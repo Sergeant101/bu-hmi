@@ -1,0 +1,287 @@
+﻿<UserControl x:Class="NGO.Elements.Gauges.GaugeRotor1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:hmi="http://schemas.monokot.com/hmi/"
+             xmlns:se="http://schemas.monokot.com/se/"
+             mc:Ignorable="d" Height="300" Width="300" MinHeight="300" MinWidth="300" MaxHeight="300" MaxWidth="300">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Monokot.ScadaExtension.Wpf;component/Themes/Controls/IndustrialStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Canvas Height="300" Width="300">
+        <se:LevelBar Canvas.Left="62" Canvas.Top="254" Name="levelBar1" Height="13" Width="178" Kind="Horizontal">
+            <se:LevelBar.Level>
+                <hmi:SeBinding  Path="Tags.Node[view.main_drives.rotor].Items[torque_0_100].Value">
+                    <hmi:SeBinding.FallbackValue>
+                        <system:Double>0</system:Double>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </se:LevelBar.Level>
+            <se:LevelBar.Fill>
+                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                    <GradientStop Color="Green" Offset="0" />
+                    <GradientStop Color="Yellow" Offset="0.8" />
+                    <GradientStop Color="Red" Offset="1" />
+                </LinearGradientBrush>
+            </se:LevelBar.Fill>
+        </se:LevelBar>
+        <Image Height="300" Width="300" Source="/NGO.Elements;component/Content/Gauges/Background/blue%20gauge%202.png" />
+        <TextBlock Height="17" Text="Ротор" HorizontalAlignment="Center" FontFamily="Tahoma" FontWeight="Bold" TextAlignment="Center" FontSize="12" VerticalAlignment="Center" Canvas.Left="132" Canvas.Top="65"/>
+        <TextBlock Height="23" Text="об/мин" FontFamily="Tahoma" FontWeight="Bold" TextAlignment="Center" FontSize="11" HorizontalAlignment="Left" Width="80" VerticalAlignment="Top" Canvas.Top="78" Canvas.Left="110" />
+        <se:RadialGauge x:Name="seGauge1" Height="270" Width="270" Canvas.Left="15" Canvas.Top="13" MajorTickBrush="White" MinorTickBrush="White" ShowStick="False" Maximum="240" Foreground="White" MajorTickCost="40" MinorTickCost="20" MajorTickThickness="4" MajorTickLength="20" MinorTickLength="10" MinorTickThickness="3" FontSize="20" FontFamily="Tahoma">
+            <se:RadialGauge.Arrows>
+                <se:RadialArrow Height="140" Width="28" BorderBrush="Transparent" Style="{StaticResource TriangleRadialArrow}">
+                    <se:RadialArrow.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.rotor].Items[real].Value" StringFormat="0">
+                            <hmi:SeBinding.FallbackValue>
+                                <system:Double>0</system:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:RadialArrow.Value>
+                </se:RadialArrow>
+                <se:RadialArrow Height="140" Width="16" Background="Red" BorderBrush="Transparent" Style="{StaticResource TriangleRadialArrow}">
+                    <se:RadialArrow.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.rotor].Items[reference].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <system:Double>0</system:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:RadialArrow.Value>
+                </se:RadialArrow>
+            </se:RadialGauge.Arrows>
+        </se:RadialGauge>
+        <!--blow-->
+        <se:VisualBox Height="25" Width="25" HorizontalAlignment="Left" VerticalAlignment="Top"   Canvas.Top="98" Canvas.Left="180"  Background="{x:Null}" BorderBrush="{x:Null}">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/NGO.Elements;component/Content/Icon/blow green.png" Stretch="Uniform"/>
+                    </se:VisualBoxStateItem.Background>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.rotor].Items[blowing_work].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/NGO.Elements;component/Content/Icon/blow red.png" Stretch="Uniform"/>
+                    </se:VisualBoxStateItem.Background>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.rotor].Items[blowing_emer].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <system:Boolean>True</system:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <!--oil-->
+        <se:VisualBox Width="30" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Top="135" Canvas.Left="193"  Background="{x:Null}" BorderBrush="{x:Null}">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/NGO.Elements;component/Content/Icon/oil green.png" Stretch="Uniform"/>
+                    </se:VisualBoxStateItem.Background>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding Path="Tags.Node[rt_oiling_work].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/NGO.Elements;component/Content/Icon/oil red.png" Stretch="Uniform"/>
+                    </se:VisualBoxStateItem.Background>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding Path="Tags.Node[rt_oiling_emergency].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <system:Boolean>True</system:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <!--heating-->
+        <se:VisualBox Width="32" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top"  Canvas.Top="173" Canvas.Left="90"  Background="{x:Null}" BorderBrush="{x:Null}">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/NGO.Elements;component/Content/Icon/heating 1 green.png" Stretch="Uniform"/>
+                    </se:VisualBoxStateItem.Background>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.rotor].Items[heating_work].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/NGO.Elements;component/Content/Icon/heating 1 red.png" Stretch="Uniform"/>
+                    </se:VisualBoxStateItem.Background>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.rotor].Items[heating_emer].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <system:Boolean>True</system:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <!--wedges-->
+
+        <se:VisualBox Height="25" Width="25" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Top="136" Canvas.Left="72"  Background="{x:Null}" BorderBrush="{x:Null}">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/NGO.Elements;component/Content/Icon/wedges yellow.png" Stretch="Uniform"/>
+                    </se:VisualBoxStateItem.Background>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.rotor].Items[wedges_attention].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/NGO.Elements;component/Content/Icon/wedges red.png" Stretch="Uniform"/>
+                    </se:VisualBoxStateItem.Background>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.rotor].Items[wedges_emer].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <system:Boolean>True</system:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <!--rotor left right-->
+        <se:VisualBox Width="69" Height="36" HorizontalAlignment="Left" VerticalAlignment="Top"  Canvas.Top="204" Canvas.Left="117" BorderBrush="{x:Null}">
+            <se:VisualBox.Background>
+                <ImageBrush ImageSource="/NGO.Elements;component/Content/Icon/rotor stop.png"/>
+            </se:VisualBox.Background>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/NGO.Elements;component/Content/Icon/rotor right.png" Stretch="Uniform"/>
+                    </se:VisualBoxStateItem.Background>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.rotor].Items[right_on].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/NGO.Elements;component/Content/Icon/rotor left.png" Stretch="Uniform"/>
+                    </se:VisualBoxStateItem.Background>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.rotor].Items[left_on].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <system:Boolean>True</system:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <Image Height="28" HorizontalAlignment="Left" Stretch="Uniform" VerticalAlignment="Top" Width="38" Source="/NGO.Elements;component/Content/Icon/brake%20red.png" Canvas.Top="171" Canvas.Left="189">
+            <Image.Visibility>
+                <hmi:SeBinding  Path="Tags.Node[view.main_drives.rotor].Items[brake_emer].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter/>
+                    </hmi:SeBinding.Converter>
+                    <hmi:SeBinding.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </Image.Visibility>
+        </Image>
+        <Image Height="80" Width="80" Source="/NGO.Elements;component/Content/Gauges/Background/white%20cap%202.png" Canvas.Left="110" Canvas.Top="110" />
+        <Grid  Height="300" Width="300">
+            <TextBlock Height="34" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.main_drives.rotor].Items[reference].Value}" HorizontalAlignment="Center" FontFamily="Tahoma" FontWeight="Bold" TextAlignment="Center" FontSize="30" VerticalAlignment="Center"/>
+            <!--<Image Height="132" HorizontalAlignment="Center" Name="image1" Stretch="Uniform" VerticalAlignment="Center" Width="149" Source="/NGO.Elements;component/Content/!.png">
+                <Image.Visibility>
+                    <hmi:SeBinding Path="modules[pvd_mod].Items[vfd-clx].isDisconnected">
+                        <hmi:SeBinding.Converter>
+                            <BooleanToVisibilityConverter />
+                        </hmi:SeBinding.Converter>
+                        <hmi:SeBinding.FallbackValue>
+                            <system:Boolean>False</system:Boolean>
+                        </hmi:SeBinding.FallbackValue>
+                    </hmi:SeBinding>
+                </Image.Visibility>
+            </Image>-->
+        </Grid>
+        <TextBlock Height="14" Text="Мощность" FontFamily="Tahoma" FontWeight="Normal" TextAlignment="Center" FontSize="11" Margin="110,69,0,0" HorizontalAlignment="Left" Width="64" VerticalAlignment="Top" Canvas.Top="193" Foreground="White" Canvas.Left="-16" />
+        <TextBlock Height="14" Text="%" FontFamily="Tahoma" FontWeight="Normal" TextAlignment="Center" FontSize="11" Margin="110,69,0,0" HorizontalAlignment="Left" Width="17" VerticalAlignment="Top" Canvas.Top="193" Foreground="White" Canvas.Left="72" />
+        <TextBlock Height="14" Text="{hmi:SeBinding Tags.Node[view.main_drives.rotor].Items[torque_0_100].Value, FallbackValue=0}" FontFamily="Tahoma" FontWeight="Normal" TextAlignment="Center" FontSize="11" Margin="110,69,0,0" HorizontalAlignment="Left" Width="27" VerticalAlignment="Top" Canvas.Top="193" Foreground="White" Canvas.Left="46" />
+        <se:VisualBox Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Width="25"   Canvas.Top="94" Canvas.Left="90" Background="Transparent" BorderThickness="0">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/NGO.Elements;component/Content/Icon/housing red.png"/>
+                    </se:VisualBoxStateItem.Background>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.rotor].Items[kozhuh_krasnyj].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <system:Boolean>True</system:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/NGO.Elements;component/Content/Icon/housing green.png"/>
+                    </se:VisualBoxStateItem.Background>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.rotor].Items[kozhuh_zelenyj].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <TextBlock Height="17" Text="SQP" FontFamily="Tahoma" FontWeight="Normal" TextAlignment="Center" HorizontalAlignment="Left" Width="28" VerticalAlignment="Top" Foreground="White" Canvas.Top="77" Canvas.Left="87">
+            <TextBlock.Visibility>
+                <hmi:Bind Path="Tags.Node[view.main_drives.rotor].Items[kozhuh_krasnyj].Value">
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </TextBlock.Visibility>
+        </TextBlock>
+        <TextBlock Height="17" Text="SQP" FontFamily="Tahoma" FontWeight="Normal" TextAlignment="Center" HorizontalAlignment="Left" Width="28" VerticalAlignment="Top" Foreground="White" Canvas.Top="77" Canvas.Left="87">
+            <TextBlock.Visibility>
+                <hmi:Bind Path="Tags.Node[view.main_drives.rotor].Items[kozhuh_zelenyj].Value">
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </TextBlock.Visibility>
+        </TextBlock>
+    </Canvas>
+</UserControl>

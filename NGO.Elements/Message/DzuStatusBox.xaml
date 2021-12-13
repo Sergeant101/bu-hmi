@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="NGO.Elements.Message.DzuStatusBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             xmlns:se="http://schemas.monokot.com/se/"
+             xmlns:hmi="http://schemas.monokot.com/hmi/"
+             xmlns:Fundamental="clr-namespace:Monokot.Hmi.Core.Fundamental;assembly=Monokot.Hmi.Core"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             d:DesignHeight="66" d:DesignWidth="147">
+    <UserControl.Resources>
+        <ResourceDictionary Source="pack://application:,,,/NGO.Elements;component/style/style.xaml"/>
+    </UserControl.Resources>
+    <Grid>
+        <se:VisualBox CornerRadius="3" 
+                      Background="LightGray" 
+                      HorizontalAlignment="Stretch" 
+                      VerticalAlignment="Stretch" 
+                      Text="ДЗУ&#xD;ПРИОТКРЫТО">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="White" Text="ДЗУ&#xD;ОТКРЫТО">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding Path="Tags.Node[view.auxiliary].Items[dzu_otkrito].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="White" Text="ДЗУ&#xD;ЗАКРЫТО">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding Path="Tags.Node[view.auxiliary].Items[dzu_zakrito].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="{StaticResource MediaBoxEmergencySolidColorBrush}" Text="ДЗУ СБОЙ&#xD;(ОБА ДАТЧИКА)">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding Path="Tags.Node[view.auxiliary].Items[dzu_sboi].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <system:Boolean>true</system:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+    </Grid>
+</UserControl>

@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="NGO.Elements.Message.ShortRotorStatusBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             xmlns:se="http://schemas.monokot.com/se/"
+             xmlns:hmi="http://schemas.monokot.com/hmi/"
+             xmlns:Fundamental="clr-namespace:Monokot.Hmi.Core.Fundamental;assembly=Monokot.Hmi.Core"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             d:DesignHeight="65" d:DesignWidth="155">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="27" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Rectangle Stroke="Black" RadiusX="5" RadiusY="5" Grid.RowSpan="2" Fill="White" />
+        <Rectangle Name="background" Stroke="Black" RadiusX="5" RadiusY="5" Grid.RowSpan="2" Fill="{Binding ElementName=LabelStatus, Path=VisualStateCollection.CurrentState.Background}" />
+        <TextBlock Grid.Row="0" Text="РОТОР" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="Tahoma"/>
+        <se:VisualBox Grid.Row="1" x:Name="LabelStatus" VerticalAlignment="Center" FontSize="18" Background="Transparent" BorderBrush="Transparent" Text="СТОП" Margin="0,1.5,0,1.5">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Text="НЕ ГОТОВ" Background="{StaticResource MediaBoxAttentionSolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.main_drives.rotor].Items[ne_gotov].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Text="АВАРИЯ" Background="{StaticResource MediaBoxEmergencySolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.main_drives.rotor].Items[avariya].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Text="ГОТОВ" Background="{StaticResource MediaBoxFineSolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="AnalogAlarms.Node[main_drives.rotor].Items[1].Blinking">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Text="РАБОТА" Background="{StaticResource MediaBoxFineSolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="AnalogAlarms.Node[main_drives.rotor].Items[2].Blinking">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+    </Grid>
+</UserControl>

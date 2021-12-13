@@ -1,0 +1,14 @@
+﻿<UserControl x:Class="DC.Frames.FrmWash"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:buttons="clr-namespace:Monokot.ScadaExtension.Wpf.Controls.Buttons;assembly=Monokot.ScadaExtension.Wpf"
+             mc:Ignorable="d" 
+             Height="1024" Width="1280" Background="White" IsVisibleChanged="UserControl_IsVisibleChanged" PreviewMouseMove="Grid_PreviewMouseMove" >
+    <Grid>
+        <TextBlock HorizontalAlignment="Center" Name="labMessage" Text="ЧТО БЫ ВЕРНУТЬСЯ К РАБОТЕ, НЕ ПРИКАСАЙТЕСЬ К ЭКРАНУ&#xA;8 СЕКУНД" FontSize="60" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Center" Width="840" />
+        <buttons:HmiButton Style="{StaticResource CirclePowerButton}"  Tag="0" FontSize="16" Height="75" Content="" Width="Auto" PreviewMouseUp="ImageButton_PreviewMouseUp" Visibility="Visible" Margin="1144,12,60,936" Foreground="White" BorderBrush="{x:Null}"/>
+        <buttons:HmiButton Style="{DynamicResource ngo_button_style}"  Tag="0" FontSize="16" Height="75" Content="ПЕРЕЗАГРУЗИТЬ ПБ" Width="Auto" PreviewMouseUp="UIElement_OnPreviewMouseUp" Visibility="Visible" Margin="1044,87,60,862" Foreground="White" BorderBrush="{x:Null}"/>
+    </Grid>
+</UserControl>

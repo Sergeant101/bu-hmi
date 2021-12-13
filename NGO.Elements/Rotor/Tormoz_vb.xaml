@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="NGO.Elements.Rotor.Tormoz_vb"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:hmi="http://schemas.monokot.com/hmi/"
+             xmlns:se="http://schemas.monokot.com/se/"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:local="clr-namespace:NGO.Elements.Rotor"
+             mc:Ignorable="d"
+             d:DesignHeight="80"
+             d:DesignWidth="200"
+             >
+    <se:VisualBox HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="5" Text="ТОРМОЗ" FontSize="20" Background="LightGray">
+        <se:VisualBox.VisualStateCollection>
+            <se:VisualBoxStateItem Background="{DynamicResource MediaBoxFineSolidColorBrush}" Text="ТОРМОЗ&#xD;&#xA;РАСТОРМОЖЕН">
+                <se:VisualBoxStateItem.Value>
+                    <hmi:SeBinding  Path="Tags.Node[view.main_drives.rotor].Items[brake].Value">
+                        <hmi:SeBinding.FallbackValue>
+                            <system:Boolean>False</system:Boolean>
+                        </hmi:SeBinding.FallbackValue>
+                    </hmi:SeBinding>
+                </se:VisualBoxStateItem.Value>
+            </se:VisualBoxStateItem>
+            <se:VisualBoxStateItem Background="{DynamicResource MediaBoxAttentionSolidColorBrush}" Text="ТОРМОЗ&#xD;&#xA;ЗАТОРМОЖЕН">
+                <se:VisualBoxStateItem.Value>
+                    <hmi:SeBinding  Path="Tags.Node[view.main_drives.rotor].Items[brake_work].Value">
+                        <hmi:SeBinding.FallbackValue>
+                            <system:Boolean>False</system:Boolean>
+                        </hmi:SeBinding.FallbackValue>
+                    </hmi:SeBinding>
+                </se:VisualBoxStateItem.Value>
+            </se:VisualBoxStateItem>
+            <se:VisualBoxStateItem Background="{DynamicResource MediaBoxEmergencySolidColorBrush}" Text="ТОРМОЗ&#xD;&#xA;АВАРИЯ">
+                <se:VisualBoxStateItem.Value>
+                    <hmi:Bind Path="Tags.Node[view.main_drives.rotor].Items[brake_emer1].Value">
+                        <hmi:Bind.FallbackValue>
+                            <system:Boolean>False</system:Boolean>
+                        </hmi:Bind.FallbackValue>
+                    </hmi:Bind>
+                </se:VisualBoxStateItem.Value>
+            </se:VisualBoxStateItem>
+        </se:VisualBox.VisualStateCollection>
+    </se:VisualBox>
+</UserControl>

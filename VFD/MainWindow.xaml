@@ -1,0 +1,28 @@
+﻿<se:SEWindow
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:my="clr-namespace:System;assembly=mscorlib"
+        xmlns:hmi="http://schemas.monokot.com/hmi/"
+        xmlns:se="http://schemas.monokot.com/se/"
+        xmlns:Frames1="clr-namespace:VFD.Frames"
+        xmlns:sng="clr-namespace:VFD.Frames.Sub.SNG"
+        xmlns:SNG_Obuchenie="clr-namespace:VFD.Frames.Sub.SNG_Obuchenie"
+        xmlns:n159="clr-namespace:VFD.Frames.Sub.n159"
+        x:Class="VFD.MainWindow"
+        Title="SCADA VFD Application"
+        WindowState="Normal"
+    WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize" 
+        Background="#FFEBEBEB" 
+        Width="1280"
+        Height="1024"
+        WindowStyle="None">
+    
+    <!--<ScrollViewer>-->
+        <n159:MainFrame/>
+    <!--</ScrollViewer>-->
+    <!--<Grid>
+
+        
+    </Grid>-->
+</se:SEWindow>

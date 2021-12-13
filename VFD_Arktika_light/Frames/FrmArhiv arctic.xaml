@@ -1,0 +1,987 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:hmi="http://schemas.monokot.com/hmi/" 
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+    
+    xmlns:Fundamental="clr-namespace:Monokot.Hmi.Core.Fundamental;assembly=Monokot.Hmi.Core"
+    x:Class="VFD_Arktika_light.Frames.FrmArhiv" 
+    xmlns:se="http://schemas.monokot.com/se/"
+             mc:Ignorable="d" 
+            d:DesignHeight="840" d:DesignWidth="1200">
+    
+    
+    <Grid>
+        <Grid.Resources>
+            <ResourceDictionary>
+
+                <SolidColorBrush x:Key="TrendViewerBackground" Color="#FFE6E6E6"/>
+                <hmi:TypeSwitchConverter x:Key="HmiTabItemContentTemplateConverter">
+                    <DataTemplate x:Key="{x:Type system:String}">
+                        <TextBlock Text="{Binding}"
+                                    FontFamily="{Binding FontFamily, RelativeSource={RelativeSource AncestorType={x:Type se:HmiTabItem}}}"
+                                    Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType={x:Type se:HmiTabItem}}}"
+                                    FontSize="{Binding FontSize, RelativeSource={RelativeSource AncestorType={x:Type se:HmiTabItem}}}"
+                                    FontWeight="{Binding FontWeight, RelativeSource={RelativeSource AncestorType={x:Type se:HmiTabItem}}}"
+                                    FontStyle="{Binding FontStyle, RelativeSource={RelativeSource AncestorType={x:Type se:HmiTabItem}}}"
+                                    FontStretch="{Binding FontStretch, RelativeSource={RelativeSource AncestorType={x:Type se:HmiTabItem}}}"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    TextAlignment="Center" >
+                        </TextBlock>
+                    </DataTemplate>
+                    <DataTemplate x:Key="{x:Type system:Object}">
+                        <ContentPresenter Content="{Binding }" />
+                    </DataTemplate>
+                </hmi:TypeSwitchConverter>
+
+                <Style TargetType="{x:Type se:HmiTabItem}">
+                    <Setter Property="Margin" Value="0,0,0,5"/>
+                    <Setter Property="Height" Value="40"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                    <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+                    <Setter Property="Foreground">
+                        <Setter.Value>
+                            <PriorityBinding>
+                                <Binding RelativeSource="{RelativeSource Self}" 
+                                         Converter="{StaticResource IsNullToUnsetValueConverter}"
+                                         Path="VisualStateCollection.CurrentState.Foreground" />
+                                <Binding Path="Foreground" RelativeSource="{RelativeSource AncestorType={x:Type  Control}}"/>
+                            </PriorityBinding>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Background" Value="{StaticResource NormalBrush}"/>
+                    <Setter Property="BorderBrush" Value="Transparent"/>
+                    <Setter Property="BorderThickness">
+                        <Setter.Value>
+                            <Thickness Bottom="1" Left="1" Right="1" Top="1"/>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="FocusVisualStyle">
+                        <Setter.Value>
+                            <Style TargetType="IFrameworkInputElement">
+                                <Style.Resources>
+                                    <ResourceDictionary />
+                                </Style.Resources>
+                                <Setter Property="Control.Template">
+                                    <Setter.Value>
+                                        <ControlTemplate>
+                                            <Rectangle Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" 
+                                           StrokeThickness="1"
+                                           HorizontalAlignment="Stretch"
+                                           StrokeDashArray="1 2" Margin="2,2,2,2" SnapsToDevicePixels="True" />
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type se:HmiTabItem}">
+                                <Grid>
+                                    <Border x:Name="Border"
+                                CornerRadius="3" 
+                                hmi:Click.Command="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(hmi:Click.Command)}"
+                                hmi:Click.Mode="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(hmi:Click.Mode)}">
+
+                                        <Border.Background>
+                                            <PriorityBinding>
+                                                <Binding RelativeSource="{RelativeSource AncestorType={x:Type  se:HmiTabItem}}" 
+                                             Converter="{StaticResource IsNullToUnsetValueConverter}"
+                                             Path="VisualStateCollection.CurrentState.Background" />
+                                                <Binding Path="Background" RelativeSource="{RelativeSource AncestorType={x:Type se:HmiTabItem}}"/>
+                                            </PriorityBinding>
+                                        </Border.Background>
+
+                                        <Border.BorderThickness>
+                                            <PriorityBinding>
+                                                <Binding RelativeSource="{RelativeSource AncestorType={x:Type  se:HmiTabItem}}" 
+                                             Converter="{StaticResource IsNullToUnsetValueConverter}"
+                                             Path="VisualStateCollection.CurrentState.BorderThickness" />
+                                                <Binding Path="BorderThickness" RelativeSource="{RelativeSource AncestorType={x:Type se:HmiTabItem}}"/>
+                                            </PriorityBinding>
+                                        </Border.BorderThickness>
+
+                                        <Border.BorderBrush>
+                                            <PriorityBinding>
+                                                <Binding RelativeSource="{RelativeSource AncestorType={x:Type  se:HmiTabItem}}" 
+                                             Converter="{StaticResource IsNullToUnsetValueConverter}"
+                                             Path="VisualStateCollection.CurrentState.BorderBrush" />
+                                                <Binding Path="BorderBrush" RelativeSource="{RelativeSource AncestorType={x:Type se:HmiTabItem}}"/>
+                                            </PriorityBinding>
+                                        </Border.BorderBrush>
+
+                                        <ContentPresenter
+                                                   ContentTemplate="{Binding RelativeSource={RelativeSource Self}, Path=Content, Converter={StaticResource HmiTabItemContentTemplateConverter}}" 
+                                                   x:Name="ContentSite" 
+                                                   VerticalAlignment="Stretch"
+                                                   HorizontalAlignment="Stretch" ContentSource="Header" 
+                                                   RecognizesAccessKey="True"/>
+                                    </Border>
+                                </Grid>
+                                <ControlTemplate.Triggers>
+
+                                    <MultiTrigger >
+                                        <MultiTrigger.Conditions>
+                                            <Condition Property="IsEnabled" Value="True"/>
+                                            <Condition Property="IsSelected" Value="True"/>
+                                        </MultiTrigger.Conditions>
+                                        <Setter TargetName="Border" Property="Background" Value="{Binding Parent.HighlightBrush, RelativeSource={RelativeSource TemplatedParent}}" />
+                                        <Setter TargetName="Border" Property="BorderThickness" Value="{Binding BorderThickness, RelativeSource={RelativeSource TemplatedParent}}" />
+                                        <Setter TargetName="Border" Property="BorderBrush" Value="Transparent" />
+                                        <Setter TargetName="Border" Property="CornerRadius" Value="5,5,0,0"/>
+                                        <Setter TargetName="Border" Property="Margin" Value="0,0,0,-6"/>
+                                        <Setter Property="Foreground" Value="{Binding Foreground, RelativeSource={RelativeSource AncestorType={x:Type Control}}}"/>
+                                    </MultiTrigger>
+                                    <Trigger Property="IsSelected" Value="False">
+                                        <Setter TargetName="Border" Property="Background">
+                                            <Setter.Value>
+                                                <PriorityBinding>
+                                                    <Binding RelativeSource="{RelativeSource AncestorType={x:Type  se:HmiTabItem}}" 
+                                             Converter="{StaticResource IsNullToUnsetValueConverter}"
+                                             Path="VisualStateCollection.CurrentState.Background" />
+                                                    <Binding Path="Background" RelativeSource="{RelativeSource AncestorType={x:Type se:HmiTabItem}}"/>
+                                                </PriorityBinding>
+                                            </Setter.Value>
+                                        </Setter>
+                                        <Setter TargetName="Border" Property="BorderThickness">
+                                            <Setter.Value>
+                                                <PriorityBinding>
+                                                    <Binding RelativeSource="{RelativeSource AncestorType={x:Type  se:HmiTabItem}}" 
+                                             Converter="{StaticResource IsNullToUnsetValueConverter}"
+                                             Path="VisualStateCollection.CurrentState.BorderThickness" />
+                                                    <Binding Path="BorderThickness" RelativeSource="{RelativeSource AncestorType={x:Type se:HmiTabItem}}"/>
+                                                </PriorityBinding>
+                                            </Setter.Value>
+                                        </Setter>
+                                        <Setter TargetName="Border" Property="BorderBrush">
+                                            <Setter.Value>
+                                                <PriorityBinding>
+                                                    <Binding RelativeSource="{RelativeSource AncestorType={x:Type  se:HmiTabItem}}" 
+                                                                     Converter="{StaticResource IsNullToUnsetValueConverter}"
+                                                                     Path="VisualStateCollection.CurrentState.BorderBrush" />
+                                                    <Binding Path="BorderBrush" RelativeSource="{RelativeSource AncestorType={x:Type se:HmiTabItem}}"/>
+                                                </PriorityBinding>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                    <Trigger Property="IsEnabled" Value="False">
+                                        <Setter TargetName="Border" Property="Opacity" Value="{StaticResource DisableOpacity}"/>
+                                    </Trigger>
+                                    <Trigger SourceName="Border" Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="Border" Property="Background" Value="{StaticResource DarkBrush}"/>
+                                        <!--<Setter TargetName="Border" Property="BorderThickness" Value="{Binding BorderThickness, RelativeSource={RelativeSource TemplatedParent}}" />-->
+                                        <!--<Setter TargetName="Border" Property="BorderBrush" Value="{Binding BorderBrush, RelativeSource={RelativeSource AncestorType={x:Type  navigation:HmiTabItem}}}" />-->
+                                    </Trigger>
+                                    <MultiTrigger>
+                                        <MultiTrigger.Conditions>
+                                            <Condition Property="IsSelected" Value="True"/>
+                                            <Condition Property="IsEnabled" Value="True"/>
+                                            <Condition SourceName="Border" Property="IsMouseOver" Value="True"/>
+                                        </MultiTrigger.Conditions>
+                                        <Setter TargetName="Border" Property="Background" Value="{Binding Parent.HighlightBrush, RelativeSource={RelativeSource TemplatedParent}}" />
+                                        <Setter TargetName="Border" Property="BorderThickness" Value="{Binding BorderThickness, RelativeSource={RelativeSource TemplatedParent}}" />
+                                        <Setter TargetName="Border" Property="BorderBrush" Value="{Binding BorderBrush, RelativeSource={RelativeSource AncestorType={x:Type  se:HmiTabItem}}}" />
+                                    </MultiTrigger>
+
+                                    <MultiTrigger>
+                                        <MultiTrigger.Conditions>
+                                            <Condition Property="IsSelected" Value="True"/>
+                                            <Condition SourceName="Border" Property="IsMouseOver" Value="False"/>
+                                            <Condition Property="IsEnabled" Value="True"/>
+                                        </MultiTrigger.Conditions>
+                                        <Setter TargetName="Border" Property="Background" Value="{Binding Parent.HighlightBrush, RelativeSource={RelativeSource TemplatedParent}}" />
+                                        <Setter TargetName="Border" Property="BorderThickness" Value="{Binding BorderThickness, RelativeSource={RelativeSource TemplatedParent}}" />
+                                        <Setter TargetName="Border" Property="BorderBrush" Value="{Binding BorderBrush, RelativeSource={RelativeSource AncestorType={x:Type se:HmiTabItem}}}" />
+                                    </MultiTrigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+
+                <Style  TargetType="{x:Type se:HmiTabControl}" >
+                    <Setter Property="SnapsToDevicePixels" Value="True" />
+                    <Setter Property="HighlightBrush" Value="#FFAAAAAA"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type se:HmiTabControl}">
+                                <Grid KeyboardNavigation.TabNavigation="Local" Background="{TemplateBinding Background}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition x:Name="ColumnDefinition0" />
+                                        <ColumnDefinition Width="0" x:Name="ColumnDefinition1" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" x:Name="RowDefinition0" />
+                                        <RowDefinition Height="*" x:Name="RowDefinition1" />
+                                    </Grid.RowDefinitions>
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup x:Name="CommonStates">
+                                            <VisualState x:Name="Disabled">
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+
+                                    <Border x:Name="Border" Grid.Row="1" Grid.Column="0"
+                                                    Background="{TemplateBinding HighlightBrush}"
+                                                    BorderThickness="{TemplateBinding BorderThickness}" 
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        KeyboardNavigation.TabNavigation="Local" KeyboardNavigation.DirectionalNavigation="Contained"
+                                        KeyboardNavigation.TabIndex="2">
+                                        <ContentPresenter x:Name="PART_SelectedContentHost" ContentSource="SelectedContent" />
+                                    </Border>
+
+                                    <ScrollViewer Grid.Row="0" Grid.Column="0" HorizontalScrollBarVisibility="Auto" 
+                                      VerticalScrollBarVisibility="Hidden" x:Name="ScrollViewer" Padding="{TemplateBinding Padding}" 
+                                      Background="Transparent"
+                                      BorderBrush="Transparent" BorderThickness="0"
+                                      HorizontalAlignment="{Binding TabHorizontalAlignment, RelativeSource={RelativeSource TemplatedParent}}"
+                                      VerticalAlignment="{Binding TabVerticalAlignment, RelativeSource={RelativeSource TemplatedParent}}"
+                                      >
+
+                                        <se:HmiTabPanel x:Name="HeaderPanel" Panel.ZIndex="1" Margin="0,0,0,0"
+                                    Orientation="Horizontal"
+                                    IsItemsHost="True" KeyboardNavigation.TabIndex="1" Background="Transparent" />
+                                    </ScrollViewer>
+
+
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="TabStripPlacement" Value="Bottom">
+                                        <Setter TargetName="HeaderPanel" Property="Grid.Row" Value="1" />
+                                        <Setter TargetName="HeaderPanel" Property="Orientation" Value="Horizontal" />
+                                        <Setter TargetName="Border" Property="Grid.Row" Value="0" />
+                                        <Setter TargetName="RowDefinition0" Property="Height" Value="*" />
+                                        <Setter TargetName="RowDefinition1" Property="Height" Value="Auto" />
+
+                                        <Setter TargetName="ScrollViewer" Property="Grid.Row" Value="1" />
+                                        <Setter TargetName="ScrollViewer" Property="HorizontalScrollBarVisibility" Value="Auto"/>
+                                        <Setter TargetName="ScrollViewer" Property="VerticalScrollBarVisibility" Value="Hidden"/>
+                                    </Trigger>
+                                    <Trigger Property="TabStripPlacement" Value="Left">
+                                        <Setter TargetName="HeaderPanel" Property="Grid.Row" Value="0" />
+                                        <Setter TargetName="HeaderPanel" Property="Grid.Column" Value="0" />
+                                        <Setter TargetName="HeaderPanel" Property="Orientation" Value="Vertical" />
+
+                                        <Setter TargetName="Border" Property="Grid.Row" Value="0" />
+                                        <Setter TargetName="Border" Property="Grid.Column" Value="1" />
+                                        <Setter TargetName="ColumnDefinition0" Property="Width" Value="Auto" />
+                                        <Setter TargetName="ColumnDefinition1" Property="Width" Value="*" />
+                                        <Setter TargetName="RowDefinition0" Property="Height" Value="*" />
+                                        <Setter TargetName="RowDefinition1" Property="Height" Value="0" />
+
+                                        <Setter TargetName="ScrollViewer" Property="Grid.Row" Value="0" />
+                                        <Setter TargetName="ScrollViewer" Property="Grid.Column" Value="0" />
+
+                                        <Setter TargetName="ScrollViewer" Property="HorizontalScrollBarVisibility" Value="Hidden"/>
+                                        <Setter TargetName="ScrollViewer" Property="VerticalScrollBarVisibility" Value="Auto"/>
+                                    </Trigger>
+                                    <Trigger Property="TabStripPlacement" Value="Right">
+                                        <Setter TargetName="HeaderPanel" Property="Grid.Row" Value="0" />
+                                        <Setter TargetName="HeaderPanel" Property="Grid.Column" Value="1" />
+                                        <Setter TargetName="HeaderPanel" Property="Orientation" Value="Vertical" />
+
+                                        <Setter TargetName="Border" Property="Grid.Row" Value="0" />
+                                        <Setter TargetName="Border" Property="Grid.Column" Value="0" />
+                                        <Setter TargetName="ColumnDefinition0" Property="Width" Value="*" />
+                                        <Setter TargetName="ColumnDefinition1" Property="Width" Value="Auto" />
+                                        <Setter TargetName="RowDefinition0" Property="Height" Value="*" />
+                                        <Setter TargetName="RowDefinition1" Property="Height" Value="0" />
+
+                                        <Setter TargetName="ScrollViewer" Property="Grid.Row" Value="0" />
+                                        <Setter TargetName="ScrollViewer" Property="Grid.Column" Value="1" />
+                                        <Setter TargetName="ScrollViewer" Property="HorizontalScrollBarVisibility" Value="Hidden"/>
+                                        <Setter TargetName="ScrollViewer" Property="VerticalScrollBarVisibility" Value="Auto"/>
+                                    </Trigger>
+                                    <Trigger Property="IsEnabled" Value="False">
+                                        <Setter TargetName="Border" Property="Opacity" Value="{StaticResource DisableOpacity}"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+
+                </Style>
+
+                <Style TargetType="{x:Type se:TrendViewer}">
+                    <Setter Property="LegendAreaLength" Value="260"/>
+                </Style>
+            </ResourceDictionary>
+        </Grid.Resources>
+        <se:HmiTabControl HorizontalAlignment="Stretch" Margin="0,10,0,0" VerticalAlignment="Stretch" TabHorizontalAlignment="Center">
+            <se:HmiTabItem Header="ПРИВОДЫ" Width="150" Height="25">
+                <se:HmiTabControl HorizontalAlignment="Stretch" Margin="0,10,0,0" VerticalAlignment="Stretch" TabHorizontalAlignment="Left" TabStripPlacement="Top" HighlightBrush="LightGray">
+                    <se:HmiTabItem RenderTransformOrigin="0.5,0.5" Header="АВАРИИ" Width="200" Height="25">
+                        <Grid>
+                            <se:AlarmViewer FontSize="16" Margin="0,0,0,0">
+                                <!--<se:AlarmViewer.Resources>
+                                    <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="DarkGray"/>
+                                </se:AlarmViewer.Resources>-->
+                                <se:AlarmViewer.AlarmClasses>
+                                    <se:AlarmClassDescriptor AlarmClassID="aux_emergency"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="drawwork_emergency"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="pump1_emergency"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="pump2_emergency"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="pump3_emergency"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="rotor_emergency"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="vspom_leb1_emer"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="vspom_leb2_emer"/>
+                                </se:AlarmViewer.AlarmClasses>
+                                <se:AlarmViewer.Columns>
+                                    <se:OnTimeColumn Header="ДАТА/ВРЕМЯ" StringFormat="{}{0:HH:mm:ss}"/>
+                                    <se:AlarmClassColumn Header="ИСТОЧНИК" />
+                                    <se:MessageColumn Header="СООБЩЕНИЕ" />
+                                    <se:MessageIDColumn Header="КОД" />
+                                </se:AlarmViewer.Columns>
+                            </se:AlarmViewer>
+                        </Grid>
+                    </se:HmiTabItem>
+                    <se:HmiTabItem Header="ГОТОВНОСТИ" RenderTransformOrigin="0.5,0.5" Width="200" Height="25">
+                        <Grid>
+                            <se:AlarmViewer FontSize="16" Margin="0,0,0,0">
+                                <!--<se:AlarmViewer.Resources>
+                                    <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="DarkGray"/>
+                                </se:AlarmViewer.Resources>-->
+                                <se:AlarmViewer.AlarmClasses>
+                                    <se:AlarmClassDescriptor AlarmClassID="aux_readiness"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="drawwork_readiness"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="pump1_readiness"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="pump2_readiness"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="pump3_readiness"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="rotor_readiness"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="vspom_leb1_ready"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="vspom_leb2_ready"/>
+                                </se:AlarmViewer.AlarmClasses>
+                                <se:AlarmViewer.Columns>
+                                    <se:OnTimeColumn Header="ДАТА/ВРЕМЯ" StringFormat="{}{0:HH:mm:ss}"/>
+                                    <se:AlarmClassColumn Header="ИСТОЧНИК" />
+                                    <se:MessageColumn Header="СООБЩЕНИЕ" />
+                                    <se:MessageIDColumn Header="КОД" />
+                                </se:AlarmViewer.Columns>
+                            </se:AlarmViewer>
+                        </Grid>
+                    </se:HmiTabItem>
+                    <se:HmiTabItem RenderTransformOrigin="0.5,0.5" Width="200" Header="ПРЕОБРАЗОВАТЕЛИ" Height="25">
+                        <se:HmiTabControl Margin="0,10,0,0">
+                            <se:HmiTabItem Header="АВАРИИ" Width="250" Margin="0" Height="25">
+                                <se:AlarmViewer FontSize="16">
+                                    <!--<se:AlarmViewer.Resources>
+                                        <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="DarkGray"/>
+                                    </se:AlarmViewer.Resources>-->
+                                    <se:AlarmViewer.AlarmClasses>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_aux_faults_abb"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_chopper_faults_abb"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_drawwork_motor1_faults_abb"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_drawwork_motor2_faults_abb"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_helperdrawwork1_faults_abb"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_helperdrawwork2_faults_abb"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_pump1_faults_abb"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_pump2_faults_abb"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_pump3_faults_abb"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_rectifier_faults_abb"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_rectifier2_faults_abb"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_rotor_faults_abb"/>
+                                    </se:AlarmViewer.AlarmClasses>
+
+                                    <se:AlarmViewer.Columns>
+                                        <se:OnTimeColumn Header="ДАТА/ВРЕМЯ" StringFormat="{}{0:HH:mm:ss}"/>
+                                        <se:AlarmClassColumn Header="ИСТОЧНИК" />
+                                        <se:MessageColumn Header="СООБЩЕНИЕ" />
+                                        <se:MessageIDColumn Header="КОД" StringFormat="{}{0:X4}"/>
+                                    </se:AlarmViewer.Columns>
+
+                                </se:AlarmViewer>
+                            </se:HmiTabItem>
+                            <se:HmiTabItem Header="ПРЕДУПРЕЖДЕНИЯ" Margin="5,0,0,0" Width="250" Height="25">
+                                <se:AlarmViewer FontSize="16">
+                                    <!--<se:AlarmViewer.Resources>
+                                        <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="DarkGray"/>
+                                    </se:AlarmViewer.Resources>-->
+                                    <se:AlarmViewer.AlarmClasses>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_aux_alarms_abb"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_chopper_alarms_abb"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_drawwork_motor1_alarms_abb"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_drawwork_motor2_alarms_abb"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_helperdrawwork1_alarms_abb"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_helperdrawwork2_alarms_abb"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_pump1_alarms_abb"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_pump2_alarms_abb"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_pump3_alarms_abb"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_rectifier_alarms_abb"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_rectifier2_alarms_abb"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_rotor_alarms_abb"/>
+                                    </se:AlarmViewer.AlarmClasses>
+                                    <se:AlarmViewer.Columns>
+                                        <se:OnTimeColumn Header="ДАТА/ВРЕМЯ" StringFormat="{}{0:HH:mm:ss}"/>
+                                        <se:AlarmClassColumn Header="ИСТОЧНИК" />
+                                        <se:MessageColumn Header="СООБЩЕНИЕ" />
+                                        <se:MessageIDColumn Header="КОД" StringFormat="{}{0:X4}"/>
+                                    </se:AlarmViewer.Columns>
+                                </se:AlarmViewer>
+                            </se:HmiTabItem>
+
+
+                            <se:HmiTabItem Header="СЛОВО СОСТОЯНИЯ" Margin="5,0,0,0" Width="250" Visibility="Collapsed">
+                                <se:AlarmViewer FontSize="16">
+                                    <!--<se:AlarmViewer.Resources>
+                                        <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="DarkGray"/>
+                                    </se:AlarmViewer.Resources>-->
+                                    <se:AlarmViewer.AlarmClasses>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_aux"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_chopper"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_lebedka1"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_lebedka2"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_pump1"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_pump2"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_pump3"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_rectifier"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_rotor"/>
+                                    </se:AlarmViewer.AlarmClasses>
+
+                                    <se:AlarmViewer.Columns>
+                                        <se:OnTimeColumn Header="ДАТА/ВРЕМЯ" StringFormat="{}{0:HH:mm:ss}"/>
+                                        <se:AlarmClassColumn Header="ИСТОЧНИК" />
+                                        <se:MessageColumn Header="СООБЩЕНИЕ" />
+                                        <se:MessageIDColumn Header="КОД" />
+                                    </se:AlarmViewer.Columns>
+                                </se:AlarmViewer>
+                            </se:HmiTabItem>
+                            <se:HmiTabItem Header="СЛОВО УПРАВЛЕНИЯ" Margin="5,0,0,0" Width="250" Visibility="Collapsed">
+                                <se:AlarmViewer FontSize="16">
+                                    <!--<se:AlarmViewer.Resources>
+                                        <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="DarkGray"/>
+                                    </se:AlarmViewer.Resources>-->
+                                    <se:AlarmViewer.AlarmClasses>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_aux"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_chopper"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_lebedka1"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_lebedka2"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_pump1"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_pump2"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_pump3"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_rectifier"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_rotor"/>
+                                    </se:AlarmViewer.AlarmClasses>
+
+                                    <se:AlarmViewer.Columns>
+                                        <se:OnTimeColumn Header="ДАТА/ВРЕМЯ" StringFormat="{}{0:HH:mm:ss}"/>
+                                        <se:AlarmClassColumn Header="ИСТОЧНИК" />
+                                        <se:MessageColumn Header="СООБЩЕНИЕ" />
+                                        <se:MessageIDColumn Header="КОД" />
+                                    </se:AlarmViewer.Columns>
+
+                                </se:AlarmViewer>
+                            </se:HmiTabItem>
+                        </se:HmiTabControl>
+                    </se:HmiTabItem>
+                </se:HmiTabControl>
+            </se:HmiTabItem>
+            <se:HmiTabItem Header="ВСПОМ. МЕХАНИЗМЫ" Margin="5,0,0,0" Width="220" Visibility="Collapsed">
+                <se:HmiTabControl HorizontalAlignment="Stretch" Margin="0,10,0,0" VerticalAlignment="Stretch" TabHorizontalAlignment="Right" TabStripPlacement="Right">
+                    <se:HmiTabItem Margin="0,5,0,0" Header="ЭНЕРГОБЛОК" Width="160">
+                        <se:HmiTabItem.LayoutTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </se:HmiTabItem.LayoutTransform>
+                        <Grid Background="Gainsboro">
+                            <se:AlarmViewer HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" FontSize="16">
+                                <!--<se:AlarmViewer.Resources>
+                                    <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="DarkGray"/>
+                                </se:AlarmViewer.Resources>-->
+                                <se:AlarmViewer.AlarmClasses>
+                                    <se:AlarmClassDescriptor AlarmClassID="transformator1"/>
+
+
+                                </se:AlarmViewer.AlarmClasses>
+
+                                <se:AlarmViewer.Columns>
+                                    <se:OnTimeColumn Header="ДАТА/ВРЕМЯ" StringFormat="{}{0:HH:mm:ss}"/>
+                                    <se:AlarmClassColumn Header="ИСТОЧНИК" />
+                                    <se:MessageColumn Header="СООБЩЕНИЕ" />
+                                    <se:MessageIDColumn Header="КОД" />
+                                </se:AlarmViewer.Columns>
+
+                            </se:AlarmViewer>
+                        </Grid>
+                    </se:HmiTabItem>
+                    <se:HmiTabItem RenderTransformOrigin="0.5,0.5" Header="КОМПРЕССОРЫ" Margin="0,5,0,0" Width="160">
+                        <se:HmiTabItem.LayoutTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </se:HmiTabItem.LayoutTransform>
+                        <Grid Background="Gainsboro"/>
+                    </se:HmiTabItem>
+
+                </se:HmiTabControl>
+            </se:HmiTabItem>
+
+            <se:HmiTabItem Header="ДЕЙСТВИЯ ПЕРСОНАЛА" Width="250" Height="25">
+                <Grid>
+                    <se:AlarmViewer HorizontalAlignment="Stretch" Margin="0,10,0,0" VerticalAlignment="Stretch" FontSize="16">
+                        <!--<se:AlarmViewer.Resources>
+                            <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="DarkGray"/>
+                        </se:AlarmViewer.Resources>-->
+                        <se:AlarmViewer.AlarmClasses>
+                            <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_aux"/>
+                            <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_bu"/>
+                            <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_lebedka1"/>
+                            <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_nasos1"/>
+                            <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_nasos2"/>
+                            <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_nasos3"/>
+                            <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_rotor"/>
+                            <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_skpb"/>
+                            <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_svp"/>
+                            <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_vspomlebedka"/>
+                            <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_vspomlebedka2"/>
+                        </se:AlarmViewer.AlarmClasses>
+
+                        <se:AlarmViewer.Columns>
+                            <se:OnTimeColumn Header="ДАТА/ВРЕМЯ" StringFormat="{}{0:G}"/>
+                            <se:AlarmClassColumn Header="ИСТОЧНИК" />
+                            <se:MessageColumn Header="СООБЩЕНИЕ" />
+                            <!--<se:MessageIDColumn Header="КОД" />-->
+                            <se:DurationColumn Header="ДЛИТЕЛЬНОСТЬ" />
+                        </se:AlarmViewer.Columns>
+
+                    </se:AlarmViewer>
+                </Grid>
+            </se:HmiTabItem>
+            <se:HmiTabItem Header="ШУНТИРОВКА" Width="150" Height="25">
+                <Grid>
+                    <se:AlarmViewer HorizontalAlignment="Stretch" UseClassFilter="False" Margin="0,10,0,0" VerticalAlignment="Stretch" FontSize="16" TimeIntervalHandling="Overlaps">
+                        <!--<se:AlarmViewer.Resources>
+                            <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="DarkGray"/>
+                        </se:AlarmViewer.Resources>-->
+                        <se:AlarmViewer.AlarmClasses>
+                            <se:AlarmClassDescriptor AlarmClassID="bypass"/>
+                        </se:AlarmViewer.AlarmClasses>
+                        <se:AlarmViewer.Columns>
+                            <se:OnTimeColumn Header="ДАТА/ВРЕМЯ (БЛОК)" Width="160" StringFormat="{}{0:G}"/>
+                            <!--<se:AlarmClassColumn Header="ИСТОЧНИК" />-->
+                            <se:MessageColumn Header="СООБЩЕНИЕ" />
+                            <!--<se:MessageIDColumn Header="КОД" />-->
+                            <se:OffTimeColumn Header="ДАТА/ВРЕМЯ (РАЗБЛОК)" Width="190" StringFormat="{}{0:G}"/>
+                            <se:DurationColumn Header="ДЛИТЕЛЬНОСТЬ" />
+                        </se:AlarmViewer.Columns>
+                    </se:AlarmViewer>
+                </Grid>
+            </se:HmiTabItem>
+
+
+            <se:HmiTabItem Header="ГРАФИКИ" Width="150" Height="25">
+                <se:HmiTabControl Margin="0,10,0,0" TabHorizontalAlignment="Center" HighlightBrush="#FF75787A">
+                    <se:HmiTabItem Header="ГЛАВНЫЕ ПРИВОДА" Width="220" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Height="25" Margin="0,0,0,5">
+                        <se:HmiTabControl TabStripPlacement="Top" Margin="0,10,0,0" >
+                            <se:HmiTabItem Header="НАСОСЫ" Height="25" Width="75" >
+                                <se:HmiTabControl Margin="0,10,0,0" HighlightBrush="#FF75787A">
+                                    <se:HmiTabItem Header="НАСОС 1" Width="100" Margin="0,5,0,0" Height="35" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                                        <Grid>
+                                            <se:TrendViewer Background="#FFECECEC" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical" Minimum="-50" Maximum="1200" TimeInterval="1">
+                                                <se:TrendViewer.TrendNodes>
+                                                    <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="pump1"/>
+                                                    <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="ustavki.msab.davlenieVManifolde"/>
+                                                </se:TrendViewer.TrendNodes>
+                                            </se:TrendViewer>
+                                        </Grid>
+                                    </se:HmiTabItem>
+                                    <se:HmiTabItem Header="НАСОС 2" Width="100" Margin="0,5,0,0" Height="35" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" >
+                                        <Grid>
+                                            <se:TrendViewer Background="#FFECECEC" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Minimum="-50" Maximum="1200" TimeInterval="1">
+                                                <se:TrendViewer.TrendNodes>
+                                                    <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="pump2"/>
+                                                    <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="ustavki.msab.davlenieVManifolde"/>
+                                                </se:TrendViewer.TrendNodes>
+                                            </se:TrendViewer>
+                                        </Grid>
+                                    </se:HmiTabItem>
+                                    <se:HmiTabItem Header="НАСОС 3" Width="100" Margin="0,5,0,0" Height="35" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                                        <Grid>
+                                            <se:TrendViewer Background="#FFECECEC" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Minimum="-50" Maximum="1200" TimeInterval="1">
+                                                <se:TrendViewer.TrendNodes>
+                                                    <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="pump3"/>
+                                                    <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="ustavki.msab.davlenieVManifolde"/>
+                                                </se:TrendViewer.TrendNodes>
+                                            </se:TrendViewer>
+                                        </Grid>
+                                    </se:HmiTabItem>
+                                </se:HmiTabControl>
+                            </se:HmiTabItem>
+                            <se:HmiTabItem Header="ЛЕБЕДКА" Height="25" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Width="75">
+                                <Grid>
+                                    <se:TrendViewer Background="#FFECECEC" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical" Minimum="-1650" Maximum="1650" TimeInterval="1">
+                                        <se:TrendViewer.TrendNodes>
+                                            <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="drawwork"/>
+                                            <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="ustavki.drawwork.davlenieVLevomReductore"/>
+                                            <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="ustavki.drawwork.davlenieVozduhaVSeti"/>
+                                            <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="ustavki.drawwork.davlenieVozduhaVTormoze"/>
+                                            <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="ustavki.drawwork.davlenieVPravomReductore"/>
+                                            <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="ustavki.msab.datchikVesa"/>
+                                        </se:TrendViewer.TrendNodes>
+                                    </se:TrendViewer>
+                                </Grid>
+                            </se:HmiTabItem>
+                            <se:HmiTabItem Header="РОТОР" Height="25" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Width="75">
+                                <Grid>
+                                    <se:TrendViewer Background="#FFECECEC" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical" Minimum="-800" Maximum="800" TimeInterval="1">
+                                        <se:TrendViewer.TrendNodes>
+                                            <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="rotor"/>
+                                            <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="ustavki.rotor.davlenieVKlinyah"/>
+                                            <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="ustavki.rotor.davlenieVTormoze"/>
+                                        </se:TrendViewer.TrendNodes>
+                                    </se:TrendViewer>
+                                </Grid>
+                            </se:HmiTabItem>
+                            <se:HmiTabItem Header="ВСП" Width="100" Margin="0,5,0,0" Height="35" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Visibility="Collapsed">
+                                <Grid>
+                                    <se:TrendViewer Background="#FFECECEC" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical">
+                                        <se:TrendViewer.TrendNodes>
+                                            <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="tds"/>
+                                        </se:TrendViewer.TrendNodes>
+                                    </se:TrendViewer>
+                                </Grid>
+                            </se:HmiTabItem>
+                            <se:HmiTabItem Header="ДП" Height="25" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Width="75">
+                                <Grid>
+                                    <se:TrendViewer Background="#FFECECEC" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical" Minimum="-1050" Maximum="1050" TimeInterval="1">
+                                        <se:TrendViewer.TrendNodes>
+                                            <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="aux"/>
+                                        </se:TrendViewer.TrendNodes>
+                                    </se:TrendViewer>
+                                </Grid>
+                            </se:HmiTabItem>
+                            <se:HmiTabItem Header="ВСЛ 1" Height="25" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Width="119.8">
+                                <Grid>
+                                    <se:TrendViewer Background="#FFECECEC" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical" TimeInterval="1" Maximum="1500" Minimum="-1500">
+                                        <se:TrendViewer.TrendNodes>
+                                            <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="helperDrawwork1"/>
+                                        </se:TrendViewer.TrendNodes>
+                                    </se:TrendViewer>
+                                </Grid>
+                            </se:HmiTabItem>
+                            <se:HmiTabItem Header="ВСЛ 2" Height="25" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Width="119.8">
+                                <Grid>
+                                    <se:TrendViewer Background="#FFECECEC" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical" TimeInterval="1" Maximum="1500" Minimum="-1500">
+                                        <se:TrendViewer.TrendNodes>
+                                            <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="helperDrawwork2"/>
+                                        </se:TrendViewer.TrendNodes>
+                                    </se:TrendViewer>
+                                </Grid>
+                            </se:HmiTabItem>
+                            <se:HmiTabItem Header="СВП" Height="25" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Width="80">
+                                <Grid>
+                                    <se:TrendViewer Background="#FFECECEC" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical">
+                                        <se:TrendViewer.TrendNodes>
+                                            <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="tds_special"/>
+                                        </se:TrendViewer.TrendNodes>
+                                    </se:TrendViewer>
+                                </Grid>
+                            </se:HmiTabItem>
+                            <se:HmiTabItem Header="БЛОК ПИТАНИЯ (В КТУ1)" Height="25" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Width="150">
+                                <Grid>
+                                    <se:TrendViewer Background="#FFECECEC" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical">
+                                        <se:TrendViewer.TrendNodes>
+                                            <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="rectifier2"/>
+                                        </se:TrendViewer.TrendNodes>
+                                    </se:TrendViewer>
+                                </Grid>
+                            </se:HmiTabItem>
+                            <se:HmiTabItem Header="БЛОК ПИТАНИЯ (В КТУ2)" Height="25" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Width="150">
+                                <Grid>
+                                    <se:TrendViewer Background="#FFECECEC" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical">
+                                        <se:TrendViewer.TrendNodes>
+                                            <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="rectifier"/>
+                                        </se:TrendViewer.TrendNodes>
+                                    </se:TrendViewer>
+                                </Grid>
+                            </se:HmiTabItem>
+                            <se:HmiTabItem Header="ЧОППЕР  (В КТУ2)" Height="25" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Width="150">
+                                <Grid>
+                                    <se:TrendViewer Background="#FFECECEC" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical">
+                                        <se:TrendViewer.TrendNodes>
+                                            <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="chopper"/>
+                                        </se:TrendViewer.TrendNodes>
+                                    </se:TrendViewer>
+                                </Grid>
+                            </se:HmiTabItem>
+                            <se:HmiTabItem Header="ТЕМПЕРАТУРЫ" Height="25" Width="119.8" >
+                                <se:HmiTabControl Margin="0,10,0,0" HighlightBrush="DimGray">
+                                    <se:HmiTabItem Header="ТЕМПЕРАТУРЫ ПЧ" Height="25" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Width="200">
+                                        <Grid>
+                                            <se:TrendViewer Background="#FFECECEC" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical">
+                                                <se:TrendViewer.TrendNodes>
+                                                    <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="temperature"/>
+                                                </se:TrendViewer.TrendNodes>
+                                            </se:TrendViewer>
+                                        </Grid>
+                                    </se:HmiTabItem>
+                                    <se:HmiTabItem Header="ТЕМПЕРАТУРЫ ДВИГАТЕЛЕЙ" Height="25" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Width="200">
+                                        <Grid>
+                                            <se:TrendViewer Background="#FFECECEC" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical">
+                                                <se:TrendViewer.TrendNodes>
+                                                    <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="temperature_dvigately"/>
+                                                    <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="temperature_dvigately_pump3"/>
+                                                </se:TrendViewer.TrendNodes>
+                                            </se:TrendViewer>
+                                        </Grid>
+                                    </se:HmiTabItem>
+                                    <se:HmiTabItem Header="ТЕМПЕРАТУРЫ ТРАНСФОРМАТОРОВ" Height="25" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Width="220">
+                                        <Grid>
+                                            <se:TrendViewer Background="#FFECECEC" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical" LegendAreaLength="200">
+                                                <se:TrendViewer.TrendNodes>
+                                                    <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="transformator1"/>
+                                                    <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="transformator3"/>
+                                                </se:TrendViewer.TrendNodes>
+                                            </se:TrendViewer>
+                                        </Grid>
+                                    </se:HmiTabItem>
+                                </se:HmiTabControl>
+                            </se:HmiTabItem>
+                        </se:HmiTabControl>
+                    </se:HmiTabItem>
+                    <se:HmiTabItem Header="ЭНЕРГОБЛОК" Margin="5,0,0,0" Width="220" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Visibility="Collapsed">
+                        <se:HmiTabControl TabStripPlacement="Left">
+                            <se:HmiTabItem Header="КРУ" Width="200" Margin="0,5,0,0" Height="35" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                                <se:HmiTabItem.LayoutTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="-90"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </se:HmiTabItem.LayoutTransform>
+                                <Grid>
+                                    <se:TrendViewer Background="#FFECECEC" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical">
+                                        <se:TrendViewer.TrendNodes>
+                                            <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="kru"/>
+                                        </se:TrendViewer.TrendNodes>
+                                    </se:TrendViewer>
+                                </Grid>
+                            </se:HmiTabItem>
+                            <se:HmiTabItem Header="БКТ Т1" Margin="0,5,0,0" Width="200" Height="35" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                                <se:HmiTabItem.LayoutTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="-90"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </se:HmiTabItem.LayoutTransform>
+                                <Grid>
+                                    <se:TrendViewer Background="#FFECECEC" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical">
+                                        <se:TrendViewer.TrendNodes>
+                                            <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="transformator1"/>
+                                        </se:TrendViewer.TrendNodes>
+                                    </se:TrendViewer>
+                                </Grid>
+                            </se:HmiTabItem>
+                            <se:HmiTabItem Header="МУЛЬТИМЕТР 690В" Margin="0,5,0,0" Width="200" Height="35" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                                <se:HmiTabItem.LayoutTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="-90"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </se:HmiTabItem.LayoutTransform>
+                                <Grid>
+                                    <se:TrendViewer Background="#FFECECEC" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical">
+                                        <se:TrendViewer.TrendNodes>
+                                            <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="multimetr1"/>
+                                        </se:TrendViewer.TrendNodes>
+                                    </se:TrendViewer>
+                                </Grid>
+                            </se:HmiTabItem>
+                            <se:HmiTabItem Header="МУЛЬТИМЕТР 400В" Margin="0,5,0,0" Width="200" Height="35" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                                <se:HmiTabItem.LayoutTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="-90"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </se:HmiTabItem.LayoutTransform>
+                                <Grid>
+                                    <se:TrendViewer Background="#FFECECEC" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical">
+                                        <se:TrendViewer.TrendNodes>
+                                            <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="multimetr2"/>
+                                        </se:TrendViewer.TrendNodes>
+                                    </se:TrendViewer>
+                                </Grid>
+                            </se:HmiTabItem>
+                        </se:HmiTabControl>
+                    </se:HmiTabItem>
+                    <se:HmiTabItem Header="БУРЕНИЕ" Width="220" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Height="25">
+                        <Grid>
+                            <se:TrendViewer Background="#FFECECEC" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical">
+                                <se:TrendViewer.TrendNodes>
+                                    <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="drilling"/>
+                                    <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="ustavki.msab.datchikVesa"/>
+                                    <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="ustavki.msab.davlenieVManifolde"/>
+                                </se:TrendViewer.TrendNodes>
+                            </se:TrendViewer>
+                        </Grid>
+                    </se:HmiTabItem>
+                    <!--<se:HmiTabItem Header="СКПБ" Margin="5,0,0,0" Width="100" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                        <Grid>
+                            <se:TrendViewer Background="#FFECECEC" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical">
+                                <se:TrendViewer.TrendNodes>
+                                    <Custom:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="msab"/>
+                                </se:TrendViewer.TrendNodes>
+                            </se:TrendViewer>
+                        </Grid>
+                    </se:HmiTabItem>-->
+                    <se:HmiTabItem Header="СЕТЕВЫЕ СИГНАЛЫ" Width="220" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Height="25">
+                        <Grid>
+                            <se:TrendViewer Background="#FFECECEC" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical">
+                                <se:TrendViewer.TrendNodes>
+                                    <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="signals"/>
+                                </se:TrendViewer.TrendNodes>
+                            </se:TrendViewer>
+                        </Grid>
+                    </se:HmiTabItem>
+                    <se:HmiTabItem Header="КРУ" Width="220" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Height="25">
+                        <se:HmiTabItem.Visibility>
+                            <hmi:Bind Path="Tags.Node[view.kru].Items[frame_visibility].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <Visibility>Visible</Visibility>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:HmiTabItem.Visibility>
+                        <se:HmiTabControl Margin="0,10,0,0">
+                            <se:HmiTabItem Header="Ячейка T1" Width="80" Height="25">
+                                <se:TrendViewer Background="#FFECECEC" LegendAreaLength="200" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical">
+                                    <se:TrendViewer.TrendNodes>
+                                        <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="kru.yachejka2"/>
+                                    </se:TrendViewer.TrendNodes>
+                                </se:TrendViewer>
+                            </se:HmiTabItem>
+                            <se:HmiTabItem Header="Ячейка T2" Width="80" Height="25">
+                                <se:TrendViewer Background="#FFECECEC" LegendAreaLength="200" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical">
+                                    <se:TrendViewer.TrendNodes>
+                                        <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="kru.yachejka3"/>
+                                    </se:TrendViewer.TrendNodes>
+                                </se:TrendViewer>
+                            </se:HmiTabItem>
+                            <se:HmiTabItem Header="Ячейка T3" Width="80" Height="25">
+                                <se:TrendViewer Background="#FFECECEC" LegendAreaLength="200" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical">
+                                    <se:TrendViewer.TrendNodes>
+                                        <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="kru.yachejka5"/>
+                                    </se:TrendViewer.TrendNodes>
+                                </se:TrendViewer>
+                            </se:HmiTabItem>
+                            <se:HmiTabItem Header="Ячейка СВП" Width="80" Height="25">
+                                <se:TrendViewer Background="#FFECECEC" LegendAreaLength="200" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical">
+                                    <se:TrendViewer.TrendNodes>
+                                        <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="kru.yachejka6"/>
+                                    </se:TrendViewer.TrendNodes>
+                                </se:TrendViewer>
+                            </se:HmiTabItem>
+                            <se:HmiTabItem Header="Ячейка ЯКНО" Margin="0,5,0,0" Visibility="Collapsed">
+                                <se:HmiTabItem.LayoutTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="-90"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </se:HmiTabItem.LayoutTransform>
+                                <se:TrendViewer Background="#FFECECEC" LegendAreaLength="200" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical">
+                                    <se:TrendViewer.TrendNodes>
+                                        <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="kru.yachejka_yakno"/>
+                                    </se:TrendViewer.TrendNodes>
+                                </se:TrendViewer>
+                            </se:HmiTabItem>
+                        </se:HmiTabControl>
+                    </se:HmiTabItem>
+                    <!--<se:HmiTabItem Header="ГИДРОРАСКРЕПИТЕЛЬ" Margin="5,0,0,0" Width="220" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                        <Grid>
+                            <se:TrendViewer Background="#FFECECEC" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical" LegendAreaLength="180">
+                                <se:TrendViewer.TrendNodes>
+                                    <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="mashinnyj_klyuch"/>
+                                    -->
+                    <!--<hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="gksh"/>-->
+                    <!--
+                                </se:TrendViewer.TrendNodes>
+                            </se:TrendViewer>
+                        </Grid>
+                    </se:HmiTabItem>-->
+                    <se:HmiTabItem Header="МАШИННЫЙ КЛЮЧ" Width="220" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Height="25">
+                        <Grid>
+                            <se:TrendViewer Background="#FFECECEC" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical" LegendAreaLength="180">
+                                <se:TrendViewer.TrendNodes>
+                                    <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="mashinnyj_klyuch"/>
+                                    <!--<hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="gksh"/>-->
+                                </se:TrendViewer.TrendNodes>
+                            </se:TrendViewer>
+                        </Grid>
+                    </se:HmiTabItem>
+                </se:HmiTabControl>
+            </se:HmiTabItem>
+            <se:HmiTabItem Header="МОТОЧАСЫ" Width="170" Height="25">
+                <se:AlarmViewer Margin="5" Foreground="Black">
+                    <!--<se:AlarmViewer.Resources>
+                        <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="DarkGray"/>
+                    </se:AlarmViewer.Resources>-->
+                    <se:AlarmViewer.LayoutTransform>
+                        <ScaleTransform ScaleX="1.3" ScaleY="1.3"/>
+                    </se:AlarmViewer.LayoutTransform>
+                    <se:AlarmViewer.AlarmClasses>
+                        <se:AlarmClassDescriptor AlarmClassID="motochasy"/>
+                    </se:AlarmViewer.AlarmClasses>
+                    <se:AlarmViewer.Columns>
+                        <se:OnTimeColumn ClipboardContentBinding="{x:Null}" Header="ДАТА/ВРЕМЯ" StringFormat="{}{0:HH:mm:ss}"/>
+                        <se:MessageColumn ClipboardContentBinding="{x:Null}" Header="СООБЩЕНИЕ"/>
+                        <se:OnValueColumn Header="МОТОЧАСЫ"/>
+                    </se:AlarmViewer.Columns>
+                </se:AlarmViewer>
+            </se:HmiTabItem>
+            <se:HmiTabItem Header="СОБЫТИЯ" Width="170" Height="25">
+                <se:AlarmViewer Margin="5" Foreground="Black">
+                    <!--<se:AlarmViewer.Resources>
+                        <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="DarkGray"/>
+                    </se:AlarmViewer.Resources>-->
+                    <se:AlarmViewer.LayoutTransform>
+                        <ScaleTransform ScaleX="1.3" ScaleY="1.3"/>
+                    </se:AlarmViewer.LayoutTransform>
+                    <se:AlarmViewer.AlarmClasses>
+                        <se:AlarmClassDescriptor AlarmClassID="sobytiya"/>
+                    </se:AlarmViewer.AlarmClasses>
+                    <se:AlarmViewer.Columns>
+                        <se:OnTimeColumn ClipboardContentBinding="{x:Null}" Header="ДАТА/ВРЕМЯ" StringFormat="{}{0:HH:mm:ss}"/>
+                        <se:MessageColumn ClipboardContentBinding="{x:Null}" Header="СООБЩЕНИЕ"/>
+                    </se:AlarmViewer.Columns>
+                </se:AlarmViewer>
+            </se:HmiTabItem>
+            <se:HmiTabItem Header="УСТАВКИ" Margin="5,0,0,0" Width="170" Visibility="Collapsed">
+                <se:AlarmViewer Margin="5" Foreground="Black">
+                    <!--<se:AlarmViewer.Resources>
+                        <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="DarkGray"/>
+                    </se:AlarmViewer.Resources>-->
+                    <se:AlarmViewer.LayoutTransform>
+                        <ScaleTransform ScaleX="1.3" ScaleY="1.3"/>
+                    </se:AlarmViewer.LayoutTransform>
+                    <se:AlarmViewer.AlarmClasses>
+                        <se:AlarmClassDescriptor AlarmClassID="vfd_ustavki"/>
+                    </se:AlarmViewer.AlarmClasses>
+                    <se:AlarmViewer.Columns>
+                        <se:OnTimeColumn ClipboardContentBinding="{x:Null}" Header="ДАТА/ВРЕМЯ" StringFormat="{}{0:HH:mm:ss}"/>
+                        <se:MessageColumn ClipboardContentBinding="{x:Null}" Header="СООБЩЕНИЕ"/>
+                        <se:OnValueColumn ClipboardContentBinding="{x:Null}" Header="OnValue" SortingOrder="{x:Null}"/>
+                    </se:AlarmViewer.Columns>
+                </se:AlarmViewer>
+            </se:HmiTabItem>
+        </se:HmiTabControl>
+
+    </Grid>
+</UserControl>

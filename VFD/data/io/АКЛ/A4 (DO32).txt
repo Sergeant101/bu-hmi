@@ -1,0 +1,128 @@
+311022
+8
+lang|RU|0 (:2 ) Резерв
+lang|EN|0 (:2 ) Start blower motor MMP (MP1)
+311022
+9
+lang|RU|1 (:3 ) Резерв
+lang|EN|1 (:3 ) Start motor of pump lubrication gear (MP1)
+311022
+10
+lang|RU|2 (:4 ) Резерв
+lang|EN|2 (:4 ) Start motor of pump cooling rods (MP1)
+311022
+11
+lang|RU|3 (:5 ) Резерв
+lang|EN|3 (:5 ) Start motor of oil/air cooling system (MP1)
+311022
+12
+lang|RU|4 (:6 ) Резерв
+lang|EN|4 (:6 ) Switch on heater of stator MMP (MP1)
+311022
+13
+lang|RU|5 (:7 ) Резерв
+lang|EN|5 (:7 ) Start motor of charging pump 1
+311022
+14
+lang|RU|6 (:8 ) Резерв
+lang|EN|6 (:8 ) Spare
+311022
+15
+lang|RU|7 (:9 ) Резерв
+lang|EN|7 (:9 ) Spare
+311022
+0
+lang|RU|0 (:12 ) Резерв
+lang|EN|0 (:12 ) Start motor blower MMP (MP2)
+311022
+1
+lang|RU|1 (:13 ) Резерв
+lang|EN|1 (:13 ) Start motor of pump lubrication gear (MP2)
+311022
+2
+lang|RU|2 (:14 ) Резерв
+lang|EN|2 (:14 ) Start motor of pump cooling rods (MP2)
+311022
+3
+lang|RU|3 (:15 ) Резерв
+lang|EN|3 (:15 ) Start motor of oil/air cooling system (MP2)
+311022
+4
+lang|RU|4 (:16 ) Резерв
+lang|EN|4 (:16 ) Switch on heater of stator MMP (MP1)
+311022
+5
+lang|RU|5 (:17 ) Резерв
+lang|EN|5 (:17 ) Start motor of charging pump 2
+311022
+6
+lang|RU|6 (:18 ) Резерв
+lang|EN|6 (:18 ) Spare
+311022
+7
+lang|RU|7 (:19 ) Резерв
+lang|EN|7 (:19 ) Spare
+311023
+8
+lang|RU|0 (:22 ) Резерв
+lang|EN|0 (:22 ) Start motor blower MMP (MP3)
+311023
+9
+lang|RU|1 (:23 ) Резерв
+lang|EN|1 (:23 ) Start motor of pump lubrication gear (MP3)
+311023
+10
+lang|RU|2 (:24 ) Резерв
+lang|EN|2 (:24 ) Start motor of pump cooling rods (MP3)
+311023
+11
+lang|RU|3 (:25 ) Резерв
+lang|EN|3 (:25 ) Start motor of oil/air cooling system (MP3)
+311023
+12
+lang|RU|4 (:26 ) Резерв
+lang|EN|4 (:26 ) Switch on heater of stator MMP (MP3)
+311023
+13
+lang|RU|5 (:27 ) Резерв
+lang|EN|5 (:27 ) Start motor of charging pump 3
+311023
+14
+lang|RU|6 (:28 ) Резерв
+lang|EN|6 (:28 ) Spare
+311023
+15
+lang|RU|7 (:29 ) Резерв
+lang|EN|7 (:29 ) Spare
+311023
+0
+lang|RU|0 (:32 ) Резерв
+lang|EN|0 (:32 ) Start motor blower MDW1
+311023
+1
+lang|RU|1 (:33 ) Резерв
+lang|EN|1 (:33 ) Start motor of pump lubrication gear
+311023
+2
+lang|RU|2 (:34 ) Резерв
+lang|EN|2 (:34 ) Start motor blower MDW2
+311023
+3
+lang|RU|3 (:35 ) Резерв
+lang|EN|3 (:35 ) Start motor of oil/air cooling system
+311023
+4
+lang|RU|4 (:36 ) Резерв
+lang|EN|4 (:36 ) Switch on heater of stator MDW1
+311023
+5
+lang|RU|5 (:37 ) Резерв
+lang|EN|5 (:37 ) Switch on heater of stator MDW2
+311023
+6
+lang|RU|6 (:38 ) Резерв
+lang|EN|6 (:38 ) Switch on valve tappet brake aux. drive
+311023
+7
+lang|RU|7 (:39 ) Резерв
+lang|EN|7 (:39 ) Spare

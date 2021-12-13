@@ -1,0 +1,65 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:se="http://schemas.monokot.com/se/"
+             xmlns:hmi="http://schemas.monokot.com/hmi/"
+             xmlns:Fundamental="clr-namespace:Monokot.Hmi.Core.Fundamental;assembly=Monokot.Hmi.Core" 
+             xmlns:System="clr-namespace:System;assembly=mscorlib"
+             x:Class="NGO.Elements.Message.Pump2StatusBox" 
+             xmlns:updated="clr-namespace:NGO.Elements.Special.StatusTextUpdatedDelay"
+    
+             mc:Ignorable="d"
+             d:DesignHeight="150" d:DesignWidth="300" PreviewMouseUp="Pump1StatusBox_OnPreviewMouseUp">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="27" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Rectangle x:Name="background" Stroke="Black" RadiusX="5" RadiusY="5" Grid.RowSpan="2" Fill="White" />
+        <updated:StatusText Grid.Row="1" TextWrapping="WrapWithOverflow" Text="StatusText" FontSize="18" VerticalAlignment="Center" TextAlignment="Center">
+            <updated:StatusText.MessageNode>
+                <hmi:HmiNodeDescriptor Comment="pump2cer" ItemType="Message" Path="pump2cer"/>
+            </updated:StatusText.MessageNode>
+            <updated:StatusText.MessageID>
+                <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump2].Items[status].Value">
+                    <hmi:SeBinding.FallbackValue>
+                        <System:Int32>0</System:Int32>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </updated:StatusText.MessageID>
+        </updated:StatusText>
+        <se:VisualBox Grid.Row="0" BorderBrush="{x:Null}" BorderThickness="1" Background="White" Text="НАСОС 2" FontSize="18">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Text="{hmi:SeBinding Dictionaries.Node[Labels].Items[74].Text, FallbackValue=Насос 2 НЕ ГОТОВ}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump2].Items[ne_gotov].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Text="{hmi:SeBinding Dictionaries.Node[Labels].Items[75].Text, FallbackValue=Насос 2 АВАРИЯ}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump2].Items[avariya].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Text="Насос 2 СТОП">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding Path="Tags.Node[view.main_drives.pump2].Items[stop].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+    </Grid>
+</UserControl>

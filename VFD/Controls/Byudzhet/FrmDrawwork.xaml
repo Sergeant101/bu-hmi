@@ -1,0 +1,367 @@
+﻿<UserControl x:Class="VFD.Frames.Sub.Byudzhet.FrmDrawwork"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:gauges="clr-namespace:NGO.Elements.Gauges;assembly=NGO.Elements"
+             xmlns:position="clr-namespace:NGO.Elements.Linear.Position;assembly=NGO.Elements"
+             xmlns:se="http://schemas.monokot.com/se/"
+             xmlns:bindings="http://schemas.monokot.com/hmi/"
+             xmlns:hmi="http://schemas.monokot.com/hmi/"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:fundamental="clr-namespace:Monokot.Hmi.Core.Fundamental;assembly=Monokot.Hmi.Core"
+             mc:Ignorable="d" 
+             d:DesignHeight="810" d:DesignWidth="1270">
+    <Grid Background="#FFE5E5E5">
+        <gauges:GaugeDrawwork_Byudzhet HorizontalAlignment="Center" Margin="390,194,390,0" VerticalAlignment="Top"/>
+        <position:Deep HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="788" Width="80"/>
+        <position:ComplexBlockPosition HorizontalAlignment="Left" Margin="1185,10,0,0" VerticalAlignment="Top" Height="788" Width="75"/>
+        <se:ScadaButton HorizontalAlignment="Left" Height="50" Margin="96,748,0,0" VerticalAlignment="Top" Width="524" Content="ДЕБЛОКИРОВКА ЛЕБЕДКИ" PushCommand="{bindings:SeBinding Tags.Node[write.drawwork].Items[unlock].WriteCommand}" ReleasedCommand="{bindings:SeBinding Tags.Node[write.drawwork].Items[unlock].WriteCommand}"/>
+        <se:ScadaButton HorizontalAlignment="Left" Height="50" Margin="640,748,0,0" VerticalAlignment="Top" Width="524" Content="ДЕБЛОКИРОВКА ДОП. ПРИВОДА" PushCommand="{bindings:SeBinding Tags.Node[write.aux].Items[unlock].WriteCommand}" ReleasedCommand="{bindings:SeBinding Tags.Node[write.drawwork].Items[unlock].WriteCommand}"/>
+        <TextBlock HorizontalAlignment="Left" Height="28" Margin="96,636,0,0" TextWrapping="Wrap" Text="Состояние лебедки" VerticalAlignment="Top" Width="524" FontSize="22" TextAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Left" Height="28" Margin="641,636,0,0" TextWrapping="Wrap" Text="Состояние ДП" VerticalAlignment="Top" Width="524" FontSize="22" TextAlignment="Center"/>
+        <se:ValueDisplay HorizontalAlignment="Left" Margin="903,397,0,0" VerticalAlignment="Top" Width="258" Height="93" BorderBrush="Black" BorderThickness="1" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" LabelForeground="DarkBlue" Label="м" Header="Высота блока (СКПБ)" FontFamily="Tahoma" HeaderFontSize="11"/>
+        <se:ValueDisplay HorizontalAlignment="Left" Margin="373,3,0,0" VerticalAlignment="Top" Width="119" Height="54" BorderBrush="Black" BorderThickness="1" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" LabelForeground="DarkBlue" Label="т" Header="Нагрузка на долото" FontFamily="Tahoma" HeaderFontSize="11" Value="{hmi:Bind Tags.Node[view.main_drives.drawwork].Items[drillometer_workbit_real].Value, FallbackValue=0}"/>
+        <se:ValueDisplay HorizontalAlignment="Left" Margin="373,62,0,0" VerticalAlignment="Top" Width="119" Height="54" BorderBrush="Black" BorderThickness="1" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" LabelForeground="DarkBlue" Label="т" Header="Общий вес" FontFamily="Tahoma" HeaderFontSize="11" Value="{hmi:Bind Tags.Node[view.main_drives.drawwork].Items[drillometer_weight].Value, FallbackValue=0}"/>
+        <se:ValueDisplay HorizontalAlignment="Left" Margin="503,3,0,0" VerticalAlignment="Top" Width="119" Height="54" BorderBrush="Black" BorderThickness="1" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" LabelForeground="DarkBlue" Label="атм" Header="Давление в системе" FontFamily="Tahoma" HeaderFontSize="11" Value="{hmi:Bind Tags.Node[view.compressor].Items[pressure_in_system].Value, FallbackValue=0}"/>
+        <se:ValueDisplay HorizontalAlignment="Left" Margin="503,62,0,0" VerticalAlignment="Top" Width="119" Height="54" BorderBrush="Black" BorderThickness="1" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" LabelForeground="DarkBlue" Label="атм" Header="Давление в торм. 1" FontFamily="Tahoma" HeaderFontSize="11" Value="{hmi:Bind Tags.Node[view.main_drives.drawwork].Items[pressure_in_brake].Value, FallbackValue=0}"/>
+        <se:ValueDisplay HorizontalAlignment="Left" Margin="632,3,0,0" VerticalAlignment="Top" Width="134" Height="54" BorderBrush="Black" BorderThickness="1" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" LabelForeground="DarkBlue" Label="атм" Header="Давление до фильтра" FontFamily="Tahoma" HeaderFontSize="11" Value="{hmi:Bind Tags.Node[view.main_drives.drawwork].Items[pressure_oil_before].Value, FallbackValue=0}"/>
+        <se:ValueDisplay HorizontalAlignment="Left" Margin="632,62,0,0" VerticalAlignment="Top" Width="134" Height="54" BorderBrush="Black" BorderThickness="1" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" LabelForeground="DarkBlue" Label="атм" Header="Давление после фильтра" FontFamily="Tahoma" HeaderFontSize="11" Value="{hmi:Bind Tags.Node[view.main_drives.drawwork].Items[pressure_oil_after].Value, FallbackValue=0}"/>
+        <se:ValueDisplay HorizontalAlignment="Left" Margin="777,3,0,0" VerticalAlignment="Top" Width="119" Height="54" BorderBrush="Black" BorderThickness="1" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" LabelForeground="DarkBlue" Label="м" Header="Глубина забоя" FontFamily="Tahoma" HeaderFontSize="11" Value="{hmi:Bind Tags.Node[view.msab].Items[deep].Value, FallbackValue=0}"/>
+        <se:ValueDisplay HorizontalAlignment="Left" Margin="777,62,0,0" VerticalAlignment="Top" Width="119" Height="54" BorderBrush="Black" BorderThickness="1" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" LabelForeground="DarkBlue" Label="атм" Header="Количество свеч" FontFamily="Tahoma" HeaderFontSize="11" Value="{hmi:Bind Tags.Node[view.msab].Items[pipe_count].Value, FallbackValue=0}"/>
+        <TextBlock HorizontalAlignment="Left" Height="28" Margin="900,3,0,0" TextWrapping="Wrap" Text="Мотор лебедки 2" VerticalAlignment="Top" Width="261" FontSize="18" TextAlignment="Center">
+            <TextBlock.Visibility>
+                <bindings:SeBinding  Path="Tags.Node[view.main_drives.aux].Items[on].Value">
+                    <bindings:SeBinding.Converter>
+                        <bindings:BoolToVisibilityConverter FalseValue="Visible" TrueValue="Hidden"/>
+                    </bindings:SeBinding.Converter>
+                    <bindings:SeBinding.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </bindings:SeBinding.FallbackValue>
+                </bindings:SeBinding>
+            </TextBlock.Visibility>
+        </TextBlock>
+        <Grid HorizontalAlignment="Left" Height="124" Margin="905,36,0,0" VerticalAlignment="Top" Width="256">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock HorizontalAlignment="Right" Margin="0,0,10,0" TextWrapping="Wrap" Text="{bindings:SeBinding Tags.Node[view.main_drives.drawwork.motor2].Items[current].Value, FallbackValue=0}" VerticalAlignment="Center" TextAlignment="Right" FontSize="24"/>
+            <TextBlock HorizontalAlignment="Right" Margin="0,0,10,0" TextWrapping="Wrap" Text="{bindings:SeBinding Tags.Node[view.main_drives.drawwork.motor2].Items[rpm].Value, FallbackValue=0}" VerticalAlignment="Center" TextAlignment="Right" Grid.Row="1" FontSize="24"/>
+            <TextBlock HorizontalAlignment="Right" Margin="0,0,10,0" TextWrapping="Wrap" Text="{bindings:SeBinding Tags.Node[view.main_drives.drawwork.motor2].Items[power].Value, FallbackValue=0}" VerticalAlignment="Center" TextAlignment="Right" Grid.Row="2" FontSize="24"/>
+            <TextBlock HorizontalAlignment="Right" Margin="0,0,10,0" TextWrapping="Wrap" Text="{bindings:SeBinding Tags.Node[view.main_drives.drawwork.motor2].Items[torque].Value, FallbackValue=0}" VerticalAlignment="Center" TextAlignment="Right" Grid.Row="3" FontSize="24"/>
+            <TextBlock HorizontalAlignment="Left" Margin="5,5,18,5" TextWrapping="Wrap" Text="А" VerticalAlignment="Center" TextAlignment="Right" Grid.Column="1" FontSize="24"/>
+            <TextBlock HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="об/мин" VerticalAlignment="Center" TextAlignment="Right" Grid.Column="1" Grid.Row="1" FontSize="24"/>
+            <TextBlock HorizontalAlignment="Left" Margin="5,5.02,0,5.02" TextWrapping="Wrap" Text="кВт" VerticalAlignment="Center" TextAlignment="Right" Grid.Column="1" Grid.Row="2" FontSize="24"/>
+            <TextBlock HorizontalAlignment="Left" Margin="5,5.02,0,5.02" TextWrapping="Wrap" Text="кН×м" VerticalAlignment="Center" TextAlignment="Right" Grid.Column="1" Grid.Row="3" FontSize="24"/>
+        </Grid>
+        <TextBlock HorizontalAlignment="Left" Height="28" Margin="96,3,0,0" TextWrapping="Wrap" Text="Мотор лебедки 1" VerticalAlignment="Top" Width="264" FontSize="18" TextAlignment="Center">
+            <TextBlock.Visibility>
+                <bindings:SeBinding  Path="Tags.Node[view.main_drives.aux].Items[on].Value">
+                    <bindings:SeBinding.Converter>
+                        <bindings:BoolToVisibilityConverter FalseValue="Visible" TrueValue="Hidden"/>
+                    </bindings:SeBinding.Converter>
+                    <bindings:SeBinding.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </bindings:SeBinding.FallbackValue>
+                </bindings:SeBinding>
+            </TextBlock.Visibility>
+        </TextBlock>
+        <Grid HorizontalAlignment="Left" Height="124" Margin="97,36,0,0" VerticalAlignment="Top" Width="263">
+            <Grid.Visibility>
+                <bindings:SeBinding  Path="Tags.Node[view.main_drives.aux].Items[on].Value">
+                    <bindings:SeBinding.Converter>
+                        <bindings:BoolToVisibilityConverter FalseValue="Visible" TrueValue="Hidden"/>
+                    </bindings:SeBinding.Converter>
+                    <bindings:SeBinding.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </bindings:SeBinding.FallbackValue>
+                </bindings:SeBinding>
+            </Grid.Visibility>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock HorizontalAlignment="Right" Margin="0,0,10,0" TextWrapping="Wrap" Text="{bindings:SeBinding Tags.Node[view.main_drives.drawwork.motor1].Items[current].Value, FallbackValue=0}" VerticalAlignment="Center" TextAlignment="Right" FontSize="24"/>
+            <TextBlock HorizontalAlignment="Right" Margin="0,0,10,0" TextWrapping="Wrap" Text="{bindings:SeBinding Tags.Node[view.main_drives.drawwork.motor1].Items[rpm].Value, FallbackValue=0}" VerticalAlignment="Center" TextAlignment="Right" Grid.Row="1" FontSize="24"/>
+            <TextBlock HorizontalAlignment="Right" Margin="0,0,10,0" TextWrapping="Wrap" Text="{bindings:SeBinding Tags.Node[view.main_drives.drawwork.motor1].Items[power].Value, FallbackValue=0}" VerticalAlignment="Center" TextAlignment="Right" Grid.Row="2" FontSize="24"/>
+            <TextBlock HorizontalAlignment="Right" Margin="0,0,10,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Center" TextAlignment="Right" Grid.Row="3" FontSize="24">
+                <TextBlock.Visibility>
+                    <bindings:SeBinding  Path="Tags.Node[view.main_drives.drawwork.motor1].Items[torque].Value">
+                        <bindings:SeBinding.FallbackValue>
+                            <Visibility>Visible</Visibility>
+                        </bindings:SeBinding.FallbackValue>
+                    </bindings:SeBinding>
+                </TextBlock.Visibility>
+            </TextBlock>
+            <TextBlock HorizontalAlignment="Left" Margin="5,5,18,5" TextWrapping="Wrap" Text="А" VerticalAlignment="Center" TextAlignment="Right" Grid.Column="1" FontSize="24"/>
+            <TextBlock HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="об/мин" VerticalAlignment="Center" TextAlignment="Right" Grid.Column="1" Grid.Row="1" FontSize="24"/>
+            <TextBlock HorizontalAlignment="Left" Margin="5,5.02,0,5.02" TextWrapping="Wrap" Text="кВт" VerticalAlignment="Center" TextAlignment="Right" Grid.Column="1" Grid.Row="2" FontSize="24"/>
+            <TextBlock HorizontalAlignment="Left" Margin="5,5.02,0,5.02" TextWrapping="Wrap" Text="кН×м" VerticalAlignment="Center" TextAlignment="Right" Grid.Column="1" Grid.Row="3" FontSize="24"/>
+        </Grid>
+        <TextBlock HorizontalAlignment="Left" Height="28" Margin="96,3,0,0" TextWrapping="Wrap" Text="Мотор ДП" VerticalAlignment="Top" Width="259" FontSize="18" TextAlignment="Center">
+            <TextBlock.Visibility>
+                <bindings:SeBinding  Path="Tags.Node[view.main_drives.aux].Items[on].Value">
+                    <bindings:SeBinding.Converter>
+                        <bindings:BoolToVisibilityConverter FalseValue="Hidden" TrueValue="Visible"/>
+                    </bindings:SeBinding.Converter>
+                    <bindings:SeBinding.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </bindings:SeBinding.FallbackValue>
+                </bindings:SeBinding>
+            </TextBlock.Visibility>
+        </TextBlock>
+        <Grid HorizontalAlignment="Left" Height="124" Margin="97,36,0,0" VerticalAlignment="Top" Width="266">
+            <Grid.Visibility>
+                <bindings:SeBinding  Path="Tags.Node[view.main_drives.aux].Items[on].Value">
+                    <bindings:SeBinding.Converter>
+                        <bindings:BoolToVisibilityConverter FalseValue="Hidden" TrueValue="Visible"/>
+                    </bindings:SeBinding.Converter>
+                    <bindings:SeBinding.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </bindings:SeBinding.FallbackValue>
+                </bindings:SeBinding>
+            </Grid.Visibility>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock HorizontalAlignment="Right" Margin="0,0,10,0" TextWrapping="Wrap" Text="{bindings:SeBinding Tags.Node[view.main_drives.aux].Items[current].Value, FallbackValue=0}" VerticalAlignment="Center" TextAlignment="Right" FontSize="24"/>
+            <TextBlock HorizontalAlignment="Right" Margin="0,0,10,0" TextWrapping="Wrap" Text="{bindings:SeBinding Tags.Node[view.main_drives.aux].Items[rpm].Value, FallbackValue=0}" VerticalAlignment="Center" TextAlignment="Right" Grid.Row="1" FontSize="24"/>
+            <TextBlock HorizontalAlignment="Right" Margin="0,0,10,0" TextWrapping="Wrap" Text="{bindings:SeBinding Tags.Node[view.main_drives.aux].Items[power].Value, FallbackValue=0}" VerticalAlignment="Center" TextAlignment="Right" Grid.Row="2" FontSize="24"/>
+            <TextBlock HorizontalAlignment="Right" Margin="0,0,10,0" TextWrapping="Wrap" Text="{bindings:SeBinding Tags.Node[view.main_drives.aux].Items[torque].Value, FallbackValue=0}" VerticalAlignment="Center" TextAlignment="Right" Grid.Row="3" FontSize="24"/>
+            <TextBlock HorizontalAlignment="Left" Margin="5,5,18,5" TextWrapping="Wrap" Text="А" VerticalAlignment="Center" TextAlignment="Right" Grid.Column="1" FontSize="24"/>
+            <TextBlock HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="об/мин" VerticalAlignment="Center" TextAlignment="Right" Grid.Column="1" Grid.Row="1" FontSize="24"/>
+            <TextBlock HorizontalAlignment="Left" Margin="5,5.02,0,5.02" TextWrapping="Wrap" Text="кВт" VerticalAlignment="Center" TextAlignment="Right" Grid.Column="1" Grid.Row="2" FontSize="24"/>
+            <TextBlock HorizontalAlignment="Left" Margin="5,5.02,0,5.02" TextWrapping="Wrap" Text="кН×м" VerticalAlignment="Center" TextAlignment="Right" Grid.Column="1" Grid.Row="3" FontSize="24"/>
+        </Grid>
+        <se:VisualBox HorizontalAlignment="Left" Margin="96,168,0,0" VerticalAlignment="Top" Width="267" Height="60" CornerRadius="5" Text="МОТОР 1" FontSize="18">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="Gold" Text="МОТОР 1">
+                    <se:VisualBoxStateItem.Value>
+                        <bindings:SeBinding  Path="Tags.Node[view.main_drives.drawwork.motor1].Items[off_emer].Value">
+                            <bindings:SeBinding.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </bindings:SeBinding.FallbackValue>
+                        </bindings:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox HorizontalAlignment="Left" Height="60" Margin="96,235,0,0" VerticalAlignment="Top" Width="267" CornerRadius="5" Text="ОБДУВ 1" FontSize="18">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="Red" Text="ОБДУВ 1 АВАРИЯ" >
+                    <se:VisualBoxStateItem.Value>
+                        <bindings:SeBinding  Path="Tags.Node[view.main_drives.drawwork.motor1].Items[blowing_emer].Value">
+                            <bindings:SeBinding.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </bindings:SeBinding.FallbackValue>
+                        </bindings:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="Green" Text="ОБДУВ 1 РАБОТА">
+                    <se:VisualBoxStateItem.Value>
+                        <bindings:SeBinding  Path="Tags.Node[view.main_drives.drawwork.motor1].Items[blowing_work].Value">
+                            <bindings:SeBinding.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </bindings:SeBinding.FallbackValue>
+                        </bindings:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox HorizontalAlignment="Left" Height="77" Margin="96,303,0,0" VerticalAlignment="Top" Width="267" CornerRadius="5" Text="МАСЛОСМАЗКА" FontSize="18">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="Red" Text="МАСЛОСМАЗКА">
+                    <se:VisualBoxStateItem.Value>
+                        <bindings:SeBinding  Path="Tags.Node[view.main_drives.drawwork].Items[oiling_emer].Value">
+                            <bindings:SeBinding.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </bindings:SeBinding.FallbackValue>
+                        </bindings:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="Green" Text="МАСЛОСМАЗКА">
+                    <se:VisualBoxStateItem.Value>
+                        <bindings:SeBinding  Path="Tags.Node[view.main_drives.drawwork].Items[oiling_work].Value">
+                            <bindings:SeBinding.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </bindings:SeBinding.FallbackValue>
+                        </bindings:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox HorizontalAlignment="Left" Height="96" Margin="97,394,0,0" VerticalAlignment="Top" Width="266" CornerRadius="5" Text="МУФТА" FontSize="18" Background="LightGray">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="Green" Text="МУФТА ВКЛ.">
+                    <se:VisualBoxStateItem.Value>
+                        <bindings:SeBinding  Path="Tags.Node[view.main_drives.drawwork].Items[gear_on_work].Value">
+                            <bindings:SeBinding.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </bindings:SeBinding.FallbackValue>
+                        </bindings:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="Green" Text="МУФТА ОТКЛ.">
+                    <se:VisualBoxStateItem.Value>
+                        <bindings:SeBinding  Path="Tags.Node[view.main_drives.drawwork].Items[gear_off_work].Value">
+                            <bindings:SeBinding.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </bindings:SeBinding.FallbackValue>
+                        </bindings:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="Red" Text="МУФТА">
+                    <se:VisualBoxStateItem.Value>
+                        <bindings:SeBinding  Path="Tags.Node[view.main_drives.drawwork].Items[gear_emergency1].Value">
+                            <bindings:SeBinding.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </bindings:SeBinding.FallbackValue>
+                        </bindings:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox HorizontalAlignment="Left" Height="98" Margin="96,510,0,0" VerticalAlignment="Top" Width="267" CornerRadius="5" Background="Green" Text="АВТООСТАНОВКА ВКЛЮЧЕНА" FontSize="18">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="Red" Text="АВТООСТАНОВКА ОТКЛЮЧЕНА">
+                    <se:VisualBoxStateItem.Value>
+                        <bindings:SeBinding  Path="Tags.Node[view.main_drives.drawwork].Items[autostop_off].Value">
+                            <bindings:SeBinding.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </bindings:SeBinding.FallbackValue>
+                        </bindings:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="Red" Text="НИЖНЯЯ ТОЧКА НЕ ОТБИТА">
+                    <se:VisualBoxStateItem.Value>
+                        <bindings:SeBinding  Path="Tags.Node[view.main_drives.drawwork].Items[bottom_point_off].Value">
+                            <bindings:SeBinding.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </bindings:SeBinding.FallbackValue>
+                        </bindings:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox HorizontalAlignment="Left" Margin="900,168,0,0" VerticalAlignment="Top" Width="261" Height="60" CornerRadius="5" Text="МОТОР 2" FontSize="18">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="Gold" Text="МОТОР 2">
+                    <se:VisualBoxStateItem.Value>
+                        <bindings:SeBinding  Path="Tags.Node[view.main_drives.drawwork.motor2].Items[off_emer].Value">
+                            <bindings:SeBinding.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </bindings:SeBinding.FallbackValue>
+                        </bindings:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox HorizontalAlignment="Left" Height="60" Margin="900,235,0,0" VerticalAlignment="Top" Width="261" CornerRadius="5" Text="ОБДУВ 2" FontSize="18">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="Red" Text="ОБДУВ 2 АВАРИЯ" >
+                    <se:VisualBoxStateItem.Value>
+                        <bindings:SeBinding  Path="Tags.Node[view.main_drives.drawwork.motor2].Items[blowing_emer].Value">
+                            <bindings:SeBinding.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </bindings:SeBinding.FallbackValue>
+                        </bindings:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="Green" Text="ОБДУВ 2 РАБОТА">
+                    <se:VisualBoxStateItem.Value>
+                        <bindings:SeBinding  Path="Tags.Node[view.main_drives.drawwork.motor2].Items[blowing_work].Value">
+                            <bindings:SeBinding.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </bindings:SeBinding.FallbackValue>
+                        </bindings:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox HorizontalAlignment="Left" Height="77" Margin="900,303,0,0" VerticalAlignment="Top" Width="261" CornerRadius="5" Text="ТОРМОЗ" FontSize="18" Background="LightGray">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="Red" Text="ТОРМОЗ ЗАТОРМОЖЕН" >
+                    <se:VisualBoxStateItem.Value>
+                        <bindings:SeBinding  Path="Tags.Node[view.main_drives.drawwork].Items[brake_on_emer].Value">
+                            <bindings:SeBinding.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </bindings:SeBinding.FallbackValue>
+                        </bindings:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="Red" Text="ТОРМОЗ РАСТОРМОЖЕН">
+                    <se:VisualBoxStateItem.Value>
+                        <bindings:SeBinding  Path="Tags.Node[view.main_drives.drawwork].Items[brake_off_emer].Value">
+                            <bindings:SeBinding.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </bindings:SeBinding.FallbackValue>
+                        </bindings:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="Green" Text="ТОРМОЗ РАСТОРМОЖЕН">
+                    <se:VisualBoxStateItem.Value>
+                        <bindings:SeBinding  Path="Tags.Node[view.main_drives.drawwork].Items[brake_off_work].Value">
+                            <bindings:SeBinding.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </bindings:SeBinding.FallbackValue>
+                        </bindings:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox HorizontalAlignment="Left" Height="98" Margin="900,510,0,0" VerticalAlignment="Top" Width="261" CornerRadius="5" Background="Gold" Text="СПУСКОПОДЪЕМНЫЕ ОПЕРАЦИИ" FontSize="18">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="Gold" Text="РУЧНОЕ БУРЕНИЕ"/>
+                <se:VisualBoxStateItem Background="Gold" Text="АВТОМАТИЧЕСКОЕ БУРЕНИЕ"/>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="73" Margin="97,669,0,0" VerticalAlignment="Top" Width="523" CornerRadius="5" Background="White">
+            <se:StatusText HorizontalAlignment="Center" TextWrapping="Wrap" Text="StatusText" VerticalAlignment="Center" Margin="0">
+                <se:StatusText.MessageNode>
+                    <bindings:HmiNodeDescriptor Comment="drawworkcer" ItemType="Message" Path="drawworkcer"/>
+                </se:StatusText.MessageNode>
+                <se:StatusText.MessageID>
+                    <bindings:SeBinding  Path="Tags.Node[view.main_drives.drawwork].Items[status].Value">
+                        <bindings:SeBinding.FallbackValue>
+                            <system:Int32>0</system:Int32>
+                        </bindings:SeBinding.FallbackValue>
+                    </bindings:SeBinding>
+                </se:StatusText.MessageID>
+            </se:StatusText>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="73" Margin="641,669,0,0" VerticalAlignment="Top" Width="523" CornerRadius="5" Background="White">
+            <se:StatusText HorizontalAlignment="Center" TextWrapping="Wrap" Text="StatusText" VerticalAlignment="Center" Margin="0">
+                <se:StatusText.MessageNode>
+                    <bindings:HmiNodeDescriptor Comment="auxcer" ItemType="Message" Path="auxcer"/>
+                </se:StatusText.MessageNode>
+                <se:StatusText.MessageID>
+                    <bindings:SeBinding  Path="Tags.Node[view.main_drives.aux].Items[status].Value">
+                        <bindings:SeBinding.FallbackValue>
+                            <system:Int32>0</system:Int32>
+                        </bindings:SeBinding.FallbackValue>
+                    </bindings:SeBinding>
+                </se:StatusText.MessageID>
+            </se:StatusText>
+        </Border>
+    </Grid>
+</UserControl>

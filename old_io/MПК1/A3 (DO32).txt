@@ -1,0 +1,128 @@
+﻿311006
+8
+lang|RU|0 (:2 ) Резерв
+lang|EN|0 (:2 ) Drawworks housing closed SQK3
+311006
+9
+lang|RU|1 (:3 ) Резерв
+lang|EN|1 (:3 ) Drawworks housing closed SQK4
+311006
+10
+lang|RU|2 (:4 ) Резерв
+lang|EN|2 (:4 ) Drawworks housing closed SQK5
+311006
+11
+lang|RU|3 (:5 ) Резерв
+lang|EN|3 (:5 ) Drawworks housing closed SQK6
+311006
+12
+lang|RU|4 (:6 ) Резерв
+lang|EN|4 (:6 ) Drawworks housing closed SQK7
+311006
+13
+lang|RU|5 (:7 ) В КРУ отключить вакуумный выключатель Q3 питания трансформатора Т3-СВП (реле 93К4)
+lang|EN|5 (:7 ) Drawworks housing closed SQK8
+311006
+14
+lang|RU|6 (:8 ) В КРУ отключить вакуумный выключатель Q1 питания трансформатора Т1-400В (реле 14К4)
+lang|EN|6 (:8 ) Drawworks housing closed SQK9 
+311006
+15
+lang|RU|7 (:9 ) В КРУ отключить вакуумный выключатель Q2 питания трансформатора Т2-690В (реле 13К4)
+lang|EN|7 (:9 ) Drawworks housing closed SQK10
+311006
+0
+lang|RU|0 (:12 ) Зажечь жёлтый светодиод 350HL1 "СТОП основной лебедки 2"
+lang|EN|0 (:12 ) Drawworks stopper open SQK1
+311006
+1
+lang|RU|1 (:13 ) Зажечь зелёный светодиод 350HL2 "РАБОТА основной лебедки 2"
+lang|EN|1 (:13 ) Overhight sensor closed
+311006
+2
+lang|RU|2 (:14 ) Зажечь красный светодиод 350HL3 "АВАРИЯ основной лебедки 2"
+lang|EN|2 (:14 ) Not overweight SMPD
+311006
+3
+lang|RU|3 (:15 ) Резерв
+lang|EN|3 (:15 ) Switch on slow gearbox
+311006
+4
+lang|RU|4 (:16 ) Резерв
+lang|EN|4 (:16 ) Switch on fast gearbox
+311006
+5
+lang|RU|5 (:17 ) Резерв
+lang|EN|5 (:17 ) Aux. drive clutch connected
+311006
+6
+lang|RU|6 (:18 ) Включить обдув тормозных резисторов ТР1 и ТР2 (реле БУВ-К1)
+lang|EN|6 (:18 ) Aux. drive clutch disconnected
+311006
+7
+lang|RU|7 (:19 ) Резерв
+lang|EN|7 (:19 ) Not overhight tackle block SMPD
+311007
+8
+lang|RU|0 (:22 ) Зажечь жёлтый светодиод 330HL1 "СТОП основной лебедки 1"
+lang|EN|0 (:22 ) Service brake SB1 inhibited
+311007
+9
+lang|RU|1 (:23 ) Зажечь зелёный светодиод 330HL2 "РАБОТА основной лебедки 1"
+lang|EN|1 (:23 ) Brake pads SB1 is not worn
+311007
+10
+lang|RU|2 (:24 ) Зажечь красный светодиод 330HL3 "АВАРИЯ основной лебедки 1"
+lang|EN|2 (:24 ) Service brake SB2 inhibited
+311007
+11
+lang|RU|3 (:25 ) Зажечь жёлтый светодиод 360HL1 "СТОП доп. привода"
+lang|EN|3 (:25 ) Brake pads SB2 is not worn
+311007
+12
+lang|RU|4 (:26 ) Зажечь зелёный светодиод 360HL2 "РАБОТА доп. привода"
+lang|EN|4 (:26 ) Emergency brake EB1 inhibited
+311007
+13
+lang|RU|5 (:27 ) Зажечь красный светодиод 360HL3 "АВАРИЯ доп. привода"
+lang|EN|5 (:27 ) Brake pads EB1 is not worn
+311007
+14
+lang|RU|6 (:28 ) Резерв
+lang|EN|6 (:28 ) Emergency brake EB2 inhibited
+311007
+15
+lang|RU|7 (:29 ) Резерв
+lang|EN|7 (:29 ) Brake pads EB2 is not worn
+311007
+0
+lang|RU|0 (:32 ) Зажечь жёлтый светодиод 401HL1 "СТОП ротора"
+lang|EN|0 (:32 ) Hydraulic unit pump ON
+311007
+1
+lang|RU|1 (:33 ) Зажечь зелёный светодиод 401HL2 "РАБОТА ротора"
+lang|EN|1 (:33 ) Bypass circuit ON
+311007
+2
+lang|RU|2 (:34 ) Зажечь красный светодиод 401HL3 "АВАРИЯ ротора"
+lang|EN|2 (:34 ) 20% gassed SMPD
+311007
+3
+lang|RU|3 (:35 ) Резерв
+lang|EN|3 (:35 ) No overheating brake resistors R1 and R2
+311007
+4
+lang|RU|4 (:36 ) Нет останова привода ротора (реле 401К1)
+lang|EN|4 (:36 ) Air pressure sensor R1 ON
+311007
+5
+lang|RU|5 (:37 ) Нет останова дополнительного привода лебедки (реле 360К1)
+lang|EN|5 (:37 ) Air pressure sensor R2 ON
+311007
+6
+lang|RU|6 (:38 ) Нет останова основного привода лебедки 1 (реле 330К1)
+lang|EN|6 (:38 ) Motor blower R1 ON
+311007
+7
+lang|RU|7 (:39 ) Нет останова основного привода лебедки 2 (реле 350К1)
+lang|EN|7 (:39 ) Motor blower R2 ON

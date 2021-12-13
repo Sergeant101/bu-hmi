@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DD6D510D-F824-4561-AA39-C6AC2CD21567}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DC</RootNamespace>
+    <AssemblyName>DC</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\..\Libs\bin\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Security">
+      <HintPath>..\..\Libs\bin\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Monokot.Hmi.Core">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Monokot.Hmi.StdProviders">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Monokot.Hmi.Wpf">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Monokot.ScadaExtension.Extended">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Monokot.ScadaExtension.Opc">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Monokot.ScadaExtension.Wpf">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Monokot.ScadaExtension.WpfComponents">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\libs\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql">
+      <HintPath>..\..\Libs\bin\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.Toolkit, Version=3.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Frames\ArcticLight\FrmTanks.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Frames\Bngre\FrmPumps.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Frames\n163\FrmDrawwork.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Frames\ArcticLight\FrmDrillingSNG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Frames\ArcticLight\FrmPumps.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Frames\ArcticLight\FrmSpo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Frames\FrmWash.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Frames\n159\FrmDrawwork.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Frames\n159\FrmPumps.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Frames\n159\FrmRotor_dc.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Frames\n159\FrmSpo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Frames\n159\FrmTanks.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Frames\n159\FrmAuxiliary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Frames\n159\FrmWeight.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Frames\n159\HelperDrawworksssssssss.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Frames\n159\HelperDrawworkSNG2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Frames\n160\FrmDrillingSNG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Frames\n163\FrmSpo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Frames\SNG\FrmDrawwork.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Frames\SNG\FrmDrillingSNG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Frames\SNG\FrmPumps.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Frames\SNG\FrmRotorSNG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Frames\SNG\FrmSpo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Frames\SNG\FrmTanks.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Frames\SNG\HelperDrawworkSNG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Frames\SNG_Obuchenie\FrmAux.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Frames\SNG_Obuchenie\FrmDrawwork.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Frames\SNG_Obuchenie\FrmSpo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Frames\SNG_Obuchenie\Pult_Nasosov.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Frames\ArcticLight\FrmTanks.xaml.cs">
+      <DependentUpon>FrmTanks.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\Bngre\FrmPumps.xaml.cs">
+      <DependentUpon>FrmPumps.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\n163\FrmDrawwork.xaml.cs">
+      <DependentUpon>FrmDrawwork.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\ArcticLight\FrmDrillingSNG.xaml.cs">
+      <DependentUpon>FrmDrillingSNG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\ArcticLight\FrmPumps.xaml.cs">
+      <DependentUpon>FrmPumps.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\ArcticLight\FrmSpo.xaml.cs">
+      <DependentUpon>FrmSpo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\FrmWash.xaml.cs">
+      <DependentUpon>FrmWash.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\n159\FrmDrawwork.xaml.cs">
+      <DependentUpon>FrmDrawwork.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\n159\FrmPumps.xaml.cs">
+      <DependentUpon>FrmPumps.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\n159\FrmRotor_dc.xaml.cs">
+      <DependentUpon>FrmRotor_dc.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\n159\FrmSpo.xaml.cs">
+      <DependentUpon>FrmSpo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\n159\FrmTanks.xaml.cs">
+      <DependentUpon>FrmTanks.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\n159\FrmAuxiliary.xaml.cs">
+      <DependentUpon>FrmAuxiliary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\n159\FrmWeight.xaml.cs" />
+    <Compile Include="Frames\n159\HelperDrawworksssssssss.xaml.cs">
+      <DependentUpon>HelperDrawworksssssssss.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\n159\HelperDrawworkSNG2.xaml.cs">
+      <DependentUpon>HelperDrawworkSNG2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\n160\FrmDrillingSNG.xaml.cs">
+      <DependentUpon>FrmDrillingSNG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\n163\FrmSpo.xaml.cs">
+      <DependentUpon>FrmSpo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\SNG\FrmDrawwork.xaml.cs">
+      <DependentUpon>FrmDrawwork.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\SNG\FrmDrillingSNG.xaml.cs">
+      <DependentUpon>FrmDrillingSNG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\SNG\FrmPumps.xaml.cs">
+      <DependentUpon>FrmPumps.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\SNG\FrmRotorSNG.xaml.cs">
+      <DependentUpon>FrmRotorSNG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\SNG\FrmSpo.xaml.cs">
+      <DependentUpon>FrmSpo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\SNG\FrmTanks.xaml.cs">
+      <DependentUpon>FrmTanks.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\SNG\HelperDrawworkSNG.xaml.cs">
+      <DependentUpon>HelperDrawworkSNG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\SNG_Obuchenie\FrmAux.xaml.cs">
+      <DependentUpon>FrmAux.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\SNG_Obuchenie\FrmDrawwork.xaml.cs">
+      <DependentUpon>FrmDrawwork.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\SNG_Obuchenie\FrmSpo.xaml.cs">
+      <DependentUpon>FrmSpo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\SNG_Obuchenie\Pult_Nasosov.xaml.cs">
+      <DependentUpon>Pult_Nasosov.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Frames\IRAN\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NGO.Elements\NGO.Elements.csproj">
+      <Project>{d126c3e5-88dc-4769-b62d-045007c55ba2}</Project>
+      <Name>NGO.Elements</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\LED %28normal%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\LED %28gleam%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Lamps\led_danger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Lamps\led_default.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Lamps\led_fine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Lamps\led_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\SwitchButton\big-switcher -45.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\SwitchButton\big-switcher 45.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\SwitchButton\big-switcher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\SwitchButton\switcher - left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\SwitchButton\switcher - right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\SwitchButton\switcher -90.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\SwitchButton\switcher + 90.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\SwitchButton\switcher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\stop_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\stop_pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Lamps\LED %28normal%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\.scadae\Scripts\Scripts.js">
+      <Link>Scripts.js</Link>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,904 @@
+﻿<UserControl x:Class="VFD.Frames.Sub.n159.CepiAvarijnogoOtklyucheniyaPitaniya_bu2"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:se="http://schemas.monokot.com/se/"
+             xmlns:hmi="http://schemas.monokot.com/hmi/"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:scheme="clr-namespace:NGO.Elements.Scheme;assembly=NGO.Elements"
+             mc:Ignorable="d" 
+             d:DesignHeight="840" d:DesignWidth="1200" Background="#FFC9C9C9" >
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/NGO.Elements;component/Style/superVfd_styles.xaml"/>
+                <ResourceDictionary Source="/NGO.Elements;component/Style/scheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Canvas>
+        <Rectangle Height="93" Stroke="#ff000000" StrokeThickness="1.0" StrokeMiterLimit="1.0" Canvas.Top="90" Width="233" StrokeDashArray="10 10" Canvas.Left="327"/>
+        <Rectangle Height="93" Stroke="#ff000000" StrokeThickness="1.0" StrokeMiterLimit="1.0" Canvas.Top="729" Width="514" StrokeDashArray="10 2 1 2" Canvas.Left="109"/>
+        <Rectangle Height="501" Stroke="#ff000000" StrokeThickness="1.0" StrokeMiterLimit="1.0" Canvas.Top="211" Width="514" StrokeDashArray="10 2 1 2" Canvas.Left="109"/>
+        <Rectangle Height="462" Stroke="#ff000000" StrokeThickness="1.0" StrokeMiterLimit="1.0" Canvas.Top="232" Width="463" StrokeDashArray="10 2 1 2" Canvas.Left="129"/>
+        <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeMiterLimit="1.0" Data="F1 M 210.260,122.026 L 210.260,258.089" Canvas.Top="157.085" Height="192.83" Stretch="Fill" Canvas.Left="377"/>
+        <Rectangle Height="60" Canvas.Left="269" StrokeStartLineCap="Round" StrokeEndLineCap="Round" Stroke="#ff000000" StrokeThickness="1.0" StrokeMiterLimit="1.0" Canvas.Top="370" Width="171"/>
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+        <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 485.221,215.569 L 831.048,215.569" Canvas.Top="245" Canvas.Left="182" Stretch="Fill" Width="163"/>
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/Кнопка "ОТКЛЮЧИТЬ вакуум. -->
+
+        <!-- Слой 1/выкл. трансформатора T1" -->
+
+        <!-- Слой 1/Отключить Q1 от PLC -->
+
+        <!-- Слой 1/Отключить Q1 -->
+
+        <!-- Слой 1/по сигналу БКТ "Авария" -->
+
+        <!-- Слой 1/Блокировка дверей  -->
+
+        <!-- Слой 1/трансформатора Т1 -->
+
+        <!-- Слой 1/Цепь аварийного  -->
+
+        <!-- Слой 1/отключения -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/БКТ -->
+
+        <!-- Слой 1/РТ.1 -->
+
+        <!-- Слой 1/РТ.2 -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/АСУ -->
+
+        <!-- Слой 1/Ручн -->
+
+        <!-- Слой 1/Комментарии -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/Отключить вакуумный -->
+
+        <!-- Слой 1/выключатель Т1 (400В) -->
+
+        <!-- Слой 1/(DO32) -->
+
+        <!-- Слой 1/32 дискретных выхода -->
+
+        <!-- Слой 1/Кнопка "ОТКЛЮЧИТЬ вакуум. -->
+
+
+        <!-- Слой 1/выкл. трансформатора T2" -->
+
+        <!-- Слой 1/Отключить Q2 от PLC -->
+
+        <!-- Слой 1/Отключить Q2 -->
+
+        <!-- Слой 1/по сигналу БКТ "Авария" -->
+
+        <!-- Слой 1/Блокировка дверей  -->
+
+        <!-- Слой 1/трансформатора Т2 -->
+
+        <!-- Слой 1/Нет стабилизированного -->
+
+        <!-- Слой 1/питания 230В -->
+
+        <!-- Слой 1/БКТ -->
+
+        <!-- Слой 1/РТ.1 -->
+
+        <!-- Слой 1/РТ.2 -->
+
+        <!-- Слой 1/Отключение Q2 -->
+
+        <!-- Слой 1/Комментарии -->
+
+        <!-- Слой 1/(DO32) -->
+
+        <!-- Слой 1/32 дискретных выхода -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/Отключить вакуумный вык-ль -->
+
+        <!-- Слой 1/Q2 траснформатора Т2 -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/Включение Q2 -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/Отключить Q3 от PLC -->
+        <TextBlock RenderTransform="1.000,-0.000,0.000,1.000,0.000,0.000" Canvas.Left="454" Canvas.Top="469" FontSize="10.41" Text="Отключить Q3 от PLC"/>
+
+        <!-- Слой 1/Отключить Q3 -->
+        <TextBlock RenderTransform="1.000,-0.000,0.000,1.000,0.000,0.000" Canvas.Left="454" Canvas.Top="499" FontSize="10.41" Text="Отключить Q3"/>
+
+        <!-- Слой 1/по сигналу БКТ "Авария" -->
+        <TextBlock RenderTransform="1.000,-0.000,0.000,1.000,0.000,0.000" Canvas.Left="454" Canvas.Top="511" FontSize="10.41" Text="по сигналу БКТ 3 &quot;Авария&quot;"/>
+
+        <!-- Слой 1/Блокировка дверей  -->
+        <TextBlock RenderTransform="1.000,-0.000,0.000,1.000,0.000,0.000" Canvas.Left="454" Canvas.Top="541" FontSize="10.41" Text="Блокировка дверей"/>
+
+        <!-- Слой 1/трансформатора Т3 -->
+        <TextBlock RenderTransform="1.000,-0.000,0.000,1.000,0.000,0.000" Canvas.Left="454" Canvas.Top="554" FontSize="10.41" Text="трансформатора Т3"/>
+
+        <!-- Слой 1/БКТ -->
+        <TextBlock RenderTransform="1.000,-0.000,0.000,1.000,0.000,0.000" Canvas.Left="380" Canvas.Top="106" FontSize="12.14" Text="БКТ"/>
+
+        <!-- Слой 1/РТ.1 -->
+        <TextBlock RenderTransform="1.000,-0.000,0.000,1.000,0.000,0.000" Canvas.Left="428" Canvas.Top="106" FontSize="12.14" Text="РТ.1"/>
+
+        <!-- Слой 1/РТ.2 -->
+        <TextBlock RenderTransform="1.000,-0.000,0.000,1.000,0.000,0.000" Canvas.Left="474" Canvas.Top="106" FontSize="12.14" Text="РТ.2"/>
+
+        <!-- Слой 1/Отключение Q3 -->
+        <TextBlock RenderTransform="1.000,-0.000,0.000,1.000,0.000,0.000" Canvas.Left="349" Canvas.Top="753" FontSize="10.41" Text="Отключение Q3"/>
+
+        <!-- Слой 1/Комментарии -->
+        <TextBlock RenderTransform="1.000,-0.000,0.000,1.000,0.000,0.000" Canvas.Left="331" Canvas.Top="393" FontSize="8.67" Text="Комментарии"/>
+
+        <!-- Слой 1/(DO32) -->
+        <TextBlock RenderTransform="1.000,-0.000,0.000,1.000,0.000,0.000" Canvas.Left="274" Canvas.Top="382" FontSize="8.67" Text="(DO16)"/>
+
+        <!-- Слой 1/32 дискретных выхода -->
+        <TextBlock RenderTransform="1.000,-0.000,0.000,1.000,0.000,0.000" Canvas.Left="343" Canvas.Top="382" FontSize="8.67" Text="32 дискретных выхода"/>
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+        <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 913.252,368.640 L 908.372,363.784" Canvas.Top="394.01" Canvas.Left="424.097" Height="4.979" RenderTransformOrigin="0.5,0.5" Stretch="Fill" Width="4.806"/>
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/Отключить вакуумный вык-ль -->
+        <TextBlock RenderTransform="1.000,-0.000,0.000,1.000,0.000,0.000" Canvas.Left="271" Canvas.Top="404" FontSize="10.41" Text="Отключить вакуумный вык-ль"/>
+
+        <!-- Слой 1/Q3 траснформатора Т3 -->
+        <TextBlock RenderTransform="1.000,-0.000,0.000,1.000,0.000,0.000" Canvas.Left="283" Canvas.Top="416" FontSize="10.41" Text="Q3 траснформатора Т3"/>
+
+        <!-- Слой 1/Включение Q3 -->
+        <TextBlock RenderTransform="1.000,-0.000,0.000,1.000,0.000,0.000" Canvas.Left="241" Canvas.Top="753" FontSize="10.41" Text="Включение Q3"/>
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/14K4 -->
+
+        <!-- Слой 1/14K3 -->
+
+        <!-- Слой 1/14K5 -->
+
+        <!-- Слой 1/14SB2 -->
+
+        <!-- Слой 1/14K6 -->
+
+        <!-- Слой 1/+КТУ -->
+        <TextBlock RenderTransform="1.000,-0.000,0.000,1.000,0.000,0.000" Canvas.Left="591" Canvas.Top="197" FontSize="12.14" Text="+КТУ"/>
+
+        <!-- Слой 1/+МПК1 -->
+        <TextBlock RenderTransform="1.000,-0.000,0.000,1.000,0.000,0.000" Canvas.Left="561" Canvas.Top="217" FontSize="12.14" Text="+МПК1"/>
+
+        <!-- Слой 1/T1 -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/+НКУ -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/QS -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/1K1 -->
+
+        <!-- Слой 1/+МКРУ -->
+        <TextBlock RenderTransform="1.000,-0.000,0.000,1.000,0.000,0.000" Canvas.Left="583" Canvas.Top="712" FontSize="12.14" Text="+МКРУ"/>
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/SA1 -->
+
+        <!-- Слой 1/A3 -->
+
+        <!-- Слой 1/8 -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/13K4 -->
+
+        <!-- Слой 1/13K3 -->
+
+        <!-- Слой 1/13K5 -->
+
+        <!-- Слой 1/13SB2 -->
+
+        <!-- Слой 1/K1 -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/A3 -->
+
+        <!-- Слой 1/9 -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/QS -->
+
+        <!-- Слой 1/T2 -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/13SB1 -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/+МКРУ -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/93K4 -->
+        <TextBlock RenderTransform="1.000,-0.000,0.000,1.000,0.000,0.000" Canvas.Left="368" Canvas.Top="449" FontSize="12.14" Text="93K4"/>
+
+        <!-- Слой 1/93K3 -->
+        <TextBlock RenderTransform="1.000,-0.000,0.000,1.000,0.000,0.000" Canvas.Left="368" Canvas.Top="484" FontSize="12.14" Text="93K3"/>
+
+        <!-- Слой 1/93K5 -->
+        <TextBlock RenderTransform="1.000,-0.000,0.000,1.000,0.000,0.000" Canvas.Left="371" Canvas.Top="526" FontSize="12.14" Text="93K5"/>
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/A3 -->
+        <TextBlock RenderTransform="1.000,-0.000,0.000,1.000,0.000,0.000" Canvas.Left="341" Canvas.Top="370" FontSize="12.14" Text="A3"/>
+
+        <!-- Слой 1/7 -->
+        <TextBlock RenderTransform="1.000,-0.000,0.000,1.000,0.000,0.000" Canvas.Left="426" Canvas.Top="412" FontSize="12.14" Text="7"/>
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/QS -->
+        <TextBlock RenderTransform="1.000,-0.000,0.000,1.000,0.000,0.000" Canvas.Left="533" Canvas.Top="121" FontSize="12.14" Text="QS"/>
+
+        <!-- Слой 1/T3 -->
+        <TextBlock RenderTransform="1.000,-0.000,0.000,1.000,0.000,0.000" Canvas.Left="543" Canvas.Top="75" FontSize="12.14" Text="T3"/>
+
+        <!-- Слой 1/93SB1 -->
+        <TextBlock RenderTransform="1.000,-0.000,0.000,1.000,0.000,0.000" Canvas.Left="273" Canvas.Top="438" FontSize="12.14" Text="93SB1"/>
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/L -->
+        <TextBlock RenderTransform="1.000,-0.000,0.000,1.000,0.000,0.000" Canvas.Left="161" Canvas.Top="239" FontSize="12.14" Text="L"/>
+
+        <!-- Слой 1// -->
+        <TextBlock RenderTransform="1.000,-0.000,0.000,1.000,0.000,0.000" Canvas.Top="242" FontSize="6.25" Text="/" Canvas.Left="169"/>
+
+        <!-- Слой 1/<Контур> -->
+        <Path Fill="#ff000000" Data="F1 M 73.489,212.734 L 65.693,215.569 L 73.489,218.404 L 73.489,212.734 Z" Canvas.Top="30" Canvas.Left="109"/>
+
+        <!-- Слой 1/<Контур> -->
+        <Path StrokeThickness="0.1" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 73.489,212.734 L 65.693,215.569 L 73.489,218.404 L 73.489,212.734 Z" Canvas.Top="30" Canvas.Left="109"/>
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/N -->
+        <TextBlock RenderTransform="1.000,-0.000,0.000,1.000,0.000,0.000" Canvas.Left="161" Canvas.Top="344" FontSize="12.14" Text="N"/>
+
+        <!-- Слой 1// -->
+        <TextBlock RenderTransform="1.000,-0.000,0.000,1.000,0.000,0.000" Canvas.Left="170" Canvas.Top="347" FontSize="6.25" Text="/"/>
+
+        <!-- Слой 1/<Контур> -->
+        <Path Fill="#ff000000" Data="F1 M 73.489,317.616 L 65.693,320.451 L 73.489,323.286 L 73.489,317.616 Z" Canvas.Top="30" Canvas.Left="109"/>
+
+        <!-- Слой 1/<Контур> -->
+        <Path StrokeThickness="0.1" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 73.489,317.616 L 65.693,320.451 L 73.489,323.286 L 73.489,317.616 Z" Canvas.Top="30" Canvas.Left="109"/>
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+
+        <!-- Слой 1/<Контур> -->
+        <scheme:QF Canvas.Left="404" Canvas.Top="105" electricType="QS" RenderTransformOrigin="0.5,0.5">
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.scheme].Items[tag68].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                    <hmi:Bind.Converter>
+                        <hmi:BooleanToInverseConverter/>
+                    </hmi:Bind.Converter>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+            <scheme:QF.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.7" ScaleY="0.7"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </scheme:QF.RenderTransform>
+        </scheme:QF>
+        <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 558.922,122.026 L 558.922,215.569" Canvas.Left="424" Stretch="Fill" Width="3" Height="212.786" Canvas.Top="138.107"/>
+        <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 558.922,122.026 L 558.922,215.569" Canvas.Left="469" Stretch="Fill" Width="3" Height="211.844" Canvas.Top="138.078"/>
+        <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="505" Canvas.Left="393.198" Width="46.604"/>
+        <scheme:QF Canvas.Left="365" Canvas.Top="482" electricType="QS" RenderTransformOrigin="0.5,0.5">
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.scheme].Items[tag81].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                    <hmi:Bind.Converter>
+                        <hmi:BooleanToInverseConverter/>
+                    </hmi:Bind.Converter>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+            <scheme:QF.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-0.7" ScaleY="0.7"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </scheme:QF.RenderTransform>
+        </scheme:QF>
+        <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="505" Canvas.Left="329.146" Width="37.708"/>
+        <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 266.953,59.664 L 266.953,73.837" Stretch="Fill" Width="3" Canvas.Left="424" Canvas.Top="105.21" Height="6.58"/>
+        <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 266.953,59.664 L 266.953,73.837" Stretch="Fill" Width="3" Canvas.Left="469" Canvas.Top="104.084" Height="7.832"/>
+        <Path Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 420.024,374.309 L 573.095,374.309" Canvas.Left="269.026" Stretch="Fill" Width="170.948" Canvas.Top="404"/>
+        <Path Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 420.024,374.309 L 573.095,374.309" Canvas.Left="269.026" Stretch="Fill" Width="170.948" Canvas.Top="392"/>
+        <scheme:QF Canvas.Left="365" Canvas.Top="526" electricType="QS" RenderTransformOrigin="0.5,0.5" Template="{DynamicResource normalno_zakrytyj_kontakt}">
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.scheme].Items[tag208].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>False</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+            <scheme:QF.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-0.7" ScaleY="0.7"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </scheme:QF.RenderTransform>
+        </scheme:QF>
+        <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="546" Canvas.Left="329.146" Width="37.708"/>
+        <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="472" Canvas.Left="247" Width="22.047"/>
+        <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="472" Canvas.Left="305.041" Width="61.918"/>
+        <scheme:QF Canvas.Left="365" Canvas.Top="448" electricType="QS" RenderTransformOrigin="0.5,0.5">
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.scheme].Items[tag207].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                    <hmi:Bind.Converter>
+                        <hmi:BooleanToInverseConverter/>
+                    </hmi:Bind.Converter>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+            <scheme:QF.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-0.7" ScaleY="0.7"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </scheme:QF.RenderTransform>
+        </scheme:QF>
+        <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="472" Canvas.Left="393.198" Width="46.604"/>
+        <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 558.922,122.026 L 558.922,215.569" Canvas.Left="439" Stretch="Fill" Width="1.198" Height="262.882" Canvas.Top="474.059"/>
+        <scheme:QF Canvas.Left="507" Canvas.Top="105" electricType="QS" RenderTransformOrigin="0.5,0.5">
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.scheme].Items[tag208].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                    <hmi:Bind.Converter>
+                        <hmi:BooleanToInverseConverter/>
+                    </hmi:Bind.Converter>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+            <scheme:QF.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.7" ScaleY="0.7"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </scheme:QF.RenderTransform>
+        </scheme:QF>
+        <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 558.922,122.026 L 558.922,215.569" Canvas.Left="527" Stretch="Fill" Width="3" Height="212.818" Canvas.Top="138.091"/>
+        <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 266.953,59.664 L 266.953,73.837" Stretch="Fill" Width="3" Canvas.Left="527" Canvas.Top="103.096" Height="8.808"/>
+        <se:VisualBox BorderBrush="Black" HorizontalAlignment="Left" Height="17" VerticalAlignment="Top" Width="35" CornerRadius="0" Background="{StaticResource MediaBoxAttentionSolidColorBrush}" Canvas.Left="359" Canvas.Top="302" FontSize="12" Text="93K1">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource MediaBoxFineSolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.scheme].Items[tag67].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" HorizontalAlignment="Left" Height="17" VerticalAlignment="Top" Width="35" CornerRadius="0" Background="{StaticResource MediaBoxAttentionSolidColorBrush}" Canvas.Left="407" Canvas.Top="260" FontSize="12" Text="93K2">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource MediaBoxFineSolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.scheme].Items[tag68].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" HorizontalAlignment="Left" Height="17" VerticalAlignment="Top" Width="35" CornerRadius="0" Background="{StaticResource MediaBoxAttentionSolidColorBrush}" Canvas.Left="453" Canvas.Top="302" FontSize="12" Text="93K3">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource MediaBoxFineSolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.scheme].Items[tag81].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" HorizontalAlignment="Left" Height="17" VerticalAlignment="Top" Width="35" CornerRadius="0" Background="{StaticResource MediaBoxAttentionSolidColorBrush}" Canvas.Left="509" Canvas.Top="260" FontSize="12" Text="93K5">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource MediaBoxFineSolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.scheme].Items[tag208].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <TextBlock RenderTransform="1.000,-0.000,0.000,1.000,0.000,0.000" Canvas.Left="326" Canvas.Top="17" FontSize="16" Text="ЦЕПИ АВАРИЙНОГО ОТКЛЮЧЕНИЯ ВАКУУМНЫХ ВЫКЛЮЧАТЕЛЕЙ КРУ" FontWeight="Bold"/>
+        <scheme:QF Canvas.Left="360" Canvas.Top="124" electricType="QS" RenderTransformOrigin="0.5,0.5" Template="{DynamicResource normalno_zakrytyj_kontakt}">
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.scheme].Items[tag67].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>False</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                    <hmi:Bind.Converter>
+                        <hmi:BooleanToInverseConverter/>
+                    </hmi:Bind.Converter>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+            <scheme:QF.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.7" ScaleY="0.7"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </scheme:QF.RenderTransform>
+        </scheme:QF>
+        <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 266.953,59.664 L 266.953,73.837" Stretch="Fill" Width="3" Canvas.Left="376" Canvas.Top="105.115" Height="25.77"/>
+        <scheme:QF Canvas.Left="449" Canvas.Top="105" electricType="QS" RenderTransformOrigin="0.5,0.5">
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.scheme].Items[tag81].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                    <hmi:Bind.Converter>
+                        <hmi:BooleanToInverseConverter/>
+                    </hmi:Bind.Converter>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+            <scheme:QF.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.7" ScaleY="0.7"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </scheme:QF.RenderTransform>
+        </scheme:QF>
+        <se:VisualBox  Canvas.Left="313" Canvas.Top="784" FontSize="10.41" Text="ВАКУУМНЫЙ ВЫКЛЮЧАТЕЛЬ&#xA;Q3 ОТКЛЮЧЕН" BorderBrush="{x:Null}" Background="{DynamicResource MediaBoxAttentionSolidColorBrush}">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Text="ВАКУУМНЫЙ ВЫКЛЮЧАТЕЛЬ&#xA;Q3 ВКЛЮЧЕН" Background="{DynamicResource MediaBoxFineSolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.scheme].Items[tag89].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="546" Canvas.Left="392.198" Width="46.604"/>
+        <TextBlock RenderTransform="1.000,-0.000,0.000,1.000,0.000,0.000" Canvas.Left="371" Canvas.Top="566" FontSize="12.14" FontFamily="ISOCPEUR" Text="K1"/>
+        <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="589" Canvas.Left="329.146" Width="37.708"/>
+        <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="589" Canvas.Left="393.198" Width="45.604"/>
+        <TextBlock RenderTransform="1.000,-0.000,0.000,1.000,0.000,0.000" Canvas.Left="366" Canvas.Top="610" FontSize="12.14" FontFamily="ISOCPEUR" Text="14K6"/>
+        <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="633" Canvas.Left="329.146" Width="37.708"/>
+        <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="633" Canvas.Left="393.198" Width="45.604"/>
+        <TextBlock RenderTransform="1.000,-0.000,0.000,1.000,0.000,0.000" Canvas.Left="454" Canvas.Top="618" FontSize="10.41" Text="Цепь аварийного"/>
+        <TextBlock RenderTransform="1.000,-0.000,0.000,1.000,0.000,0.000" Canvas.Left="454" Canvas.Top="630" FontSize="10.41" Text="отключения"/>
+        <TextBlock RenderTransform="1.000,-0.000,0.000,1.000,0.000,0.000" Canvas.Left="453" Canvas.Top="582" FontSize="10.41" Text="Нет стабилизированного"/>
+        <TextBlock RenderTransform="1.000,-0.000,0.000,1.000,0.000,0.000" Canvas.Left="453" Canvas.Top="594" FontSize="10.41" Text="питания 230В"/>
+        <scheme:QF Canvas.Left="365" Canvas.Top="566" electricType="QS" isOpen="True" RenderTransformOrigin="0.5,0.5">
+            <scheme:QF.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-0.7" ScaleY="0.7"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </scheme:QF.RenderTransform>
+        </scheme:QF>
+        <scheme:QF Canvas.Left="365" Canvas.Top="610" electricType="QS" RenderTransformOrigin="0.5,0.5">
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.scheme].Items[tag111].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+            <scheme:QF.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-0.7" ScaleY="0.7"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </scheme:QF.RenderTransform>
+        </scheme:QF>
+        <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 558.922,122.026 L 558.922,215.569" Canvas.Left="329" Stretch="Fill" Width="1.198" Height="262.882" Canvas.Top="474.059"/>
+        <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 558.922,122.026 L 558.922,215.569" Canvas.Left="247" Stretch="Fill" Width="1.198" Height="262.882" Canvas.Top="474.059"/>
+        <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 266.953,59.664 L 266.953,73.837" Stretch="Fill" Width="4" Canvas.Left="343" Canvas.Top="103.146" Height="142.708"/>
+        <!-- Слой 1/<Контур> -->
+        <!-- Слой 1/<Контур> -->
+        <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeMiterLimit="1.0" StrokeDashArray="4.29,4.29" Data="F1 M 252.780,96.514 L 262.701,96.514" Canvas.Left="509" Canvas.Top="126" Stretch="Fill" Width="11.438"/>
+        <Ellipse Height="7" Canvas.Left="503" StrokeStartLineCap="Round" StrokeEndLineCap="Round" Stroke="#ff000000" StrokeThickness="1.0" StrokeMiterLimit="1.0" Canvas.Top="123" Width="7"/>
+        <!-- Слой 1/Цепь аварийного  -->
+        <!-- Слой 1/отключения -->
+        <scheme:QF Canvas.Left="268" Canvas.Top="449" electricType="QS" RenderTransformOrigin="0.5,0.5" Template="{DynamicResource knopka}" Width="38" isOpen="True">
+            <scheme:QF.RenderTransform>
+                <TransformGroup>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </scheme:QF.RenderTransform>
+        </scheme:QF>
+        <Ellipse Fill="#ff000000" Height="5" Canvas.Left="327" Canvas.Top="506" Width="5"/>
+        <Ellipse Fill="#ff000000" Height="5" Canvas.Left="437" Canvas.Top="506" Width="5"/>
+        <Ellipse Fill="#ff000000" Height="5" Canvas.Left="327" Canvas.Top="546" Width="5"/>
+        <Ellipse Fill="#ff000000" Height="5" Canvas.Left="437" Canvas.Top="546" Width="5"/>
+        <Ellipse Fill="#ff000000" Height="5" Canvas.Left="327" Canvas.Top="590" Width="5"/>
+        <Ellipse Fill="#ff000000" Height="5" Canvas.Left="437" Canvas.Top="590" Width="5"/>
+        <Ellipse Fill="#ff000000" Height="5" Canvas.Left="327" Canvas.Top="634" Width="5"/>
+        <Ellipse Fill="#ff000000" Height="5" Canvas.Left="437" Canvas.Top="634" Width="5"/>
+        <Ellipse Fill="#ff000000" Height="5" Canvas.Left="375" Canvas.Top="348" Width="5"/>
+        <Ellipse Fill="#ff000000" Height="5" Canvas.Left="423" Canvas.Top="348" Width="5"/>
+        <Ellipse Fill="#ff000000" Height="5" Canvas.Left="468" Canvas.Top="348" Width="5"/>
+        <Ellipse Fill="#ff000000" Height="5" Canvas.Left="498" Canvas.Top="348" Width="5"/>
+        <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 558.922,122.026 L 558.922,215.569" Canvas.Left="499" Stretch="Fill" Width="3" Height="68.386" Canvas.Top="351"/>
+        <se:VisualBox BorderBrush="Black" HorizontalAlignment="Left" Height="17" VerticalAlignment="Top" Width="35" CornerRadius="0" Background="{DynamicResource MediaBoxAttentionSolidColorBrush}" Canvas.Left="483" Canvas.Top="379" FontSize="12" Text="93K4">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{DynamicResource MediaBoxFineSolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.scheme].Items[tag207].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="1" Stretch="Fill" Canvas.Top="103" Canvas.Left="345" Width="184.104"/>
+        <Ellipse Fill="#ff000000" Height="5" Canvas.Left="375" Canvas.Top="101" Width="5"/>
+        <Ellipse Fill="#ff000000" Height="5" Canvas.Left="423" Canvas.Top="101" Width="5"/>
+        <Ellipse Fill="#ff000000" Height="5" Canvas.Left="468" Canvas.Top="101" Width="5"/>
+        <TextBlock  Canvas.Left="676" Canvas.Top="217" Text="T3-БКТ – сигнал «Нет неисправности блока контроля температуры» трансформатора Т3&#xA;&#xA;
+Т3-РТ.1 – сигнал «Предупреждение (сигнал БКТ)» трансформатора Т3&#xA;&#xA;
+Т3-РТ.2 – сигнал «Перегрев (сигнал БКТ)» трансформатора Т3&#xA;&#xA;
+Т3-QS –  сигнал «Конечные выключатели двери Т3 замкнуты»&#xA;&#xA;
+МПК1-93К1 – нет неисправности БКТ трансформатора Т3&#xA;&#xA;
+МПК1-93К2 – перегрев трансформатора Т3&#xA;&#xA;
+МПК1-93К3 – авария трансформатора Т3&#xA;&#xA;
+МПК1-93К5 – блокировка дверей трансформатора Т3&#xA;&#xA;
+МПК1-93К4 – отключить вакуумный выключатель Q3 (Т3) от ПЛК&#xA;&#xA;
+МПК1-93SB1 – кнопка «Включить вакуумный выключатель Q3» трансформатора Т3&#xA;&#xA;
+МПК1-14К6 – собрана цепь нулевого расцепителя (QF1 – при питании от ЛЭП, QF2 – при питании от ДЭС)&#xA;&#xA;" Width="514" TextWrapping="Wrap"/>
+        <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 485.221,215.569 L 831.048,215.569" Canvas.Top="350" Canvas.Left="182.042" Stretch="Fill" Width="346.916"/>
+        <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 485.221,215.569 L 831.048,215.569" Canvas.Top="417" Canvas.Left="442" Stretch="Fill" Width="59.166" Height="3.25"/>
+        <Rectangle Height="42" Stroke="#ff000000" StrokeThickness="1.0" StrokeMiterLimit="1.0" Canvas.Top="737" Width="214" StrokeDashArray="10 10" Canvas.Left="236"/>
+        <Rectangle Height="42" Stroke="#ff000000" StrokeThickness="1.0" StrokeMiterLimit="1.0" Canvas.Top="737" Width="94" StrokeDashArray="10 10" Canvas.Left="236"/>
+        <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 558.922,122.026 L 558.922,215.569" Canvas.Left="415" Stretch="Fill" Width="3" Height="38.386" Canvas.Top="392"/>
+        <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 485.221,215.569 L 831.048,215.569" Canvas.Top="397" Canvas.Left="431" Stretch="Fill" Width="5.177" Height="3.25"/>
+        <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 485.221,215.569 L 831.048,215.569" Canvas.Top="397" Canvas.Left="420" Stretch="Fill" Width="8.238" Height="3.25"/>
+        <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 913.252,368.640 L 908.372,363.784" Canvas.Top="394.01" Canvas.Left="427.097" Height="4.979" RenderTransformOrigin="0.5,0.5" Stretch="Fill" Width="4.806"/>
+        <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 913.252,368.640 L 908.372,363.784" Canvas.Top="398.01" Canvas.Left="424.097" Height="4.979" RenderTransformOrigin="0.5,0.5" Stretch="Fill" Width="4.806">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 913.252,368.640 L 908.372,363.784" Canvas.Top="398.01" Canvas.Left="427.097" Height="4.979" RenderTransformOrigin="0.5,0.5" Stretch="Fill" Width="4.806">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Ellipse Stroke="#ff000000" Height="7" Canvas.Left="436" Canvas.Top="415" Width="7"/>
+    </Canvas>
+</UserControl>

@@ -1,0 +1,1296 @@
+﻿<UserControl
+              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:se="http://schemas.monokot.com/se/"
+             xmlns:hmi="http://schemas.monokot.com/hmi/"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:scheme="clr-namespace:NGO.Elements.Scheme;assembly=NGO.Elements"
+             xmlns:BrakeScheme="clr-namespace:NGO.Elements.Special.BrakeScheme;assembly=NGO.Elements" 
+             xmlns:Lebedka="clr-namespace:NGO.Elements.Lebedka;assembly=NGO.Elements"
+             x:Class="VFD.Frames.Sub.n159.SchemaPnevmoTormoz"
+             mc:Ignorable="d" 
+             d:DesignHeight="840" d:DesignWidth="1200" Background="#FFC9C9C9" >
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/NGO.Elements;component/Style/superVfd_styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <DrawingBrush x:Key="CrossLine" AlignmentX="Left" AlignmentY="Top" Stretch="Uniform">
+                <DrawingBrush.Drawing>
+                    <GeometryDrawing>
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="Black"  Thickness="2" EndLineCap="Square" StartLineCap="Square"/>
+                        </GeometryDrawing.Pen>
+                        <GeometryDrawing.Geometry>
+                            <PathGeometry>
+                                <PathFigure IsClosed="True" StartPoint="0,0">
+                                    <LineSegment Point="20,20" IsStroked="False"/>
+                                </PathFigure>
+                                <PathFigure IsClosed="True" StartPoint="20,0">
+                                    <LineSegment Point="0,20" IsStroked="False" />
+                                </PathFigure>
+                            </PathGeometry>
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                </DrawingBrush.Drawing>
+            </DrawingBrush>
+
+            <VisualBrush x:Key="CrossLineBrush" TileMode="Tile" Viewport="0,0,8,8" ViewportUnits="Absolute">
+                <VisualBrush.Visual>
+                    <Rectangle Width="1" Height="1" Fill="{StaticResource CrossLine}" SnapsToDevicePixels="True"/>
+                </VisualBrush.Visual>
+            </VisualBrush>
+
+            <DrawingBrush x:Key="Ellipse" AlignmentX="Left" AlignmentY="Top" Stretch="Uniform">
+                <DrawingBrush.Drawing>
+                    <GeometryDrawing>
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="Black"  Thickness="2" EndLineCap="Square" StartLineCap="Square"/>
+                        </GeometryDrawing.Pen>
+                        <GeometryDrawing.Geometry>
+                            <EllipseGeometry RadiusX="10" RadiusY="10" />
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                </DrawingBrush.Drawing>
+            </DrawingBrush>
+
+            <VisualBrush x:Key="EllipseBrush" TileMode="Tile" Viewport="0,0,10,10" ViewportUnits="Absolute">
+                <VisualBrush.Visual>
+                    <Rectangle Width="2" Height="2" Fill="{StaticResource Ellipse}" SnapsToDevicePixels="True"/>
+                </VisualBrush.Visual>
+            </VisualBrush>
+
+            <DrawingBrush x:Key="Spring" AlignmentX="Left" AlignmentY="Top" Stretch="Uniform">
+                <DrawingBrush.Drawing>
+                    <GeometryDrawing>
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="Black"  Thickness="2" EndLineCap="Triangle" StartLineCap="Triangle"/>
+                        </GeometryDrawing.Pen>
+                        <GeometryDrawing.Geometry>
+                            <PathGeometry>
+                                <PathFigure IsClosed="True" StartPoint="0,0">
+                                    <LineSegment Point="5,15" IsStroked="False"/>
+                                </PathFigure>
+                                <PathFigure IsClosed="True" StartPoint="5,15">
+                                    <LineSegment Point="10,0" IsStroked="False" />
+                                </PathFigure>
+                            </PathGeometry>
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                </DrawingBrush.Drawing>
+            </DrawingBrush>
+
+            <VisualBrush x:Key="SpringBrush" TileMode="Tile" Viewport="0,0,7,14" ViewportUnits="Absolute">
+                <VisualBrush.Visual>
+                    <Rectangle Width="5" Height="8" Fill="{StaticResource Spring}" SnapsToDevicePixels="True"/>
+                </VisualBrush.Visual>
+            </VisualBrush>
+
+            <SolidColorBrush x:Key="Pnevmo" Color="Green" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Canvas Width="1200" SnapsToDevicePixels="True">
+        <Rectangle Height="118" Canvas.Left="145" Stroke="Black" StrokeLineJoin="Round" Canvas.Top="394" Width="27"/>
+        <Rectangle Width="238" Height="142" Canvas.Left="123" Canvas.Top="150" Stroke="Black" StrokeDashArray="10 10" StrokeEndLineCap="Square" StrokeDashOffset="-5"/>
+        <Path Width="1" Height="402.106" Canvas.Left="431.106" Canvas.Top="402" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 479.305,503.091L 479.305,540.055" StrokeEndLineCap="Square"/>
+        <Path Width="14" Height="1" Canvas.Left="425" Canvas.Top="402.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 483.954,503.091L 474.643,503.091"/>
+        <Path Width="14" Height="1" Canvas.Left="425" Canvas.Top="432.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 483.954,503.091L 474.643,503.091"/>
+        <Path Width="14" Height="1" Canvas.Left="425" Canvas.Top="765.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 483.954,503.091L 474.643,503.091"/>
+        <Path Width="14" Height="1" Canvas.Left="425" Canvas.Top="804.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 483.954,503.091L 474.643,503.091"/>
+        <Path x:Name="Line_207" Width="1" Height="200.89" Canvas.Left="452" Canvas.Top="424.055" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square"/>
+        <Path  Width="4.98"   Height="5"   Canvas.Left="450.01" Canvas.Top="625"     Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 260.281,520.261C 260.281,519.747 259.867,519.32 259.355,519.32C 258.855,519.32 258.441,519.747 258.441,520.261C 258.441,520.776 258.855,521.175 259.355,521.175C 259.867,521.175 260.281,520.776 260.281,520.261 Z "/>
+        <Path  Width="17.286"   Height="1"   Canvas.Left="448" Canvas.Top="624.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008"/>
+        <Path  Width="4.98"   Height="5"   Canvas.Left="450.01" Canvas.Top="419"     Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 260.281,520.261C 260.281,519.747 259.867,519.32 259.355,519.32C 258.855,519.32 258.441,519.747 258.441,520.261C 258.441,520.776 258.855,521.175 259.355,521.175C 259.867,521.175 260.281,520.776 260.281,520.261 Z "/>
+        <Path  Width="8.984"   Height="1"   Canvas.Left="448" Canvas.Top="424.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008"/>
+        <Path Width="269.574" Height="1" Canvas.Left="201.213" Canvas.Top="630.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 483.954,503.091L 474.643,503.091" StrokeStartLineCap="Square" StrokeEndLineCap="Square"/>
+        <Path  Width="4.98"   Height="5"   Canvas.Left="450.01" Canvas.Top="631"     Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 260.281,520.261C 260.281,519.747 259.867,519.32 259.355,519.32C 258.855,519.32 258.441,519.747 258.441,520.261C 258.441,520.776 258.855,521.175 259.355,521.175C 259.867,521.175 260.281,520.776 260.281,520.261 Z "/>
+        <Path  Width="17.286"   Height="1"   Canvas.Left="448" Canvas.Top="636.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008"/>
+        <Path x:Name="Line_207_Copy" Width="1" Height="143" Canvas.Left="452.106" Canvas.Top="637" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeStartLineCap="Square" StrokeEndLineCap="Square"/>
+        <Path x:Name="Line_207_Copy1" Width="2.896" Height="12.21" Canvas.Left="486.052" Canvas.Top="615" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path  Width="4.98"   Height="5"   Canvas.Left="450.01" Canvas.Top="781"     Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 260.281,520.261C 260.281,519.747 259.867,519.32 259.355,519.32C 258.855,519.32 258.441,519.747 258.441,520.261C 258.441,520.776 258.855,521.175 259.355,521.175C 259.867,521.175 260.281,520.776 260.281,520.261 Z "/>
+        <Path  Width="8.984"   Height="1"   Canvas.Left="448" Canvas.Top="780" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008"/>
+        <Path  Width="4.98"   Height="5"   Canvas.Left="450.01" Canvas.Top="413"     Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 260.281,520.261C 260.281,519.747 259.867,519.32 259.355,519.32C 258.855,519.32 258.441,519.747 258.441,520.261C 258.441,520.776 258.855,521.175 259.355,521.175C 259.867,521.175 260.281,520.776 260.281,520.261 Z "/>
+        <Path  Width="8.984"   Height="1"   Canvas.Left="448" Canvas.Top="411.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008"/>
+        <Path x:Name="Line_207_Copy2" Width="1" Height="20.782" Canvas.Left="452" Canvas.Top="392.109" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path Width="38.811" Height="1" Canvas.Left="414.094" Canvas.Top="391" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 483.954,503.091L 474.643,503.091" StrokeStartLineCap="Square" StrokeEndLineCap="Square" StrokeDashCap="Square"/>
+        <Path  Width="4.98"   Height="5"   Canvas.Left="412.01" Canvas.Top="413"     Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 260.281,520.261C 260.281,519.747 259.867,519.32 259.355,519.32C 258.855,519.32 258.441,519.747 258.441,520.261C 258.441,520.776 258.855,521.175 259.355,521.175C 259.867,521.175 260.281,520.776 260.281,520.261 Z "/>
+        <Path  Width="8.984"   Height="1"   Canvas.Left="410" Canvas.Top="411.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008"/>
+        <Path x:Name="Line_207_Copy3" Width="1" Height="21" Canvas.Left="414" Canvas.Top="392.109" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path  Width="4.98"   Height="5"   Canvas.Left="412.01" Canvas.Top="419"     Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 260.281,520.261C 260.281,519.747 259.867,519.32 259.355,519.32C 258.855,519.32 258.441,519.747 258.441,520.261C 258.441,520.776 258.855,521.175 259.355,521.175C 259.867,521.175 260.281,520.776 260.281,520.261 Z "/>
+        <Path  Width="8.984"   Height="1"   Canvas.Left="410" Canvas.Top="424.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008"/>
+        <Path x:Name="Line_207_Copy4" Width="1" Height="155.14" Canvas.Left="414" Canvas.Top="424" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square"/>
+        <Path Width="13" Height="1" Canvas.Left="408.033" Canvas.Top="578.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 483.954,503.091L 474.643,503.091" StrokeStartLineCap="Square" StrokeEndLineCap="Square" StrokeDashCap="Square"/>
+        <Path x:Name="Line_207_Copy5" Width="1" Height="9.115" Canvas.Left="408.106" Canvas.Top="578" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path x:Name="Line_207_Copy6" Width="1" Height="9.115" Canvas.Left="420.107" Canvas.Top="578" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path x:Name="Line_207_Copy7" Width="1" Height="9.115" Canvas.Left="414.106" Canvas.Top="583" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path x:Name="Line_207_Copy8" Width="1" Height="9.115" Canvas.Left="425" Canvas.Top="583" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path Width="25" Height="1" Canvas.Left="401" Canvas.Top="592" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 483.954,503.091L 474.643,503.091" StrokeStartLineCap="Square" StrokeEndLineCap="Square" StrokeDashCap="Square"/>
+        <Path x:Name="Line_207_Copy9" Width="2.894" Height="6.568" Canvas.Left="463.053" Canvas.Top="618.216" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path x:Name="Line_207_Copy10" Width="2.894" Height="6.482" Canvas.Left="463.053" Canvas.Top="636" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path  Width="4.98"   Height="5"   Canvas.Left="450.01" Canvas.Top="787"     Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 260.281,520.261C 260.281,519.747 259.867,519.32 259.355,519.32C 258.855,519.32 258.441,519.747 258.441,520.261C 258.441,520.776 258.855,521.175 259.355,521.175C 259.867,521.175 260.281,520.776 260.281,520.261 Z "/>
+        <Path  Width="8.984"   Height="1"   Canvas.Left="448" Canvas.Top="792.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008"/>
+        <Path Width="63.878" Height="1" Canvas.Left="406.061" Canvas.Top="786.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 483.954,503.091L 474.643,503.091" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path x:Name="Line_207_Copy11" Width="1" Height="20.782" Canvas.Left="452.106" Canvas.Top="793" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path Width="38.812" Height="1" Canvas.Left="414.094" Canvas.Top="814" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 483.954,503.091L 474.643,503.091" StrokeStartLineCap="Square" StrokeEndLineCap="Square" StrokeDashCap="Square"/>
+        <Path  Width="4.98"   Height="5"   Canvas.Left="412.01" Canvas.Top="781"     Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 260.281,520.261C 260.281,519.747 259.867,519.32 259.355,519.32C 258.855,519.32 258.441,519.747 258.441,520.261C 258.441,520.776 258.855,521.175 259.355,521.175C 259.867,521.175 260.281,520.776 260.281,520.261 Z "/>
+        <Path  Width="8.984"   Height="1"   Canvas.Left="410" Canvas.Top="780" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008"/>
+        <Path x:Name="Line_207_Copy12" Width="1" Height="20.782" Canvas.Left="414" Canvas.Top="793" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path  Width="4.98"   Height="5"   Canvas.Left="412.01" Canvas.Top="787"     Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 260.281,520.261C 260.281,519.747 259.867,519.32 259.355,519.32C 258.855,519.32 258.441,519.747 258.441,520.261C 258.441,520.776 258.855,521.175 259.355,521.175C 259.867,521.175 260.281,520.776 260.281,520.261 Z "/>
+        <Path  Width="8.984"   Height="1"   Canvas.Left="410" Canvas.Top="792.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008"/>
+        <Rectangle Height="79" Canvas.Left="220" Stroke="Black" StrokeLineJoin="Round" Canvas.Top="592" Width="183"/>
+        <Path x:Name="Line_207_Copy13" Width="1.786" Height="107.688" Canvas.Left="401.107" Canvas.Top="578.156" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeThickness="4" StrokeStartLineCap="Square" StrokeEndLineCap="Square"/>
+        <Path Width="25.893" Height="1" Canvas.Left="401" Canvas.Top="670" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 483.954,503.091L 474.643,503.091" StrokeStartLineCap="Square" StrokeEndLineCap="Square" StrokeDashCap="Square"/>
+        <Path x:Name="Line_207_Copy14" Width="1" Height="9.115" Canvas.Left="414.106" Canvas.Top="671" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path x:Name="Line_207_Copy15" Width="1.786" Height="9.115" Canvas.Left="425" Canvas.Top="671" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path Width="12.934" Height="1" Canvas.Left="408.033" Canvas.Top="684.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 483.954,503.091L 474.643,503.091" StrokeStartLineCap="Square" StrokeEndLineCap="Square" StrokeDashCap="Square"/>
+        <Path x:Name="Line_207_Copy16" Width="1" Height="9.115" Canvas.Left="408.106" Canvas.Top="676" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path x:Name="Line_207_Copy17" Width="1.786" Height="9.115" Canvas.Left="420.107" Canvas.Top="676" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path x:Name="Line_207_Copy18" Width="1" Height="95.664" Canvas.Left="414.106" Canvas.Top="684.168" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Rectangle Height="17" Canvas.Left="470" Stroke="Black" StrokeLineJoin="Round" Canvas.Top="778" Width="8"/>
+        <Path Width="14.894" Height="1" Canvas.Left="478.053" Canvas.Top="786.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 483.954,503.091L 474.643,503.091" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path  Width="14.318"   Height="1"   Canvas.Left="467" Canvas.Top="778.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008"/>
+        <Path  Width="14.318"   Height="1"   Canvas.Left="467" Canvas.Top="794" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008"/>
+        <Path x:Name="Line_207_Copy19" Width="1.788" Height="20.784" Canvas.Left="491.106" Canvas.Top="776.108" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path x:Name="Line_207_Copy20" Width="1.413" Height="20.784" Canvas.Left="506" Canvas.Top="776.108" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path Width="25.081" Height="1" Canvas.Left="487" Canvas.Top="785.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 483.954,503.091L 474.643,503.091" StrokeEndLineCap="Square" StrokeStartLineCap="Round" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-54.678"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Path Width="20.56" Height="1" Canvas.Left="506.22" Canvas.Top="786.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 483.954,503.091L 474.643,503.091" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path Width="171.878" Height="1" Canvas.Left="298.061" Canvas.Top="418" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 483.954,503.091L 474.643,503.091" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Rectangle Height="15" Canvas.Left="470" Stroke="Black" StrokeLineJoin="Round" Canvas.Top="409" Width="8"/>
+        <Path Width="14.894" Height="1" Canvas.Left="478.053" Canvas.Top="418" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 483.954,503.091L 474.643,503.091" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path  Width="14.318"   Height="1"   Canvas.Left="467" Canvas.Top="409.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008"/>
+        <Path  Width="14.318"   Height="1"   Canvas.Left="467" Canvas.Top="423" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008"/>
+        <Path x:Name="Line_207_Copy21" Width="1.788" Height="20.784" Canvas.Left="491.106" Canvas.Top="406.108" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path x:Name="Line_207_Copy22" Width="1.413" Height="20.784" Canvas.Left="506" Canvas.Top="406.108" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path Width="20.56" Height="1" Canvas.Left="506.22" Canvas.Top="418" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 483.954,503.091L 474.643,503.091" StrokeEndLineCap="Square" StrokeStartLineCap="Square" RenderTransformOrigin="0.5,0.5"/>
+        <Rectangle Height="13" Canvas.Left="474" Stroke="Black" StrokeLineJoin="Round" Canvas.Top="626" Width="83"/>
+        <Path x:Name="Line_207_Copy23" Width="2.896" Height="82.98" Canvas.Left="466.052" Canvas.Top="636.01" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path  Width="121.421"   Height="2.896"   Canvas.Left="468" Canvas.Top="544.052" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square"/>
+        <Rectangle Height="13" Fill="{StaticResource CrossLineBrush}" Canvas.Left="463" Stroke="Black" StrokeLineJoin="Round" Canvas.Top="584" Width="50" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Fill="{StaticResource CrossLineBrush}" Height="13" Canvas.Left="463" Stroke="Black" StrokeLineJoin="Round" Canvas.Top="669" Width="50" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Path x:Name="Line_207_Copy24" Width="2.896" Height="79.918" Canvas.Left="466.052" Canvas.Top="545.041" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path x:Name="Line_207_Copy25" Width="2.896" Height="12.965" Canvas.Left="486.052" Canvas.Top="638.018" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path  Width="122.063"   Height="2.968"   Canvas.Left="467" Canvas.Top="718.016" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square"/>
+        <Path x:Name="Line_207_Copy26" Width="2.896" Height="61.281" Canvas.Left="503.052" Canvas.Top="651" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path  Width="13.834"   Height="2.898"   Canvas.Left="497.083" Canvas.Top="711.051" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008"/>
+        <Path x:Name="Line_207_Copy27" Width="2.896" Height="61.279" Canvas.Left="503.052" Canvas.Top="550" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path  Width="13.834"   Height="2.898"   Canvas.Left="497.083" Canvas.Top="549.051" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008"/>
+        <Path x:Name="Line_207_Copy28" Width="2.896" Height="12.21" Canvas.Left="518.052" Canvas.Top="615" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Rectangle Fill="{StaticResource CrossLineBrush}" Height="13" Canvas.Left="495" Stroke="Black" StrokeLineJoin="Round" Canvas.Top="584" Width="50" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Fill="{StaticResource CrossLineBrush}" Height="13" Canvas.Left="495" Stroke="Black" StrokeLineJoin="Round" Canvas.Top="669" Width="50" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Path x:Name="Line_207_Copy29" Width="2.896" Height="12.965" Canvas.Left="518.052" Canvas.Top="638.018" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path x:Name="Line_207_Copy30" Width="2.896" Height="61.279" Canvas.Left="534.052" Canvas.Top="550" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path  Width="13.834"   Height="2.898"   Canvas.Left="529.083" Canvas.Top="549.051" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008"/>
+        <Path x:Name="Line_207_Copy31" Width="2.896" Height="61.279" Canvas.Left="535.052" Canvas.Top="651" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path  Width="13.834"   Height="2.898"   Canvas.Left="529.083" Canvas.Top="711.051" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008"/>
+        <Path x:Name="Line_207_Copy32" Width="2.898" Height="12.223" Canvas.Left="551.051" Canvas.Top="615" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Rectangle Fill="{StaticResource CrossLineBrush}" Height="13" Canvas.Left="523" Stroke="Black" StrokeLineJoin="Round" Canvas.Top="580" Width="59" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Fill="{StaticResource CrossLineBrush}" Height="12" Canvas.Left="522" Stroke="Black" StrokeLineJoin="Round" Canvas.Top="674" Width="60" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Path x:Name="Line_207_Copy33" Width="2.898" Height="12.984" Canvas.Left="551.051" Canvas.Top="638.008" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path x:Name="Line_207_Copy34" Width="2.896" Height="61.279" Canvas.Left="567.052" Canvas.Top="550" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path  Width="13.832"   Height="2.898"   Canvas.Left="562.084" Canvas.Top="549.051" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008"/>
+        <Path x:Name="Line_207_Copy35" Width="2.896" Height="61.279" Canvas.Left="568.052" Canvas.Top="651" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path  Width="13.832"   Height="2.898"   Canvas.Left="562.084" Canvas.Top="711.051" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008"/>
+        <Path x:Name="Line_207_Copy36" Width="2.898" Height="10.063" Canvas.Left="587.051" Canvas.Top="545" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path x:Name="Line_207_Copy37" Width="2.898" Height="9.959" Canvas.Left="587.051" Canvas.Top="710.02" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path  Width="57.928"   Height="2.898"   Canvas.Left="588.036" Canvas.Top="553.051" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square"/>
+        <Path  Width="57.896"   Height="3.069"   Canvas.Left="588.052" Canvas.Top="709" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square"/>
+        <Rectangle x:Name="Rectangle_451" Width="53" Height="17" Canvas.Left="635" Canvas.Top="660" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform X="-66"/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle x:Name="Rectangle_452" Width="8" Height="17" Canvas.Left="636" Canvas.Top="660" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform X="-56"/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+
+        <!-- <BrakeScheme:AirBrakeControl3 Height="28" Canvas.Left="726" Canvas.Top="694" Width="44"  open="{Binding modules[tags_mod].objects[тормоз_воздушный_клапан9].value, FallbackValue=true}" RenderTransformOrigin="0.5,0.5">
+            <BrakeScheme:AirBrakeControl3.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </BrakeScheme:AirBrakeControl3.RenderTransform>
+        </BrakeScheme:AirBrakeControl3>
+        
+        -->
+
+        <Rectangle x:Name="Rectangle_452_Copy" Width="59" Height="5" Canvas.Left="643" Canvas.Top="666" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform X="-56"/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Path x:Name="Line_207_Copy38" Width="2.896" Height="48.112" Canvas.Left="644.052" Canvas.Top="663" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path x:Name="Line_207_Copy39" Width="2.896" Height="16.112" Canvas.Left="644.052" Canvas.Top="554" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path x:Name="Line_207_Copy40" Width="2.897" Height="61.279" Canvas.Left="595.052" Canvas.Top="600" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path x:Name="Line_207_Copy41" Width="2.897" Height="33.173" Canvas.Left="603.052" Canvas.Top="628" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path x:Name="Line_207_Copy42" Width="2.897" Height="17.112" Canvas.Left="611.052" Canvas.Top="644" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path  Width="64.66"   Height="1"   Canvas.Left="612.17" Canvas.Top="644.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square"/>
+        <Path x:Name="Line_207_Copy43" Width="2.898" Height="64.762" Canvas.Left="675.051" Canvas.Top="644.119" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path  Width="70.283"   Height="1"   Canvas.Left="676" Canvas.Top="707.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square"/>
+        <Path  Width="144.888"   Height="1"   Canvas.Left="604.056" Canvas.Top="628.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square"/>
+        <Path  Width="43.876"   Height="1"   Canvas.Left="746.062" Canvas.Top="698.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square"/>
+        <Path  Width="43.876"   Height="1"   Canvas.Left="746.062" Canvas.Top="698.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="{StaticResource Pnevmo}" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square">
+            <Path.Visibility>
+                <hmi:Bind Path="Tags.Node[view.main_drives.drawwork.brake_scheme].Items[tube5].Value">
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Path.Visibility>
+        </Path>
+        <Path x:Name="Line_207_Copy45" Width="3.776" Height="11.449" Canvas.Left="745.112" Canvas.Top="698" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path  Width="60.993"   Height="1"   Canvas.Left="596.004" Canvas.Top="600.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square"/>
+        <Path x:Name="Line_207_Copy47" Width="2.897" Height="24.279" Canvas.Left="655.052" Canvas.Top="576" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+
+        <Path x:Name="Line_207_Copy44" Width="3.776" Height="11.449" Canvas.Left="746.112" Canvas.Top="618" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path  Width="24.968"   Height="1"   Canvas.Left="656.016" Canvas.Top="576.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square"/>
+
+        <Path  Width="40.534"   Height="1"   Canvas.Left="748.233" Canvas.Top="588.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square"/>
+        <Path  Width="40.534"   Height="1"   Canvas.Left="748.233" Canvas.Top="588.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="{StaticResource Pnevmo}" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square">
+            <Path.Visibility>
+                <hmi:Bind Path="Tags.Node[view.main_drives.drawwork.brake_scheme].Items[tube5].Value">
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Path.Visibility>
+        </Path>
+        <Path x:Name="Line_207_Copy46" Width="3.776" Height="13.032" Canvas.Left="746.112" Canvas.Top="576" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path  Width="2.897" Height="110.628" Canvas.Left="788.052" Canvas.Top="588.186" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path  Width="2.897" Height="110.628" Canvas.Left="788.052" Canvas.Top="588.186" Stretch="Fill" StrokeLineJoin="Round" Stroke="{StaticResource Pnevmo}" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square">
+            <Path.Visibility>
+                <hmi:Bind Path="Tags.Node[view.main_drives.drawwork.brake_scheme].Items[tube5].Value">
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Path.Visibility>
+        </Path>
+        <Path  Width="119.519"   Height="1"   Canvas.Left="753.428" Canvas.Top="618.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square"/>
+        <Path  Width="119.519"   Height="1"   Canvas.Left="753.428" Canvas.Top="618.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="{StaticResource Pnevmo}" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square">
+            <Path.Visibility>
+                <hmi:Bind Path="Tags.Node[view.main_drives.drawwork.brake_scheme].Items[tube5].Value">
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Path.Visibility>
+        </Path>
+        <Path  Width="1.788" Height="361.042" Canvas.Left="871.106" Canvas.Top="258" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square"/>
+        <Path  Width="1.788" Height="361.042" Canvas.Left="871.106" Canvas.Top="258" Stretch="Fill" StrokeLineJoin="Round" Stroke="{StaticResource Pnevmo}" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square">
+            <Path.Visibility>
+                <hmi:Bind Path="Tags.Node[view.main_drives.drawwork.brake_scheme].Items[tube5].Value">
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Path.Visibility>
+        </Path>
+
+        <Path  Width="62.229"   Height="2.898"   Canvas.Left="810.651" Canvas.Top="257.051" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square"/>
+        <Path  Width="62.229"   Height="2.898"   Canvas.Left="810.651" Canvas.Top="257.051" Stretch="Fill" StrokeLineJoin="Round" Stroke="{StaticResource Pnevmo}" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square">
+            <Path.Visibility>
+                <hmi:Bind Path="Tags.Node[view.main_drives.drawwork.brake_scheme].Items[tube5].Value">
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Path.Visibility>
+        </Path>
+        <Path  Width="85.751"   Height="1"   Canvas.Left="698.234" Canvas.Top="258" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square" RenderTransformOrigin="0.5,0.5"/>
+        <Path  Width="85.751"   Height="1"   Canvas.Left="698.234" Canvas.Top="258" Stretch="Fill" StrokeLineJoin="Round" Stroke="{StaticResource Pnevmo}" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square" RenderTransformOrigin="0.5,0.5">
+            <Path.Visibility>
+                <hmi:Bind Path="Tags.Node[view.main_drives.drawwork.brake_scheme].Items[tube4].Value">
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Path.Visibility>
+        </Path>
+
+        <Path  Width="2.897" Height="111.52" Canvas.Left="746.385" Canvas.Top="141.24" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path  Width="2.897" Height="111.52" Canvas.Left="746.385" Canvas.Top="141.24" Stretch="Fill" StrokeLineJoin="Round" Stroke="{StaticResource Pnevmo}" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square">
+            <Path.Visibility>
+                <hmi:Bind Path="Tags.Node[view.main_drives.drawwork.brake_scheme].Items[tube10].Value">
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Path.Visibility>
+        </Path>
+        <Path  Width="37.369"   Height="2.898"   Canvas.Left="747" Canvas.Top="271.051" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square"/>
+        <Path  Width="37.369"   Height="2.898"   Canvas.Left="747" Canvas.Top="271.051" Stretch="Fill" StrokeLineJoin="Round" Stroke="{StaticResource Pnevmo}" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square">
+            <Path.Visibility>
+                <hmi:Bind Path="Tags.Node[view.main_drives.drawwork.brake_scheme].Items[tube10].Value">
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Path.Visibility>
+        </Path>
+        <Path  Width="54.115"   Height="1"   Canvas.Left="623.125" Canvas.Top="258" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square" RenderTransformOrigin="0.5,0.5"/>
+        <Path  Width="52.99"   Height="1"   Canvas.Left="623" Canvas.Top="258" Stretch="Fill" StrokeLineJoin="Round" Stroke="{StaticResource Pnevmo}" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square" RenderTransformOrigin="0.5,0.5">
+            <Path.Visibility>
+                <hmi:Bind Path="Tags.Node[view.main_drives.drawwork.brake_scheme].Items[tube4].Value">
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Path.Visibility>
+        </Path>
+
+        <Path  Width="34.573"   Height="1"   Canvas.Left="642.057" Canvas.Top="249" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square" RenderTransformOrigin="0.5,0.5"/>
+        <Path  Width="34.573"   Height="1"   Canvas.Left="642.057" Canvas.Top="249" Stretch="Fill" StrokeLineJoin="Round" Stroke="{StaticResource Pnevmo}" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square" RenderTransformOrigin="0.5,0.5">
+            <Path.Visibility>
+                <hmi:Bind Path="Tags.Node[view.main_drives.drawwork.brake_scheme].Items[tube9].Value">
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Path.Visibility>
+        </Path>
+
+
+        <Path x:Name="Path_348" Width="4.706" Height="9.862" Canvas.Left="745.48" Canvas.Top="132.069" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 349.878,286.963L 350.293,284.026L 349.48,284.026L 349.878,286.963 Z " RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Path Width="2.897" Height="108.738" Canvas.Left="641.385" Canvas.Top="141.131" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path Width="2.897" Height="108.738" Canvas.Left="641.385" Canvas.Top="141.131" Stretch="Fill" StrokeLineJoin="Round" Stroke="{StaticResource Pnevmo}" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square">
+            <Path.Visibility>
+                <hmi:Bind Path="Tags.Node[view.main_drives.drawwork.brake_scheme].Items[tube9].Value">
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Path.Visibility>
+        </Path>
+        <Path Width="4.706" Height="9.862" Canvas.Left="640.48" Canvas.Top="132.069" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 349.878,286.963L 350.293,284.026L 349.48,284.026L 349.878,286.963 Z " RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+
+        <Path  Width="35.136"   Height="1"   Canvas.Left="566" Canvas.Top="249" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square" RenderTransformOrigin="0.5,0.5"/>
+        <Path  Width="35.136"   Height="1"   Canvas.Left="566" Canvas.Top="249" Stretch="Fill" StrokeLineJoin="Round" Stroke="{StaticResource Pnevmo}" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square" RenderTransformOrigin="0.5,0.5">
+            <Path.Visibility>
+                <hmi:Bind Path="Tags.Node[view.main_drives.drawwork.brake_scheme].Items[tube8].Value">
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Path.Visibility>
+        </Path>
+
+
+        <Path Width="2.897" Height="108.74" Canvas.Left="564.052" Canvas.Top="141.13" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path Width="2.897" Height="108.74" Canvas.Left="564.052" Canvas.Top="141.13" Stretch="Fill" StrokeLineJoin="Round" Stroke="{StaticResource Pnevmo}" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square">
+            <Path.Visibility>
+                <hmi:Bind Path="Tags.Node[view.main_drives.drawwork.brake_scheme].Items[tube8].Value">
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Path.Visibility>
+        </Path>
+        <Path x:Name="Path_348_Copy1" Width="4.706" Height="9.862" Canvas.Left="563.147" Canvas.Top="132.069" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 349.878,286.963L 350.293,284.026L 349.48,284.026L 349.878,286.963 Z " RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Rectangle Width="12" Height="12" Canvas.Left="679" Canvas.Top="371" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black"/>
+        <Path x:Name="Line_207_Copy53" Width="2.897" Height="246.449" Canvas.Left="684.052" Canvas.Top="383" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Rectangle Width="12" Height="12" Canvas.Left="629" Canvas.Top="371" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black"/>
+        <Path x:Name="Line_207_Copy54" Width="2.896" Height="5.737" Canvas.Left="634.052" Canvas.Top="383.132" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path  Width="51.011"   Height="2.898"   Canvas.Left="635" Canvas.Top="388.051" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square"/>
+        <Path  Width="327.98"   Height="1"   Canvas.Left="274" Canvas.Top="258" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square" RenderTransformOrigin="0.5,0.5" />
+        <Path  Width="327.98"   Height="1"   Canvas.Left="274" Canvas.Top="258" Stretch="Fill" StrokeLineJoin="Round" Stroke="{StaticResource Pnevmo}" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square" RenderTransformOrigin="0.5,0.5">
+            <Path.Visibility>
+                <hmi:Bind Path="Tags.Node[view.main_drives.drawwork.brake_scheme].Items[tube1].Value">
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Path.Visibility>
+        </Path>
+
+
+        <Rectangle Width="12" Height="12" Canvas.Left="480" Canvas.Top="240" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black"/>
+        <Path x:Name="Line_207_Copy55" Width="2.896" Height="5.736" Canvas.Left="485.052" Canvas.Top="252.132" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path  Width="13"   Height="1"   Canvas.Left="277.244" Canvas.Top="417.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square"/>
+        <Path  Width="5"   Height="5"   Canvas.Left="272.01" Canvas.Top="415"     Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 260.281,520.261C 260.281,519.747 259.867,519.32 259.355,519.32C 258.855,519.32 258.441,519.747 258.441,520.261C 258.441,520.776 258.855,521.175 259.355,521.175C 259.867,521.175 260.281,520.776 260.281,520.261 Z "/>
+        <Path Stroke="Black" StrokeThickness="1" Canvas.Left="269" Canvas.Top="412" Stretch="Fill" Width="3.375" Height="11" Data="M0,0 A25,25,0,0,0,0,30"/>
+        <Path  Width="35"   Height="1"   Canvas.Left="235" Canvas.Top="417" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square"/>
+        <Path  Width="5"   Height="5"   Canvas.Left="226.01" Canvas.Top="415"     Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 260.281,520.261C 260.281,519.747 259.867,519.32 259.355,519.32C 258.855,519.32 258.441,519.747 258.441,520.261C 258.441,520.776 258.855,521.175 259.355,521.175C 259.867,521.175 260.281,520.776 260.281,520.261 Z "/>
+        <Path  Width="31"   Height="1"   Canvas.Left="195.14" Canvas.Top="417.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square"/>
+        <Rectangle Height="19" Canvas.Left="189" Stroke="Black" StrokeLineJoin="Round" Canvas.Top="409" Width="6"/>
+        <Path  Width="31"   Height="1"   Canvas.Left="158.14" Canvas.Top="417.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square"/>
+        <Path Width="1" Height="99.029" Canvas.Left="158.106" Canvas.Top="402" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 479.305,503.091L 479.305,540.055" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path Width="15" Height="1" Canvas.Left="151" Canvas.Top="402.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 483.954,503.091L 474.643,503.091" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path Width="25.081" Height="1" Canvas.Left="487" Canvas.Top="416.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 483.954,503.091L 474.643,503.091" StrokeEndLineCap="Square" StrokeStartLineCap="Round" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-54.678"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Path Width="35.026" Height="4.422" Canvas.Left="123" Canvas.Top="487" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 483.954,503.091L 474.643,503.091" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path x:Name="Line_207_Copy58" Width="1.788" Height="20.784" Canvas.Left="108.106" Canvas.Top="478.108" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path x:Name="Line_207_Copy59" Width="1.413" Height="20.784" Canvas.Left="123" Canvas.Top="478.108" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path Width="20.56" Height="1" Canvas.Left="88.22" Canvas.Top="489.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 483.954,503.091L 474.643,503.091" StrokeEndLineCap="Square" StrokeStartLineCap="Square" RenderTransformOrigin="0.5,0.5"/>
+        <Path Width="25.952" Height="1" Canvas.Left="103.024" Canvas.Top="487.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 483.954,503.091L 474.643,503.091" StrokeStartLineCap="Square" RenderTransformOrigin="0.5,0.5" StrokeEndLineCap="Square">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-54.678"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Path Width="15" Height="1" Canvas.Left="151" Canvas.Top="479.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 483.954,503.091L 474.643,503.091" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path Width="15" Height="1" Canvas.Left="151" Canvas.Top="500.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 483.954,503.091L 474.643,503.091" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path x:Name="Line_207_Copy62" Width="1" Height="55" Canvas.Left="337" Canvas.Top="360" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path  Width="119"   Height="1"   Canvas.Left="218" Canvas.Top="360" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square"/>
+        <Path  Width="75.553"   Height="1"   Canvas.Left="174.203" Canvas.Top="258" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square" RenderTransformOrigin="0.5,0.5"/>
+        <Path  Width="75.553"   Height="1"   Canvas.Left="174.203" Canvas.Top="258" Stretch="Fill" StrokeLineJoin="Round" Stroke="{StaticResource Pnevmo}" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square" RenderTransformOrigin="0.5,0.5">
+            <Path.Visibility>
+                <hmi:Bind Path="Tags.Node[view.main_drives.drawwork.brake_scheme].Items[tube2].Value">
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Path.Visibility>
+        </Path>
+
+        <Path Width="1.788" Height="94.156" Canvas.Left="173.106" Canvas.Top="258" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path Width="1.788" Height="94.156" Canvas.Left="173.106" Canvas.Top="258" Stretch="Fill" StrokeLineJoin="Round" Stroke="{StaticResource Pnevmo}" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square">
+            <Path.Visibility>
+                <hmi:Bind Path="Tags.Node[view.main_drives.drawwork.brake_scheme].Items[tube2].Value">
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Path.Visibility>
+        </Path>
+        <Path Width="1.788" Height="149.692" Canvas.Left="152.106" Canvas.Top="202.154" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path Width="1.788" Height="149.692" Canvas.Left="152.106" Canvas.Top="202.154" Stretch="Fill" StrokeLineJoin="Round" Stroke="{StaticResource Pnevmo}" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square">
+            <Path.Visibility>
+                <hmi:Bind Path="Tags.Node[view.main_drives.drawwork.brake_scheme].Items[tube3].Value">
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Path.Visibility>
+        </Path>
+        <Path  Width="141.968"   Height="1"   Canvas.Left="153.016" Canvas.Top="202" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square" RenderTransformOrigin="0.5,0.5"/>
+        <Path  Width="141.968"   Height="1"   Canvas.Left="153.016" Canvas.Top="202" Stretch="Fill" StrokeLineJoin="Round" Stroke="{StaticResource Pnevmo}" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square" RenderTransformOrigin="0.5,0.5">
+            <Path.Visibility>
+                <hmi:Bind Path="Tags.Node[view.main_drives.drawwork.brake_scheme].Items[tube3].Value">
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Path.Visibility>
+        </Path>
+
+        <Path  Width="83.198"   Height="1"   Canvas.Left="318.172" Canvas.Top="202" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Path x:Name="Line_207_Copy65" Width="2.896" Height="190.175" Canvas.Left="400.052" Canvas.Top="68" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path Stroke="Black" StrokeThickness="1" Canvas.Left="232" Canvas.Top="412" Stretch="Fill" Width="3.375" Height="11" Data="M0,0 A25,25,0,0,0,0,30" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Rectangle Width="475" Height="142" Canvas.Left="410" Canvas.Top="150" Stroke="Black" StrokeDashArray="10 10" StrokeEndLineCap="Square" StrokeDashOffset="-5"/>
+        <Path Width="2.897" Height="137.737" Canvas.Left="796.052" Canvas.Top="92" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path Width="2.897" Height="137.737" Canvas.Left="796.052" Canvas.Top="92" Stretch="Fill" StrokeLineJoin="Round" Stroke="{StaticResource Pnevmo}" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square">
+            <Path.Visibility>
+                <hmi:Bind Path="Tags.Node[view.main_drives.drawwork.brake_scheme].Items[tube7].Value">
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Path.Visibility>
+        </Path>
+        <Path x:Name="Path_348_Copy3" Width="4.706" Height="9.862" Canvas.Left="795.147" Canvas.Top="229.069" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 349.878,286.963L 350.293,284.026L 349.48,284.026L 349.878,286.963 Z " RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="360"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <TextBlock Canvas.Left="353" TextWrapping="Wrap" Text="ПНЕВМОСЕТЬ 0,9 МПа" Canvas.Top="44"/>
+        <TextBlock Canvas.Left="764" TextWrapping="Wrap" Text="ИЗ КАБИНЫ" Canvas.Top="44"/>
+        <TextBlock Canvas.Left="340" TextWrapping="Wrap" Text="БА1" Canvas.Top="128"/>
+        <TextBlock Canvas.Left="843" TextWrapping="Wrap" Text="БА2" Canvas.Top="129"/>
+        <TextBlock Canvas.Left="329" TextWrapping="Wrap" Text="Р2" Canvas.Top="185"/>
+        <TextBlock Canvas.Left="285" TextWrapping="Wrap" Text="P1" Canvas.Top="241"/>
+        <TextBlock Canvas.Left="606" TextWrapping="Wrap" Text="Р2" Canvas.Top="220"/>
+        <TextBlock Canvas.Left="686" TextWrapping="Wrap" Text="Р1" Canvas.Top="220"/>
+        <TextBlock Canvas.Left="809" TextWrapping="Wrap" Text="Р3" Canvas.Top="223"/>
+        <Path Stroke="Black" StrokeThickness="1" Canvas.Left="745.333" Canvas.Top="252" Stretch="Fill" Width="3.376" Height="11" Data="M0,0 A25,25,0,0,0,0,30"/>
+        <Path Stroke="{StaticResource Pnevmo}" StrokeThickness="1" Canvas.Left="745.333" Canvas.Top="252" Stretch="Fill" Width="3.376" Height="11" Data="M0,0 A25,25,0,0,0,0,30">
+            <Path.Visibility>
+                <hmi:Bind Path="Tags.Node[view.main_drives.drawwork.brake_scheme].Items[tube10].Value">
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Path.Visibility>
+        </Path>
+        <Path Width="2.897" Height="11.02" Canvas.Left="746.385" Canvas.Top="262" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path Width="2.897" Height="11.02" Canvas.Left="746.385" Canvas.Top="262" Stretch="Fill" StrokeLineJoin="Round" Stroke="{StaticResource Pnevmo}" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square">
+            <Path.Visibility>
+                <hmi:Bind Path="Tags.Node[view.main_drives.drawwork.brake_scheme].Items[tube10].Value">
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Path.Visibility>
+        </Path>
+        <Path Stroke="Black" StrokeThickness="1" Canvas.Left="684" Canvas.Top="570" Stretch="Fill" Width="3.376" Height="11" Data="M0,0 A25,25,0,0,0,0,30" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Path  Width="58.872"   Height="1"   Canvas.Left="690.064" Canvas.Top="576.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square"/>
+        <TextBlock Canvas.Left="203" TextWrapping="Wrap" Text="SQДП1" Canvas.Top="301"/>
+        <TextBlock Canvas.Left="264" TextWrapping="Wrap" Text="SQДП2" Canvas.Top="301"/>
+
+        <TextBlock Canvas.Left="471" TextWrapping="Wrap" Text="ВРСЛ" Canvas.Top="219"/>
+        <TextBlock Canvas.Left="618" TextWrapping="Wrap" Text="SPTЛ" Canvas.Top="350"/>
+        <TextBlock Canvas.Left="671" TextWrapping="Wrap" Text="ВРТЛ" Canvas.Top="350"/>
+        <TextBlock Canvas.Left="525" TextWrapping="Wrap" Text="МЛ2" Canvas.Top="377"/>
+        <TextBlock Canvas.Left="525" TextWrapping="Wrap" Text="МЛ1" Canvas.Top="746"/>
+        <TextBlock Canvas.Left="710" TextWrapping="Wrap" Text="КВ1" Canvas.Top="667"/>
+        <TextBlock Canvas.Left="710" TextWrapping="Wrap" Text="КВ3" Canvas.Top="596"/>
+        <TextBlock Canvas.Left="710" TextWrapping="Wrap" Text="КВ2" Canvas.Top="536"/>
+        <Path  Width="4.98"   Height="5"   Canvas.Left="210.01" Canvas.Top="625"     Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 260.281,520.261C 260.281,519.747 259.867,519.32 259.355,519.32C 258.855,519.32 258.441,519.747 258.441,520.261C 258.441,520.776 258.855,521.175 259.355,521.175C 259.867,521.175 260.281,520.776 260.281,520.261 Z "/>
+        <Path  Width="8.984"   Height="1"   Canvas.Left="208.008" Canvas.Top="623.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path x:Name="Line_207_Copy69" Width="1.788" Height="6.891" Canvas.Left="211.106" Canvas.Top="618.054" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path  Width="4.98"   Height="5"   Canvas.Left="210.01" Canvas.Top="631"     Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 260.281,520.261C 260.281,519.747 259.867,519.32 259.355,519.32C 258.855,519.32 258.441,519.747 258.441,520.261C 258.441,520.776 258.855,521.175 259.355,521.175C 259.867,521.175 260.281,520.776 260.281,520.261 Z "/>
+        <Path  Width="8.984"   Height="1"   Canvas.Left="208.008" Canvas.Top="636.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path x:Name="Line_207_Copy70" Width="1.788" Height="6.891" Canvas.Left="211.106" Canvas.Top="637.054" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Rectangle Height="14" Canvas.Left="185" Stroke="Black" StrokeLineJoin="Round" Canvas.Top="624" Width="14" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="45"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Height="15" Canvas.Left="172" Stroke="Black" StrokeLineJoin="Round" Canvas.Top="623" Width="6"/>
+        <Path Width="5.463" Height="4.422" Canvas.Left="178" Canvas.Top="628" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 483.954,503.091L 474.643,503.091" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path Width="5.463" Height="4.422" Canvas.Left="167" Canvas.Top="628" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 483.954,503.091L 474.643,503.091" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path x:Name="Path_568_Copy2" Width="16.66" Height="16.66" Canvas.Left="150.17" Canvas.Top="622.17" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 622.492,632.432C 622.492,629.383 619.982,626.901 616.93,626.901C 613.88,626.901 611.399,629.383 611.399,632.432C 611.399,635.515 613.88,637.996 616.93,637.996C 619.982,637.996 622.492,635.515 622.492,632.432 Z "/>
+        <Path x:Name="Line_207_Copy71" Width="1.786" Height="111.688" Canvas.Left="219.107" Canvas.Top="578.156" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeThickness="3" StrokeStartLineCap="Square" StrokeEndLineCap="Square"/>
+        <Path x:Name="Line_207_Copy77" Width="1.788" Height="17.435" Canvas.Left="219.106" Canvas.Top="714" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path Width="18.888" Height="1" Canvas.Left="211.056" Canvas.Top="729.106" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 483.954,503.091L 474.643,503.091" StrokeStartLineCap="Square" StrokeEndLineCap="Square" StrokeDashCap="Square"/>
+        <TextBlock Canvas.Left="93" TextWrapping="Wrap" Text="МТ-ДП" Canvas.Top="392"/>
+        <TextBlock Canvas.Left="57" TextWrapping="Wrap" Text="МДП" Canvas.Top="449"/>
+        <TextBlock Canvas.Left="148" TextWrapping="Wrap" Text="ДИ" Canvas.Top="604"/>
+        <TextBlock Canvas.Left="255" TextWrapping="Wrap" Text="SQС" Canvas.Top="691"/>
+        <TextBlock Canvas.Left="467" TextWrapping="Wrap" Text="ТД" Canvas.Top="436"/>
+        <TextBlock Canvas.Left="271" TextWrapping="Wrap" Text="SQП " Canvas.Top="526"/>
+        <TextBlock Canvas.Left="887" TextWrapping="Wrap" Canvas.Top="350" Height="18" Width="307" Text="БА1,БА2  - БЛОК АППАРАТУРЫ 1,2"/>
+        <TextBlock Canvas.Left="887" TextWrapping="Wrap" Text="МЛ1, МЛ2 ДВИГАТЕЛЬ ЛЕБЕДКИ 1, 2&#xA;" Canvas.Top="378" Height="19" Width="307"/>
+        <TextBlock Canvas.Left="887" TextWrapping="Wrap" Text="МДП - ДВИГАТЕЛЬ ДОП. ПРИВОДА" Canvas.Top="405" Height="18" Width="307"/>
+        <TextBlock Canvas.Left="889" TextWrapping="Wrap" Text="МТ-ДП - ГИДРОТОЛКАТЕЛЬ ТОРМОЗА ДОП. ПРИВОДА" Canvas.Top="430" Height="19" Width="307"/>
+        <TextBlock Canvas.Left="889" TextWrapping="Wrap" Text="ТД - ТОРМОЗ ДИСКОВЫЙ" Canvas.Top="461" Height="20" Width="307"/>
+        <TextBlock Canvas.Left="889" TextWrapping="Wrap" Canvas.Top="494" Height="53" Width="307"><Run Text="БА1-P1, БА1-P2 - РАСПРЕДЕЛИТЕЛИ ВОЗДУХА "/><Run Text="&#x9;&#x9;&#x9;ВКЛЮЧЕНИЯ/ОТКЛЮЧЕНИЯ МУФТЫ &#x9;&#x9;ДОП. ПРИВОДА"/></TextBlock>
+        <TextBlock Canvas.Left="889" TextWrapping="Wrap" Text="БА2-P1, БА2-P2 - РАСПРЕДЕЛИТЕЛИ ВОЗДУХА НА &#x9;&#x9;&#x9;РАСТОРМАЖИВАНИЕ ТОРМОЗА ТД" Canvas.Top="558" Height="42" Width="307"/>
+        <TextBlock Canvas.Left="889" TextWrapping="Wrap" Text="БА2-P3 - РАСПРЕДЕЛИТЕЛЬ ВОЗДУХА НА &#x9; &#x9;&#x9; ЗАТОРМАЖИВАНИЕ ТД" Canvas.Top="602" Height="37" Width="317"/>
+        <TextBlock Canvas.Left="889" TextWrapping="Wrap" Text="КВ1,КВ2,КВ3 - КРАН ВЫПУСКНОЙ 1,2,3" Canvas.Top="649" Height="22" Width="317"/>
+        <BrakeScheme:AirBrakeControl3 Height="28" Canvas.Left="729" Canvas.Top="614" Width="44"  open="{Binding modules[tags_mod].objects[тормоз_воздушный_клапан9].value, FallbackValue=true}" RenderTransformOrigin="0.5,0.5">
+            <BrakeScheme:AirBrakeControl3.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </BrakeScheme:AirBrakeControl3.RenderTransform>
+        </BrakeScheme:AirBrakeControl3>
+
+        <BrakeScheme:AirBrakeControl3 Height="28" Canvas.Left="729" Canvas.Top="562" Width="44"  open="{Binding modules[tags_mod].objects[тормоз_воздушный_клапан9].value, FallbackValue=false}" RenderTransformOrigin="0.5,0.5">
+            <BrakeScheme:AirBrakeControl3.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </BrakeScheme:AirBrakeControl3.RenderTransform>
+        </BrakeScheme:AirBrakeControl3>
+
+        <BrakeScheme:HydroControl1 Height="50" Width="50" Canvas.Left="772" Canvas.Top="238" open="True" >
+            <BrakeScheme:HydroControl1.LayoutTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </BrakeScheme:HydroControl1.LayoutTransform>
+        </BrakeScheme:HydroControl1>
+
+
+
+        <BrakeScheme:AirBrakeControl Template="{StaticResource AirTemplate1}" Canvas.Left="675" Canvas.Top="237" Height="32" Width="27" open="True"/>
+
+        <BrakeScheme:AirBrakeControl  Template="{StaticResource AirTemplate1}" Canvas.Left="600" Canvas.Top="237" Height="32" Width="27"/>
+
+
+
+        <BrakeScheme:AirBrakeControl Template="{StaticResource AirTemplate2}" Canvas.Left="294" Canvas.Top="188" Height="33" Width="25">
+            <BrakeScheme:AirBrakeControl.open>
+                <hmi:Bind Path="Tags.Node[view.main_drives.drawwork.brake_scheme].Items[ba1_r2].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>False</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </BrakeScheme:AirBrakeControl.open>
+        </BrakeScheme:AirBrakeControl>
+
+        <BrakeScheme:AirBrakeControl3 Height="16" Canvas.Left="783" Canvas.Top="84" Width="29"  open="{Binding modules[tags_mod].objects[тормоз_воздушный_клапан9].value, FallbackValue=false}" RenderTransformOrigin="0.5,0.5"/>
+
+        <BrakeScheme:AirBrakeControl Template="{StaticResource AirTemplate2}" Canvas.Left="250" Canvas.Top="244" Height="33" Width="25">
+            <BrakeScheme:AirBrakeControl.open>
+                <hmi:Bind Path="Tags.Node[view.main_drives.drawwork.brake_scheme].Items[ba1_r1].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>False</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </BrakeScheme:AirBrakeControl.open>
+        </BrakeScheme:AirBrakeControl>
+
+        <BrakeScheme:AirBrakeControl Template="{StaticResource stopor}" Canvas.Left="194" Canvas.Top="684" Height="33" Width="36">
+            <BrakeScheme:AirBrakeControl.open>
+                <hmi:Bind Path="Tags.Node[view.main_drives.drawwork].Items[stopor_zelenyj].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>false</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </BrakeScheme:AirBrakeControl.open>
+        </BrakeScheme:AirBrakeControl>
+
+        <BrakeScheme:AirBrakeControl Template="{StaticResource joystick}" Canvas.Left="675" Canvas.Top="70" Height="37" Width="29"/>
+
+        <BrakeScheme:AirBrakeControl Template="{StaticResource porshen}" Canvas.Left="148" Canvas.Top="351" Height="18" Width="70"/>
+
+        <BrakeScheme:AirBrakeControl Template="{StaticResource mufta}" Canvas.Left="288" Canvas.Top="392" Height="53" Width="49"/>
+
+        <se:VisualBox HorizontalAlignment="Left" VerticalAlignment="Center" Width="22" Height="22" Style="{StaticResource sqk}" Canvas.Top="322" Canvas.Left="212">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource LedOkBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.main_drives.drawwork.brake_scheme].Items[sqdp1_zelenyj].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="{StaticResource LedBadBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.main_drives.drawwork.brake_scheme].Items[sqdp1_krasnyj].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox HorizontalAlignment="Left" VerticalAlignment="Center" Width="22" Height="22" Style="{StaticResource sqk}" Canvas.Top="322" Canvas.Left="274">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource LedOkBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.main_drives.drawwork.brake_scheme].Items[sqdp2_zelenyj].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="{StaticResource LedBadBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.main_drives.drawwork.brake_scheme].Items[sqdp2_krasnyj].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox HorizontalAlignment="Left" VerticalAlignment="Center" Width="22" Height="22" Style="{StaticResource VB_LampStyle}" Canvas.Top="413" Canvas.Left="102">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource LedOkBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump1].Items[booster_work].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="{StaticResource LedBadBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump1].Items[booster_emer].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox HorizontalAlignment="Left" VerticalAlignment="Center" Width="22" Height="22" Style="{StaticResource sqk}" Canvas.Top="712" Canvas.Left="255">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource LedOkBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.main_drives.drawwork].Items[stopor_zelenyj].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="{StaticResource LedBadBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.main_drives.drawwork].Items[stopor_krasnyj].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox HorizontalAlignment="Left" VerticalAlignment="Center" Width="22" Height="22" Style="{StaticResource sqk}" Canvas.Top="547" Canvas.Left="271">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource LedOkBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.main_drives.drawwork].Items[perepodem_zelenyj].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="{StaticResource LedBadBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.main_drives.drawwork].Items[perepodem_krasnyj].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox Canvas.Left="518" Canvas.Top="767" Height="40" Width="40" BorderBrush="{x:Null}" Style="{StaticResource Motor}">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource MediaBoxFineSolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.scheme].Items[drawwork1_m_green].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="{StaticResource MediaBoxEmergencySolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.scheme].Items[drawwork1_m_red].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <Grid Height="60" Canvas.Left="558" Canvas.Top="756" Width="105">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="А" VerticalAlignment="Top" Height="21" FontSize="14"/>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="кВт" VerticalAlignment="Top" Height="21" FontSize="14" Grid.Row="1" Grid.RowSpan="2"/>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="об/мин" VerticalAlignment="Top" Height="21" FontSize="14" Grid.Row="2"/>
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{hmi:Bind Tags.Node[view.main_drives.drawwork.motor1].Items[current].Value, FallbackValue=0}" VerticalAlignment="Top" Height="21" FontSize="14" Margin="0,0,5,0"/>
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{hmi:Bind Tags.Node[view.main_drives.drawwork.motor1].Items[power].Value, FallbackValue=0}" VerticalAlignment="Top" Height="21" FontSize="14" Margin="0,0,5,0" Grid.Row="1" Grid.RowSpan="2"/>
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{hmi:Bind Tags.Node[view.main_drives.drawwork.motor1].Items[rpm].Value, FallbackValue=0}" VerticalAlignment="Top" Height="21" FontSize="14" Margin="0,0,5,0" Grid.Row="2"/>
+        </Grid>
+        <se:VisualBox Canvas.Left="517" Canvas.Top="398" Height="40" Width="40" BorderBrush="{x:Null}" Style="{StaticResource Motor}">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource MediaBoxFineSolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.scheme].Items[drawwork2_m_green].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="{StaticResource MediaBoxEmergencySolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.scheme].Items[drawwork2_m_red].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <Grid Height="60" Canvas.Left="565" Canvas.Top="398" Width="105">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="А" VerticalAlignment="Top" Height="21" FontSize="14"/>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="кВт" VerticalAlignment="Top" Height="21" FontSize="14" Grid.Row="1" Grid.RowSpan="2"/>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="об/мин" VerticalAlignment="Top" Height="21" FontSize="14" Grid.Row="2"/>
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{hmi:Bind Tags.Node[view.main_drives.drawwork.motor2].Items[current].Value, FallbackValue=0}" VerticalAlignment="Top" Height="21" FontSize="14" Margin="0,0,5,0"/>
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{hmi:Bind Tags.Node[view.main_drives.drawwork.motor2].Items[power].Value, FallbackValue=0}" VerticalAlignment="Top" Height="21" FontSize="14" Margin="0,0,5,0" Grid.Row="1" Grid.RowSpan="2"/>
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{hmi:Bind Tags.Node[view.main_drives.drawwork.motor2].Items[rpm].Value, FallbackValue=0}" VerticalAlignment="Top" Height="21" FontSize="14" Margin="0,0,5,0" Grid.Row="2"/>
+        </Grid>
+        <se:VisualBox Canvas.Left="50" Canvas.Top="471" Height="40" Width="40" BorderBrush="{x:Null}" Style="{StaticResource Motor}">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource MediaBoxFineSolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.scheme].Items[aux_m_green].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="{StaticResource MediaBoxEmergencySolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.scheme].Items[aux_m_red].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <Grid Height="60" Canvas.Top="516" Width="105" Canvas.Left="6">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="А" VerticalAlignment="Top" FontSize="14" Grid.RowSpan="2"/>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="кВт" VerticalAlignment="Top" FontSize="14" Grid.Row="1" Grid.RowSpan="2"/>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0,0,0,-1" TextWrapping="Wrap" Text="об/мин" VerticalAlignment="Top" FontSize="14" Grid.Row="2"/>
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{hmi:Bind Tags.Node[view.main_drives.aux].Items[current].Value, FallbackValue=0}" VerticalAlignment="Top" Height="21" FontSize="14" Margin="0,0,5,0" Grid.RowSpan="2"/>
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{hmi:Bind Tags.Node[view.main_drives.aux].Items[power].Value, FallbackValue=0}" VerticalAlignment="Top" Height="21" FontSize="14" Margin="0,0,5,0" Grid.Row="1" Grid.RowSpan="2"/>
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{hmi:Bind Tags.Node[view.main_drives.aux].Items[rpm].Value, FallbackValue=0}" VerticalAlignment="Top" Height="21" FontSize="14" Margin="0,0,5,-1" Grid.Row="2"/>
+        </Grid>
+        <Rectangle Height="14" Canvas.Left="185" Stroke="Black" StrokeLineJoin="Round" Canvas.Top="705" Width="14" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="45"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Height="14" Canvas.Left="172" Stroke="Black" StrokeLineJoin="Round" Canvas.Top="704" Width="6"/>
+        <Path Width="5.463" Height="4.422" Canvas.Left="178" Canvas.Top="708" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 483.954,503.091L 474.643,503.091" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path Width="5.463" Height="4.422" Canvas.Left="167" Canvas.Top="708" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 483.954,503.091L 474.643,503.091" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Path x:Name="Path_568_Copy" Width="16.66" Height="16.66" Canvas.Left="150.17" Canvas.Top="703.17" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 622.492,632.432C 622.492,629.383 619.982,626.901 616.93,626.901C 613.88,626.901 611.399,629.383 611.399,632.432C 611.399,635.515 613.88,637.996 616.93,637.996C 619.982,637.996 622.492,635.515 622.492,632.432 Z "/>
+        <TextBlock Canvas.Left="148" TextWrapping="Wrap" Text="СКПБ" Canvas.Top="684"/>
+        <Grid Height="50" Canvas.Left="14" Canvas.Top="597" Width="105">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="м" VerticalAlignment="Top" FontSize="14" Grid.RowSpan="2"/>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="м/с" VerticalAlignment="Top" Height="21" FontSize="14" Grid.Row="1">
+                <TextBlock.Visibility>
+                    <hmi:Bind Path="Tags.Node[view.main_drives.drawwork].Items[meters_in_sec].Value">
+                        <hmi:Bind.FallbackValue>
+                            <Visibility>Visible</Visibility>
+                        </hmi:Bind.FallbackValue>
+                    </hmi:Bind>
+                </TextBlock.Visibility>
+            </TextBlock>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="м/ч" VerticalAlignment="Top" FontSize="14" Grid.Row="1">
+                <TextBlock.Visibility>
+                    <hmi:Bind Path="Tags.Node[view.main_drives.drawwork].Items[meters_in_hour].Value">
+                        <hmi:Bind.FallbackValue>
+                            <Visibility>Visible</Visibility>
+                        </hmi:Bind.FallbackValue>
+                    </hmi:Bind>
+                </TextBlock.Visibility>
+            </TextBlock>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="имп" VerticalAlignment="Top" FontSize="14" Grid.Row="2"/>
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.main_drives.drawwork].Items[tb_position].Value}" VerticalAlignment="Top" Height="21" FontSize="14" Margin="0,0,5,0" Grid.RowSpan="2"/>
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.main_drives.drawwork].Items[real].Value}" VerticalAlignment="Top" Height="21" FontSize="14" Margin="0,0,5,0" Grid.Row="1"/>
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{hmi:Bind Tags.Node[view.main_drives.aux].Items[rpm].Value, FallbackValue=0}" VerticalAlignment="Top" Height="21" FontSize="14" Margin="0,0,5,0" Grid.Row="2"/>
+        </Grid>
+        <Grid Height="40" Canvas.Left="14" Canvas.Top="691" Width="105">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="м" VerticalAlignment="Top" FontSize="14" Grid.RowSpan="2"/>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="м/ч" VerticalAlignment="Top" FontSize="14" Grid.Row="1"/>
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.main_drives.drawwork].Items[tb_pos_msab].Value}" VerticalAlignment="Top" Height="21" FontSize="14" Margin="0,0,5,0" Grid.RowSpan="2"/>
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.msab].Items[skorost_prohodki].Value}" VerticalAlignment="Top" Height="21" FontSize="14" Margin="0,0,5,-1" Grid.Row="1"/>
+        </Grid>
+
+        <Path x:Name="Path_348_Copy2" Width="4.706" Height="28.53" Canvas.Left="258.147" Canvas.Top="549.235" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 349.878,286.963L 350.293,284.026L 349.48,284.026L 349.878,286.963 Z " RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="360"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Path  Width="4.98"   Height="5"   Canvas.Left="258.01" Canvas.Top="544"     Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 260.281,520.261C 260.281,519.747 259.867,519.32 259.355,519.32C 258.855,519.32 258.441,519.747 258.441,520.261C 258.441,520.776 258.855,521.175 259.355,521.175C 259.867,521.175 260.281,520.776 260.281,520.261 Z "/>
+        <Rectangle Fill="{StaticResource EllipseBrush}" Height="10" Canvas.Left="221" Canvas.Top="582" Width="180"/>
+        <Rectangle Fill="{StaticResource EllipseBrush}" Height="10" Canvas.Left="226" Canvas.Top="573" Width="30"/>
+        <Line Width="1" Height="62" Canvas.Left="191" Canvas.Top="640" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" StrokeEndLineCap="Square" StrokeStartLineCap="Square" Y1="30" StrokeDashArray="5 5"/>
+        <Path x:Name="Path_348_Copy4" Width="4.706" Height="8.764" Canvas.Left="258.147" Canvas.Top="536.118" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 349.878,286.963L 350.293,284.026L 349.48,284.026L 349.878,286.963 Z " RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="360"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Path Width="38.92" Height="4.422" Canvas.Left="219.04" Canvas.Top="545" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 483.954,503.091L 474.643,503.091" StrokeEndLineCap="Square" StrokeStartLineCap="Square"/>
+        <Rectangle Fill="{StaticResource SpringBrush}" Height="10" Canvas.Left="568" Canvas.Top="559" Width="77"/>
+        <Rectangle Fill="{StaticResource SpringBrush}" Height="10" Canvas.Left="570" Canvas.Top="689" Width="75"/>
+
+        <Path  Width="160.677"   Height="1"   Canvas.Left="700.162" Canvas.Top="92" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Path x:Name="Path_348_Copy5" Width="4.706" Height="9.862" Canvas.Left="863.147" Canvas.Top="88.069" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 349.878,286.963L 350.293,284.026L 349.48,284.026L 349.878,286.963 Z " RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="270"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+
+        <Path  Width="275.614"   Height="1"   Canvas.Left="401.5" Canvas.Top="102" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square" RenderTransformOrigin="0.5,0.5"/>
+        <Path  Width="275.614"   Height="1"   Canvas.Left="401.5" Canvas.Top="102" Stretch="Fill" StrokeLineJoin="Round" Stroke="{StaticResource Pnevmo}" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square" RenderTransformOrigin="0.5,0.5">
+            <Path.Visibility>
+                <hmi:Bind Path="Tags.Node[view.main_drives.drawwork.brake_scheme].Items[tube1].Value">
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Path.Visibility>
+        </Path>
+
+
+
+        <Lebedka:Tormoz_vb Canvas.Left="698" Canvas.Top="409" Width="165" Height="57"/>
+        <se:ValueDisplay Value="{hmi:Bind Tags.Node[view.compressor].Items[pressure_in_system].Value}" Header="ДАВЛЕНИЕ В СЕТИ&#xA;" Label="МПа" Canvas.Left="431" Canvas.Top="162" Width="113" Height="52" HeaderLength="15" HeaderFontSize="12"/>
+        <se:ValueDisplay Value="{hmi:Bind Tags.Node[view.main_drives.drawwork].Items[davlenie_masla_v_rabochem_tormoze].Value}" Header="ДАВЛЕНИЕ В ТОРМОЗЕ&#xA;" Label="МПа" Canvas.Left="618" Canvas.Top="295" Width="135" Height="52" HeaderLength="15" HeaderFontSize="12"/>
+
+        <se:VisualBox HorizontalAlignment="Left" VerticalAlignment="Center" Width="22" Height="22" Style="{StaticResource VB_LedStyle}" Canvas.Top="219" Canvas.Left="221">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource LedOkBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.main_drives.drawwork.brake_scheme].Items[ba1_r1].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox HorizontalAlignment="Left" VerticalAlignment="Center" Width="22" Height="22" Style="{StaticResource VB_LedStyle}" Canvas.Top="162" Canvas.Left="277">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource LedOkBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.main_drives.drawwork.brake_scheme].Items[ba1_r2].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox HorizontalAlignment="Left" VerticalAlignment="Center" Width="22" Height="22" Style="{StaticResource VB_LedStyle}" Canvas.Top="219" Canvas.Left="653">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource LedOkBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.main_drives.drawwork.brake_scheme].Items[ba2_r1].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox HorizontalAlignment="Left" VerticalAlignment="Center" Width="22" Height="22" Style="{StaticResource VB_LedStyle}" Canvas.Top="219" Canvas.Left="577">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource LedOkBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.main_drives.drawwork.brake_scheme].Items[ba2_r2].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox HorizontalAlignment="Left" VerticalAlignment="Center" Width="22" Height="22" Style="{StaticResource VB_LedStyle}" Canvas.Top="219" Canvas.Left="764">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource LedOkBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.main_drives.drawwork.brake_scheme].Items[ba2_r3].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="{StaticResource LedBadBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.main_drives.drawwork.brake_scheme].Items[ba2_r3_ext].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <Path  Width="3" Height="190.175" Canvas.Left="400.052" Canvas.Top="68" Stretch="Fill" StrokeLineJoin="Round" Stroke="{StaticResource Pnevmo}" Data="F1 M 494.735,493.91L 494.735,658.302" StrokeEndLineCap="Square" StrokeStartLineCap="Square">
+            <Path.Visibility>
+                <hmi:Bind Path="Tags.Node[view.main_drives.drawwork.brake_scheme].Items[tube1].Value">
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Path.Visibility>
+        </Path>
+        <Path  Width="83"   Height="1"   Canvas.Left="318" Canvas.Top="202" Stretch="Fill" StrokeLineJoin="Round" Stroke="{StaticResource Pnevmo}" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square" RenderTransformOrigin="0.5,0.5">
+            <Path.Visibility>
+                <hmi:Bind Path="Tags.Node[view.main_drives.drawwork.brake_scheme].Items[tube1].Value">
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Path.Visibility>
+        </Path>
+        <Path  Width="64.177"   Height="1"   Canvas.Left="796.662" Canvas.Top="92" Stretch="Fill" StrokeLineJoin="Round" Stroke="{StaticResource Pnevmo}" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square" RenderTransformOrigin="0.5,0.5">
+            <Path.Visibility>
+                <hmi:Bind Path="Tags.Node[view.main_drives.drawwork.brake_scheme].Items[tube11].Value">
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Path.Visibility>
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Path  Width="96.677"   Height="1"   Canvas.Left="700.162" Canvas.Top="92" Stretch="Fill" StrokeLineJoin="Round" Stroke="{StaticResource Pnevmo}" Data="F1 M 256.245,519.008L 260.295,519.008" StrokeStartLineCap="Square" StrokeEndLineCap="Square" RenderTransformOrigin="0.5,0.5">
+            <Path.Visibility>
+                <hmi:Bind Path="Tags.Node[view.main_drives.drawwork.brake_scheme].Items[tube6].Value">
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Path.Visibility>
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+
+    </Canvas>
+</UserControl>

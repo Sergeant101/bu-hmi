@@ -1,0 +1,1619 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:style="clr-namespace:NGO.Elements.style;assembly=NGO.Elements"
+    xmlns:hmi="http://schemas.monokot.com/hmi/"
+    xmlns:se="http://schemas.monokot.com/se/"
+             xmlns:msab="clr-namespace:NGO.Elements.Gauges.Small.Msab;assembly=NGO.Elements"
+             xmlns:System="clr-namespace:System;assembly=mscorlib"
+             xmlns:Message="clr-namespace:NGO.Elements.Message;assembly=NGO.Elements"
+             x:Class="VFD.Frames.Sub.n159.Pult_Nasosov" 
+             mc:Ignorable="d" 
+             Height="810" Width="1270">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <Style TargetType="{x:Type se:HmiButton}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate>
+                            <Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="2"/>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <DrawingBrush x:Key="Switcher" Stretch="Uniform">
+                <DrawingBrush.Drawing>
+                    <DrawingGroup>
+                        <GeometryDrawing Geometry="F1 M 35.8655,35.9186C 77.5354,-5.75066 145.093,-5.75066 186.761,35.9186C 228.432,77.5873 228.432,145.146 186.761,186.814C 145.093,228.483 77.5354,228.483 35.8655,186.814C -5.80249,145.146 -5.80182,77.5873 35.8655,35.9186 Z ">
+                            <GeometryDrawing.Brush>
+                                <RadialGradientBrush RadiusX="0.908822" RadiusY="0.90882" Center="0.44333,0.967654" GradientOrigin="0.44333,0.967654">
+                                    <RadialGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <RotateTransform CenterX="0.44333" CenterY="0.967654" Angle="-81.7772"/>
+                                        </TransformGroup>
+                                    </RadialGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#FF2D2D2D" Offset="0"/>
+                                    <GradientStop Color="#FF1D1B1B" Offset="0.701581"/>
+                                    <GradientStop Color="#FF0D0A09" Offset="1"/>
+                                </RadialGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                        <GeometryDrawing Geometry="F1 M 111.314,222.733C 81.5672,222.733 53.6004,211.148 32.566,190.113C -10.8553,146.693 -10.8553,76.041 32.5654,32.6191C 53.6004,11.5839 81.5672,-7.62939e-006 111.314,-7.62939e-006C 141.061,-7.62939e-006 169.027,11.5839 190.061,32.6191C 211.096,53.653 222.681,81.6198 222.681,111.367C 222.681,141.113 211.096,169.079 190.061,190.113C 169.027,211.148 141.061,222.733 111.314,222.733 Z M 111.314,9.33327C 84.0602,9.33327 58.4371,19.9466 39.165,39.2187C -0.616364,79.0013 -0.616364,143.732 39.1656,183.514C 58.4371,202.785 84.0602,213.4 111.314,213.4C 138.567,213.4 164.191,202.785 183.462,183.514C 202.734,164.242 213.347,138.62 213.347,111.367C 213.347,84.1126 202.734,58.4902 183.462,39.2187C 164.191,19.9466 138.567,9.33327 111.314,9.33327 Z ">
+                            <GeometryDrawing.Brush>
+                                <LinearGradientBrush StartPoint="-0.048748,0.5" EndPoint="1,0.5">
+                                    <GradientStop Color="#FFA6A6A6" Offset="0"/>
+                                    <GradientStop Color="#FF6E6E6E" Offset="0.0810269"/>
+                                    <GradientStop Color="#FF363636" Offset="0.162056"/>
+                                    <GradientStop Color="#FF565656" Offset="0.250107"/>
+                                    <GradientStop Color="#FF777777" Offset="0.347826"/>
+                                    <GradientStop Color="#FF7B7B7B" Offset="0.436725"/>
+                                    <GradientStop Color="#FF808080" Offset="0.565218"/>
+                                    <GradientStop Color="#FF5C5C5C" Offset="0.688625"/>
+                                    <GradientStop Color="#FF383838" Offset="0.750988"/>
+                                    <GradientStop Color="#FF4C4C4C" Offset="0.816182"/>
+                                    <GradientStop Color="#FF616161" Offset="0.881423"/>
+                                    <GradientStop Color="#FF7F7F7F" Offset="0.940348"/>
+                                    <GradientStop Color="#FF9E9E9E" Offset="1"/>
+                                </LinearGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                        <GeometryDrawing Geometry="F1 M 111.34,9.86659C 167.397,9.86659 212.84,55.3097 212.84,111.367C 212.84,167.423 167.397,212.867 111.34,212.867C 55.2834,212.867 9.84027,167.423 9.84027,111.367C 9.84027,55.3097 55.2834,9.86659 111.34,9.86659 Z ">
+                            <GeometryDrawing.Pen>
+                                <Pen Thickness="2" LineJoin="Round" Brush="#FFC0C0C0"/>
+                            </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                        <GeometryDrawing Geometry="F1 M 146.507,246.533C 146.507,253.897 140.537,259.867 133.174,259.867L 86.5069,259.867C 79.143,259.867 73.1736,253.897 73.1736,246.533L 73.1736,39.8666C 73.1736,32.5027 79.143,26.5332 86.5069,26.5332L 133.174,26.5332C 140.537,26.5332 146.507,32.5027 146.507,39.8666L 146.507,246.533 Z ">
+                            <GeometryDrawing.Brush>
+                                <RadialGradientBrush RadiusX="1.17919" RadiusY="0.370603" Center="0.5,0.5" GradientOrigin="0.5,0.5">
+                                    <RadialGradientBrush.RelativeTransform>
+                                        <TransformGroup/>
+                                    </RadialGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#FF2D2D2D" Offset="0"/>
+                                    <GradientStop Color="#FF222121" Offset="0.587886"/>
+                                    <GradientStop Color="#FF181615" Offset="0.837945"/>
+                                    <GradientStop Color="#FF12100F" Offset="0.922928"/>
+                                    <GradientStop Color="#FF0D0A09" Offset="1"/>
+                                </RadialGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                        <GeometryDrawing Geometry="F1 M 147.174,247.2C 147.174,254.563 141.204,260.533 133.84,260.533L 87.1736,260.533C 79.8097,260.533 73.8402,254.563 73.8402,247.2L 73.8402,40.5332C 73.8402,33.1694 79.8097,27.1999 87.1736,27.1999L 133.84,27.1999C 141.204,27.1999 147.174,33.1694 147.174,40.5332L 147.174,247.2 Z ">
+                            <GeometryDrawing.Pen>
+                                <Pen Thickness="1.33333" MiterLimit="2.75" Brush="#FFA6A6A6"/>
+                            </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                        <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M 118.507,114.533C 118.507,116.742 116.717,118.533 114.507,118.533L 107.84,118.533C 105.631,118.533 103.84,116.742 103.84,114.533L 103.84,39.8666C 103.84,37.6576 105.631,35.8666 107.84,35.8666L 114.507,35.8666C 116.717,35.8666 118.507,37.6576 118.507,39.8666L 118.507,114.533 Z "/>
+                    </DrawingGroup>
+                </DrawingBrush.Drawing>
+            </DrawingBrush>
+
+            <DrawingBrush x:Key="SwitcherBig" Stretch="Uniform">
+                <DrawingBrush.Drawing>
+                    <DrawingGroup>
+                        <GeometryDrawing Geometry="F1 M 471.122,437.939C 471.122,448.719 462.382,457.458 451.603,457.458L 22.1856,457.458C 11.4055,457.458 2.66666,448.719 2.66666,437.939L 2.66666,22.1856C 2.66666,11.4063 11.4055,2.66664 22.1856,2.66664L 451.603,2.66664C 462.382,2.66664 471.122,11.4063 471.122,22.1856L 471.122,437.939 Z ">
+                            <GeometryDrawing.Brush>
+                                <RadialGradientBrush RadiusX="0.5" RadiusY="0.515021" Center="0.5,0.5" GradientOrigin="0.5,0.5">
+                                    <RadialGradientBrush.RelativeTransform>
+                                        <TransformGroup/>
+                                    </RadialGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#FFFCFCFC" Offset="0"/>
+                                    <GradientStop Color="#FFFFFFFF" Offset="1"/>
+                                </RadialGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                        <GeometryDrawing Geometry="F1 M 471.122,437.939C 471.122,448.719 462.382,457.458 451.603,457.458L 22.1856,457.458C 11.4055,457.458 2.66666,448.719 2.66666,437.939L 2.66666,22.1856C 2.66666,11.4063 11.4055,2.66664 22.1856,2.66664L 451.603,2.66664C 462.382,2.66664 471.122,11.4063 471.122,22.1856L 471.122,437.939 Z ">
+                            <GeometryDrawing.Pen>
+                                <Pen Thickness="5.33333" MiterLimit="2.75" Brush="#FF000000"/>
+                            </GeometryDrawing.Pen>
+                            <GeometryDrawing.Brush>
+                                <RadialGradientBrush RadiusX="0.52277" RadiusY="0.538475" Center="0.5,0.5" GradientOrigin="0.5,0.5">
+                                    <RadialGradientBrush.RelativeTransform>
+                                        <TransformGroup/>
+                                    </RadialGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#FFFCFCFC" Offset="0"/>
+                                    <GradientStop Color="#FFFFFFFF" Offset="1"/>
+                                </RadialGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                        <GeometryDrawing Geometry="F1 M 147.754,118.631C 196.968,69.4174 276.759,69.4174 325.971,118.631C 375.187,167.845 375.187,247.636 325.971,296.848C 276.759,346.062 196.968,346.062 147.754,296.848C 98.541,247.636 98.5418,167.845 147.754,118.631 Z ">
+                            <GeometryDrawing.Brush>
+                                <RadialGradientBrush RadiusX="0.908822" RadiusY="0.90882" Center="0.44333,0.967654" GradientOrigin="0.44333,0.967654">
+                                    <RadialGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <RotateTransform CenterX="0.44333" CenterY="0.967654" Angle="-81.7772"/>
+                                        </TransformGroup>
+                                    </RadialGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#FF2D2D2D" Offset="0"/>
+                                    <GradientStop Color="#FF1D1B1B" Offset="0.701581"/>
+                                    <GradientStop Color="#FF0D0A09" Offset="1"/>
+                                </RadialGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                        <GeometryDrawing Geometry="F1 M 236.863,339.271C 201.73,339.271 168.7,325.589 143.857,300.745C 92.5734,249.463 92.5734,166.019 143.856,114.735C 168.7,89.8906 201.73,76.2093 236.863,76.2093C 271.996,76.2093 305.026,89.8906 329.868,114.735C 354.712,139.577 368.394,172.607 368.394,207.74C 368.394,242.873 354.712,275.903 329.868,300.745C 305.026,325.589 271.996,339.271 236.863,339.271 Z M 236.863,87.2325C 204.675,87.2325 174.412,99.7675 151.65,122.529C 104.666,169.515 104.666,245.966 151.651,292.951C 174.412,315.711 204.675,328.248 236.863,328.248C 269.051,328.248 299.314,315.711 322.074,292.951C 344.836,270.19 357.371,239.928 357.371,207.74C 357.371,175.552 344.836,145.29 322.074,122.529C 299.314,99.7675 269.051,87.2325 236.863,87.2325 Z ">
+                            <GeometryDrawing.Brush>
+                                <LinearGradientBrush StartPoint="-0.048748,0.5" EndPoint="1,0.5">
+                                    <GradientStop Color="#FFA6A6A6" Offset="0"/>
+                                    <GradientStop Color="#FF6E6E6E" Offset="0.0810269"/>
+                                    <GradientStop Color="#FF363636" Offset="0.162056"/>
+                                    <GradientStop Color="#FF565656" Offset="0.250107"/>
+                                    <GradientStop Color="#FF777777" Offset="0.347826"/>
+                                    <GradientStop Color="#FF7B7B7B" Offset="0.436725"/>
+                                    <GradientStop Color="#FF808080" Offset="0.565218"/>
+                                    <GradientStop Color="#FF5C5C5C" Offset="0.688625"/>
+                                    <GradientStop Color="#FF383838" Offset="0.750988"/>
+                                    <GradientStop Color="#FF4C4C4C" Offset="0.816182"/>
+                                    <GradientStop Color="#FF616161" Offset="0.881423"/>
+                                    <GradientStop Color="#FF7F7F7F" Offset="0.940348"/>
+                                    <GradientStop Color="#FF9E9E9E" Offset="1"/>
+                                </LinearGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                        <GeometryDrawing Geometry="F1 M 236.894,87.8624C 303.101,87.8624 356.772,141.534 356.772,207.74C 356.772,273.947 303.101,327.618 236.894,327.618C 170.687,327.618 117.016,273.947 117.016,207.74C 117.016,141.534 170.687,87.8624 236.894,87.8624 Z ">
+                            <GeometryDrawing.Pen>
+                                <Pen Thickness="2" LineJoin="Round" Brush="#FFC0C0C0"/>
+                            </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                        <GeometryDrawing Geometry="F1 M 271.394,440.329C 271.394,447.692 265.207,453.662 257.576,453.662L 209.212,453.662C 201.581,453.662 195.394,447.692 195.394,440.329L 195.394,58.9957C 195.394,51.6319 201.581,45.6624 209.212,45.6624L 257.576,45.6624C 265.207,45.6624 271.394,51.6319 271.394,58.9957L 271.394,440.329 Z ">
+                            <GeometryDrawing.Brush>
+                                <RadialGradientBrush RadiusX="1.17919" RadiusY="0.211946" Center="0.5,0.285948" GradientOrigin="0.5,0.285948">
+                                    <RadialGradientBrush.RelativeTransform>
+                                        <TransformGroup/>
+                                    </RadialGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#FF2D2D2D" Offset="0"/>
+                                    <GradientStop Color="#FF222121" Offset="0.587886"/>
+                                    <GradientStop Color="#FF181615" Offset="0.837945"/>
+                                    <GradientStop Color="#FF12100F" Offset="0.922928"/>
+                                    <GradientStop Color="#FF0D0A09" Offset="1"/>
+                                </RadialGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                        <GeometryDrawing Brush="#FFA6A6A6" Geometry="F1 M 271.605,438.692L 270.816,438.692C 270.815,442.835 269.139,446.577 266.425,449.295C 263.708,452.009 259.966,453.686 255.823,453.686L 211.632,453.686C 207.489,453.686 203.746,452.009 201.03,449.295C 198.316,446.577 196.639,442.835 196.639,438.692L 196.639,61.495C 196.639,57.3522 198.316,53.6084 201.03,50.8928C 203.746,48.1787 207.489,46.5026 211.632,46.5018L 255.823,46.5018C 259.966,46.5026 263.708,48.1787 266.425,50.8928C 269.139,53.6084 270.815,57.3522 270.816,61.495L 270.816,438.692L 271.605,438.692L 272.394,438.692L 272.394,61.495C 272.393,52.3424 264.975,44.9244 255.823,44.9236L 211.632,44.9236C 202.48,44.9244 195.062,52.3424 195.061,61.495L 195.061,438.692C 195.062,447.844 202.48,455.264 211.632,455.264L 255.823,455.264C 264.975,455.264 272.393,447.844 272.394,438.692L 271.605,438.692 Z "/>
+                    </DrawingGroup>
+                </DrawingBrush.Drawing>
+            </DrawingBrush>
+
+            <SolidColorBrush x:Key="Tablichki" Color="#FFFDFDFD" />
+
+            <Thickness x:Key="rectangle_margin" Left="-3" Right="-3" />
+
+            <DrawingBrush Stretch="Uniform" x:Key="StartBlink">
+                <DrawingBrush.Drawing>
+                    <DrawingGroup>
+                        <GeometryDrawing Brush="#FF000000" Geometry="F1 M 195.177,66.6667C 195.177,120.169 151.805,163.54 98.3032,163.54C 44.8019,163.54 1.42853,120.169 1.42853,66.6667C 1.42853,13.1653 44.8019,-30.2067 98.3032,-30.2067C 151.805,-30.2067 195.177,13.1653 195.177,66.6667 Z ">
+                            <GeometryDrawing.Pen>
+                                <Pen Thickness="5" LineJoin="Round">
+                                    <Pen.Brush>
+                                        <LinearGradientBrush StartPoint="-2.03932e-007,0.5" EndPoint="1,0.5">
+                                            <GradientStop Color="#FFB9B9B9" Offset="0"/>
+                                            <GradientStop Color="#FF656565" Offset="0.125581"/>
+                                            <GradientStop Color="#FFE0E0E0" Offset="0.460465"/>
+                                            <GradientStop Color="#FF4F4F4F" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Pen.Brush>
+                                </Pen>
+                            </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                        <GeometryDrawing Geometry="F1 M 99.6034,4.70934C 132.227,4.70934 158.675,31.156 158.675,63.78L 196.477,63.78C 196.477,10.2773 153.106,-33.0933 99.6034,-33.0933L 99.6034,4.70934 Z ">
+                            <GeometryDrawing.Brush>
+                                <RadialGradientBrush RadiusX="1.13574" RadiusY="1.13574" Center="1.05589,-0.0116507" GradientOrigin="1.05589,-0.0116507">
+                                    <RadialGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <RotateTransform CenterX="1.05589" CenterY="-0.0116507" Angle="136.309"/>
+                                        </TransformGroup>
+                                    </RadialGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#FFFFFFFF" Offset="0"/>
+                                    <GradientStop Color="#FFFFFFFF" Offset="0.24"/>
+                                    <GradientStop Color="#807F7F7F" Offset="0.761266"/>
+                                    <GradientStop Color="#00000000" Offset="0.92"/>
+                                    <GradientStop Color="#00000000" Offset="1"/>
+                                </RadialGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                        <GeometryDrawing Brush="#FF0CFF00" Geometry="F1 M 156.451,66.6667C 156.451,99.2907 130.004,125.737 97.3803,125.737C 64.7576,125.737 38.311,99.2907 38.311,66.6667C 38.311,34.044 64.7576,7.59734 97.3803,7.59734C 130.004,7.59734 156.451,34.044 156.451,66.6667 Z "/>
+                        <GeometryDrawing Brush="#FFFBFFDC" Geometry="F1 M 105.225,105L 89.5367,105L 89.5367,28.3333L 105.225,28.3333L 105.225,105 Z "/>
+                    </DrawingGroup>
+                </DrawingBrush.Drawing>
+            </DrawingBrush>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid>
+
+        <style:cool_rect Margin="-3,92,-7,8"/>
+        <Rectangle HorizontalAlignment="Left" Height="40" Margin="813,608,0,0" VerticalAlignment="Top" Width="119" Fill="{StaticResource Tablichki}" Stroke="Black"/>
+        <Rectangle HorizontalAlignment="Left" Height="40" Margin="688,608,0,0" VerticalAlignment="Top" Width="126" Fill="{StaticResource Tablichki}" Stroke="Black"/>
+        <Rectangle HorizontalAlignment="Left" Height="40" Margin="930,608,0,0" VerticalAlignment="Top" Width="175" Fill="{StaticResource Tablichki}" Stroke="Black"/>
+        <Rectangle HorizontalAlignment="Left" Height="40" Margin="1104,608,0,0" VerticalAlignment="Top" Width="153" Fill="{StaticResource Tablichki}" Stroke="Black"/>
+        <Rectangle HorizontalAlignment="Left" Height="40" Margin="456,608,0,0" VerticalAlignment="Top" Width="126" Fill="{StaticResource Tablichki}" Stroke="Black"/>
+        <Rectangle HorizontalAlignment="Left" Height="40" Margin="340,608,0,0" VerticalAlignment="Top" Width="117" Fill="{StaticResource Tablichki}" Stroke="Black"/>
+        <Rectangle HorizontalAlignment="Left" Height="40" Margin="173,608,0,0" VerticalAlignment="Top" Width="168" Fill="{StaticResource Tablichki}" Stroke="Black"/>
+        <Rectangle HorizontalAlignment="Left" Height="40" Margin="21,608,0,0" VerticalAlignment="Top" Width="153" Fill="{StaticResource Tablichki}" Stroke="Black"/>
+        <Rectangle HorizontalAlignment="Left" Height="42" Margin="764,304,0,0" VerticalAlignment="Top" Width="122" Fill="{StaticResource Tablichki}" Stroke="Black"/>
+        <Rectangle HorizontalAlignment="Left" Height="42" Margin="885,304,0,0" VerticalAlignment="Top" Width="134" Fill="{StaticResource Tablichki}" Stroke="Black"/>
+        <Rectangle HorizontalAlignment="Left" Height="42" Margin="1018,304,0,0" VerticalAlignment="Top" Width="123" Fill="{StaticResource Tablichki}" Stroke="Black"/>
+        <Rectangle HorizontalAlignment="Left" Height="42" Margin="1140,304,0,0" VerticalAlignment="Top" Width="128" Fill="{StaticResource Tablichki}" Stroke="Black"/>
+        <Rectangle HorizontalAlignment="Left" Height="42" Margin="643,304,0,0" VerticalAlignment="Top" Width="122" Fill="{StaticResource Tablichki}" Stroke="Black"/>
+        <Rectangle HorizontalAlignment="Left" Height="42" Margin="125,304,0,0" VerticalAlignment="Top" Width="122" Fill="{StaticResource Tablichki}" Stroke="Black"/>
+        <Rectangle HorizontalAlignment="Left" Height="42" Margin="246,304,0,0" VerticalAlignment="Top" Width="134" Fill="{StaticResource Tablichki}" Stroke="Black"/>
+        <Rectangle HorizontalAlignment="Left" Height="42" Margin="379,304,0,0" VerticalAlignment="Top" Width="123" Fill="{StaticResource Tablichki}" Stroke="Black"/>
+        <Rectangle HorizontalAlignment="Left" Height="42" Margin="501,304,0,0" VerticalAlignment="Top" Width="128" Fill="{StaticResource Tablichki}" Stroke="Black"/>
+        <Rectangle Fill="{StaticResource Tablichki}" Stroke="Black" Margin="641,444,3,302"/>
+        <Rectangle Fill="{StaticResource Tablichki}" Stroke="Black" Margin="3,444,641,302"/>
+        <Rectangle HorizontalAlignment="Left" Height="42" Margin="4,304,0,0" VerticalAlignment="Top" Width="122" Fill="{StaticResource Tablichki}" Stroke="Black"/>
+
+        <se:VisualBox BorderThickness="0" Margin="-2,330,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Height="130">
+            <se:VisualBox.Background>
+                <ImageBrush Stretch="Uniform"  ImageSource="/VFD;component/Content/LED (normal).png"/>
+            </se:VisualBox.Background>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[lampa_obogrev1_vkl].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/VFD;component/Content/LED (gleam).png" Stretch="Uniform"/>
+                    </se:VisualBoxStateItem.Background>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+
+        <TextBlock VerticalAlignment="Center" Text="ОБОГРЕВ ВКЛЮЧЕН" Width="90" TextAlignment="Center" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="21,306,1159,466" Height="38" />
+        <se:VisualBox BorderThickness="0" Margin="123,330,0,0" Width="130" Height="130" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <se:VisualBox.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="/VFD;component/Content/LED (normal).png"/>
+            </se:VisualBox.Background>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[lampa_podpornyj_nasos1_vkl].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/VFD;component/Content/LED (gleam).png"/>
+                    </se:VisualBoxStateItem.Background>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <TextBlock VerticalAlignment="Center" Text="ПОДПОРНЫЙ НАСОС ВКЛЮЧЕН" Width="120" TextAlignment="Center" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="127,306,1023,466" Height="38" />
+        <se:VisualBox BorderThickness="0" Margin="248,330,0,0" Width="130" Height="130" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <se:VisualBox.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="/VFD;component/Content/LED (normal).png"/>
+            </se:VisualBox.Background>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[lampa_ohlazhdenie_shtokov1_vkl].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/VFD;component/Content/LED (gleam).png" Stretch="Uniform"/>
+                    </se:VisualBoxStateItem.Background>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <TextBlock VerticalAlignment="Center" Width="131" TextAlignment="Center" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="248,306,891,466" Text="ОХЛАЖДЕНИЕ ШТОКОВ ВКЛЮЧЕНО" Height="38" />
+        <se:VisualBox BorderThickness="0" Margin="375,330,0,0" Width="130" Height="130" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <se:VisualBox.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="/VFD;component/Content/LED (normal).png"/>
+            </se:VisualBox.Background>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[lampa_smazka1_vkl].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/VFD;component/Content/LED (gleam).png"/>
+                    </se:VisualBoxStateItem.Background>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <TextBlock VerticalAlignment="Center" Width="80" TextAlignment="Center" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="401,306,789,464" Text="СМАЗКА ВКЛЮЧЕНА" Height="40" />
+        <se:VisualBox BorderThickness="0" Margin="500,330,0,0" Width="130" Height="130" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <se:VisualBox.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="/VFD;component/Content/LED (normal).png"/>
+            </se:VisualBox.Background>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[lampa_obduv1_vkl].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/VFD;component/Content/LED (gleam).png" Stretch="Uniform"/>
+                    </se:VisualBoxStateItem.Background>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <TextBlock VerticalAlignment="Center" Width="79" TextAlignment="Center" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="527,306,664,464" Text="ОБДУВ МН1 ВКЛЮЧЕН" Height="40" />
+        <TextBlock VerticalAlignment="Center" Width="620" TextAlignment="Center" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="6,454,644,334" Height="22" ><Run Text="ВСПОМОГАТЕЛЬНЫЕ МЕХАНИЗМЫ"/><Run Text=" НАСОСА 1"/></TextBlock>
+        <se:VisualBox BorderThickness="0" Margin="1140,330,0,0" Width="130" Height="130" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <se:VisualBox.Background>
+                <ImageBrush Stretch="Uniform"  ImageSource="/VFD;component/Content/LED (normal).png"/>
+            </se:VisualBox.Background>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[lampa_obogrev2_vkl].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/VFD;component/Content/LED (gleam).png" Stretch="Uniform"/>
+                    </se:VisualBoxStateItem.Background>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <TextBlock VerticalAlignment="Center" Text="ОБОГРЕВ ВКЛЮЧЕН" Width="80" TextAlignment="Center" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="1164,304,26,474" />
+        <se:VisualBox BorderThickness="0" Margin="1015,330,0,0" Width="130" Height="130" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <se:VisualBox.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="/VFD;component/Content/LED (normal).png"/>
+            </se:VisualBox.Background>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[lampa_podpornyj_nasos2_vkl].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/VFD;component/Content/LED (gleam).png" Stretch="Uniform"/>
+                    </se:VisualBoxStateItem.Background>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <TextBlock VerticalAlignment="Center" Text="ПОДПОРНЫЙ НАСОС ВКЛЮЧЕН" Width="120" TextAlignment="Center" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="1019,306,131,466" Height="38" />
+        <se:VisualBox BorderThickness="0" Margin="887,330,0,0" Width="130" Height="130" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <se:VisualBox.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="/VFD;component/Content/LED (normal).png"/>
+            </se:VisualBox.Background>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[lampa_ohlazhdenie_shtokov2_vkl].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/VFD;component/Content/LED (gleam).png" Stretch="Uniform"/>
+                    </se:VisualBoxStateItem.Background>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <TextBlock VerticalAlignment="Center" Width="131" TextAlignment="Center" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="886,306,253,470" Text="ОХЛАЖДЕНИЕ ШТОКОВ ВКЛЮЧЕНО" Height="34" />
+        <se:VisualBox BorderThickness="0" Margin="761,330,0,0" Width="130" Height="130" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <se:VisualBox.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="/VFD;component/Content/LED (normal).png"/>
+            </se:VisualBox.Background>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[lampa_smazka2_vkl].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/VFD;component/Content/LED (gleam).png" Stretch="Uniform"/>
+                    </se:VisualBoxStateItem.Background>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <TextBlock VerticalAlignment="Center" Width="80" TextAlignment="Center" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="789,306,401,464" Text="СМАЗКА ВКЛЮЧЕНА" Height="40" />
+        <se:VisualBox BorderThickness="0" Margin="638,330,0,0" Width="130" Height="130" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <se:VisualBox.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="/VFD;component/Content/LED (normal).png"/>
+            </se:VisualBox.Background>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[lampa_obduv2_vkl].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/VFD;component/Content/LED (gleam).png" Stretch="Uniform"/>
+                    </se:VisualBoxStateItem.Background>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <TextBlock VerticalAlignment="Center" Width="80" TextAlignment="Center" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="664,306,526,464" Text="ОБДУВ МН2 ВКЛЮЧЕН" Height="40" />
+        <TextBlock VerticalAlignment="Center" Width="626" TextAlignment="Center" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="644,454,0,334" Text="ВСПОМОГАТЕЛЬНЫЕ МЕХАНИЗМЫ НАСОСА 2" Height="22" />
+        <TextBlock VerticalAlignment="Center" Width="143" TextAlignment="Center" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="21,608,1106,170" Text="СКОРОСТЬ НАСОСА 1" Height="32" />
+        <TextBlock VerticalAlignment="Center" Width="147" TextAlignment="Center" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="1107,608,16,170" Text="СКОРОСТЬ НАСОСА 2" Height="32" />
+        <TextBlock VerticalAlignment="Center" Width="125" TextAlignment="Center" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="459,608,686,170" Text="УПРАВЛЕНИЕ НАСОСОМ 1" Height="32" />
+        <TextBlock VerticalAlignment="Center" Width="125" TextAlignment="Center" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="688,608,457,170" Text="УПРАВЛЕНИЕ НАСОСОМ 2" Height="32" />
+
+        <se:HmiButton Style="{StaticResource CircleStartButton}" BorderThickness="0" hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[nasos1_pusk_w].WriteCommand}" Margin="349,689,0,0" Width="90" Height="90" HorizontalAlignment="Left" VerticalAlignment="Top" >
+            <se:HmiButton.VisualStateCollection>
+                <se:HmiButtonState Background="{StaticResource StartBlink}">
+                    <se:HmiButtonState.Value>
+                        <hmi:SeBinding Path="DiscreteAlarms.Node[status].Items[2].Blinking">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:HmiButtonState.Value>
+                </se:HmiButtonState>
+                <se:HmiButtonState Background="{StaticResource StartBlink}">
+                    <se:HmiButtonState.Value>
+                        <hmi:SeBinding Path="DiscreteAlarms.Node[status].Items[1].Blinking">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:HmiButtonState.Value>
+                </se:HmiButtonState>
+                <se:HmiButtonState Background="{StaticResource StartBlink}">
+                    <se:HmiButtonState.Value>
+                        <hmi:SeBinding Path="AnalogAlarms.Node[Status].Items[90001].Blinking">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:HmiButtonState.Value>
+                </se:HmiButtonState>
+                <se:HmiButtonState Background="{StaticResource StartBlink}">
+                    <se:HmiButtonState.Value>
+                        <hmi:SeBinding Path="AnalogAlarms.Node[Status].Items[10001].Blinking">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:HmiButtonState.Value>
+                </se:HmiButtonState>
+            </se:HmiButton.VisualStateCollection>
+        </se:HmiButton>
+        <se:HmiButton Style="{StaticResource CircleStopButton}" BorderThickness="0" hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[nasos1_stop_w].WriteCommand}" Margin="211,690,0,0" Width="90" Height="90" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBlock VerticalAlignment="Center" Text="ПУСК&#xA;НАСОСА 1" Width="75" TextAlignment="Center" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="359,608,836,158" Height="44" />
+        <TextBlock VerticalAlignment="Center" Text="СТОП/ДЕБЛОКИРОВКА&#xA;НАСОСА 1&#xA;&#xA;" Width="156" TextAlignment="Center" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="179,608,935,146" Height="56" />
+        <se:HmiButton Style="{StaticResource CircleStartButton}" BorderThickness="0" hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[nasos2_pusk_w].WriteCommand}" Margin="823,689,0,0" Width="90" Height="90" HorizontalAlignment="Left" VerticalAlignment="Top" >
+            <se:HmiButton.VisualStateCollection>
+                <se:HmiButtonState Background="{StaticResource StartBlink}">
+                    <se:HmiButtonState.Value>
+                        <hmi:SeBinding Path="DiscreteAlarms.Node[status].Items[22].Blinking">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:HmiButtonState.Value>
+                </se:HmiButtonState>
+                <se:HmiButtonState Background="{StaticResource StartBlink}">
+                    <se:HmiButtonState.Value>
+                        <hmi:SeBinding Path="DiscreteAlarms.Node[status].Items[21].Blinking">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:HmiButtonState.Value>
+                </se:HmiButtonState>
+                <se:HmiButtonState Background="{StaticResource StartBlink}">
+                    <se:HmiButtonState.Value>
+                        <hmi:SeBinding Path="AnalogAlarms.Node[Status].Items[90002].Blinking">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:HmiButtonState.Value>
+                </se:HmiButtonState>
+                <se:HmiButtonState Background="{StaticResource StartBlink}">
+                    <se:HmiButtonState.Value>
+                        <hmi:SeBinding Path="AnalogAlarms.Node[Status].Items[10002].Blinking">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:HmiButtonState.Value>
+                </se:HmiButtonState>
+            </se:HmiButton.VisualStateCollection>
+        </se:HmiButton>
+        <TextBlock VerticalAlignment="Center" Text="ПУСК&#xA;НАСОСА 2" Width="63" TextAlignment="Center" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="839,608,368,160" Height="42" />
+        <se:HmiButton Style="{StaticResource CircleStopButton}" BorderThickness="0" hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[nasos2_stop_w].WriteCommand}" Margin="966,690,0,0" Width="90" Height="90" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBlock VerticalAlignment="Center" Text="СТОП/ДЕБЛОКИРОВКА&#xA;НАСОСА 2&#xA;&#xA;" Width="162" TextAlignment="Center" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="937,608,171,152" Height="50" />
+        <se:ValueDisplay HorizontalAlignment="Left" Margin="266,173,0,0" VerticalAlignment="Top" Width="230" Height="80" BorderThickness="0" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" Label="ход/мин" Header="{hmi:SeBinding Dictionaries.Node[Labels].Items[36].Text, FallbackValue=СКОРОСТЬ НАСОСА 1 (ФАКТ.)}" FontFamily="Tahoma" Value="{hmi:SeBinding Tags.Node[view.main_drives.pump1].Items[real].Value, FallbackValue=0}" CornerRadius="3"/>
+        <se:ValueDisplay HorizontalAlignment="Left" Margin="764,174,0,0" VerticalAlignment="Top" Width="230" Height="80" BorderThickness="0" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" Label="ход/мин" Header="{hmi:SeBinding Dictionaries.Node[Labels].Items[40].Text, FallbackValue=СКОРОСТЬ НАСОСА 2 (ФАКТ.)}" FontFamily="Tahoma" Value="{hmi:SeBinding Tags.Node[view.main_drives.pump2].Items[real].Value, FallbackValue=0}" CornerRadius="3"/>
+
+        <TextBlock TextWrapping="Wrap" Margin="560,104,555,662" HorizontalAlignment="Center" Text="ДАВЛЕНИЕ В МАНИФОЛЬДЕ" TextAlignment="Center" FontSize="16" VerticalAlignment="Center" Width="155"/>
+
+        <msab:MsabDavlenieVManifolde HorizontalAlignment="Left" VerticalAlignment="Top" Height="118" Width="118" Margin="579,158,0,0"/>
+        <TextBlock VerticalAlignment="Top" Text="ЗВОНОК&#xA;БУРИЛЬЩИКУ" TextAlignment="Center" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="72,102,0,0" FontSize="16" />
+        <TextBlock VerticalAlignment="Top" Text="АВАРИЙНЫЙ&#xA;СТОП" TextAlignment="Center" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="1092,102,0,0" FontSize="16" />
+
+        <Grid HorizontalAlignment="Left" Height="119" Margin="6,476,0,0" VerticalAlignment="Top" Width="120">
+            <Grid.Resources>
+                <ResourceDictionary>
+                    <Style TargetType="{x:Type se:HmiButton}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate>
+                                    <Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="2"/>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ResourceDictionary>
+            </Grid.Resources>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="32*"/>
+                <RowDefinition Height="87*"/>
+            </Grid.RowDefinitions>
+            <Rectangle Fill="{StaticResource Tablichki}" Stroke="Black" Margin="{StaticResource rectangle_margin}" />
+            <TextBlock Text="РУЧН. ВКЛ" TextWrapping="Wrap"    TextAlignment="Left" HorizontalAlignment="Left" Width="40"/>
+            <TextBlock Text="ОТКЛ" TextWrapping="Wrap" Width="36"       HorizontalAlignment="Center"  TextAlignment="Center" Margin="42,10,42,0"/>
+            <TextBlock Text="УПР. АСУ" TextWrapping="Wrap" Width="35"   HorizontalAlignment="Right"   TextAlignment="Right"/>
+            <se:VisualBox Grid.Row="1" BorderBrush="{x:Null}">
+                <se:VisualBox.Background>
+                    <ImageBrush Stretch="Uniform" ImageSource="/VFD;component/Content/SwitchButton/switcher.png"/>
+                </se:VisualBox.Background>
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/VFD;component/Content/SwitchButton/switcher - left.png" Stretch="Uniform"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[obogrev1_vkl].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/VFD;component/Content/SwitchButton/switcher.png" Stretch="Uniform"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[obogrev1_otkl].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/VFD;component/Content/SwitchButton/switcher - right.png" Stretch="Uniform"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[obogrev1_asu].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+            </se:VisualBox>
+            <se:HmiButton hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[obogrev1_vkl_w].WriteCommand}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="119" MinWidth="10" Width="40" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="#00000000"/>
+            <se:HmiButton hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[obogrev1_otkl_w].WriteCommand}" HorizontalAlignment="Left" Margin="40,0,0,0" VerticalAlignment="Top" Height="119" MinWidth="10" Width="40" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="#00000000"/>
+            <se:HmiButton hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[obogrev1_asu_w].WriteCommand}" HorizontalAlignment="Left" Margin="80,0,0,0" VerticalAlignment="Top" Height="119" MinWidth="10" Width="40" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="#00000000"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="119" Margin="131,476,0,0" VerticalAlignment="Top" Width="120">
+            <Grid.Resources>
+                <ResourceDictionary>
+                    <Style TargetType="{x:Type se:HmiButton}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate>
+                                    <Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="2"/>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ResourceDictionary>
+            </Grid.Resources>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="32*"/>
+                <RowDefinition Height="87*"/>
+            </Grid.RowDefinitions>
+            <Rectangle Fill="{DynamicResource Tablichki}" Stroke="Black" Margin="{DynamicResource rectangle_margin}" />
+            <TextBlock Text="РУЧН. ВКЛ" TextWrapping="Wrap"    TextAlignment="Left" HorizontalAlignment="Left" Width="40"/>
+            <TextBlock Text="ОТКЛ" TextWrapping="Wrap" Width="36"       HorizontalAlignment="Center"  TextAlignment="Center" Margin="42,10,42,0"/>
+            <TextBlock Text="УПР. АСУ" TextWrapping="Wrap" Width="35"   HorizontalAlignment="Right"   TextAlignment="Right"/>
+            <se:VisualBox Grid.Row="1" BorderBrush="{x:Null}">
+                <se:VisualBox.Background>
+                    <ImageBrush Stretch="Uniform" ImageSource="/VFD;component/Content/SwitchButton/switcher.png"/>
+                </se:VisualBox.Background>
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/VFD;component/Content/SwitchButton/switcher - left.png" Stretch="Uniform"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[podpornyj_nasos1_vkl].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/VFD;component/Content/SwitchButton/switcher.png" Stretch="Uniform"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[podpornyj_nasos1_otkl].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/VFD;component/Content/SwitchButton/switcher - right.png" Stretch="Uniform"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[podpornyj_nasos1_asu].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+            </se:VisualBox>
+            <se:HmiButton hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[podpornyj_nasos1_vkl_w].WriteCommand}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="119" MinWidth="10" Width="40" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="#00000000"/>
+            <se:HmiButton hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[podpornyj_nasos1_otkl_w].WriteCommand}" HorizontalAlignment="Left" Margin="40,0,0,0" VerticalAlignment="Top" Height="119" MinWidth="10" Width="40" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="#00000000"/>
+            <se:HmiButton hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[podpornyj_nasos1_asu_w].WriteCommand}" HorizontalAlignment="Left" Margin="80,0,0,0" VerticalAlignment="Top" Height="119" MinWidth="10" Width="40" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="#00000000"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="119" Margin="256,476,0,0" VerticalAlignment="Top" Width="120">
+            <Grid.Resources>
+                <ResourceDictionary>
+                    <Style TargetType="{x:Type se:HmiButton}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate>
+                                    <Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="2"/>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ResourceDictionary>
+            </Grid.Resources>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="32*"/>
+                <RowDefinition Height="87*"/>
+            </Grid.RowDefinitions>
+            <Rectangle Fill="{DynamicResource Tablichki}" Stroke="Black" Margin="{DynamicResource rectangle_margin}" />
+            <TextBlock Text="РУЧН. ВКЛ" TextWrapping="Wrap"    TextAlignment="Left" HorizontalAlignment="Left" Width="40"/>
+            <TextBlock Text="ОТКЛ" TextWrapping="Wrap" Width="36"       HorizontalAlignment="Center"  TextAlignment="Center" Margin="42,10,42,0"/>
+            <TextBlock Text="УПР. АСУ" TextWrapping="Wrap" Width="35"   HorizontalAlignment="Right"   TextAlignment="Right"/>
+            <se:VisualBox Grid.Row="1" BorderBrush="{x:Null}">
+                <se:VisualBox.Background>
+                    <ImageBrush Stretch="Uniform" ImageSource="/VFD;component/Content/SwitchButton/switcher.png"/>
+                </se:VisualBox.Background>
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/VFD;component/Content/SwitchButton/switcher - left.png" Stretch="Uniform"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[ohlazhdenie shtokov1_vkl].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/VFD;component/Content/SwitchButton/switcher.png" Stretch="Uniform"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[ohlazhdenie shtokov1_otkl].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/VFD;component/Content/SwitchButton/switcher - right.png" Stretch="Uniform"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[ohlazhdenie shtokov1_asu].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+            </se:VisualBox>
+            <se:HmiButton hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[ohlazhdenie_shtokov1_vkl_w].WriteCommand}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="119" MinWidth="10" Width="40" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="#00000000"/>
+            <se:HmiButton hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[ohlazhdenie_shtokov1_otkl_w].WriteCommand}" HorizontalAlignment="Left" Margin="40,0,0,0" VerticalAlignment="Top" Height="119" MinWidth="10" Width="40" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="#00000000"/>
+            <se:HmiButton hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[ohlazhdenie_shtokov1_asu_w].WriteCommand}" HorizontalAlignment="Left" Margin="80,0,0,0" VerticalAlignment="Top" Height="119" MinWidth="10" Width="40" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="#00000000"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="119" Margin="381,476,0,0" VerticalAlignment="Top" Width="120">
+            <Grid.Resources>
+                <ResourceDictionary>
+                    <Style TargetType="{x:Type se:HmiButton}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate>
+                                    <Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="2"/>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ResourceDictionary>
+            </Grid.Resources>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="32*"/>
+                <RowDefinition Height="87*"/>
+            </Grid.RowDefinitions>
+            <Rectangle Fill="{DynamicResource Tablichki}" Stroke="Black" Margin="{DynamicResource rectangle_margin}" />
+            <TextBlock Text="РУЧН. ВКЛ" TextWrapping="Wrap"    TextAlignment="Left" HorizontalAlignment="Left" Width="40"/>
+            <TextBlock Text="ОТКЛ" TextWrapping="Wrap" Width="36"       HorizontalAlignment="Center"  TextAlignment="Center" Margin="42,10,42,0"/>
+            <TextBlock Text="УПР. АСУ" TextWrapping="Wrap" Width="35"   HorizontalAlignment="Right"   TextAlignment="Right"/>
+            <se:VisualBox Grid.Row="1" BorderBrush="{x:Null}">
+                <se:VisualBox.Background>
+                    <ImageBrush Stretch="Uniform" ImageSource="/VFD;component/Content/SwitchButton/switcher.png"/>
+                </se:VisualBox.Background>
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/VFD;component/Content/SwitchButton/switcher - left.png" Stretch="Uniform"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[smazka1_vkl].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/VFD;component/Content/SwitchButton/switcher.png" Stretch="Uniform"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[smazka1_otkl].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/VFD;component/Content/SwitchButton/switcher - right.png" Stretch="Uniform"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[smazka1_asu].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+            </se:VisualBox>
+            <se:HmiButton hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[smazka1_vkl_w].WriteCommand}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="119" MinWidth="10" Width="40" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="#00000000"/>
+            <se:HmiButton hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[smazka1_otkl_w].WriteCommand}" HorizontalAlignment="Left" Margin="40,0,0,0" VerticalAlignment="Top" Height="119" MinWidth="10" Width="40" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="#00000000"/>
+            <se:HmiButton hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[smazka1_asu_w].WriteCommand}" HorizontalAlignment="Left" Margin="80,0,0,0" VerticalAlignment="Top" Height="119" MinWidth="10" Width="40" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="#00000000"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="119" Margin="506,476,0,0" VerticalAlignment="Top" Width="120">
+            <Grid.Resources>
+                <ResourceDictionary>
+                    <Style TargetType="{x:Type se:HmiButton}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate>
+                                    <Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="2"/>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ResourceDictionary>
+            </Grid.Resources>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="32*"/>
+                <RowDefinition Height="87*"/>
+            </Grid.RowDefinitions>
+            <Rectangle Fill="{DynamicResource Tablichki}" Stroke="Black" Margin="{DynamicResource rectangle_margin}" />
+            <TextBlock Text="РУЧН. ВКЛ" TextWrapping="Wrap"    TextAlignment="Left" HorizontalAlignment="Left" Width="40"/>
+            <TextBlock Text="ОТКЛ" TextWrapping="Wrap" Width="36"       HorizontalAlignment="Center"  TextAlignment="Center" Margin="42,10,42,0"/>
+            <TextBlock Text="УПР. АСУ" TextWrapping="Wrap" Width="35"   HorizontalAlignment="Right"   TextAlignment="Right"/>
+            <se:VisualBox Grid.Row="1" BorderBrush="{x:Null}">
+                <se:VisualBox.Background>
+                    <ImageBrush Stretch="Uniform" ImageSource="/VFD;component/Content/SwitchButton/switcher.png"/>
+                </se:VisualBox.Background>
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/VFD;component/Content/SwitchButton/switcher - left.png" Stretch="Uniform"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[obduv1_vkl].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/VFD;component/Content/SwitchButton/switcher.png" Stretch="Uniform"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[obduv1_otkl].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/VFD;component/Content/SwitchButton/switcher - right.png" Stretch="Uniform"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[obduv1_asu].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+            </se:VisualBox>
+            <se:HmiButton hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[obduv1_vkl_w].WriteCommand}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="119" MinWidth="10" Width="40" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="#00000000"/>
+            <se:HmiButton hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[obduv1_otkl_w].WriteCommand}" HorizontalAlignment="Left" Margin="40,0,0,0" VerticalAlignment="Top" Height="119" MinWidth="10" Width="40" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="#00000000"/>
+            <se:HmiButton hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[obduv1_asu_w].WriteCommand}" HorizontalAlignment="Left" Margin="80,0,0,0" VerticalAlignment="Top" Height="119" MinWidth="10" Width="40" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="#00000000"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="119" Margin="459,656,0,0" VerticalAlignment="Top" Width="120">
+            <Grid.Resources>
+                <ResourceDictionary>
+                    <Style TargetType="{x:Type se:HmiButton}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate>
+                                    <Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="2"/>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ResourceDictionary>
+            </Grid.Resources>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="32*"/>
+                <RowDefinition Height="87*"/>
+            </Grid.RowDefinitions>
+            <Rectangle Fill="{DynamicResource Tablichki}" Margin="{DynamicResource rectangle_margin}" Stroke="Black" />
+            <TextBlock Text="ПБ" TextWrapping="Wrap"    TextAlignment="Left" HorizontalAlignment="Left" Width="40" Margin="5,10,0,0"/>
+            <TextBlock Text="ЗАПРЕТ" TextWrapping="Wrap" Width="55"       HorizontalAlignment="Center"  TextAlignment="Center" Margin="0,10,0,0"/>
+            <TextBlock Text="ПН" TextWrapping="Wrap" Width="35"   HorizontalAlignment="Right"   TextAlignment="Right" Margin="0,10,5,0"/>
+            <se:VisualBox Grid.Row="1" BorderBrush="{x:Null}">
+                <se:VisualBox.Background>
+                    <ImageBrush Stretch="Uniform" ImageSource="/VFD;component/Content/SwitchButton/switcher.png"/>
+                </se:VisualBox.Background>
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/VFD;component/Content/SwitchButton/switcher - left.png" Stretch="Uniform"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[nasos1_upravlenie_pb].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/VFD;component/Content/SwitchButton/switcher.png" Stretch="Uniform"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[nasos1_upravlenie_zapret].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/VFD;component/Content/SwitchButton/switcher - right.png" Stretch="Uniform"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[nasos1_upravlenie_pn].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+            </se:VisualBox>
+            <se:HmiButton hmi:Click.Command="{hmi:Bind Tags.Node[write.pult_nasosov].Items[nasos1_upravlenie_pb_w].WriteCommand}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="119" MinWidth="10" Width="40" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="#00000000"/>
+            <se:HmiButton hmi:Click.Command="{hmi:Bind Tags.Node[write.pult_nasosov].Items[nasos1_upravlenie_zapret_w].WriteCommand}" HorizontalAlignment="Left" Margin="40,0,0,0" VerticalAlignment="Top" Height="119" MinWidth="10" Width="40" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="#00000000"/>
+            <se:HmiButton hmi:Click.Command="{hmi:Bind Tags.Node[write.pult_nasosov].Items[nasos1_upravlenie_pn_w].WriteCommand}" HorizontalAlignment="Left" Margin="80,0,0,0" VerticalAlignment="Top" Height="119" MinWidth="10" Width="40" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="#00000000"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="119" Margin="1144,476,0,0" VerticalAlignment="Top" Width="120">
+            <Grid.Resources>
+                <ResourceDictionary>
+                    <Style TargetType="{x:Type se:HmiButton}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate>
+                                    <Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="2"/>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ResourceDictionary>
+            </Grid.Resources>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="32*"/>
+                <RowDefinition Height="87*"/>
+            </Grid.RowDefinitions>
+            <Rectangle Fill="{DynamicResource Tablichki}" Stroke="Black" Margin="{DynamicResource rectangle_margin}" />
+            <TextBlock Text="РУЧН. ВКЛ" TextWrapping="Wrap"    TextAlignment="Left" HorizontalAlignment="Left" Width="40"/>
+            <TextBlock Text="ОТКЛ" TextWrapping="Wrap" Width="36"       HorizontalAlignment="Center"  TextAlignment="Center" Margin="42,10,42,0"/>
+            <TextBlock Text="УПР. АСУ" TextWrapping="Wrap" Width="35"   HorizontalAlignment="Right"   TextAlignment="Right"/>
+            <se:VisualBox Grid.Row="1" BorderBrush="{x:Null}">
+                <se:VisualBox.Background>
+                    <ImageBrush Stretch="Uniform" ImageSource="/VFD;component/Content/SwitchButton/switcher.png"/>
+                </se:VisualBox.Background>
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/VFD;component/Content/SwitchButton/switcher - left.png" Stretch="Uniform"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[obogrev2_vkl].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/VFD;component/Content/SwitchButton/switcher.png" Stretch="Uniform"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[obogrev2_otkl].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/VFD;component/Content/SwitchButton/switcher - right.png" Stretch="Uniform"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[obogrev2_asu].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+            </se:VisualBox>
+            <se:HmiButton hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[obogrev2_vkl_w].WriteCommand}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="119" MinWidth="10" Width="40" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="#00000000"/>
+            <se:HmiButton hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[obogrev2_otkl_w].WriteCommand}" HorizontalAlignment="Left" Margin="40,0,0,0" VerticalAlignment="Top" Height="119" MinWidth="10" Width="40" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="#00000000"/>
+            <se:HmiButton hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[obogrev2_asu_w].WriteCommand}" HorizontalAlignment="Left" Margin="80,0,0,0" VerticalAlignment="Top" Height="119" MinWidth="10" Width="40" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="#00000000"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="119" Margin="1019,476,0,0" VerticalAlignment="Top" Width="120">
+            <Grid.Resources>
+                <ResourceDictionary>
+                    <Style TargetType="{x:Type se:HmiButton}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate>
+                                    <Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="2"/>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ResourceDictionary>
+            </Grid.Resources>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="32*"/>
+                <RowDefinition Height="87*"/>
+            </Grid.RowDefinitions>
+            <Rectangle Fill="{DynamicResource Tablichki}" Stroke="Black" Margin="{DynamicResource rectangle_margin}" />
+            <TextBlock Text="РУЧН. ВКЛ" TextWrapping="Wrap"    TextAlignment="Left" HorizontalAlignment="Left" Width="40"/>
+            <TextBlock Text="ОТКЛ" TextWrapping="Wrap" Width="36"       HorizontalAlignment="Center"  TextAlignment="Center" Margin="42,10,42,0"/>
+            <TextBlock Text="УПР. АСУ" TextWrapping="Wrap" Width="35"   HorizontalAlignment="Right"   TextAlignment="Right"/>
+            <se:VisualBox Grid.Row="1" BorderBrush="{x:Null}">
+                <se:VisualBox.Background>
+                    <ImageBrush Stretch="Uniform" ImageSource="/VFD;component/Content/SwitchButton/switcher.png"/>
+                </se:VisualBox.Background>
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/VFD;component/Content/SwitchButton/switcher - left.png" Stretch="Uniform"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[podpornyj_nasos2_vkl].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/VFD;component/Content/SwitchButton/switcher.png" Stretch="Uniform"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[podpornyj_nasos2_otkl].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/VFD;component/Content/SwitchButton/switcher - right.png" Stretch="Uniform"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[podpornyj_nasos2_asu].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+            </se:VisualBox>
+            <se:HmiButton hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[podpornyj_nasos2_vkl_w].WriteCommand}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="119" MinWidth="10" Width="40" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="#00000000"/>
+            <se:HmiButton hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[podpornyj_nasos2_otkl_w].WriteCommand}" HorizontalAlignment="Left" Margin="40,0,0,0" VerticalAlignment="Top" Height="119" MinWidth="10" Width="40" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="#00000000"/>
+            <se:HmiButton hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[podpornyj_nasos2_asu_w].WriteCommand}" HorizontalAlignment="Left" Margin="80,0,0,0" VerticalAlignment="Top" Height="119" MinWidth="10" Width="40" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="#00000000"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="119" Margin="894,476,0,0" VerticalAlignment="Top" Width="120">
+            <Grid.Resources>
+                <ResourceDictionary>
+                    <Style TargetType="{x:Type se:HmiButton}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate>
+                                    <Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="2"/>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ResourceDictionary>
+            </Grid.Resources>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="32*"/>
+                <RowDefinition Height="87*"/>
+            </Grid.RowDefinitions>
+            <Rectangle Fill="{DynamicResource Tablichki}" Stroke="Black" Margin="{DynamicResource rectangle_margin}" />
+            <TextBlock Text="РУЧН. ВКЛ" TextWrapping="Wrap"    TextAlignment="Left" HorizontalAlignment="Left" Width="40"/>
+            <TextBlock Text="ОТКЛ" TextWrapping="Wrap" Width="36"       HorizontalAlignment="Center"  TextAlignment="Center" Margin="42,10,42,0"/>
+            <TextBlock Text="УПР. АСУ" TextWrapping="Wrap" Width="35"   HorizontalAlignment="Right"   TextAlignment="Right"/>
+            <se:VisualBox Grid.Row="1" BorderBrush="{x:Null}">
+                <se:VisualBox.Background>
+                    <ImageBrush Stretch="Uniform" ImageSource="/VFD;component/Content/SwitchButton/switcher.png"/>
+                </se:VisualBox.Background>
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/VFD;component/Content/SwitchButton/switcher - left.png" Stretch="Uniform"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[ohlazhdenie shtokov2_vkl].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/VFD;component/Content/SwitchButton/switcher.png" Stretch="Uniform"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[ohlazhdenie shtokov2_otkl].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/VFD;component/Content/SwitchButton/switcher - right.png" Stretch="Uniform"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[ohlazhdenie shtokov2_asu].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+            </se:VisualBox>
+            <se:HmiButton hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[ohlazhdenie_shtokov2_vkl_w].WriteCommand}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="119" MinWidth="10" Width="40" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="#00000000"/>
+            <se:HmiButton hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[ohlazhdenie_shtokov2_otkl_w].WriteCommand}" HorizontalAlignment="Left" Margin="40,0,0,0" VerticalAlignment="Top" Height="119" MinWidth="10" Width="40" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="#00000000"/>
+            <se:HmiButton hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[ohlazhdenie_shtokov2_asu_w].WriteCommand}" HorizontalAlignment="Left" Margin="80,0,0,0" VerticalAlignment="Top" Height="119" MinWidth="10" Width="40" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="#00000000"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="119" Margin="769,476,0,0" VerticalAlignment="Top" Width="120">
+            <Grid.Resources>
+                <ResourceDictionary>
+                    <Style TargetType="{x:Type se:HmiButton}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate>
+                                    <Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="2"/>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ResourceDictionary>
+            </Grid.Resources>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="32*"/>
+                <RowDefinition Height="87*"/>
+            </Grid.RowDefinitions>
+            <Rectangle Fill="{DynamicResource Tablichki}" Stroke="Black" Margin="{DynamicResource rectangle_margin}" />
+            <TextBlock Text="РУЧН. ВКЛ" TextWrapping="Wrap"    TextAlignment="Left" HorizontalAlignment="Left" Width="40"/>
+            <TextBlock Text="ОТКЛ" TextWrapping="Wrap" Width="36"       HorizontalAlignment="Center"  TextAlignment="Center" Margin="42,10,42,0"/>
+            <TextBlock Text="УПР. АСУ" TextWrapping="Wrap" Width="35"   HorizontalAlignment="Right"   TextAlignment="Right"/>
+            <se:VisualBox Grid.Row="1" BorderBrush="{x:Null}">
+                <se:VisualBox.Background>
+                    <ImageBrush Stretch="Uniform" ImageSource="/VFD;component/Content/SwitchButton/switcher.png"/>
+                </se:VisualBox.Background>
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/VFD;component/Content/SwitchButton/switcher - left.png" Stretch="Uniform"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[smazka2_vkl].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/VFD;component/Content/SwitchButton/switcher.png" Stretch="Uniform"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[smazka2_otkl].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/VFD;component/Content/SwitchButton/switcher - right.png" Stretch="Uniform"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[smazka2_asu].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+            </se:VisualBox>
+            <se:HmiButton hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[smazka2_vkl_w].WriteCommand}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="119" MinWidth="10" Width="40" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="#00000000"/>
+            <se:HmiButton hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[smazka2_otkl_w].WriteCommand}" HorizontalAlignment="Left" Margin="40,0,0,0" VerticalAlignment="Top" Height="119" MinWidth="10" Width="40" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="#00000000"/>
+            <se:HmiButton hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[smazka2_asu_w].WriteCommand}" HorizontalAlignment="Left" Margin="80,0,0,0" VerticalAlignment="Top" Height="119" MinWidth="10" Width="40" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="#00000000"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="119" Margin="644,476,0,0" VerticalAlignment="Top" Width="120">
+            <Grid.Resources>
+                <ResourceDictionary>
+                    <Style TargetType="{x:Type se:HmiButton}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate>
+                                    <Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="2"/>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ResourceDictionary>
+            </Grid.Resources>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="32*"/>
+                <RowDefinition Height="87*"/>
+            </Grid.RowDefinitions>
+            <Rectangle Fill="{DynamicResource Tablichki}" Stroke="Black" Margin="{DynamicResource rectangle_margin}" />
+            <TextBlock Text="РУЧН. ВКЛ" TextWrapping="Wrap"    TextAlignment="Left" HorizontalAlignment="Left" Width="40"/>
+            <TextBlock Text="ОТКЛ" TextWrapping="Wrap" Width="36"       HorizontalAlignment="Center"  TextAlignment="Center" Margin="42,10,42,0"/>
+            <TextBlock Text="УПР. АСУ" TextWrapping="Wrap" Width="35"   HorizontalAlignment="Right"   TextAlignment="Right"/>
+            <se:VisualBox Grid.Row="1" BorderBrush="{x:Null}">
+                <se:VisualBox.Background>
+                    <ImageBrush Stretch="Uniform" ImageSource="/VFD;component/Content/SwitchButton/switcher.png"/>
+                </se:VisualBox.Background>
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/VFD;component/Content/SwitchButton/switcher - left.png" Stretch="Uniform"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[obduv2_vkl].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/VFD;component/Content/SwitchButton/switcher.png" Stretch="Uniform"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[obduv2_otkl].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/VFD;component/Content/SwitchButton/switcher - right.png" Stretch="Uniform"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[obduv2_asu].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+            </se:VisualBox>
+            <se:HmiButton hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[obduv2_vkl_w].WriteCommand}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="119" MinWidth="10" Width="40" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="#00000000"/>
+            <se:HmiButton hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[obduv2_otkl_w].WriteCommand}" HorizontalAlignment="Left" Margin="40,0,0,0" VerticalAlignment="Top" Height="119" MinWidth="10" Width="40" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="#00000000"/>
+            <se:HmiButton hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[obduv2_asu_w].WriteCommand}" HorizontalAlignment="Left" Margin="80,0,0,0" VerticalAlignment="Top" Height="119" MinWidth="10" Width="40" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="#00000000"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="119" Margin="693,656,0,0" VerticalAlignment="Top" Width="120">
+            <Grid.Resources>
+                <ResourceDictionary>
+                    <Style TargetType="{x:Type se:HmiButton}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate>
+                                    <Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="2"/>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ResourceDictionary>
+            </Grid.Resources>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="32*"/>
+                <RowDefinition Height="87*"/>
+            </Grid.RowDefinitions>
+            <Rectangle Fill="{DynamicResource Tablichki}" Margin="{DynamicResource rectangle_margin}" Stroke="Black" />
+            <TextBlock Text="ПБ" TextWrapping="Wrap"    TextAlignment="Left" HorizontalAlignment="Left" Width="40" Margin="5,10,0,0"/>
+            <TextBlock Text="ЗАПРЕТ" TextWrapping="Wrap" Width="55"       HorizontalAlignment="Center"  TextAlignment="Center" Margin="0,10,0,0"/>
+            <TextBlock Text="ПН" TextWrapping="Wrap" Width="35"   HorizontalAlignment="Right"   TextAlignment="Right" Margin="0,10,5,0"/>
+            <se:VisualBox Grid.Row="1" BorderBrush="{x:Null}">
+                <se:VisualBox.Background>
+                    <ImageBrush Stretch="Uniform" ImageSource="/VFD;component/Content/SwitchButton/switcher.png"/>
+                </se:VisualBox.Background>
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/VFD;component/Content/SwitchButton/switcher - left.png" Stretch="Uniform"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[nasos2_upravlenie_pb].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/VFD;component/Content/SwitchButton/switcher.png" Stretch="Uniform"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[nasos2_upravlenie_zapret].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/VFD;component/Content/SwitchButton/switcher - right.png" Stretch="Uniform"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[nasos2_upravlenie_pn].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+            </se:VisualBox>
+            <se:HmiButton hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[nasos2_upravlenie_pb_w].WriteCommand}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="119" MinWidth="10" Width="40" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="#00000000"/>
+            <se:HmiButton hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[nasos2_upravlenie_zapret_w].WriteCommand}" HorizontalAlignment="Left" Margin="40,0,0,0" VerticalAlignment="Top" Height="119" MinWidth="10" Width="40" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="#00000000"/>
+            <se:HmiButton hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[nasos2_upravlenie_pn_w].WriteCommand}" HorizontalAlignment="Left" Margin="80,0,0,0" VerticalAlignment="Top" Height="119" MinWidth="10" Width="40" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="#00000000"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="174" Margin="24,628,0,0" VerticalAlignment="Top" Width="147">
+            <Grid.Resources>
+                <ResourceDictionary>
+                    <Style TargetType="{x:Type se:HmiButton}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate>
+                                    <Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="2"/>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ResourceDictionary>
+            </Grid.Resources>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="19*"/>
+                <RowDefinition Height="148*"/>
+            </Grid.RowDefinitions>
+            <Rectangle Fill="{DynamicResource Tablichki}" Margin="{DynamicResource rectangle_margin}" Stroke="Black"/>
+            <TextBlock Text="МЕНЬШЕ" TextWrapping="Wrap"    TextAlignment="Left" HorizontalAlignment="Left" Width="62" Margin="0"/>
+            <TextBlock Text="0" TextWrapping="Wrap" Width="55"       HorizontalAlignment="Center"  TextAlignment="Center" Margin="46,0"/>
+            <TextBlock Text="БОЛЬШЕ" TextWrapping="Wrap" Width="56"   HorizontalAlignment="Right"   TextAlignment="Right" Margin="0,0,5,0"/>
+            <se:VisualBox Grid.Row="1" BorderBrush="{x:Null}">
+                <se:VisualBox.Background>
+                    <ImageBrush Stretch="Uniform" ImageSource="/VFD;component/Content/SwitchButton/big-switcher.png"/>
+                </se:VisualBox.Background>
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/VFD;component/Content/SwitchButton/big-switcher -45.png" Stretch="Uniform"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[nasos1_skorost_menshe].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/VFD;component/Content/SwitchButton/big-switcher.png" Stretch="Uniform"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[nasos1_skorost_0].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/VFD;component/Content/SwitchButton/big-switcher 45.png" Stretch="Uniform"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[nasos1_skorost_bolshe].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+            </se:VisualBox>
+            <se:HmiButton hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[nasos1_skorost_menshe_w].WriteCommand}" HorizontalAlignment="Left" MinWidth="10" Width="50" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="#00000000"/>
+            <se:HmiButton hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[nasos1_skorost_0_w].WriteCommand}" Margin="50,0" MinWidth="10" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="#00000000"/>
+            <se:HmiButton hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[nasos1_skorost_bolshe_w].WriteCommand}" HorizontalAlignment="Right" Margin="0" MinWidth="10" Width="46" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="#00000000"/>
+        </Grid>
+        <Grid HorizontalAlignment="Right" Height="174" Margin="0,628,16,0" VerticalAlignment="Top" Width="147">
+            <Grid.Resources>
+                <ResourceDictionary>
+                    <Style TargetType="{x:Type se:HmiButton}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate>
+                                    <Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="2"/>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ResourceDictionary>
+            </Grid.Resources>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="19*"/>
+                <RowDefinition Height="148*"/>
+            </Grid.RowDefinitions>
+            <Rectangle Fill="{DynamicResource Tablichki}" Margin="{DynamicResource rectangle_margin}" Stroke="Black" />
+            <TextBlock Text="МЕНЬШЕ" TextWrapping="Wrap"    TextAlignment="Left" HorizontalAlignment="Left" Width="62" Margin="0"/>
+            <TextBlock Text="0" TextWrapping="Wrap" Width="55"       HorizontalAlignment="Center"  TextAlignment="Center" Margin="46,0"/>
+            <TextBlock Text="БОЛЬШЕ" TextWrapping="Wrap" Width="56"   HorizontalAlignment="Right"   TextAlignment="Right" Margin="0,0,5,0"/>
+            <se:VisualBox Grid.Row="1" BorderBrush="{x:Null}">
+                <se:VisualBox.Background>
+                    <ImageBrush Stretch="Uniform" ImageSource="/VFD;component/Content/SwitchButton/big-switcher.png"/>
+                </se:VisualBox.Background>
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/VFD;component/Content/SwitchButton/big-switcher -45.png" Stretch="Uniform"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[nasos2_skorost_menshe].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/VFD;component/Content/SwitchButton/big-switcher.png" Stretch="Uniform"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[nasos2_skorost_0].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/VFD;component/Content/SwitchButton/big-switcher 45.png" Stretch="Uniform"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[nasos2_skorost_bolshe].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+            </se:VisualBox>
+            <se:HmiButton hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[nasos2_skorost_menshe_w].WriteCommand}" HorizontalAlignment="Left" MinWidth="10" Width="50" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="#00000000"/>
+            <se:HmiButton hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[nasos2_skorost_0_w].WriteCommand}" Margin="50,0" MinWidth="10" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="#00000000"/>
+            <se:HmiButton hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[nasos2_skorost_bolshe_w].WriteCommand}" HorizontalAlignment="Right" Margin="0" MinWidth="10" Width="46" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="#00000000"/>
+        </Grid>
+        <se:HmiButton Margin="1071,144,0,0" VerticalAlignment="Top" Height="155" HorizontalAlignment="Left" Width="141" BorderBrush="{x:Null}" hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[avarijnij_stop_w].WriteCommand}">
+                    <se:HmiButton.Template>
+                            <ControlTemplate TargetType="se:HmiButton">
+                                <Border x:Name="Border"
+                            CornerRadius="2"
+                            SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}"
+                            >
+                                    <Border.Background>
+                                        <PriorityBinding>
+                                            <Binding RelativeSource="{RelativeSource AncestorType={x:Type se:HmiButton}}" 
+                                         Converter="{StaticResource IsNullToUnsetValueConverter}"
+                                         Path="VisualStateCollection.CurrentState.Background" />
+
+                                            <Binding Path="Background" RelativeSource="{RelativeSource TemplatedParent}"/>
+                                        </PriorityBinding>
+                                    </Border.Background>
+
+                                    <Border.BorderThickness>
+                                        <PriorityBinding>
+                                            <Binding RelativeSource="{RelativeSource AncestorType={x:Type se:HmiButton}}" 
+                                         Converter="{StaticResource IsNullToUnsetValueConverter}"
+                                         Path="VisualStateCollection.CurrentState.BorderThickness" />
+
+                                            <Binding Path="BorderThickness" RelativeSource="{RelativeSource TemplatedParent}"/>
+                                        </PriorityBinding>
+                                    </Border.BorderThickness>
+
+                                    <Border.BorderBrush>
+                                        <PriorityBinding>
+                                            <Binding RelativeSource="{RelativeSource AncestorType={x:Type se:HmiButton}}" 
+                                         Converter="{StaticResource IsNullToUnsetValueConverter}" 
+                                         Path="VisualStateCollection.CurrentState.BorderBrush" />
+
+                                            <Binding Path="BorderBrush" RelativeSource="{RelativeSource TemplatedParent}"/>
+                                        </PriorityBinding>
+                                    </Border.BorderBrush>
+
+
+                                    <ContentPresenter RecognizesAccessKey="True" Content="{TemplateBinding ContentControl.Content}" 
+                                          ContentTemplate="{Binding RelativeSource={RelativeSource Self}, Path=Content, Converter={StaticResource HmiButtonContentTemplateConverter}}" 
+                                          ContentStringFormat="{TemplateBinding ContentControl.ContentStringFormat}" 
+                                          Name="contentPresenter" Margin="{TemplateBinding Control.Padding}" 
+                                          HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" 
+                                          VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}"
+                                          SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" Focusable="False"/>
+                                </Border>
+
+
+                                <ControlTemplate.Triggers>
+                                    <!--<Trigger Property="IsKeyboardFocused" Value="true">
+                                        <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource DefaultedBorderBrush}" />
+                                    </Trigger>-->
+                                    <Trigger Property="IsDefaulted" Value="true">
+                                        <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource DefaultedBorderBrush}" />
+                                    </Trigger>
+
+                                    <Trigger Property="IsPressed" Value="False">
+                                        <Setter TargetName="Border" Property="BorderBrush">
+                                            <Setter.Value>
+                                                <PriorityBinding>
+                                                    <Binding RelativeSource="{RelativeSource AncestorType={x:Type se:HmiButton}}" 
+                                         Converter="{StaticResource IsNullToUnsetValueConverter}" 
+                                         Path="VisualStateCollection.CurrentState.BorderBrush" />
+
+                                                    <Binding Path="BorderBrush" RelativeSource="{RelativeSource TemplatedParent}"/>
+                                                </PriorityBinding>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+
+                                    <!--<Trigger Property="IsPressed" Value="true">
+                                        <Setter TargetName="Border" Property="Background" Value="{StaticResource PressedBrush}" />
+                                        <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource PressedBorderBrush}" />
+                                    </Trigger>-->
+                                    <Trigger Property="IsEnabled" Value="False">
+                                        <Setter TargetName="Border" Property="Opacity" Value="{StaticResource DisableOpacity}"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                    </se:HmiButton.Template>
+            <se:HmiButton.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="/VFD;component/Content/stop_normal.png"/>
+            </se:HmiButton.Background>
+            <se:HmiButton.VisualStateCollection>
+                <se:HmiButtonState>
+                    <se:HmiButtonState.Background>
+                        <ImageBrush ImageSource="/VFD;component/Content/stop_pressed.png" Stretch="Uniform"/>
+                    </se:HmiButtonState.Background>
+                    <se:HmiButtonState.Value>
+                        <hmi:SeBinding Path="Tags.Node[view.pult_nasosov].Items[avarijnij_stop].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:HmiButtonState.Value>
+                </se:HmiButtonState>
+            </se:HmiButton.VisualStateCollection>
+        </se:HmiButton>
+        <se:HmiButton Style="{StaticResource CircleRingButton}" BorderThickness="0" hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pult_nasosov].Items[zvonok].WriteCommand}" Margin="81,174,0,0" Width="90" Height="90" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+        <Message:Pump1StatusBox HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="77" Width="616"/>
+        <Message:Pump2StatusBox HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" Height="77" Width="616"/>
+
+    </Grid>
+</UserControl>

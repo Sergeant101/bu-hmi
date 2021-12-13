@@ -1,0 +1,1856 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D126C3E5-88DC-4769-B62D-045007C55BA2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NGO.Elements</RootNamespace>
+    <AssemblyName>NGO.Elements</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.AcroPDFLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\bin\AxInterop.AcroPDFLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.AcroPDFLib">
+      <HintPath>..\..\bin\Interop.AcroPDFLib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\bin\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Security">
+      <HintPath>..\..\bin\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Monokot.Hmi.Core">
+      <HintPath>..\..\..\..\..\rep\se\Hmi_Core\bin\x86\Debug\Monokot.Hmi.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Monokot.Hmi.StdProviders, Version=2.0.0.1, Culture=neutral, PublicKeyToken=2cc048d59e1cb7f1, processorArchitecture=x86" />
+    <Reference Include="Monokot.Hmi.Wpf">
+      <HintPath>..\..\..\..\..\rep\se\Hmi_Wpf\bin\x86\Debug\Monokot.Hmi.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Monokot.ScadaExtension.Opc">
+      <HintPath>..\..\..\..\..\rep\se\SE_Opc\bin\x86\Debug\Monokot.ScadaExtension.Opc.dll</HintPath>
+    </Reference>
+    <Reference Include="Monokot.ScadaExtension.Wpf">
+      <HintPath>..\..\..\..\..\rep\se\SE_Wpf\bin\Debug\Monokot.ScadaExtension.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Monokot.ScadaExtension.WpfComponents">
+      <HintPath>..\..\..\..\..\rep\se\SE_Wpf_Components\bin\x86\Debug\Monokot.ScadaExtension.WpfComponents.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\libs\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql">
+      <HintPath>..\..\bin\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="OxyPlot">
+      <HintPath>..\..\bin\OxyPlot.dll</HintPath>
+    </Reference>
+    <Reference Include="OxyPlot.Wpf">
+      <HintPath>..\..\bin\OxyPlot.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="OxyPlot.Xps">
+      <HintPath>..\..\bin\OxyPlot.Xps.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WPFPdfViewer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\bin\WPFPdfViewer.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BUHelper.cs" />
+    <Compile Include="Gauges\ExternalDrawworkIntel.xaml.cs">
+      <DependentUpon>ExternalDrawworkIntel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\GaugeDrawwork_SNG_Obuchenie.xaml.cs">
+      <DependentUpon>GaugeDrawwork_SNG_Obuchenie.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\GaugeDrawwork_Byudzhet.xaml.cs">
+      <DependentUpon>GaugeDrawwork_Byudzhet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\GaugeDrawworkSNG.xaml.cs">
+      <DependentUpon>GaugeDrawworkSNG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\GaugeHelperDrawwork2.xaml.cs">
+      <DependentUpon>GaugeHelperDrawwork2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\GaugePressure.xaml.cs">
+      <DependentUpon>GaugePressure.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\GaugePressure2.xaml.cs">
+      <DependentUpon>GaugePressure2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\GaugePressure1.xaml.cs">
+      <DependentUpon>GaugePressure1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\GaugePump3_bngre.xaml.cs">
+      <DependentUpon>GaugePump3_bngre.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\GaugeSPO.xaml.cs">
+      <DependentUpon>GaugeSPO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\GaugeTDS1.xaml.cs">
+      <DependentUpon>GaugeTDS1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\GaugeTDS2.xaml.cs">
+      <DependentUpon>GaugeTDS2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Joystick\izm_velichina_izmeneniya_signala.xaml.cs">
+      <DependentUpon>izm_velichina_izmeneniya_signala.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Joystick\izm_vremya_izmereniya_prirashcheniya.xaml.cs">
+      <DependentUpon>izm_vremya_izmereniya_prirashcheniya.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MomentGKSH.xaml.cs">
+      <DependentUpon>MomentGKSH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MomentMashKluch.xaml.cs">
+      <DependentUpon>MomentMashKluch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Presets\izm_zaderzhka_otkluchenia_obduva_dr2.xaml.cs">
+      <DependentUpon>izm_zaderzhka_otkluchenia_obduva_dr2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Presets\izm_zaderzhka_otkluchenia_obduva_p3.xaml.cs">
+      <DependentUpon>izm_zaderzhka_otkluchenia_obduva_p3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Presets\izm_zaderzhka_otkluchenia_obduva_p2.xaml.cs">
+      <DependentUpon>izm_zaderzhka_otkluchenia_obduva_p2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Presets\izm_zaderzhka_otkluchenia_obduva_p1.xaml.cs">
+      <DependentUpon>izm_zaderzhka_otkluchenia_obduva_p1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Presets\izm_zaderzhka_otkluchenia_obduva_dr1.xaml.cs">
+      <DependentUpon>izm_zaderzhka_otkluchenia_obduva_dr1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Presets\izm_zaderzhka_otkluchenia_obduva_aux.xaml.cs">
+      <DependentUpon>izm_zaderzhka_otkluchenia_obduva_aux.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Presets\izm_zaderzhka_otkluchenia_privoda_helperdrawwork2.xaml.cs">
+      <DependentUpon>izm_zaderzhka_otkluchenia_privoda_helperdrawwork2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Presets\izm_zaderzhka_otkluchenia_privoda_helperdrawwork1.xaml.cs">
+      <DependentUpon>izm_zaderzhka_otkluchenia_privoda_helperdrawwork1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Presets\izm_zaderzhka_otkluchenia_privoda_p3.xaml.cs">
+      <DependentUpon>izm_zaderzhka_otkluchenia_privoda_p3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Presets\izm_zaderzhka_otkluchenia_privoda_p2.xaml.cs">
+      <DependentUpon>izm_zaderzhka_otkluchenia_privoda_p2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Presets\izm_izm_maksimalnaya_nagruzka_na_doloto.xaml.cs">
+      <DependentUpon>izm_izm_maksimalnaya_nagruzka_na_doloto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Presets\izm_zaderzhka_otkluchenia_produvka_rotor.xaml.cs">
+      <DependentUpon>izm_zaderzhka_otkluchenia_produvka_rotor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Presets\izm_zaderzhka_otkluchenia_privoda_aux - Copy.xaml.cs">
+      <DependentUpon>izm_zaderzhka_otkluchenia_privoda_aux - Copy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Presets\izm_zaderzhka_otkluchenia_privoda_dr.xaml.cs">
+      <DependentUpon>izm_zaderzhka_otkluchenia_privoda_dr.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Presets\izm_zaderzhka_otkluchenia_obduva_rotor.xaml.cs">
+      <DependentUpon>izm_zaderzhka_otkluchenia_obduva_rotor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Presets\izm_zaderzhka_otkluchenia_privoda_rotor.xaml.cs">
+      <DependentUpon>izm_zaderzhka_otkluchenia_privoda_rotor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Presets\izm_zaderzhka_otkluchenia_privoda_p1.xaml.cs">
+      <DependentUpon>izm_zaderzhka_otkluchenia_privoda_p1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Drawwork\DrawworkDavlenieVDvigatele2.xaml.cs">
+      <DependentUpon>DrawworkDavlenieVDvigatele2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Drawwork\DrawworkDavlenieVozduhaVTormoze.xaml.cs">
+      <DependentUpon>DrawworkDavlenieVozduhaVTormoze.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Drawwork\DrawworkDavlenieVozduhaVSeti.xaml.cs">
+      <DependentUpon>DrawworkDavlenieVozduhaVSeti.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Drawwork\DrawworkDavlenieSmazkiPosleFiltra.xaml.cs">
+      <DependentUpon>DrawworkDavlenieSmazkiPosleFiltra.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Drawwork\DrawworkDavlenieSmazkiDoFiltra.xaml.cs">
+      <DependentUpon>DrawworkDavlenieSmazkiDoFiltra.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Drawwork\DrawworkDavlenieSmazkiTormoza.xaml.cs">
+      <DependentUpon>DrawworkDavlenieSmazkiTormoza.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Drawwork\DrawworkDavlenieVDvigatele1.xaml.cs">
+      <DependentUpon>DrawworkDavlenieVDvigatele1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Drawwork\DrawworkDavlenieVRabochemTormoze2.xaml.cs">
+      <DependentUpon>DrawworkDavlenieVRabochemTormoze2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Drawwork\DrawworkDavlenieVRabochemTormoze.xaml.cs">
+      <DependentUpon>DrawworkDavlenieVRabochemTormoze.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Drawwork\DrawworkDavlenieVAvarijnomTormoze.xaml.cs">
+      <DependentUpon>DrawworkDavlenieVAvarijnomTormoze.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Msab\MsabDatchikVesa.xaml.cs">
+      <DependentUpon>MsabDatchikVesa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Drawwork\DrawworkTemperaturaMaslaTormoza.xaml.cs">
+      <DependentUpon>DrawworkTemperaturaMaslaTormoza.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Drawwork\DrawworkTemperaturaMaslaReductora.xaml.cs">
+      <DependentUpon>DrawworkTemperaturaMaslaReductora.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Drawwork\DrawworkDavlenieSmazkiReductora.xaml.cs">
+      <DependentUpon>DrawworkDavlenieSmazkiReductora.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Drawwork\DrawworkDavlenieVPravomReduktore.xaml.cs">
+      <DependentUpon>DrawworkDavlenieVPravomReduktore.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Drawwork\DrawworkDavlenieVLevomReduktore.xaml.cs">
+      <DependentUpon>DrawworkDavlenieVLevomReduktore.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Msab\MsabDavlenieVManifolde.xaml.cs">
+      <DependentUpon>MsabDavlenieVManifolde.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Other\DavlenieVManifoldeVlbSpecial2.xaml.cs">
+      <DependentUpon>DavlenieVManifoldeVlbSpecial2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Other\PodderzhanieDavleniya.xaml.cs">
+      <DependentUpon>PodderzhanieDavleniya.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Other\DavlenieVManifoldeVlbSpecial.xaml.cs">
+      <DependentUpon>DavlenieVManifoldeVlbSpecial.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Other\DavlenieVManifoldeVlb.xaml.cs">
+      <DependentUpon>DavlenieVManifoldeVlb.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Pump1\Pump1DavlenieNaVhode.xaml.cs">
+      <DependentUpon>Pump1DavlenieNaVhode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Pump1\Pump1DavlenieNaVihode.xaml.cs">
+      <DependentUpon>Pump1DavlenieNaVihode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Pump1\Pump1DavlenieVDvigatele.xaml.cs">
+      <DependentUpon>Pump1DavlenieVDvigatele.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Pump1\Pump1DavlenieVSOZH.xaml.cs">
+      <DependentUpon>Pump1DavlenieVSOZH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Pump1\Pump1DavlenieVPodshipnikah.xaml.cs">
+      <DependentUpon>Pump1DavlenieVPodshipnikah.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Pump1\Pump1DavlenieVPolzunah.xaml.cs">
+      <DependentUpon>Pump1DavlenieVPolzunah.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Pump1\Pump1TemperaturaMasla.xaml.cs">
+      <DependentUpon>Pump1TemperaturaMasla.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Pump2\Pump2DavlenieNaVhode.xaml.cs">
+      <DependentUpon>Pump2DavlenieNaVhode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Pump2\Pump2DavlenieVDvigatele.xaml.cs">
+      <DependentUpon>Pump2DavlenieVDvigatele.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Pump2\Pump2DavlenieVPodshipnikah.xaml.cs">
+      <DependentUpon>Pump2DavlenieVPodshipnikah.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Pump2\Pump2DavlenieVPolzunah.xaml.cs">
+      <DependentUpon>Pump2DavlenieVPolzunah.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Pump2\Pump2DavlenieVSOZH.xaml.cs">
+      <DependentUpon>Pump2DavlenieVSOZH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Pump3\Pump3DavlenieVPodshipnikah.xaml.cs">
+      <DependentUpon>Pump3DavlenieVPodshipnikah.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Pump3\Pump3DavlenieVSOZH.xaml.cs">
+      <DependentUpon>Pump3DavlenieVSOZH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Pump3\Pump3DavlenieNaVhode.xaml.cs">
+      <DependentUpon>Pump3DavlenieNaVhode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Pump3\Pump3DavlenieVDvigatele.xaml.cs">
+      <DependentUpon>Pump3DavlenieVDvigatele.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Pump3\Pump3DavlenieNaVihode.xaml.cs">
+      <DependentUpon>Pump3DavlenieNaVihode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Pump3\Pump3TemperaturaMasla.xaml.cs">
+      <DependentUpon>Pump3TemperaturaMasla.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Pump2\Pump2DavlenieNaVihode.xaml.cs">
+      <DependentUpon>Pump2DavlenieNaVihode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Pump2\Pump2TemperaturaMasla.xaml.cs">
+      <DependentUpon>Pump2TemperaturaMasla.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Rotor\RotorDavlenieVDvigatele.xaml.cs">
+      <DependentUpon>RotorDavlenieVDvigatele.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Rotor\RotorDavlenieVVilke.xaml.cs">
+      <DependentUpon>RotorDavlenieVVilke.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Rotor\RotorDavlenieVKlinyah.xaml.cs">
+      <DependentUpon>RotorDavlenieVKlinyah.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Small\Rotor\RotorDavlenieVTormoze.xaml.cs">
+      <DependentUpon>RotorDavlenieVTormoze.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\TemperatureGauge1.xaml.cs">
+      <DependentUpon>TemperatureGauge1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\TemperatureGauge.xaml.cs">
+      <DependentUpon>TemperatureGauge.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Tormoz\izm_zaderzhka_nalozheniya_tormoza_Burenie.xaml.cs">
+      <DependentUpon>izm_zaderzhka_nalozheniya_tormoza_Burenie.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Tormoz\izm_zaderzhka_nalozheniya_tormoza_SPO.xaml.cs">
+      <DependentUpon>izm_zaderzhka_nalozheniya_tormoza_SPO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lebedka\Avtoostanovka_vb.xaml.cs">
+      <DependentUpon>Avtoostanovka_vb.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lebedka\Tormoz_vb.xaml.cs">
+      <DependentUpon>Tormoz_vb.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Linear\Position\ComplexBlockPosition.xaml.cs">
+      <DependentUpon>ComplexBlockPosition.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoginControl.xaml.cs">
+      <DependentUpon>LoginControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Message\Burenie\ShortPump3StatusBox.xaml.cs">
+      <DependentUpon>ShortPump3StatusBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Message\DzuStatusBox.xaml.cs">
+      <DependentUpon>DzuStatusBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Message\Burenie\ShortAuxStatusBox.xaml.cs">
+      <DependentUpon>ShortAuxStatusBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Message\Burenie\ShortRotorStatusBox.xaml.cs">
+      <DependentUpon>ShortRotorStatusBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Message\Burenie\ShortPump2StatusBox.xaml.cs">
+      <DependentUpon>ShortPump2StatusBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Message\Burenie\ShortPump1StatusBox.xaml.cs">
+      <DependentUpon>ShortPump1StatusBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Message\Burenie\ShortDrawworkStatusBox.xaml.cs">
+      <DependentUpon>ShortDrawworkStatusBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Message\Burenie\ShortTdsStatusBox.xaml.cs">
+      <DependentUpon>ShortTdsStatusBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Message\Compressor2MainStatusBox.xaml.cs">
+      <DependentUpon>Compressor2MainStatusBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Message\Compressor1MainStatusBox.xaml.cs">
+      <DependentUpon>Compressor1MainStatusBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Message\Compressor2StatusBox.xaml.cs">
+      <DependentUpon>Compressor2StatusBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Message\Compressor1StatusBox.xaml.cs">
+      <DependentUpon>Compressor1StatusBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Message\HelperDrawwork2StatusBox.xaml.cs">
+      <DependentUpon>HelperDrawwork2StatusBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Message\Pump3StatusBox.xaml.cs">
+      <DependentUpon>Pump3StatusBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Message\Tgu1StatusBox.xaml.cs">
+      <DependentUpon>Tgu1StatusBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Message\Tgu2StatusBox.xaml.cs">
+      <DependentUpon>Tgu2StatusBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="passwordControl.xaml.cs">
+      <DependentUpon>passwordControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Rotor\Tormoz_vb.xaml.cs">
+      <DependentUpon>Tormoz_vb.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Scheme\QF.xaml.cs">
+      <DependentUpon>QF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Special\BrakeScheme\AirBrakeControl.xaml.cs" />
+    <Compile Include="Special\BrakeScheme\AirBrakeControl1.xaml.cs" />
+    <Compile Include="Special\BrakeScheme\AirBrakeControl2.xaml.cs" />
+    <Compile Include="Special\BrakeScheme\AirBrakeControl3.xaml.cs" />
+    <Compile Include="Special\BrakeScheme\BrakeDisk.xaml.cs" />
+    <Compile Include="Special\BrakeScheme\EggControl.xaml.cs" />
+    <Compile Include="Special\BrakeScheme\HydroControl.xaml.cs" />
+    <Compile Include="Special\BrakeScheme\HydroControl1.xaml.cs" />
+    <Compile Include="Special\BrakeScheme\HydroControl2.xaml.cs" />
+    <Compile Include="Special\BrakeScheme\HydroControl3.xaml.cs" />
+    <Compile Include="Special\BrakeScheme\HydroControl4.xaml.cs" />
+    <Compile Include="Special\BrakeScheme\hydroPump.xaml.cs" />
+    <Compile Include="Special\Calibration\Calibration.xaml.cs" />
+    <Compile Include="Special\Calibration\CalibrationInput0.xaml.cs" />
+    <Compile Include="Special\Calibration\CalibrationVertical.xaml.cs" />
+    <Compile Include="Special\Calibration\CalibrationViewModel.cs" />
+    <Compile Include="Special\ClickCommandMode\MomentaryConfirmMode.cs" />
+    <Compile Include="Special\Complectation\Complectations.cs" />
+    <Compile Include="Special\Complectation\ComplectationToVisibilityConverter.cs" />
+    <Compile Include="Special\Complectation\PlcToVisibilityConverter.cs" />
+    <Compile Include="Special\Complectation\PlcType.cs" />
+    <Compile Include="Special\Complectation\Utils.cs" />
+    <Compile Include="Special\Complectation\ZakazType.cs" />
+    <Compile Include="Special\ConfigurateSituation\ConfigurationSituationWnd.xaml.cs">
+      <DependentUpon>ConfigurationSituationWnd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Special\ConfigurateSituation\ConfigureItemControl.xaml.cs" />
+    <Compile Include="Special\ConfigurateSituation\ConfigureSituationButton.cs" />
+    <Compile Include="Special\Complectation\EnumDescriptionConverter.cs" />
+    <Compile Include="Special\IndustrialSwitchButton\SimpleSwitch.xaml.cs">
+      <DependentUpon>SimpleSwitch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Special\IndustrialSwitchButton\SwitchButton.cs" />
+    <Compile Include="Special\IO\Backplane.cs" />
+    <Compile Include="Special\IO\IOTemplateSelector.cs" />
+    <Compile Include="Special\IO\Topology.cs" />
+    <Compile Include="Special\IO\IOView.xaml.cs" />
+    <Compile Include="Special\IO\VfdModule.xaml.cs" />
+    <Compile Include="Special\Keypad\ArrayKeypad.xaml.cs">
+      <DependentUpon>ArrayKeypad.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Special\Keypad\ArrayKeypadButton.cs" />
+    <Compile Include="Special\NGOComboBox\NGOComboBox.cs" />
+    <Compile Include="Special\Pdf\PdfHelper.cs" />
+    <Compile Include="Special\Permissions\Model\NgoAuth.cs" />
+    <Compile Include="Special\Permissions\Model\NgoAuthStatus.cs" />
+    <Compile Include="Special\Permissions\Model\NgoAuthUser.cs" />
+    <Compile Include="Special\Permissions\View\PermissionButton.xaml.cs">
+      <DependentUpon>PermissionButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Special\ReadyWindow\Readies.xaml.cs">
+      <DependentUpon>Readies.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Special\ReadyWindow\TagsFromFileModel.cs" />
+    <Compile Include="Special\Complectation\ZakazToVisibilityConverter.cs" />
+    <Compile Include="Message\PodderzanieDavleniaStatusBox.xaml.cs">
+      <DependentUpon>PodderzanieDavleniaStatusBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Special\StatusTextUpdatedDelay\StatusText.cs" />
+    <Compile Include="Special\Transliteration\Transliteration.cs" />
+    <Compile Include="Special\Transliteration\TransliterationType.cs" />
+    <Compile Include="style\cool_rect.xaml.cs">
+      <DependentUpon>cool_rect.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZeroHour\ZeroHourViewModel.cs" />
+    <Page Include="Gauges\ExternalDrawworkIntel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\GaugeDrawwork_SNG_Obuchenie.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\GaugeDrawwork_Byudzhet.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\GaugeDrawworkSNG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\GaugeHelperDrawwork2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\GaugeHelperDrawwork.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\GaugePressure.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\GaugePressure2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\GaugePressure1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\GaugePump1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\GaugePump2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\GaugePump3_bngre.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\GaugePump3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\GaugeRotor1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\GaugeRotor2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="Gauges\GaugeHelperDrawwork.xaml.cs">
+      <DependentUpon>GaugeHelperDrawwork.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\GaugePump1.xaml.cs">
+      <DependentUpon>GaugePump1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\GaugePump2.xaml.cs">
+      <DependentUpon>GaugePump2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\GaugePump3.xaml.cs">
+      <DependentUpon>GaugePump3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\GaugeRotor1.xaml.cs">
+      <DependentUpon>GaugeRotor1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\GaugeRotor2.xaml.cs">
+      <DependentUpon>GaugeRotor2.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Gauges\GaugeSPO.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\GaugeTDS1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\GaugeTDS2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\GaugeWeight.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\Joystick\izm_velichina_izmeneniya_signala.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Joystick\izm_vremya_izmereniya_prirashcheniya.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MomentGKSH.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\MomentMashKluch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\Presets\izm_zaderzhka_otkluchenia_obduva_dr2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Presets\izm_zaderzhka_otkluchenia_obduva_p3.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Presets\izm_zaderzhka_otkluchenia_obduva_p2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Presets\izm_zaderzhka_otkluchenia_obduva_p1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Presets\izm_zaderzhka_otkluchenia_obduva_dr1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Presets\izm_zaderzhka_otkluchenia_obduva_aux.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Presets\izm_zaderzhka_otkluchenia_privoda_helperdrawwork2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Presets\izm_zaderzhka_otkluchenia_privoda_helperdrawwork1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Presets\izm_zaderzhka_otkluchenia_privoda_p3.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Presets\izm_zaderzhka_otkluchenia_privoda_p2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Presets\izm_izm_maksimalnaya_nagruzka_na_doloto.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Presets\izm_zaderzhka_otkluchenia_produvka_rotor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Presets\izm_zaderzhka_otkluchenia_privoda_aux - Copy.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Presets\izm_zaderzhka_otkluchenia_privoda_dr.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Presets\izm_zaderzhka_otkluchenia_obduva_rotor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Presets\izm_zaderzhka_otkluchenia_privoda_rotor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Presets\izm_zaderzhka_otkluchenia_privoda_p1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Small\Drawwork\DrawworkDavlenieVDvigatele2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Small\Drawwork\DrawworkDavlenieVozduhaVTormoze.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Small\Drawwork\DrawworkDavlenieVozduhaVSeti.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Small\Drawwork\DrawworkDavlenieSmazkiPosleFiltra.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Small\Drawwork\DrawworkDavlenieSmazkiDoFiltra.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Small\Drawwork\DrawworkDavlenieSmazkiTormoza.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Small\Drawwork\DrawworkDavlenieVDvigatele1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Small\Drawwork\DrawworkDavlenieVRabochemTormoze2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Small\Drawwork\DrawworkDavlenieVRabochemTormoze.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Small\Drawwork\DrawworkDavlenieVAvarijnomTormoze.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Small\Msab\MsabDatchikVesa.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Small\Drawwork\DrawworkTemperaturaMaslaTormoza.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Small\Drawwork\DrawworkTemperaturaMaslaReductora.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Small\Drawwork\DrawworkDavlenieSmazkiReductora.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Small\Drawwork\DrawworkDavlenieVPravomReduktore.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Small\Drawwork\DrawworkDavlenieVLevomReduktore.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\Small\Msab\MsabDavlenieVManifolde.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Small\Other\DavlenieVManifoldeVlbSpecial2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Small\Other\PodderzhanieDavleniya.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Small\Other\DavlenieVManifoldeVlbSpecial.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Small\Other\DavlenieVManifoldeVlb.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\Small\Pump1\Pump1DavlenieNaVhode.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Small\Pump1\Pump1DavlenieNaVihode.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\Small\Pump1\Pump1DavlenieVDvigatele.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Small\Pump1\Pump1DavlenieVSOZH.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Small\Pump1\Pump1DavlenieVPodshipnikah.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Small\Pump1\Pump1DavlenieVPolzunah.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Small\Pump1\Pump1TemperaturaMasla.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\Small\Pump2\Pump2DavlenieNaVhode.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Small\Pump2\Pump2DavlenieVDvigatele.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Small\Pump2\Pump2DavlenieVPodshipnikah.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Small\Pump2\Pump2DavlenieVPolzunah.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Small\Pump2\Pump2DavlenieVSOZH.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Small\Pump3\Pump3DavlenieVPodshipnikah.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Small\Pump3\Pump3DavlenieVSOZH.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Small\Pump3\Pump3DavlenieNaVhode.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Small\Pump3\Pump3DavlenieVDvigatele.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Small\Pump3\Pump3DavlenieNaVihode.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Small\Pump3\Pump3TemperaturaMasla.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Small\Pump2\Pump2DavlenieNaVihode.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\Small\Pump2\Pump2TemperaturaMasla.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\Small\Rotor\RotorDavlenieVDvigatele.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Small\Rotor\RotorDavlenieVVilke.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Small\Rotor\RotorDavlenieVKlinyah.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Small\Rotor\RotorDavlenieVTormoze.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\TemperatureGauge1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\TemperatureGauge.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\Tormoz\izm_zaderzhka_nalozheniya_tormoza_Burenie.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Tormoz\izm_zaderzhka_nalozheniya_tormoza_SPO.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lebedka\Avtoostanovka_vb.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lebedka\Tormoz_vb.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Linear\Position\ComplexBlockPosition.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Linear\Position\BlockPosition.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Linear\Position\Deep.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoginControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Message\Burenie\ShortPump3StatusBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Message\DzuStatusBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Message\AuxStatusBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Message\Burenie\ShortAuxStatusBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Message\Burenie\ShortRotorStatusBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Message\Burenie\ShortPump2StatusBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Message\Burenie\ShortPump1StatusBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Message\Burenie\ShortDrawworkStatusBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Message\Burenie\ShortTdsStatusBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Message\Compressor2MainStatusBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Message\Compressor1MainStatusBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Message\Compressor2StatusBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Message\Compressor1StatusBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Message\DrawworkStatusBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Message\HelperDrawwork2StatusBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Message\HelperDrawworkStatusBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Message\Pump1StatusBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Message\Pump2StatusBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Message\Pump3StatusBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Message\RotorStatusBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Message\Tgu1StatusBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Message\Tgu2StatusBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MSAB\GasView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MSAB\WideTank.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="passwordControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Rotor\Tormoz_vb.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Scheme\QF.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Special\BrakeScheme\AirBrakeControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Special\BrakeScheme\AirBrakeControl1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Special\BrakeScheme\AirBrakeControl2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Special\BrakeScheme\AirBrakeControl3.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Special\BrakeScheme\BrakeDisk.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Special\BrakeScheme\EggControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Special\BrakeScheme\HydroControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Special\BrakeScheme\HydroControl1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Special\BrakeScheme\HydroControl2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Special\BrakeScheme\HydroControl3.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Special\BrakeScheme\HydroControl4.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Special\BrakeScheme\hydroPump.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Special\Calibration\Calibration.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Special\Calibration\CalibrationInput0.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Special\Calibration\CalibrationVertical.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Special\ConfigurateSituation\ConfigurationSituationWnd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Special\ConfigurateSituation\ConfigureItemControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Special\IndustrialSwitchButton\SimpleSwitch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Special\IO\IOView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Special\IO\VfdModule.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Special\Keypad\ArrayKeypad.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Special\NGOComboBox\Style.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Special\Permissions\View\PermissionButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Special\ReadyWindow\Readies.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Message\PodderzanieDavleniaStatusBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="style\brake_scheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="style\cool_rect.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="style\icons.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="style\io_style.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="style\scheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="style\style.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="style\superVfd_styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Gauges\GaugeWeight.xaml.cs">
+      <DependentUpon>GaugeWeight.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Linear\Position\BlockPosition.xaml.cs">
+      <DependentUpon>BlockPosition.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Linear\Position\Deep.xaml.cs">
+      <DependentUpon>Deep.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Message\AuxStatusBox.xaml.cs">
+      <DependentUpon>AuxStatusBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Message\DrawworkStatusBox.xaml.cs">
+      <DependentUpon>DrawworkStatusBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Message\HelperDrawworkStatusBox.xaml.cs">
+      <DependentUpon>HelperDrawworkStatusBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Message\Pump1StatusBox.xaml.cs">
+      <DependentUpon>Pump1StatusBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Message\Pump2StatusBox.xaml.cs">
+      <DependentUpon>Pump2StatusBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Message\RotorStatusBox.xaml.cs">
+      <DependentUpon>RotorStatusBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MSAB\GasView.xaml.cs">
+      <DependentUpon>GasView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MSAB\WideTank.xaml.cs">
+      <DependentUpon>WideTank.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Content\Gauges\Background\Thumbs.db" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Gauges\Arrows\arrow temp.png" />
+    <Resource Include="Content\Icon\arrow %28left%29.png" />
+    <Resource Include="Content\Icon\arrow %28right%29.png" />
+    <Resource Include="Content\Icon\blow emer.png" />
+    <Resource Include="Content\Icon\blow emergency.png" />
+    <Resource Include="Content\Icon\blow green.png" />
+    <Resource Include="Content\Icon\blow red.png" />
+    <Resource Include="Content\Icon\blow run.png" />
+    <Resource Include="Content\Icon\blow work.png" />
+    <Resource Include="Content\Icon\brake red.png" />
+    <Resource Include="Content\Icon\brake.png" />
+    <Resource Include="Content\Icon\gear red.png" />
+    <Resource Include="Content\Icon\gear yellow.png" />
+    <Resource Include="Content\Icon\heating emer.png" />
+    <Resource Include="Content\Icon\heating emergency.png" />
+    <Resource Include="Content\Icon\heating green.png" />
+    <Resource Include="Content\Icon\heating red.png" />
+    <Resource Include="Content\Icon\heating run.png" />
+    <Resource Include="Content\Icon\heating work.png" />
+    <Resource Include="Content\Icon\housing red.png" />
+    <Resource Include="Content\Icon\housing.png" />
+    <Resource Include="Content\Icon\oil emer.png" />
+    <Resource Include="Content\Icon\oil green.png" />
+    <Resource Include="Content\Icon\oil red.png" />
+    <Resource Include="Content\Icon\oil run.png" />
+    <Resource Include="Content\Icon\oiling emergency.png" />
+    <Resource Include="Content\Icon\oiling work.png" />
+    <Resource Include="Content\Icon\rotor left.png" />
+    <Resource Include="Content\Icon\rotor right.png" />
+    <Resource Include="Content\Icon\rotor stop.png" />
+    <Resource Include="Content\Icon\ter emer.png" />
+    <Resource Include="Content\Icon\ter emergency.png" />
+    <Resource Include="Content\Icon\ter run.png" />
+    <Resource Include="Content\Icon\ter work.png" />
+    <Resource Include="Content\Icon\wedges att.png" />
+    <Resource Include="Content\Icon\wedges emergency.png" />
+    <Resource Include="Content\Icon\wedges r.png" />
+    <Resource Include="Content\Icon\wedges red.png" />
+    <Resource Include="Content\Icon\wedges yellow.png" />
+    <Resource Include="Content\Icon\wedges.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Gauges\Background\black cap.png" />
+    <Resource Include="Content\Gauges\Background\blue gauge 2.png" />
+    <Resource Include="Content\Gauges\Background\blue gauge.png" />
+    <Resource Include="Content\Gauges\Background\gas_SCALE.png" />
+    <Resource Include="Content\Gauges\Background\gaz tank-02-02.png" />
+    <Resource Include="Content\Gauges\Background\gray gauge.png" />
+    <Resource Include="Content\Gauges\Background\green gauge %28empty%29.png" />
+    <Resource Include="Content\Gauges\Background\green gauge.png" />
+    <Resource Include="Content\Gauges\Background\pump inlet cap.png" />
+    <Resource Include="Content\Gauges\Background\pumps gauge background.png" />
+    <Resource Include="Content\Gauges\Background\red cap %28todco%29.png" />
+    <Resource Include="Content\Gauges\Background\rotor cap.png" />
+    <Resource Include="Content\Gauges\Background\tank background.png" />
+    <Resource Include="Content\Gauges\Background\tank.bmp" />
+    <Resource Include="Content\Gauges\Background\todco gauge 2.png" />
+    <Resource Include="Content\Gauges\Background\todco gauge 320.png" />
+    <Resource Include="Content\Gauges\Background\todco gauge 400.png" />
+    <Resource Include="Content\Gauges\Background\todco gauge.png" />
+    <Resource Include="Content\Gauges\Background\todco gauge400.png" />
+    <Resource Include="Content\Gauges\Background\todco gauge450.png" />
+    <Resource Include="Content\Gauges\Background\todco_gauge_%28un_weigth_scale%29.png" />
+    <Resource Include="Content\Gauges\Background\todco_gauge_%28un_weigth_scale%292.png" />
+    <Resource Include="Content\Gauges\Background\violet gauge.png" />
+    <Resource Include="Content\Gauges\Background\white cap 2.png" />
+    <Resource Include="Content\Gauges\Background\white cap 3.png" />
+    <Resource Include="Content\Gauges\Background\white cap.png" />
+    <Resource Include="Content\Gauges\Background\white gauge 2.png" />
+    <Resource Include="Content\Gauges\Background\white gauge.png" />
+    <Resource Include="Content\Gauges\Background\_scale %28del%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Gauges\Arrows\arrow 1 white.png" />
+    <Resource Include="Content\Gauges\Arrows\arrow red.png" />
+    <Resource Include="Content\Gauges\Arrows\black arrow.png" />
+    <Resource Include="Content\Gauges\Arrows\dark blue arrow.png" />
+    <Resource Include="Content\Gauges\Arrows\gray arrow %28todco%29 2.png" />
+    <Resource Include="Content\Gauges\Arrows\gray arrow %28todco%29.png" />
+    <Resource Include="Content\Gauges\Arrows\gray arrow 2.png" />
+    <Resource Include="Content\Gauges\Arrows\gray arrow.png" />
+    <Resource Include="Content\Gauges\Arrows\gray gauge arrow %28red%29.png" />
+    <Resource Include="Content\Gauges\Arrows\orange arrow 2.png" />
+    <Resource Include="Content\Gauges\Arrows\orange arrow.png" />
+    <Resource Include="Content\Gauges\Arrows\point here.png" />
+    <Resource Include="Content\Gauges\Arrows\pump inlet pressure.png" />
+    <Resource Include="Content\Gauges\Arrows\pz_here.bmp" />
+    <Resource Include="Content\Gauges\Arrows\red arrow %28todco%29 2.png" />
+    <Resource Include="Content\Gauges\Arrows\red arrow %28todco%29.png" />
+    <Resource Include="Content\Gauges\Arrows\red arrow 2.png" />
+    <Resource Include="Content\Gauges\Arrows\red arrow 3.png" />
+    <Resource Include="Content\Gauges\Arrows\red arrow.png" />
+    <Resource Include="Content\Gauges\Arrows\scroll.png" />
+    <Resource Include="Content\Gauges\Arrows\white arrow.png" />
+    <Resource Include="Content\Gauges\Arrows\yellow arrow %28todco%29 2.png" />
+    <Resource Include="Content\Gauges\Arrows\yellow arrow %28todco%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Gauges\Linear\deep.png" />
+    <Resource Include="Content\Gauges\Linear\deep6500.png" />
+    <Resource Include="Content\Gauges\Linear\deep7350.png" />
+    <Resource Include="Content\Gauges\Linear\irfkf-02.png" />
+    <Resource Include="Content\Gauges\Linear\metal tank.png" />
+    <Resource Include="Content\Gauges\Linear\tank arktika2 back.png" />
+    <Resource Include="Content\Gauges\Linear\tank arktika2.png" />
+    <Resource Include="Content\Gauges\Linear\tank background.png" />
+    <Resource Include="Content\Gauges\Linear\tank border.png" />
+    <Resource Include="Content\Gauges\Linear\tank.png" />
+    <Resource Include="Content\Gauges\Linear\tb %28scale%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Buttons\black button %28normal%29.png" />
+    <Resource Include="Content\Buttons\black button %28push%29.png" />
+    <Resource Include="Content\Buttons\black button %28select%29.png" />
+    <Resource Include="Content\Buttons\black button 2 %28normal%29.png" />
+    <Resource Include="Content\Buttons\black button 2 %28push%29.png" />
+    <Resource Include="Content\Buttons\black button 3 %28normal%29.png" />
+    <Resource Include="Content\Buttons\black button 3 %28push%29.png" />
+    <Resource Include="Content\Buttons\black button 3 %28select%29.png" />
+    <Resource Include="Content\Buttons\black button 3 %28select, push%29.png" />
+    <Resource Include="Content\Buttons\black button 4 %28normal%29.png" />
+    <Resource Include="Content\Buttons\black button 4 %28push%29.png" />
+    <Resource Include="Content\Buttons\black button 4 %28select%29.png" />
+    <Resource Include="Content\Buttons\black button 4 %28select, push%29.png" />
+    <Resource Include="Content\Buttons\Button_DcApp %28normal%29.png" />
+    <Resource Include="Content\Buttons\Button_DcApp %28push%29.png" />
+    <Resource Include="Content\Buttons\fugure gray normal.png" />
+    <Resource Include="Content\Buttons\fugure green normal.png" />
+    <Resource Include="Content\Buttons\orange-button-%28normal%29.png" />
+    <Resource Include="Content\Buttons\orange-button-%28push%29.png" />
+    <Resource Include="Content\Buttons\orange-button-%28select%29.png" />
+    <Resource Include="Content\Buttons\ring-button-%28normal%29.png" />
+    <Resource Include="Content\Buttons\ring-button-%28push%29.png" />
+    <Resource Include="Content\Buttons\start button %28normal%29.png" />
+    <Resource Include="Content\Buttons\start button %28push%29.png" />
+    <Resource Include="Content\Buttons\stop button %28normal%29.png" />
+    <Resource Include="Content\Buttons\stop button %28push%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\!.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\LED\LED %28gleam%29.png" />
+    <Resource Include="Content\LED\LED %28normal%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Backround\metal panel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Buttons\black-button-%28normal%29-middle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Buttons\black-button-%28push%29-middle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Buttons\black-button-2-%28normal%29-small.png" />
+    <Resource Include="Content\Buttons\black-button-2-%28push%29-small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Buttons\black-button-3-%28normal%29-big.png" />
+    <Resource Include="Content\Buttons\black-button-3-%28push%29-big.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Buttons\black-button-%28selected%29-middle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Buttons\black-button-3-%28select%29-big.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Gauges\Arrows\black-triangle_210_30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Buttons\test\black-button-%28disable%29-bg.png" />
+    <Resource Include="Content\Buttons\test\black-button-%28disable%29-bottom.png" />
+    <Resource Include="Content\Buttons\test\black-button-%28disable%29-left-bg.png" />
+    <Resource Include="Content\Buttons\test\black-button-%28disable%29-left-bottom.png" />
+    <Resource Include="Content\Buttons\test\black-button-%28disable%29-left-top.png" />
+    <Resource Include="Content\Buttons\test\black-button-%28disable%29-right-bottom.png" />
+    <Resource Include="Content\Buttons\test\black-button-%28disable%29-right-top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\LED\led_emer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\LED\led_alarm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\LED\led_work.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Gauges\Background\yellow gauge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Gauges\Background\orange gauge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Gauges\Arrows\arrow-press.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Gauges\Arrows\arrow-press-big.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Icon\calc-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Icon\heating 1 green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Icon\heating 1 red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Buttons\black-button-%28normal%29-middle-disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Buttons\black-button-2-%28normal%29-small-disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Icon\housing green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Buttons\test\black-button-%28normal%29-bg.png" />
+    <Resource Include="Content\Buttons\test\black-button-%28normal%29-bottom.png" />
+    <Resource Include="Content\Buttons\test\black-button-%28normal%29-left.png" />
+    <Resource Include="Content\Buttons\test\black-button-%28normal%29-right.png" />
+    <Resource Include="Content\Buttons\test\black-button-%28normal%29-top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Buttons\test\black-button-%28normal%29-left-bottom.png" />
+    <Resource Include="Content\Buttons\test\black-button-%28normal%29-left-top.png" />
+    <Resource Include="Content\Buttons\test\black-button-%28normal%29-right-bottom.png" />
+    <Resource Include="Content\Buttons\test\black-button-%28normal%29-right-top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Buttons\test\black-button-%28normal%29-left-bg.png" />
+    <Resource Include="Content\Buttons\test\black-button-%28normal%29-right-bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Buttons\test\black-button-%28push%29-bottom.png" />
+    <Resource Include="Content\Buttons\test\black-button-%28push%29-left-bg.png" />
+    <Resource Include="Content\Buttons\test\black-button-%28push%29-left-bottom.png" />
+    <Resource Include="Content\Buttons\test\black-button-%28push%29-left-top.png" />
+    <Resource Include="Content\Buttons\test\black-button-%28push%29-right-bg.png" />
+    <Resource Include="Content\Buttons\test\black-button-%28push%29-right-bottom.png" />
+    <Resource Include="Content\Buttons\test\black-button-%28push%29-right-top.png" />
+    <Resource Include="Content\Buttons\test\black-button-%28push%29-top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Buttons\test\black-button-%28selected%29-bottom.png" />
+    <Resource Include="Content\Buttons\test\black-button-%28selected%29-left-bg.png" />
+    <Resource Include="Content\Buttons\test\black-button-%28selected%29-left-bottom.png" />
+    <Resource Include="Content\Buttons\test\black-button-%28selected%29-left-top.png" />
+    <Resource Include="Content\Buttons\test\black-button-%28selected%29-right-bg.png" />
+    <Resource Include="Content\Buttons\test\black-button-%28selected%29-right-bottom.png" />
+    <Resource Include="Content\Buttons\test\black-button-%28selected%29-right-top.png" />
+    <Resource Include="Content\Buttons\test\black-button-%28selected%29-top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Buttons\test\black-button-%28selected%29-bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Buttons\test\black-button-%28disable%29-top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Buttons\test\black-button-%28disable%29-right-bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Buttons\ngo_style_button\disable\black-button-%28disable%29_01.png" />
+    <Resource Include="Content\Buttons\ngo_style_button\disable\black-button-%28disable%29_02.png" />
+    <Resource Include="Content\Buttons\ngo_style_button\disable\black-button-%28disable%29_03.png" />
+    <Resource Include="Content\Buttons\ngo_style_button\disable\black-button-%28disable%29_04.png" />
+    <Resource Include="Content\Buttons\ngo_style_button\disable\black-button-%28disable%29_05.png" />
+    <Resource Include="Content\Buttons\ngo_style_button\disable\black-button-%28disable%29_06.png" />
+    <Resource Include="Content\Buttons\ngo_style_button\disable\black-button-%28disable%29_07.png" />
+    <Resource Include="Content\Buttons\ngo_style_button\disable\black-button-%28disable%29_08.png" />
+    <Resource Include="Content\Buttons\ngo_style_button\disable\black-button-%28disable%29_09.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Buttons\ngo_style_button\normal\black-button-%28normal%29_01.png" />
+    <Resource Include="Content\Buttons\ngo_style_button\normal\black-button-%28normal%29_02.png" />
+    <Resource Include="Content\Buttons\ngo_style_button\normal\black-button-%28normal%29_03.png" />
+    <Resource Include="Content\Buttons\ngo_style_button\normal\black-button-%28normal%29_04.png" />
+    <Resource Include="Content\Buttons\ngo_style_button\normal\black-button-%28normal%29_05.png" />
+    <Resource Include="Content\Buttons\ngo_style_button\normal\black-button-%28normal%29_06.png" />
+    <Resource Include="Content\Buttons\ngo_style_button\normal\black-button-%28normal%29_07.png" />
+    <Resource Include="Content\Buttons\ngo_style_button\normal\black-button-%28normal%29_08.png" />
+    <Resource Include="Content\Buttons\ngo_style_button\normal\black-button-%28normal%29_09.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Buttons\ngo_style_button\push\black-button-%28push%29_01.png" />
+    <Resource Include="Content\Buttons\ngo_style_button\push\black-button-%28push%29_02.png" />
+    <Resource Include="Content\Buttons\ngo_style_button\push\black-button-%28push%29_03.png" />
+    <Resource Include="Content\Buttons\ngo_style_button\push\black-button-%28push%29_04.png" />
+    <Resource Include="Content\Buttons\ngo_style_button\push\black-button-%28push%29_05.png" />
+    <Resource Include="Content\Buttons\ngo_style_button\push\black-button-%28push%29_06.png" />
+    <Resource Include="Content\Buttons\ngo_style_button\push\black-button-%28push%29_07.png" />
+    <Resource Include="Content\Buttons\ngo_style_button\push\black-button-%28push%29_08.png" />
+    <Resource Include="Content\Buttons\ngo_style_button\push\black-button-%28push%29_09.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Buttons\ngo_style_button\selected\black-button-%28selected%29_01.png" />
+    <Resource Include="Content\Buttons\ngo_style_button\selected\black-button-%28selected%29_02.png" />
+    <Resource Include="Content\Buttons\ngo_style_button\selected\black-button-%28selected%29_03.png" />
+    <Resource Include="Content\Buttons\ngo_style_button\selected\black-button-%28selected%29_04.png" />
+    <Resource Include="Content\Buttons\ngo_style_button\selected\black-button-%28selected%29_05.png" />
+    <Resource Include="Content\Buttons\ngo_style_button\selected\black-button-%28selected%29_06.png" />
+    <Resource Include="Content\Buttons\ngo_style_button\selected\black-button-%28selected%29_07.png" />
+    <Resource Include="Content\Buttons\ngo_style_button\selected\black-button-%28selected%29_08.png" />
+    <Resource Include="Content\Buttons\ngo_style_button\selected\black-button-%28selected%29_09.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Icon\h_pump_pump_emer.png" />
+    <Resource Include="Content\Icon\h_pump_pump_work.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Icon\folder-icon.png" />
+    <Resource Include="Content\Icon\pdf-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Buttons\power_button.png" />
+    <Resource Include="Content\Buttons\power_button_push.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Statuses\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="led_fine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="led_danger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="led_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Icon\gear green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Icon\keyboard.png" />
+    <Resource Include="Content\Icon\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Harakteristika_momenta.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Lamps\LED %28normal%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Lamps\led_danger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Lamps\led_default.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Lamps\led_fine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Lamps\led_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\LED %28gleam%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\LED %28normal%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\abb-dtme-i-485-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\abb_controller_inverter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\abb_inverter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\abb_panel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\AnyBus 60x60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\B&amp;R.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\BCT-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\brssh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\compact logix.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\CompactLogix.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\control logix.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\ControlLogix.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\cpu-319.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\dc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\dpp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\encoder-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\encoder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\end.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\et200-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\et200-5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\et200-9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\et200sp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\firewall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\gprs-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\GW-7663.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\hmi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\modbus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\moxa-awk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\moxa-EDS-205.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\moxa-EDS-508.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\moxa-MGATE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\Moxa508.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\notebook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\nport.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\PEPPERLFUCHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\point-io-17.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\Point IO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\pump.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\red-circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\s2000-kdl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\s2000bi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\s2000pp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\signal_20m.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\SINAMICS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\sirius.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\VFD pc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\С2000-М.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Scheme\acdc-green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Scheme\acdc-red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Scheme\acdc-yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Scheme\cb-close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Scheme\cb-open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Scheme\choper-green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Scheme\choper-red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Scheme\choper-yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Scheme\converter-green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Scheme\converter-red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Scheme\converter-yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Scheme\dcdc-green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Scheme\dcdc-red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Scheme\dcdc-yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Scheme\dpp-green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Scheme\dpp-red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Scheme\dpp-yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Scheme\inverter-green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Scheme\inverter-red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Scheme\inverter-yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Scheme\motor-green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Scheme\motor-red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Scheme\motor-yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Scheme\QF-close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Scheme\QF-open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Scheme\QS-close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Scheme\QS-open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Scheme\S71200 Serial Communication.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Scheme\t2-green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Scheme\t2-red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Scheme\t2-yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Scheme\t3-green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Scheme\t3-red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Scheme\t3-yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\stop_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\stop_pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\SwitchButton\big-switcher -45.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\SwitchButton\big-switcher 45.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\SwitchButton\big-switcher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\SwitchButton\switcher - left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\SwitchButton\switcher - right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\SwitchButton\switcher -90.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\SwitchButton\switcher + 90.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\SwitchButton\switcher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\switcher-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\switcher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\tr100m.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\tr100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\VFD\Network\trm138_shh7.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

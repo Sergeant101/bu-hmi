@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="NGO.Elements.Gauges.MomentGKSH"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:se="http://schemas.monokot.com/se/"             
+             xmlns:hmi="http://schemas.monokot.com/hmi/"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Monokot.ScadaExtension.Wpf;component/Themes/Controls/IndustrialStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Viewbox>
+        <Grid>
+            <se:RadialGauge Style="{StaticResource SimpleGauge}" 
+                            FontSize="22" 
+                            Foreground="Black"
+                            Height="200"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Width="200" 
+                            MajorTickBrush="Black" 
+                            MajorTickCost="25" 
+                            MajorTickLength="15" 
+                            Maximum="100" 
+                            MinorTickLength="10" 
+                            Canvas.Left="955" 
+                            Canvas.Top="536"
+                            StartAngle="205"
+                            EndAngle="-25">
+                <se:RadialGauge.Arrows>
+                    <se:RadialArrow Style="{StaticResource TriangleRadialArrow}" Background="DarkGray" >
+                        <se:RadialArrow.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.gksh].Items[moment].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Double>0</system:Double>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:RadialArrow.Value>
+                    </se:RadialArrow>
+                </se:RadialGauge.Arrows>
+            </se:RadialGauge>
+            <TextBlock FontSize="28" HorizontalAlignment="Center" Canvas.Left="955" Canvas.Top="225" Text="{hmi:SeBinding Tags.Node[view.gksh].Items[moment].Value, FallbackValue=0, StringFormat=0.0}" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Foreground="Black" FontFamily="Tahoma" Margin="0,151,0,0" />
+            <TextBlock FontSize="20" HorizontalAlignment="Center" Text="кН×м" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Foreground="Black" FontFamily="Tahoma" Margin="0,60,0,0" />
+        </Grid>
+    </Viewbox>
+</UserControl>

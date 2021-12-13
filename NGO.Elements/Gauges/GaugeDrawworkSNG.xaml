@@ -1,0 +1,695 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:my="clr-namespace:System;assembly=mscorlib"
+             xmlns:se="http://schemas.monokot.com/se/"
+             xmlns:hmi="http://schemas.monokot.com/hmi/"
+    x:Class="NGO.Elements.Gauges.GaugeDrawworkSNG"
+             mc:Ignorable="d" Height="380" Width="490" MinHeight="380" MaxHeight="380" MinWidth="490" MaxWidth="490">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Monokot.ScadaExtension.Wpf;component/Themes/Controls/IndustrialStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Canvas Width="490" Height="380">
+        <se:LevelBar Canvas.Left="134" Canvas.Top="315" x:Name="levelBar1" Height="15" Width="217" Level="{hmi:SeBinding modules[tags_mod].Items[dr_m1_torque].Value, FallbackValue=0}" Maximum="150" Minimum="0" Kind="Horizontal">
+            <se:LevelBar.Fill>
+                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                    <GradientStop Color="Green" Offset="0" />
+                    <GradientStop Color="Yellow" Offset="0.8" />
+                    <GradientStop Color="Red" Offset="1" />
+                </LinearGradientBrush>
+            </se:LevelBar.Fill>
+        </se:LevelBar>
+        <Image Height="380" Width="490" Source="/NGO.Elements;component/Content/Gauges/Background/violet%20gauge.png" d:IsLocked="True" />
+        <TextBlock Height="34" Text="Лебедка" HorizontalAlignment="Center" FontFamily="Tahoma" FontWeight="Bold" TextAlignment="Center" FontSize="20" VerticalAlignment="Center"  Foreground="#FFBF8BC6" Canvas.Left="200" Canvas.Top="75" />
+        <se:RadialGauge x:Name="radialGauge1" Height="340" Width="340" Canvas.Left="75" Canvas.Top="22" MajorTickBrush="White" MinorTickBrush="White" ShowStick="False" Foreground="White" MajorTickCost="0.75" MinorTickCost="0.25" MajorTickThickness="5" MajorTickLength="20" MinorTickLength="15" MinorTickThickness="2" FontSize="20" ScaleLabelsStringFormat="{}{0:0.##}" FontFamily="Tahoma" EndAngle="-10" StartAngle="190" UseMajorTickCount="True" UseMinorTickCount="True" MinorTickCount="4" MajorTickCount="5">
+            <se:RadialGauge.Minimum>
+                <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork].Items[dr_min].Value">
+                    <hmi:SeBinding.FallbackValue>
+                        <my:Double>-1.5</my:Double>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </se:RadialGauge.Minimum>
+            <se:RadialGauge.Maximum>
+                <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork].Items[dr_max].Value">
+                    <hmi:SeBinding.FallbackValue>
+                        <my:Double>1.5</my:Double>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </se:RadialGauge.Maximum>
+            <se:RadialGauge.Arrows>
+                <se:RadialArrow Background="White" Style="{StaticResource TriangleRadialArrow}" Height="170" Width="30" BorderBrush="Transparent">
+                    <se:RadialArrow.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork].Items[real].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <my:Double>0</my:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:RadialArrow.Value>
+                </se:RadialArrow>
+                <se:RadialArrow Background="Red" Style="{StaticResource TriangleRadialArrow}" Height="170" Width="16" BorderBrush="Transparent">
+                    <se:RadialArrow.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork].Items[reference].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <my:Double>0</my:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:RadialArrow.Value>
+                </se:RadialArrow>
+
+                <!--м/ч-->
+                <!--<se:VisualArrow>
+                    <se:VisualArrow.Visibility>
+                        <hmi:SeBinding FallbackValue="Visibility" Path="modules[tags_mod].Items[dr_mh].Value" StringFormat="0.0">
+                            <hmi:SeBinding.Converter>
+                                <hmi:BoolToVisibilityConverter FalseValue="Collapsed" TrueValue="Visible"/>
+                            </hmi:SeBinding.Converter>
+                        </hmi:SeBinding>
+                    </se:VisualArrow.Visibility>
+                    <se:VisualArrow.value>
+                        <hmi:SeBinding Path="modules[tags_mod].Items[dr_real_mh].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <my:Double>0</my:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualArrow.value>
+                </se:VisualArrow>
+                <se:VisualArrow>
+                    <se:VisualArrow.Visibility>
+                        <hmi:SeBinding FallbackValue="Visibility" Path="modules[tags_mod].Items[dr_mh].Value" StringFormat="0.0">
+                            <hmi:SeBinding.Converter>
+                                <hmi:BoolToVisibilityConverter FalseValue="Collapsed" TrueValue="Visible"/>
+                            </hmi:SeBinding.Converter>
+                        </hmi:SeBinding>
+                    </se:VisualArrow.Visibility>
+                    <se:VisualArrow.value>
+                        <hmi:SeBinding Path="modules[tags_mod].Items[dr_reference_mh].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <my:Double>0</my:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualArrow.value>
+                </se:VisualArrow>-->
+            </se:RadialGauge.Arrows>
+        </se:RadialGauge>
+        <Image Height="40" Width="40" Source="/NGO.Elements;component/Content/Gauges/Background/black%20cap.png" Canvas.Left="226" Canvas.Top="171" />
+        <!-- вспом. механизмы -->
+        <!--heating1-->
+        <se:VisualBox Canvas.Top="71" Canvas.Left="51" Width="37" Height="37" Background="Transparent" BorderThickness="0">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork.motor1].Items[heating_emer].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <my:Boolean>True</my:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/NGO.Elements;component/Content/Icon/heating red.png"></ImageBrush>
+                    </se:VisualBoxStateItem.Background>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork.motor1].Items[heating_work].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <my:Boolean>False</my:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/NGO.Elements;component/Content/Icon/heating green.png"></ImageBrush>
+                    </se:VisualBoxStateItem.Background>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <TextBlock Height="12" Text="1" FontFamily="Tahoma" FontWeight="Normal" TextAlignment="Center" FontSize="8"  HorizontalAlignment="Left" Width="11" VerticalAlignment="Top" Foreground="White" Canvas.Top="97" Canvas.Left="81">
+            <TextBlock.Visibility>
+                <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork.motor1].Items[heating_emer].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter/>
+                    </hmi:SeBinding.Converter>
+                    <hmi:SeBinding.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </TextBlock.Visibility></TextBlock>
+        <TextBlock Height="12" Text="1" FontFamily="Tahoma" FontWeight="Normal" TextAlignment="Center" FontSize="8"  HorizontalAlignment="Left" Width="11" VerticalAlignment="Top" Foreground="White" Canvas.Top="97" Canvas.Left="81">
+            <TextBlock.Visibility>
+                <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork.motor1].Items[heating_work].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter/>
+                    </hmi:SeBinding.Converter>
+                    <hmi:SeBinding.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </TextBlock.Visibility></TextBlock>
+        <!--blow1-->
+        <se:VisualBox      Canvas.Top="143" Canvas.Left="24"  Width="35" Height="35" Background="Transparent" BorderThickness="0">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork.motor1].Items[blowing_emer].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <my:Boolean>True</my:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/NGO.Elements;component/Content/Icon/blow red.png"></ImageBrush>
+                    </se:VisualBoxStateItem.Background>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork.motor1].Items[blowing_work].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <my:Boolean>False</my:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/NGO.Elements;component/Content/Icon/blow green.png"/>
+                    </se:VisualBoxStateItem.Background>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <TextBlock Height="12" Text="1" FontFamily="Tahoma" FontWeight="Normal" TextAlignment="Center" FontSize="8" HorizontalAlignment="Left" Width="11" VerticalAlignment="Top" Foreground="White" Canvas.Top="166" Canvas.Left="48">
+            <TextBlock.Visibility>
+                <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork.motor1].Items[blowing_work].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter/>
+                    </hmi:SeBinding.Converter>
+                    <hmi:SeBinding.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </TextBlock.Visibility></TextBlock>
+        <TextBlock Height="12" Text="1" FontFamily="Tahoma" FontWeight="Normal" TextAlignment="Center" FontSize="8" HorizontalAlignment="Left" Width="11" VerticalAlignment="Top" Foreground="White" Canvas.Top="166" Canvas.Left="48">
+            <TextBlock.Visibility>
+                <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork.motor1].Items[blowing_emer].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter/>
+                    </hmi:SeBinding.Converter>
+                    <hmi:SeBinding.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </TextBlock.Visibility></TextBlock>
+        <!--oil-->
+        <se:VisualBox     Canvas.Top="210" Canvas.Left="22" Width="41" Height="19" Background="Transparent" BorderThickness="0">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/NGO.Elements;component/Content/Icon/oil red.png"/>
+                    </se:VisualBoxStateItem.Background>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork.motor1].Items[smazka_avariya].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <my:Boolean>True</my:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/NGO.Elements;component/Content/Icon/oil green.png"/>
+                    </se:VisualBoxStateItem.Background>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork.motor1].Items[smazka_rabota].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <my:Boolean>False</my:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <!--blow2-->
+        <se:VisualBox      Canvas.Top="143" Canvas.Left="429"  Width="35" Height="35" Background="Transparent" BorderThickness="0">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/NGO.Elements;component/Content/Icon/blow red.png"/>
+                    </se:VisualBoxStateItem.Background>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork.motor2].Items[blowing_emer].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <my:Boolean>True</my:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/NGO.Elements;component/Content/Icon/blow green.png"/>
+                    </se:VisualBoxStateItem.Background>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork.motor2].Items[blowing_work].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <my:Boolean>False</my:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <TextBlock Height="12" Text="2" FontFamily="Tahoma" FontWeight="Normal" TextAlignment="Center" FontSize="8" HorizontalAlignment="Left" Width="11" VerticalAlignment="Top" Foreground="White" Canvas.Top="166" Canvas.Left="453">
+            <TextBlock.Visibility>
+                <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork.motor2].Items[blowing_emer].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter/>
+                    </hmi:SeBinding.Converter>
+                    <hmi:SeBinding.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </TextBlock.Visibility></TextBlock>
+        <TextBlock Height="12" Text="2" FontFamily="Tahoma" FontWeight="Normal" TextAlignment="Center" FontSize="8" HorizontalAlignment="Left" Width="11" VerticalAlignment="Top" Foreground="White" Canvas.Top="166" Canvas.Left="453">
+            <TextBlock.Visibility>
+                <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork.motor2].Items[blowing_work].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter/>
+                    </hmi:SeBinding.Converter>
+                    <hmi:SeBinding.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </TextBlock.Visibility></TextBlock>
+        <!--heating2-->
+        <se:VisualBox      Canvas.Top="71" Canvas.Left="394" Width="37" Height="37" Background="Transparent" BorderThickness="0">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/NGO.Elements;component/Content/Icon/heating red.png" ></ImageBrush>
+                    </se:VisualBoxStateItem.Background>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork.motor2].Items[heating_emer].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <my:Boolean>True</my:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/NGO.Elements;component/Content/Icon/heating green.png"></ImageBrush>
+                    </se:VisualBoxStateItem.Background>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork.motor2].Items[heating_work].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <my:Boolean>False</my:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <TextBlock Height="12" Text="2" FontFamily="Tahoma" FontWeight="Normal" TextAlignment="Center" FontSize="8"  HorizontalAlignment="Left" Width="11" VerticalAlignment="Top" Foreground="White" Canvas.Top="97" Canvas.Left="424">
+            <TextBlock.Visibility>
+                <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork.motor2].Items[heating_emer].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter/>
+                    </hmi:SeBinding.Converter>
+                    <hmi:SeBinding.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </TextBlock.Visibility></TextBlock>
+        <TextBlock Height="12" Text="2" FontFamily="Tahoma" FontWeight="Normal" TextAlignment="Center" FontSize="8"  HorizontalAlignment="Left" Width="11" VerticalAlignment="Top" Foreground="White" Canvas.Top="97" Canvas.Left="424">
+            <TextBlock.Visibility>
+                <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork.motor2].Items[heating_work].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter/>
+                    </hmi:SeBinding.Converter>
+                    <hmi:SeBinding.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </TextBlock.Visibility></TextBlock>
+        <se:VisualBox     Canvas.Top="210" Canvas.Left="427"  Width="41" Height="19" Background="Transparent" BorderThickness="0">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/NGO.Elements;component/Content/Icon/oil red.png"/>
+                    </se:VisualBoxStateItem.Background>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork.motor2].Items[smazka_avariya].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <my:Boolean>True</my:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/NGO.Elements;component/Content/Icon/oil green.png" ></ImageBrush>
+                    </se:VisualBoxStateItem.Background>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork.motor2].Items[smazka_rabota].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <my:Boolean>False</my:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <TextBlock Height="12" Text="2" FontFamily="Tahoma" FontWeight="Normal" TextAlignment="Center" FontSize="8"  HorizontalAlignment="Left" Width="11" VerticalAlignment="Top" Foreground="White" Canvas.Top="222" Canvas.Left="463">
+            <TextBlock.Visibility>
+                <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork.motor2].Items[smazka_avariya].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter/>
+                    </hmi:SeBinding.Converter>
+                    <hmi:SeBinding.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </TextBlock.Visibility></TextBlock>
+
+        <TextBlock Height="12" Text="2" FontFamily="Tahoma" FontWeight="Normal" TextAlignment="Center" FontSize="8"  HorizontalAlignment="Left" Width="11" VerticalAlignment="Top" Foreground="White" Canvas.Top="222" Canvas.Left="463">
+            <TextBlock.Visibility>
+                <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork.motor2].Items[smazka_rabota].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter/>
+                    </hmi:SeBinding.Converter>
+                    <hmi:SeBinding.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </TextBlock.Visibility></TextBlock>
+
+
+
+
+
+        <TextBlock Height="12" Text="1" FontFamily="Tahoma" FontWeight="Normal" TextAlignment="Center" FontSize="8"  HorizontalAlignment="Left" Width="11" VerticalAlignment="Top" Foreground="White" Canvas.Top="222" Canvas.Left="58">
+            <TextBlock.Visibility>
+                <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork.motor1].Items[smazka_avariya].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter/>
+                    </hmi:SeBinding.Converter>
+                    <hmi:SeBinding.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </TextBlock.Visibility></TextBlock>
+
+        <TextBlock Height="12" Text="1" FontFamily="Tahoma" FontWeight="Normal" TextAlignment="Center" FontSize="8"  HorizontalAlignment="Left" Width="11" VerticalAlignment="Top" Foreground="White" Canvas.Top="222" Canvas.Left="58">
+            <TextBlock.Visibility>
+                <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork.motor1].Items[smazka_rabota].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter/>
+                    </hmi:SeBinding.Converter>
+                    <hmi:SeBinding.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </TextBlock.Visibility></TextBlock>
+
+
+        <Grid Height="380" Width="490">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="239*" />
+                <RowDefinition Height="46*" />
+                <RowDefinition Height="95*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="125*" />
+                <ColumnDefinition Width="100*" />
+                <ColumnDefinition Width="40*" />
+                <ColumnDefinition Width="100*" />
+                <ColumnDefinition Width="125*" />
+            </Grid.ColumnDefinitions>
+
+            <!--Значения задания и фактической скорости-->
+            <Rectangle Margin="10,0,10,10" x:Name="rectangle1" Stroke="{x:Null}" Fill="White" RadiusX="5" RadiusY="5" Grid.Column="1" Grid.Row="1" />
+            <TextBlock Height="34" HorizontalAlignment="Center" FontFamily="Tahoma" FontWeight="Normal" TextAlignment="Center" FontSize="28" VerticalAlignment="Top" Foreground="Black" Text="{hmi:SeBinding Tags.Node[view.main_drives.drawwork].Items[reference].Value, FallbackValue=-FB, StringFormat=0.##}"      Grid.Column="1" Grid.Row="1"/>
+
+            <!--м/ч-->
+            <!--<TextBlock Height="34" HorizontalAlignment="Center" FontFamily="Tahoma" FontWeight="Normal" TextAlignment="Center" FontSize="28" VerticalAlignment="Top" Foreground="Black" Text="{hmi:SeBinding modules[tags_mod].Items[dr_reference_mh].Value, FallbackValue=-FB, StringFormat=0}"      Grid.Column="1" Grid.Row="1">
+                <TextBlock.Visibility>
+                    <hmi:SeBinding FallbackValue="Visibility" Path="modules[tags_mod].Items[dr_mh].Value" StringFormat="0.0">
+                        <hmi:SeBinding.Converter>
+                            <hmi:BoolToVisibilityConverter FalseValue="Collapsed" TrueValue="Visible"/>
+                        </hmi:SeBinding.Converter>
+                    </hmi:SeBinding>
+                </TextBlock.Visibility>
+            </TextBlock>-->
+
+
+            <Rectangle Margin="10,0,10,10" x:Name="rectangle2" Stroke="{x:Null}" Fill="White" RadiusX="5" RadiusY="5" Grid.Column="3" Grid.Row="1"/>
+            <TextBlock Height="34" HorizontalAlignment="Center" FontFamily="Tahoma" FontWeight="Normal" TextAlignment="Center" FontSize="28" VerticalAlignment="Top" Foreground="Black" Text="{hmi:SeBinding Tags.Node[view.main_drives.drawwork].Items[real].Value, FallbackValue=FB, StringFormat=0.##}" Grid.Column="3" Grid.Row="1"/>
+
+            <!--м/ч-->
+            <!--<TextBlock Height="34" HorizontalAlignment="Center" FontFamily="Tahoma" FontWeight="Normal" TextAlignment="Center" FontSize="28" VerticalAlignment="Top" Foreground="Black" Text="{hmi:SeBinding modules[tags_mod].Items[dr_real_mh].Value, FallbackValue=FB, StringFormat=0}" Grid.Column="3" Grid.Row="1">
+                <TextBlock.Visibility>
+                    <hmi:SeBinding FallbackValue="Visibility" Path="modules[tags_mod].Items[dr_mh].Value" StringFormat="0.0">
+                        <hmi:SeBinding.Converter>
+                            <hmi:BoolToVisibilityConverter FalseValue="Collapsed" TrueValue="Visible"/>
+                        </hmi:SeBinding.Converter>
+                    </hmi:SeBinding>
+                </TextBlock.Visibility>
+            </TextBlock>-->
+
+            <TextBlock Height="24" Text="задан." HorizontalAlignment="Center" FontFamily="Tahoma" FontWeight="Normal" TextAlignment="Center" FontSize="14" VerticalAlignment="Bottom" Foreground="White" Grid.Column="1" />
+            <TextBlock Height="24" Text="факт." HorizontalAlignment="Center" FontFamily="Tahoma" FontWeight="Normal" TextAlignment="Center" FontSize="14" VerticalAlignment="Bottom"  Foreground="White" Grid.Column="3" />
+
+            <TextBlock FontFamily="Tahoma" FontSize="14" FontWeight="Normal" Foreground="White" Height="24" HorizontalAlignment="Center" Margin="35,0,43,22" TextAlignment="Center" VerticalAlignment="Center" Visibility="Visible" Text="{hmi:SeBinding modules[tags_mod].Items[Лебедка тип скорости].Text, FallbackValue=м/ч}" Grid.Column="2" Grid.Row="1"/>
+            <TextBlock FontFamily="Tahoma" FontSize="14" FontWeight="Normal" Foreground="White" Height="25" HorizontalAlignment="Center" Margin="32,224,32,36" TextAlignment="Center" VerticalAlignment="Center" Width="146" Visibility="Visible" Grid.ColumnSpan="3" Grid.Column="1" Grid.RowSpan="2" Text="{hmi:SeBinding modules[tags_mod].Items[Лебедка тип скорости].Text, FallbackValue=СКОРОСТЬ}"/>
+            <TextBlock FontFamily="Tahoma" FontSize="14" FontWeight="Normal" Foreground="White" Height="25" HorizontalAlignment="Center" Margin="32,27,32,89" TextAlignment="Center" VerticalAlignment="Center" Width="146" Visibility="Visible" Grid.ColumnSpan="3" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Text="{hmi:SeBinding modules[tags_mod].Items[Лебедка сообщения спидометра].Text, FallbackValue=ТИП ПЕРЕДАЧИ}"/>
+            <Image Height="132" HorizontalAlignment="Center" x:Name="image1" Visibility="Collapsed" Stretch="Uniform" VerticalAlignment="Center" Width="149" Source="/NGO.Elements;component/Content/!.png" Grid.ColumnSpan="3" Margin="46,132,46,21" Grid.Column="1" Grid.RowSpan="2">
+            </Image>
+        </Grid>
+        <TextBlock Height="12" Text="ГА1" FontFamily="Tahoma" FontWeight="Normal" TextAlignment="Center" FontSize="10" HorizontalAlignment="Left" Width="33" VerticalAlignment="Top" Foreground="White" Canvas.Top="253" Canvas.Left="49">
+            <TextBlock.Visibility>
+                <hmi:SeBinding Path="modules[tags_mod].Items[гидростанция_насос_гдт1_работа].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter />
+                    </hmi:SeBinding.Converter>
+                    <hmi:SeBinding.FallbackValue>
+                        <my:Boolean>False</my:Boolean>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </TextBlock.Visibility></TextBlock>
+        <TextBlock Height="12" Text="ГА1" FontFamily="Tahoma" FontWeight="Normal" TextAlignment="Center" FontSize="10" HorizontalAlignment="Left" Width="33" VerticalAlignment="Top" Foreground="White" Canvas.Top="253" Canvas.Left="49">
+            <TextBlock.Visibility>
+                <hmi:SeBinding Path="modules[tags_mod].Items[гидростанция_насос_гдт1_авария].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter />
+                    </hmi:SeBinding.Converter>
+                    <hmi:SeBinding.FallbackValue>
+                        <my:Boolean>False</my:Boolean>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </TextBlock.Visibility></TextBlock>
+
+
+        <TextBlock Height="12" Text="ГА2" FontFamily="Tahoma" FontWeight="Normal" TextAlignment="Center" FontSize="10" HorizontalAlignment="Left" Width="36" VerticalAlignment="Top" Foreground="White" Canvas.Top="253" Canvas.Left="406">
+            <TextBlock.Visibility>
+                <hmi:SeBinding Path="modules[tags_mod].Items[гидростанция_насос_гдт2_работа].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter />
+                    </hmi:SeBinding.Converter>
+                    <hmi:SeBinding.FallbackValue>
+                        <my:Boolean>False</my:Boolean>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </TextBlock.Visibility></TextBlock>
+        <TextBlock Height="12" Text="ГА2" FontFamily="Tahoma" FontWeight="Normal" TextAlignment="Center" FontSize="10" HorizontalAlignment="Left" Width="36" VerticalAlignment="Top" Foreground="White" Canvas.Top="253" Canvas.Left="406">
+            <TextBlock.Visibility>
+                <hmi:SeBinding Path="modules[tags_mod].Items[гидростанция_насос_гдт2_авария].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter />
+                    </hmi:SeBinding.Converter>
+                    <hmi:SeBinding.FallbackValue>
+                        <my:Boolean>False</my:Boolean>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </TextBlock.Visibility></TextBlock>
+
+        <se:VisualBox Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Width="25"  Canvas.Top="268" Canvas.Left="412" Background="Transparent" BorderThickness="0">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/NGO.Elements;component/Content/Icon/h_pump_pump_emer.png" />
+                    </se:VisualBoxStateItem.Background>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding Path="modules[tags_mod].Items[гидростанция_насос_гдт2_авария].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <my:Boolean>True</my:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/NGO.Elements;component/Content/Icon/h_pump_pump_work.png" />
+                    </se:VisualBoxStateItem.Background>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding Path="modules[tags_mod].Items[гидростанция_насос_гдт2_работа].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <my:Boolean>False</my:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+
+
+        <se:VisualBox Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Width="25"   Canvas.Top="288" Canvas.Left="196" Background="Transparent" BorderThickness="0">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/NGO.Elements;component/Content/Icon/housing red.png"></ImageBrush>
+                    </se:VisualBoxStateItem.Background>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork].Items[kozhuh_sqkl_krasnyj].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <my:Boolean>True</my:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/NGO.Elements;component/Content/Icon/housing green.png"/>
+                    </se:VisualBoxStateItem.Background>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork].Items[kozhuh_sqkl_zelenyj].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <my:Boolean>False</my:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+
+
+
+        <!--<TextBlock Height="12" Text="SQKЛ" FontFamily="Tahoma" FontWeight="Normal" TextAlignment="Center" FontSize="10" Margin="110,69,0,0" HorizontalAlignment="Left" Width="35" VerticalAlignment="Top" Foreground="White" Canvas.Top="153" Canvas.Left="-72">
+            <TextBlock.Visibility>
+                <hmi:SeBinding Path="modules[tags_mod].Items[dr_h5].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter />
+                    </hmi:SeBinding.Converter>
+                    <hmi:SeBinding.FallbackValue>
+                        <my:Boolean>False</my:Boolean>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </TextBlock.Visibility></TextBlock>-->
+
+
+        <!--<Image Height="20" HorizontalAlignment="Left" Stretch="Uniform" VerticalAlignment="Top" Width="20" Source="/NGO.Elements;component/Content/Icon/housing%20red.png" Canvas.Top="233" Canvas.Left="52">
+            <Image.Visibility>
+                <hmi:SeBinding Path="modules[tags_mod].Items[dr_h5].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter />
+                    </hmi:SeBinding.Converter>
+                    <hmi:SeBinding.FallbackValue>
+                        <my:Boolean>False</my:Boolean>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </Image.Visibility>
+        </Image>-->
+
+        <TextBlock Height="14" Text="Мощность" FontFamily="Tahoma" FontWeight="Normal" TextAlignment="Center" FontSize="11" Margin="110,69,0,0" HorizontalAlignment="Left" Width="64" VerticalAlignment="Top" Canvas.Top="259" Foreground="White" Canvas.Left="77" />
+        <TextBlock Height="14" Text="%" FontFamily="Tahoma" FontWeight="Normal" TextAlignment="Center" FontSize="11" Margin="110,69,0,0" HorizontalAlignment="Left" Width="17" VerticalAlignment="Top" Canvas.Top="259" Foreground="White" Canvas.Left="165" />
+        <TextBlock Height="14" Text="{hmi:SeBinding modules[tags_mod].Items[dr_m1_torque].Value, FallbackValue=50}" FontFamily="Tahoma" FontWeight="Normal" TextAlignment="Center" FontSize="11" Margin="110,69,0,0" HorizontalAlignment="Left" Width="27" VerticalAlignment="Top" Canvas.Top="259" Foreground="White" Canvas.Left="139" />
+
+        <!-- наложен тормоз / верхняя точка / ВП -->
+        <Image Height="27" HorizontalAlignment="Left" Stretch="Uniform" VerticalAlignment="Top" Width="30" Source="/NGO.Elements;component/Content/Icon/brake%20red.png" Canvas.Top="288" Canvas.Left="233">
+            <Image.Visibility>
+                <hmi:SeBinding Path="modules[tags_mod].Items[dr_braked].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter />
+                    </hmi:SeBinding.Converter>
+                    <hmi:SeBinding.FallbackValue>
+                        <my:Boolean>False</my:Boolean>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </Image.Visibility>
+        </Image>
+        <se:VisualBox Canvas.Top="288" Canvas.Left="275" Width="25" Height="25" Background="Transparent" BorderThickness="0">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/NGO.Elements;component/Content/Icon/gear red.png" />
+                    </se:VisualBoxStateItem.Background>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding Path="modules[tags_mod].Items[dr_mesh_emergency].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <my:Boolean>True</my:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Value="{hmi:SeBinding modules[tags_mod].Items[dr_mesh_work].Value, FallbackValue=false}">
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/NGO.Elements;component/Content/Icon/gear yellow.png"/>
+                    </se:VisualBoxStateItem.Background>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <!--<Image Height="27" HorizontalAlignment="Left" Stretch="Uniform" VerticalAlignment="Top" Width="29" Source="/NGO.Elements;component/Content/Icon/gear%20red.png" Canvas.Top="288" Canvas.Left="216" />-->
+        <TextBlock Height="27" Text="ОБВОД" FontFamily="Tahoma" FontWeight="Normal" TextAlignment="Center" FontSize="14" HorizontalAlignment="Left" Width="50" VerticalAlignment="Top" Canvas.Top="288" Foreground="Red" Canvas.Left="134">
+            <TextBlock.Visibility>
+                <hmi:SeBinding Path="modules[tags_mod].Items[dr_remoteConsole].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter />
+                    </hmi:SeBinding.Converter>
+                    <hmi:SeBinding.FallbackValue>
+                        <my:Boolean>False</my:Boolean>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </TextBlock.Visibility></TextBlock>
+        <TextBlock Height="27" Text="Hmax" FontFamily="Tahoma" FontWeight="Normal" TextAlignment="Center" FontSize="14" HorizontalAlignment="Left" Width="37" VerticalAlignment="Top" Canvas.Top="288" Foreground="Red" Canvas.Left="309">
+            <TextBlock.Visibility>
+                <hmi:SeBinding Path="modules[tags_mod].Items[dr_hmax].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter />
+                    </hmi:SeBinding.Converter>
+                    <hmi:SeBinding.FallbackValue>
+                        <my:Boolean>False</my:Boolean>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </TextBlock.Visibility></TextBlock>
+        <se:VisualBox Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Width="25"  Canvas.Top="268" Canvas.Left="53" BorderThickness="0" Background="Transparent">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/NGO.Elements;component/Content/Icon/h_pump_pump_emer.png" />
+                    </se:VisualBoxStateItem.Background>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding Path="modules[tags_mod].Items[гидростанция_насос_гдт1_авария].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <my:Boolean>True</my:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/NGO.Elements;component/Content/Icon/h_pump_pump_work.png"/>
+                    </se:VisualBoxStateItem.Background>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding Path="modules[tags_mod].Items[гидростанция_насос_гдт1_работа].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <my:Boolean>False</my:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+
+    </Canvas>
+</UserControl>

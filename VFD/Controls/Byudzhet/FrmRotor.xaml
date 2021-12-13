@@ -1,0 +1,144 @@
+﻿<UserControl x:Class="VFD.Frames.Sub.Byudzhet.FrmRotor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:gauges="clr-namespace:NGO.Elements.Gauges;assembly=NGO.Elements"
+             xmlns:hmi="http://schemas.monokot.com/hmi/"
+             xmlns:se="http://schemas.monokot.com/se/"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:fundamental="clr-namespace:Monokot.Hmi.Core.Fundamental;assembly=Monokot.Hmi.Core"
+             xmlns:buttons="clr-namespace:Monokot.ScadaExtension.Wpf.Controls.Buttons;assembly=Monokot.ScadaExtension.Wpf"
+             mc:Ignorable="d" 
+             d:DesignHeight="840" d:DesignWidth="1280"
+             >
+    <Grid Background="#FFE5E5E5">
+        <gauges:GaugeRotor1 HorizontalAlignment="Left" Margin="13,316,0,0" VerticalAlignment="Top"/>
+        <gauges:GaugeRotor2 Margin="0,316,13,0" VerticalAlignment="Top" Width="300" HorizontalAlignment="Right"/>
+        <TextBlock HorizontalAlignment="Left" Height="28" Margin="436,528,0,0" TextWrapping="Wrap" Text="Состояние ротора" VerticalAlignment="Top" Width="398" FontSize="22" TextAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Center" Height="28" Margin="557,356,555,0" TextWrapping="Wrap" Text="Мотор ротора" VerticalAlignment="Top" Width="158" FontSize="18" TextAlignment="Center"/>
+        <Grid HorizontalAlignment="Center" Height="124" Margin="540,399,536,0" VerticalAlignment="Top" Width="194">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock HorizontalAlignment="Right" Margin="0,0,10,0" TextWrapping="Wrap" Text="{hmi:SeBinding Tags.Node[view.main_drives.rotor].Items[current].Value, FallbackValue=0}" VerticalAlignment="Center" TextAlignment="Right" FontSize="24"/>
+            <TextBlock HorizontalAlignment="Right" Margin="0,0,10,0" TextWrapping="Wrap" Text="{hmi:SeBinding Tags.Node[view.main_drives.rotor].Items[rpm].Value, FallbackValue=0}" VerticalAlignment="Center" TextAlignment="Right" Grid.Row="1" FontSize="24"/>
+            <TextBlock HorizontalAlignment="Right" Margin="0,0,10,0" TextWrapping="Wrap" Text="{hmi:SeBinding Tags.Node[view.main_drives.rotor].Items[power].Value, FallbackValue=0}" VerticalAlignment="Center" TextAlignment="Right" Grid.Row="2" FontSize="24"/>
+            <TextBlock HorizontalAlignment="Right" Margin="0,0,10,0" TextWrapping="Wrap" Text="{hmi:SeBinding Tags.Node[view.main_drives.rotor].Items[torque].Value, FallbackValue=0}" VerticalAlignment="Center" TextAlignment="Right" Grid.Row="3" FontSize="24"/>
+            <TextBlock HorizontalAlignment="Left" Margin="5,5,18,5" TextWrapping="Wrap" Text="А" VerticalAlignment="Center" TextAlignment="Right" Grid.Column="1" FontSize="24"/>
+            <TextBlock HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="об/мин" VerticalAlignment="Center" TextAlignment="Right" Grid.Column="1" Grid.Row="1" FontSize="24"/>
+            <TextBlock HorizontalAlignment="Left" Margin="5,5.02,0,5.02" TextWrapping="Wrap" Text="кВт" VerticalAlignment="Center" TextAlignment="Right" Grid.Column="1" Grid.Row="2" FontSize="24"/>
+            <TextBlock HorizontalAlignment="Left" Margin="5,5.02,0,5.02" TextWrapping="Wrap" Text="кН×м" VerticalAlignment="Center" TextAlignment="Right" Grid.Column="1" Grid.Row="3" FontSize="24"/>
+        </Grid>
+        <se:ValueDisplay HorizontalAlignment="Right" Margin="0,713,15,0" VerticalAlignment="Top" Width="312" Height="85" BorderBrush="Black" BorderThickness="1" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" LabelForeground="DarkBlue" Label="%" Header="Момент" FontFamily="Tahoma" HeaderFontSize="11" Value="{hmi:Bind Tags.Node[view.main_drives.rotor].Items[torque_0_100].Value, FallbackValue=0}"/>
+        <se:ValueDisplay HorizontalAlignment="Left" Margin="15,713,0,0" VerticalAlignment="Top" Width="298" Height="85" BorderBrush="Black" BorderThickness="1" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" LabelForeground="DarkBlue" Label="об/мин" Header="Скорость (факт)" FontFamily="Tahoma" HeaderFontSize="11" Value="{hmi:Bind Tags.Node[view.main_drives.rotor].Items[real].Value, FallbackValue=0}"/>
+        <se:ScadaButton HorizontalAlignment="Center" Height="50" Margin="436,683,436,0" VerticalAlignment="Top" Width="398" Content="ДЕБЛОКИРОВКА РОТОРА" PushCommand="{hmi:SeBinding Tags.Node[write.rotor].Items[unlock].WriteCommand}" ReleasedCommand="{hmi:SeBinding Tags.Node[write.rotor].Items[unlock].WriteCommand}"/>
+        <se:RadialGauge Style="{StaticResource RpmGauge}" HorizontalAlignment="Left" Margin="75,66,0,0" VerticalAlignment="Top" Maximum="16" MajorTickCost="4" MinorTickBrush="Black" MajorTickBrush="Black" Foreground="Black" FontSize="16" MinorTickCost="1" Height="155" Width="155">
+            <se:RadialGauge.Arrows>
+                <se:RadialArrow Style="{StaticResource RpmRadialArrow}" Value="{hmi:SeBinding Tags.Node[view.main_drives.rotor].Items[pressure_in_wedges].Value, FallbackValue=0}"/>
+            </se:RadialGauge.Arrows>
+            <!--<TextBlock HorizontalAlignment="Center" Height="23" Margin="65,114,65,0" TextWrapping="Wrap" Text="атм" VerticalAlignment="Top" Width="30" TextAlignment="Center"/>
+            <TextBlock HorizontalAlignment="Center" Height="23" Margin="73,93,73,0" TextWrapping="Wrap" Text="{hmi:SeBinding Tags.Node[view.main_drives.rotor].Items[pressure_in_wedges].Value, FallbackValue=0}" VerticalAlignment="Top" TextAlignment="Center" FontSize="20" />-->
+        </se:RadialGauge>
+        <TextBlock HorizontalAlignment="Center" Height="28" Margin="15,10,957,0" TextWrapping="Wrap" Text="Давление воздуха в клиньях" VerticalAlignment="Top" Width="315" FontSize="18" TextAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Center" Height="28" Margin="945,10,16,0" TextWrapping="Wrap" Text="Давление воздуха в тормозе" VerticalAlignment="Top" Width="315" FontSize="18" TextAlignment="Center"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="95" Margin="436,561,0,0" VerticalAlignment="Top" Width="398" CornerRadius="5" Background="White">
+            <se:StatusText HorizontalAlignment="Center" TextWrapping="Wrap" Text="StatusText" VerticalAlignment="Center" Margin="0">
+                <se:StatusText.MessageID>
+                    <hmi:SeBinding  Path="Tags.Node[view.main_drives.rotor].Items[status].Value">
+                        <hmi:SeBinding.FallbackValue>
+                            <system:Int32>0</system:Int32>
+                        </hmi:SeBinding.FallbackValue>
+                    </hmi:SeBinding>
+                </se:StatusText.MessageID>
+                <se:StatusText.MessageNode>
+                    <hmi:HmiNodeDescriptor Comment="rotorcer" ItemType="Message" Path="rotorcer"/>
+                </se:StatusText.MessageNode>
+            </se:StatusText>
+        </Border>
+        <se:VisualBox HorizontalAlignment="Left" Height="80" Margin="502,231,0,0" VerticalAlignment="Top" Width="268" CornerRadius="5" Text="ОБДУВ" FontSize="22">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="Red" Text="ОБДУВ АВАРИЯ" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.rotor].Items[blowing_emer].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="Green" Text="ОБДУВ РАБОТА">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.rotor].Items[blowing_work].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox HorizontalAlignment="Left" Height="80" Margin="15,231,0,0" VerticalAlignment="Top" Width="298" CornerRadius="5" Text="КЛИНЬЯ ОПУЩЕНЫ" FontSize="22" Background="LightGray">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="Red" Text="КЛИНЬЯ ПОДНЯТЫ" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.rotor].Items[wedges_emer].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="Gold" Text="КЛИНЬЯ ПОДНЯТЫ">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.rotor].Items[wedges_attention].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox HorizontalAlignment="Right" Height="80" Margin="0,231,15,0" VerticalAlignment="Top" Width="315" CornerRadius="5" Text="ТОРМОЗ РАСТОРМОЖЕН" FontSize="22" Background="LightGray">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="Red" Text="ТОРМОЗ АВАРИЯ" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.rotor].Items[brake_emer].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="Green" Text="ТОРМОЗ ЗАТОРМОЖЕН">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.rotor].Items[brake_work].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:RadialGauge Style="{StaticResource RpmGauge}" HorizontalAlignment="Left" Margin="1032,66,0,0" VerticalAlignment="Top" Maximum="16" MajorTickCost="4" MinorTickBrush="Black" MajorTickBrush="Black" Foreground="Black" FontSize="16" MinorTickCost="1" Height="155" Width="155">
+            <se:RadialGauge.Arrows>
+                <se:RadialArrow Style="{StaticResource RpmRadialArrow}" Value="{hmi:SeBinding Tags.Node[view.main_drives.rotor].Items[pressure_in_clutch].Value, FallbackValue=0}"/>
+            </se:RadialGauge.Arrows>
+            <!--<TextBlock HorizontalAlignment="Center" Height="23" Margin="65,114,65,0" TextWrapping="Wrap" Text="атм" VerticalAlignment="Top" TextAlignment="Center" Width="30"/>
+            <TextBlock HorizontalAlignment="Center" Height="23" Margin="73,93,73,0" TextWrapping="Wrap" Text="{hmi:SeBinding Tags.Node[view.main_drives.rotor].Items[pressure_in_clutch].Value, FallbackValue=0}" VerticalAlignment="Top" TextAlignment="Center" FontSize="20" />-->
+        </se:RadialGauge>
+        <buttons:HmiButton Style="{StaticResource MetalBorderButton}" Content="+" HorizontalAlignment="Left" Margin="226,621,0,0" VerticalAlignment="Top" Height="82" Width="87" FontSize="36" hmi:Click.Command="{hmi:SeBinding Tags.Node[write.rotor].Items[skorost_bolshe].WriteCommand}"/>
+        <buttons:HmiButton Style="{StaticResource MetalBorderButton}" Content="-" HorizontalAlignment="Left" Margin="15,621,0,0" VerticalAlignment="Top" Height="82" Width="87" FontSize="36" hmi:Click.Command="{hmi:SeBinding Tags.Node[write.rotor].Items[skorost_menshe].WriteCommand}"/>
+        <buttons:HmiButton Style="{StaticResource MetalBorderButton}" Content="+" HorizontalAlignment="Left" Margin="1175,621,0,0" VerticalAlignment="Top" Height="82" Width="87" FontSize="36" hmi:Click.Command="{hmi:SeBinding Tags.Node[write.rotor].Items[moment_bolshe].WriteCommand}"/>
+        <buttons:HmiButton Style="{StaticResource MetalBorderButton}" Content="-" HorizontalAlignment="Left" Margin="953,621,0,0" VerticalAlignment="Top" Height="82" Width="87" FontSize="36" hmi:Click.Command="{hmi:SeBinding Tags.Node[write.rotor].Items[moment_menshe].WriteCommand}"/>
+    </Grid>
+</UserControl>

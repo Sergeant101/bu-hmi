@@ -1,0 +1,128 @@
+﻿311012
+8
+lang|RU|0 (:2 ) Включен пускатель 1КМ1 на входе устройства плавного пуска УПП1 (реле 1РП3)
+lang|EN|0 (:2 ) Circuit breaker rectifier QF1 on
+311012
+9
+lang|RU|1 (:3 ) Сигнал окончания плавного пуска УПП1 100% U вых. (реле 1РП3)
+lang|EN|1 (:3 ) Circuit breaker 42QF1 on
+311012
+10
+lang|RU|2 (:4 ) Включен пускатель 2КМ1 на входе устройства плавного пуска УПП2 (реле 2РП3)
+lang|EN|2 (:4 ) Emergency control circuit (Emergency STOP SB2 in VFD by relay K21)
+311012
+11
+lang|RU|3 (:5 ) Сигнал окончания плавного пуска УПП2 100% U вых. (реле 2РП3)
+lang|EN|3 (:5 ) Emergency control circuit (Emergency STOP SB3 in VFD by relay K22)
+311012
+12
+lang|RU|4 (:6 ) Включено реле ШЦС-К111 "Пуск 1-ого подпорного насоса вручную с ПН или от АСУ"
+lang|EN|4 (:6 ) Emergency control circuit (Fire alarm in VFD by relay K23)
+311012
+13
+lang|RU|5 (:7 ) Включено реле ШЦС-К110 "Включен 1-ый подпорный насос  прямо (113КМ1) или плавно (113КМ2)"
+lang|EN|5 (:7 ) Emergency control circuit (Power supply by relay K24)
+311012
+14
+lang|RU|6 (:8 ) Включено реле ШЦС-К113 "Пуск 2-ого подпорного насоса вручную с ПН или от АСУ"
+lang|EN|6 (:8 ) Emergency control circuit (50% gassed by relay K25)
+311012
+15
+lang|RU|7 (:9 ) Включено реле ШЦС-К115 "Включен 2-ой подпорный насос прямо (123КМ1) или плавно (123КМ2)"
+lang|EN|7 (:9 ) Emergency control circuit (emergency stop SB12 driller's cabin by relay K19)
+311012
+0
+lang|RU|0 (:12 ) Включено реле ШЦС-705К1 "ДЗУ открыто"
+lang|EN|0 (:12 ) Emergency control circuit (Temperature sensor in VFD by relay K26)
+311012
+1
+lang|RU|1 (:13 ) Включено реле ШЦС-705К2 "ДЗУ закрыто"
+lang|EN|1 (:13 ) Not low level in oil hydraulic unit
+311012
+2
+lang|RU|2 (:14 ) Включено реле ШЦС-719К4 "Пуск насоса илоотделителя ПЛАВНО" от кнопки 719SB1 "ПУСК" модуля МТО
+lang|EN|2 (:14 ) Limit level in oil hydraulic unit
+311012
+3
+lang|RU|3 (:15 ) Включено реле ШЦС-719К6 "Нет стопа насоса илоотделителя" от кнопки 719SB1 "СТОП" модуля МТО
+lang|EN|3 (:15 ) Oil hydraulic unit filter F1 is dirty in oil hydraulic unit
+311012
+4
+lang|RU|4 (:16 ) Включено реле ШЦС-719К5 "Включен насос илоотделителя 719М1 прямо (719КМ1) или плавно (719КМ2)"
+lang|EN|4 (:16 ) Oil hydraulic unit filter F2 is dirty in oil hydraulic unit
+311012
+5
+lang|RU|5 (:17 ) Включено реле ШЦС-717К4 "Пуск насоса пескотделителя ПЛАВНО" от кнопки 717SB1 "ПУСК" модуля МТО
+lang|EN|5 (:17 ) Spare
+311012
+6
+lang|RU|6 (:18 ) Включено реле ШЦС-717К6 "Нет стопа насоса пескотделителя" от кнопки 717SB1 "СТОП" модуля МТО
+lang|EN|6 (:18 ) Select CPU1
+311012
+7
+lang|RU|7 (:19 ) Включено реле ШЦС-717К5 "Включен насос пескотделителя прямо (717КМ1) или плавно (717КМ2)"
+lang|EN|7 (:19 ) Select CPU2
+311013
+8
+lang|RU|0 (:22 ) Включен пускатель ШЦС-703KM1 "Включен насос долива"
+lang|EN|0 (:22 ) Circuit breaker QF1 on in MG-PSC (GEN1)
+311013
+9
+lang|RU|1 (:23 ) Резерв
+lang|EN|1 (:23 ) Sensor air pressure MDW1 ON
+311013
+10
+lang|RU|2 (:24 ) Включено реле ШЦС-731К4 "Пуск 1-ой воронки ПЛАВНО" от кнопки 731SB1 "ПУСК" модуля МПБР
+lang|EN|2 (:24 ) No excess of pressure in manifold (signal SMPD)
+311013
+11
+lang|RU|3 (:25 ) Включено реле ШЦС-731К6 "Нет стопа 1-ой воронки" от кнопки 731SB1 "СТОП" модуля МПБР
+lang|EN|3 (:25 ) Sensor air pressure MDW2 ON/
+311013
+12
+lang|RU|4 (:26 ) Включено реле ШЦС-731К5 "Включена 1-ая воронка прямо (731КМ1) или плавно (731КМ2)"
+lang|EN|4 (:26 ) Drawworks oil filter  is dirty
+311013
+13
+lang|RU|5 (:27 ) Включено реле ШЦС-733К4 "Пуск 2-ой воронки ПЛАВНО" от кнопки 733SB1 "ПУСК" модуля МПБР
+lang|EN|5 (:27 ) Circuit breaker QF2 on in MG-PSC (GEN2)
+311013
+14
+lang|RU|6 (:28 ) Включено реле ШЦС-733К6 "Нет стопа 2-ой воронки" от кнопки 733SB1 "СТОП" модуля МПБР
+lang|EN|6 (:28 ) Circuit breaker QF3 on in MG-PSC (GEN3)
+311013
+15
+lang|RU|7 (:29 ) Включено реле ШЦС-733К5 "Включена 2-ая воронка прямо (733КМ1) или плавно (733КМ2)"
+lang|EN|7 (:29 ) Circuit breaker QF4 on in MG-PSC (GEN4)
+311013
+0
+lang|RU|0 (:32 ) Резерв
+lang|EN|0 (:32 ) Circuit breaker QF5 on in MG-PSC (690VAC)
+311013
+1
+lang|RU|1 (:33 ) Резерв
+lang|EN|1 (:33 ) Circuit breaker QF6 on in MG-PSC (400VAC)
+311013
+2
+lang|RU|2 (:34 ) Включено реле ШЦС-750К4 "Пуск ВШН1 ПЛАВНО" от кнопки 750SB1 "ПУСК" устья скважины
+lang|EN|2 (:34 ) Circuit breaker QF7 on in MG-PSC (TopDrive)
+311013
+3
+lang|RU|3 (:35 ) Включено реле ШЦС-750К6 "Нет стопа ВШН1" от кнопки 750SB1 "СТОП" устья скважины
+lang|EN|3 (:35 ) Circuit breaker QF8 on in MG-PSC (control circuits 1)
+311013
+4
+lang|RU|4 (:36 ) Включено реле ШЦС-750К5 "Включен ВШН1 прямо (750КМ1) или плавно (750КМ2)"
+lang|EN|4 (:36 ) Circuit breaker QF9 on in MG-PSC (control circuits 2)
+311013
+5
+lang|RU|5 (:37 ) Включено реле ШЦС-751К4 "Пуск ВШН2 ПЛАВНО" от кнопки 751SB1 "ПУСК" устья скважины
+lang|EN|5 (:37 ) Overheat in VFD
+311013
+6
+lang|RU|6 (:38 ) Включено реле ШЦС-751К6 "Нет стопа ВШН2" от кнопки 751SB1 "СТОП" устья скважины
+lang|EN|6 (:38 ) High humidity in VFD
+311013
+7
+lang|RU|7 (:39 ) Включено реле ШЦС-751К5 "Включен ВШН2 прямо (751КМ1) или плавно (751КМ2)"
+lang|EN|7 (:39 ) SQ3 PCP-ON

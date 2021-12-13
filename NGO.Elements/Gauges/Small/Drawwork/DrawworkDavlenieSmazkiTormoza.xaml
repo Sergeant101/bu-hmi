@@ -1,0 +1,143 @@
+﻿<UserControl x:Class="NGO.Elements.Gauges.Small.Drawwork.DrawworkDavlenieSmazkiTormoza"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:se="http://schemas.monokot.com/se/"
+             xmlns:bindings="http://schemas.monokot.com/hmi/"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Monokot.ScadaExtension.Wpf;component/Themes/Controls/IndustrialStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Viewbox Stretch="Fill">
+        <Grid>
+        <se:RadialGauge ShowScaleLabels="False" Style="{StaticResource PressureGauge}"  MajorTickLength="7" MajorTickCount="5" UseMajorTickCount="True" UseMinorTickCount="True" MinorTickCount="5" Height="100" Width="100" BringRangesToFront="False">
+            <se:RadialGauge.Ranges>
+                <se:RadialRange>
+                    <se:RadialRange.Maximum>
+                        <bindings:SeBinding  Path="Tags.Node[view.main_drives.drawwork.presets.davlenieSmazkiTormoza].Items[fault_min].Value">
+                            <bindings:SeBinding.FallbackValue>
+                                <system:Double>20</system:Double>
+                            </bindings:SeBinding.FallbackValue>
+                        </bindings:SeBinding>
+                    </se:RadialRange.Maximum>
+                    <se:RadialRange.Minimum>
+                        <bindings:SeBinding  Path="Tags.Node[view.main_drives.drawwork.presets.davlenieSmazkiTormoza].Items[min].Value">
+                            <bindings:SeBinding.FallbackValue>
+                                <system:Double>0</system:Double>
+                            </bindings:SeBinding.FallbackValue>
+                        </bindings:SeBinding>
+                    </se:RadialRange.Minimum>
+                </se:RadialRange>
+                <se:RadialRange Fill="Yellow">
+                    <se:RadialRange.Maximum>
+                        <bindings:SeBinding  Path="Tags.Node[view.main_drives.drawwork.presets.davlenieSmazkiTormoza].Items[alarm_min].Value">
+                            <bindings:SeBinding.FallbackValue>
+                                <system:Double>20</system:Double>
+                            </bindings:SeBinding.FallbackValue>
+                        </bindings:SeBinding>
+                    </se:RadialRange.Maximum>
+                    <se:RadialRange.Minimum>
+                        <bindings:SeBinding  Path="Tags.Node[view.main_drives.drawwork.presets.davlenieSmazkiTormoza].Items[fault_min].Value">
+                            <bindings:SeBinding.FallbackValue>
+                                <system:Double>0</system:Double>
+                            </bindings:SeBinding.FallbackValue>
+                        </bindings:SeBinding>
+                    </se:RadialRange.Minimum>
+                </se:RadialRange>
+                <se:RadialRange Fill="LimeGreen">
+                    <se:RadialRange.Maximum>
+                        <bindings:SeBinding  Path="Tags.Node[view.main_drives.drawwork.presets.davlenieSmazkiTormoza].Items[alarm_max].Value">
+                            <bindings:SeBinding.FallbackValue>
+                                <system:Double>20</system:Double>
+                            </bindings:SeBinding.FallbackValue>
+                        </bindings:SeBinding>
+                    </se:RadialRange.Maximum>
+                    <se:RadialRange.Minimum>
+                        <bindings:SeBinding  Path="Tags.Node[view.main_drives.drawwork.presets.davlenieSmazkiTormoza].Items[alarm_min].Value">
+                            <bindings:SeBinding.FallbackValue>
+                                <system:Double>0</system:Double>
+                            </bindings:SeBinding.FallbackValue>
+                        </bindings:SeBinding>
+                    </se:RadialRange.Minimum>
+                </se:RadialRange>
+                <se:RadialRange Fill="Yellow">
+                    <se:RadialRange.Maximum>
+                        <bindings:SeBinding  Path="Tags.Node[view.main_drives.drawwork.presets.davlenieSmazkiTormoza].Items[fault_max].Value">
+                            <bindings:SeBinding.FallbackValue>
+                                <system:Double>20</system:Double>
+                            </bindings:SeBinding.FallbackValue>
+                        </bindings:SeBinding>
+                    </se:RadialRange.Maximum>
+                    <se:RadialRange.Minimum>
+                        <bindings:SeBinding  Path="Tags.Node[view.main_drives.drawwork.presets.davlenieSmazkiTormoza].Items[alarm_max].Value">
+                            <bindings:SeBinding.FallbackValue>
+                                <system:Double>0</system:Double>
+                            </bindings:SeBinding.FallbackValue>
+                        </bindings:SeBinding>
+                    </se:RadialRange.Minimum>
+                </se:RadialRange>
+                <se:RadialRange>
+                    <se:RadialRange.Maximum>
+                        <bindings:SeBinding  Path="Tags.Node[view.main_drives.drawwork.presets.davlenieSmazkiTormoza].Items[max].Value">
+                            <bindings:SeBinding.FallbackValue>
+                                <system:Double>20</system:Double>
+                            </bindings:SeBinding.FallbackValue>
+                        </bindings:SeBinding>
+                    </se:RadialRange.Maximum>
+                    <se:RadialRange.Minimum>
+                        <bindings:SeBinding  Path="Tags.Node[view.main_drives.drawwork.presets.davlenieSmazkiTormoza].Items[fault_max].Value">
+                            <bindings:SeBinding.FallbackValue>
+                                <system:Double>0</system:Double>
+                            </bindings:SeBinding.FallbackValue>
+                        </bindings:SeBinding>
+                    </se:RadialRange.Minimum>
+                </se:RadialRange>
+            </se:RadialGauge.Ranges>
+            <se:RadialGauge.Minimum>
+                <bindings:SeBinding  Path="Tags.Node[view.main_drives.drawwork.presets.davlenieSmazkiTormoza].Items[min].Value">
+                    <bindings:SeBinding.FallbackValue>
+                        <system:Double>0</system:Double>
+                    </bindings:SeBinding.FallbackValue>
+                </bindings:SeBinding>
+            </se:RadialGauge.Minimum>
+            <se:RadialGauge.Maximum>
+                <bindings:SeBinding  Path="Tags.Node[view.main_drives.drawwork.presets.davlenieSmazkiTormoza].Items[max].Value">
+                    <bindings:SeBinding.FallbackValue>
+                        <system:Double>100</system:Double>
+                    </bindings:SeBinding.FallbackValue>
+                </bindings:SeBinding>
+            </se:RadialGauge.Maximum>
+            <se:RadialGauge.Arrows>
+                <se:RadialArrow BorderBrush="{x:Null}" Background="Black" Height="60" Width="8" Style="{StaticResource PressureRadialArrow}">
+                    <se:RadialArrow.Value>
+                        <bindings:SeBinding  Path="Tags.Node[view.main_drives.drawwork].Items[davlenie_masla_v_tormoze].Value">
+                            <bindings:SeBinding.FallbackValue>
+                                <system:Double>0</system:Double>
+                            </bindings:SeBinding.FallbackValue>
+                        </bindings:SeBinding>
+                    </se:RadialArrow.Value>
+                </se:RadialArrow>
+            </se:RadialGauge.Arrows>
+            
+        </se:RadialGauge>
+            <Label Content="{bindings:Bind FallbackValue=0.00, Path=Tags.Node[view.main_drives.drawwork].Items[davlenie_masla_v_tormoze].Value}" VerticalAlignment="Bottom" Margin="0,0,0,18" HorizontalContentAlignment="Center" ContentStringFormat="{}{0:0.##}" FontSize="18"/>
+            <TextBlock TextWrapping="Wrap" VerticalAlignment="Bottom" Margin="0,0,0,8" TextAlignment="Center" Text="атм"></TextBlock>
+            <Image HorizontalAlignment="Left" Height="12" Margin="27,31,0,0" VerticalAlignment="Top" Width="12" Source="/NGO.Elements;component/led_danger.png">
+                <Image.Visibility>
+                    <bindings:SeBinding  Path="Tags.Node[view.main_drives.drawwork.presets.davlenieSmazkiTormoza].Items[OFF].Value">
+                        <bindings:SeBinding.FallbackValue>
+                            <Visibility>Visible</Visibility>
+                        </bindings:SeBinding.FallbackValue>
+                    </bindings:SeBinding>
+                </Image.Visibility>
+            </Image>
+        </Grid>
+    </Viewbox>
+</UserControl>

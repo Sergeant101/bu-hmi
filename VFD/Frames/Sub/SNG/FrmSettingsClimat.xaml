@@ -1,0 +1,286 @@
+﻿<UserControl x:Class="Vfd_app.Gui.Frames.FrmSettingsClimat"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:elements="clr-namespace:NGO.Elements;assembly=NGO.Elements"
+             xmlns:style="clr-namespace:NGO.Elements.style;assembly=NGO.Elements"
+
+             xmlns:hmi="http://schemas.monokot.com/hmi/"
+             xmlns:se="http://schemas.monokot.com/se/"
+
+             mc:Ignorable="d" 
+             Background="#FFC9C9C9"
+              d:DesignHeight="900" Width="1280">
+    <!--<UserControl.Resources>
+        <ResourceDictionary />
+    </UserControl.Resources>-->
+    <Canvas>
+
+        <style:cool_rect Height="272" Width="415" Canvas.Left="860" Canvas.Top="628"/>
+
+        <style:cool_rect Height="263" Width="415" Canvas.Left="860" Canvas.Top="37"/>
+
+        <style:cool_rect Height="863" Width="424" Canvas.Left="426" Canvas.Top="37"/>
+        <style:cool_rect Height="863" Width="424" Canvas.Left="2" Canvas.Top="37"/>
+        <style:cool_rect Height="256" Width="415" Canvas.Left="860" Canvas.Top="342"/>
+
+        <Grid Width="365" Canvas.Left="28" Canvas.Top="90" Height="115">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Rectangle Fill="#FF727272" Stroke="Black" Margin="-5,-5,-5,-5" Grid.RowSpan="99" RadiusX="5" RadiusY="5"/>
+            <se:VisualBox Grid.Row="0" Margin="5,0,5,0" VerticalAlignment="Stretch" FontFamily="Tahoma" Width="Auto" Text="{hmi:SeBinding modules[tags_mod].Items[climate_AKL_network (медиа)].Text, FallbackValue=НЕТ СВЯЗИ}" Height="40" CornerRadius="5">
+                <se:VisualBox.Background>
+                    <hmi:SeBinding FallbackValue="Silver" Path="modules[tags_mod].Items[climate_AKL_network (медиа)].color">
+                        <hmi:SeBinding.Converter>
+                            <hmi:ColorToSolidColorBrushConverter />
+                        </hmi:SeBinding.Converter>
+                    </hmi:SeBinding>
+                </se:VisualBox.Background>
+            </se:VisualBox>
+            <se:VisualBox Grid.Row="2" VerticalAlignment="Stretch" Margin="5,0,5,0" FontFamily="Tahoma" Width="Auto" Text="{hmi:SeBinding modules[tags_mod].Items[climate_AKL_humidity (медиа)].Text, FallbackValue=Влажность}" Height="40" CornerRadius="5">
+                <se:VisualBox.Background>
+                    <hmi:SeBinding FallbackValue="Silver" Path="modules[tags_mod].Items[climate_AKL_humidity (медиа)].color">
+                        <hmi:SeBinding.Converter>
+                            <hmi:ColorToSolidColorBrushConverter />
+                        </hmi:SeBinding.Converter>
+                    </hmi:SeBinding>
+                </se:VisualBox.Background>
+            </se:VisualBox>
+
+        </Grid>
+
+        <TextBlock Foreground="Black" TextAlignment="Center" VerticalAlignment="Top" FontSize="22" Text="ПУЛЬТ   НАСОСОВ" Canvas.Left="431" FontWeight="Bold" Width="420" />
+
+        <Grid Width="365" Canvas.Left="456" Canvas.Top="257" Height="292">
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".7*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+            <Rectangle Fill="#FF727272" Stroke="Black" Margin="-5,-5,-5,-5" Grid.RowSpan="99" RadiusX="5" RadiusY="5"/>
+            <se:VisualBox FontFamily="Tahoma" Margin="5,0,5,0" Width="Auto" Text="{hmi:SeBinding modules[tags_mod].Items[climate_PC1_heat (медиа)].Text, FallbackValue=НЕТ СВЯЗИ}" VerticalAlignment="Stretch" Grid.Row="0" Height="40" CornerRadius="5">
+                <se:VisualBox.Background>
+                    <hmi:SeBinding FallbackValue="Silver" Path="modules[tags_mod].Items[climate_PC1_heat (медиа)].color">
+                        <hmi:SeBinding.Converter>
+                            <hmi:ColorToSolidColorBrushConverter />
+                        </hmi:SeBinding.Converter>
+                    </hmi:SeBinding>
+                </se:VisualBox.Background>
+            </se:VisualBox>
+            <se:HmiButton Style="{StaticResource MetalBorderButton}" Grid.Row="1" Content="АВТОМАТИЧЕСКИЙ РЕЖИМ"     FontSize="24" hmi:Click.Command="{hmi:SeBinding modules[tags_mod].Items[db_buttons_9_0].WriteCommand}" Margin="10,0" />
+            <se:HmiButton Style="{StaticResource MetalBorderButton}" Grid.Row="2" Content="ВКЛЮЧИТЬ ВРУЧНУЮ"         FontSize="24" hmi:Click.Command="{hmi:SeBinding modules[tags_mod].Items[db_buttons_9_1].WriteCommand}" Margin="10,0" />
+            <se:HmiButton Style="{StaticResource MetalBorderButton}" Grid.Row="3" Content="ОТКЛЮЧИТЬ ВРУЧНУЮ"        FontSize="24" hmi:Click.Command="{hmi:SeBinding modules[tags_mod].Items[db_buttons_9_2].WriteCommand}" Margin="10,0" />
+        </Grid>
+        <Grid Width="365" Canvas.Left="456" Canvas.Top="604" Height="271">
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".7*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+            <Rectangle Fill="#FF727272" Stroke="Black" Margin="-5,-5,-5,-5" Grid.RowSpan="99" RadiusX="5" RadiusY="5"/>
+            <se:VisualBox Grid.Row="0" FontFamily="Tahoma"  Width="Auto" Text="{hmi:SeBinding modules[tags_mod].Items[climate_PC1_supply (медиа)].Text, FallbackValue=НЕТ СВЯЗИ}" Height="40" Margin="5,0,5,0" CornerRadius="5">
+                <se:VisualBox.Background>
+                    <hmi:SeBinding FallbackValue="Silver" Path="modules[tags_mod].Items[climate_PC1_supply (медиа)].color">
+                        <hmi:SeBinding.Converter>
+                            <hmi:ColorToSolidColorBrushConverter />
+                        </hmi:SeBinding.Converter>
+                    </hmi:SeBinding>
+                </se:VisualBox.Background>
+            </se:VisualBox>
+            <se:HmiButton Style="{StaticResource MetalBorderButton}" Grid.Row="1" Content="АВТОМАТИЧЕСКИЙ РЕЖИМ"        FontSize="24" hmi:Click.Command="{hmi:SeBinding modules[tags_mod].Items[db_buttons_9_3].WriteCommand}" Margin="10,0" />
+            <se:HmiButton Style="{StaticResource MetalBorderButton}" Grid.Row="2" Content="ВКЛЮЧИТЬ ВРУЧНУЮ"     FontSize="24" hmi:Click.Command="{hmi:SeBinding modules[tags_mod].Items[db_buttons_9_4].WriteCommand}" Margin="10,0" />
+            <se:HmiButton Style="{StaticResource MetalBorderButton}" Grid.Row="3" Content="ОТКЛЮЧИТЬ ВРУЧНУЮ"    FontSize="24" hmi:Click.Command="{hmi:SeBinding modules[tags_mod].Items[db_buttons_9_5].WriteCommand}" Margin="10,0" />
+        </Grid>
+
+
+        <TextBlock Foreground="Black" TextAlignment="Center" VerticalAlignment="Top" FontSize="22" Text="МОДУЛЬ  ЧП" Canvas.Left="860" FontWeight="Bold" Width="420" />
+        <Grid Width="364" Canvas.Left="457" Canvas.Top="90" Height="115">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Rectangle Fill="#FF727272" Stroke="Black" Margin="-5,-5,-5,-5" Grid.RowSpan="99" RadiusX="5" RadiusY="5"/>
+            <se:VisualBox Grid.Row="0" Margin="5,0,5,0" FontFamily="Tahoma" Width="Auto" Text="{hmi:SeBinding modules[tags_mod].Items[climate_PC1_network (медиа)].Text, FallbackValue=НЕТ СВЯЗИ}" Height="40" CornerRadius="5">
+                <se:VisualBox.Background>
+                    <hmi:SeBinding FallbackValue="Silver" Path="modules[tags_mod].Items[climate_PC1_network (медиа)].color">
+                        <hmi:SeBinding.Converter>
+                            <hmi:ColorToSolidColorBrushConverter />
+                        </hmi:SeBinding.Converter>
+                    </hmi:SeBinding>
+                </se:VisualBox.Background>
+            </se:VisualBox>
+            <se:VisualBox Grid.Row="2" VerticalAlignment="Stretch" Margin="5,0,5,0" FontFamily="Tahoma" Width="Auto" Text="{hmi:SeBinding modules[tags_mod].Items[climate_PC1_humidity (медиа)].Text, FallbackValue=Влажность}" Height="40" CornerRadius="5">
+                <se:VisualBox.Background>
+                    <hmi:SeBinding FallbackValue="Silver" Path="modules[tags_mod].Items[climate_PC1_humidity (медиа)].color">
+                        <hmi:SeBinding.Converter>
+                            <hmi:ColorToSolidColorBrushConverter />
+                        </hmi:SeBinding.Converter>
+                    </hmi:SeBinding>
+                </se:VisualBox.Background>
+            </se:VisualBox>
+
+
+        </Grid>
+        <Grid Width="365" Canvas.Left="28" Canvas.Top="257" Height="292">
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".7*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+            <Rectangle Fill="#FF727272" Stroke="Black" Margin="-5,-5,-5,-5" Grid.RowSpan="4" RadiusX="5" RadiusY="5"/>
+            <se:VisualBox  Grid.Row="0"  FontFamily="Tahoma" Margin="5,0,5,10" Width="Auto" Text="{hmi:SeBinding modules[tags_mod].Items[climate_AKL_heat (медиа)].Text, FallbackValue=НЕТ СВЯЗИ}" Height="40" CornerRadius="5">
+                <se:VisualBox.Background>
+                    <hmi:SeBinding FallbackValue="Silver" Path="modules[tags_mod].Items[climate_AKL_heat (медиа)].color">
+                        <hmi:SeBinding.Converter>
+                            <hmi:ColorToSolidColorBrushConverter />
+                        </hmi:SeBinding.Converter>
+                    </hmi:SeBinding>
+                </se:VisualBox.Background>
+            </se:VisualBox>
+
+            <se:HmiButton Style="{StaticResource MetalBorderButton}" Grid.Row="1" Content="АВТОМАТИЧЕСКИЙ РЕЖИМ"    FontSize="24" hmi:Click.Command="{hmi:SeBinding modules[tags_mod].Items[db_buttons_8_0].WriteCommand}" Margin="10,0"/>
+            <se:HmiButton Style="{StaticResource MetalBorderButton}" Grid.Row="2" Content="ВКЛЮЧИТЬ ВРУЧНУЮ"  FontSize="24" hmi:Click.Command="{hmi:SeBinding modules[tags_mod].Items[db_buttons_8_1].WriteCommand}" Margin="10,0" />
+            <se:HmiButton Style="{StaticResource MetalBorderButton}" Grid.Row="3" Content="ОТКЛЮЧИТЬ ВРУЧНУЮ" FontSize="24" hmi:Click.Command="{hmi:SeBinding modules[tags_mod].Items[db_buttons_8_2].WriteCommand}" Margin="10,0" />
+        </Grid>
+        <Grid Width="366" Canvas.Left="28" Canvas.Top="604" Height="271">
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".7*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+            <Rectangle Fill="#FF727272" Stroke="Black" Margin="-5,-5,-5,-5" Grid.RowSpan="99" RadiusX="5" RadiusY="5"/>
+            <se:VisualBox Grid.Row="0" FontFamily="Tahoma" Width="Auto" Text="{hmi:SeBinding modules[tags_mod].Items[climate_AKL_supply (медиа)].Text, FallbackValue=НЕТ СВЯЗИ}" Height="40" Margin="5,0,5,0" CornerRadius="5">
+                <se:VisualBox.Background>
+                    <hmi:SeBinding FallbackValue="Silver" Path="modules[tags_mod].Items[climate_AKL_supply (медиа)].color">
+                        <hmi:SeBinding.Converter>
+                            <hmi:ColorToSolidColorBrushConverter />
+                        </hmi:SeBinding.Converter>
+                    </hmi:SeBinding>
+                </se:VisualBox.Background>
+            </se:VisualBox>
+            <se:HmiButton Style="{StaticResource MetalBorderButton}"  Grid.Row="1" Content="АВТОМАТИЧЕСКИЙ РЕЖИМ"     FontSize="24" hmi:Click.Command="{hmi:SeBinding modules[tags_mod].Items[db_buttons_8_3].WriteCommand}" Margin="10,0"/>
+            <se:HmiButton Style="{StaticResource MetalBorderButton}"  Grid.Row="2" Content="ВКЛЮЧИТЬ ВРУЧНУЮ"  FontSize="24" hmi:Click.Command="{hmi:SeBinding modules[tags_mod].Items[db_buttons_8_4].WriteCommand}" Margin="10,0"/>
+            <se:HmiButton Style="{StaticResource MetalBorderButton}"  Grid.Row="3" Content="ОТКЛЮЧИТЬ ВРУЧНУЮ" FontSize="24" hmi:Click.Command="{hmi:SeBinding modules[tags_mod].Items[db_buttons_8_5].WriteCommand}" Margin="10,0"/>
+        </Grid>
+        <TextBlock Foreground="Black" TextAlignment="Center" VerticalAlignment="Top" FontSize="22" Text="ШКАФ   АКЛ" Canvas.Left="2" FontWeight="Bold" Width="424" />
+        <TextBlock Foreground="Black" TextAlignment="Center" VerticalAlignment="Top" FontSize="22" Text="РУ0,4кВ" Canvas.Left="860" FontWeight="Bold" Width="420" Canvas.Top="319" />
+        <TextBlock Foreground="Black" TextAlignment="Center" VerticalAlignment="Center" FontSize="20" Text="ПИТАНИЕ" Canvas.Left="28" Canvas.Top="565" Width="365" FontWeight="Bold" />
+        <TextBlock Foreground="Black" TextAlignment="Center" VerticalAlignment="Center" FontSize="20" Text="ПИТАНИЕ" Canvas.Left="456" Canvas.Top="565" Width="365" FontWeight="Bold" />
+        <TextBlock Foreground="Black" TextAlignment="Center" VerticalAlignment="Center" FontSize="20" Text="ОБОГРЕВ" Canvas.Left="30" Canvas.Top="223" Width="365" FontWeight="Bold" />
+        <TextBlock Foreground="Black" TextAlignment="Center" VerticalAlignment="Center" FontSize="20" Text="ОБОГРЕВ" Canvas.Left="454" Canvas.Top="223" Width="365" FontWeight="Bold" />
+        <TextBlock Foreground="Black" TextAlignment="Center" VerticalAlignment="Center" FontSize="20" Text="СОСТОЯНИЕ ДАТЧИКОВ" Canvas.Left="30" Canvas.Top="55" Width="365" FontWeight="Bold" />
+        <TextBlock Foreground="Black" TextAlignment="Center" VerticalAlignment="Center" FontSize="20" Text="СОСТОЯНИЕ ДАТЧИКОВ" Canvas.Left="457" Canvas.Top="53" Width="364" FontWeight="Bold" />
+
+        <se:VisualBox Grid.Row="0" FontFamily="Tahoma" Height="80" Text="{hmi:SeBinding modules[tags_mod].Items[пс_нб (медиа)].Text, FallbackValue=НЕТ СВЯЗИ}" Width="346" Canvas.Left="898" Canvas.Top="679" CornerRadius="5"  >
+            <se:VisualBox.Background>
+                <hmi:SeBinding FallbackValue="Silver" Path="modules[tags_mod].Items[пс_нб (медиа)].color">
+                    <hmi:SeBinding.Converter>
+                        <hmi:ColorToSolidColorBrushConverter />
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </se:VisualBox.Background>
+        </se:VisualBox>
+        <se:VisualBox Grid.Row="3" FontFamily="Tahoma" Height="80" Text="{hmi:SeBinding modules[tags_mod].Items[пс_тгу (медиа)].Text, FallbackValue=НЕТ СВЯЗИ}" Width="346" Canvas.Left="898" Canvas.Top="798" CornerRadius="5"  >
+            <se:VisualBox.Background>
+                <hmi:SeBinding FallbackValue="Silver" Path="modules[tags_mod].Items[пс_тгу (медиа)].color">
+                    <hmi:SeBinding.Converter>
+                        <hmi:ColorToSolidColorBrushConverter />
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </se:VisualBox.Background>
+        </se:VisualBox>
+
+        <Grid Canvas.Left="890" Canvas.Top="90" Height="180" Width="356">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <Rectangle Fill="#FF727272" Stroke="Black" Margin="-5,-5,-5,-5" Grid.RowSpan="99" RadiusX="5" RadiusY="5"/>
+
+            <se:VisualBox Margin="5,0,5,0"  FontFamily="Tahoma" Height="40" Width="346" Text="{hmi:SeBinding modules[tags_mod].Items[climate_VFD_humidity (медиа)].Text, FallbackValue=НЕТ СВЯЗИ}" Grid.Row="1" CornerRadius="5">
+                <se:VisualBox.Background>
+                    <hmi:SeBinding FallbackValue="Silver" Path="modules[tags_mod].Items[climate_VFD_humidity (медиа)].color">
+                        <hmi:SeBinding.Converter>
+                            <hmi:ColorToSolidColorBrushConverter />
+                        </hmi:SeBinding.Converter>
+                    </hmi:SeBinding>
+                </se:VisualBox.Background>
+            </se:VisualBox>
+            <se:VisualBox Margin="5,0,5,0"  FontFamily="Tahoma" Height="40" Width="346" Text="{hmi:SeBinding modules[tags_mod].Items[climate_VFD_heat (медиа)].Text, FallbackValue=НЕТ СВЯЗИ}"  Grid.Row="0" CornerRadius="5">
+                <se:VisualBox.Background>
+                    <hmi:SeBinding FallbackValue="Silver" Path="modules[tags_mod].Items[climate_VFD_heat (медиа)].color">
+                        <hmi:SeBinding.Converter>
+                            <hmi:ColorToSolidColorBrushConverter />
+                        </hmi:SeBinding.Converter>
+                    </hmi:SeBinding>
+                </se:VisualBox.Background>
+            </se:VisualBox>
+            <se:VisualBox FontFamily="Tahoma" Height="80" Text="{hmi:SeBinding modules[tags_mod].Items[пс_мчп (медиа)].Text, FallbackValue=НЕТ СВЯЗИ}" Width="Auto" Margin="5,0,5,0" Grid.Row="2" CornerRadius="5">
+                <se:VisualBox.Background>
+                    <hmi:SeBinding FallbackValue="Silver" Path="modules[tags_mod].Items[пс_мчп (медиа)].color">
+                        <hmi:SeBinding.Converter>
+                            <hmi:ColorToSolidColorBrushConverter />
+                        </hmi:SeBinding.Converter>
+                    </hmi:SeBinding>
+                </se:VisualBox.Background>
+            </se:VisualBox>
+        </Grid>
+
+        <Grid Canvas.Left="890" Canvas.Top="390" Height="180" Width="367">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+
+            <Rectangle Fill="#FF727272" Stroke="Black" Margin="-5,-5,-5,-5" Grid.RowSpan="99" RadiusX="5" RadiusY="5"/>
+            <se:VisualBox FontFamily="Tahoma" Height="40" Width="Auto" Text="{hmi:SeBinding modules[tags_mod].Items[climate_NKU_heat (медиа)].Text, FallbackValue=НЕТ СВЯЗИ}" Grid.Row="0"  Margin="5,0" CornerRadius="5">
+                <se:VisualBox.Background>
+                    <hmi:SeBinding FallbackValue="Silver" Path="modules[tags_mod].Items[climate_NKU_heat (медиа)].color">
+                        <hmi:SeBinding.Converter>
+                            <hmi:ColorToSolidColorBrushConverter />
+                        </hmi:SeBinding.Converter>
+                    </hmi:SeBinding>
+                </se:VisualBox.Background>
+            </se:VisualBox>
+            <se:VisualBox FontFamily="Tahoma" Height="40" Text="{hmi:SeBinding modules[tags_mod].Items[climate_NKU_humidity (медиа)].Text, FallbackValue=НЕТ СВЯЗИ}" Width="Auto" Grid.Row="1"  Margin="5,0" CornerRadius="5">
+                <se:VisualBox.Background>
+                    <hmi:SeBinding FallbackValue="Silver" Path="modules[tags_mod].Items[climate_NKU_humidity (медиа)].color">
+                        <hmi:SeBinding.Converter>
+                            <hmi:ColorToSolidColorBrushConverter />
+                        </hmi:SeBinding.Converter>
+                    </hmi:SeBinding>
+                </se:VisualBox.Background>
+            </se:VisualBox>
+            <se:VisualBox Grid.Row="2" FontFamily="Tahoma" Height="80" Text="{hmi:SeBinding modules[tags_mod].Items[пс_ру (медиа)].Text, FallbackValue=НЕТ СВЯЗИ}" Width="Auto"  Margin="5,0,5,0" CornerRadius="5">
+                <se:VisualBox.Background>
+                    <hmi:SeBinding FallbackValue="Silver" Path="modules[tags_mod].Items[пс_ру (медиа)].color">
+                        <hmi:SeBinding.Converter>
+                            <hmi:ColorToSolidColorBrushConverter />
+                        </hmi:SeBinding.Converter>
+                    </hmi:SeBinding>
+                </se:VisualBox.Background>
+            </se:VisualBox>
+
+        </Grid>
+
+        <TextBlock Foreground="Black" TextAlignment="Center" VerticalAlignment="Center" FontSize="20" Text="СОСТОЯНИЕ ДАТЧИКОВ" Canvas.Left="898" Canvas.Top="53" Width="346" FontWeight="Bold" />
+        <TextBlock Foreground="Black" TextAlignment="Center" VerticalAlignment="Center" FontSize="20" Text="СОСТОЯНИЕ ДАТЧИКОВ" Canvas.Left="898" Canvas.Top="358" Width="346" FontWeight="Bold" />
+        <TextBlock Foreground="Black" TextAlignment="Center" VerticalAlignment="Top" FontSize="20" Canvas.Left="855" FontWeight="Bold" Width="415" Canvas.Top="646" ><Run Text="НАСОСНЫЙ БЛОК"/></TextBlock>
+        <TextBlock Foreground="Black" TextAlignment="Center" VerticalAlignment="Top" FontSize="20" Canvas.Left="855" FontWeight="Bold" Width="415" Canvas.Top="765" ><Run Text="ТЕПЛОГЕНЕРАТОР"/></TextBlock>
+    </Canvas>
+</UserControl>

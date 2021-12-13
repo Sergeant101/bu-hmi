@@ -1,0 +1,593 @@
+﻿<UserControl x:Class="VFD_160.Frames.ktu1.SLD"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:se="http://schemas.monokot.com/se/"
+             xmlns:hmi="http://schemas.monokot.com/hmi/"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:scheme="clr-namespace:NGO.Elements.Scheme;assembly=NGO.Elements"
+             mc:Ignorable="d" 
+             d:DesignHeight="840" d:DesignWidth="1200" Background="#FFC9C9C9">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/NGO.Elements;component/Style/superVfd_styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Canvas>
+        <Border BorderBrush="Black" BorderThickness="1" Canvas.Left="9" Canvas.Top="272" Height="382" Width="485" Background="{DynamicResource LaitoviiSerii}" CornerRadius="5"/>
+        <TextBlock Canvas.Left="427" TextWrapping="Wrap" Text="КТУ 1" Canvas.Top="243" FontSize="14"/>
+        <Border BorderBrush="Black" BorderThickness="1" Canvas.Left="125" Canvas.Top="43" Height="102" x:Name="border14" Width="1066" Background="{DynamicResource LaitoviiSerii}" CornerRadius="5"/>
+        <Border BorderBrush="#FF939393" BorderThickness="1" Canvas.Left="305" Canvas.Top="682" Height="125" Width="91" />
+        <Border BorderBrush="#FF939393" BorderThickness="1" Canvas.Left="402" Canvas.Top="682" Height="125"  Width="92" />
+        <Rectangle Height="329" Canvas.Left="70" Fill="Black" Canvas.Top="163" Width="2"/>
+        <Rectangle Height="107" Canvas.Left="253" Fill="Black" Canvas.Top="594" Width="2"/>
+        <Rectangle Height="89" Canvas.Left="350" Fill="Black" Canvas.Top="597" Width="2"/>
+        <Rectangle Height="89" Canvas.Left="447" Fill="Black" Canvas.Top="597" Width="2"/>
+        <Rectangle Height="361" Canvas.Left="254" Fill="Black" Canvas.Top="132" Width="2"/>
+        <Rectangle Height="31" Canvas.Left="1117" Fill="Black" Canvas.Top="134" Width="2"/>
+        <Rectangle Height="191" Canvas.Left="390" Fill="Black" Canvas.Top="137" Width="2"/>
+        <Rectangle Height="45" Canvas.Left="352" Fill="Black" Canvas.Top="495" Width="2"/>
+        <Rectangle Height="45" Canvas.Left="432" Fill="Black" Canvas.Top="495" Width="2"/>
+        <Rectangle Height="1" Canvas.Left="371" Fill="Black" Canvas.Top="483" Width="44"/>
+        <se:VisualBox Canvas.Left="24" Canvas.Top="42" Width="84" Height="130" BorderBrush="{x:Null}">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/NGO.Elements;component/Content/VFD/Scheme/dpp-green.png" Stretch="Uniform"/>
+                    </se:VisualBoxStateItem.Background>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.scheme].Items[tag18].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+            <se:VisualBox.Background>
+                <ImageBrush ImageSource="/NGO.Elements;component/Content/VFD/Scheme/dpp-yellow.png" Stretch="Uniform"/>
+            </se:VisualBox.Background>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="8" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="1038" Canvas.Left="142" Canvas.Top="69" CornerRadius="0">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.scheme].Items[bus_kru2].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="8" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="236" Canvas.Left="23" Canvas.Top="539" CornerRadius="0">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.scheme].Items[bus_400_nku].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+
+        <scheme:QF Canvas.Left="39" Canvas.Top="491" Height="52" Width="38">
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.scheme].Items[tag18].Value">
+                    <hmi:Bind.Converter>
+                        <hmi:BooleanToInverseConverter/>
+                    </hmi:Bind.Converter>
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <scheme:QF Canvas.Left="223" Canvas.Top="492" Height="52" Width="38">
+            <scheme:QF.isOpen>
+                <hmi:Bind  Path="Tags.Node[view.scheme].Items[tag17].Value">
+                    <hmi:Bind.Converter>
+                        <hmi:BooleanToInverseConverter/>
+                    </hmi:Bind.Converter>
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <scheme:QF Canvas.Left="225" Height="58" Width="62" Template="{StaticResource vacuum_qs}" Canvas.Top="77">
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.scheme].Items[tag88].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                    <hmi:Bind.Converter>
+                        <hmi:BooleanToInverseConverter/>
+                    </hmi:Bind.Converter>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <scheme:QF Canvas.Left="360" Canvas.Top="77" Height="62" Width="62"  Template="{StaticResource vacuum_qs}">
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.scheme].Items[tag87].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                    <hmi:Bind.Converter>
+                        <hmi:BooleanToInverseConverter/>
+                    </hmi:Bind.Converter>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <scheme:QF Canvas.Left="1088" Canvas.Top="77" Width="62"  Template="{StaticResource vacuum_qs}">
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.scheme].Items[tag89].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                    <hmi:Bind.Converter>
+                        <hmi:BooleanToInverseConverter/>
+                    </hmi:Bind.Converter>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <scheme:QF Canvas.Top="544" Height="52" Width="38" Canvas.Left="223" RenderTransformOrigin="0.5,0.5">
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.scheme].Items[tag94].Value">
+                    <hmi:Bind.Converter>
+                        <hmi:BooleanToInverseConverter/>
+                    </hmi:Bind.Converter>
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <se:VisualBox Canvas.Left="407" Canvas.Top="464" Height="41" Width="51" BorderBrush="{x:Null}">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.scheme].Items[rectifier2_green].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/NGO.Elements;component/Content/VFD/Scheme/acdc-green.png" Stretch="Uniform"/>
+                    </se:VisualBoxStateItem.Background>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.scheme].Items[rectifier2_red].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/NGO.Elements;component/Content/VFD/Scheme/acdc-red.png" Stretch="Uniform"/>
+                    </se:VisualBoxStateItem.Background>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+            <se:VisualBox.Background>
+                <ImageBrush ImageSource="/NGO.Elements;component/Content/VFD/Scheme/acdc-yellow.png" Stretch="Uniform"/>
+            </se:VisualBox.Background>
+        </se:VisualBox>
+        <scheme:QF Canvas.Left="321" Canvas.Top="412" electricType="QS" Height="52" Width="39">
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.scheme].Items[tag225].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                    <hmi:Bind.Converter>
+                        <hmi:BooleanToInverseConverter/>
+                    </hmi:Bind.Converter>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <scheme:QF Canvas.Left="401" Canvas.Top="412" electricType="QS" Height="52" Width="38">
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.scheme].Items[tag226].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                    <hmi:Bind.Converter>
+                        <hmi:BooleanToInverseConverter/>
+                    </hmi:Bind.Converter>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <scheme:QF Canvas.Left="319" Canvas.Top="546" electricType="QS" Height="52" Width="40">
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.scheme].Items[tag209].Value">
+                    <hmi:Bind.Converter>
+                        <hmi:BooleanToInverseConverter/>
+                    </hmi:Bind.Converter>
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <scheme:QF Canvas.Left="416" Canvas.Top="546" electricType="QS" Height="52" Width="39">
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.scheme].Items[tag210].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                    <hmi:Bind.Converter>
+                        <hmi:BooleanToInverseConverter/>
+                    </hmi:Bind.Converter>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <se:VisualBox Canvas.Left="243" Canvas.Top="325" Height="41" Width="22" BorderBrush="{x:Null}" Background="{DynamicResource t2_yellow}">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{DynamicResource t2_green}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.scheme].Items[tag5].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="{DynamicResource t2_orange}" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.scheme].Items[tag6].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="{DynamicResource t2_red}" Priority="3">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.scheme].Items[tag10].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <TextBlock Canvas.Left="77" TextWrapping="Wrap" Text="QF2" Canvas.Top="501" FontSize="14" Height="25" Width="34"/>
+        <TextBlock Canvas.Left="262" TextWrapping="Wrap" Text="42QF1" Canvas.Top="558" FontSize="14" Height="25" Width="41"/>
+        <TextBlock Canvas.Left="267" TextWrapping="Wrap" Text="QF1" Canvas.Top="499" FontSize="14" Height="25" Width="33"/>
+        <TextBlock Canvas.Left="138" TextWrapping="Wrap" Text="~ 400 В" Canvas.Top="515" FontSize="14"/>
+        <TextBlock Canvas.Left="360" TextWrapping="Wrap" Text="QF1" Canvas.Top="426" FontSize="14" Height="25" Width="33"/>
+        <TextBlock Canvas.Left="446" TextWrapping="Wrap" Text="QF2" Canvas.Top="426" FontSize="14" Height="25" Width="34"/>
+        <TextBlock Canvas.Left="934" TextWrapping="Wrap" Text="ПИТАНИЕ&#xA;~690В&#xA;ВЛБ" Canvas.Top="168" FontSize="14" TextAlignment="Center"/>
+        <TextBlock Canvas.Left="1150" TextWrapping="Wrap" Text="КРУ 1" FontSize="14" Canvas.Top="20"/>
+        <TextBlock Canvas.Left="617" TextWrapping="Wrap" Text="~ 6000 В" FontSize="14" Canvas.Top="48"/>
+        <TextBlock Canvas.Left="281" TextWrapping="Wrap" Text="Q1" Canvas.Top="103" FontSize="14" Width="23"/>
+        <TextBlock Canvas.Left="420" TextWrapping="Wrap" Text="Q2" Canvas.Top="105" FontSize="14" Width="23"/>
+        <TextBlock Canvas.Left="1151" TextWrapping="Wrap" Text="Q4" Canvas.Top="95" FontSize="14" Width="24"/>
+        <TextBlock Canvas.Left="272" TextWrapping="Wrap" Text="Т1" FontSize="14" Canvas.Top="337"/>
+        <TextBlock Canvas.Left="426" TextWrapping="Wrap" Text="Т2" FontSize="14" Canvas.Top="337"/>
+        <TextBlock Canvas.Left="1105" TextWrapping="Wrap" Text="СВП" FontSize="14" Canvas.Top="170"/>
+        <se:VisualBox Canvas.Left="331" Canvas.Top="605" Height="32" Width="40" BorderBrush="{x:Null}" Style="{DynamicResource Inverter_DC}">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{DynamicResource MediaBoxFineSolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.scheme].Items[pump1_green].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <!--<se:VisualBoxStateItem Background="{DynamicResource MediaBoxFineSolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.main_drives.pump1.vfd].Items[ready_bit].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>-->
+                <se:VisualBoxStateItem Background="{DynamicResource MediaBoxEmergencySolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.scheme].Items[pump1_red].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox Canvas.Left="331" Canvas.Top="686" Height="40" Width="40" BorderBrush="{x:Null}" Style="{DynamicResource Motor}">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{DynamicResource MediaBoxFineSolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.scheme].Items[pump1_m_green].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="{DynamicResource MediaBoxEmergencySolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.scheme].Items[pump1_m_red].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox Canvas.Left="428" Canvas.Top="686" Height="40" Width="40" BorderBrush="{x:Null}" Style="{DynamicResource Motor}">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{DynamicResource MediaBoxFineSolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.scheme].Items[pump2_m_green].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="{DynamicResource MediaBoxEmergencySolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.scheme].Items[pump2_m_red].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox Canvas.Top="325" Height="41" Width="51" BorderBrush="{x:Null}" Background="{DynamicResource t3_yellow}" Canvas.Left="365">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{DynamicResource t3_green}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.scheme].Items[tag7].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="{DynamicResource t3_orange}" Priority="2">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.scheme].Items[tag8].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="{DynamicResource t3_red}" Priority="3">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.scheme].Items[tag9].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <TextBlock Canvas.Left="374" TextWrapping="Wrap" Text="Н1" Canvas.Top="659" FontSize="14"/>
+        <TextBlock Canvas.Left="472" TextWrapping="Wrap" Text="Н2" Canvas.Top="659" FontSize="14"/>
+        <Grid Height="60" Canvas.Left="301" Canvas.Top="740" Width="100">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="А" VerticalAlignment="Top" Height="21" FontSize="14"/>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="кВт" VerticalAlignment="Top" Height="21" FontSize="14" Grid.Row="1" Grid.RowSpan="2"/>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="об/мин" VerticalAlignment="Top" Height="21" FontSize="14" Grid.Row="2"/>
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{hmi:Bind Tags.Node[view.main_drives.pump1].Items[current].Value, FallbackValue=0}" VerticalAlignment="Top" Height="21" FontSize="14" Margin="0,0,5,0"/>
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{hmi:Bind Tags.Node[view.main_drives.pump1].Items[power].Value, FallbackValue=0}" VerticalAlignment="Top" Height="21" FontSize="14" Margin="0,0,5,0" Grid.Row="1" Grid.RowSpan="2"/>
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{hmi:Bind Tags.Node[view.main_drives.pump1].Items[rpm].Value, FallbackValue=0}" VerticalAlignment="Top" Height="21" FontSize="14" Margin="0,0,5,0" Grid.Row="2"/>
+        </Grid>
+        <Grid Height="60" Canvas.Left="399" Canvas.Top="740" Width="100">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="А" VerticalAlignment="Top" Height="21" FontSize="14"/>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="кВт" VerticalAlignment="Top" Height="21" FontSize="14" Grid.Row="1" Grid.RowSpan="2"/>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="об/мин" VerticalAlignment="Top" Height="21" FontSize="14" Grid.Row="2"/>
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{hmi:Bind Tags.Node[view.main_drives.pump2].Items[current].Value, FallbackValue=0}" VerticalAlignment="Top" Height="21" FontSize="14" Margin="0,0,5,0"/>
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{hmi:Bind Tags.Node[view.main_drives.pump2].Items[power].Value, FallbackValue=0}" VerticalAlignment="Top" Height="21" FontSize="14" Margin="0,0,5,0" Grid.Row="1" Grid.RowSpan="2"/>
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{hmi:Bind Tags.Node[view.main_drives.pump2].Items[rpm].Value, FallbackValue=0}" VerticalAlignment="Top" Height="21" FontSize="14" Margin="0,0,5,0" Grid.Row="2"/>
+        </Grid>
+        <TextBlock x:Name="text" TextWrapping="Wrap" FontSize="14" FontFamily="Tahoma" Text="НБ" Canvas.Left="66" Canvas.Top="716"/>
+        <TextBlock TextWrapping="Wrap" FontSize="14" FontFamily="Tahoma" Text="МПК1" Canvas.Left="12" Canvas.Top="716"/>
+        <TextBlock TextWrapping="Wrap" FontSize="14" FontFamily="Tahoma" Text="ФКУ2" Canvas.Left="118" Canvas.Top="716"/>
+        <TextBlock TextWrapping="Wrap" FontSize="14" FontFamily="Tahoma" Text="БК" Canvas.Left="186" Canvas.Top="716"/>
+        <Rectangle Height="120" Canvas.Left="27" Fill="Black" Canvas.Top="581" Width="2"/>
+        <Rectangle Height="120" Canvas.Left="75" Fill="Black" Canvas.Top="581" Width="2"/>
+        <scheme:QF Canvas.Left="48" Canvas.Top="538" Height="52" Width="38" RenderTransformOrigin="0.5,0.5">
+            <scheme:QF.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.7" ScaleY="0.7"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </scheme:QF.RenderTransform>
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.scheme].Items[tag60].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <Rectangle Height="120" Fill="Black" Canvas.Top="581" Width="2" Canvas.Left="134"/>
+        <scheme:QF Canvas.Left="107" Canvas.Top="538" Height="52" Width="38" RenderTransformOrigin="0.5,0.5">
+            <scheme:QF.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.7" ScaleY="0.7"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </scheme:QF.RenderTransform>
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.scheme].Items[tag63].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <Rectangle Height="120" Canvas.Left="194" Fill="Black" Canvas.Top="581" Width="2"/>
+        <scheme:QF Canvas.Top="538" Height="52" Width="38" Canvas.Left="167" RenderTransformOrigin="0.5,0.5">
+            <scheme:QF.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.7" ScaleY="0.7"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </scheme:QF.RenderTransform>
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.scheme].Items[tag64].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <TextBlock Canvas.Left="81" TextWrapping="Wrap" Text="65QF1" Canvas.Top="558" FontSize="10"/>
+        <TextBlock Canvas.Left="140" TextWrapping="Wrap" Text="34QF1" Canvas.Top="558" FontSize="10"/>
+        <TextBlock Canvas.Left="193" TextWrapping="Wrap" Text="671QF1" Canvas.Top="558" FontSize="10"/>
+        <TextBlock Canvas.Left="49" TextWrapping="Wrap" Text="АДЭС" Canvas.Top="18" FontSize="14"/>
+        <scheme:QF Canvas.Top="539" Height="52" Width="38" RenderTransformOrigin="0.5,0.5">
+            <scheme:QF.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.7" ScaleY="0.7"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </scheme:QF.RenderTransform>
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.scheme].Items[tag218].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                    <hmi:Bind.Converter>
+                        <hmi:BooleanToInverseConverter/>
+                    </hmi:Bind.Converter>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <TextBlock Canvas.Left="30" TextWrapping="Wrap" Text="QF3" Canvas.Top="558" FontSize="10"/>
+        <se:VisualBox Canvas.Left="429" Canvas.Top="605" Height="32" Width="40" BorderBrush="{x:Null}" Style="{DynamicResource Inverter_DC}">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{DynamicResource MediaBoxFineSolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.scheme].Items[pump2_green].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="{DynamicResource MediaBoxEmergencySolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.scheme].Items[pump2_red].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="7" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="139" Canvas.Top="540" CornerRadius="0" Canvas.Left="327">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.scheme].Items[bus_1000_nku].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <Rectangle Height="28" Canvas.Left="965" Fill="Black" Canvas.Top="137" Width="2"/>
+        <scheme:QF Canvas.Left="936" Canvas.Top="77" Height="62" Width="62"  Template="{StaticResource vacuum_qs}">
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.scheme].Items[tag217].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                    <hmi:Bind.Converter>
+                        <hmi:BooleanToInverseConverter/>
+                    </hmi:Bind.Converter>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <TextBlock Canvas.Left="996" TextWrapping="Wrap" Text="Q3" Canvas.Top="105" FontSize="14" Width="23"/>
+        <Rectangle Height="17" Canvas.Left="375" Fill="Black" Canvas.Top="362" Width="2"/>
+        <Rectangle Height="17" Canvas.Left="405" Fill="Black" Canvas.Top="362" Width="2"/>
+        <Rectangle Height="1" Canvas.Left="352" Fill="Black" Canvas.Top="378" Width="24"/>
+        <Rectangle Height="35" Canvas.Left="352" Fill="Black" Canvas.Top="378" Width="2"/>
+        <Rectangle Height="1" Canvas.Left="405" Fill="Black" Canvas.Top="378" Width="27"/>
+        <Rectangle Height="35" Canvas.Left="431" Fill="Black" Canvas.Top="378" Width="2"/>
+        <se:VisualBox Canvas.Left="327" Canvas.Top="464" Height="41" Width="51" BorderBrush="{x:Null}">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.scheme].Items[rectifier2_green].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/NGO.Elements;component/Content/VFD/Scheme/acdc-green.png" Stretch="Uniform"/>
+                    </se:VisualBoxStateItem.Background>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.scheme].Items[rectifier2_red].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/NGO.Elements;component/Content/VFD/Scheme/acdc-red.png" Stretch="Uniform"/>
+                    </se:VisualBoxStateItem.Background>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+            <se:VisualBox.Background>
+                <ImageBrush ImageSource="/NGO.Elements;component/Content/VFD/Scheme/acdc-yellow.png" Stretch="Uniform"/>
+            </se:VisualBox.Background>
+        </se:VisualBox>
+        <TextBlock Canvas.Left="368" TextWrapping="Wrap" Text="= 1000 В" Canvas.Top="515" FontSize="14"/>
+        <TextBlock TextWrapping="Wrap" FontSize="14" FontFamily="Tahoma" Text="ПИТАНИЕ&#xA;~400В&#xA;ВЛБ" Canvas.Left="222" Canvas.Top="716" TextAlignment="Center"/>
+    </Canvas>
+</UserControl>

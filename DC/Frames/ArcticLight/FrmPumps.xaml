@@ -1,0 +1,1110 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:gauges="clr-namespace:NGO.Elements.Gauges;assembly=NGO.Elements"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:message="clr-namespace:NGO.Elements.Message;assembly=NGO.Elements"
+             xmlns:style="clr-namespace:NGO.Elements.style;assembly=NGO.Elements"
+             xmlns:hmi="http://schemas.monokot.com/hmi/"
+             xmlns:se="http://schemas.monokot.com/se/"
+    
+             xmlns:Msab="clr-namespace:NGO.Elements.Gauges.Small.Msab;assembly=NGO.Elements" xmlns:Other="clr-namespace:NGO.Elements.Gauges.Small.Other;assembly=NGO.Elements"
+    xmlns:buttons="clr-namespace:Monokot.ScadaExtension.Wpf.Controls.Buttons;assembly=Monokot.ScadaExtension.Wpf"
+    xmlns:hmiButton="clr-namespace:Monokot.ScadaExtension.WpfComponents.VisualStateCollection.HmiButton;assembly=Monokot.ScadaExtension.WpfComponents"
+    x:Class="DC.Frames.ArcticLight.FrmPumps" 
+    
+             mc:Ignorable="d"
+             Background="#FFC9C9C9" d:DesignWidth="1280" Height="890">
+    <Viewbox>
+        <Canvas Width="1280" Height="920"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <buttons:HmiButton Style="{StaticResource MetalBorderButton}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="80" Width="80" FontSize="36" hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pump1].Items[skorost_bolshe].WriteCommand}" Canvas.Left="329" Canvas.Top="744">
+                <Rectangle Width="30" Height="30">
+                    <Rectangle.Fill>
+                        <DrawingBrush>
+                            <DrawingBrush.Drawing>
+                                <DrawingGroup>
+                                    <GeometryDrawing Brush="White" Geometry="F1 M 10,7.5 L 16.5,7.5 16.5,10 10,10 10,16.5 7.5,16.5 7.5,10 1,10 1,7.5 7.5,7.5 7.5,1 10,1z" />
+                                </DrawingGroup>
+                            </DrawingBrush.Drawing>
+                        </DrawingBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+            </buttons:HmiButton>
+
+            <buttons:HmiButton Style="{StaticResource MetalBorderButton}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="80" Width="80" FontSize="36" hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pump1].Items[skorost_menshe].WriteCommand}" Canvas.Left="6" Canvas.Top="744">
+                <Rectangle Width="30" Height="30">
+                    <Rectangle.Fill>
+                        <DrawingBrush>
+                            <DrawingBrush.Drawing>
+                                <DrawingGroup>
+                                    <GeometryDrawing Brush="White" Geometry="M 0,4.5 L 0,10 0,6 10,6 10,6 10,0 10,4.5z" />
+                                </DrawingGroup>
+                            </DrawingBrush.Drawing>
+                        </DrawingBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+            </buttons:HmiButton>
+
+            <buttons:HmiButton Style="{StaticResource MetalBorderButton}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="71" Width="584" FontSize="20" hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pump1].Items[sinhronnoe_upravlenie].WriteCommand}" Canvas.Left="354" Canvas.Top="373">
+                <buttons:HmiButton.Content>
+                    <se:VisualBox CornerRadius="3" Width="567" Height="66" HorizontalAlignment="Left" VerticalAlignment="Top" Text="СИНХРОННОЕ УПРАВЛЕНИЕ&#xD;&#xA;(ЗАПРЕТ)" BorderBrush="{x:Null}">
+                        <se:VisualBox.VisualStateCollection>
+                            <se:VisualBoxStateItem Text="СИНХРОННОЕ УПРАВЛЕНИЕ&#xD;&#xA;РАЗРЕШЕНО">
+                                <se:VisualBoxStateItem.Value>
+                                    <hmi:Bind Path="Tags.Node[view.main_drives.pump1].Items[sinhronnoe_uravlenie_razresheno].Value">
+                                        <hmi:Bind.FallbackValue>
+                                            <system:Boolean>False</system:Boolean>
+                                        </hmi:Bind.FallbackValue>
+                                    </hmi:Bind>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem Text="СИНХРОННОЕ УПРАВЛЕНИЕ&#xD;&#xA;(НАСОС 1 НАСОС 2)">
+                                <se:VisualBoxStateItem.Value>
+                                    <hmi:Bind Path="Tags.Node[view.main_drives.pump1].Items[sinhronnoe_uravlenie_n1_n2].Value">
+                                        <hmi:Bind.FallbackValue>
+                                            <system:Boolean>False</system:Boolean>
+                                        </hmi:Bind.FallbackValue>
+                                    </hmi:Bind>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem Text="СИНХРОННОЕ УПРАВЛЕНИЕ&#xD;&#xA;(НАСОС 2 НАСОС 3)">
+                                <se:VisualBoxStateItem.Value>
+                                    <hmi:Bind Path="Tags.Node[view.main_drives.pump1].Items[sinhronnoe_uravlenie_n2_n3].Value">
+                                        <hmi:Bind.FallbackValue>
+                                            <system:Boolean>False</system:Boolean>
+                                        </hmi:Bind.FallbackValue>
+                                    </hmi:Bind>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem Text="СИНХРОННОЕ УПРАВЛЕНИЕ&#xD;&#xA;(НАСОС 1 НАСОС 3)">
+                                <se:VisualBoxStateItem.Value>
+                                    <hmi:Bind Path="Tags.Node[view.main_drives.pump1].Items[sinhronnoe_uravlenie_n1_n3].Value">
+                                        <hmi:Bind.FallbackValue>
+                                            <system:Boolean>False</system:Boolean>
+                                        </hmi:Bind.FallbackValue>
+                                    </hmi:Bind>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem Text="СИНХРОННОЕ УПРАВЛЕНИЕ&#xD;&#xA;(НАСОС 1 НАСОС 2 НАСОС 3)">
+                                <se:VisualBoxStateItem.Value>
+                                    <hmi:Bind Path="Tags.Node[view.main_drives.pump1].Items[sinhronnoe_uravlenie_n1_n2_n3].Value">
+                                        <hmi:Bind.FallbackValue>
+                                            <system:Boolean>False</system:Boolean>
+                                        </hmi:Bind.FallbackValue>
+                                    </hmi:Bind>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                        </se:VisualBox.VisualStateCollection>
+                    </se:VisualBox>
+                </buttons:HmiButton.Content>
+                <buttons:HmiButton.VisualStateCollection>
+                    <hmiButton:HmiButtonState Background="#FF56A856">
+                        <hmiButton:HmiButtonState.Value>
+                            <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump1].Items[sync].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </hmiButton:HmiButtonState.Value>
+                    </hmiButton:HmiButtonState>
+                </buttons:HmiButton.VisualStateCollection>
+            </buttons:HmiButton>
+
+
+            <!--<buttons:HmiButton Style="{StaticResource MetalBorderButton}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="71" Width="584" FontSize="20" hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pump1].Items[sinhronnoe_upravlenie].WriteCommand}" Canvas.Left="354" Canvas.Top="373">
+                <buttons:HmiButton.Content>
+                    <se:VisualBox Text="СИНХРОННОЕ УПРАВЛЕНИЕ&#xD;&#xA;(В ЗАПРЕТЕ)" BorderBrush="{x:Null}" FontSize="18">
+                        <se:VisualBox.VisualStateCollection>
+                            <se:VisualBoxStateItem Text="СИНХРОННОЕ УПРАВЛЕНИЕ">
+                                <se:VisualBoxStateItem.Value>
+                                    <hmi:Bind Path="Expressions.Node[].Items[1].Value">
+                                        <hmi:Bind.FallbackValue>
+                                            <system:Boolean>true</system:Boolean>
+                                        </hmi:Bind.FallbackValue>
+                                    </hmi:Bind>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                        </se:VisualBox.VisualStateCollection>
+
+                    </se:VisualBox>
+                </buttons:HmiButton.Content>
+
+                <buttons:HmiButton.VisualStateCollection>
+                    <hmiButton:HmiButtonState Background="#FF56A856">
+                        <hmiButton:HmiButtonState.Value>
+                            <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump1].Items[sync].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </hmiButton:HmiButtonState.Value>
+                    </hmiButton:HmiButtonState>
+                </buttons:HmiButton.VisualStateCollection>
+            </buttons:HmiButton>-->
+            <buttons:HmiButton Style="{StaticResource MetalBorderButton}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="80" Width="80" FontSize="36" hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pump2].Items[skorost_bolshe].WriteCommand}" Canvas.Left="767" Canvas.Top="744">
+                <Rectangle Width="30" Height="30">
+                    <Rectangle.Fill>
+                        <DrawingBrush>
+                            <DrawingBrush.Drawing>
+                                <DrawingGroup>
+                                    <GeometryDrawing Brush="White" Geometry="F1 M 10,7.5 L 16.5,7.5 16.5,10 10,10 10,16.5 7.5,16.5 7.5,10 1,10 1,7.5 7.5,7.5 7.5,1 10,1z" />
+                                </DrawingGroup>
+                            </DrawingBrush.Drawing>
+                        </DrawingBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+            </buttons:HmiButton>
+
+            <buttons:HmiButton Style="{StaticResource MetalBorderButton}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="80" Width="80" FontSize="36" hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pump2].Items[skorost_menshe].WriteCommand}" Canvas.Left="436" Canvas.Top="744">
+                <Rectangle Width="30" Height="30">
+                    <Rectangle.Fill>
+                        <DrawingBrush>
+                            <DrawingBrush.Drawing>
+                                <DrawingGroup>
+                                    <GeometryDrawing Brush="White" Geometry="M 0,4.5 L 0,10 0,6 10,6 10,6 10,0 10,4.5z" />
+                                </DrawingGroup>
+                            </DrawingBrush.Drawing>
+                        </DrawingBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+            </buttons:HmiButton>
+            <buttons:HmiButton Style="{StaticResource MetalBorderButton}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="80" Width="80" FontSize="36" hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pump3].Items[skorost_bolshe].WriteCommand}" Canvas.Left="1192" Canvas.Top="744">
+                <Rectangle Width="30" Height="30">
+                    <Rectangle.Fill>
+                        <DrawingBrush>
+                            <DrawingBrush.Drawing>
+                                <DrawingGroup>
+                                    <GeometryDrawing Brush="White" Geometry="F1 M 10,7.5 L 16.5,7.5 16.5,10 10,10 10,16.5 7.5,16.5 7.5,10 1,10 1,7.5 7.5,7.5 7.5,1 10,1z" />
+                                </DrawingGroup>
+                            </DrawingBrush.Drawing>
+                        </DrawingBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+            </buttons:HmiButton>
+            <buttons:HmiButton Style="{StaticResource MetalBorderButton}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="80" Width="80" FontSize="36" hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pump3].Items[skorost_menshe].WriteCommand}" Canvas.Left="862" Canvas.Top="744">
+                <Rectangle Width="30" Height="30">
+                    <Rectangle.Fill>
+                        <DrawingBrush>
+                            <DrawingBrush.Drawing>
+                                <DrawingGroup>
+                                    <GeometryDrawing Brush="White" Geometry="M 0,4.5 L 0,10 0,6 10,6 10,6 10,0 10,4.5z" />
+                                </DrawingGroup>
+                            </DrawingBrush.Drawing>
+                        </DrawingBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+            </buttons:HmiButton>
+            <style:cool_rect Canvas.Top="27" Height="352" Width="180" Canvas.Left="439"/>
+            <style:cool_rect Canvas.Top="27" Height="352" Width="180" Canvas.Left="1"/>
+            <gauges:GaugePump1 Height="300" HorizontalAlignment="Left" Canvas.Left="79" x:Name="gaugePump11" VerticalAlignment="Top" Width="300" Canvas.Top="445">
+                <gauges:GaugePump1.LayoutTransform>
+                    <ScaleTransform ScaleX="0.9" ScaleY="0.90"/>
+                </gauges:GaugePump1.LayoutTransform>
+            </gauges:GaugePump1>
+            <gauges:GaugePump2 Height="87" HorizontalAlignment="Left" Canvas.Left="497" x:Name="gaugePump21" VerticalAlignment="Top" Width="300" Canvas.Top="445">
+                <gauges:GaugePump2.LayoutTransform>
+                    <ScaleTransform ScaleX="0.9" ScaleY="0.9"/>
+                </gauges:GaugePump2.LayoutTransform>
+            </gauges:GaugePump2>
+            <se:ValueDisplay HorizontalAlignment="Left" Canvas.Left="7" x:Name="ValueDisplay8_Copy1" VerticalAlignment="Top" Width="152" Height="66" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" Header="ОБЩАЯ ПОДАЧА" Label="л/сек" Canvas.Top="379" Value="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.main_drives.pump1].Items[summary_feed].Value}" HeaderFontSize="13" HeaderLength="30"/>
+            <TextBlock Canvas.Left="59" TextWrapping="Wrap" FontSize="22" HorizontalAlignment="Center" FontWeight="Bold" Canvas.Top="2"><Run Language="ru-ru" Text="БУРОВОЙ НАСОС 1"/></TextBlock>
+            <TextBlock Canvas.Left="493" TextWrapping="Wrap" FontSize="22" HorizontalAlignment="Center" FontWeight="Bold" Canvas.Top="2"><Run Language="ru-ru" Text="БУРОВОЙ НАСОС 2"/></TextBlock>
+            <se:ValueDisplay HorizontalAlignment="Left" Canvas.Top="378"  VerticalAlignment="Top" Width="165" Height="65" BorderThickness="0" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" Label="МПа" Header="ДАВЛЕНИЕ В МАНИФОЛЬДЕ&#xA; (СКПБ)" Value="{hmi:Bind Tags.Node[view.msab].Items[davlenie_vlb].Value, FallbackValue=0}" Canvas.Left="943" HeaderFontSize="11" HeaderLength="30"/>
+            <se:ValueDisplay Canvas.Left="164" Canvas.Top="379" Height="65" x:Name="ValueDisplay2_Copy1" Width="185" HeaderBackground="Black" Label="МПа" ValueBackground="White" ValueForeground="Black" Header="МАКСИМАЛЬНОЕ ДАВЛЕНИЕ" Value="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.msab.presets.davlenieVManifolde].Items[fault_max].Value}" HeaderFontSize="13" HeaderLength="30"/>
+            <se:ValueDisplay HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="70" BorderThickness="0" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" Label="мм" FontFamily="Tahoma" Value="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.main_drives.pump1].Items[diameter].Value}" ValueFontSize="28" CornerRadius="3" Canvas.Left="189" Canvas.Top="33" LabelFontSize="16" Header="ДИАМЕТР ШТОКА Н1"/>
+            <buttons:KeypadButton HorizontalAlignment="Left" VerticalAlignment="Top" Height="70" Width="60" FontSize="36" Value="{hmi:SeBinding Tags.Node[write.pump1].Items[diameter].Value}" Canvas.Left="349" Canvas.Top="33" Message="ДИАМЕТР ШТОКА" Title="НАСОС 1">
+                <buttons:KeypadButton.Rules>
+                    <hmi:IntArrayValidationRules message="Величина должна соответствовать одному из значений {0}">
+                        <hmi:IntArrayValidationRules.array>
+                            <system:Int32>140</system:Int32>
+                            <system:Int32>150</system:Int32>
+                            <system:Int32>160</system:Int32>
+                            <system:Int32>170</system:Int32>
+                            <system:Int32>180</system:Int32>
+                            <system:Int32>190</system:Int32>
+                        </hmi:IntArrayValidationRules.array>
+                    </hmi:IntArrayValidationRules>
+                </buttons:KeypadButton.Rules>
+            </buttons:KeypadButton>
+            <se:ValueDisplay HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="70" BorderThickness="0" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" Label="мм" FontFamily="Tahoma" Value="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.main_drives.pump2].Items[diameter].Value}" ValueFontSize="28" CornerRadius="3" Canvas.Left="629" Canvas.Top="33" LabelFontSize="16" Header="ДИАМЕТР ШТОКА Н2"/>
+            <buttons:KeypadButton HorizontalAlignment="Left" VerticalAlignment="Top" Height="70" Width="60" FontSize="36" Value="{hmi:SeBinding Tags.Node[write.pump2].Items[diameter].Value}" Canvas.Left="787" Canvas.Top="33" Title="НАСОС 2" Message="ДИАМЕТР ШТОКА">
+                <buttons:KeypadButton.Rules>
+                    <hmi:IntArrayValidationRules message="Величина должна соответствовать одному из значений {0}">
+                        <hmi:IntArrayValidationRules.array>
+                            <system:Int32>140</system:Int32>
+                            <system:Int32>150</system:Int32>
+                            <system:Int32>160</system:Int32>
+                            <system:Int32>170</system:Int32>
+                            <system:Int32>180</system:Int32>
+                            <system:Int32>190</system:Int32>
+                        </hmi:IntArrayValidationRules.array>
+                    </hmi:IntArrayValidationRules>
+                </buttons:KeypadButton.Rules>
+
+            </buttons:KeypadButton>
+            <se:ValueDisplay HorizontalAlignment="Left" VerticalAlignment="Top" Width="218" Height="70" BorderThickness="0" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" Label="ход" FontFamily="Tahoma" Value="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.main_drives.pump1].Items[throw].Value}" CornerRadius="3" Canvas.Left="191" Canvas.Top="108" Header="ХОДЫ НАСОСА 1"/>
+            <se:ValueDisplay HorizontalAlignment="Left" VerticalAlignment="Top" Width="218" Height="70" BorderThickness="0" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" Label="л/сек" FontFamily="Tahoma" Value="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.main_drives.pump1].Items[feed].Value}" ValueFontSize="28" CornerRadius="3" Canvas.Left="191" Canvas.Top="183" Header="ПОДАЧА НАСОСА 1"/>
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Width="225" Canvas.Left="14" Canvas.Top="51">
+                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal" Margin="0">
+                    <se:VisualBox HorizontalAlignment="Left" VerticalAlignment="Center" Width="22" Height="22" Style="{DynamicResource VB_LampStyle}">
+                        <se:VisualBox.VisualStateCollection>
+                            <se:VisualBoxStateItem Background="{DynamicResource LedOkBrush}">
+                                <se:VisualBoxStateItem.Value>
+                                    <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump1].Items[booster_work].Value">
+                                        <hmi:SeBinding.FallbackValue>
+                                            <system:Boolean>False</system:Boolean>
+                                        </hmi:SeBinding.FallbackValue>
+                                    </hmi:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem Background="{DynamicResource LedBadBrush}">
+                                <se:VisualBoxStateItem.Value>
+                                    <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump1].Items[booster_emer].Value">
+                                        <hmi:SeBinding.FallbackValue>
+                                            <system:Boolean>False</system:Boolean>
+                                        </hmi:SeBinding.FallbackValue>
+                                    </hmi:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                        </se:VisualBox.VisualStateCollection>
+                    </se:VisualBox>
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="ПОДПОР" VerticalAlignment="Center" FontSize="22" Margin="5,0,0,0" FontFamily="Tahoma"/>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal" Margin="0,15,0,0">
+                    <se:VisualBox HorizontalAlignment="Left" VerticalAlignment="Center" Width="22" Height="22" Style="{DynamicResource VB_LampStyle}">
+                        <se:VisualBox.VisualStateCollection>
+                            <se:VisualBoxStateItem Background="{DynamicResource LedOkBrush}">
+                                <se:VisualBoxStateItem.Value>
+                                    <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump1].Items[oiling_work].Value">
+                                        <hmi:SeBinding.FallbackValue>
+                                            <system:Boolean>False</system:Boolean>
+                                        </hmi:SeBinding.FallbackValue>
+                                    </hmi:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem Background="{DynamicResource LedBadBrush}">
+                                <se:VisualBoxStateItem.Value>
+                                    <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump1].Items[oiling_emer].Value">
+                                        <hmi:SeBinding.FallbackValue>
+                                            <system:Boolean>False</system:Boolean>
+                                        </hmi:SeBinding.FallbackValue>
+                                    </hmi:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                        </se:VisualBox.VisualStateCollection>
+                    </se:VisualBox>
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="СМАЗКА" VerticalAlignment="Center" FontSize="22" Margin="5,0,0,0" FontFamily="Tahoma"/>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal" Margin="0,15,0,0">
+                    <se:VisualBox HorizontalAlignment="Left" VerticalAlignment="Center" Width="22" Height="22" Style="{DynamicResource VB_LampStyle}">
+                        <se:VisualBox.VisualStateCollection>
+                            <se:VisualBoxStateItem Background="{DynamicResource LedOkBrush}">
+                                <se:VisualBoxStateItem.Value>
+                                    <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump1].Items[ter_work].Value">
+                                        <hmi:SeBinding.FallbackValue>
+                                            <system:Boolean>False</system:Boolean>
+                                        </hmi:SeBinding.FallbackValue>
+                                    </hmi:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem Background="{DynamicResource LedBadBrush}">
+                                <se:VisualBoxStateItem.Value>
+                                    <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump1].Items[ter_emer].Value">
+                                        <hmi:SeBinding.FallbackValue>
+                                            <system:Boolean>False</system:Boolean>
+                                        </hmi:SeBinding.FallbackValue>
+                                    </hmi:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                        </se:VisualBox.VisualStateCollection>
+                    </se:VisualBox>
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="СОЖ" VerticalAlignment="Center" FontSize="22" Margin="5,0,0,0" FontFamily="Tahoma"/>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal" Margin="0,15,0,0">
+                    <se:VisualBox HorizontalAlignment="Left" VerticalAlignment="Center" Width="22" Height="22" Style="{DynamicResource VB_LampStyle}">
+                        <se:VisualBox.VisualStateCollection>
+                            <se:VisualBoxStateItem Background="{DynamicResource LedOkBrush}">
+                                <se:VisualBoxStateItem.Value>
+                                    <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump1].Items[blowing_work].Value">
+                                        <hmi:SeBinding.FallbackValue>
+                                            <system:Boolean>False</system:Boolean>
+                                        </hmi:SeBinding.FallbackValue>
+                                    </hmi:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem Background="{DynamicResource LedBadBrush}">
+                                <se:VisualBoxStateItem.Value>
+                                    <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump1].Items[blowing_emer].Value">
+                                        <hmi:SeBinding.FallbackValue>
+                                            <system:Boolean>False</system:Boolean>
+                                        </hmi:SeBinding.FallbackValue>
+                                    </hmi:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                        </se:VisualBox.VisualStateCollection>
+                    </se:VisualBox>
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="ОБДУВ МН1" VerticalAlignment="Center" FontSize="22" Margin="5,0,0,0" FontFamily="Tahoma"/>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal" Margin="0,15,0,0">
+                    <se:VisualBox HorizontalAlignment="Left" VerticalAlignment="Center" Width="22" Height="22" Style="{DynamicResource VB_LampStyle}">
+                        <se:VisualBox.VisualStateCollection>
+                            <se:VisualBoxStateItem Background="{DynamicResource LedOkBrush}">
+                                <se:VisualBoxStateItem.Value>
+                                    <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump1].Items[motor_air_green].Value">
+                                        <hmi:SeBinding.FallbackValue>
+                                            <system:Boolean>False</system:Boolean>
+                                        </hmi:SeBinding.FallbackValue>
+                                    </hmi:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem Background="{DynamicResource LedBadBrush}">
+                                <se:VisualBoxStateItem.Value>
+                                    <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump1].Items[motor_air_red].Value">
+                                        <hmi:SeBinding.FallbackValue>
+                                            <system:Boolean>False</system:Boolean>
+                                        </hmi:SeBinding.FallbackValue>
+                                    </hmi:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                        </se:VisualBox.VisualStateCollection>
+                    </se:VisualBox>
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="22" Margin="5,0,0,0" FontFamily="Tahoma" Text="НАПОРОМЕР&#xA;МОТОРА"/>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Top" Orientation="Horizontal" Margin="0,15,0,0">
+                    <se:VisualBox HorizontalAlignment="Left" VerticalAlignment="Center" Width="22" Height="22" Style="{DynamicResource VB_LampStyle}">
+                        <se:VisualBox.VisualStateCollection>
+                            <se:VisualBoxStateItem Background="{DynamicResource LedOkBrush}">
+                                <se:VisualBoxStateItem.Value>
+                                    <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump1].Items[heating_work].Value">
+                                        <hmi:SeBinding.FallbackValue>
+                                            <system:Boolean>False</system:Boolean>
+                                        </hmi:SeBinding.FallbackValue>
+                                    </hmi:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem Background="{DynamicResource LedBadBrush}">
+                                <se:VisualBoxStateItem.Value>
+                                    <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump1].Items[heating_emer].Value">
+                                        <hmi:SeBinding.FallbackValue>
+                                            <system:Boolean>False</system:Boolean>
+                                        </hmi:SeBinding.FallbackValue>
+                                    </hmi:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                        </se:VisualBox.VisualStateCollection>
+                    </se:VisualBox>
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="22" Margin="5,0,0,0" FontFamily="Tahoma" Text="ОБОГРЕВ&#xA;МОТОРА"/>
+                </StackPanel>
+            </StackPanel>
+            <Grid HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="215" Background="#FFF4F4F5" Canvas.Left="104" Canvas.Top="744">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock HorizontalAlignment="Right" Margin="0,0,10,0" TextWrapping="Wrap" Text="{hmi:SeBinding Tags.Node[view.main_drives.pump1].Items[current].Value, FallbackValue=0}" VerticalAlignment="Center" TextAlignment="Right" FontSize="24"/>
+                <TextBlock HorizontalAlignment="Right" Margin="0,0,10,0" TextWrapping="Wrap" Text="{hmi:SeBinding Tags.Node[view.main_drives.pump1].Items[rpm].Value, FallbackValue=0}" VerticalAlignment="Center" TextAlignment="Right" Grid.Row="1" FontSize="24"/>
+                <TextBlock HorizontalAlignment="Right" Margin="0,0,10,0" TextWrapping="Wrap" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.main_drives.pump1.vfd].Items[power].Value}" VerticalAlignment="Center" TextAlignment="Right" Grid.Row="2" FontSize="24"/>
+                <TextBlock HorizontalAlignment="Left" Margin="5,5,18,5" TextWrapping="Wrap" Text="А" VerticalAlignment="Center" TextAlignment="Right" Grid.Column="1" FontSize="18"/>
+                <TextBlock HorizontalAlignment="Left" Margin="5,0,0,0" TextWrapping="Wrap" Text="об/мин" VerticalAlignment="Center" TextAlignment="Right" Grid.Column="1" Grid.Row="1" FontSize="18"/>
+                <TextBlock HorizontalAlignment="Left" Margin="5,5.02,0,5.02" TextWrapping="Wrap" Text="кВт" VerticalAlignment="Center" TextAlignment="Right" Grid.Column="1" Grid.Row="2" FontSize="18"/>
+            </Grid>
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Width="252" Canvas.Left="449" Canvas.Top="51">
+                <StackPanel VerticalAlignment="Top" Orientation="Horizontal" Margin="0">
+                    <se:VisualBox HorizontalAlignment="Left" VerticalAlignment="Center" Width="22" Height="22" Style="{DynamicResource VB_LampStyle}">
+                        <se:VisualBox.VisualStateCollection>
+                            <se:VisualBoxStateItem Background="{DynamicResource LedOkBrush}">
+                                <se:VisualBoxStateItem.Value>
+                                    <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump2].Items[booster_work].Value">
+                                        <hmi:SeBinding.FallbackValue>
+                                            <system:Boolean>False</system:Boolean>
+                                        </hmi:SeBinding.FallbackValue>
+                                    </hmi:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem Background="{DynamicResource LedBadBrush}">
+                                <se:VisualBoxStateItem.Value>
+                                    <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump2].Items[booster_emer].Value">
+                                        <hmi:SeBinding.FallbackValue>
+                                            <system:Boolean>False</system:Boolean>
+                                        </hmi:SeBinding.FallbackValue>
+                                    </hmi:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                        </se:VisualBox.VisualStateCollection>
+                    </se:VisualBox>
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="ПОДПОР" VerticalAlignment="Center" FontSize="22" Margin="5,0,0,0" FontFamily="Tahoma" Width="115"/>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Top" Orientation="Horizontal" Margin="0,15,0,0">
+                    <se:VisualBox HorizontalAlignment="Left" VerticalAlignment="Center" Width="22" Height="22" Style="{DynamicResource VB_LampStyle}">
+                        <se:VisualBox.VisualStateCollection>
+                            <se:VisualBoxStateItem Background="{DynamicResource LedOkBrush}">
+                                <se:VisualBoxStateItem.Value>
+                                    <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump2].Items[oiling_work].Value">
+                                        <hmi:SeBinding.FallbackValue>
+                                            <system:Boolean>False</system:Boolean>
+                                        </hmi:SeBinding.FallbackValue>
+                                    </hmi:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem Background="{DynamicResource LedBadBrush}">
+                                <se:VisualBoxStateItem.Value>
+                                    <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump2].Items[oiling_emer].Value">
+                                        <hmi:SeBinding.FallbackValue>
+                                            <system:Boolean>False</system:Boolean>
+                                        </hmi:SeBinding.FallbackValue>
+                                    </hmi:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                        </se:VisualBox.VisualStateCollection>
+                    </se:VisualBox>
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="СМАЗКА" VerticalAlignment="Center" FontSize="22" Margin="5,0,0,0" FontFamily="Tahoma" Width="115"/>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Top" Orientation="Horizontal" Margin="0,15,0,0">
+                    <se:VisualBox HorizontalAlignment="Left" VerticalAlignment="Center" Width="22" Height="22" Style="{DynamicResource VB_LampStyle}">
+                        <se:VisualBox.VisualStateCollection>
+                            <se:VisualBoxStateItem Background="{DynamicResource LedOkBrush}">
+                                <se:VisualBoxStateItem.Value>
+                                    <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump2].Items[ter_work].Value">
+                                        <hmi:SeBinding.FallbackValue>
+                                            <system:Boolean>False</system:Boolean>
+                                        </hmi:SeBinding.FallbackValue>
+                                    </hmi:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem Background="{DynamicResource LedBadBrush}">
+                                <se:VisualBoxStateItem.Value>
+                                    <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump2].Items[ter_emer].Value">
+                                        <hmi:SeBinding.FallbackValue>
+                                            <system:Boolean>False</system:Boolean>
+                                        </hmi:SeBinding.FallbackValue>
+                                    </hmi:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                        </se:VisualBox.VisualStateCollection>
+                    </se:VisualBox>
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="СОЖ" VerticalAlignment="Center" FontSize="22" Margin="5,0,0,0" FontFamily="Tahoma" Width="115"/>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Top" Orientation="Horizontal" Margin="0,15,0,0">
+                    <se:VisualBox HorizontalAlignment="Left" VerticalAlignment="Center" Width="22" Height="22" Style="{DynamicResource VB_LampStyle}">
+                        <se:VisualBox.VisualStateCollection>
+                            <se:VisualBoxStateItem Background="{DynamicResource LedOkBrush}">
+                                <se:VisualBoxStateItem.Value>
+                                    <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump2].Items[blowing_work].Value">
+                                        <hmi:SeBinding.FallbackValue>
+                                            <system:Boolean>False</system:Boolean>
+                                        </hmi:SeBinding.FallbackValue>
+                                    </hmi:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem Background="{DynamicResource LedBadBrush}">
+                                <se:VisualBoxStateItem.Value>
+                                    <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump2].Items[blowing_emer].Value">
+                                        <hmi:SeBinding.FallbackValue>
+                                            <system:Boolean>False</system:Boolean>
+                                        </hmi:SeBinding.FallbackValue>
+                                    </hmi:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                        </se:VisualBox.VisualStateCollection>
+                    </se:VisualBox>
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="ОБДУВ МН2" VerticalAlignment="Center" FontSize="22" Margin="5,0,0,0" FontFamily="Tahoma"/>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Top" Orientation="Horizontal" Margin="0,15,0,0">
+                    <se:VisualBox HorizontalAlignment="Left" VerticalAlignment="Center" Width="22" Height="22" Style="{DynamicResource VB_LampStyle}">
+                        <se:VisualBox.VisualStateCollection>
+                            <se:VisualBoxStateItem Background="{DynamicResource LedOkBrush}">
+                                <se:VisualBoxStateItem.Value>
+                                    <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump2].Items[motor_air_green].Value">
+                                        <hmi:SeBinding.FallbackValue>
+                                            <system:Boolean>False</system:Boolean>
+                                        </hmi:SeBinding.FallbackValue>
+                                    </hmi:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem Background="{DynamicResource LedBadBrush}">
+                                <se:VisualBoxStateItem.Value>
+                                    <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump2].Items[motor_air_red].Value">
+                                        <hmi:SeBinding.FallbackValue>
+                                            <system:Boolean>False</system:Boolean>
+                                        </hmi:SeBinding.FallbackValue>
+                                    </hmi:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                        </se:VisualBox.VisualStateCollection>
+                    </se:VisualBox>
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="22" Margin="5,0,0,0" FontFamily="Tahoma" Text="НАПОРОМЕР&#xA;МОТОРА"/>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Top" Orientation="Horizontal" Margin="0,15,0,0">
+                    <se:VisualBox HorizontalAlignment="Left" VerticalAlignment="Center" Width="22" Height="22" Style="{DynamicResource VB_LampStyle}">
+                        <se:VisualBox.VisualStateCollection>
+                            <se:VisualBoxStateItem Background="{DynamicResource LedOkBrush}">
+                                <se:VisualBoxStateItem.Value>
+                                    <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump2].Items[heating_work].Value">
+                                        <hmi:SeBinding.FallbackValue>
+                                            <system:Boolean>False</system:Boolean>
+                                        </hmi:SeBinding.FallbackValue>
+                                    </hmi:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem Background="{DynamicResource LedBadBrush}">
+                                <se:VisualBoxStateItem.Value>
+                                    <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump2].Items[heating_emer].Value">
+                                        <hmi:SeBinding.FallbackValue>
+                                            <system:Boolean>False</system:Boolean>
+                                        </hmi:SeBinding.FallbackValue>
+                                    </hmi:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                        </se:VisualBox.VisualStateCollection>
+                    </se:VisualBox>
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="22" Margin="5,0,0,0" FontFamily="Tahoma" Text="ОБОГРЕВ&#xA;МОТОРА"/>
+                </StackPanel>
+            </StackPanel>
+            <se:ValueDisplay HorizontalAlignment="Left" VerticalAlignment="Top" Width="218" Height="70" BorderThickness="0" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" Label="ход" FontFamily="Tahoma" Value="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.main_drives.pump2].Items[throw].Value}" ValueFontSize="28" CornerRadius="3" Canvas.Left="629" Canvas.Top="108" Header="ХОДЫ НАСОСА 2"/>
+            <se:ValueDisplay HorizontalAlignment="Left" VerticalAlignment="Top" Width="218" Height="70" BorderThickness="0" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" Label="л/сек" FontFamily="Tahoma" Value="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.main_drives.pump2].Items[feed].Value}" ValueFontSize="28" CornerRadius="3" Canvas.Left="629" Canvas.Top="183" Header="ПОДАЧА НАСОСА 2"/>
+            <Grid HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="215" Background="#FFF4F4F5" Canvas.Left="535" Canvas.Top="744">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock HorizontalAlignment="Right" Margin="0,0,10,0" TextWrapping="Wrap" Text="{hmi:SeBinding Tags.Node[view.main_drives.pump2].Items[current].Value, FallbackValue=0}" VerticalAlignment="Center" TextAlignment="Right" FontSize="24"/>
+                <TextBlock HorizontalAlignment="Right" Margin="0,0,10,0" TextWrapping="Wrap" Text="{hmi:SeBinding Tags.Node[view.main_drives.pump2].Items[rpm].Value, FallbackValue=0}" VerticalAlignment="Center" TextAlignment="Right" Grid.Row="1" FontSize="24"/>
+                <TextBlock HorizontalAlignment="Right" Margin="0,0,10,0" TextWrapping="Wrap" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.main_drives.pump2.vfd].Items[power].Value}" VerticalAlignment="Center" TextAlignment="Right" Grid.Row="2" FontSize="24"/>
+                <TextBlock HorizontalAlignment="Left" Margin="5,5,18,5" TextWrapping="Wrap" Text="А" VerticalAlignment="Center" TextAlignment="Right" Grid.Column="1" FontSize="18"/>
+                <TextBlock HorizontalAlignment="Left" Margin="5,0,0,0" TextWrapping="Wrap" Text="об/мин" VerticalAlignment="Center" TextAlignment="Right" Grid.Column="1" Grid.Row="1" FontSize="18"/>
+                <TextBlock HorizontalAlignment="Left" Margin="5,5.02,0,5.02" TextWrapping="Wrap" Text="кВт" VerticalAlignment="Center" TextAlignment="Right" Grid.Column="1" Grid.Row="2" FontSize="18"/>
+            </Grid>
+            <se:VisualBox CornerRadius="3" Text="КОЖУХ&#xA;СДВИНУТ" Background="{StaticResource MediaBoxAttentionSolidColorBrush}" Width="218" Height="55" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="191" Canvas.Top="259">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="{StaticResource MediaBoxFineSolidColorBrush}" Text="КОЖУХИ&#xA;УСТАНОВЛЕНЫ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump1].Items[h_com_green].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem Background="{StaticResource MediaBoxEmergencySolidColorBrush}" Text="КОЖУХА&#xA;СДВИНУТЫ" >
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump1].Items[h_com_red].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+            </se:VisualBox>
+            <se:VisualBox CornerRadius="3" Text="ПРЕДОХРАНИТЕЛЬНЫЙ&#xA;КЛАПАН СРАБОТАЛ" Background="{StaticResource MediaBoxAttentionSolidColorBrush}" Width="220" Height="55" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="189" Canvas.Top="319">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="{StaticResource MediaBoxFineSolidColorBrush}" Text="ПРЕДОХРАНИТЕЛЬНЫЙ&#xA;КЛАПАН ВЗВЕДЕН">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump1].Items[h4_green].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem Background="{StaticResource MediaBoxEmergencySolidColorBrush}" Text="ПРЕДОХРАНИТЕЛЬНЫЙ&#xA;КЛАПАН СРАБОТАЛ" >
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump1].Items[h4_red].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+            </se:VisualBox>
+            <se:VisualBox CornerRadius="3" Text="КОЖУХ&#xA;СДВИНУТ" Background="{StaticResource MediaBoxAttentionSolidColorBrush}" Width="218" Height="55" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="629" Canvas.Top="259">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="{StaticResource MediaBoxFineSolidColorBrush}" Text="КОЖУХИ&#xA;УСТАНОВЛЕНЫ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump2].Items[h_com_green].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem Background="{StaticResource MediaBoxEmergencySolidColorBrush}" Text="КОЖУХ&#xA;СДВИНУТ" >
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump2].Items[h_com_red].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+            </se:VisualBox>
+            <se:VisualBox CornerRadius="3" Text="ПРЕДОХРАНИТЕЛЬНЫЙ&#xA;КЛАПАН СРАБОТАЛ" Background="{StaticResource MediaBoxAttentionSolidColorBrush}" Width="220" Height="55" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="629" Canvas.Top="319">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="{StaticResource MediaBoxFineSolidColorBrush}" Text="ПРЕДОХРАНИТЕЛЬНЫЙ&#xA;КЛАПАН ВЗВЕДЕН">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump2].Items[h4_green].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem Background="{StaticResource MediaBoxEmergencySolidColorBrush}" Text="ПРЕДОХРАНИТЕЛЬНЫЙ&#xA;КЛАПАН СРАБОТАЛ" >
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump2].Items[h4_red].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+            </se:VisualBox>
+            <message:DzuStatusBox Background="LightGray" 
+                Width="212" 
+                Height="65" 
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top" 
+                Canvas.Left="354" 
+                Canvas.Top="378" Visibility="Hidden" />
+            <style:cool_rect Canvas.Top="27" Height="352" Width="180" Canvas.Left="865"/>
+            <gauges:GaugePump3 Height="87" HorizontalAlignment="Left" Canvas.Left="923" x:Name="gaugePump21_Copy" VerticalAlignment="Top" Width="300" Canvas.Top="445">
+                <gauges:GaugePump3.LayoutTransform>
+                    <ScaleTransform ScaleX="0.9" ScaleY="0.9"/>
+                </gauges:GaugePump3.LayoutTransform>
+            </gauges:GaugePump3>
+            <TextBlock Canvas.Left="919" TextWrapping="Wrap" FontSize="22" HorizontalAlignment="Center" FontWeight="Bold" Text="БУРОВОЙ НАСОС 3" Canvas.Top="2"/>
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Width="252" Canvas.Left="878" Canvas.Top="51">
+                <StackPanel VerticalAlignment="Top" Orientation="Horizontal" Margin="0">
+                    <se:VisualBox HorizontalAlignment="Left" VerticalAlignment="Center" Width="22" Height="22" Style="{DynamicResource VB_LampStyle}">
+                        <se:VisualBox.VisualStateCollection>
+                            <se:VisualBoxStateItem Background="{DynamicResource LedOkBrush}">
+                                <se:VisualBoxStateItem.Value>
+                                    <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump3].Items[booster_work].Value">
+                                        <hmi:SeBinding.FallbackValue>
+                                            <system:Boolean>False</system:Boolean>
+                                        </hmi:SeBinding.FallbackValue>
+                                    </hmi:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem Background="{DynamicResource LedBadBrush}">
+                                <se:VisualBoxStateItem.Value>
+                                    <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump3].Items[booster_emer].Value">
+                                        <hmi:SeBinding.FallbackValue>
+                                            <system:Boolean>False</system:Boolean>
+                                        </hmi:SeBinding.FallbackValue>
+                                    </hmi:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                        </se:VisualBox.VisualStateCollection>
+                    </se:VisualBox>
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="ПОДПОР" VerticalAlignment="Center" FontSize="22" Margin="5,0,0,0" FontFamily="Tahoma" Width="115"/>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Top" Orientation="Horizontal" Margin="0,15,0,0">
+                    <se:VisualBox HorizontalAlignment="Left" VerticalAlignment="Center" Width="22" Height="22" Style="{DynamicResource VB_LampStyle}">
+                        <se:VisualBox.VisualStateCollection>
+                            <se:VisualBoxStateItem Background="{DynamicResource LedOkBrush}">
+                                <se:VisualBoxStateItem.Value>
+                                    <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump3].Items[oiling_work].Value">
+                                        <hmi:SeBinding.FallbackValue>
+                                            <system:Boolean>False</system:Boolean>
+                                        </hmi:SeBinding.FallbackValue>
+                                    </hmi:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem Background="{DynamicResource LedBadBrush}">
+                                <se:VisualBoxStateItem.Value>
+                                    <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump3].Items[oiling_emer].Value">
+                                        <hmi:SeBinding.FallbackValue>
+                                            <system:Boolean>False</system:Boolean>
+                                        </hmi:SeBinding.FallbackValue>
+                                    </hmi:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                        </se:VisualBox.VisualStateCollection>
+                    </se:VisualBox>
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="СМАЗКА" VerticalAlignment="Center" FontSize="22" Margin="5,0,0,0" FontFamily="Tahoma" Width="115"/>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Top" Orientation="Horizontal" Margin="0,15,0,0">
+                    <se:VisualBox HorizontalAlignment="Left" VerticalAlignment="Center" Width="22" Height="22" Style="{DynamicResource VB_LampStyle}">
+                        <se:VisualBox.VisualStateCollection>
+                            <se:VisualBoxStateItem Background="{DynamicResource LedOkBrush}">
+                                <se:VisualBoxStateItem.Value>
+                                    <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump3].Items[ter_work].Value">
+                                        <hmi:SeBinding.FallbackValue>
+                                            <system:Boolean>False</system:Boolean>
+                                        </hmi:SeBinding.FallbackValue>
+                                    </hmi:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem Background="{DynamicResource LedBadBrush}">
+                                <se:VisualBoxStateItem.Value>
+                                    <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump3].Items[ter_emer].Value">
+                                        <hmi:SeBinding.FallbackValue>
+                                            <system:Boolean>False</system:Boolean>
+                                        </hmi:SeBinding.FallbackValue>
+                                    </hmi:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                        </se:VisualBox.VisualStateCollection>
+                    </se:VisualBox>
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="СОЖ" VerticalAlignment="Center" FontSize="22" Margin="5,0,0,0" FontFamily="Tahoma" Width="115"/>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Top" Orientation="Horizontal" Margin="0,15,0,0">
+                    <se:VisualBox HorizontalAlignment="Left" VerticalAlignment="Center" Width="22" Height="22" Style="{DynamicResource VB_LampStyle}">
+                        <se:VisualBox.VisualStateCollection>
+                            <se:VisualBoxStateItem Background="{DynamicResource LedOkBrush}">
+                                <se:VisualBoxStateItem.Value>
+                                    <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump3].Items[blowing_work].Value">
+                                        <hmi:SeBinding.FallbackValue>
+                                            <system:Boolean>False</system:Boolean>
+                                        </hmi:SeBinding.FallbackValue>
+                                    </hmi:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem Background="{DynamicResource LedBadBrush}">
+                                <se:VisualBoxStateItem.Value>
+                                    <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump3].Items[blowing_emer].Value">
+                                        <hmi:SeBinding.FallbackValue>
+                                            <system:Boolean>False</system:Boolean>
+                                        </hmi:SeBinding.FallbackValue>
+                                    </hmi:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                        </se:VisualBox.VisualStateCollection>
+                    </se:VisualBox>
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="ОБДУВ МН3" VerticalAlignment="Center" FontSize="22" Margin="5,0,0,0" FontFamily="Tahoma"/>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Top" Orientation="Horizontal" Margin="0,15,0,0">
+                    <se:VisualBox HorizontalAlignment="Left" VerticalAlignment="Center" Width="22" Height="22" Style="{DynamicResource VB_LampStyle}">
+                        <se:VisualBox.VisualStateCollection>
+                            <se:VisualBoxStateItem Background="{DynamicResource LedOkBrush}">
+                                <se:VisualBoxStateItem.Value>
+                                    <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump3].Items[motor_air_green].Value">
+                                        <hmi:SeBinding.FallbackValue>
+                                            <system:Boolean>False</system:Boolean>
+                                        </hmi:SeBinding.FallbackValue>
+                                    </hmi:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem Background="{DynamicResource LedBadBrush}">
+                                <se:VisualBoxStateItem.Value>
+                                    <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump3].Items[motor_air_red].Value">
+                                        <hmi:SeBinding.FallbackValue>
+                                            <system:Boolean>False</system:Boolean>
+                                        </hmi:SeBinding.FallbackValue>
+                                    </hmi:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                        </se:VisualBox.VisualStateCollection>
+                    </se:VisualBox>
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="22" Margin="5,0,0,0" FontFamily="Tahoma" Text="НАПОРОМЕР&#xA;МОТОРА"/>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Top" Orientation="Horizontal" Margin="0,15,0,0">
+                    <se:VisualBox HorizontalAlignment="Left" VerticalAlignment="Center" Width="22" Height="22" Style="{DynamicResource VB_LampStyle}">
+                        <se:VisualBox.VisualStateCollection>
+                            <se:VisualBoxStateItem Background="{DynamicResource LedOkBrush}">
+                                <se:VisualBoxStateItem.Value>
+                                    <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump3].Items[heating_work].Value">
+                                        <hmi:SeBinding.FallbackValue>
+                                            <system:Boolean>False</system:Boolean>
+                                        </hmi:SeBinding.FallbackValue>
+                                    </hmi:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem Background="{DynamicResource LedBadBrush}">
+                                <se:VisualBoxStateItem.Value>
+                                    <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump3].Items[heating_emer].Value">
+                                        <hmi:SeBinding.FallbackValue>
+                                            <system:Boolean>False</system:Boolean>
+                                        </hmi:SeBinding.FallbackValue>
+                                    </hmi:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                        </se:VisualBox.VisualStateCollection>
+                    </se:VisualBox>
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="22" Margin="5,0,0,0" FontFamily="Tahoma" Text="ОБОГРЕВ&#xA;МОТОРА"/>
+                </StackPanel>
+            </StackPanel>
+            <Grid HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="215" Background="#FFF4F4F5" Canvas.Left="962" Canvas.Top="744">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock HorizontalAlignment="Right" Margin="0,0,10,0" TextWrapping="Wrap" Text="{hmi:SeBinding Tags.Node[view.main_drives.pump3].Items[current].Value, FallbackValue=0}" VerticalAlignment="Center" TextAlignment="Right" FontSize="24"/>
+                <TextBlock HorizontalAlignment="Right" Margin="0,0,10,0" TextWrapping="Wrap" Text="{hmi:SeBinding Tags.Node[view.main_drives.pump3].Items[rpm].Value, FallbackValue=0}" VerticalAlignment="Center" TextAlignment="Right" Grid.Row="1" FontSize="24"/>
+                <TextBlock HorizontalAlignment="Right" Margin="0,0,10,0" TextWrapping="Wrap" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.main_drives.pump3.vfd].Items[power].Value}" VerticalAlignment="Center" TextAlignment="Right" Grid.Row="2" FontSize="24"/>
+                <TextBlock HorizontalAlignment="Left" Margin="5,5,18,5" TextWrapping="Wrap" Text="А" VerticalAlignment="Center" TextAlignment="Right" Grid.Column="1" FontSize="18"/>
+                <TextBlock HorizontalAlignment="Left" Margin="5,0,0,0" TextWrapping="Wrap" Text="об/мин" VerticalAlignment="Center" TextAlignment="Right" Grid.Column="1" Grid.Row="1" FontSize="18"/>
+                <TextBlock HorizontalAlignment="Left" Margin="5,5.02,0,5.02" TextWrapping="Wrap" Text="кВт" VerticalAlignment="Center" TextAlignment="Right" Grid.Column="1" Grid.Row="2" FontSize="18"/>
+            </Grid>
+            <se:VisualBox CornerRadius="3" Text="КОЖУХ&#xA;СДВИНУТ" Background="{StaticResource MediaBoxAttentionSolidColorBrush}" Width="218" Height="55" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="1048" Canvas.Top="259">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="{StaticResource MediaBoxFineSolidColorBrush}" Text="КОЖУХИ&#xA;УСТАНОВЛЕНЫ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump3].Items[h_com_green].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem Background="{StaticResource MediaBoxEmergencySolidColorBrush}" Text="КОЖУХ&#xA;СДВИНУТ" >
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump3].Items[h_com_red].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+            </se:VisualBox>
+            <se:VisualBox CornerRadius="3" Text="ПРЕДОХРАНИТЕЛЬНЫЙ&#xA;КЛАПАН СРАБОТАЛ" Background="{StaticResource MediaBoxAttentionSolidColorBrush}" Width="220" Height="55" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="1048" Canvas.Top="319">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="{StaticResource MediaBoxFineSolidColorBrush}" Text="ПРЕДОХРАНИТЕЛЬНЫЙ&#xA;КЛАПАН ВЗВЕДЕН">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump3].Items[h4_green].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem Background="{StaticResource MediaBoxEmergencySolidColorBrush}" Text="ПРЕДОХРАНИТЕЛЬНЫЙ&#xA;КЛАПАН СРАБОТАЛ" >
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump3].Items[h4_red].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+            </se:VisualBox>
+            <message:Pump3StatusBox  Canvas.Left="862" Canvas.Top="830" HorizontalAlignment="Left" VerticalAlignment="Top" Height="79" Width="410" FontFamily="Tahoma" FontSize="18">
+                <message:Pump3StatusBox.hasEmergency>
+                    <hmi:SeBinding Path="Tags.Node[view.main_drives.pump3].Items[avariya].Value">
+                        <hmi:SeBinding.FallbackValue>
+                            <system:Boolean>False</system:Boolean>
+                        </hmi:SeBinding.FallbackValue>
+                    </hmi:SeBinding>
+                </message:Pump3StatusBox.hasEmergency>
+                <message:Pump3StatusBox.hasAlarm>
+                    <hmi:SeBinding Path="Tags.Node[view.main_drives.pump3].Items[ne_gotov].Value">
+                        <hmi:SeBinding.FallbackValue>
+                            <system:Boolean>False</system:Boolean>
+                        </hmi:SeBinding.FallbackValue>
+                    </hmi:SeBinding>
+                </message:Pump3StatusBox.hasAlarm>
+                <message:Pump3StatusBox.hasStop>
+                    <hmi:SeBinding Path="Tags.Node[view.main_drives.pump3].Items[stop].Value">
+                        <hmi:SeBinding.FallbackValue>
+                            <system:Boolean>False</system:Boolean>
+                        </hmi:SeBinding.FallbackValue>
+                    </hmi:SeBinding>
+                </message:Pump3StatusBox.hasStop>
+            </message:Pump3StatusBox>
+            <se:ValueDisplay HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="70" BorderThickness="0" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" Label="мм" FontFamily="Tahoma" Value="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.main_drives.pump3].Items[diameter].Value}" ValueFontSize="28" CornerRadius="3" Canvas.Left="1048" Canvas.Top="33" LabelFontSize="16" Header="ДИАМЕТР ШТОКА Н3"/>
+            <buttons:KeypadButton HorizontalAlignment="Left" VerticalAlignment="Top" Height="70" Width="60" FontSize="36" Value="{hmi:SeBinding Tags.Node[write.pump3].Items[diameter].Value}" Canvas.Left="1206" Canvas.Top="33" Title="НАСОС 3" Message="ДИАМЕТР ШТОКА">
+                <buttons:KeypadButton.Rules>
+                    <hmi:IntArrayValidationRules message="Величина должна соответствовать одному из значений {0}">
+                        <hmi:IntArrayValidationRules.array>
+                            <system:Int32>140</system:Int32>
+                            <system:Int32>150</system:Int32>
+                            <system:Int32>160</system:Int32>
+                            <system:Int32>170</system:Int32>
+                            <system:Int32>180</system:Int32>
+                            <system:Int32>190</system:Int32>
+                        </hmi:IntArrayValidationRules.array>
+                    </hmi:IntArrayValidationRules>
+                </buttons:KeypadButton.Rules>
+
+            </buttons:KeypadButton>
+            <se:ValueDisplay HorizontalAlignment="Left" VerticalAlignment="Top" Width="218" Height="70" BorderThickness="0" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" Label="ход" FontFamily="Tahoma" Value="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.main_drives.pump3].Items[throw].Value}" ValueFontSize="28" CornerRadius="3" Canvas.Left="1048" Canvas.Top="108" Header="ХОДЫ НАСОСА 3"/>
+            <se:ValueDisplay HorizontalAlignment="Left" VerticalAlignment="Top" Width="218" Height="70" BorderThickness="0" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" Label="л/сек" FontFamily="Tahoma" Value="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.main_drives.pump3].Items[feed].Value}" ValueFontSize="28" CornerRadius="3" Canvas.Left="1048" Canvas.Top="183" Header="ПОДАЧА НАСОСА 3"/>
+            <message:Pump1StatusBox Canvas.Left="6" Canvas.Top="829" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="410" Height="80" FontSize="18" FontFamily="Tahoma">
+                <message:Pump1StatusBox.hasEmergency>
+                    <hmi:SeBinding Path="Tags.Node[view.main_drives.pump1].Items[avariya].Value">
+                        <hmi:SeBinding.FallbackValue>
+                            <system:Boolean>False</system:Boolean>
+                        </hmi:SeBinding.FallbackValue>
+                    </hmi:SeBinding>
+                </message:Pump1StatusBox.hasEmergency>
+                <message:Pump1StatusBox.hasAlarm>
+                    <hmi:SeBinding Path="Tags.Node[view.main_drives.pump1].Items[ne_gotov].Value">
+                        <hmi:SeBinding.FallbackValue>
+                            <system:Boolean>False</system:Boolean>
+                        </hmi:SeBinding.FallbackValue>
+                    </hmi:SeBinding>
+                </message:Pump1StatusBox.hasAlarm>
+                <message:Pump1StatusBox.hasStop>
+                    <hmi:SeBinding Path="Tags.Node[view.main_drives.pump1].Items[stop].Value">
+                        <hmi:SeBinding.FallbackValue>
+                            <system:Boolean>False</system:Boolean>
+                        </hmi:SeBinding.FallbackValue>
+                    </hmi:SeBinding>
+                </message:Pump1StatusBox.hasStop>
+            </message:Pump1StatusBox>
+            <message:Pump2StatusBox  Canvas.Left="436" Canvas.Top="829" HorizontalAlignment="Left" VerticalAlignment="Top" Height="80" Width="412" FontFamily="Tahoma" FontSize="18">
+                <message:Pump2StatusBox.hasEmergency>
+                    <hmi:SeBinding Path="Tags.Node[view.main_drives.pump2].Items[avariya].Value">
+                        <hmi:SeBinding.FallbackValue>
+                            <system:Boolean>False</system:Boolean>
+                        </hmi:SeBinding.FallbackValue>
+                    </hmi:SeBinding>
+                </message:Pump2StatusBox.hasEmergency>
+                <message:Pump2StatusBox.hasAlarm>
+                    <hmi:SeBinding Path="Tags.Node[view.main_drives.pump2].Items[ne_gotov].Value">
+                        <hmi:SeBinding.FallbackValue>
+                            <system:Boolean>False</system:Boolean>
+                        </hmi:SeBinding.FallbackValue>
+                    </hmi:SeBinding>
+                </message:Pump2StatusBox.hasAlarm>
+                <message:Pump2StatusBox.hasStop>
+                    <hmi:SeBinding Path="Tags.Node[view.main_drives.pump2].Items[stop].Value">
+                        <hmi:SeBinding.FallbackValue>
+                            <system:Boolean>False</system:Boolean>
+                        </hmi:SeBinding.FallbackValue>
+                    </hmi:SeBinding>
+                </message:Pump2StatusBox.hasStop>
+            </message:Pump2StatusBox>
+            <se:ValueDisplay HorizontalAlignment="Left" Canvas.Top="378"  VerticalAlignment="Top" Width="158" Height="65" BorderThickness="0" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" Label="МПа" Header="ДАВЛЕНИЕ В МАНИФОЛЬДЕ &#xA;(АСУ)" Value="{hmi:Bind Tags.Node[view.main_drives.pump1].Items[pressure_in_manifold].Value, FallbackValue=0}" Canvas.Left="1112" HeaderFontSize="11" HeaderLength="30"/>
+            <message:PodderzanieDavleniaStatusBox Background="LightGray" 
+                Width="168" 
+                Height="65" 
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top" 
+                Canvas.Left="772" 
+                Canvas.Top="379" Visibility="Hidden" />
+            <buttons:KeypadButton Style="{StaticResource MetalBorderStdButton}" FontFamily="Arial" Message="{hmi:Bind FallbackValue=ВВЕДИТЕ ЗНАЧЕНИЕ, Path=Expressions.Node[ustavki.pump3].Items[7].Value}"  Title="СКОРОСТЬ НАСОСА 3" FontSize="56" Height="80" HorizontalAlignment="Left"  Canvas.Left="860" Canvas.Top="659" VerticalAlignment="Top" Width="80"  Margin="0">
+                <buttons:KeypadButton.IsEnabled>
+                    <hmi:Bind Path="Tags.Node[view.main_drives.pump3.presets].Items[calc_skorost_vidimost].Value">
+                        <hmi:Bind.FallbackValue>
+                            <system:Boolean>false</system:Boolean>
+                        </hmi:Bind.FallbackValue>
+                    </hmi:Bind>
+                </buttons:KeypadButton.IsEnabled>
+                <buttons:KeypadButton.Value>
+                    <hmi:Bind Path="Tags.Node[write.pump3].Items[calc_skorost].Value">
+                        <hmi:Bind.FallbackValue>
+                            <system:Double>0</system:Double>
+                        </hmi:Bind.FallbackValue>
+                    </hmi:Bind>
+                </buttons:KeypadButton.Value>
+                <Viewbox>
+                    <Path Fill="White" 
+                        Margin="10" 
+                        SnapsToDevicePixels="True" 
+                        Data="F1 M 30.083,10.000 C 30.083,11.105 29.188,12.000 28.083,12.000 L 7.917,12.000 C 6.812,12.000 5.917,11.105 5.917,10.000 L 5.917,8.000 C 5.917,6.895 6.812,6.000 7.917,6.000 L 28.083,6.000 C 29.188,6.000 30.083,6.895 30.083,8.000 L 30.083,10.000 Z M 30.042,22.000 C 30.042,23.105 29.146,24.000 28.042,24.000 L 26.042,24.000 C 24.937,24.000 24.042,23.105 24.042,22.000 L 24.042,20.000 C 24.042,18.895 24.937,18.000 26.042,18.000 L 28.042,18.000 C 29.146,18.000 30.042,18.895 30.042,20.000 L 30.042,22.000 Z M 30.042,31.000 C 30.042,32.105 29.146,33.000 28.042,33.000 L 26.042,33.000 C 24.937,33.000 24.042,32.105 24.042,31.000 L 24.042,29.000 C 24.042,27.895 24.937,27.000 26.042,27.000 L 28.042,27.000 C 29.146,27.000 30.042,27.895 30.042,29.000 L 30.042,31.000 Z M 30.042,40.000 C 30.042,41.105 29.146,42.000 28.042,42.000 L 26.042,42.000 C 24.937,42.000 24.042,41.105 24.042,40.000 L 24.042,38.000 C 24.042,36.895 24.937,36.000 26.042,36.000 L 28.042,36.000 C 29.146,36.000 30.042,36.895 30.042,38.000 L 30.042,40.000 Z M 21.042,22.000 C 21.042,23.105 20.146,24.000 19.042,24.000 L 17.042,24.000 C 15.937,24.000 15.042,23.105 15.042,22.000 L 15.042,20.000 C 15.042,18.895 15.937,18.000 17.042,18.000 L 19.042,18.000 C 20.146,18.000 21.042,18.895 21.042,20.000 L 21.042,22.000 Z M 21.042,31.000 C 21.042,32.105 20.146,33.000 19.042,33.000 L 17.042,33.000 C 15.937,33.000 15.042,32.105 15.042,31.000 L 15.042,29.000 C 15.042,27.895 15.937,27.000 17.042,27.000 L 19.042,27.000 C 20.146,27.000 21.042,27.895 21.042,29.000 L 21.042,31.000 Z M 21.042,40.000 C 21.042,41.105 20.146,42.000 19.042,42.000 L 17.042,42.000 C 15.937,42.000 15.042,41.105 15.042,40.000 L 15.042,38.000 C 15.042,36.895 15.937,36.000 17.042,36.000 L 19.042,36.000 C 20.146,36.000 21.042,36.895 21.042,38.000 L 21.042,40.000 Z M 11.958,22.000 C 11.958,23.105 11.063,24.000 9.958,24.000 L 7.958,24.000 C 6.854,24.000 5.958,23.105 5.958,22.000 L 5.958,20.000 C 5.958,18.895 6.854,18.000 7.958,18.000 L 9.958,18.000 C 11.063,18.000 11.958,18.895 11.958,20.000 L 11.958,22.000 Z M 11.958,31.000 C 11.958,32.105 11.063,33.000 9.958,33.000 L 7.958,33.000 C 6.854,33.000 5.958,32.105 5.958,31.000 L 5.958,29.000 C 5.958,27.895 6.854,27.000 7.958,27.000 L 9.958,27.000 C 11.063,27.000 11.958,27.895 11.958,29.000 L 11.958,31.000 Z M 11.958,40.000 C 11.958,41.105 11.063,42.000 9.958,42.000 L 7.958,42.000 C 6.854,42.000 5.958,41.105 5.958,40.000 L 5.958,38.000 C 5.958,36.895 6.854,36.000 7.958,36.000 L 9.958,36.000 C 11.063,36.000 11.958,36.895 11.958,38.000 L 11.958,40.000 Z M 33.000,0.000 L 3.000,0.000 C 1.343,0.000 0.000,1.343 0.000,3.000 L 0.000,45.000 C 0.000,46.657 1.343,48.000 3.000,48.000 L 33.000,48.000 C 34.657,48.000 36.000,46.657 36.000,45.000 L 36.000,3.000 C 36.000,1.343 34.657,0.000 33.000,0.000 Z"/>
+                </Viewbox>
+            </buttons:KeypadButton>
+            <buttons:KeypadButton Style="{StaticResource MetalBorderStdButton}" FontFamily="Arial" Message="{hmi:Bind FallbackValue=ВВЕДИТЕ ЗНАЧЕНИЕ, Path=Expressions.Node[ustavki.pump2].Items[7].Value}"  Title="СКОРОСТЬ НАСОСА 2" FontSize="56" Height="80" HorizontalAlignment="Left"  Canvas.Left="436" Canvas.Top="659" VerticalAlignment="Top" Width="80"  Margin="0">
+                <buttons:KeypadButton.IsEnabled>
+                    <hmi:Bind Path="Tags.Node[view.main_drives.pump2.presets].Items[calc_skorost_vidimost].Value">
+                        <hmi:Bind.FallbackValue>
+                            <system:Boolean>false</system:Boolean>
+                        </hmi:Bind.FallbackValue>
+                    </hmi:Bind>
+                </buttons:KeypadButton.IsEnabled>
+                <buttons:KeypadButton.Value>
+                    <hmi:Bind Path="Tags.Node[write.pump2].Items[calc_skorost].Value">
+                        <hmi:Bind.FallbackValue>
+                            <system:Double>0</system:Double>
+                        </hmi:Bind.FallbackValue>
+                    </hmi:Bind>
+                </buttons:KeypadButton.Value>
+                <Viewbox>
+                    <Path Fill="White" 
+                        Margin="10" 
+                        SnapsToDevicePixels="True" 
+                        Data="F1 M 30.083,10.000 C 30.083,11.105 29.188,12.000 28.083,12.000 L 7.917,12.000 C 6.812,12.000 5.917,11.105 5.917,10.000 L 5.917,8.000 C 5.917,6.895 6.812,6.000 7.917,6.000 L 28.083,6.000 C 29.188,6.000 30.083,6.895 30.083,8.000 L 30.083,10.000 Z M 30.042,22.000 C 30.042,23.105 29.146,24.000 28.042,24.000 L 26.042,24.000 C 24.937,24.000 24.042,23.105 24.042,22.000 L 24.042,20.000 C 24.042,18.895 24.937,18.000 26.042,18.000 L 28.042,18.000 C 29.146,18.000 30.042,18.895 30.042,20.000 L 30.042,22.000 Z M 30.042,31.000 C 30.042,32.105 29.146,33.000 28.042,33.000 L 26.042,33.000 C 24.937,33.000 24.042,32.105 24.042,31.000 L 24.042,29.000 C 24.042,27.895 24.937,27.000 26.042,27.000 L 28.042,27.000 C 29.146,27.000 30.042,27.895 30.042,29.000 L 30.042,31.000 Z M 30.042,40.000 C 30.042,41.105 29.146,42.000 28.042,42.000 L 26.042,42.000 C 24.937,42.000 24.042,41.105 24.042,40.000 L 24.042,38.000 C 24.042,36.895 24.937,36.000 26.042,36.000 L 28.042,36.000 C 29.146,36.000 30.042,36.895 30.042,38.000 L 30.042,40.000 Z M 21.042,22.000 C 21.042,23.105 20.146,24.000 19.042,24.000 L 17.042,24.000 C 15.937,24.000 15.042,23.105 15.042,22.000 L 15.042,20.000 C 15.042,18.895 15.937,18.000 17.042,18.000 L 19.042,18.000 C 20.146,18.000 21.042,18.895 21.042,20.000 L 21.042,22.000 Z M 21.042,31.000 C 21.042,32.105 20.146,33.000 19.042,33.000 L 17.042,33.000 C 15.937,33.000 15.042,32.105 15.042,31.000 L 15.042,29.000 C 15.042,27.895 15.937,27.000 17.042,27.000 L 19.042,27.000 C 20.146,27.000 21.042,27.895 21.042,29.000 L 21.042,31.000 Z M 21.042,40.000 C 21.042,41.105 20.146,42.000 19.042,42.000 L 17.042,42.000 C 15.937,42.000 15.042,41.105 15.042,40.000 L 15.042,38.000 C 15.042,36.895 15.937,36.000 17.042,36.000 L 19.042,36.000 C 20.146,36.000 21.042,36.895 21.042,38.000 L 21.042,40.000 Z M 11.958,22.000 C 11.958,23.105 11.063,24.000 9.958,24.000 L 7.958,24.000 C 6.854,24.000 5.958,23.105 5.958,22.000 L 5.958,20.000 C 5.958,18.895 6.854,18.000 7.958,18.000 L 9.958,18.000 C 11.063,18.000 11.958,18.895 11.958,20.000 L 11.958,22.000 Z M 11.958,31.000 C 11.958,32.105 11.063,33.000 9.958,33.000 L 7.958,33.000 C 6.854,33.000 5.958,32.105 5.958,31.000 L 5.958,29.000 C 5.958,27.895 6.854,27.000 7.958,27.000 L 9.958,27.000 C 11.063,27.000 11.958,27.895 11.958,29.000 L 11.958,31.000 Z M 11.958,40.000 C 11.958,41.105 11.063,42.000 9.958,42.000 L 7.958,42.000 C 6.854,42.000 5.958,41.105 5.958,40.000 L 5.958,38.000 C 5.958,36.895 6.854,36.000 7.958,36.000 L 9.958,36.000 C 11.063,36.000 11.958,36.895 11.958,38.000 L 11.958,40.000 Z M 33.000,0.000 L 3.000,0.000 C 1.343,0.000 0.000,1.343 0.000,3.000 L 0.000,45.000 C 0.000,46.657 1.343,48.000 3.000,48.000 L 33.000,48.000 C 34.657,48.000 36.000,46.657 36.000,45.000 L 36.000,3.000 C 36.000,1.343 34.657,0.000 33.000,0.000 Z"/>
+                </Viewbox>
+            </buttons:KeypadButton>
+            <buttons:KeypadButton Style="{StaticResource MetalBorderStdButton}" FontFamily="Arial" Message="{hmi:Bind FallbackValue=ВВЕДИТЕ ЗНАЧЕНИЕ, Path=Expressions.Node[ustavki.pump1].Items[7].Value}"  Title="СКОРОСТЬ НАСОСА 1" FontSize="56" Height="80" HorizontalAlignment="Left"  Canvas.Left="7" Canvas.Top="659" VerticalAlignment="Top" Width="80"  Margin="0">
+                <buttons:KeypadButton.IsEnabled>
+                    <hmi:Bind Path="Tags.Node[view.main_drives.pump1.presets].Items[calc_skorost_vidimost].Value">
+                        <hmi:Bind.FallbackValue>
+                            <system:Boolean>false</system:Boolean>
+
+                        </hmi:Bind.FallbackValue>
+                    </hmi:Bind>
+                </buttons:KeypadButton.IsEnabled>
+                <buttons:KeypadButton.Value>
+                    <hmi:Bind Path="Tags.Node[write.pump1].Items[calc_skorost].Value">
+                        <hmi:Bind.FallbackValue>
+                            <system:Double>0</system:Double>
+                        </hmi:Bind.FallbackValue>
+                    </hmi:Bind>
+                </buttons:KeypadButton.Value>
+                <Viewbox>
+                    <Path Fill="White" 
+                        Margin="10" 
+                        SnapsToDevicePixels="True" 
+                        Data="F1 M 30.083,10.000 C 30.083,11.105 29.188,12.000 28.083,12.000 L 7.917,12.000 C 6.812,12.000 5.917,11.105 5.917,10.000 L 5.917,8.000 C 5.917,6.895 6.812,6.000 7.917,6.000 L 28.083,6.000 C 29.188,6.000 30.083,6.895 30.083,8.000 L 30.083,10.000 Z M 30.042,22.000 C 30.042,23.105 29.146,24.000 28.042,24.000 L 26.042,24.000 C 24.937,24.000 24.042,23.105 24.042,22.000 L 24.042,20.000 C 24.042,18.895 24.937,18.000 26.042,18.000 L 28.042,18.000 C 29.146,18.000 30.042,18.895 30.042,20.000 L 30.042,22.000 Z M 30.042,31.000 C 30.042,32.105 29.146,33.000 28.042,33.000 L 26.042,33.000 C 24.937,33.000 24.042,32.105 24.042,31.000 L 24.042,29.000 C 24.042,27.895 24.937,27.000 26.042,27.000 L 28.042,27.000 C 29.146,27.000 30.042,27.895 30.042,29.000 L 30.042,31.000 Z M 30.042,40.000 C 30.042,41.105 29.146,42.000 28.042,42.000 L 26.042,42.000 C 24.937,42.000 24.042,41.105 24.042,40.000 L 24.042,38.000 C 24.042,36.895 24.937,36.000 26.042,36.000 L 28.042,36.000 C 29.146,36.000 30.042,36.895 30.042,38.000 L 30.042,40.000 Z M 21.042,22.000 C 21.042,23.105 20.146,24.000 19.042,24.000 L 17.042,24.000 C 15.937,24.000 15.042,23.105 15.042,22.000 L 15.042,20.000 C 15.042,18.895 15.937,18.000 17.042,18.000 L 19.042,18.000 C 20.146,18.000 21.042,18.895 21.042,20.000 L 21.042,22.000 Z M 21.042,31.000 C 21.042,32.105 20.146,33.000 19.042,33.000 L 17.042,33.000 C 15.937,33.000 15.042,32.105 15.042,31.000 L 15.042,29.000 C 15.042,27.895 15.937,27.000 17.042,27.000 L 19.042,27.000 C 20.146,27.000 21.042,27.895 21.042,29.000 L 21.042,31.000 Z M 21.042,40.000 C 21.042,41.105 20.146,42.000 19.042,42.000 L 17.042,42.000 C 15.937,42.000 15.042,41.105 15.042,40.000 L 15.042,38.000 C 15.042,36.895 15.937,36.000 17.042,36.000 L 19.042,36.000 C 20.146,36.000 21.042,36.895 21.042,38.000 L 21.042,40.000 Z M 11.958,22.000 C 11.958,23.105 11.063,24.000 9.958,24.000 L 7.958,24.000 C 6.854,24.000 5.958,23.105 5.958,22.000 L 5.958,20.000 C 5.958,18.895 6.854,18.000 7.958,18.000 L 9.958,18.000 C 11.063,18.000 11.958,18.895 11.958,20.000 L 11.958,22.000 Z M 11.958,31.000 C 11.958,32.105 11.063,33.000 9.958,33.000 L 7.958,33.000 C 6.854,33.000 5.958,32.105 5.958,31.000 L 5.958,29.000 C 5.958,27.895 6.854,27.000 7.958,27.000 L 9.958,27.000 C 11.063,27.000 11.958,27.895 11.958,29.000 L 11.958,31.000 Z M 11.958,40.000 C 11.958,41.105 11.063,42.000 9.958,42.000 L 7.958,42.000 C 6.854,42.000 5.958,41.105 5.958,40.000 L 5.958,38.000 C 5.958,36.895 6.854,36.000 7.958,36.000 L 9.958,36.000 C 11.063,36.000 11.958,36.895 11.958,38.000 L 11.958,40.000 Z M 33.000,0.000 L 3.000,0.000 C 1.343,0.000 0.000,1.343 0.000,3.000 L 0.000,45.000 C 0.000,46.657 1.343,48.000 3.000,48.000 L 33.000,48.000 C 34.657,48.000 36.000,46.657 36.000,45.000 L 36.000,3.000 C 36.000,1.343 34.657,0.000 33.000,0.000 Z"/>
+                </Viewbox>
+            </buttons:KeypadButton>
+            <buttons:HmiButton Content="H1" Style="{StaticResource MetalBorderButton}" FontFamily="Arial"  FontSize="48" Height="80" HorizontalAlignment="Left"  Canvas.Left="329" Canvas.Top="659" VerticalAlignment="Top" Width="80"  Margin="0" hmi:Click.Command="{hmi:Bind Path=Tags.Node[write.pump1].Items[vklyuchit_v_sinhronnoe_uravlenie].WriteCommand}">
+                <buttons:HmiButton.VisualStateCollection>
+                    <hmiButton:HmiButtonState Background="{StaticResource MediaBoxFineSolidColorBrush}">
+                        <hmiButton:HmiButtonState.Value>
+                            <hmi:Bind Path="Tags.Node[view.main_drives.pump1].Items[vklyuchen_v_sinhronnoe_uravlenie].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </hmiButton:HmiButtonState.Value>
+                    </hmiButton:HmiButtonState>
+                </buttons:HmiButton.VisualStateCollection>
+
+            </buttons:HmiButton>
+            <buttons:HmiButton Content="H2" Style="{StaticResource MetalBorderButton}" FontFamily="Arial"  FontSize="48" Height="80" HorizontalAlignment="Left"  Canvas.Left="767" Canvas.Top="659" VerticalAlignment="Top" Width="80"  Margin="0" hmi:Click.Command="{hmi:Bind Path=Tags.Node[write.pump2].Items[vklyuchit_v_sinhronnoe_uravlenie].WriteCommand}">
+                <buttons:HmiButton.VisualStateCollection>
+                    <hmiButton:HmiButtonState Background="{StaticResource MediaBoxFineSolidColorBrush}">
+                        <hmiButton:HmiButtonState.Value>
+                            <hmi:Bind Path="Tags.Node[view.main_drives.pump2].Items[vklyuchen_v_sinhronnoe_uravlenie].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </hmiButton:HmiButtonState.Value>
+                    </hmiButton:HmiButtonState>
+                </buttons:HmiButton.VisualStateCollection>
+
+            </buttons:HmiButton>
+            <buttons:HmiButton Content="H3" Style="{StaticResource MetalBorderButton}" FontFamily="Arial"  FontSize="48" Height="80" HorizontalAlignment="Left"  Canvas.Left="1192" Canvas.Top="659" VerticalAlignment="Top" Width="80"  Margin="0" hmi:Click.Command="{hmi:Bind Path=Tags.Node[write.pump3].Items[vklyuchit_v_sinhronnoe_uravlenie].WriteCommand}">
+                <buttons:HmiButton.VisualStateCollection>
+                    <hmiButton:HmiButtonState Background="{StaticResource MediaBoxFineSolidColorBrush}">
+                        <hmiButton:HmiButtonState.Value>
+                            <hmi:Bind Path="Tags.Node[view.main_drives.pump3].Items[vklyuchen_v_sinhronnoe_uravlenie].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </hmiButton:HmiButtonState.Value>
+                    </hmiButton:HmiButtonState>
+                </buttons:HmiButton.VisualStateCollection>
+
+            </buttons:HmiButton>
+        </Canvas>
+    </Viewbox>
+</UserControl>

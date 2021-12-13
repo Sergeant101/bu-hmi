@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="NGO.Elements.Gauges.GaugeTDS2"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" Height="300" Width="300" MinHeight="300" MinWidth="300" MaxHeight="300" MaxWidth="300"
+             xmlns:my="clr-namespace:System;assembly=mscorlib"
+             xmlns:hmi="http://schemas.monokot.com/hmi/"
+             xmlns:se="http://schemas.monokot.com/se/">
+    <Canvas Height="300" Width="300">
+        <Image Height="300" Width="300" Source="/NGO.Elements;component/Content/Gauges/Background/blue gauge.png" />
+        <TextBlock Height="17" Text="ВСП" HorizontalAlignment="Center" FontFamily="Tahoma" FontWeight="Bold" TextAlignment="Center" FontSize="12" VerticalAlignment="Center" Canvas.Left="137" Canvas.Top="59" />
+        <TextBlock Height="23" Text="кН х м" FontFamily="Tahoma" FontWeight="Bold" TextAlignment="Center" FontSize="11" Margin="110,70,0,0" HorizontalAlignment="Left" Width="80" VerticalAlignment="Top" />
+
+
+        <se:RadialGauge Name="seGauge1" Height="270" Width="270" Canvas.Left="15" Canvas.Top="13" MajorTickBrush="White" MinorTickBrush="White" ShowStick="False" Maximum="60" Foreground="White" MajorTickCost="10" MajorTickThickness="4" MajorTickLength="20" MinorTickLength="10" MinorTickThickness="2" FontSize="20" FontFamily="Tahoma" MinorTickCost="2">
+            <se:RadialGauge.Arrows>
+                <se:RadialArrow Style="{StaticResource TriangleRadialArrow}" Height="140" Width="28" BorderBrush="Transparent">
+                    <se:RadialArrow.Value>
+                        <hmi:Bind Path="Tags.Node[view.main_drives.tds].Items[torque].Value">
+                            <hmi:Bind.FallbackValue>
+                                <my:Double>0</my:Double>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:RadialArrow.Value>
+                </se:RadialArrow>
+                <se:RadialArrow Value="{hmi:SeBinding Path=Tags.Node[tds_maxTorque].Value, FallbackValue=0}" Style="{StaticResource TriangleRadialArrow}" Height="140" Width="16" Background="Red" BorderBrush="Transparent" Visibility="Hidden"/>
+            </se:RadialGauge.Arrows>
+        </se:RadialGauge>
+        <Image Height="80" Width="80" Source="/NGO.Elements;component/Content/Gauges/Background/white%20cap%202.png" Canvas.Left="110" Canvas.Top="110" />
+        <Grid  Height="300" Width="300">
+            <Rectangle Height="40" HorizontalAlignment="Left" Margin="119,236,0,0" Name="rectangle1" Stroke="{x:Null}" VerticalAlignment="Top" Width="60" Fill="White" RadiusX="5" RadiusY="5" />
+            <TextBlock Height="34" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.main_drives.tds].Items[torque].Value}" HorizontalAlignment="Center" FontFamily="Tahoma" FontWeight="Bold" TextAlignment="Center" FontSize="26" VerticalAlignment="Center"/>
+
+            <!--<Image Height="132" HorizontalAlignment="Center" Name="image1" Stretch="Uniform" VerticalAlignment="Center" Width="149" Source="/NGO.Elements;component/Content/!.png">
+                <Image.Visibility>
+                    <hmi:SeBinding Path="modules[pvd_mod].Items[vfd-clx].isDisconnected">
+                        <hmi:SeBinding.Converter>
+                            <BooleanToVisibilityConverter />
+                        </hmi:SeBinding.Converter>
+                        <hmi:SeBinding.FallbackValue>
+                            <my:Boolean>False</my:Boolean>
+                        </hmi:SeBinding.FallbackValue>
+                    </hmi:SeBinding>
+                </Image.Visibility>
+            </Image>-->
+        </Grid>
+        <TextBlock Height="22" Text="факт." FontFamily="Tahoma" FontWeight="Bold" TextAlignment="Center" FontSize="12" Margin="110,69,0,0" HorizontalAlignment="Left" Width="52" VerticalAlignment="Top" Canvas.Top="167" Foreground="Black" Canvas.Left="13" />
+        <TextBlock Height="25" Text="{hmi:SeBinding Path=Tags.Node[tds_drive_torque].Value, FallbackValue=0.0, StringFormat=0.0}" FontWeight="Normal" TextAlignment="Center" FontSize="20" Margin="110,69,0,0" HorizontalAlignment="Left" Width="52" VerticalAlignment="Top" Canvas.Top="181" Foreground="Black" Canvas.Left="13" FontFamily="Tahoma" />
+    </Canvas>
+</UserControl>

@@ -1,0 +1,128 @@
+﻿311022
+8
+lang|RU|0 (:2 ) Резерв
+lang|EN|0 (:2 ) Drawworks housing closed SQK3
+311022
+9
+lang|RU|1 (:3 ) Резерв
+lang|EN|1 (:3 ) Drawworks housing closed SQK4
+311022
+10
+lang|RU|2 (:4 ) Резерв
+lang|EN|2 (:4 ) Drawworks housing closed SQK5
+311022
+11
+lang|RU|3 (:5 ) Резерв
+lang|EN|3 (:5 ) Drawworks housing closed SQK6
+311022
+12
+lang|RU|4 (:6 ) Резерв
+lang|EN|4 (:6 ) Drawworks housing closed SQK7
+311022
+13
+lang|RU|5 (:7 ) Резерв
+lang|EN|5 (:7 ) Drawworks housing closed SQK8
+311022
+14
+lang|RU|6 (:8 ) Резерв
+lang|EN|6 (:8 ) Drawworks housing closed SQK9 
+311022
+15
+lang|RU|7 (:9 ) Резерв
+lang|EN|7 (:9 ) Drawworks housing closed SQK10
+311022
+0
+lang|RU|0 (:12 ) Нет превышения веса (сигнал СКПБ)
+lang|EN|0 (:12 ) Drawworks stopper open SQK1
+311022
+1
+lang|RU|1 (:13 ) Нет переподъема талевого блока (сигнал СКПБ)
+lang|EN|1 (:13 ) Overhight sensor closed
+311022
+2
+lang|RU|2 (:14 ) Нет превышения давления в манифольде (сигнал СКПБ)
+lang|EN|2 (:14 ) Not overweight SMPD
+311022
+3
+lang|RU|3 (:15 ) Резерв
+lang|EN|3 (:15 ) Switch on slow gearbox
+311022
+4
+lang|RU|4 (:16 ) Резерв
+lang|EN|4 (:16 ) Switch on fast gearbox
+311022
+5
+lang|RU|5 (:17 ) Резерв (реле К22)
+lang|EN|5 (:17 ) Aux. drive clutch connected
+311022
+6
+lang|RU|6 (:18 ) Открыт дисковый затвор Модуля тонкой очистки (реле 704К1)
+lang|EN|6 (:18 ) Aux. drive clutch disconnected
+311022
+7
+lang|RU|7 (:19 ) Закрыт дисковый затвор Модуля тонкой очистки (реле 704К2)
+lang|EN|7 (:19 ) Not overhight tackle block SMPD
+311023
+8
+lang|RU|0 (:22 ) В кабине бурильщика нажата кнопка SB7 "Звонок в насосном блоке"
+lang|EN|0 (:22 ) Service brake SB1 inhibited
+311023
+9
+lang|RU|1 (:23 ) В кабине бурильщика переключатель SA5 в положении "Увеличить скорость ротора"
+lang|EN|1 (:23 ) Brake pads SB1 is not worn
+311023
+10
+lang|RU|2 (:24 ) В кабине бурильщика переключатель SA5 в положении "Уменьшить скорость ротора"
+lang|EN|2 (:24 ) Service brake SB2 inhibited
+311023
+11
+lang|RU|3 (:25 ) В кабине бурильщика переключатель SA6 в положении "Увеличить момент ротора"
+lang|EN|3 (:25 ) Brake pads SB2 is not worn
+311023
+12
+lang|RU|4 (:26 ) В кабине бурильщика переключатель SA6 в положении "Уменьшить момент ротора"
+lang|EN|4 (:26 ) Emergency brake EB1 inhibited
+311023
+13
+lang|RU|5 (:27 ) Включен конечный выключатель SQ3 "Задвинута площадка центрирования труб ПЦТ"
+lang|EN|5 (:27 ) Brake pads EB1 is not worn
+311023
+14
+lang|RU|6 (:28 ) Резерв
+lang|EN|6 (:28 ) Emergency brake EB2 inhibited
+311023
+15
+lang|RU|7 (:29 ) Резерв
+lang|EN|7 (:29 ) Brake pads EB2 is not worn
+311023
+0
+lang|RU|0 (:32 ) Резерв
+lang|EN|0 (:32 ) Hydraulic unit pump ON
+311023
+1
+lang|RU|1 (:33 ) Включен пускатель 307КМ1 гидротолкателя доп. привода лебедки
+lang|EN|1 (:33 ) Bypass circuit ON
+311023
+2
+lang|RU|2 (:34 ) Резерв
+lang|EN|2 (:34 ) 20% gassed SMPD
+311023
+3
+lang|RU|3 (:35 ) Резерв
+lang|EN|3 (:35 ) No overheating brake resistors R1 and R2
+311023
+4
+lang|RU|4 (:36 ) Резерв
+lang|EN|4 (:36 ) Air pressure sensor R1 ON
+311023
+5
+lang|RU|5 (:37 ) Резерв
+lang|EN|5 (:37 ) Air pressure sensor R2 ON
+311023
+6
+lang|RU|6 (:38 ) Резерв
+lang|EN|6 (:38 ) Motor blower R1 ON
+311023
+7
+lang|RU|7 (:39 ) Нет загазованности 50% НКПР от СКПБ (реле 1К12)
+lang|EN|7 (:39 ) Motor blower R2 ON

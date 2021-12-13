@@ -1,0 +1,782 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Custom="http://schemas.monokot.com/hmi/" xmlns:se="http://schemas.monokot.com/se/" xmlns:System="clr-namespace:System;assembly=mscorlib"
+    x:Class="VFD.Frames.Sub.SNG_Obuchenie.Topologiya" 
+             mc:Ignorable="d" 
+             d:DesignHeight="840" d:DesignWidth="1260" FontFamily="Tahoma">
+    <UserControl.Resources>
+        <DrawingBrush x:Key="RedBusBrush" ViewportUnits="Absolute" Viewport="0,0,30,1" TileMode="Tile" Stretch="None">
+            <DrawingBrush.Drawing>
+                <DrawingGroup>
+                    <GeometryDrawing>
+                        <GeometryDrawing.Geometry>
+                            <LineGeometry EndPoint="15,0" StartPoint="0,0"/>
+                        </GeometryDrawing.Geometry>
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="Red"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                    <GeometryDrawing>
+                        <GeometryDrawing.Geometry>
+                            <LineGeometry EndPoint="30,0" StartPoint="15,0"/>
+                        </GeometryDrawing.Geometry>
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="Black"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+            </DrawingBrush.Drawing>
+        </DrawingBrush>
+        <DrawingBrush x:Key="GreenBusBrush" ViewportUnits="Absolute" Viewport="0,0,30,1" TileMode="Tile" Stretch="None">
+            <DrawingBrush.Drawing>
+                <DrawingGroup>
+                    <GeometryDrawing>
+                        <GeometryDrawing.Geometry>
+                            <LineGeometry EndPoint="15,0" StartPoint="0,0"/>
+                        </GeometryDrawing.Geometry>
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="Green"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                    <GeometryDrawing>
+                        <GeometryDrawing.Geometry>
+                            <LineGeometry EndPoint="30,0" StartPoint="15,0"/>
+                        </GeometryDrawing.Geometry>
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="Black"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+            </DrawingBrush.Drawing>
+        </DrawingBrush>
+    </UserControl.Resources>
+    <Canvas>
+
+        <Border Canvas.Left="960" Height="346" BorderThickness="1" BorderBrush="Black" Width="280" Canvas.Top="33" SnapsToDevicePixels="True" CornerRadius="5" Background="#FFD1D1D1" />
+
+        <Border Canvas.Left="10" Height="407" BorderThickness="1" BorderBrush="Black" Width="1230" Canvas.Top="418" SnapsToDevicePixels="True" CornerRadius="5" Background="#FFD1D1D1" d:IsLocked="True" />
+
+        <Border Canvas.Left="500" Height="346" BorderThickness="1" BorderBrush="Black" Width="450" Canvas.Top="33" SnapsToDevicePixels="True" CornerRadius="5" Background="#FFD1D1D1" />
+        <Border Canvas.Left="10" Height="346" BorderThickness="1" BorderBrush="Black" Width="480" Canvas.Top="33" SnapsToDevicePixels="True" CornerRadius="5" Background="#FFD1D1D1" />
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="5" Background="{StaticResource GreenBusBrush}" VerticalAlignment="Top" Width="547" Canvas.Left="236" Canvas.Top="336" SnapsToDevicePixels="True" CornerRadius="0">
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="6" Background="{StaticResource GreenBusBrush}" VerticalAlignment="Top" Width="158" Canvas.Left="703" Canvas.Top="412" SnapsToDevicePixels="True" CornerRadius="0" RenderTransformOrigin="0.5,0.5">
+            <se:VisualBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </se:VisualBox.RenderTransform>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="6" Background="{StaticResource GreenBusBrush}" VerticalAlignment="Top" Width="132" Canvas.Left="536" Canvas.Top="425" SnapsToDevicePixels="True" CornerRadius="0" RenderTransformOrigin="0.5,0.5">
+            <se:VisualBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </se:VisualBox.RenderTransform>
+
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="6" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="92" Canvas.Left="555" Canvas.Top="644" SnapsToDevicePixels="True" CornerRadius="0" RenderTransformOrigin="0.5,0.5">
+            <se:VisualBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </se:VisualBox.RenderTransform>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <Custom:Bind Path="Tags.Node[view.network].Items[mgate].Value">
+                            <Custom:Bind.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </Custom:Bind.FallbackValue>
+                        </Custom:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="5" Background="{StaticResource GreenBusBrush}" VerticalAlignment="Top" Width="371" Canvas.Left="234" Canvas.Top="361" SnapsToDevicePixels="True" CornerRadius="0">
+
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="4" Background="{StaticResource GreenBusBrush}" VerticalAlignment="Top" Width="106" Canvas.Left="341" Canvas.Top="221" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" CornerRadius="0">
+            <se:VisualBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </se:VisualBox.RenderTransform>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" />
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="4" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="108" Canvas.Left="17" Canvas.Top="220" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" CornerRadius="0">
+            <se:VisualBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </se:VisualBox.RenderTransform>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <Custom:Bind  Path="Tags.Node[view.network].Items[net_dc1].Value">
+                            <Custom:Bind.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </Custom:Bind.FallbackValue>
+                        </Custom:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="4" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="106" Canvas.Left="186" Canvas.Top="219" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" CornerRadius="0">
+            <se:VisualBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </se:VisualBox.RenderTransform>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <Custom:Bind  Path="Tags.Node[view.network].Items[net_dc2].Value">
+                            <Custom:Bind.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </Custom:Bind.FallbackValue>
+                        </Custom:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="6" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="34" Canvas.Left="574" Canvas.Top="776" SnapsToDevicePixels="True" CornerRadius="0" RenderTransformOrigin="0.5,0.5">
+            <se:VisualBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </se:VisualBox.RenderTransform>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <Custom:Bind  Path="Tags.Node[view.network].Items[net_plc1].Value">
+                            <Custom:Bind.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </Custom:Bind.FallbackValue>
+                        </Custom:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="6" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="56" Canvas.Left="579" Canvas.Top="786" SnapsToDevicePixels="True" CornerRadius="0" RenderTransformOrigin="0.5,0.5">
+            <se:VisualBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </se:VisualBox.RenderTransform>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <Custom:Bind  Path="Tags.Node[view.network].Items[net_plc1].Value">
+                            <Custom:Bind.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </Custom:Bind.FallbackValue>
+                        </Custom:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="6" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="544" Canvas.Left="66" Canvas.Top="811" SnapsToDevicePixels="True" CornerRadius="0">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <Custom:Bind  Path="Tags.Node[view.network].Items[net_plc1].Value">
+                            <Custom:Bind.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </Custom:Bind.FallbackValue>
+                        </Custom:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="6" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="409" Canvas.Left="185" Canvas.Top="791" SnapsToDevicePixels="True" CornerRadius="0">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <Custom:Bind  Path="Tags.Node[view.network].Items[net_plc1].Value">
+                            <Custom:Bind.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </Custom:Bind.FallbackValue>
+                        </Custom:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="6" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="92" Canvas.Left="23" Canvas.Top="768" SnapsToDevicePixels="True" CornerRadius="0" RenderTransformOrigin="0.5,0.5">
+            <se:VisualBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </se:VisualBox.RenderTransform>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <Custom:Bind  Path="Tags.Node[view.network].Items[net_plc1].Value">
+                            <Custom:Bind.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </Custom:Bind.FallbackValue>
+                        </Custom:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="6" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="92" Canvas.Left="141" Canvas.Top="748" SnapsToDevicePixels="True" CornerRadius="0" RenderTransformOrigin="0.5,0.5">
+            <se:VisualBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </se:VisualBox.RenderTransform>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <Custom:Bind  Path="Tags.Node[view.network].Items[net_plc1].Value">
+                            <Custom:Bind.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </Custom:Bind.FallbackValue>
+                        </Custom:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="6" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="92" Canvas.Left="413" Canvas.Top="748" SnapsToDevicePixels="True" CornerRadius="0" RenderTransformOrigin="0.5,0.5">
+            <se:VisualBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </se:VisualBox.RenderTransform>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <Custom:Bind  Path="Tags.Node[view.network].Items[net_plc1].Value">
+                            <Custom:Bind.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </Custom:Bind.FallbackValue>
+                        </Custom:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="6" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="98" Canvas.Left="751" Canvas.Top="640" SnapsToDevicePixels="True" CornerRadius="0" RenderTransformOrigin="0.5,0.5">
+            <se:VisualBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </se:VisualBox.RenderTransform>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <Custom:Bind  Path="Tags.Node[view.network].Items[net_plc1].Value">
+                            <Custom:Bind.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </Custom:Bind.FallbackValue>
+                        </Custom:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="6" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="275" Canvas.Left="760" Canvas.Top="508" SnapsToDevicePixels="True" CornerRadius="0">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <Custom:Bind Path="Tags.Node[view.main_drives.tds.vfd].Items[icmp].Value">
+                            <Custom:Bind.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </Custom:Bind.FallbackValue>
+                        </Custom:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="5" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="428" Canvas.Left="670" Canvas.Top="295" SnapsToDevicePixels="True" CornerRadius="0">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <Custom:Bind Path="Tags.Node[view.main_drives.tds].Items[online].Value">
+                            <Custom:Bind.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </Custom:Bind.FallbackValue>
+                        </Custom:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="6" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="66" Canvas.Left="628" Canvas.Top="205" SnapsToDevicePixels="True" CornerRadius="0" RenderTransformOrigin="0.5,0.5">
+            <se:VisualBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </se:VisualBox.RenderTransform>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <Custom:Bind  Path="Tags.Node[view.network].Items[net_plc1].Value">
+                            <Custom:Bind.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </Custom:Bind.FallbackValue>
+                        </Custom:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="4" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="149" Canvas.Left="69" Canvas.Top="273" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" CornerRadius="0">
+            <se:VisualBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </se:VisualBox.RenderTransform>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <Custom:Bind  Path="Tags.Node[view.network].Items[net_dc1].Value">
+                            <Custom:Bind.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </Custom:Bind.FallbackValue>
+                        </Custom:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="4" Background="{StaticResource GreenBusBrush}" VerticalAlignment="Top" Width="146" Canvas.Left="250" Canvas.Top="273" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" CornerRadius="0">
+            <se:VisualBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </se:VisualBox.RenderTransform>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" />
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="6" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="276" Canvas.Left="316" Canvas.Top="564" SnapsToDevicePixels="True" CornerRadius="0" RenderTransformOrigin="0.5,0.5">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <Custom:Bind  Path="Tags.Node[view.helperdrawwork1.vfd].Items[icmp].Value">
+                            <Custom:Bind.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </Custom:Bind.FallbackValue>
+                        </Custom:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="6" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="88" Canvas.Left="956" Canvas.Top="671" SnapsToDevicePixels="True" CornerRadius="0" RenderTransformOrigin="0.5,0.5">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <Custom:Bind  Path="Tags.Node[view.main_drives.aux.vfd].Items[icmp].Value">
+                            <Custom:Bind.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </Custom:Bind.FallbackValue>
+                        </Custom:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="5" Background="{StaticResource GreenBusBrush}" VerticalAlignment="Top" Width="135" Canvas.Left="624" Canvas.Top="564" SnapsToDevicePixels="True" CornerRadius="0">
+
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="6" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="224" Canvas.Left="811" Canvas.Top="564" SnapsToDevicePixels="True" CornerRadius="0">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <Custom:Bind  Path="Tags.Node[view.main_drives.drawwork.motor1.vfd].Items[icmp].Value">
+                            <Custom:Bind.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </Custom:Bind.FallbackValue>
+                        </Custom:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="6" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="151" Canvas.Left="811" Canvas.Top="594" SnapsToDevicePixels="True" CornerRadius="0" RenderTransformOrigin="0.5,0.5">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <Custom:Bind  Path="Tags.Node[view.main_drives.aux.vfd].Items[icmp].Value">
+                            <Custom:Bind.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </Custom:Bind.FallbackValue>
+                        </Custom:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="6" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="82" Canvas.Left="918" Canvas.Top="632" SnapsToDevicePixels="True" CornerRadius="0" RenderTransformOrigin="0.5,0.5">
+            <se:VisualBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </se:VisualBox.RenderTransform>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <Custom:Bind  Path="Tags.Node[view.main_drives.aux.vfd].Items[icmp].Value">
+                            <Custom:Bind.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </Custom:Bind.FallbackValue>
+                        </Custom:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <Rectangle Stroke="#FF000000" Height="406" StrokeThickness="2" StrokeDashArray="4 4" SnapsToDevicePixels="True" Width="2" Canvas.Left="241" Canvas.Top="419"/>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="6" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="98" Canvas.Left="721" Canvas.Top="640" SnapsToDevicePixels="True" CornerRadius="0" RenderTransformOrigin="0.5,0.5">
+            <se:VisualBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </se:VisualBox.RenderTransform>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <Custom:Bind  Path="Tags.Node[view.network].Items[net_plc1].Value">
+                            <Custom:Bind.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </Custom:Bind.FallbackValue>
+                        </Custom:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+
+        <Image Source="/VFD;component/Content/Network/moxa-EDS-508.png" SnapsToDevicePixels="True" Height="125" Canvas.Left="629" Canvas.Top="230" Width="65"/>
+        <Image Source="/VFD;component/Content/Network/red-circle.png" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" Height="94" Canvas.Left="614" Canvas.Top="249" Width="94">
+            <Image.Visibility>
+                <Custom:Bind Path="Tags.Node[view.network].Items[net_swt3].Value">
+                    <Custom:Bind.Converter>
+                        <Custom:BoolToVisibilityConverter FalseValue="Visible" TrueValue="Hidden"/>
+                    </Custom:Bind.Converter>
+                    <Custom:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </Custom:Bind.FallbackValue>
+                </Custom:Bind>
+            </Image.Visibility>
+        </Image>
+        <Image Source="/VFD;component/Content/Network/moxa-EDS-508.png" SnapsToDevicePixels="True" Height="125" Canvas.Left="568" Canvas.Top="487" Width="65"/>
+        <Image Source="/VFD;component/Content/Network/red-circle.png" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" Height="95" Canvas.Left="554" Canvas.Top="505" Width="94">
+            <Image.Visibility>
+                <Custom:Bind Path="Tags.Node[view.network].Items[net_swt1].Value">
+                    <Custom:Bind.Converter>
+                        <Custom:BoolToVisibilityConverter FalseValue="Visible" TrueValue="Hidden"/>
+                    </Custom:Bind.Converter>
+                    <Custom:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </Custom:Bind.FallbackValue>
+                </Custom:Bind>
+            </Image.Visibility>
+        </Image>
+        <Image Source="/VFD;component/Content/Network/moxa-EDS-508.png" SnapsToDevicePixels="True" Height="125" Canvas.Left="749" Canvas.Top="487" Width="65"/>
+        <Image Source="/VFD;component/Content/Network/red-circle.png" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" Height="95" Canvas.Left="735" Canvas.Top="505" Width="95">
+            <Image.Visibility>
+                <Custom:Bind Path="Tags.Node[view.network].Items[net_swt2].Value">
+                    <Custom:Bind.Converter>
+                        <Custom:BoolToVisibilityConverter FalseValue="Visible" TrueValue="Hidden"/>
+                    </Custom:Bind.Converter>
+                    <Custom:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </Custom:Bind.FallbackValue>
+                </Custom:Bind>
+            </Image.Visibility>
+        </Image>
+        <Image Source="/VFD;component/Content/Network/moxa-EDS-508.png" SnapsToDevicePixels="True" Height="125" Canvas.Left="203" Canvas.Top="245" Width="65"/>
+        <Image Source="/VFD;component/Content/Network/red-circle.png" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" Height="95" Canvas.Left="186" Canvas.Top="265" Width="94">
+            <Image.Visibility>
+                <Custom:Bind Path="Tags.Node[view.network].Items[net_swt4].Value">
+                    <Custom:Bind.Converter>
+                        <Custom:BoolToVisibilityConverter FalseValue="Visible" TrueValue="Hidden"/>
+                    </Custom:Bind.Converter>
+                    <Custom:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </Custom:Bind.FallbackValue>
+                </Custom:Bind>
+            </Image.Visibility>
+        </Image>
+        <Image Source="/VFD;component/Content/Network/et200-9.png" SnapsToDevicePixels="True" Canvas.Left="614" Canvas.Top="104" Height="78" Width="284"/>
+        <Image Source="/VFD;component/Content/Network/red-circle.png" SnapsToDevicePixels="True" Canvas.Left="629" Canvas.Top="98" Height="94" Width="94">
+            <Image.Visibility>
+                <Custom:Bind Path="Tags.Node[view.network].Items[akl].Value">
+                    <Custom:Bind.Converter>
+                        <Custom:BoolToVisibilityConverter FalseValue="Visible" TrueValue="Hidden"/>
+                    </Custom:Bind.Converter>
+                    <Custom:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </Custom:Bind.FallbackValue>
+                </Custom:Bind>
+            </Image.Visibility>
+        </Image>
+        <Image Source="/VFD;component/Content/Network/et200-3.png" SnapsToDevicePixels="True" Height="78" Canvas.Left="733" Canvas.Top="692" Width="146"/>
+        <Image Source="/VFD;component/Content/Network/red-circle.png" SnapsToDevicePixels="True" Height="94" Canvas.Left="768" Canvas.Top="682" Width="94">
+            <Image.Visibility>
+                <Custom:Bind  Path="Tags.Node[view.network].Items[net_plc1].Value">
+                    <Custom:Bind.Converter>
+                        <Custom:BoolToVisibilityConverter FalseValue="Visible" TrueValue="Hidden"/>
+                    </Custom:Bind.Converter>
+                    <Custom:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </Custom:Bind.FallbackValue>
+                </Custom:Bind>
+            </Image.Visibility>
+        </Image>
+
+        <Image HorizontalAlignment="Left" Source="/VFD;component/Content/Network/abb_panel.png" Height="76" VerticalAlignment="Top" Width="42" Canvas.Left="1020" Canvas.Top="543"/>
+        <Image HorizontalAlignment="Left" Source="/VFD;component/Content/Network/abb_panel.png" Height="76" VerticalAlignment="Top" Width="42" Canvas.Left="1020" Canvas.Top="451"/>
+        <Image Source="/VFD;component/Content/Network/modbus.png" SnapsToDevicePixels="True" Height="78" Canvas.Left="567" Canvas.Top="692" Width="62"/>
+        <Image Height="70" Canvas.Left="346" Canvas.Top="111" Width="97" Source="/VFD;component/Content/Network/hmi.png" SnapsToDevicePixels="True"/>
+        <Image Height="75" Canvas.Left="31" Canvas.Top="106" Width="80" Source="/VFD;component/Content/Network/dc.png" SnapsToDevicePixels="True"/>
+        <Image Height="75" Canvas.Left="199" Canvas.Top="106" Width="80" Source="/VFD;component/Content/Network/dc.png" SnapsToDevicePixels="True"/>
+        <Image Height="100" Canvas.Left="21" Canvas.Top="96" Width="100" Source="/VFD;component/Content/Network/red-circle.png" SnapsToDevicePixels="True">
+            <Image.Visibility>
+                <Custom:Bind  Path="Tags.Node[view.network].Items[net_dc1].Value">
+                    <Custom:Bind.Converter>
+                        <Custom:BoolToVisibilityConverter FalseValue="Visible" TrueValue="Hidden"/>
+                    </Custom:Bind.Converter>
+                    <Custom:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </Custom:Bind.FallbackValue>
+                </Custom:Bind>
+            </Image.Visibility>
+        </Image>
+        <Image Height="100" Canvas.Left="189" Canvas.Top="94" Width="100" Source="/VFD;component/Content/Network/red-circle.png" SnapsToDevicePixels="True">
+            <Image.Visibility>
+                <Custom:Bind  Path="Tags.Node[view.network].Items[net_dc2].Value">
+                    <Custom:Bind.Converter>
+                        <Custom:BoolToVisibilityConverter FalseValue="Visible" TrueValue="Hidden"/>
+                    </Custom:Bind.Converter>
+                    <Custom:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </Custom:Bind.FallbackValue>
+                </Custom:Bind>
+            </Image.Visibility>
+        </Image>
+        <TextBlock Canvas.Left="36" TextWrapping="Wrap" Text="АОП1&#xA;(192.168.1.1)" FontSize="20" Canvas.Top="43" SnapsToDevicePixels="True"/>
+        <Image Source="/VFD;component/Content/Network/modbus.png" SnapsToDevicePixels="True" Height="78" Canvas.Left="1075" Canvas.Top="258" Width="62"/>
+        <Image Source="/VFD;component/Content/Network/sirius.png" SnapsToDevicePixels="True" Height="78" Canvas.Left="28" Canvas.Top="692" Width="81"/>
+        <Image Source="/VFD;component/Content/Network/BCT-3.png" SnapsToDevicePixels="True" Height="78" Canvas.Left="132" Canvas.Top="692" Width="81"/>
+        <Image Source="/VFD;component/Content/Network/abb-dtme-i-485-96.png" SnapsToDevicePixels="True" Height="64" Canvas.Left="419" Canvas.Top="692" Width="81"/>
+        <Image Height="100" Canvas.Left="17" Canvas.Top="682" Width="100" Source="/VFD;component/Content/Network/red-circle.png" SnapsToDevicePixels="True">
+            <Image.Visibility>
+                <Custom:Bind Path="Tags.Node[view.kru].Items[online].Value">
+                    <Custom:Bind.Converter>
+                        <Custom:BoolToVisibilityConverter FalseValue="Visible" TrueValue="Hidden"/>
+                    </Custom:Bind.Converter>
+                    <Custom:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </Custom:Bind.FallbackValue>
+                </Custom:Bind>
+            </Image.Visibility>
+        </Image>
+        <Image Height="100" Canvas.Left="132" Canvas.Top="682" Width="100" Source="/VFD;component/Content/Network/red-circle.png" SnapsToDevicePixels="True">
+            <Image.Visibility>
+                <Custom:Bind Path="Tags.Node[view.bkt1].Items[online].Value">
+                    <Custom:Bind.Converter>
+                        <Custom:BoolToVisibilityConverter FalseValue="Hidden" TrueValue="Visible"/>
+                    </Custom:Bind.Converter>
+                    <Custom:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </Custom:Bind.FallbackValue>
+                </Custom:Bind>
+            </Image.Visibility>
+        </Image>
+        <Image Height="100" Canvas.Left="409" Canvas.Top="682" Width="100" Source="/VFD;component/Content/Network/red-circle.png" SnapsToDevicePixels="True">
+            <Image.Visibility>
+                <Custom:Bind Path="Tags.Node[view.multimetr2].Items[online].Value">
+                    <Custom:Bind.Converter>
+                        <Custom:BoolToVisibilityConverter FalseValue="Visible" TrueValue="Hidden"/>
+                    </Custom:Bind.Converter>
+                    <Custom:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </Custom:Bind.FallbackValue>
+                </Custom:Bind>
+            </Image.Visibility>
+        </Image>
+        <Image Height="100" Canvas.Left="551" Canvas.Top="682" Width="100" Source="/VFD;component/Content/Network/red-circle.png" SnapsToDevicePixels="True">
+            <Image.Visibility>
+                <Custom:Bind Path="Tags.Node[view.network].Items[mgate].Value">
+                    <Custom:Bind.Converter>
+                        <Custom:BoolToVisibilityConverter FalseValue="Visible" TrueValue="Collapsed"/>
+                    </Custom:Bind.Converter>
+                    <Custom:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </Custom:Bind.FallbackValue>
+                </Custom:Bind>
+            </Image.Visibility>
+        </Image>
+        <Image Height="100" Canvas.Left="990" Canvas.Top="538" Width="100" Source="/VFD;component/Content/Network/red-circle.png" SnapsToDevicePixels="True">
+            <Image.Visibility>
+                <Custom:Bind Path="Tags.Node[view.main_drives.drawwork.motor1.vfd].Items[icmp].Value">
+                    <Custom:Bind.Converter>
+                        <Custom:BoolToVisibilityConverter FalseValue="Visible" TrueValue="Hidden"/>
+                    </Custom:Bind.Converter>
+                    <Custom:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </Custom:Bind.FallbackValue>
+                </Custom:Bind>
+            </Image.Visibility>
+        </Image>
+        <Image Height="100" Canvas.Left="990" Canvas.Top="436" Width="100" Source="/VFD;component/Content/Network/red-circle.png" SnapsToDevicePixels="True">
+            <Image.Visibility>
+                <Custom:Bind Path="Tags.Node[view.main_drives.tds.vfd].Items[icmp].Value">
+                    <Custom:Bind.Converter>
+                        <Custom:BoolToVisibilityConverter FalseValue="Visible" TrueValue="Hidden"/>
+                    </Custom:Bind.Converter>
+                    <Custom:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </Custom:Bind.FallbackValue>
+                </Custom:Bind>
+            </Image.Visibility>
+        </Image>
+        <Image HorizontalAlignment="Left" Source="/VFD;component/Content/Network/abb_panel.png" Height="76" VerticalAlignment="Top" Width="42" Canvas.Left="1020" Canvas.Top="650"/>
+        <Image HorizontalAlignment="Left" Source="/VFD;component/Content/Network/abb_panel.png" Height="76" VerticalAlignment="Top" Width="42" Canvas.Left="289" Canvas.Top="528"/>
+        <Image Height="100" Canvas.Left="990" Canvas.Top="641" Width="100" Source="/VFD;component/Content/Network/red-circle.png" SnapsToDevicePixels="True">
+            <Image.Visibility>
+                <Custom:Bind Path="Tags.Node[view.main_drives.aux.vfd].Items[icmp].Value">
+                    <Custom:Bind.Converter>
+                        <Custom:BoolToVisibilityConverter FalseValue="Visible" TrueValue="Hidden"/>
+                    </Custom:Bind.Converter>
+                    <Custom:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </Custom:Bind.FallbackValue>
+                </Custom:Bind>
+            </Image.Visibility>
+        </Image>
+        <Image Height="100" Canvas.Left="258" Canvas.Top="516" Width="100" Source="/VFD;component/Content/Network/red-circle.png" SnapsToDevicePixels="True">
+            <Image.Visibility>
+                <Custom:Bind Path="Tags.Node[view.helperdrawwork1.vfd].Items[icmp].Value">
+                    <Custom:Bind.Converter>
+                        <Custom:BoolToVisibilityConverter FalseValue="Visible" TrueValue="Hidden"/>
+                    </Custom:Bind.Converter>
+                    <Custom:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </Custom:Bind.FallbackValue>
+                </Custom:Bind>
+            </Image.Visibility>
+        </Image>
+        <TextBlock Canvas.Left="253" TextWrapping="Wrap" Text="SWT4&#xA;(192.168.2.60)" Canvas.Top="196" SnapsToDevicePixels="True" FontSize="20"/>
+        <TextBlock Canvas.Left="695" TextWrapping="Wrap" Text="SWT3&#xA;(192.168.2.50)" Canvas.Top="187" SnapsToDevicePixels="True" FontSize="20"/>
+        <TextBlock Canvas.Left="614" TextWrapping="Wrap" Text="ET200M&#xA;(192.168.1.5)" Canvas.Top="41" SnapsToDevicePixels="True" FontSize="20"/>
+        <TextBlock Canvas.Left="794" TextWrapping="Wrap" Text="SWT2&#xA;(192.168.2.151)" Canvas.Top="439" SnapsToDevicePixels="True" FontSize="20"/>
+        <TextBlock Canvas.Left="614" TextWrapping="Wrap" Text="SWT1&#xA;(192.168.2.150)" Canvas.Top="439" SnapsToDevicePixels="True" FontSize="20"/>
+        <TextBlock Canvas.Left="341" TextWrapping="Wrap" Text="ВСПОМ. ЛЕБЕДКА&#xA;(192.168.1.24)" Canvas.Top="507" SnapsToDevicePixels="True" FontSize="20"/>
+        <TextBlock Canvas.Left="817" TextWrapping="Wrap" Text="CPU343-1&#xA;(192.168.2.16)" Canvas.Top="773" SnapsToDevicePixels="True" FontSize="20" TextAlignment="Center"/>
+        <TextBlock Canvas.Left="1080" TextWrapping="Wrap" Text="ДОП. ПРИВОД&#xA;(192.168.1.9)" Canvas.Top="663" SnapsToDevicePixels="True" FontSize="20"/>
+        <TextBlock Canvas.Left="35" TextWrapping="Wrap" Text="СИРИУС&#xA;(1)" Canvas.Top="633" SnapsToDevicePixels="True" FontSize="20"/>
+        <TextBlock Canvas.Left="143" TextWrapping="Wrap" Text="БКТ&#xA;(200)" Canvas.Top="633" SnapsToDevicePixels="True" FontSize="20"/>
+        <TextBlock Canvas.Left="411" TextWrapping="Wrap" Text="МУЛЬТИМЕТР &#xD;&#xA;~400В (102)" Canvas.Top="633" SnapsToDevicePixels="True" FontSize="20"/>
+        <TextBlock Canvas.Left="611" TextWrapping="Wrap" Text="M-GATE&#xA;(192.168.1.20)" Canvas.Top="633" SnapsToDevicePixels="True" FontSize="20"/>
+        <TextBlock Canvas.Left="1080" TextWrapping="Wrap" Text="ЛЕБЕДКА&#xA;(192.168.1.12)" Canvas.Top="557" SnapsToDevicePixels="True" FontSize="20"/>
+        <TextBlock Canvas.Left="1080" TextWrapping="Wrap" Text="ВСП&#xA;(192.168.1.29)" Canvas.Top="462" SnapsToDevicePixels="True" FontSize="20"/>
+        <TextBlock Canvas.Left="198" TextWrapping="Wrap" Text="АОП2&#xA;(192.168.1.2)" Canvas.Top="43" SnapsToDevicePixels="True" FontSize="20"/>
+        <TextBlock Canvas.Left="335" TextWrapping="Wrap" Text="MONITOR&#xA;(192.168.1.3)" Canvas.Top="43" SnapsToDevicePixels="True" FontSize="20"/>
+        <TextBlock Canvas.Left="346" TextWrapping="Wrap" Text="ОТСЕК РУ0,4кВ - ЧП" Canvas.Top="427" SnapsToDevicePixels="True" FontSize="20"/>
+        <TextBlock Canvas.Left="72" TextWrapping="Wrap" Text="ОТСЕК КРУ" Canvas.Top="427" SnapsToDevicePixels="True" FontSize="20"/>
+        <TextBlock Canvas.Left="415" TextWrapping="Wrap" Text="КАБИНА" SnapsToDevicePixels="True" FontSize="20" Canvas.Top="4"/>
+        <TextBlock Canvas.Left="847" TextWrapping="Wrap" Text="ШКАФ АКЛ" SnapsToDevicePixels="True" FontSize="20" Canvas.Top="4"/>
+        <Image Source="/VFD;component/Content/Network/red-circle.png" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" Height="94" Canvas.Left="1059" Canvas.Top="250" Width="94">
+            <Image.Visibility>
+                <Custom:Bind Path="Tags.Node[view.main_drives.tds].Items[online].Value">
+                    <Custom:Bind.Converter>
+                        <Custom:BoolToVisibilityConverter FalseValue="Visible" TrueValue="Hidden"/>
+                    </Custom:Bind.Converter>
+                    <Custom:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </Custom:Bind.FallbackValue>
+                </Custom:Bind>
+            </Image.Visibility>
+        </Image>
+        <TextBlock Canvas.Left="1049" TextWrapping="Wrap" Text="ВСП&#xA;(192.168.1.18)" Canvas.Top="191" SnapsToDevicePixels="True" FontSize="20"/>
+        <TextBlock Canvas.Left="669" TextWrapping="Wrap" Text="CPU319&#xA;(192.168.1.16)" Canvas.Top="773" SnapsToDevicePixels="True" FontSize="20" TextAlignment="Center"/>
+        <TextBlock Canvas.Left="1070" TextWrapping="Wrap" Text="ВЕРХНИЙ ПРИВОД" SnapsToDevicePixels="True" FontSize="20" Canvas.Top="4"/>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="6" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="92" Canvas.Left="263" Canvas.Top="748" SnapsToDevicePixels="True" CornerRadius="0" RenderTransformOrigin="0.5,0.5">
+            <se:VisualBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </se:VisualBox.RenderTransform>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <Custom:Bind  Path="Tags.Node[view.network].Items[net_plc1].Value">
+                            <Custom:Bind.FallbackValue>
+                                <System:Boolean>False</System:Boolean>
+                            </Custom:Bind.FallbackValue>
+                        </Custom:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <Image Source="/VFD;component/Content/Network/abb-dtme-i-485-96.png" SnapsToDevicePixels="True" Height="64" Canvas.Left="268" Canvas.Top="692" Width="81"/>
+        <Image Height="100" Canvas.Left="259" Canvas.Top="682" Width="100" Source="/VFD;component/Content/Network/red-circle.png" SnapsToDevicePixels="True">
+            <Image.Visibility>
+                <Custom:Bind Path="Tags.Node[view.multimetr1].Items[online].Value">
+                    <Custom:Bind.Converter>
+                        <Custom:BoolToVisibilityConverter FalseValue="Visible" TrueValue="Hidden"/>
+                    </Custom:Bind.Converter>
+                    <Custom:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </Custom:Bind.FallbackValue>
+                </Custom:Bind>
+            </Image.Visibility>
+        </Image>
+        <TextBlock Canvas.Left="259" TextWrapping="Wrap" Text="МУЛЬТИМЕТР&#xA;~690В (101)" Canvas.Top="633" SnapsToDevicePixels="True" FontSize="20"/>
+        <TextBlock Canvas.Left="1128" TextWrapping="Wrap" Text="МОДУЛЬ ЭО" SnapsToDevicePixels="True" FontSize="20" Canvas.Top="389"/>
+    </Canvas>
+</UserControl>

@@ -1,0 +1,118 @@
+﻿<UserControl x:Class="NGO.Elements.Special.Calibration.CalibrationVertical"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:se="http://schemas.monokot.com/se/"
+             xmlns:oxy="http://oxyplot.org/wpf"
+             mc:Ignorable="d" Width="Auto" Height="Auto" Name="_uc" Loaded="_uc_Loaded" d:DesignWidth="400" d:DesignHeight="600">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!--<ResourceDictionary Source="../../style/style.xaml"/>-->
+            </ResourceDictionary.MergedDictionaries>
+            <DataTemplate x:Key="calibration_item_template">
+                <Grid Visibility="{Binding Visibility}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.Background>
+                        <RadialGradientBrush>
+                            <RadialGradientBrush.RelativeTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1.702" ScaleY="2.243"/>
+                                    <SkewTransform AngleX="0" AngleY="0"/>
+                                    <RotateTransform Angle="0"/>
+                                    <TranslateTransform X="0" Y="0"/>
+                                </TransformGroup>
+                            </RadialGradientBrush.RelativeTransform>
+                            <GradientStop Color="#7F000000" Offset="0"/>
+                            <GradientStop Color="#FFADADAD" Offset="1"/>
+                        </RadialGradientBrush>
+                    </Grid.Background>
+                    <Grid Margin="5,5,0,5" Grid.Column="0" Visibility="{Binding ElementName=_uc, Path=axisXvisibility}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="60" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBox Name="x_txtbx" FontSize="16" Text="{Binding x,StringFormat=0.##, UpdateSourceTrigger=PropertyChanged}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="0"/>
+                        <Button Margin="5,0,5,0" Grid.Column="1" Command="{Binding ElementName=x_keypad, Path=ShowKeypadCmd}" Visibility="{Binding xEditorVisible}">
+                            <Button.Content>
+                                <Image Source="/NGO.Elements;component/Content/Icon/calc-icon.png"/>
+                            </Button.Content>
+                        </Button>
+                        <se:CtrlKeypad Name="x_keypad" Value="{Binding x}" EnterCommand="{Binding xWrite}" Multiplier="{Binding xMulFactor}" WindowTitle="ВВЕДИТЕ ЗНАЧЕНИЕ" WindowMessage="">
+                            <!--<keypad:CtrlKeypad.validationRules>
+                                <rules:RangeValidationRule maximumValue="{Binding ElementName=_uc, Path=maximumX}" minimumValue="{Binding ElementName=_uc, Path=minimumX}"/>
+                            </keypad:CtrlKeypad.validationRules>-->
+                        </se:CtrlKeypad>
+                        <TextBlock Margin="5,0,5,0" Grid.Column="2" FontSize="14" Text="{Binding ElementName=_uc, Path=titleAxisX}" HorizontalAlignment="Stretch" VerticalAlignment="Center" FontFamily="Tahoma"/>
+                    </Grid>
+                    <Grid Margin="5,5,0,5" Grid.Column="1" Visibility="{Binding ElementName=_uc, Path=axisYvisibility}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="60" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBox Name="y_txtbx" FontSize="16" Text="{Binding y, StringFormat=0.#, UpdateSourceTrigger=PropertyChanged}" Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                        <Button Margin="5,0,5,0" Grid.Column="1" Command="{Binding ElementName=y_keypad, Path=ShowKeypadCmd}"  Visibility="{Binding yEditorVisible}">
+                            <Button.Content>
+                                <Image Source="/NGO.Elements;component/Content/Icon/calc-icon.png"/>
+                            </Button.Content>
+                        </Button>
+                        <se:CtrlKeypad x:Name="y_keypad" Value="{Binding y}" EnterCommand="{Binding yWrite}" Multiplier="{Binding yMulFactor}"  WindowTitle="ВВЕДИТЕ ЗНАЧЕНИЕ" WindowMessage="">
+                            <!--<keypad:CtrlKeypad.validationRules>
+                                <rules:RangeValidationRule maximumValue="" minimumValue="{Binding ElementName=_uc, Path=minimumY}"/>
+                            </keypad:CtrlKeypad.validationRules>-->
+                        </se:CtrlKeypad>
+                        <TextBlock Margin="5,0,5,0" Grid.Column="2" FontSize="14" Text="{Binding ElementName=_uc, Path=titleAxisY}" HorizontalAlignment="Stretch"   VerticalAlignment="Center" FontFamily="Tahoma"/>
+                    </Grid>
+                </Grid>
+            </DataTemplate>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid Name="root">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="4*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200*" />
+        </Grid.ColumnDefinitions>
+        <ListBox Visibility="Visible" Name="lst" ItemTemplate="{StaticResource calibration_item_template}" ItemsSource="{Binding points}" HorizontalContentAlignment="Stretch" Background="{x:Null}" Margin="0" Grid.Row="1"/>
+        <oxy:PlotView Name="plot" Grid.Row="0" Background="{x:Null}" Model="{Binding plotModel}" Grid.Column="1" Margin="0.5,0,-6,0"/>
+
+        <Grid Grid.Row="2" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Name="saveAsDefBtn" Command="{Binding saveFileCmd}"  FontSize="16">
+                <Button.Content>
+                    <TextBlock Text="Сохранить как значения&#xA;по-умолчанию" TextWrapping="Wrap" TextAlignment="Center" FontFamily="Tahoma" Foreground="Black" />
+                </Button.Content>
+            </Button>
+            <Button Grid.Column="1" Name="loadDefBtn" Command="{Binding loadFileCmd}"  FontSize="16">
+                <Button.Content>
+                    <TextBlock Text="Загрузить значения&#xA;по-умолчанию" TextWrapping="Wrap" TextAlignment="Center" FontFamily="Tahoma" Foreground="Black" />
+                </Button.Content>
+            </Button>
+            <!--<Button Height="60" HorizontalAlignment="Left" Name="writeToPLCButton" VerticalAlignment="Top" Width="190" Command="{Binding writeCmd}" Margin="15,5,0,0" Click="WriteToPLCButton_Click"  FontSize="16">
+                <Button.Content>
+                    <TextBlock Text="Сохранить значения(записать в ПЛК)" TextWrapping="Wrap" TextAlignment="Center" FontFamily="Tahoma" Foreground="Black" />
+                </Button.Content>
+            </Button>-->
+            <Button Visibility="Collapsed" Height="60" HorizontalAlignment="Left" Name="CancelButton" VerticalAlignment="Top" Width="190" Margin="15,5,0,-2" Click="CancelButton_Click"  FontSize="16">
+                <Button.Content>
+                    <TextBlock Text="Закрыть" TextWrapping="Wrap" TextAlignment="Center" FontFamily="Tahoma" Foreground="Black" />
+                </Button.Content>
+            </Button>
+        </Grid>
+        <!--<Button Content="test feedback" Height="60" HorizontalAlignment="Left" Name="button3" VerticalAlignment="Top" Width="92" Click="button3_Click" Margin="15,5,0,0"  Foreground="White" />-->
+
+    </Grid>
+</UserControl>

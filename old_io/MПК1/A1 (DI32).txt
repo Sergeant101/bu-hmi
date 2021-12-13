@@ -1,0 +1,128 @@
+﻿311002
+8
+lang|RU|0 (:2 ) В контейнере КТУ включен автоматический выключатель QF1 питания выпрямителя
+lang|EN|0 (:2 ) Circuit breaker QF1 DSU POWER is switched on in the VFD-house
+311002
+9
+lang|RU|1 (:3 ) В контейнере КТУ включен автоматический выключатель QF2 питания выпрямителя
+lang|EN|1 (:3 ) Circuit breaker QF2 DSU POWER is switched on in the VFD-house
+311002
+10
+lang|RU|2 (:4 ) Отжата аварийная кнопка SB1 контейнера КТУ (реле 1К7 цепи нулевого расцепителя)
+lang|EN|2 (:4 ) Not push button "Stop mud pump 3" on drillers console
+311002
+11
+lang|RU|3 (:5 ) Отжата аварийная кнопка SB2 контейнера КТУ (реле 1К8 цепи нулевого расцепителя)
+lang|EN|3 (:5 ) Rotation Rotary to rigth on drillers console
+311002
+12
+lang|RU|4 (:6 ) Нет сигнала "Пожар" пожарной сигнализации ПС контейнера КТУ (реле 1К9 цепи нулевого расцепителя)
+lang|EN|4 (:6 ) Rotation Rotary to left on drillers console
+311002
+13
+lang|RU|5 (:7 ) Нет сигнала "Перегрев" датчика температуры ДТ контейнера КТУ (реле 1К10 цепи нулевого расцепителя)
+lang|EN|5 (:7 ) Lever pushed of top drive
+311002
+14
+lang|RU|6 (:8 ) Отжата аварийная кнопка SB3 контейнера КТУ (реле 1К11 цепи нулевого расцепителя)
+lang|EN|6 (:8 ) IBOP of Top drive closed
+311002
+15
+lang|RU|7 (:9 ) Контроль исправности блоков управления КРУ1
+lang|EN|7 (:9 ) Pipe grab of Top drive closed
+311002
+0
+lang|RU|0 (:12 ) Тормозной блок ТБ1 готов
+lang|EN|0 (:12 ) Add speed of mud pump 1 on drillers console
+311002
+1
+lang|RU|1 (:13 ) Тормозной блок ТБ2 готов
+lang|EN|1 (:13 ) Reduce speed of mud pump 1 on drillers console
+311002
+2
+lang|RU|2 (:14 ) Отжата аварийная кнопка SB3 в кабине бурильщика (реле 1К2 цепи нулевого расцепителя)
+lang|EN|2 (:14 ) Add speed of mud pump 2 on drillers console
+311002
+3
+lang|RU|3 (:15 ) Включен автоматический выключатель 42QF1 "Питание 400В контейнера КТУ"
+lang|EN|3 (:15 ) Reduce speed of mud pump 2 on drillers console
+311002
+4
+lang|RU|4 (:16 ) Резерв
+lang|EN|4 (:16 ) Add speed of mud pump 3 on drillers console
+311002
+5
+lang|RU|5 (:17 ) В КРУ включен вакуумный выключатель Q1 питания трансформатора Т1-400В (реле К104)
+lang|EN|5 (:17 ) Reduce speed of mud pump 3  on drillers console
+311002
+6
+lang|RU|6 (:18 ) Нет неисправности блок контроля температур БКТ трансформатора Т1-400В (реле 14К1)
+lang|EN|6 (:18 ) Not emergency stop of mud pumps on drillers console
+311002
+7
+lang|RU|7 (:19 ) Перегрев трансформатора Т1-400В (реле 14К2)
+lang|EN|7 (:19 ) Not push button "Drawwarks brake" on drillers console
+311003
+8
+lang|RU|0 (:22 ) Авария трансформатора Т1-400В (реле 14К3)
+lang|EN|0 (:22 ) Switch on "Start/Unlock"of Rotor on drillers console
+311003
+9
+lang|RU|1 (:23 ) Блокировка дверей трансформатора Т1-400В (реле 14К5)
+lang|EN|1 (:23 ) Switch on "Stop"of Rotor on drillers console
+311003
+10
+lang|RU|2 (:24 ) Включен режим отключения трансформатора Т1-400В от АСУ (Переключатель SA1 шкафа МПК1)
+lang|EN|2 (:24 ) Increase speed of Rotor on drillers console
+311003
+11
+lang|RU|3 (:25 ) В КРУ включен вакуумный выключатель Q2 питания трансформатора Т2-690В (реле К106)
+lang|EN|3 (:25 ) Reduce speed of  Rotor on drillers console
+311003
+12
+lang|RU|4 (:26 ) Нет неисправности блок контроля температур БКТ трансформатора Т2-690В (реле 13К1)
+lang|EN|4 (:26 ) Increase torque of Rotor on drillers console
+311003
+13
+lang|RU|5 (:27 ) Перегрев трансформатора Т2-690В (реле 13К2)
+lang|EN|5 (:27 ) Reduce torque of  Rotor on drillers console
+311003
+14
+lang|RU|6 (:28 ) Авария трансформатора Т2-690В (реле 13К3)
+lang|EN|6 (:28 ) Not a raised rotary table
+311003
+15
+lang|RU|7 (:29 ) Блокировка дверей трансформатора Т2-690В (реле 13К5)
+lang|EN|7 (:29 ) Air pressure sensor MR ON
+311003
+0
+lang|RU|0 (:32 ) В КРУ включен вакуумный выключатель Q3 питания трансформатора Т3-СВП (реле К107)
+lang|EN|0 (:32 ) Push button "Start/Unlock" main drive drawworks
+311003
+1
+lang|RU|1 (:33 ) Нет неисправности блок контроля температур БКТ трансформатора Т3-СВП (реле 93К1)
+lang|EN|1 (:33 ) Not push button "Stop" main drive drawworks
+311003
+2
+lang|RU|2 (:34 ) Перегрев трансформатора Т3-СВП (реле 93К2)
+lang|EN|2 (:34 ) Push button "Start/Unlock" aux. drive drawworks
+311003
+3
+lang|RU|3 (:35 ) Авария трансформатора Т3-СВП (реле 93К3)
+lang|EN|3 (:35 ) Not push button "Stop" aux. drive drawworks
+311003
+4
+lang|RU|4 (:36 ) Блокировка дверей трансформатора Т3-СВП (реле 93К5)
+lang|EN|4 (:36 ) Not push button "Emergency Stop of Drilling Rig"
+311003
+5
+lang|RU|5 (:37 ) Резерв
+lang|EN|5 (:37 ) Drum is not in position "parking"
+311003
+6
+lang|RU|6 (:38 ) Резерв
+lang|EN|6 (:38 ) Drawworks mode is drilling
+311003
+7
+lang|RU|7 (:39 ) Резерв
+lang|EN|7 (:39 ) Drawworks mode is Round-Trip

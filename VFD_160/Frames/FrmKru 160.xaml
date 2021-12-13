@@ -1,0 +1,2125 @@
+﻿<UserControl x:Class="VFD_160.Frames.FrmKru"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:hmi="http://schemas.monokot.com/hmi/"
+             xmlns:se="http://schemas.monokot.com/se/"
+             xmlns:system="clr-namespace:System;assembly=mscorlib" 
+             xmlns:scheme="clr-namespace:NGO.Elements.Scheme;assembly=NGO.Elements"
+             xmlns:local="clr-namespace:VFD_160.Frames"
+             mc:Ignorable="d"
+             d:DesignHeight="1000" Width="1400"
+             >
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/NGO.Elements;component/Style/superVfd_styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="387" Margin="10,5,0,0" Stroke="Black" VerticalAlignment="Top" Width="1380" RadiusX="5" RadiusY="5"/>
+        <Rectangle Fill="#FF818181" HorizontalAlignment="Left" Height="355" Margin="71,28,0,0" Stroke="Black" VerticalAlignment="Top" Width="76" RadiusX="5" RadiusY="5"/>
+        <Rectangle Fill="#FF818181" HorizontalAlignment="Left" Height="355" Margin="155,28,0,0" Stroke="Black" VerticalAlignment="Top" Width="188" RadiusX="5" RadiusY="5"/>
+        <Rectangle Fill="#FF818181" HorizontalAlignment="Left" Height="355" Margin="350,28,0,0" Stroke="Black" VerticalAlignment="Top" Width="320" RadiusX="5" RadiusY="5"/>
+        <Rectangle Fill="#FF818181" HorizontalAlignment="Left" Height="355" Margin="690,28,0,0" Stroke="Black" VerticalAlignment="Top" Width="125" RadiusX="5" RadiusY="5"/>
+        <Rectangle Fill="#FF818181" HorizontalAlignment="Left" Height="355" Margin="841,28,0,0" Stroke="Black" VerticalAlignment="Top" Width="172" RadiusX="5" RadiusY="5"/>
+        <Rectangle Fill="#FF818181" HorizontalAlignment="Left" Height="355" Margin="1020,28,0,0" Stroke="Black" VerticalAlignment="Top" Width="163" RadiusX="5" RadiusY="5"/>
+        <Rectangle Fill="#FF818181" HorizontalAlignment="Left" Height="355" Margin="1188,28,0,0" Stroke="Black" VerticalAlignment="Top" Width="87" RadiusX="5" RadiusY="5"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="508" Margin="1166,397,0,0" Stroke="Black" VerticalAlignment="Top" Width="217" RadiusX="5" RadiusY="5" Visibility="Hidden"/>
+        <se:VisualBox BorderBrush="Black" Width="1258" BorderThickness="1" HorizontalAlignment="Left" Height="5" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" SnapsToDevicePixels="True" Margin="97,31,0,0" CornerRadius="0">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.network].Items[net_plc1].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <Rectangle  Margin="1351,97,0,0" Fill="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Height="261" Width="2"/>
+        <scheme:QF Margin="1327,58,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" Width="30">
+            <scheme:QF.isOpen>
+                <hmi:SeBinding Path="modules[tags_mod].Items[sld_q2].Value">
+                    <hmi:SeBinding.Converter>
+                        <hmi:BooleanToInverseVisibility/>
+                    </hmi:SeBinding.Converter>
+                    <hmi:SeBinding.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <Rectangle  Margin="1351,36,0,0" Fill="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="2"/>
+        <Grid HorizontalAlignment="Left" Height="70" Margin="1192,430,0,0" VerticalAlignment="Top" Width="100" Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.ColumnSpan="2" Grid.RowSpan="3" Fill="Black" RadiusX="5" RadiusY="5" d:IsLocked="True"/>
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Text="В" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" FontFamily="Arial" Foreground="Yellow" Visibility="Hidden" />
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Grid.Row="1" Text="В" VerticalAlignment="Center" FontSize="18" Foreground="#FF3FCB3F" FontFamily="Arial" FontWeight="Bold" Visibility="Hidden" />
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Grid.Row="2" Text="В" VerticalAlignment="Center" FontSize="18" Foreground="Red" FontFamily="Arial" FontWeight="Bold" Visibility="Hidden" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="0" Margin="0,3,5,3" FontSize="18" Grid.Column="0" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka_yakno].Items[U_a].Value}" FontWeight="Bold" FontFamily="Arial" Foreground="Yellow" Visibility="Hidden" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="1" Margin="0,2,5,2" FontSize="18" Grid.Column="0" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka_yakno].Items[U_b].Value}" FontWeight="Bold" FontFamily="Arial" Foreground="#FF3FCB3F" Visibility="Hidden" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="2" Margin="0,2,5,2" FontSize="18" Grid.Column="0" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka_yakno].Items[U_c].Value}" FontWeight="Bold" FontFamily="Arial" Foreground="Red" Visibility="Hidden"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="70" Margin="1192,513,0,0" VerticalAlignment="Top" Width="100" Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.ColumnSpan="2" Fill="Black" RadiusX="3" RadiusY="3" Grid.RowSpan="3" d:IsLocked="True"/>
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Text="А" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" FontFamily="Arial" Foreground="Yellow" Visibility="Hidden" />
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Grid.Row="1" Text="А" VerticalAlignment="Center" FontSize="18" Foreground="#FF3FCB3F" FontFamily="Arial" FontWeight="Bold" Visibility="Hidden" />
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Grid.Row="2" Text="А" VerticalAlignment="Center" FontSize="18" Foreground="Red" FontFamily="Arial" FontWeight="Bold" Visibility="Hidden" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Margin="0,3,5,3" FontSize="18" Grid.Column="0"              Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka_yakno].Items[I_a].Value}" FontWeight="Bold" FontFamily="Arial" Foreground="Yellow" Visibility="Hidden" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="1" Margin="0,2,5,2" FontSize="18" Grid.Column="0" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka_yakno].Items[I_b].Value}" FontWeight="Bold" FontFamily="Arial" Foreground="#FF3FCB3F" Visibility="Hidden" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="2" Margin="0,2,5,2" FontSize="18" Grid.Column="0" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka_yakno].Items[I_c].Value}" FontWeight="Bold" FontFamily="Arial" Foreground="Red" Visibility="Hidden"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="31" Margin="1192,588,0,0" VerticalAlignment="Top" Width="100" Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.ColumnSpan="2" Fill="Black" RadiusX="3" RadiusY="3" d:IsLocked="True"/>
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Text="Гц" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" FontFamily="Arial" Foreground="White" Visibility="Hidden" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Margin="0,3,5,3" FontSize="18" Grid.Column="0" FontWeight="Bold" FontFamily="Arial" Foreground="White" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka_yakno].Items[frequence].Value}" Visibility="Hidden" />
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="31" Margin="1192,625,0,0" VerticalAlignment="Top" Width="100" Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.ColumnSpan="2" Fill="Black" RadiusX="3" RadiusY="3" d:IsLocked="True"/>
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Text="КВт" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" FontFamily="Arial" Foreground="White" Visibility="Hidden" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="18" Grid.Column="0" FontWeight="Bold" FontFamily="Arial" Foreground="White" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka_yakno].Items[frequence].Value}" Margin="0,0,3,0" Visibility="Hidden" />
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="31" Margin="1192,661,0,0" VerticalAlignment="Top" Width="100" Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.ColumnSpan="2" Fill="Black" RadiusX="3" RadiusY="3" d:IsLocked="True"/>
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Text="КВАр" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" FontFamily="Arial" Foreground="White" Visibility="Hidden" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="18" Grid.Column="0" FontWeight="Bold" FontFamily="Arial" Foreground="White" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka_yakno].Items[Q].Value}" Margin="0,0,3,0" Visibility="Hidden" />
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="31" Margin="1192,738,0,0" VerticalAlignment="Top" Width="100" Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.ColumnSpan="2" Fill="Black" RadiusX="3" RadiusY="3" d:IsLocked="True"/>
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Text="cos" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" FontFamily="Arial" Foreground="White" Visibility="Hidden" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="18" Grid.Column="0" FontWeight="Bold" FontFamily="Arial" Foreground="White" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka_yakno].Items[cos].Value}" Margin="0,0,3,0" Visibility="Hidden" />
+        </Grid>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="КРУ 1" VerticalAlignment="Top" Margin="1348,6,0,0" FontSize="14" />
+
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="508" Margin="10,396,0,0" Stroke="Black" VerticalAlignment="Top" Width="718" RadiusX="5" RadiusY="5"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="508" Margin="733,396,0,0" Stroke="Black" VerticalAlignment="Top" Width="376" RadiusX="5" RadiusY="5"/>
+
+        <Rectangle Fill="#FF818181" HorizontalAlignment="Left" Height="483" Margin="364,403,0,0" Stroke="Black" VerticalAlignment="Top" Width="320" RadiusX="5" RadiusY="5"/>
+        <Rectangle Fill="#FF818181" HorizontalAlignment="Left" Height="483" Margin="740,403,0,0" Stroke="Black" VerticalAlignment="Top" Width="320" RadiusX="5" RadiusY="5"/>
+        <Rectangle Fill="#FF818181" HorizontalAlignment="Left" Height="483" Margin="29,403,0,0" Stroke="Black" VerticalAlignment="Top" Width="328" RadiusX="5" RadiusY="5"/>
+        <TextBlock HorizontalAlignment="Left" Margin="99,677,0,0" TextWrapping="Wrap" Text="Отказы датчиков" VerticalAlignment="Top" FontSize="16" TextAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Left" Margin="443,676,0,0" TextWrapping="Wrap" Text="Отказы датчиков" VerticalAlignment="Top" FontSize="16" TextAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Left" Margin="855,676,0,0" TextWrapping="Wrap" Text="Отказы датчиков" VerticalAlignment="Top" FontSize="16" TextAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Ячейка 2 T1" VerticalAlignment="Top" Margin="207,5,0,0" FontSize="14" Height="19" />
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Ячейка 3 T2" VerticalAlignment="Top" Margin="478,6,0,0" FontSize="14" Height="19" />
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Ячейка 4 ТНИ" VerticalAlignment="Top" Margin="712,6,0,0" FontSize="14" Height="19" />
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Ячейка 5 T3" VerticalAlignment="Top" Margin="901,7,0,0" FontSize="14" Height="19" />
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Ячейка 6 СВП" VerticalAlignment="Top" Margin="1056,6,0,0" FontSize="14" Height="19" />
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Ячейка 7 ФКУ" VerticalAlignment="Top" Margin="1188,5,0,0" FontSize="14" Height="19" />
+        <Rectangle  Margin="133,97,0,0" Fill="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Height="148" Width="2"/>
+        <Rectangle  Height="346" Margin="296,91,0,0" Fill="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Width="2"/>
+        <scheme:QF Margin="109,58,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" Width="30">
+            <scheme:QF.isOpen>
+                <hmi:SeBinding Path="modules[tags_mod].Items[sld_q2].Value">
+                    <hmi:SeBinding.Converter>
+                        <hmi:BooleanToInverseVisibility/>
+                    </hmi:SeBinding.Converter>
+                    <hmi:SeBinding.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <!--<schemas:VerticalWire Height="Auto" thickness="2" Margin="508,63,762,820" Width="Auto" />-->
+        <Grid HorizontalAlignment="Left" Height="70" Margin="475,43,0,0" VerticalAlignment="Top" Width="100">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.ColumnSpan="2" Grid.RowSpan="3" Fill="Black" RadiusX="5" RadiusY="5" d:IsLocked="True"/>
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Text="В" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" FontFamily="Arial" Foreground="Yellow" />
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Grid.Row="1" Text="В" VerticalAlignment="Center" FontSize="18" Foreground="#FF3FCB3F" FontFamily="Arial" FontWeight="Bold" />
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Grid.Row="2" Text="В" VerticalAlignment="Center" FontSize="18" Foreground="Red" FontFamily="Arial" FontWeight="Bold" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="0" Margin="0,3,5,3" FontSize="18" Grid.Column="0" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka3].Items[U_a].Value}" FontWeight="Bold" FontFamily="Arial" Foreground="Yellow" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="1" Margin="0,2,5,2" FontSize="18" Grid.Column="0" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka3].Items[U_b].Value}" FontWeight="Bold" FontFamily="Arial" Foreground="#FF3FCB3F" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="2" Margin="0,2,5,2" FontSize="18" Grid.Column="0" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka3].Items[U_c].Value}" FontWeight="Bold" FontFamily="Arial" Foreground="Red"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="70" Margin="475,118,0,0" VerticalAlignment="Top" Width="100">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.ColumnSpan="2" Grid.RowSpan="3" Fill="Black" RadiusX="3" RadiusY="3" d:IsLocked="True"/>
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Text="А" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" FontFamily="Arial" Foreground="Yellow" />
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Grid.Row="1" Text="А" VerticalAlignment="Center" FontSize="18" Foreground="#FF3FCB3F" FontFamily="Arial" FontWeight="Bold" />
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Grid.Row="2" Text="А" VerticalAlignment="Center" FontSize="18" Foreground="Red" FontFamily="Arial" FontWeight="Bold" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Margin="0,3,5,3" FontSize="18" Grid.Column="0"              Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka3].Items[I_a].Value}" FontWeight="Bold" FontFamily="Arial" Foreground="Yellow" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="1" Margin="0,2,5,2" FontSize="18" Grid.Column="0" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka3].Items[I_b].Value}" FontWeight="Bold" FontFamily="Arial" Foreground="#FF3FCB3F" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="2" Margin="0,2,5,2" FontSize="18" Grid.Column="0" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka3].Items[I_c].Value}" FontWeight="Bold" FontFamily="Arial" Foreground="Red"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="31" Margin="475,193,0,0" VerticalAlignment="Top" Width="100" Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.ColumnSpan="2" Fill="Black" RadiusX="3" RadiusY="3" d:IsLocked="True"/>
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Text="Гц" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" FontFamily="Arial" Foreground="White" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Margin="0,3,5,3" FontSize="18" Grid.Column="0" FontWeight="Bold" FontFamily="Arial" Foreground="White" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka3].Items[frequence].Value}" />
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="31" Margin="475,230,0,0" VerticalAlignment="Top" Width="100">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="0.7*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.ColumnSpan="2" Fill="Black" RadiusX="3" RadiusY="3" d:IsLocked="True"/>
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Text="КВт" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" FontFamily="Arial" Foreground="White" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="18" Grid.Column="0" FontWeight="Bold" FontFamily="Arial" Foreground="White" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka3].Items[P].Value}" Margin="0,0,3,0" />
+        </Grid>
+        <!--<schemas:VerticalWire Height="Auto" thickness="2" Margin="822,118,448,747" Width="Auto" />-->
+
+        <Rectangle  Margin="133,36,0,0" Fill="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="2"/>
+        <Rectangle  Height="346" Margin="606,91,0,0" Fill="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Width="2"/>
+
+        <Rectangle  Height="345" Margin="980,92,0,0" Fill="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Width="2"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" Text="Ячейка 1 ТСН" Margin="68,5,0,0" FontSize="14" Height="19" />
+
+        <se:VisualBox BorderBrush="{x:Null}" Background="{DynamicResource t2_yellow}" Margin="273,412,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="47" Height="78">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{DynamicResource t2_green}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.scheme].Items[tag5].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="{DynamicResource t2_orange}" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.scheme].Items[tag6].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="{DynamicResource t2_red}" Priority="3">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.scheme].Items[tag10].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="{x:Null}" Background="{DynamicResource t3_yellow}" Margin="564,412,0,0" HorizontalAlignment="Left" Width="85" Height="78" VerticalAlignment="Top">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{DynamicResource t3_green}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.scheme].Items[tag7].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="{DynamicResource t3_orange}" Priority="2">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.scheme].Items[tag8].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="{DynamicResource t3_red}" Priority="3">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.scheme].Items[tag9].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <Grid HorizontalAlignment="Left" Height="70" Margin="165,118,0,0" VerticalAlignment="Top" Width="100">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.ColumnSpan="2" Grid.RowSpan="3" Fill="Black" RadiusX="3" RadiusY="3" d:IsLocked="True"/>
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Text="А" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" FontFamily="Arial" Foreground="Yellow" />
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Grid.Row="1" Text="А" VerticalAlignment="Center" FontSize="18" Foreground="#FF3FCB3F" FontFamily="Arial" FontWeight="Bold" />
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Grid.Row="2" Text="А" VerticalAlignment="Center" FontSize="18" Foreground="Red" FontFamily="Arial" FontWeight="Bold" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Margin="0,3,5,3" FontSize="18" Grid.Column="0"              Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka2].Items[I_a].Value}" FontWeight="Bold" FontFamily="Arial" Foreground="Yellow" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="1" Margin="0,2,5,2" FontSize="18" Grid.Column="0" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka2].Items[I_b].Value}" FontWeight="Bold" FontFamily="Arial" Foreground="#FF3FCB3F" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="2" Margin="0,2,5,2" FontSize="18" Grid.Column="0" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka2].Items[I_c].Value}" FontWeight="Bold" FontFamily="Arial" Foreground="Red"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="70" Margin="165,43,0,0" VerticalAlignment="Top" Width="100">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.ColumnSpan="2" Grid.RowSpan="3" Fill="Black" RadiusX="5" RadiusY="5" d:IsLocked="True"/>
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Text="В" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" FontFamily="Arial" Foreground="Yellow" />
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Grid.Row="1" Text="В" VerticalAlignment="Center" FontSize="18" Foreground="#FF3FCB3F" FontFamily="Arial" FontWeight="Bold" />
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Grid.Row="2" Text="В" VerticalAlignment="Center" FontSize="18" Foreground="Red" FontFamily="Arial" FontWeight="Bold" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="0" Margin="0,3,5,3" FontSize="18" Grid.Column="0" FontWeight="Bold" FontFamily="Arial" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka2].Items[U_a].Value}" Foreground="Yellow"/>
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="1" Margin="0,2,5,2" FontSize="18" Grid.Column="0" FontWeight="Bold" FontFamily="Arial" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka2].Items[U_b].Value}" Foreground="#FF3FCB3F" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="2" Margin="0,2,5,2" FontSize="18" Grid.Column="0" FontWeight="Bold" FontFamily="Arial" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka2].Items[U_c].Value}" Foreground="Red"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="31" Margin="165,193,0,0" VerticalAlignment="Top" Width="100" Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.ColumnSpan="2" Fill="Black" RadiusX="3" RadiusY="3" d:IsLocked="True"/>
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Text="Гц" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" FontFamily="Arial" Foreground="White" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Margin="0,3,5,3" FontSize="18" Grid.Column="0" FontWeight="Bold" FontFamily="Arial" Foreground="White" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka2].Items[frequence].Value}" />
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="31" Margin="165,230,0,0" VerticalAlignment="Top" Width="100">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.ColumnSpan="2" Fill="Black" RadiusX="3" RadiusY="3" d:IsLocked="True"/>
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Text="КВт" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" FontFamily="Arial" Foreground="White" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="18" Grid.Column="0" FontWeight="Bold" FontFamily="Arial" Foreground="White" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka2].Items[P].Value}" Margin="0,0,3,0" />
+        </Grid>
+        <scheme:QF Template="{StaticResource vacuum_qs}" Margin="271,53,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="54" Width="54">
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.scheme].Items[tag88].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                    <hmi:Bind.Converter>
+                        <hmi:BooleanToInverseConverter/>
+                    </hmi:Bind.Converter>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <scheme:QF  Template="{StaticResource vacuum_qs}" Margin="581,53,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="54" Width="54">
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.scheme].Items[tag87].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                    <hmi:Bind.Converter>
+                        <hmi:BooleanToInverseConverter/>
+                    </hmi:Bind.Converter>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <Grid HorizontalAlignment="Left" Height="70" Margin="848,43,0,0" VerticalAlignment="Top" Width="100">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.ColumnSpan="2" Grid.RowSpan="3" Fill="Black" RadiusX="5" RadiusY="5" d:IsLocked="True"/>
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Text="В" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" FontFamily="Arial" Foreground="Yellow" />
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Grid.Row="1" Text="В" VerticalAlignment="Center" FontSize="18" Foreground="#FF3FCB3F" FontFamily="Arial" FontWeight="Bold" />
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Grid.Row="2" Text="В" VerticalAlignment="Center" FontSize="18" Foreground="Red" FontFamily="Arial" FontWeight="Bold" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="0" Margin="0,3,5,3" FontSize="18" Grid.Column="0" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka5].Items[U_a].Value}" FontWeight="Bold" FontFamily="Arial" Foreground="Yellow" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="1" Margin="0,2,5,2" FontSize="18" Grid.Column="0" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka5].Items[U_b].Value}" FontWeight="Bold" FontFamily="Arial" Foreground="#FF3FCB3F" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="2" Margin="0,2,5,2" FontSize="18" Grid.Column="0" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka5].Items[U_c].Value}" FontWeight="Bold" FontFamily="Arial" Foreground="Red"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="70" Margin="848,118,0,0" VerticalAlignment="Top" Width="100">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.ColumnSpan="2" Grid.RowSpan="3" Fill="Black" RadiusX="3" RadiusY="3" d:IsLocked="True"/>
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Text="А" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" FontFamily="Arial" Foreground="Yellow" />
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Grid.Row="1" Text="А" VerticalAlignment="Center" FontSize="18" Foreground="#FF3FCB3F" FontFamily="Arial" FontWeight="Bold" />
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Grid.Row="2" Text="А" VerticalAlignment="Center" FontSize="18" Foreground="Red" FontFamily="Arial" FontWeight="Bold" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Margin="0,3,5,3" FontSize="18" Grid.Column="0"              Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka5].Items[I_a].Value}" FontWeight="Bold" FontFamily="Arial" Foreground="Yellow" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="1" Margin="0,2,5,2" FontSize="18" Grid.Column="0" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka5].Items[I_b].Value}" FontWeight="Bold" FontFamily="Arial" Foreground="#FF3FCB3F" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="2" Margin="0,2,5,2" FontSize="18" Grid.Column="0" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka5].Items[I_c].Value}" FontWeight="Bold" FontFamily="Arial" Foreground="Red"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="31" Margin="848,193,0,0" VerticalAlignment="Top" Width="100" Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.ColumnSpan="2" Fill="Black" RadiusX="3" RadiusY="3" d:IsLocked="True"/>
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Text="Гц" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" FontFamily="Arial" Foreground="White" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Margin="0,3,5,3" FontSize="18" Grid.Column="0" FontWeight="Bold" FontFamily="Arial" Foreground="White" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka5].Items[P].Value}" />
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="31" Margin="848,230,0,0" VerticalAlignment="Top" Width="100">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.ColumnSpan="3" Fill="Black" RadiusX="3" RadiusY="3" d:IsLocked="True"/>
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Text="КВт" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" FontFamily="Arial" Foreground="White" Grid.ColumnSpan="2" Margin="0,5" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="18" Grid.Column="0" FontWeight="Bold" FontFamily="Arial" Foreground="White" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka5].Items[P].Value}" Margin="0,0,3,0" />
+        </Grid>
+        <scheme:QF  Template="{StaticResource vacuum_qs}" Margin="955,53,0,0" Width="54" Height="54" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.scheme].Items[tag217].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                    <hmi:Bind.Converter>
+                        <hmi:BooleanToInverseConverter/>
+                    </hmi:Bind.Converter>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <se:VisualBox BorderBrush="{x:Null}" Background="{DynamicResource t3_yellow}" Margin="940,412,0,0" HorizontalAlignment="Left" Width="82" Height="66" VerticalAlignment="Top">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{DynamicResource t3_green}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.scheme].Items[tag228].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="{DynamicResource t3_orange}" Priority="2">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.scheme].Items[tag229].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="{DynamicResource t3_red}" Priority="3">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.scheme].Items[tag230].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <Rectangle  Margin="765,97,0,0" Fill="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Height="148" Width="2"/>
+        <scheme:QF Margin="741,58,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" Width="30">
+            <scheme:QF.isOpen>
+                <hmi:SeBinding Path="modules[tags_mod].Items[sld_q2].Value">
+                    <hmi:SeBinding.Converter>
+                        <hmi:BooleanToInverseVisibility/>
+                    </hmi:SeBinding.Converter>
+                    <hmi:SeBinding.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <Rectangle  Margin="765,36,0,0" Fill="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="2"/>
+        <Rectangle  Margin="1151,91,0,0" Fill="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Height="153" Width="2"/>
+        <Rectangle  Margin="1227,97,0,0" Fill="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Height="148" Width="2"/>
+        <Rectangle  Margin="1228,36,0,0" Fill="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="2"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="КTУ 1" VerticalAlignment="Top" Margin="687,403,0,0" FontSize="14" />
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="КTУ 2" VerticalAlignment="Top" Margin="1066,403,0,0" FontSize="14" />
+        <Grid HorizontalAlignment="Left" Height="70" Margin="1024,43,0,0" VerticalAlignment="Top" Width="100">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.ColumnSpan="2" Grid.RowSpan="3" Fill="Black" RadiusX="5" RadiusY="5" d:IsLocked="True"/>
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Text="В" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" FontFamily="Arial" Foreground="Yellow" />
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Grid.Row="1" Text="В" VerticalAlignment="Center" FontSize="18" Foreground="#FF3FCB3F" FontFamily="Arial" FontWeight="Bold" />
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Grid.Row="2" Text="В" VerticalAlignment="Center" FontSize="18" Foreground="Red" FontFamily="Arial" FontWeight="Bold" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="0" Margin="0,3,5,3" FontSize="18" Grid.Column="0" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka6].Items[U_a].Value}" FontWeight="Bold" FontFamily="Arial" Foreground="Yellow" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="1" Margin="0,2,5,2" FontSize="18" Grid.Column="0" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka6].Items[U_b].Value}" FontWeight="Bold" FontFamily="Arial" Foreground="#FF3FCB3F" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="2" Margin="0,2,5,2" FontSize="18" Grid.Column="0" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka6].Items[U_c].Value}" FontWeight="Bold" FontFamily="Arial" Foreground="Red"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="70" Margin="1024,118,0,0" VerticalAlignment="Top" Width="100">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.ColumnSpan="2" Grid.RowSpan="3" Fill="Black" RadiusX="3" RadiusY="3" Margin="0,0,0,0" d:IsLocked="True"/>
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Text="А" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" FontFamily="Arial" Foreground="Yellow" />
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Grid.Row="1" Text="А" VerticalAlignment="Center" FontSize="18" Foreground="#FF3FCB3F" FontFamily="Arial" FontWeight="Bold" />
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Grid.Row="2" Text="А" VerticalAlignment="Center" FontSize="18" Foreground="Red" FontFamily="Arial" FontWeight="Bold" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Margin="0,3,5,3" FontSize="18" Grid.Column="0"              Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka6].Items[I_a].Value}" FontWeight="Bold" FontFamily="Arial" Foreground="Yellow" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="1" Margin="0,2,5,2" FontSize="18" Grid.Column="0" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka6].Items[I_b].Value}" FontWeight="Bold" FontFamily="Arial" Foreground="#FF3FCB3F" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="2" Margin="0,2,5,2" FontSize="18" Grid.Column="0" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka6].Items[I_c].Value}" FontWeight="Bold" FontFamily="Arial" Foreground="Red"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="31" Margin="1024,193,0,0" VerticalAlignment="Top" Width="100" Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.ColumnSpan="2" Fill="Black" RadiusX="3" RadiusY="3" d:IsLocked="True"/>
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Text="Гц" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" FontFamily="Arial" Foreground="White" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Margin="0,3,5,3" FontSize="18" Grid.Column="0" FontWeight="Bold" FontFamily="Arial" Foreground="White" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka6].Items[frequence].Value}" />
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="31" Margin="1024,230,0,0" VerticalAlignment="Top" Width="100">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.ColumnSpan="2" Fill="Black" RadiusX="3" RadiusY="3" d:IsLocked="True"/>
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Text="КВт" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" FontFamily="Arial" Foreground="White" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="18" Grid.Column="0" FontWeight="Bold" FontFamily="Arial" Foreground="White" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka6].Items[P].Value}" Margin="0,0,3,0" />
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="31" Margin="1024,266,0,0" VerticalAlignment="Top" Width="100">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.ColumnSpan="2" Fill="Black" RadiusX="3" RadiusY="3" d:IsLocked="True"/>
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Text="КВАр" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" FontFamily="Arial" Foreground="White" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="18" Grid.Column="0" FontWeight="Bold" FontFamily="Arial" Foreground="White" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka6].Items[Q].Value}" Margin="0,0,3,0" />
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="31" Margin="1024,342,0,0" VerticalAlignment="Top" Width="100">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.ColumnSpan="2" Fill="Black" RadiusX="3" RadiusY="3" d:IsLocked="True"/>
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Text="cos" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" FontFamily="Arial" Foreground="White" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="18" Grid.Column="0" FontWeight="Bold" FontFamily="Arial" Foreground="White" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka6].Items[cos].Value}" Margin="0,0,3,0" />
+        </Grid>
+        <Grid Margin="45,490,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="289">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="240*"/>
+                <ColumnDefinition Width="90"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ТЕМПЕРАТУРА В КАНАЛЕ А" VerticalAlignment="Center" FontSize="14"/>
+            <TextBlock Grid.Row="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ТЕМПЕРАТУРА В КАНАЛЕ В" VerticalAlignment="Center" FontSize="14"/>
+            <TextBlock Grid.Row="2" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ТЕМПЕРАТУРА В КАНАЛЕ С" VerticalAlignment="Center" FontSize="14"/>
+            <TextBlock Grid.Row="3" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ТЕМПЕРАТУРА В КАНАЛЕ Р" VerticalAlignment="Center" FontSize="14"/>
+            <TextBlock Grid.Row="4" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ТЕМПЕРАТУРА В КОРПУСЕ БЛОКА" VerticalAlignment="Top" FontSize="14" Visibility="Hidden"/>
+
+            <se:VisualBox Grid.Row="0" Grid.Column="1" Text="{hmi:Bind Tags.Node[view.bkt1].Items[temperatura_kanal_a].Value, FallbackValue=v}" TextAlignment="Right" FontSize="16"  HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="{x:Null}">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Text="НЕТ СВЯЗИ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt1].Items[online].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>true</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+
+                    <se:VisualBoxStateItem Text="ОБРЫВ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt1].Items[obryv_datchika_a].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem Text="КЗ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt1].Items[kz_datchika_a].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+            </se:VisualBox>
+            <se:VisualBox Grid.Row="1" Grid.Column="1" Text="{hmi:Bind Tags.Node[view.bkt1].Items[temperatura_kanal_b].Value, FallbackValue=v}" TextAlignment="Right" FontSize="16"  HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="{x:Null}">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Text="НЕТ СВЯЗИ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt1].Items[online].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+
+                    <se:VisualBoxStateItem Text="ОБРЫВ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt1].Items[obryv_datchika_b].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem Text="КЗ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt1].Items[kz_datchika_b].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+            </se:VisualBox>
+
+            <se:VisualBox Grid.Row="2" Grid.Column="1" Text="{hmi:Bind Tags.Node[view.bkt1].Items[temperatura_kanal_c].Value, FallbackValue=v}" TextAlignment="Right" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="{x:Null}">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Text="НЕТ СВЯЗИ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt1].Items[online].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+
+                    <se:VisualBoxStateItem Text="ОБРЫВ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt1].Items[obryv_datchika_c].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem Text="КЗ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt1].Items[kz_datchika_c].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+            </se:VisualBox>
+
+            <se:VisualBox Grid.Row="3" Grid.Column="1" Text="{hmi:Bind Tags.Node[view.bkt1].Items[temperatura_kanal_p].Value, FallbackValue=v}" TextAlignment="Right"  FontSize="16"  HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="{x:Null}">
+
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Text="НЕТ СВЯЗИ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt1].Items[online].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+
+                    <se:VisualBoxStateItem Text="ОБРЫВ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt1].Items[obryv_datchika_p].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem Text="КЗ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt1].Items[kz_datchika_p].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+            </se:VisualBox>
+
+        </Grid>
+
+        <Grid Margin="45,557,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="162">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock  Grid.Row="0"  Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ОТКАЗ ВСТРОЕННОГО АЦП" VerticalAlignment="Center" FontSize="14" Visibility="Hidden"/>
+            <TextBlock  Grid.Row="1"  Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ПЕРЕГРЕВ ПО КАНАЛУ А" VerticalAlignment="Center" FontSize="14"/>
+            <TextBlock  Grid.Row="2"  Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ПЕРЕГРЕВ ПО КАНАЛУ В" VerticalAlignment="Center" FontSize="14"/>
+            <TextBlock  Grid.Row="3"  Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ПЕРЕГРЕВ ПО КАНАЛУ С" VerticalAlignment="Center" FontSize="14"/>
+            <TextBlock  Grid.Row="4"  Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ПЕРЕГРЕВ ПО КАНАЛУ Р" VerticalAlignment="Center" FontSize="14"/>
+            <TextBlock  Grid.Row="5"  Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ОТКАЗ ДАТЧИКА" VerticalAlignment="Center" FontSize="14" Visibility="Collapsed"/>
+            <TextBlock  Grid.Row="6"  Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ОТКАЗ СХЕМЫ ОПРОСА ДАТЧИКОВ" VerticalAlignment="Center" FontSize="14" Visibility="Collapsed"/>
+
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" Height="12" VerticalAlignment="Center" Width="12" CornerRadius="15" Visibility="Hidden">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt1].Items[otkaz_vstroennogo_acp].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" Height="12" VerticalAlignment="Center" Width="12" CornerRadius="15">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt1].Items[peregrev_kanala_a].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" Height="12" VerticalAlignment="Center" Width="12" CornerRadius="15">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt1].Items[peregrev_kanala_b].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" Height="12" VerticalAlignment="Center" Width="12" CornerRadius="15">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt1].Items[peregrev_kanala_c].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center" Height="12" VerticalAlignment="Center" Width="12" CornerRadius="15">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt1].Items[peregrev_kanala_p].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  Grid.Row="5" Grid.Column="0" HorizontalAlignment="Center" Height="12" VerticalAlignment="Center" Width="12" CornerRadius="15" Visibility="Collapsed">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt1].Items[otkaz_datchika].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  Grid.Row="6" Grid.Column="0" HorizontalAlignment="Center" Height="12" VerticalAlignment="Center" Width="12" CornerRadius="15" Visibility="Collapsed">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt1].Items[otkaz_skhemy_oprosa_datchikov].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="184" Margin="45,702,0,0" VerticalAlignment="Top" Width="236">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="17*"/>
+                <ColumnDefinition Width="149*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock HorizontalAlignment="Left"  TextWrapping="Wrap" Text="ОБРЫВ ДАТЧИКА А"     VerticalAlignment="Center" FontSize="14" Grid.Row="0" Grid.Column="1"/>
+            <TextBlock HorizontalAlignment="Left"  TextWrapping="Wrap" Text="ЗАМЫКАНИЕ ДАТЧИКА А" VerticalAlignment="Center" FontSize="14" Grid.Row="1" Grid.Column="1"/>
+            <TextBlock HorizontalAlignment="Left"  TextWrapping="Wrap" Text="ОБРЫВ ДАТЧИКА В"     VerticalAlignment="Center" FontSize="14" Grid.Row="2" Grid.Column="1"/>
+            <TextBlock HorizontalAlignment="Left"  TextWrapping="Wrap" Text="ЗАМЫКАНИЕ ДАТЧИКА В" VerticalAlignment="Center" FontSize="14" Grid.Row="3" Grid.Column="1"/>
+            <TextBlock HorizontalAlignment="Left"  TextWrapping="Wrap" Text="ОБРЫВ ДАТЧИКА С"     VerticalAlignment="Center" FontSize="14" Grid.Row="4" Grid.Column="1"/>
+            <TextBlock HorizontalAlignment="Left"  TextWrapping="Wrap" Text="ЗАМЫКАНИЕ ДАТЧИКА С" VerticalAlignment="Center" FontSize="14" Grid.Row="5" Grid.Column="1"/>
+            <TextBlock HorizontalAlignment="Left"  TextWrapping="Wrap" Text="ОБРЫВ ДАТЧИКА Р"     VerticalAlignment="Center" FontSize="14" Grid.Row="6" Grid.Column="1"/>
+            <TextBlock HorizontalAlignment="Left"  TextWrapping="Wrap" Text="ЗАМЫКАНИЕ ДАТЧИКА Р" VerticalAlignment="Center" FontSize="14" Grid.Row="7" Grid.Column="1" />
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  HorizontalAlignment="Center" Height="12" Margin="0,0,0,0" VerticalAlignment="Center" Width="12" CornerRadius="15">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt1].Items[obryv_datchika_a].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  HorizontalAlignment="Center" Grid.Row="1" Height="12" Margin="0,0,0,0" VerticalAlignment="Center" Width="12" CornerRadius="15">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt1].Items[kz_datchika_a].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  HorizontalAlignment="Center" Grid.Row="2" Height="12" Margin="0,0,0,0" VerticalAlignment="Center" Width="12" CornerRadius="15">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt1].Items[obryv_datchika_b].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  HorizontalAlignment="Center" Grid.Row="3" Height="12" Margin="0,0,0,0" VerticalAlignment="Center" Width="12" CornerRadius="15">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt1].Items[kz_datchika_b].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  HorizontalAlignment="Center" Grid.Row="4" Height="12" Margin="0,0,0,0" VerticalAlignment="Center" Width="12" CornerRadius="15">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt1].Items[obryv_datchika_c].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  HorizontalAlignment="Center" Grid.Row="5" Height="12" Margin="0,0,0,0" VerticalAlignment="Center" Width="12" CornerRadius="15">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt1].Items[kz_datchika_c].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  HorizontalAlignment="Center" Grid.Row="6" Height="12" Margin="0,0,0,0" VerticalAlignment="Center" Width="12" CornerRadius="15">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt1].Items[obryv_datchika_p].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  HorizontalAlignment="Center" Grid.Row="7" Height="12" Margin="0,0,0,0" VerticalAlignment="Center" Width="12" CornerRadius="15">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt1].Items[kz_datchika_p].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+        </Grid>
+
+        <TextBlock HorizontalAlignment="Left" Margin="69,410,0,0" TextWrapping="Wrap" Text="ПРЕДУПРЕЖДЕНИЕ" VerticalAlignment="Top" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="69,432,0,0" TextWrapping="Wrap" Text="ПЕРЕГРЕВ" VerticalAlignment="Top" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="69,452,0,0" TextWrapping="Wrap" Text="НЕИСПРАВНОСТЬ С БКТ" VerticalAlignment="Top" FontSize="14"/>
+
+        <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0" HorizontalAlignment="Left" Height="12" Margin="52,415,0,0" VerticalAlignment="Top" Width="12">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="Red">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.bkt1].Items[vkl_rele_preduprezhdenie].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+
+        </se:VisualBox>
+        <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0" HorizontalAlignment="Left" Height="12" Margin="52,437,0,0" VerticalAlignment="Top" Width="12">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="Red">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.bkt1].Items[vkl_rele_avariya].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+
+        </se:VisualBox>
+        <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0" HorizontalAlignment="Left" Height="12" Margin="52,457,0,0" VerticalAlignment="Top" Width="12">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="Red">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.bkt1].Items[vkl_rele_NBKT].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+
+        </se:VisualBox>
+        <Grid Margin="375,490,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="289">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="240*"/>
+                <ColumnDefinition Width="90"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ТЕМПЕРАТУРА В КАНАЛЕ А" VerticalAlignment="Center" FontSize="14"/>
+            <TextBlock Grid.Row="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ТЕМПЕРАТУРА В КАНАЛЕ В" VerticalAlignment="Center" FontSize="14"/>
+            <TextBlock Grid.Row="2" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ТЕМПЕРАТУРА В КАНАЛЕ С" VerticalAlignment="Center" FontSize="14"/>
+            <TextBlock Grid.Row="3" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ТЕМПЕРАТУРА В КАНАЛЕ Р" VerticalAlignment="Center" FontSize="14"/>
+            <TextBlock Grid.Row="4" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ТЕМПЕРАТУРА В КОРПУСЕ БЛОКА" VerticalAlignment="Top" FontSize="14" Visibility="Hidden"/>
+
+            <se:VisualBox Grid.Row="0" Grid.Column="1" Text="{hmi:Bind Tags.Node[view.bkt2].Items[temperatura_kanal_a].Value, FallbackValue=v}" TextAlignment="Right" FontSize="16"  HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="{x:Null}">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Text="НЕТ СВЯЗИ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt2].Items[online].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+
+                    <se:VisualBoxStateItem Text="ОБРЫВ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt2].Items[obryv_datchika_a].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem Text="КЗ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt2].Items[kz_datchika_a].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+            </se:VisualBox>
+            <se:VisualBox Grid.Row="1" Grid.Column="1" Text="{hmi:Bind Tags.Node[view.bkt2].Items[temperatura_kanal_b].Value, FallbackValue=v}" TextAlignment="Right" FontSize="16"  HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="{x:Null}">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Text="НЕТ СВЯЗИ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt2].Items[online].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+
+                    <se:VisualBoxStateItem Text="ОБРЫВ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt2].Items[obryv_datchika_b].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem Text="КЗ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt2].Items[kz_datchika_b].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+            </se:VisualBox>
+            <se:VisualBox Grid.Row="2" Grid.Column="1" Text="{hmi:Bind Tags.Node[view.bkt2].Items[temperatura_kanal_c].Value, FallbackValue=v}" TextAlignment="Right" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="{x:Null}">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Text="НЕТ СВЯЗИ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt2].Items[online].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+
+                    <se:VisualBoxStateItem Text="ОБРЫВ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt2].Items[obryv_datchika_c].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem Text="КЗ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt2].Items[kz_datchika_c].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+            </se:VisualBox>
+
+            <se:VisualBox Grid.Row="3" Grid.Column="1" Text="{hmi:Bind Tags.Node[view.bkt2].Items[temperatura_kanal_p].Value, FallbackValue=v}" TextAlignment="Right"  FontSize="16"  HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="{x:Null}">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Text="НЕТ СВЯЗИ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt2].Items[online].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+
+                    <se:VisualBoxStateItem Text="ОБРЫВ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt2].Items[obryv_datchika_p].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem Text="КЗ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt2].Items[kz_datchika_p].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+            </se:VisualBox>
+
+            <TextBlock Grid.Row="4" Grid.Column="1" TextWrapping="Wrap" Text="{hmi:Bind Tags.Node[view.bkt2].Items[temperatura_korpusa].Value, FallbackValue=v}" TextAlignment="Right"  FontSize="16"  HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Hidden"/>
+        </Grid>
+        <Grid Margin="375,557,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="162">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock  Grid.Row="0"  Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ОТКАЗ ВСТРОЕННОГО АЦП" VerticalAlignment="Center" FontSize="14" Visibility="Hidden"/>
+            <TextBlock  Grid.Row="1"  Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ПЕРЕГРЕВ ПО КАНАЛУ А" VerticalAlignment="Center" FontSize="14"/>
+            <TextBlock  Grid.Row="2"  Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ПЕРЕГРЕВ ПО КАНАЛУ В" VerticalAlignment="Center" FontSize="14"/>
+            <TextBlock  Grid.Row="3"  Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ПЕРЕГРЕВ ПО КАНАЛУ С" VerticalAlignment="Center" FontSize="14"/>
+            <TextBlock  Grid.Row="4"  Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ПЕРЕГРЕВ ПО КАНАЛУ Р" VerticalAlignment="Center" FontSize="14"/>
+            <TextBlock  Grid.Row="5"  Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ОТКАЗ ДАТЧИКА" VerticalAlignment="Center" FontSize="14" Visibility="Collapsed"/>
+            <TextBlock  Grid.Row="6"  Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ОТКАЗ СХЕМЫ ОПРОСА ДАТЧИКОВ" VerticalAlignment="Center" FontSize="14" Visibility="Collapsed"/>
+
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" Height="12" VerticalAlignment="Center" Width="12" CornerRadius="15" Visibility="Hidden">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt2].Items[otkaz_vstroennogo_acp].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" Height="12" VerticalAlignment="Center" Width="12" CornerRadius="15">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt2].Items[peregrev_kanala_a].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" Height="12" VerticalAlignment="Center" Width="12" CornerRadius="15">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt2].Items[peregrev_kanala_b].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" Height="12" VerticalAlignment="Center" Width="12" CornerRadius="15">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt2].Items[peregrev_kanala_c].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center" Height="12" VerticalAlignment="Center" Width="12" CornerRadius="15">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt2].Items[peregrev_kanala_p].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  Grid.Row="5" Grid.Column="0" HorizontalAlignment="Center" Height="12" VerticalAlignment="Center" Width="12" CornerRadius="15" Visibility="Collapsed">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt2].Items[otkaz_datchika].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  Grid.Row="6" Grid.Column="0" HorizontalAlignment="Center" Height="12" VerticalAlignment="Center" Width="12" CornerRadius="15" Visibility="Collapsed">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt2].Items[otkaz_skhemy_oprosa_datchikov].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="184" Margin="375,702,0,0" VerticalAlignment="Top" Width="236">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="17*"/>
+                <ColumnDefinition Width="149*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock HorizontalAlignment="Left"  TextWrapping="Wrap" Text="ОБРЫВ ДАТЧИКА А"     VerticalAlignment="Center" FontSize="14" Grid.Row="0" Grid.Column="1"/>
+            <TextBlock HorizontalAlignment="Left"  TextWrapping="Wrap" Text="ЗАМЫКАНИЕ ДАТЧИКА А" VerticalAlignment="Center" FontSize="14" Grid.Row="1" Grid.Column="1"/>
+            <TextBlock HorizontalAlignment="Left"  TextWrapping="Wrap" Text="ОБРЫВ ДАТЧИКА В"     VerticalAlignment="Center" FontSize="14" Grid.Row="2" Grid.Column="1"/>
+            <TextBlock HorizontalAlignment="Left"  TextWrapping="Wrap" Text="ЗАМЫКАНИЕ ДАТЧИКА В" VerticalAlignment="Center" FontSize="14" Grid.Row="3" Grid.Column="1"/>
+            <TextBlock HorizontalAlignment="Left"  TextWrapping="Wrap" Text="ОБРЫВ ДАТЧИКА С"     VerticalAlignment="Center" FontSize="14" Grid.Row="4" Grid.Column="1"/>
+            <TextBlock HorizontalAlignment="Left"  TextWrapping="Wrap" Text="ЗАМЫКАНИЕ ДАТЧИКА С" VerticalAlignment="Center" FontSize="14" Grid.Row="5" Grid.Column="1"/>
+            <TextBlock HorizontalAlignment="Left"  TextWrapping="Wrap" Text="ОБРЫВ ДАТЧИКА Р"     VerticalAlignment="Center" FontSize="14" Grid.Row="6" Grid.Column="1"/>
+            <TextBlock HorizontalAlignment="Left"  TextWrapping="Wrap" Text="ЗАМЫКАНИЕ ДАТЧИКА Р" VerticalAlignment="Center" FontSize="14" Grid.Row="7" Grid.Column="1" />
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  HorizontalAlignment="Center" Height="12" Margin="0,0,0,0" VerticalAlignment="Center" Width="12" CornerRadius="15">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt2].Items[obryv_datchika_a].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  HorizontalAlignment="Center" Grid.Row="1" Height="12" Margin="0,0,0,0" VerticalAlignment="Center" Width="12" CornerRadius="15">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt2].Items[kz_datchika_a].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  HorizontalAlignment="Center" Grid.Row="2" Height="12" Margin="0,0,0,0" VerticalAlignment="Center" Width="12" CornerRadius="15">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt2].Items[obryv_datchika_b].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  HorizontalAlignment="Center" Grid.Row="3" Height="12" Margin="0,0,0,0" VerticalAlignment="Center" Width="12" CornerRadius="15">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt2].Items[kz_datchika_b].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  HorizontalAlignment="Center" Grid.Row="4" Height="12" Margin="0,0,0,0" VerticalAlignment="Center" Width="12" CornerRadius="15">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt2].Items[obryv_datchika_c].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  HorizontalAlignment="Center" Grid.Row="5" Height="12" Margin="0,0,0,0" VerticalAlignment="Center" Width="12" CornerRadius="15">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt2].Items[kz_datchika_c].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  HorizontalAlignment="Center" Grid.Row="6" Height="12" Margin="0,0,0,0" VerticalAlignment="Center" Width="12" CornerRadius="15">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt2].Items[obryv_datchika_p].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  HorizontalAlignment="Center" Grid.Row="7" Height="12" Margin="0,0,0,0" VerticalAlignment="Center" Width="12" CornerRadius="15">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt2].Items[kz_datchika_p].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+        </Grid>
+        <Grid Margin="750,490,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="289">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="240*"/>
+                <ColumnDefinition Width="90"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ТЕМПЕРАТУРА В КАНАЛЕ А" VerticalAlignment="Center" FontSize="14"/>
+            <TextBlock Grid.Row="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ТЕМПЕРАТУРА В КАНАЛЕ В" VerticalAlignment="Center" FontSize="14"/>
+            <TextBlock Grid.Row="2" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ТЕМПЕРАТУРА В КАНАЛЕ С" VerticalAlignment="Center" FontSize="14"/>
+            <TextBlock Grid.Row="3" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ТЕМПЕРАТУРА В КАНАЛЕ Р" VerticalAlignment="Center" FontSize="14"/>
+            <TextBlock Grid.Row="4" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ТЕМПЕРАТУРА В КОРПУСЕ БЛОКА" VerticalAlignment="Top" FontSize="14" Visibility="Hidden"/>
+
+            <se:VisualBox Grid.Row="0" Grid.Column="1" Text="{hmi:Bind Tags.Node[view.bkt3].Items[temperatura_kanal_a].Value, FallbackValue=v}" TextAlignment="Right" FontSize="16"  HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="{x:Null}">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Text="НЕТ СВЯЗИ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt3].Items[online].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+
+                    <se:VisualBoxStateItem Text="ОБРЫВ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt3].Items[obryv_datchika_a].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem Text="КЗ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt3].Items[kz_datchika_a].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+            </se:VisualBox>
+
+            <se:VisualBox Grid.Row="1" Grid.Column="1" Text="{hmi:Bind Tags.Node[view.bkt3].Items[temperatura_kanal_b].Value, FallbackValue=v}" TextAlignment="Right" FontSize="16"  HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="{x:Null}">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Text="НЕТ СВЯЗИ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt3].Items[online].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+
+                    <se:VisualBoxStateItem Text="ОБРЫВ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt3].Items[obryv_datchika_b].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem Text="КЗ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt3].Items[kz_datchika_b].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+            </se:VisualBox>
+
+            <se:VisualBox Grid.Row="2" Grid.Column="1" Text="{hmi:Bind Tags.Node[view.bkt3].Items[temperatura_kanal_c].Value, FallbackValue=v}" TextAlignment="Right" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="{x:Null}">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Text="НЕТ СВЯЗИ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt3].Items[online].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+
+                    <se:VisualBoxStateItem Text="ОБРЫВ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt3].Items[obryv_datchika_c].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem Text="КЗ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt3].Items[kz_datchika_c].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+            </se:VisualBox>
+
+
+            <se:VisualBox Grid.Row="3" Grid.Column="1" Text="{hmi:Bind Tags.Node[view.bkt3].Items[temperatura_kanal_p].Value, FallbackValue=v}" TextAlignment="Right"  FontSize="16"  HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="{x:Null}">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Text="НЕТ СВЯЗИ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt3].Items[online].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+
+                    <se:VisualBoxStateItem Text="ОБРЫВ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt3].Items[obryv_datchika_p].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem Text="КЗ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt3].Items[kz_datchika_p].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+            </se:VisualBox>
+
+            <TextBlock Grid.Row="4" Grid.Column="1" TextWrapping="Wrap" Text="{hmi:Bind Tags.Node[view.bkt3].Items[temperatura_korpusa].Value, FallbackValue=v}" TextAlignment="Right"  FontSize="16"  HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Hidden"/>
+        </Grid>
+        <Grid Margin="750,557,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="162">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock  Grid.Row="0"  Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ОТКАЗ ВСТРОЕННОГО АЦП" VerticalAlignment="Center" FontSize="14" Visibility="Hidden"/>
+            <TextBlock  Grid.Row="1"  Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ПЕРЕГРЕВ ПО КАНАЛУ А" VerticalAlignment="Center" FontSize="14"/>
+            <TextBlock  Grid.Row="2"  Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ПЕРЕГРЕВ ПО КАНАЛУ В" VerticalAlignment="Center" FontSize="14"/>
+            <TextBlock  Grid.Row="3"  Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ПЕРЕГРЕВ ПО КАНАЛУ С" VerticalAlignment="Center" FontSize="14"/>
+            <TextBlock  Grid.Row="4"  Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ПЕРЕГРЕВ ПО КАНАЛУ Р" VerticalAlignment="Center" FontSize="14"/>
+            <TextBlock  Grid.Row="5"  Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ОТКАЗ ДАТЧИКА" VerticalAlignment="Center" FontSize="14" Visibility="Collapsed"/>
+            <TextBlock  Grid.Row="6"  Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ОТКАЗ СХЕМЫ ОПРОСА ДАТЧИКОВ" VerticalAlignment="Center" FontSize="14" Visibility="Collapsed"/>
+
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"   Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" Height="12" VerticalAlignment="Center" Width="12" CornerRadius="15" Visibility="Hidden">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt3].Items[otkaz_vstroennogo_acp].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" Height="12" VerticalAlignment="Center" Width="12" CornerRadius="15">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt3].Items[peregrev_kanala_a].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" Height="12" VerticalAlignment="Center" Width="12" CornerRadius="15">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt3].Items[peregrev_kanala_b].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" Height="12" VerticalAlignment="Center" Width="12" CornerRadius="15">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt3].Items[peregrev_kanala_c].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center" Height="12" VerticalAlignment="Center" Width="12" CornerRadius="15">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt3].Items[peregrev_kanala_p].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  Grid.Row="5" Grid.Column="0" HorizontalAlignment="Center" Height="12" VerticalAlignment="Center" Width="12" CornerRadius="15" Visibility="Collapsed">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt3].Items[otkaz_datchika].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  Grid.Row="6" Grid.Column="0" HorizontalAlignment="Center" Height="12" VerticalAlignment="Center" Width="12" CornerRadius="15" Visibility="Collapsed">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt3].Items[otkaz_skhemy_oprosa_datchikov].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="184" Margin="750,702,0,0" VerticalAlignment="Top" Width="236">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="17*"/>
+                <ColumnDefinition Width="149*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock HorizontalAlignment="Left"  TextWrapping="Wrap" Text="ОБРЫВ ДАТЧИКА А"     VerticalAlignment="Center" FontSize="14" Grid.Row="0" Grid.Column="1"/>
+            <TextBlock HorizontalAlignment="Left"  TextWrapping="Wrap" Text="ЗАМЫКАНИЕ ДАТЧИКА А" VerticalAlignment="Center" FontSize="14" Grid.Row="1" Grid.Column="1"/>
+            <TextBlock HorizontalAlignment="Left"  TextWrapping="Wrap" Text="ОБРЫВ ДАТЧИКА В"     VerticalAlignment="Center" FontSize="14" Grid.Row="2" Grid.Column="1"/>
+            <TextBlock HorizontalAlignment="Left"  TextWrapping="Wrap" Text="ЗАМЫКАНИЕ ДАТЧИКА В" VerticalAlignment="Center" FontSize="14" Grid.Row="3" Grid.Column="1"/>
+            <TextBlock HorizontalAlignment="Left"  TextWrapping="Wrap" Text="ОБРЫВ ДАТЧИКА С"     VerticalAlignment="Center" FontSize="14" Grid.Row="4" Grid.Column="1"/>
+            <TextBlock HorizontalAlignment="Left"  TextWrapping="Wrap" Text="ЗАМЫКАНИЕ ДАТЧИКА С" VerticalAlignment="Center" FontSize="14" Grid.Row="5" Grid.Column="1"/>
+            <TextBlock HorizontalAlignment="Left"  TextWrapping="Wrap" Text="ОБРЫВ ДАТЧИКА Р"     VerticalAlignment="Center" FontSize="14" Grid.Row="6" Grid.Column="1"/>
+            <TextBlock HorizontalAlignment="Left"  TextWrapping="Wrap" Text="ЗАМЫКАНИЕ ДАТЧИКА Р" VerticalAlignment="Center" FontSize="14" Grid.Row="7" Grid.Column="1" />
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  HorizontalAlignment="Center" Height="12" Margin="0,0,0,0" VerticalAlignment="Center" Width="12" CornerRadius="15">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt3].Items[obryv_datchika_a].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  HorizontalAlignment="Center" Grid.Row="1" Height="12" Margin="0,0,0,0" VerticalAlignment="Center" Width="12" CornerRadius="15">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt3].Items[kz_datchika_a].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  HorizontalAlignment="Center" Grid.Row="2" Height="12" Margin="0,0,0,0" VerticalAlignment="Center" Width="12" CornerRadius="15">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt3].Items[obryv_datchika_b].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  HorizontalAlignment="Center" Grid.Row="3" Height="12" Margin="0,0,0,0" VerticalAlignment="Center" Width="12" CornerRadius="15">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt3].Items[kz_datchika_b].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  HorizontalAlignment="Center" Grid.Row="4" Height="12" Margin="0,0,0,0" VerticalAlignment="Center" Width="12" CornerRadius="15">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt3].Items[obryv_datchika_c].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  HorizontalAlignment="Center" Grid.Row="5" Height="12" Margin="0,0,0,0" VerticalAlignment="Center" Width="12" CornerRadius="15">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt3].Items[kz_datchika_c].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  HorizontalAlignment="Center" Grid.Row="6" Height="12" Margin="0,0,0,0" VerticalAlignment="Center" Width="12" CornerRadius="15">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt3].Items[obryv_datchika_p].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+            <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  HorizontalAlignment="Center" Grid.Row="7" Height="12" Margin="0,0,0,0" VerticalAlignment="Center" Width="12" CornerRadius="15">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="Red">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.bkt3].Items[kz_datchika_p].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+        </Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="395,410,0,0" TextWrapping="Wrap" Text="ПРЕДУПРЕЖДЕНИЕ" VerticalAlignment="Top" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="395,432,0,0" TextWrapping="Wrap" Text="ПЕРЕГРЕВ" VerticalAlignment="Top" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="395,452,0,0" TextWrapping="Wrap" Text="НЕИСПРАВНОСТЬ С БКТ" VerticalAlignment="Top" FontSize="14"/>
+        <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  HorizontalAlignment="Left" Height="12" Margin="378,415,0,0" VerticalAlignment="Top" Width="12" CornerRadius="15">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="Red">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.bkt2].Items[vkl_rele_preduprezhdenie].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+
+        </se:VisualBox>
+        <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  HorizontalAlignment="Left" Height="12" Margin="378,437,0,0" VerticalAlignment="Top" Width="12" CornerRadius="15">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="Red">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.bkt2].Items[vkl_rele_avariya].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+
+        </se:VisualBox>
+        <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  HorizontalAlignment="Left" Height="12" Margin="378,457,0,0" VerticalAlignment="Top" Width="12" CornerRadius="15">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="Red">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.bkt2].Items[vkl_rele_NBKT].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+
+        </se:VisualBox>
+        <TextBlock HorizontalAlignment="Left" Margin="771,410,0,0" TextWrapping="Wrap" Text="ПРЕДУПРЕЖДЕНИЕ" VerticalAlignment="Top" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="771,432,0,0" TextWrapping="Wrap" Text="ПЕРЕГРЕВ" VerticalAlignment="Top" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="771,452,0,0" TextWrapping="Wrap" Text="НЕИСПРАВНОСТЬ С БКТ" VerticalAlignment="Top" FontSize="14"/>
+        <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  HorizontalAlignment="Left" Height="12" Margin="754,415,0,0" VerticalAlignment="Top" Width="12" CornerRadius="15">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="Red">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.bkt3].Items[vkl_rele_preduprezhdenie].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+
+        </se:VisualBox>
+        <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  HorizontalAlignment="Left" Height="12" Margin="754,437,0,0" VerticalAlignment="Top" Width="12" CornerRadius="15">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="Red">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.bkt3].Items[vkl_rele_avariya].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+
+        </se:VisualBox>
+        <se:VisualBox Style="{StaticResource VB_LampStyle}" BorderThickness="0"  HorizontalAlignment="Left" Height="12" Margin="754,457,0,0" VerticalAlignment="Top" Width="12" CornerRadius="15">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="Red">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.bkt3].Items[vkl_rele_NBKT].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+
+        </se:VisualBox>
+        <Grid HorizontalAlignment="Left" Height="31" Margin="848,266,0,0" VerticalAlignment="Top" Width="100">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.ColumnSpan="3" Fill="Black" RadiusX="3" RadiusY="3" d:IsLocked="True"/>
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Text="КВАр" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" FontFamily="Arial" Foreground="White" Grid.ColumnSpan="2" Margin="0,5" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="18" Grid.Column="0" FontWeight="Bold" FontFamily="Arial" Foreground="White" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka5].Items[Q].Value}" Margin="0,0,3,0" />
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="31" Margin="848,342,0,0" VerticalAlignment="Top" Width="100">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.ColumnSpan="3" Fill="Black" RadiusX="3" RadiusY="3" d:IsLocked="True"/>
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Text="cos" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" FontFamily="Arial" Foreground="White" Grid.ColumnSpan="2" Margin="0,5" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="18" Grid.Column="0" FontWeight="Bold" FontFamily="Arial" Foreground="White" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka5].Items[cos].Value}" Margin="0,0,3,0" />
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="31" Margin="475,266,0,0" VerticalAlignment="Top" Width="100">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.ColumnSpan="2" Fill="Black" RadiusX="3" RadiusY="3" d:IsLocked="True"/>
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Text="КВАр" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" FontFamily="Arial" Foreground="White" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="18" Grid.Column="0" FontWeight="Bold" FontFamily="Arial" Foreground="White" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka3].Items[Q].Value}" Margin="0,0,3,0" />
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="31" Margin="475,342,0,0" VerticalAlignment="Top" Width="100">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.ColumnSpan="2" Fill="Black" RadiusX="3" RadiusY="3" d:IsLocked="True"/>
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Text="cos" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" FontFamily="Arial" Foreground="White" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="18" Grid.Column="0" FontWeight="Bold" FontFamily="Arial" Foreground="White" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka3].Items[cos].Value}" Margin="0,0,3,0" />
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="31" Margin="165,266,0,0" VerticalAlignment="Top" Width="100">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.ColumnSpan="2" Fill="Black" RadiusX="3" RadiusY="3" d:IsLocked="True"/>
+            <TextBlock Grid.Column="1" TextWrapping="Wrap" Text="КВАр" VerticalAlignment="Center" FontWeight="Bold" FontFamily="Arial" Foreground="White" FontSize="16" Margin="0,-3" Height="18" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="18" Grid.Column="0" FontWeight="Bold" FontFamily="Arial" Foreground="White" Height="21" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka2].Items[Q].Value}" Margin="0,0,3,0" />
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="31" Margin="165,342,0,0" VerticalAlignment="Top" Width="100">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="0.7*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.ColumnSpan="2" Fill="Black" RadiusX="3" RadiusY="3" d:IsLocked="True"/>
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Text="cos" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" FontFamily="Arial" Foreground="White" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="18" Grid.Column="0" FontWeight="Bold" FontFamily="Arial" Foreground="White" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka2].Items[cos].Value}" Margin="0,0,3,0" />
+        </Grid>
+        <scheme:QF Margin="1204,58,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" Width="30">
+            <scheme:QF.isOpen>
+                <hmi:SeBinding Path="modules[tags_mod].Items[sld_q2].Value">
+                    <hmi:SeBinding.Converter>
+                        <hmi:BooleanToInverseVisibility/>
+                    </hmi:SeBinding.Converter>
+                    <hmi:SeBinding.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <scheme:QF  Template="{StaticResource vacuum_qs}" Margin="1126,53,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="54" Height="54">
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.scheme].Items[tag89].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                    <hmi:Bind.Converter>
+                        <hmi:BooleanToInverseConverter/>
+                    </hmi:Bind.Converter>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <Grid HorizontalAlignment="Left" Height="31" Margin="1024,303,0,0" VerticalAlignment="Top" Width="100">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.ColumnSpan="2" Fill="Black" RadiusX="3" RadiusY="3" d:IsLocked="True"/>
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Text="КВА" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" FontFamily="Arial" Foreground="White" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="18" Grid.Column="0" FontWeight="Bold" FontFamily="Arial" Foreground="White" Height="21" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka6].Items[S].Value}" Margin="0,0,3,0" />
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="31" Margin="848,303,0,0" VerticalAlignment="Top" Width="100">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.ColumnSpan="3" Fill="Black" RadiusX="3" RadiusY="3" d:IsLocked="True"/>
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Text="КВА" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" FontFamily="Arial" Foreground="White" Grid.ColumnSpan="2" Margin="0,5" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="18" Grid.Column="0" FontWeight="Bold" FontFamily="Arial" Foreground="White" Height="21" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka5].Items[S].Value}" Margin="0,0,3,0" />
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="31" Margin="475,303,0,0" VerticalAlignment="Top" Width="100">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.ColumnSpan="2" Fill="Black" RadiusX="3" RadiusY="3" d:IsLocked="True"/>
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Text="КВА" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" FontFamily="Arial" Foreground="White" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="18" Grid.Column="0" FontWeight="Bold" FontFamily="Arial" Foreground="White" Height="21" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka3].Items[S].Value}" Margin="0,0,3,0" />
+
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="31" Margin="165,303,0,0" VerticalAlignment="Top" Width="100">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.ColumnSpan="2" Fill="Black" RadiusX="3" RadiusY="3" d:IsLocked="True"/>
+            <TextBlock Grid.Column="1" TextWrapping="Wrap" Text="КВА" VerticalAlignment="Center" FontWeight="Bold" FontFamily="Arial" Foreground="White" FontSize="16" Margin="0,-3" Height="18" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="18" Grid.Column="0" FontWeight="Bold" FontFamily="Arial" Foreground="White" Height="21" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.kru.yachejka2].Items[S].Value}" Margin="0,0,3,0" />
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="31" Margin="1192,699,0,0" VerticalAlignment="Top" Width="100" Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.ColumnSpan="2" Fill="Black" RadiusX="3" RadiusY="3" d:IsLocked="True"/>
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Text="КВА" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" FontFamily="Arial" Foreground="White" Visibility="Hidden" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="18" Grid.Column="0" FontWeight="Bold" FontFamily="Arial" Foreground="White" Text="{hmi:Bind FallbackValue=###, Path=Expressions.Node[kru].Items[4].Value}" Margin="0,0,3,0" Visibility="Hidden" />
+        </Grid>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Ячейка ЯКНО" VerticalAlignment="Top" Margin="1192,403,0,0" FontSize="14" Visibility="Hidden" />
+        <Rectangle  Margin="606,36,0,0" Fill="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="2"/>
+        <Rectangle  Margin="296,36,0,0" Fill="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="2"/>
+        <Rectangle  Margin="980,36,0,0" Fill="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="2"/>
+        <Rectangle  Margin="1151,36,0,0" Fill="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="2"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Ввод 6 кВ" VerticalAlignment="Top" Margin="1321,364,0,0" FontSize="14" Height="19" />
+
+    </Grid>
+</UserControl>

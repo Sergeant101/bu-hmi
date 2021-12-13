@@ -1,0 +1,11 @@
+﻿<se:SEWindow x:Class="Configurator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SCADA Application" Height="431" Width="725"
+        xmlns:my="clr-namespace:System;assembly=mscorlib"
+        xmlns:se="http://schemas.monokot.com/se/"
+        xmlns:hmi="http://schemas.monokot.com/hmi/"
+        Background="#FFF9F8F9" WindowStartupLocation="CenterScreen">
+    <Canvas>
+    </Canvas>
+</se:SEWindow>

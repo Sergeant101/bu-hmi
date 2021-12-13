@@ -1,0 +1,582 @@
+﻿<UserControl x:Class="VFD.Frames.Sub.SNG_Obuchenie.SLD"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:se="http://schemas.monokot.com/se/"
+             xmlns:bindings="http://schemas.monokot.com/hmi/"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:scheme="clr-namespace:NGO.Elements.Scheme;assembly=NGO.Elements"
+             mc:Ignorable="d" 
+             d:DesignHeight="840" d:DesignWidth="1200">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/NGO.Elements;component/Style/superVfd_styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Canvas>
+        <Rectangle HorizontalAlignment="Center" Height="506" Stroke="Black" VerticalAlignment="Top" Width="1063" RadiusX="10" RadiusY="10" Fill="Gainsboro" Canvas.Left="69" Canvas.Top="148"/>
+
+
+
+        <Ellipse Stroke="Black" StrokeThickness="2" Height="62" Canvas.Left="570" Canvas.Top="227" Width="62"/>
+
+
+
+        <Rectangle Height="332" Canvas.Left="146" Fill="Black" Canvas.Top="136" Width="2" Visibility="Collapsed"/>
+        <Rectangle Height="132" Canvas.Left="146" Fill="Black" Canvas.Top="566" Width="2"/>
+        <Rectangle Height="130" Canvas.Left="431" Fill="Black" Canvas.Top="568" Width="2"/>
+        <Rectangle Height="132" Canvas.Left="783" Fill="Black" Canvas.Top="566" Width="2"/>
+        <Rectangle Height="131" Canvas.Left="1050" Fill="Black" Canvas.Top="567" Width="2"/>
+        <Rectangle Height="200" Canvas.Left="599" Fill="Black" Canvas.Top="35" Width="2"/>
+        <Rectangle Height="150" Canvas.Left="600" Fill="Black" Canvas.Top="284" Width="2"/>
+        <Rectangle Height="30" Canvas.Left="585" Fill="Black" Canvas.Top="444" Width="2"/>
+        <Rectangle Height="19" Canvas.Left="615" Fill="Black" Canvas.Top="455" Width="2"/>
+        <Rectangle Height="1" Canvas.Left="491" Fill="Black" Canvas.Top="473" Width="95"/>
+        <Rectangle Height="15" Canvas.Left="491" Fill="Black" Canvas.Top="546" Width="2"/>
+        <Rectangle Height="1" Canvas.Left="615" Fill="Black" Canvas.Top="473" Width="95"/>
+        <Rectangle Height="22" Canvas.Left="708" Fill="Black" Canvas.Top="473" Width="2"/>
+        <se:VisualBox Canvas.Left="105" Canvas.Top="8" Width="84" Height="130" BorderBrush="{x:Null}" Visibility="Collapsed">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/VFD;component/Content/Scheme/dpp-green.png" Stretch="Uniform"/>
+                    </se:VisualBoxStateItem.Background>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+            <se:VisualBox.Background>
+                <ImageBrush ImageSource="/VFD;component/Content/Scheme/dpp-yellow.png" Stretch="Uniform"/>
+            </se:VisualBox.Background>
+        </se:VisualBox>
+
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="7" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="387" Canvas.Left="115" Canvas.Top="561" CornerRadius="0">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <bindings:Bind Path="Tags.Node[view.scheme].Items[tag80].Value">
+                            <bindings:Bind.FallbackValue>
+                                <system:Boolean>True</system:Boolean>
+                            </bindings:Bind.FallbackValue>
+                        </bindings:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="7" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="360" Canvas.Left="702" Canvas.Top="561" CornerRadius="0">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <bindings:Bind Path="Tags.Node[view.scheme].Items[tag79].Value">
+                            <bindings:Bind.FallbackValue>
+                                <system:Boolean>True</system:Boolean>
+                            </bindings:Bind.FallbackValue>
+                        </bindings:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+
+        <scheme:QF Canvas.Left="115" Canvas.Top="467" Height="52" Width="38" Visibility="Collapsed">
+            <scheme:QF.isOpen>
+                <bindings:Bind  Path="Tags.Node[view.scheme].Items[tag98].Value">
+                    <bindings:Bind.Converter>
+                        <bindings:BooleanToInverseConverter/>
+                    </bindings:Bind.Converter>
+                    <bindings:Bind.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </bindings:Bind.FallbackValue>
+                </bindings:Bind>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <scheme:QF Canvas.Left="569" Canvas.Top="234" Height="51" Width="39" electricType="QS">
+            <scheme:QF.isOpen>
+                <bindings:Bind  Path="Tags.Node[view.scheme].Items[tag78].Value">
+                    <bindings:Bind.Converter>
+                        <bindings:BooleanToInverseConverter/>
+                    </bindings:Bind.Converter>
+                    <bindings:Bind.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </bindings:Bind.FallbackValue>
+                </bindings:Bind>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <scheme:QF Canvas.Left="460" Canvas.Top="494" Height="52" Width="39">
+            <scheme:QF.isOpen>
+                <bindings:Bind  Path="Tags.Node[view.scheme].Items[tag80].Value">
+                    <bindings:Bind.Converter>
+                        <bindings:BooleanToInverseConverter/>
+                    </bindings:Bind.Converter>
+                    <bindings:Bind.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </bindings:Bind.FallbackValue>
+                </bindings:Bind>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <scheme:QF Canvas.Left="677" Canvas.Top="494" Height="52" Width="38">
+            <scheme:QF.isOpen>
+                <bindings:Bind  Path="Tags.Node[view.scheme].Items[tag79].Value">
+                    <bindings:Bind.Converter>
+                        <bindings:BooleanToInverseConverter/>
+                    </bindings:Bind.Converter>
+                    <bindings:Bind.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </bindings:Bind.FallbackValue>
+                </bindings:Bind>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <TextBlock Canvas.Left="153" TextWrapping="Wrap" Text="QF2" Canvas.Top="477" FontSize="20" Visibility="Collapsed"/>
+        <TextBlock Canvas.Left="499" TextWrapping="Wrap" Text="QF4" Canvas.Top="508" FontSize="20"/>
+        <TextBlock Canvas.Left="722" TextWrapping="Wrap" Text="QF3" Canvas.Top="508" FontSize="20"/>
+        <TextBlock Canvas.Left="1079" TextWrapping="Wrap" Text="МЧП" Canvas.Top="115" FontSize="20"/>
+        <TextBlock Canvas.Left="631" TextWrapping="Wrap" Text="Q1" Canvas.Top="205" FontSize="20"/>
+        <TextBlock Canvas.Left="631" TextWrapping="Wrap" Text="Т1&#xD;&#xA;6/0,4-0,69 кВ" Canvas.Top="408" FontSize="20"/>
+        <se:VisualBox Canvas.Left="121" Canvas.Top="594" Height="42" Width="51" BorderBrush="{x:Null}" CornerRadius="0">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Value>
+                        <bindings:Bind  Path="Tags.Node[view.main_drives.aux.vfd].Items[ready_bit].Value">
+                            <bindings:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </bindings:Bind.FallbackValue>
+                        </bindings:Bind>
+                    </se:VisualBoxStateItem.Value>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/VFD;component/Content/Scheme/converter-green.png" Stretch="Uniform"/>
+                    </se:VisualBoxStateItem.Background>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Value>
+                        <bindings:Bind  Path="Tags.Node[view.main_drives.aux.vfd].Items[running_bit].Value">
+                            <bindings:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </bindings:Bind.FallbackValue>
+                        </bindings:Bind>
+                    </se:VisualBoxStateItem.Value>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/VFD;component/Content/Scheme/converter-green.png" Stretch="Uniform"/>
+                    </se:VisualBoxStateItem.Background>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Value>
+                        <bindings:Bind  Path="Tags.Node[view.main_drives.aux.vfd].Items[emer_bit].Value">
+                            <bindings:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </bindings:Bind.FallbackValue>
+                            <bindings:Bind.Converter>
+                                <bindings:BooleanToInverseConverter/>
+                            </bindings:Bind.Converter>
+                        </bindings:Bind>
+                    </se:VisualBoxStateItem.Value>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/VFD;component/Content/Scheme/converter-red.png" Stretch="Fill"/>
+                    </se:VisualBoxStateItem.Background>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+            <se:VisualBox.Background>
+                <ImageBrush ImageSource="/VFD;component/Content/Scheme/converter-yellow.png" Stretch="Uniform"/>
+            </se:VisualBox.Background>
+        </se:VisualBox>
+        <se:VisualBox Canvas.Left="409" Canvas.Top="594" Height="42" Width="50" BorderBrush="{x:Null}" CornerRadius="0">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Value>
+                        <bindings:Bind  Path="Tags.Node[view.helperdrawwork1.vfd].Items[ready_bit].Value">
+                            <bindings:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </bindings:Bind.FallbackValue>
+                        </bindings:Bind>
+                    </se:VisualBoxStateItem.Value>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/VFD;component/Content/Scheme/converter-green.png" Stretch="Uniform"/>
+                    </se:VisualBoxStateItem.Background>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Value>
+                        <bindings:Bind  Path="Tags.Node[view.helperdrawwork1.vfd].Items[running_bit].Value">
+                            <bindings:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </bindings:Bind.FallbackValue>
+                        </bindings:Bind>
+                    </se:VisualBoxStateItem.Value>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/VFD;component/Content/Scheme/converter-green.png" Stretch="Uniform"/>
+                    </se:VisualBoxStateItem.Background>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Value>
+                        <bindings:Bind  Path="Tags.Node[view.helperdrawwork1.vfd].Items[emer_bit].Value">
+                            <bindings:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </bindings:Bind.FallbackValue>
+                            <bindings:Bind.Converter>
+                                <bindings:BooleanToInverseConverter/>
+                            </bindings:Bind.Converter>
+                        </bindings:Bind>
+                    </se:VisualBoxStateItem.Value>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/VFD;component/Content/Scheme/converter-red.png" Stretch="Fill"/>
+                    </se:VisualBoxStateItem.Background>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+            <se:VisualBox.Background>
+                <ImageBrush ImageSource="/VFD;component/Content/Scheme/converter-yellow.png" Stretch="Uniform"/>
+            </se:VisualBox.Background>
+        </se:VisualBox>
+        <se:VisualBox Canvas.Left="759" Canvas.Top="594" Height="42" Width="51" BorderBrush="{x:Null}" CornerRadius="0">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Value>
+                        <bindings:Bind  Path="Tags.Node[view.main_drives.drawwork.motor1.vfd].Items[ready_bit].Value">
+                            <bindings:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </bindings:Bind.FallbackValue>
+                        </bindings:Bind>
+                    </se:VisualBoxStateItem.Value>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/VFD;component/Content/Scheme/converter-green.png" Stretch="Uniform"/>
+                    </se:VisualBoxStateItem.Background>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Value>
+                        <bindings:Bind  Path="Tags.Node[view.main_drives.drawwork.motor1.vfd].Items[running_bit].Value">
+                            <bindings:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </bindings:Bind.FallbackValue>
+                        </bindings:Bind>
+                    </se:VisualBoxStateItem.Value>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/VFD;component/Content/Scheme/converter-green.png" Stretch="Uniform"/>
+                    </se:VisualBoxStateItem.Background>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Value>
+                        <bindings:Bind  Path="Tags.Node[view.main_drives.drawwork.motor1.vfd].Items[emer_bit].Value">
+                            <bindings:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </bindings:Bind.FallbackValue>
+                            <bindings:Bind.Converter>
+                                <bindings:BooleanToInverseConverter/>
+                            </bindings:Bind.Converter>
+                        </bindings:Bind>
+                    </se:VisualBoxStateItem.Value>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/VFD;component/Content/Scheme/converter-red.png" Stretch="Uniform"/>
+                    </se:VisualBoxStateItem.Background>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+            <se:VisualBox.Background>
+                <ImageBrush ImageSource="/VFD;component/Content/Scheme/converter-yellow.png" Stretch="Uniform"/>
+            </se:VisualBox.Background>
+        </se:VisualBox>
+        <se:VisualBox Canvas.Left="1023" Canvas.Top="594" Height="42" Width="51" BorderBrush="{x:Null}" CornerRadius="0">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Value>
+                        <bindings:Bind  Path="Tags.Node[view.scheme].Items[tag55].Value">
+                            <bindings:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </bindings:Bind.FallbackValue>
+                        </bindings:Bind>
+                    </se:VisualBoxStateItem.Value>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/VFD;component/Content/Scheme/converter-green.png" Stretch="Uniform"/>
+                    </se:VisualBoxStateItem.Background>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Value>
+                        <bindings:Bind  Path="Tags.Node[view.scheme].Items[tag56].Value">
+                            <bindings:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </bindings:Bind.FallbackValue>
+                        </bindings:Bind>
+                    </se:VisualBoxStateItem.Value>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/VFD;component/Content/Scheme/converter-red.png" Stretch="Fill"/>
+                    </se:VisualBoxStateItem.Background>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+            <se:VisualBox.Background>
+                <ImageBrush ImageSource="/VFD;component/Content/Scheme/converter-yellow.png" Stretch="Uniform"/>
+            </se:VisualBox.Background>
+        </se:VisualBox>
+        <se:VisualBox Canvas.Left="121" Canvas.Top="696" Height="41" Width="51" BorderBrush="{x:Null}">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Value>
+                        <bindings:Bind  Path="Tags.Node[view.main_drives.aux.vfd].Items[running_bit].Value">
+                            <bindings:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </bindings:Bind.FallbackValue>
+                        </bindings:Bind>
+                    </se:VisualBoxStateItem.Value>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/VFD;component/Content/Scheme/motor-green.png" Stretch="Uniform"/>
+                    </se:VisualBoxStateItem.Background>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/VFD;component/Content/Scheme/motor-red.png" Stretch="Uniform"/>
+                    </se:VisualBoxStateItem.Background>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+            <se:VisualBox.Background>
+                <ImageBrush ImageSource="/VFD;component/Content/Scheme/motor-yellow.png" Stretch="Uniform"/>
+            </se:VisualBox.Background>
+        </se:VisualBox>
+        <se:VisualBox Canvas.Left="409" Canvas.Top="696" Height="41" Width="50" BorderBrush="{x:Null}">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/VFD;component/Content/Scheme/motor-green.png" Stretch="Uniform"/>
+                    </se:VisualBoxStateItem.Background>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/VFD;component/Content/Scheme/motor-red.png" Stretch="Uniform"/>
+                    </se:VisualBoxStateItem.Background>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+            <se:VisualBox.Background>
+                <ImageBrush ImageSource="/VFD;component/Content/Scheme/motor-yellow.png" Stretch="Uniform"/>
+            </se:VisualBox.Background>
+        </se:VisualBox>
+        <se:VisualBox Canvas.Left="759" Canvas.Top="696" Height="41" Width="51" BorderBrush="{x:Null}">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/VFD;component/Content/Scheme/motor-green.png" Stretch="Uniform"/>
+                    </se:VisualBoxStateItem.Background>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/VFD;component/Content/Scheme/motor-red.png" Stretch="Uniform"/>
+                    </se:VisualBoxStateItem.Background>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+            <se:VisualBox.Background>
+                <ImageBrush ImageSource="/VFD;component/Content/Scheme/motor-yellow.png" Stretch="Uniform"/>
+            </se:VisualBox.Background>
+        </se:VisualBox>
+        <se:VisualBox Canvas.Left="1023" Canvas.Top="696" Height="41" Width="51" BorderBrush="{x:Null}">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/VFD;component/Content/Scheme/motor-green.png" Stretch="Uniform"/>
+                    </se:VisualBoxStateItem.Background>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem.Background>
+                        <ImageBrush ImageSource="/VFD;component/Content/Scheme/motor-red.png" Stretch="Fill"/>
+                    </se:VisualBoxStateItem.Background>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+            <se:VisualBox.Background>
+                <ImageBrush ImageSource="/VFD;component/Content/Scheme/motor-yellow.png" Stretch="Uniform"/>
+            </se:VisualBox.Background>
+        </se:VisualBox>
+        <se:VisualBox Canvas.Left="575" Canvas.Top="420" Height="41" Width="51" BorderBrush="{x:Null}" Background="{StaticResource t3_yellow}">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource t3_green}">
+                    <se:VisualBoxStateItem.Value>
+                        <bindings:Bind  Path="Tags.Node[view.scheme].Items[tag78].Value">
+                            <bindings:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </bindings:Bind.FallbackValue>
+                        </bindings:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="{StaticResource t3_red}">
+                    <se:VisualBoxStateItem.Value>
+                        <bindings:Bind  Path="Tags.Node[view.scheme].Items[tag83].Value">
+                            <bindings:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </bindings:Bind.FallbackValue>
+                        </bindings:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <TextBlock Canvas.Left="173" TextWrapping="Wrap" Text="ДОПОЛНИТЕЛЬНЫЙ&#xD;&#xA;ПРИВОД" Canvas.Top="658" FontSize="20"/>
+        <TextBlock Canvas.Left="455" TextWrapping="Wrap" Text="ВСПОМОГАТЕЛЬНАЯ&#xD;&#xA;ЛЕБЕДКА" Canvas.Top="658" FontSize="20"/>
+        <TextBlock Canvas.Left="816" TextWrapping="Wrap" Text="ЛЕБЕДКА" Canvas.Top="658" FontSize="20"/>
+        <TextBlock Canvas.Left="1077" TextWrapping="Wrap" Text="ВСП" Canvas.Top="658" FontSize="20"/>
+        <Grid Height="81" Canvas.Left="72" Canvas.Top="744" Width="150">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="А" VerticalAlignment="Top" FontSize="20"/>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="кВт" VerticalAlignment="Top" Grid.Row="1" Grid.RowSpan="2" FontSize="20"/>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="об/мин" VerticalAlignment="Top" Grid.Row="2" FontSize="20"/>
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{bindings:Bind Tags.Node[view.main_drives.aux].Items[current].Value, FallbackValue=0}" VerticalAlignment="Top" Margin="0,0,5,0" FontSize="20"/>
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{bindings:Bind Tags.Node[view.main_drives.aux].Items[power].Value, FallbackValue=0}" VerticalAlignment="Top" Margin="0,0,5,0" Grid.Row="1" Grid.RowSpan="2" FontSize="20"/>
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{bindings:Bind Tags.Node[view.main_drives.aux].Items[rpm].Value, FallbackValue=0}" VerticalAlignment="Top" Margin="0,0,5,0" Grid.Row="2" FontSize="20"/>
+        </Grid>
+        <Grid Height="81" Canvas.Left="360" Canvas.Top="744" Width="150">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="А" VerticalAlignment="Top" FontSize="20"/>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="кВт" VerticalAlignment="Top" Grid.Row="1" Grid.RowSpan="2" FontSize="20"/>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="об/мин" VerticalAlignment="Top" Grid.Row="2" FontSize="20"/>
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{bindings:Bind Tags.Node[view.helperdrawwork1].Items[current].Value, FallbackValue=0}" VerticalAlignment="Top" Margin="0,0,5,0" FontSize="20"/>
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{bindings:Bind Tags.Node[view.helperdrawwork1].Items[power].Value, FallbackValue=0}" VerticalAlignment="Top" Margin="0,0,5,0" Grid.Row="1" Grid.RowSpan="2" FontSize="20"/>
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{bindings:Bind Tags.Node[view.helperdrawwork1].Items[rpm].Value, FallbackValue=0}" VerticalAlignment="Top" Margin="0,0,5,0" Grid.Row="2" FontSize="20"/>
+        </Grid>
+        <Grid Height="81" Canvas.Left="713" Canvas.Top="744" Width="150">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="А" VerticalAlignment="Top" FontSize="20"/>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="кВт" VerticalAlignment="Top" Grid.Row="1" Grid.RowSpan="2" FontSize="20"/>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="об/мин" VerticalAlignment="Top" Grid.Row="2" FontSize="20"/>
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{bindings:Bind Tags.Node[view.main_drives.drawwork.motor1].Items[current].Value, FallbackValue=0}" VerticalAlignment="Top" Margin="0,0,5,0" FontSize="20"/>
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{bindings:Bind Tags.Node[view.main_drives.drawwork.motor1].Items[power].Value, FallbackValue=0}" VerticalAlignment="Top" Margin="0,0,5,0" Grid.Row="1" Grid.RowSpan="2" FontSize="20"/>
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{bindings:Bind Tags.Node[view.main_drives.drawwork.motor1].Items[rpm].Value, FallbackValue=0}" VerticalAlignment="Top" Margin="0,0,5,0" Grid.Row="2" FontSize="20"/>
+        </Grid>
+        <Grid Height="81" Canvas.Left="978" Canvas.Top="744" Width="150">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="А" VerticalAlignment="Top" FontSize="20"/>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="кВт" VerticalAlignment="Top" Grid.Row="1" Grid.RowSpan="2" FontSize="20"/>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="об/мин" VerticalAlignment="Top" Grid.Row="2" FontSize="20"/>
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{bindings:Bind Tags.Node[view.main_drives.rotor].Items[current].Value, FallbackValue=0}" VerticalAlignment="Top" Margin="0,0,5,0" FontSize="20"/>
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{bindings:Bind Tags.Node[view.main_drives.rotor].Items[power].Value, FallbackValue=0}" VerticalAlignment="Top" Margin="0,0,5,0" Grid.Row="1" Grid.RowSpan="2" FontSize="20"/>
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{bindings:Bind Tags.Node[view.main_drives.rotor].Items[rpm].Value, FallbackValue=0}" VerticalAlignment="Top" Margin="0,0,5,0" Grid.Row="2" FontSize="20"/>
+        </Grid>
+        <Rectangle Height="22" Canvas.Left="491" Fill="Black" Canvas.Top="473" Width="2"/>
+        <Rectangle Height="18" Canvas.Left="707" Fill="Black" Canvas.Top="544" Width="2"/>
+        <Rectangle Height="44" Canvas.Left="145" Fill="Black" Canvas.Top="517" Width="2" Visibility="Collapsed"/>
+        <TextBlock Canvas.Left="629" TextWrapping="Wrap" Text="6,3 кВ" Canvas.Top="80" FontSize="20"/>
+        <Grid HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="150" Canvas.Left="682" Canvas.Top="155">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="31*"/>
+                <ColumnDefinition Width="19*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.ColumnSpan="2" Grid.RowSpan="3" Fill="Black" RadiusX="5" RadiusY="5"/>
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Text="В" VerticalAlignment="Center" FontSize="20" FontWeight="Bold" Foreground="Yellow" Height="23" Margin="0,2" Width="14" FontFamily="Tahoma" />
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Grid.Row="1" Text="В" VerticalAlignment="Center" FontSize="20" Foreground="#FF3FCB3F" FontWeight="Bold" Height="23" Margin="0,2" Width="14" FontFamily="Tahoma" />
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Grid.Row="2" Text="В" VerticalAlignment="Center" FontSize="20" Foreground="Red" FontWeight="Bold" Height="23" Margin="0,2" Width="14" FontFamily="Tahoma" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Margin="0,2,5,2" FontSize="20" Grid.Column="0" Text="{bindings:Bind Tags.Node[view.kru].Items[U_a].Value, FallbackValue=v}" FontWeight="Bold" Foreground="Yellow" Height="23" Width="11" TextAlignment="Right" FontFamily="Tahoma" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="1" Margin="0,2,5,2" FontSize="20" Grid.Column="0" Text="{bindings:Bind Tags.Node[view.kru].Items[U_b].Value, FallbackValue=v}" FontWeight="Bold" Foreground="#FF3FCB3F" Height="23" Width="11" TextAlignment="Right" FontFamily="Tahoma" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="2" Margin="0,2,5,2" FontSize="20" Grid.Column="0" Text="{bindings:Bind Tags.Node[view.kru].Items[U_c].Value, FallbackValue=v}" FontWeight="Bold" Foreground="Red" Height="23" Width="11" TextAlignment="Right" FontFamily="Tahoma"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="150" Canvas.Left="682" Canvas.Top="241">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="31*"/>
+                <ColumnDefinition Width="19*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.ColumnSpan="2" Grid.RowSpan="3" Fill="Black" RadiusX="3" RadiusY="3"/>
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Text="А" VerticalAlignment="Center" FontSize="20" FontWeight="Bold" Foreground="Yellow" Height="23" Margin="0,2" Width="14" FontFamily="Tahoma" />
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Grid.Row="1" Text="А" VerticalAlignment="Center" FontSize="20" Foreground="#FF3FCB3F" FontWeight="Bold" Height="23" Margin="0,2" Width="14" FontFamily="Tahoma" />
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Grid.Row="2" Text="А" VerticalAlignment="Center" FontSize="20" Foreground="Red" FontWeight="Bold" Height="23" Margin="0,2" Width="14" FontFamily="Tahoma" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Margin="0,2,5,2" FontSize="20" Grid.Column="0"              Text="{bindings:Bind Tags.Node[view.kru].Items[I_a].Value, FallbackValue=v}" FontWeight="Bold" Foreground="Yellow" Height="23" Width="11" TextAlignment="Right" FontFamily="Tahoma" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="1" Margin="0,2,5,2" FontSize="20" Grid.Column="0" Text="{bindings:Bind Tags.Node[view.kru].Items[I_b].Value, FallbackValue=v}" FontWeight="Bold" Foreground="#FF3FCB3F" Height="23" Width="11" TextAlignment="Right" FontFamily="Tahoma" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="2" Margin="0,2,5,2" FontSize="20" Grid.Column="0" Text="{bindings:Bind Tags.Node[view.kru].Items[I_c].Value, FallbackValue=v}" FontWeight="Bold" Foreground="Red" Height="23" Width="11" TextAlignment="Right" FontFamily="Tahoma"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="150" Canvas.Left="682" Canvas.Top="327">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="91*"/>
+                <ColumnDefinition Width="59*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.ColumnSpan="2" Grid.RowSpan="3" Fill="Black" RadiusX="3" RadiusY="3"/>
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Text="МВт" VerticalAlignment="Center" FontWeight="Bold" Foreground="White" FontSize="16" Margin="0,2" FontFamily="Tahoma" />
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Grid.Row="1" Text="МВAр" VerticalAlignment="Center" Foreground="White" FontWeight="Bold" FontSize="16" Margin="0,1" FontFamily="Tahoma" />
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Grid.Row="2" Text="кВт х ч" VerticalAlignment="Center" Foreground="White" FontWeight="Bold" FontSize="16" Margin="0,2,-9,2" FontFamily="Tahoma" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Column="0"              Text="{bindings:Bind Tags.Node[view.kru].Items[P].Value, FallbackValue=123456}" FontWeight="Bold" Foreground="White" FontSize="20" Height="23" Width="67" Margin="0,0,5,0" TextAlignment="Right" FontFamily="Tahoma" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0" Text="{bindings:Bind Tags.Node[view.kru].Items[Q].Value, FallbackValue=v}" FontWeight="Bold" Foreground="White" FontSize="20" Height="24" Width="11" Margin="0,0,5,0" TextAlignment="Right" FontFamily="Tahoma"/>
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0" Text="{bindings:Bind Tags.Node[view.kru].Items[ehnergiya].Value, FallbackValue=v}" FontWeight="Bold" Foreground="White" FontSize="20" Height="23" Width="11" Margin="0,0,5,0" TextAlignment="Right" FontFamily="Tahoma"/>
+        </Grid>
+        <Grid Height="81" Canvas.Left="835" Canvas.Top="469" Width="150">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock  FontSize="20" Text="{bindings:Bind Tags.Node[view.multimetr1].Items[I_srednij].Value, FallbackValue=40.1}"       VerticalAlignment="Center" HorizontalAlignment="Right" TextAlignment="Right" Foreground="Black"/>
+            <TextBlock Text="{bindings:Bind Tags.Node[view.multimetr1].Items[chastota].Value, FallbackValue=49\,99}" FontSize="20" TextAlignment="Right" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="2" />
+            <TextBlock FontSize="20" TextAlignment="Right" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" Text="Гц" Margin="5,0,0,0" />
+            <TextBlock FontSize="20" TextAlignment="Right" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Text="А" Margin="5,0,0,0" />
+            <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Top" Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="2">
+                <TextBlock  FontSize="20" Text="{bindings:Bind Tags.Node[view.multimetr1].Items[U_ab].Value, FallbackValue=690\,0}"       VerticalAlignment="Top" HorizontalAlignment="Left" TextAlignment="Right" Foreground="Black"/>
+                <TextBlock  FontSize="20" Text="B" Margin="5,0,0,0"      VerticalAlignment="Top" HorizontalAlignment="Left" TextAlignment="Center" Foreground="Black"/>
+                <TextBlock  FontSize="20" Text="/" Margin="5,0,0,0"      VerticalAlignment="Top" HorizontalAlignment="Left" TextAlignment="Center" Foreground="Black"/>
+                <TextBlock  FontSize="20" Text="{bindings:Bind Tags.Node[view.multimetr1].Items[U_srednee].Value, FallbackValue=fb}"       VerticalAlignment="Top" HorizontalAlignment="Left" TextAlignment="Center" Foreground="Black" Margin="5,0,0,0"/>
+                <TextBlock  FontSize="20" Text="B" Margin="5,0,0,0"      VerticalAlignment="Top" HorizontalAlignment="Left" TextAlignment="Center" Foreground="Black"/>
+            </StackPanel>
+
+        </Grid>
+        <Grid Height="81" Canvas.Left="273" Canvas.Top="469" Width="150">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock FontSize="20" TextAlignment="Right" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" Text="Гц" Margin="5,0,0,0" />
+            <TextBlock FontSize="20" TextAlignment="Right" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Text="А" Margin="5,0,0,0" />
+            <TextBlock  FontSize="20" Text="{bindings:Bind Tags.Node[view.multimetr2].Items[I_srednij].Value, FallbackValue=40\,1}"       VerticalAlignment="Center" HorizontalAlignment="Right" TextAlignment="Right" Foreground="Black"/>
+            <TextBlock Text="{bindings:Bind Tags.Node[view.multimetr2].Items[chastota].Value, FallbackValue=45\,22}" FontSize="20" TextAlignment="Right" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="2" />
+
+            <StackPanel HorizontalAlignment="Stretch" Grid.Row="1" Grid.ColumnSpan="2" Margin="0,0,0,0" VerticalAlignment="Top" Orientation="Horizontal">
+                <TextBlock  FontSize="20" Text="{bindings:Bind Tags.Node[view.multimetr2].Items[U_ab].Value, FallbackValue=400\,0}"       VerticalAlignment="Top" HorizontalAlignment="Left" TextAlignment="Right" Foreground="Black"/>
+                <TextBlock  FontSize="20" Text="B" Margin="5,0,0,0"      VerticalAlignment="Top" HorizontalAlignment="Left" TextAlignment="Center" Foreground="Black"/>
+                <TextBlock  FontSize="20" Text="/" Margin="5,0,0,0"      VerticalAlignment="Top" HorizontalAlignment="Left" TextAlignment="Center" Foreground="Black"/>
+                <TextBlock  FontSize="20" Text="{bindings:Bind Tags.Node[view.multimetr2].Items[U_srednee].Value, FallbackValue=fb}"       VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="Black" Margin="5,0,0,0"/>
+                <TextBlock  FontSize="20" Text="B" Margin="5,0,0,0"      VerticalAlignment="Top" HorizontalAlignment="Left" TextAlignment="Center" Foreground="Black"/>
+            </StackPanel>
+        </Grid>
+
+        
+
+
+    </Canvas>
+</UserControl>

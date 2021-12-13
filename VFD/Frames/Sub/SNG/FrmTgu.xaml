@@ -1,0 +1,209 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:elements="clr-namespace:NGO.Elements;assembly=NGO.Elements"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:message="clr-namespace:NGO.Elements.Message;assembly=NGO.Elements"
+    
+             xmlns:se="http://schemas.monokot.com/se/"
+             xmlns:hmi="http://schemas.monokot.com/hmi/"
+    
+             x:Class="Vfd_app.Gui.Frames.FrmTgu" 
+             mc:Ignorable="d" 
+             d:DesignHeight="940" d:DesignWidth="1280">
+    <Canvas Margin="0,40,0,0" Background="#FFC9C9C9">
+        <Rectangle Fill="#FF959595" Height="297" Canvas.Top="593" Width="1259" RadiusY="10" RadiusX="10" Stroke="Black" Canvas.Left="6" d:IsLocked="True"/>
+        <Rectangle Fill="#FF959595" Height="488" Canvas.Top="52" Width="1259" RadiusY="10" RadiusX="10" Stroke="Black" Canvas.Left="6" d:IsLocked="True"/>
+
+        <se:VisualBox Canvas.Left="27" Canvas.Top="52" Height="45" x:Name="indicator4_Copy" Width="280" FontFamily="Tahoma" Text="ТГУ1 СТАТУС" Visibility="Collapsed">
+            <se:VisualBox.Background>
+                <hmi:SeBinding FallbackValue="Gray" Path="modules[tags_mod].Items[тгу1_статус (медиа)].color">
+                    <hmi:SeBinding.Converter>
+                        <hmi:ColorToSolidColorBrushConverter/>
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </se:VisualBox.Background>
+        </se:VisualBox>
+
+        <se:ValueDisplay HorizontalAlignment="Center" VerticalAlignment="Center" Height="70" Width="260" Canvas.Left="29" Canvas.Top="430" Header="Температура приточного воздуха, Г1" Label="°С" LabelFontSize="16" Value="{hmi:SeBinding modules[tags_mod].Items[тгу1_температура_нагр_воздуха].Value, FallbackValue=Fallback, StringFormat=0.0}" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" LabelForeground="Black"/>
+
+        <TextBlock Canvas.Left="323" TextWrapping="Wrap" FontSize="28" HorizontalAlignment="Center" FontWeight="Bold" Text="Теплогенераторная установка" Canvas.Top="5" Width="638" TextAlignment="Center" />
+        <se:ValueDisplay HorizontalAlignment="Center" VerticalAlignment="Center" Height="70" Width="260" Canvas.Left="300" Canvas.Top="430" Header="Температура приточного воздуха, Г2" Label="°С" LabelFontSize="16" Value="{hmi:SeBinding modules[tags_mod].Items[тгу2_температура_нагр_воздуха].Value, FallbackValue=Fallback, StringFormat=0.0}" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" LabelForeground="Black"/>
+        <se:VisualBox Canvas.Left="341" Canvas.Top="52" Height="45" x:Name="indicator4_Copy4" Width="280" FontFamily="Tahoma" Text="ТГУ1 СТАТУС" Visibility="Collapsed">
+            <se:VisualBox.Background>
+                <hmi:SeBinding FallbackValue="Gray" Path="modules[tags_mod].Items[тгу2_статус (медиа)].color">
+                    <hmi:SeBinding.Converter>
+                        <hmi:ColorToSolidColorBrushConverter/>
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </se:VisualBox.Background>
+        </se:VisualBox>
+        <se:ValueDisplay HorizontalAlignment="Center" VerticalAlignment="Center" Height="70" Width="288" Canvas.Left="688" Canvas.Top="430" Header="Расход топлива" Label="л/ч" LabelFontSize="16" Value="{hmi:SeBinding modules[tags_mod].Items[тгу1_расход_топлива].Value, FallbackValue=Fallback, StringFormat=0.0}" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" LabelForeground="Black" Visibility="Collapsed"/>
+        <se:ValueDisplay HorizontalAlignment="Center" VerticalAlignment="Center" Height="70" Width="202" Canvas.Left="573" Canvas.Top="719" Header="Давление воздуха в сети" Label="МПа" LabelFontSize="16" Value="{hmi:SeBinding modules[tags_mod].Items[dr_pressureInSys].Value, FallbackValue=Fallback, StringFormat=0.00}" HeaderBackground="Black" ValueForeground="Black" LabelForeground="Black">
+            <se:ValueDisplay.ValueBackground>
+                <hmi:SeBinding FallbackValue="Gray" Path="modules[tags_mod].Items[лебедка_инд_воздух (медиа)].color">
+                    <hmi:SeBinding.Converter>
+                        <hmi:ColorToSolidColorBrushConverter/>
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </se:ValueDisplay.ValueBackground>
+        </se:ValueDisplay>
+        <se:ValueDisplay HorizontalAlignment="Center" VerticalAlignment="Center" Height="85" Width="146" Canvas.Left="611" Canvas.Top="774" Header="Давление воздуха" Label="МПа" LabelFontSize="16" Value="{hmi:SeBinding modules[tags_mod].Items[компрессор2_давление_воздуха].Value, FallbackValue=Fallback, StringFormat=0}" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" LabelForeground="Black" Visibility="Hidden"/>
+        <se:ValueDisplay HorizontalAlignment="Center" VerticalAlignment="Center" Height="70" Width="225" Canvas.Left="795" Canvas.Top="719" Header="Наработка двигателя" Label="ч" LabelFontSize="16" Value="{hmi:SeBinding modules[tags_mod].Items[компрессор1_наработка1].Value, FallbackValue=Fallback, StringFormat=0}" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" LabelForeground="Black"/>
+        <se:ValueDisplay HorizontalAlignment="Center" VerticalAlignment="Center" Height="70" Width="225" Canvas.Left="795" Canvas.Top="640" Header="Наработка под нагрузкой" Label="ч" LabelFontSize="16" Value="{hmi:SeBinding modules[tags_mod].Items[компрессор1_наработка2].Value, FallbackValue=Fallback, StringFormat=0}" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" LabelForeground="Black"/>
+        <se:ValueDisplay HorizontalAlignment="Center" VerticalAlignment="Center" Height="70" Width="225" Canvas.Left="795" Canvas.Top="804" Header="Осталось до сервис. обслужив." Label="ч" LabelFontSize="16" Value="{hmi:SeBinding modules[tags_mod].Items[компрессор1_наработка3].Value, FallbackValue=Fallback, StringFormat=0}" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" LabelForeground="Black"/>
+        <TextBlock Canvas.Left="323" TextWrapping="Wrap" Canvas.Top="547" FontSize="28" HorizontalAlignment="Center" FontWeight="Bold" Text="Компрессорная установка" Width="638" TextAlignment="Center" />
+
+        <se:VisualBox     Height="25" Canvas.Top="340" Width="25" Canvas.Left="29" BorderBrush="{x:Null}">
+            <se:VisualBox.Background>
+                <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_normal.png"/>
+            </se:VisualBox.Background>
+        </se:VisualBox>
+
+        <TextBlock TextWrapping="Wrap" FontSize="22" FontFamily="Tahoma" Height="30" Canvas.Left="59" Canvas.Top="338" Width="121"><Run Text="Горелка"/><Run Language="ru-ru" Text=" 1"/></TextBlock>
+        <se:VisualBox     Height="25" Canvas.Top="374" Width="25" Canvas.Left="29" BorderBrush="{x:Null}">
+            <se:VisualBox.Background>
+                <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_normal.png"/>
+            </se:VisualBox.Background>
+        </se:VisualBox>
+        <TextBlock TextWrapping="Wrap" FontSize="22" FontFamily="Tahoma" Height="30" Canvas.Left="59" Canvas.Top="372" Width="149"><Run Text="Вентилятор"/><Run Language="ru-ru" Text=" 1"/></TextBlock>
+        <se:VisualBox     Height="25" Canvas.Top="340" Width="25" Canvas.Left="341" BorderBrush="{x:Null}">
+            <se:VisualBox.Background>
+                <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_normal.png"/>
+            </se:VisualBox.Background>
+        </se:VisualBox>
+        <TextBlock TextWrapping="Wrap" FontSize="22" FontFamily="Tahoma" Height="30" Canvas.Left="374" Canvas.Top="340" Width="121"><Run Text="Горелка"/><Run Language="ru-ru" Text=" 2"/></TextBlock>
+        <se:VisualBox     Height="25" Canvas.Top="374" Width="25" Canvas.Left="341" BorderBrush="{x:Null}">
+            <se:VisualBox.Background>
+                <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_normal.png"/>
+            </se:VisualBox.Background>
+        </se:VisualBox>
+        <TextBlock TextWrapping="Wrap" FontSize="22" FontFamily="Tahoma" Height="30" Canvas.Left="374" Canvas.Top="372" Width="148"><Run Text="Вентилятор"/><Run Language="ru-ru" Text=" 2"/></TextBlock>
+        <se:VisualBox     Height="25" Canvas.Top="331" Width="25" Canvas.Left="688" BorderBrush="{x:Null}">
+            <se:VisualBox.Background>
+                <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_normal.png"/>
+            </se:VisualBox.Background>
+        </se:VisualBox>
+        <TextBlock TextWrapping="Wrap" FontSize="22" FontFamily="Tahoma" Text="Уровень топлива 15%" Height="30" Canvas.Left="726" Canvas.Top="329" Width="244"/>
+        <se:VisualBox     Height="25" Canvas.Top="278" Width="25" Canvas.Left="688" BorderBrush="{x:Null}">
+            <se:VisualBox.Background>
+                <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_normal.png"/>
+            </se:VisualBox.Background>
+        </se:VisualBox>
+        <TextBlock TextWrapping="Wrap" FontSize="22" FontFamily="Tahoma" Text="Клапан перед топливным баком открыт" Height="53" Canvas.Left="726" Canvas.Top="265" Width="274"/>
+        <se:VisualBox     Height="25" Canvas.Top="371" Width="25" Canvas.Left="688" BorderBrush="{x:Null}">
+            <se:VisualBox.Background>
+                <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_normal.png"/>
+            </se:VisualBox.Background>
+        </se:VisualBox>
+        <TextBlock TextWrapping="Wrap" FontSize="22" FontFamily="Tahoma" Text="Уровень топлива 100%" Height="30" Canvas.Left="726" Canvas.Top="369" Width="244"/>
+        <se:VisualBox     Height="25" Canvas.Top="98" Width="25" Canvas.Left="688" BorderBrush="{x:Null}">
+            <se:VisualBox.Background>
+                <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_normal.png"/>
+            </se:VisualBox.Background>
+        </se:VisualBox>
+        <TextBlock TextWrapping="Wrap" FontSize="22" FontFamily="Tahoma" Text="Наружный 0% циркуляционный 100%" Height="35" Canvas.Left="717" Canvas.Top="96" Width="402"/>
+        <se:VisualBox     Height="25" Canvas.Top="141" Width="26" Canvas.Left="688" BorderBrush="{x:Null}">
+            <se:VisualBox.Background>
+                <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_normal.png"/>
+            </se:VisualBox.Background>
+        </se:VisualBox>
+        <se:VisualBox    Height="24" Canvas.Top="181" Width="25" Canvas.Left="293" Visibility="Hidden" BorderBrush="{x:Null}">
+            <se:VisualBox.Background>
+                <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_normal.png"/>
+            </se:VisualBox.Background>
+        </se:VisualBox>
+        <TextBlock TextWrapping="Wrap" FontSize="22" FontFamily="Tahoma" Text="Исправность пожарной сигнализации" Height="61" Canvas.Left="323" Canvas.Top="179" Width="254" Visibility="Hidden"/>
+        <message:Compressor1MainStatusBox Canvas.Left="29" Canvas.Top="640" FontSize="14" Height="95" Width="260"/>
+        <message:Compressor2MainStatusBox Canvas.Left="29" Canvas.Top="780" FontSize="14" Height="94" Width="260" Visibility="Visible"/>
+        <message:Compressor1StatusBox Canvas.Left="300" Canvas.Top="640" FontSize="14" Height="95" Width="260"/>
+        <message:Compressor2StatusBox Canvas.Left="300" Canvas.Top="779" FontSize="14" Height="95" Width="260" Visibility="Visible"/>
+        <se:VisualBox     Height="25" Canvas.Top="182" Width="25" Canvas.Left="29" BorderBrush="{x:Null}">
+            <se:VisualBox.Background>
+                <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_normal.png"/>
+            </se:VisualBox.Background>
+        </se:VisualBox>
+        <TextBlock TextWrapping="Wrap" FontSize="22" FontFamily="Tahoma" Height="30" Canvas.Left="61" Canvas.Top="179" Text="Готовность к пуску"/>
+        <se:VisualBox     Height="25" Canvas.Top="238" Width="25" Canvas.Left="29" BorderBrush="{x:Null}">
+            <se:VisualBox.Background>
+                <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_normal.png"/>
+            </se:VisualBox.Background>
+        </se:VisualBox>
+        <TextBlock TextWrapping="Wrap" FontSize="22" FontFamily="Tahoma" Height="30" Canvas.Left="61" Canvas.Top="235" Width="421"  Text="Напряжение в цепи управления 220В"/>
+        <se:VisualBox    Height="25" Canvas.Top="281" Width="25" Canvas.Left="29" BorderBrush="{x:Null}">
+            <se:VisualBox.Background>
+                <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_normal.png"/>
+            </se:VisualBox.Background>
+        </se:VisualBox>
+        <TextBlock TextWrapping="Wrap" FontSize="22" FontFamily="Tahoma" Height="30" Canvas.Left="61" Canvas.Top="278" Width="421"  Text="Исправность газоанализатора"/>
+        <se:VisualBox    Height="25" Canvas.Top="351" Width="25" Canvas.Left="29" Visibility="Hidden" BorderBrush="{x:Null}">
+            <se:VisualBox.Background>
+                <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_normal.png"/>
+            </se:VisualBox.Background>
+        </se:VisualBox>
+        <TextBlock TextWrapping="Wrap" FontSize="22" FontFamily="Tahoma" Height="30" Canvas.Left="61" Canvas.Top="348" Width="421"  Text="Исправность детектора дыма" Visibility="Hidden"/>
+        <TextBlock TextWrapping="Wrap" FontSize="22" FontFamily="Tahoma" Text="Положение воздушной заслонки:" Height="30" Canvas.Left="682" Canvas.Top="57" Width="404" FontWeight="Bold" TextAlignment="Center"/>
+        <se:VisualBox     Height="25" Canvas.Top="190" Width="24" Canvas.Left="688" BorderBrush="{x:Null}">
+            <se:VisualBox.Background>
+                <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_normal.png"/>
+            </se:VisualBox.Background>
+        </se:VisualBox>
+        <se:VisualBox    Height="25" Canvas.Top="69" Width="25" Canvas.Left="29" BorderBrush="{x:Null}">
+            <se:VisualBox.Background>
+                <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_normal.png"/>
+            </se:VisualBox.Background>
+        </se:VisualBox>
+        <TextBlock TextWrapping="Wrap" FontSize="22" FontFamily="Tahoma" Height="30" Canvas.Left="61" Canvas.Top="66" Width="204"  Text="Связь с ТГУ"/>
+        <se:VisualBox    Height="25" Canvas.Top="111" Width="25" Canvas.Left="29" BorderBrush="{x:Null}">
+            <se:VisualBox.Background>
+                <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_normal.png"/>
+            </se:VisualBox.Background>
+        </se:VisualBox>
+        <TextBlock TextWrapping="Wrap" FontSize="22" FontFamily="Tahoma" Height="30" Canvas.Left="61" Canvas.Top="108" Width="204"  Text="Исправность ТГУ"/>
+        <se:VisualBox     Height="24" Canvas.Top="68" Width="25" Canvas.Left="344" BorderBrush="{x:Null}">
+            <se:VisualBox.Background>
+                <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_normal.png"/>
+            </se:VisualBox.Background>
+        </se:VisualBox>
+        <TextBlock TextWrapping="Wrap" FontSize="22" FontFamily="Tahoma" Text="Обогрев" Height="30" Canvas.Left="374" Canvas.Top="66" Width="159"/>
+        <se:VisualBox   Height="24" Canvas.Top="111" Width="25" Canvas.Left="293" Visibility="Hidden" BorderBrush="{x:Null}">
+            <se:VisualBox.Background>
+                <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_normal.png"/>
+            </se:VisualBox.Background>
+            <se:VisualBox.Text>
+                <hmi:SeBinding Path="modules[tags_mod].Items[тгу1_температура_высокая].Value">
+                    <hmi:SeBinding.FallbackValue>
+                        <system:Boolean>False</system:Boolean>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </se:VisualBox.Text>
+        </se:VisualBox>
+        <TextBlock TextWrapping="Wrap" FontSize="22" FontFamily="Tahoma" Text="Температура в помещении слишком высокая" Height="57" Canvas.Left="323" Canvas.Top="109" Width="280" Visibility="Hidden"/>
+        <TextBlock Canvas.Left="300" TextWrapping="Wrap" Canvas.Top="748" FontSize="16" HorizontalAlignment="Center" FontWeight="Bold" Text="Последнее сообщение в архиве" Width="260" TextAlignment="Center" />
+        <se:VisualBox    Height="25" Canvas.Top="656" Width="25" Canvas.Left="578" BorderBrush="{x:Null}">
+            <se:VisualBox.Background>
+                <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_normal.png"/>
+            </se:VisualBox.Background>
+        </se:VisualBox>
+        <se:VisualBox    Height="25" Canvas.Top="822" Width="25" Canvas.Left="578" BorderBrush="{x:Null}">
+            <se:VisualBox.Background>
+                <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_normal.png"/>
+            </se:VisualBox.Background>
+        </se:VisualBox>
+
+        <TextBlock TextWrapping="Wrap" FontSize="22" FontFamily="Tahoma" Height="59" Canvas.Left="619" Canvas.Top="640" Width="163"><Run Text="Связь с "/><Run Language="ru-ru" Text="компрессором"/><Run Text=" 1"/></TextBlock>
+        <TextBlock TextWrapping="Wrap" FontSize="22" FontFamily="Tahoma" Height="52" Canvas.Left="619" Canvas.Top="807" Width="163"><Run Text="Связь с "/><Run Language="ru-ru" Text="компрессором 2"/></TextBlock>
+        <se:ValueDisplay HorizontalAlignment="Center" VerticalAlignment="Center" Height="70" Width="279" Canvas.Left="29" Canvas.Top="505" Header="Температура помещения НБ" Label="°С" LabelFontSize="16" Value="{hmi:SeBinding modules[tags_mod].Items[тгу1_температура_в_помещении].Value, FallbackValue=Fallback, StringFormat=0.0}" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" LabelForeground="Black" Visibility="Hidden"/>
+        <se:ValueDisplay HorizontalAlignment="Center" VerticalAlignment="Center" Height="70" Width="279" Canvas.Left="342" Canvas.Top="505" Header="Температура помещения ЦС" Label="°С" LabelFontSize="16" Value="{hmi:SeBinding modules[tags_mod].Items[тгу2_температура_в_помещении].Value, FallbackValue=Fallback, StringFormat=0.0}" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" LabelForeground="Black" Visibility="Hidden"/>
+        <TextBlock TextWrapping="Wrap" FontSize="22" FontFamily="Tahoma" Text="Наружный 50% циркуляционный 50%" Height="35" Canvas.Left="717" Canvas.Top="139" Width="402"/>
+        <TextBlock TextWrapping="Wrap" FontSize="22" FontFamily="Tahoma" Text="Наружный 100% циркуляционный 0%" Height="35" Canvas.Left="717" Canvas.Top="190" Width="402"/>
+        <se:ValueDisplay HorizontalAlignment="Center" VerticalAlignment="Center" Height="70" Width="225" Canvas.Left="1031" Canvas.Top="719" Header="Наработка двигателя" Label="ч" LabelFontSize="16" Value="{hmi:SeBinding modules[tags_mod].Items[компрессор2_наработка1].Value, FallbackValue=Fallback, StringFormat=0}" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" LabelForeground="Black"/>
+        <se:ValueDisplay HorizontalAlignment="Center" VerticalAlignment="Center" Height="70" Width="225" Canvas.Left="1031" Canvas.Top="640" Header="Наработка под нагрузкой" Label="ч" LabelFontSize="16" Value="{hmi:SeBinding modules[tags_mod].Items[компрессор2_наработка2].Value, FallbackValue=Fallback, StringFormat=0}" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" LabelForeground="Black"/>
+        <se:ValueDisplay HorizontalAlignment="Center" VerticalAlignment="Center" Height="70" Width="225" Canvas.Left="1031" Canvas.Top="804" Header="Осталось до сервис. обслужив." Label="ч" LabelFontSize="16" Value="{hmi:SeBinding modules[tags_mod].Items[компрессор2_наработка3].Value, FallbackValue=Fallback, StringFormat=0}" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" LabelForeground="Black"/>
+        <TextBlock Canvas.Left="300" TextWrapping="Wrap" Canvas.Top="608" FontSize="16" HorizontalAlignment="Center" FontWeight="Bold" Text="Последнее сообщение в архиве" Width="260" TextAlignment="Center" />
+        <TextBlock TextWrapping="Wrap" FontSize="22" FontFamily="Tahoma" Height="30" Canvas.Left="795" Canvas.Top="603" Width="225"  Text="Компрессор 1" TextAlignment="Center" FontWeight="Bold"/>
+        <TextBlock TextWrapping="Wrap" FontSize="22" FontFamily="Tahoma" Height="30" Canvas.Left="1031" Canvas.Top="603" Width="225"  Text="Компрессор 2" TextAlignment="Center" FontWeight="Bold"/>
+    </Canvas>
+</UserControl>

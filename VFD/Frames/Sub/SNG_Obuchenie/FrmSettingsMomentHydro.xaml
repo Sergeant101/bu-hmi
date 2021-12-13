@@ -1,0 +1,67 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:permissions="clr-namespace:NGO.Elements.Special.Permissions;assembly=NGO.Elements"
+    
+             xmlns:se="http://schemas.monokot.com/se/"
+             xmlns:hmi="http://schemas.monokot.com/hmi/"
+             xmlns:style="clr-namespace:NGO.Elements.style;assembly=NGO.Elements"
+             xmlns:calibration="clr-namespace:NGO.Elements.Special.Calibration;assembly=NGO.Elements"
+             xmlns:gauges="clr-namespace:NGO.Elements.Gauges;assembly=NGO.Elements"
+
+             xmlns:System="clr-namespace:System;assembly=mscorlib"
+             x:Class="VFD.Frames.Sub.SNG_Obuchenie.FrmSettingsMomentHydro"
+             mc:Ignorable="d"
+
+             d:DesignHeight="830" d:DesignWidth="1280">
+    <Grid Margin="0,0,0,0" Background="#FFC9C9C9">
+
+        <Canvas>
+
+            <style:cool_rect Height="825" Width="480" Canvas.Top="-6" Canvas.Left="760"/>
+
+            <style:cool_rect Height="825" Width="480" Canvas.Top="-6" Canvas.Left="35"/>
+
+            <calibration:CalibrationVertical titleAxisY="МОМЕНТ, кН х м" titleAxisX="мА" maximumX="20" minimumX="0" maximumY="160" majorStepX="5" majorStepY="40" filename="hydro1" FontFamily="Tahoma" HorizontalAlignment="Left" Width="445" Height="702" VerticalAlignment="Top" Canvas.Left="50" Canvas.Top="46">
+                <calibration:CalibrationVertical.LayoutTransform>
+                    <ScaleTransform ScaleX="1" ScaleY="1"/>
+                </calibration:CalibrationVertical.LayoutTransform>
+                <calibration:CalibrationVertical.points>
+                    <calibration:CalibrationPoint x="{hmi:Bind Tags.Node[view.hydrostation.nelinejnost].Items[zadanie_momenta_mA_1].Value, FallbackValue=0}" xWrite="{hmi:Bind Tags.Node[write.hydrostation.nelinejnost].Items[zadanie_momenta_mA_1].WriteCommand, FallbackValue=''}" y="{hmi:Bind Tags.Node[view.hydrostation.nelinejnost].Items[zadanie_momenta_kN_1].Value, FallbackValue=0}" yWrite="{hmi:Bind Tags.Node[write.hydrostation.nelinejnost].Items[zadanie_momenta_kN_1].WriteCommand, FallbackValue=''}"/>
+                    <calibration:CalibrationPoint x="{hmi:Bind Tags.Node[view.hydrostation.nelinejnost].Items[zadanie_momenta_mA_2].Value, FallbackValue=0}" xWrite="{hmi:Bind Tags.Node[write.hydrostation.nelinejnost].Items[zadanie_momenta_mA_2].WriteCommand, FallbackValue=''}" y="{hmi:Bind Tags.Node[view.hydrostation.nelinejnost].Items[zadanie_momenta_kN_2].Value, FallbackValue=0}" yWrite="{hmi:Bind Tags.Node[write.hydrostation.nelinejnost].Items[zadanie_momenta_kN_2].WriteCommand, FallbackValue=''}"/>
+                    <calibration:CalibrationPoint x="{hmi:Bind Tags.Node[view.hydrostation.nelinejnost].Items[zadanie_momenta_mA_3].Value, FallbackValue=0}" xWrite="{hmi:Bind Tags.Node[write.hydrostation.nelinejnost].Items[zadanie_momenta_mA_3].WriteCommand, FallbackValue=''}" y="{hmi:Bind Tags.Node[view.hydrostation.nelinejnost].Items[zadanie_momenta_kN_3].Value, FallbackValue=0}" yWrite="{hmi:Bind Tags.Node[write.hydrostation.nelinejnost].Items[zadanie_momenta_kN_3].WriteCommand, FallbackValue=''}"/>
+                    <calibration:CalibrationPoint x="{hmi:Bind Tags.Node[view.hydrostation.nelinejnost].Items[zadanie_momenta_mA_4].Value, FallbackValue=0}" xWrite="{hmi:Bind Tags.Node[write.hydrostation.nelinejnost].Items[zadanie_momenta_mA_4].WriteCommand, FallbackValue=''}" y="{hmi:Bind Tags.Node[view.hydrostation.nelinejnost].Items[zadanie_momenta_kN_4].Value, FallbackValue=0}" yWrite="{hmi:Bind Tags.Node[write.hydrostation.nelinejnost].Items[zadanie_momenta_kN_4].WriteCommand, FallbackValue=''}"/>
+                    <calibration:CalibrationPoint x="{hmi:Bind Tags.Node[view.hydrostation.nelinejnost].Items[zadanie_momenta_mA_5].Value, FallbackValue=0}" xWrite="{hmi:Bind Tags.Node[write.hydrostation.nelinejnost].Items[zadanie_momenta_mA_5].WriteCommand, FallbackValue=''}" y="{hmi:Bind Tags.Node[view.hydrostation.nelinejnost].Items[zadanie_momenta_kN_5].Value, FallbackValue=0}" yWrite="{hmi:Bind Tags.Node[write.hydrostation.nelinejnost].Items[zadanie_momenta_kN_5].WriteCommand, FallbackValue=''}"/>
+                    <calibration:CalibrationPoint x="{hmi:Bind Tags.Node[view.hydrostation.nelinejnost].Items[zadanie_momenta_mA_6].Value, FallbackValue=0}" xWrite="{hmi:Bind Tags.Node[write.hydrostation.nelinejnost].Items[zadanie_momenta_mA_6].WriteCommand, FallbackValue=''}" y="{hmi:Bind Tags.Node[view.hydrostation.nelinejnost].Items[zadanie_momenta_kN_6].Value, FallbackValue=0}" yWrite="{hmi:Bind Tags.Node[write.hydrostation.nelinejnost].Items[zadanie_momenta_kN_6].WriteCommand, FallbackValue=''}"/>
+                </calibration:CalibrationVertical.points>
+            </calibration:CalibrationVertical>
+
+            <TextBlock TextWrapping="Wrap" Text="ЗАДАНИЕ МОМЕНТА МАШИННОГО&#xA;КЛЮЧА С ГИДРОАГРЕГАТА" FontSize="16" TextAlignment="Center" Canvas.Left="174" Canvas.Top="7"/>
+            <calibration:CalibrationVertical titleAxisY="МОМЕНТ, кН х м" titleAxisX="мА" maximumX="20" minimumX="0" maximumY="160" majorStepX="5" majorStepY="40" filename="hydro2" FontFamily="Tahoma" HorizontalAlignment="Left" Width="445" Height="702" VerticalAlignment="Top" Canvas.Left="774" Canvas.Top="46">
+                <calibration:CalibrationVertical.LayoutTransform>
+                    <ScaleTransform ScaleX="1" ScaleY="1"/>
+                </calibration:CalibrationVertical.LayoutTransform>
+                <calibration:CalibrationVertical.points>
+                    <calibration:CalibrationPoint x="{hmi:Bind Tags.Node[view.hydrostation.nelinejnost].Items[fakt_momenta_mA_1].Value, FallbackValue=0}" xWrite="{hmi:Bind Tags.Node[write.hydrostation.nelinejnost].Items[fakt_momenta_mA_1].WriteCommand, FallbackValue=''}" y="{hmi:Bind Tags.Node[view.hydrostation.nelinejnost].Items[fakt_momenta_kN_1].Value, FallbackValue=0}" yWrite="{hmi:Bind Tags.Node[write.hydrostation.nelinejnost].Items[fakt_momenta_kN_1].WriteCommand, FallbackValue=''}"/>
+                    <calibration:CalibrationPoint x="{hmi:Bind Tags.Node[view.hydrostation.nelinejnost].Items[fakt_momenta_mA_2].Value, FallbackValue=0}" xWrite="{hmi:Bind Tags.Node[write.hydrostation.nelinejnost].Items[fakt_momenta_mA_2].WriteCommand, FallbackValue=''}" y="{hmi:Bind Tags.Node[view.hydrostation.nelinejnost].Items[fakt_momenta_kN_2].Value, FallbackValue=0}" yWrite="{hmi:Bind Tags.Node[write.hydrostation.nelinejnost].Items[fakt_momenta_kN_2].WriteCommand, FallbackValue=''}"/>
+                    <calibration:CalibrationPoint x="{hmi:Bind Tags.Node[view.hydrostation.nelinejnost].Items[fakt_momenta_mA_3].Value, FallbackValue=0}" xWrite="{hmi:Bind Tags.Node[write.hydrostation.nelinejnost].Items[fakt_momenta_mA_3].WriteCommand, FallbackValue=''}" y="{hmi:Bind Tags.Node[view.hydrostation.nelinejnost].Items[fakt_momenta_kN_3].Value, FallbackValue=0}" yWrite="{hmi:Bind Tags.Node[write.hydrostation.nelinejnost].Items[fakt_momenta_kN_3].WriteCommand, FallbackValue=''}"/>
+                    <calibration:CalibrationPoint x="{hmi:Bind Tags.Node[view.hydrostation.nelinejnost].Items[fakt_momenta_mA_4].Value, FallbackValue=0}" xWrite="{hmi:Bind Tags.Node[write.hydrostation.nelinejnost].Items[fakt_momenta_mA_4].WriteCommand, FallbackValue=''}" y="{hmi:Bind Tags.Node[view.hydrostation.nelinejnost].Items[fakt_momenta_kN_4].Value, FallbackValue=0}" yWrite="{hmi:Bind Tags.Node[write.hydrostation.nelinejnost].Items[fakt_momenta_kN_4].WriteCommand, FallbackValue=''}"/>
+                    <calibration:CalibrationPoint x="{hmi:Bind Tags.Node[view.hydrostation.nelinejnost].Items[fakt_momenta_mA_5].Value, FallbackValue=0}" xWrite="{hmi:Bind Tags.Node[write.hydrostation.nelinejnost].Items[fakt_momenta_mA_5].WriteCommand, FallbackValue=''}" y="{hmi:Bind Tags.Node[view.hydrostation.nelinejnost].Items[fakt_momenta_kN_5].Value, FallbackValue=0}" yWrite="{hmi:Bind Tags.Node[write.hydrostation.nelinejnost].Items[fakt_momenta_kN_5].WriteCommand, FallbackValue=''}"/>
+                    <calibration:CalibrationPoint x="{hmi:Bind Tags.Node[view.hydrostation.nelinejnost].Items[fakt_momenta_mA_6].Value, FallbackValue=0}" xWrite="{hmi:Bind Tags.Node[write.hydrostation.nelinejnost].Items[fakt_momenta_mA_6].WriteCommand, FallbackValue=''}" y="{hmi:Bind Tags.Node[view.hydrostation.nelinejnost].Items[fakt_momenta_kN_6].Value, FallbackValue=0}" yWrite="{hmi:Bind Tags.Node[write.hydrostation.nelinejnost].Items[fakt_momenta_kN_6].WriteCommand, FallbackValue=''}"/>
+                </calibration:CalibrationVertical.points>
+            </calibration:CalibrationVertical>
+            <TextBlock TextWrapping="Wrap" Text="ФАКТИЧЕСКИЙ  МОМЕНТ МАШИННОГО&#xA;КЛЮЧА С ГИДРОАГРЕГАТА" FontSize="16" TextAlignment="Center" Canvas.Left="880" Canvas.Top="7"/>
+            <se:ValueDisplay Canvas.Left="274" Canvas.Top="753" Height="52" x:Name="numericDisplay13_Copy3" Width="220" HeaderBackground="Black" Label="кН х м" Value="{hmi:Bind Tags.Node[view.mashinnyj_klyuch].Items[zadannyj_moment].Value, FallbackValue=0.0}" ValueBackground="White" ValueForeground="Black" Header="ЗАДАНИЕ МОМЕНТА" FontFamily="Tahoma" ValueFontSize="20" />
+            <se:ValueDisplay Canvas.Left="50" Canvas.Top="753" Height="52" x:Name="numericDisplay13_Copy" Width="220" HeaderBackground="Black" Label="мА" Value="{hmi:Bind Tags.Node[view.mashinnyj_klyuch].Items[ma_zadannyj_moment].Value, FallbackValue=0.0}" ValueBackground="White" ValueForeground="Black" Header="ТОК" FontFamily="Tahoma" ValueFontSize="20" />
+            <se:ValueDisplay Canvas.Left="999" Canvas.Top="753" Height="52" x:Name="numericDisplay13_Copy1" Width="220" HeaderBackground="Black" Label="кН х м" Value="{hmi:Bind Tags.Node[view.mashinnyj_klyuch].Items[fakticheskij_moment].Value, FallbackValue=0.0}" ValueBackground="White" ValueForeground="Black" Header="ФАКТИЧЕСКИЙ  МОМЕНТ" FontFamily="Tahoma" ValueFontSize="20" />
+            <se:ValueDisplay Canvas.Left="774" Canvas.Top="753" Height="52" x:Name="numericDisplay13_Copy2" Width="220" HeaderBackground="Black" Label="мА" Value="{hmi:Bind Tags.Node[view.mashinnyj_klyuch].Items[ma_facticheskij_moment].Value, FallbackValue=0.0}" ValueBackground="White" ValueForeground="Black" Header="ТОК" FontFamily="Tahoma" ValueFontSize="20" />
+            
+
+            <gauges:MomentMashKluch FontSize="22" Foreground="Black" Height="200" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Canvas.Left="539" Canvas.Top="260">
+            </gauges:MomentMashKluch>
+            <TextBlock Canvas.Left="539" Canvas.Top="208" FontSize="20" Foreground="Black" Height="48" Text="МОМЕНТ НА МАШИННОМ КЛЮЧЕ" TextAlignment="Center" TextWrapping="Wrap" Width="200" FontFamily="Tahoma" RenderTransformOrigin="0.5,0.5" />
+        </Canvas>
+    </Grid>
+</UserControl>

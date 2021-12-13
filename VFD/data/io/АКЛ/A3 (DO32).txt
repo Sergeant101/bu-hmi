@@ -1,0 +1,128 @@
+311020
+8
+lang|RU|0 (:2 ) Зажечь светодиод кн. "С/Д привода насоса 1" в кабине бурильщика
+lang|EN|0 (:2 ) Switch on led "Start/Stop/Unlock" mud pump 1 on pumps console
+311020
+9
+lang|RU|1 (:3 ) Зажечь светодиод кн. "С/Д привода насоса 2" в кабине бурильщика
+lang|EN|1 (:3 ) Switch on led "Start/Stop/Unlock" mud pump 2 on pumps console
+311020
+10
+lang|RU|2 (:4 ) Зажечь светодиод кн. "П/С/Д привода осн. лебедки" в кабине бурильщика
+lang|EN|2 (:4 ) Switch on led "Start/Stop/Unlock" mud pump 3 on pumps console
+311020
+11
+lang|RU|3 (:5 ) Включить светодиод  кн. "Пуск ротора" в кабине бурильщика
+lang|EN|3 (:5 ) Switch on "AW1.ENable"
+311020
+12
+lang|RU|4 (:6 ) Растормозить гидротолкатель доп. привода лебедки
+lang|EN|4 (:6 ) Switch on "AW1.Forward (Speed 1)"
+311020
+13
+lang|RU|5 (:7 ) Зажечь светодиод кн. "П/С/Д привода доп. лебедки" в кабине бурильщика
+lang|EN|5 (:7 ) Switch on "AW1.Reverse (Speed 1)"
+311020
+14
+lang|RU|6 (:8 ) Резерв
+lang|EN|6 (:8 ) Switch on "AW1.Speed 2"
+311020
+15
+lang|RU|7 (:9 ) Включить светодиод кн. "Пуск вспом. лебедки" в кабине бурильщика
+lang|EN|7 (:9 ) Switch on "AW1.Speed 3"
+311020
+0
+lang|RU|0 (:12 ) Резерв
+lang|EN|0 (:12 ) Switch on led "Start AW 1"
+311020
+1
+lang|RU|1 (:13 ) Резерв
+lang|EN|1 (:13 ) Spare
+311020
+2
+lang|RU|2 (:14 ) Резерв
+lang|EN|2 (:14 ) Spare
+311020
+3
+lang|RU|3 (:15 ) Резерв
+lang|EN|3 (:15 ) Spare
+311020
+4
+lang|RU|4 (:16 ) Резерв
+lang|EN|4 (:16 ) Spare
+311020
+5
+lang|RU|5 (:17 ) Резерв
+lang|EN|5 (:17 ) Spare
+311020
+6
+lang|RU|6 (:18 ) Резерв
+lang|EN|6 (:18 ) Spare
+311020
+7
+lang|RU|7 (:19 ) Включить пускатель обдува двигателя лебедки
+lang|EN|7 (:19 ) Spare
+311021
+8
+lang|RU|0 (:22 ) Резерв
+lang|EN|0 (:22 ) Spare
+311021
+9
+lang|RU|1 (:23 ) Включить реле обогрева двигателя лебедки (МЛ-ЕК)
+lang|EN|1 (:23 ) Spare
+311021
+10
+lang|RU|2 (:24 ) Резерв
+lang|EN|2 (:24 ) Spare
+311021
+11
+lang|RU|3 (:25 ) Включить пускатель смазки лебедки (МСЛ)
+lang|EN|3 (:25 ) Spare
+311021
+12
+lang|RU|4 (:26 ) Деблокировка противозатаскивателя
+lang|EN|4 (:26 ) Spare
+311021
+13
+lang|RU|5 (:27 ) Разрешить растормаживание
+lang|EN|5 (:27 ) Spare
+311021
+14
+lang|RU|6 (:28 ) Растормозить тормоз лебедки
+lang|EN|6 (:28 ) Spare
+311021
+15
+lang|RU|7 (:29 ) Резерв
+lang|EN|7 (:29 ) Spare
+311021
+0
+lang|RU|0 (:32 ) Резерв
+lang|EN|0 (:32 ) Spare
+311021
+1
+lang|RU|1 (:33 ) Включить муфту доп. привода
+lang|EN|1 (:33 ) Spare
+311021
+2
+lang|RU|2 (:34 ) Отключить муфту доп. привода
+lang|EN|2 (:34 ) Spare
+311021
+3
+lang|RU|3 (:35 ) Резерв
+lang|EN|3 (:35 ) Spare
+311021
+4
+lang|RU|4 (:36 ) Резерв
+lang|EN|4 (:36 ) Spare
+311021
+5
+lang|RU|5 (:37 ) Резерв
+lang|EN|5 (:37 ) Spare
+311021
+6
+lang|RU|6 (:38 ) Резерв
+lang|EN|6 (:38 ) Spare
+311021
+7
+lang|RU|7 (:39 ) Резерв
+lang|EN|7 (:39 ) Spare

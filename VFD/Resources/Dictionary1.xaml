@@ -1,0 +1,178 @@
+﻿<Viewbox 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    mc:Ignorable="d" 
+    >
+
+    <Viewbox UseLayoutRounding="True">
+        <Canvas Width="40" Height="40">
+            <Ellipse SnapsToDevicePixels="True" Height="5" Canvas.Left="17" Stroke="Black" StrokeThickness="1" Canvas.Top="35" Width="5" RenderTransformOrigin="0.5,0.5">
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform X="-17" Y="-18"/>
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+            <Ellipse SnapsToDevicePixels="True" Height="5" Canvas.Left="17" Stroke="Black" StrokeThickness="1" Width="5" RenderTransformOrigin="0.5,0.5">
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform X="18" Y="17"/>
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+            <Path SnapsToDevicePixels="True" StrokeThickness="2.0" Stroke="#ff000000" StrokeMiterLimit="1.0" Data="F1 M 0,0 L 10,0" Stretch="Fill" Canvas.Left="3" Canvas.Top="18" RenderTransformOrigin="0.5,0.5" Width="10"/>
+
+            <Path SnapsToDevicePixels="True" StrokeThickness="2.0" Stroke="#ff000000" StrokeMiterLimit="1.0" Data="F1 M 0,0 L 10,0" Stretch="Fill" Canvas.Top="23" Canvas.Left="5" RenderTransformOrigin="0.5,0.5">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+
+
+            <Canvas Name="Switch_open" Height="40" Width="40" d:IsLocked="True" d:IsHidden="True">
+                <Path StrokeThickness="2" Stroke="#ff000000" StrokeMiterLimit="1.0" Data="F1 M 113,0 L 130,0" Canvas.Left="11" Stretch="Fill" Width="19" Canvas.Top="1"/>
+                <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 130,425 L 130,431" Height="7" Stretch="Fill" Canvas.Top="1" Canvas.Left="28"/>
+                <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 130,425 L 130,431" Height="7" Stretch="Fill" Canvas.Top="1" Canvas.Left="11"/>
+                <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 130,425 L 130,431" Height="15.123" Stretch="Fill" Canvas.Top="1" Canvas.Left="18"/>
+                <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 130,425 L 130,431" Height="16" Stretch="Fill" Canvas.Top="1" Canvas.Left="22"/>
+                <Path StrokeThickness="2" Stroke="#ff000000" StrokeMiterLimit="1.0" Data="F1 M 872,111 L 862,91" Canvas.Left="11" Canvas.Top="3" Height="22" Stretch="Fill" Width="11" RenderTransformOrigin="0.5,0.5" StrokeEndLineCap="Round" StrokeStartLineCap="Square">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-90"/>
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                </Path>
+            </Canvas>
+            <Canvas Name="Switch_close" Height="40" Width="40" d:IsLocked="True" d:IsHidden="True">
+                <Path StrokeThickness="2" Stroke="#ff000000" StrokeMiterLimit="1.0" Data="F1 M 113,0 L 130,0" Canvas.Left="11" Stretch="Fill" Width="19" Canvas.Top="6"/>
+                <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 130,425 L 130,431" Height="7" Stretch="Fill" Canvas.Top="6.375" Canvas.Left="28"/>
+                <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 130,425 L 130,431" Height="7" Stretch="Fill" Canvas.Top="6.375" Canvas.Left="11"/>
+                <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 130,425 L 130,431" Height="18.206" Stretch="Fill" Canvas.Top="6" Canvas.Left="18"/>
+                <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 130,425 L 130,431" Height="16" Stretch="Fill" Canvas.Top="6.375" Canvas.Left="22"/>
+                <Path StrokeThickness="2" Stroke="#ff000000" x:Name="Switch_disconnect_Copy" StrokeMiterLimit="1.0" Data="F1 M 872,91 L 862,111" Canvas.Left="10.917" Canvas.Top="13" Height="22" Stretch="Fill" Width="11" RenderTransformOrigin="0.5,0.5" StrokeEndLineCap="Round" StrokeStartLineCap="Square">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="90"/>
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                </Path>
+            </Canvas>
+            <Path SnapsToDevicePixels="True" StrokeThickness="2.0" Stroke="#ff000000" StrokeMiterLimit="1.0" Data="F1 M 0,0 L 10,0" Stretch="Fill" Canvas.Left="26" Canvas.Top="18" RenderTransformOrigin="0.5,0.5" Width="11"/>
+        </Canvas>
+    </Viewbox>
+
+    <!--<Canvas Width="40" Height="40">
+        <Ellipse Height="5" Canvas.Left="17" Stroke="Black" StrokeThickness="1" Canvas.Top="35" Width="5" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform X="-17" Y="-18"/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse Height="5" Canvas.Left="17" Stroke="Black" StrokeThickness="1" Width="5" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform X="18" Y="17"/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 862.229,79.506 L 862.229,93.679" Stretch="Fill" Width="2" Canvas.Left="18" Canvas.Top="29.187" Height="6.626" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform X="-11.813" Y="-12.813"/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 862.229,93.679 L 873.567,93.679" Height="2.75" Stretch="Fill" Canvas.Top="10.125" Canvas.Left="1" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform X="3.5" Y="13.5"/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 872.150,90.845 L 862.229,110.687" Canvas.Left="10" Canvas.Top="22.668" Height="22.332" Stretch="Fill" Width="11" RenderTransformOrigin="0.5,0.5" d:IsHidden="True">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="60"/>
+                    <TranslateTransform X="6.334" Y="-4.666"/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 862.229,110.687 L 862.229,124.860" Stretch="Fill" Width="4" Canvas.Left="17" Canvas.Top="4.188" Height="7.624" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform X="12.688" Y="11.688"/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+
+
+        <Canvas Name="Switch_open" Height="40" Width="40" d:IsHidden="True">
+            <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 113.882,425.333 L 130.890,425.333" Canvas.Left="11" Stretch="Fill" Width="18" Canvas.Top="10.25"/>
+            <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 130.890,425.333 L 130.890,431.002" Height="7" Stretch="Fill" Canvas.Top="9.75" Canvas.Left="28"/>
+            <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 130.890,425.333 L 130.890,431.002" Height="7" Stretch="Fill" Canvas.Top="10.25" Canvas.Left="11"/>
+            <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 130.890,425.333 L 130.890,431.002" Height="23.353" Stretch="Fill" Canvas.Top="10" Canvas.Left="18"/>
+            <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 130.890,425.333 L 130.890,431.002" Height="17.318" Stretch="Fill" Canvas.Top="10" Canvas.Left="22"/>
+            <Path x:Name="Switch_disconnect_Copy1" StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 872.150,90.845 L 862.229,110.687" Canvas.Left="9" Canvas.Top="22.668" Height="22.332" Stretch="Fill" Width="11" RenderTransformOrigin="0.5,0.5">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="60"/>
+                        <TranslateTransform X="6.334" Y="-4.666"/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+        </Canvas>
+        <Canvas Name="Switch_close" Height="40" Width="40" d:IsHidden="True">
+            <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 113.882,425.333 L 130.890,425.333" Canvas.Left="11" Stretch="Fill" Width="18" Canvas.Top="6.375"/>
+            <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 130.890,425.333 L 130.890,431.002" Height="7" Stretch="Fill" Canvas.Top="6.375" Canvas.Left="28"/>
+            <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 130.890,425.333 L 130.890,431.002" Height="7" Stretch="Fill" Canvas.Top="6.375" Canvas.Left="11"/>
+            <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 130.890,425.333 L 130.890,431.002" Height="18.206" Stretch="Fill" Canvas.Top="6" Canvas.Left="18"/>
+            <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 130.890,425.333 L 130.890,431.002" Height="16" Stretch="Fill" Canvas.Top="6.375" Canvas.Left="22"/>
+            <Path x:Name="Switch_disconnect_Copy" StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 872.150,90.845 L 862.229,110.687" Canvas.Left="5" Canvas.Top="18.458" Height="22.332" Stretch="Fill" Width="11" RenderTransformOrigin="0.5,0.5">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform X="6.334" Y="-4.666"/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+        </Canvas>
+    </Canvas>-->
+</Viewbox>

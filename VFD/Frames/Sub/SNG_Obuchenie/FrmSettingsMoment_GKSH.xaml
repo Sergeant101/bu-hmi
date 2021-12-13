@@ -1,0 +1,58 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:permissions="clr-namespace:NGO.Elements.Special.Permissions;assembly=NGO.Elements"
+    
+             xmlns:se="http://schemas.monokot.com/se/"
+             xmlns:hmi="http://schemas.monokot.com/hmi/"
+             xmlns:style="clr-namespace:NGO.Elements.style;assembly=NGO.Elements"
+             xmlns:calibration="clr-namespace:NGO.Elements.Special.Calibration;assembly=NGO.Elements"
+
+             xmlns:Gauges="clr-namespace:NGO.Elements.Gauges;assembly=NGO.Elements"
+             xmlns:System="clr-namespace:System;assembly=mscorlib"
+             x:Class="VFD.Frames.Sub.SNG_Obuchenie.FrmSettingsMoment_GKSH"
+             mc:Ignorable="d" d:DesignWidth="1280" Height="838">
+    <Grid Margin="0,0,0,0">
+
+        <Canvas>
+            <style:cool_rect Height="837" Width="437" Canvas.Top="1" Canvas.Left="3"/>
+            <calibration:CalibrationVertical titleAxisY="Давление, кгс/см²" titleAxisX="мА" maximumX="20" minimumX="0" maximumY="200" majorStepX="5" majorStepY="40" filename="hydro3" FontFamily="Tahoma" HorizontalAlignment="Left" Width="411" Height="771" VerticalAlignment="Top" Canvas.Left="15" Canvas.Top="55">
+                <calibration:CalibrationVertical.LayoutTransform>
+                    <ScaleTransform ScaleX="1" ScaleY="1"/>
+                </calibration:CalibrationVertical.LayoutTransform>
+                <calibration:CalibrationVertical.points>
+                    <calibration:CalibrationPoint x="{hmi:Bind Tags.Node[view.gksh].Items[skorost1_mA_1].Value, FallbackValue=0}" xWrite="{hmi:Bind Tags.Node[write.gksh].Items[skorost1_mA_1].WriteCommand}" y="{hmi:Bind Tags.Node[view.gksh].Items[skorost1_atm_1].Value, FallbackValue=0}" yWrite="{hmi:Bind Tags.Node[write.gksh].Items[skorost1_atm_1].WriteCommand}"/>
+                    <calibration:CalibrationPoint x="{hmi:Bind Tags.Node[view.gksh].Items[skorost1_mA_2].Value, FallbackValue=0}" xWrite="{hmi:Bind Tags.Node[write.gksh].Items[skorost1_mA_2].WriteCommand}" y="{hmi:Bind Tags.Node[view.gksh].Items[skorost1_atm_2].Value, FallbackValue=0}" yWrite="{hmi:Bind Tags.Node[write.gksh].Items[skorost1_atm_2].WriteCommand}"/>
+                    <calibration:CalibrationPoint x="{hmi:Bind Tags.Node[view.gksh].Items[skorost1_mA_3].Value, FallbackValue=0}" xWrite="{hmi:Bind Tags.Node[write.gksh].Items[skorost1_mA_3].WriteCommand}" y="{hmi:Bind Tags.Node[view.gksh].Items[skorost1_atm_3].Value, FallbackValue=0}" yWrite="{hmi:Bind Tags.Node[write.gksh].Items[skorost1_atm_3].WriteCommand}"/>
+                    <calibration:CalibrationPoint x="{hmi:Bind Tags.Node[view.gksh].Items[skorost1_mA_4].Value, FallbackValue=0}" xWrite="{hmi:Bind Tags.Node[write.gksh].Items[skorost1_mA_4].WriteCommand}" y="{hmi:Bind Tags.Node[view.gksh].Items[skorost1_atm_4].Value, FallbackValue=0}" yWrite="{hmi:Bind Tags.Node[write.gksh].Items[skorost1_atm_4].WriteCommand}"/>
+                    <calibration:CalibrationPoint x="{hmi:Bind Tags.Node[view.gksh].Items[skorost1_mA_5].Value, FallbackValue=0}" xWrite="{hmi:Bind Tags.Node[write.gksh].Items[skorost1_mA_5].WriteCommand}" y="{hmi:Bind Tags.Node[view.gksh].Items[skorost1_atm_5].Value, FallbackValue=0}" yWrite="{hmi:Bind Tags.Node[write.gksh].Items[skorost1_atm_5].WriteCommand}"/>
+                    <calibration:CalibrationPoint x="{hmi:Bind Tags.Node[view.gksh].Items[skorost1_mA_6].Value, FallbackValue=0}" xWrite="{hmi:Bind Tags.Node[write.gksh].Items[skorost1_mA_6].WriteCommand}" y="{hmi:Bind Tags.Node[view.gksh].Items[skorost1_atm_6].Value, FallbackValue=0}" yWrite="{hmi:Bind Tags.Node[write.gksh].Items[skorost1_atm_6].WriteCommand}"/>
+                </calibration:CalibrationVertical.points>
+            </calibration:CalibrationVertical>
+            <TextBlock TextWrapping="Wrap" FontSize="16" TextAlignment="Center" Canvas.Left="97" Width="300" Canvas.Top="25"><Run Text="Фактический момент "/><Run Text="ключа КМБО"/></TextBlock>
+            <style:cool_rect Height="837" Width="825" Canvas.Top="1" Canvas.Left="445"/>
+            <Image Height="494" Canvas.Left="468" Canvas.Top="55" Width="784" Source="/VFD;component/Content/Harakteristika_momenta.jpg"/>
+            <se:ValueDisplay HorizontalAlignment="Left" Canvas.Left="673" Canvas.Top="589" x:Name="ValueDisplay2_Copy" VerticalAlignment="Top" Width="203" HeaderBackground="Black" ValueForeground="Black" Height="65" Label="МПа" Header="ДАВЛЕНИЕ КЛЮЧА КМБО" Value="{hmi:Bind Tags.Node[view.gksh].Items[davlenie_vozduha].Value, FallbackValue=0.00}" FontFamily="Tahoma" />
+
+            <Gauges:MomentGKSH Height="200" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Canvas.Left="468" Canvas.Top="608"/>
+
+            <se:VisualBox Background="{StaticResource MediaBoxFineSolidColorBrush}" Text="НИЗКАЯ&#xA;ПЕРЕДАЧА" Foreground="Black" FontFamily="Tahoma" Canvas.Left="673" Canvas.Top="659" Width="203" Height="67">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Text="ВЫСОКАЯ&#xA;ПЕРЕДАЧА" Background="{StaticResource MediaBoxFineSolidColorBrush}">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.gksh].Items[bystraya_peredacha].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+            </se:VisualBox>
+            <TextBlock Canvas.Left="468" Canvas.Top="554" FontSize="20" Foreground="Black" Height="54" TextAlignment="Center" TextWrapping="Wrap" Width="200" FontFamily="Tahoma" ><Run Text="МОМЕНТ НА "/><Run/><LineBreak/><Run Text="КЛЮЧЕ КМБО"/></TextBlock>
+
+        </Canvas>
+    </Grid>
+</UserControl>

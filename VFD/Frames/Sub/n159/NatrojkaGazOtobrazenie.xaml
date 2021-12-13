@@ -1,0 +1,780 @@
+﻿<UserControl x:Class="VFD.Frames.Sub.n159.NatrojkaGazOtobrazenie"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:hmi="http://schemas.monokot.com/hmi/"
+             xmlns:se="http://schemas.monokot.com/se/"
+             xmlns:system="clr-namespace:System;assembly=mscorlib" 
+             xmlns:Pump1="clr-namespace:NGO.Elements.Gauges.Small.Pump1;assembly=NGO.Elements" 
+             xmlns:Pump2="clr-namespace:NGO.Elements.Gauges.Small.Pump2;assembly=NGO.Elements"
+             xmlns:style="clr-namespace:NGO.Elements.style;assembly=NGO.Elements"
+             xmlns:drawwork="clr-namespace:NGO.Elements.Gauges.Small.Drawwork;assembly=NGO.Elements"
+             xmlns:rotor="clr-namespace:NGO.Elements.Gauges.Small.Rotor;assembly=NGO.Elements"
+             xmlns:local="clr-namespace:VFD.Frames.Sub.n159"
+             xmlns:msab="clr-namespace:NGO.Elements.MSAB;assembly=NGO.Elements" 
+             mc:Ignorable="d"  Width="1280" Height="770"
+            xmlns:ngo="clr-namespace:NGO.Elements.Special.NGOComboBox;assembly=NGO.Elements"
+             >
+    <UserControl.Resources>
+        <CompositeCollection x:Key="Dens"
+                             x:Shared="False">
+
+            <TextBlock TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed"/>
+
+            <TextBlock Text="НЕТ ДАТЧИКА" 
+                       FontSize="20" 
+                       FontWeight="Bold" />
+
+            <TextBlock Text="НКПР, %" 
+                       FontSize="20" 
+                       FontWeight="Bold" />
+
+            <TextBlock Text="H₂S, мг/м3" 
+                       FontSize="20" 
+                       FontWeight="Bold" />
+
+            <TextBlock Text="CH₄, мг/м3" 
+                       FontSize="20" 
+                       FontWeight="Bold" />
+        </CompositeCollection>
+
+        <CompositeCollection x:Key="Tanks"
+                             x:Shared="False">
+
+            <TextBlock TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed"/>
+
+            <TextBlock Text="НЕТ ДАТЧИКА" 
+                       FontSize="20" 
+                       FontWeight="Bold" />
+
+            <TextBlock Text="КАНАЛ 1" 
+                       FontSize="20" 
+                       FontWeight="Bold" />
+
+            <TextBlock Text="КАНАЛ 2" 
+                       FontSize="20" 
+                       FontWeight="Bold" />
+
+            <TextBlock Text="КАНАЛ 3" 
+                       FontSize="20" 
+                       FontWeight="Bold" />
+
+            <TextBlock Text="КАНАЛ 4" 
+                       FontSize="20" 
+                       FontWeight="Bold" />
+
+            <TextBlock Text="КАНАЛ 5" 
+                       FontSize="20" 
+                       FontWeight="Bold" />
+
+            <TextBlock Text="КАНАЛ 6" 
+                       FontSize="20" 
+                       FontWeight="Bold" />
+        </CompositeCollection>
+
+    </UserControl.Resources>
+    <Grid Background="Gainsboro" HorizontalAlignment="Center" VerticalAlignment="Stretch">
+        <Grid Background="Gainsboro" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="1280" Margin="0">
+            <style:cool_rect Margin="6,0,-1,5"/>
+
+            <Viewbox Margin="91,22,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="173" Width="105">
+                <Grid Margin="5,0,10,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <se:StatusText Grid.Row="1" FontSize="20" Foreground="Black" Height="27"   Text="НКПР" TextAlignment="Center" TextWrapping="Wrap" Width="64" FontFamily="Tahoma" FontWeight="Bold" >
+                        <se:StatusText.MessageID>
+                            <hmi:Bind Path="Tags.Node[view.msab.gas1.settings].Items[units].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Int32>0</system:Int32>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:StatusText.MessageID>
+                        <se:StatusText.MessageNode>
+                            <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Message" Path="msab_gaz_name"/>
+                        </se:StatusText.MessageNode>
+                    </se:StatusText>
+
+                    <msab:GasView HorizontalAlignment="Left" VerticalAlignment="Top" Height="269" Canvas.Left="9" Canvas.Top="616" Width="65" majorTickCost="20" units=" " Grid.Row="2" Grid.RowSpan="2">
+                        <msab:GasView.maximum>
+                            <hmi:Bind Path="Expressions.Node[msab.gas1].Items[1].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Double>100</system:Double>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </msab:GasView.maximum>
+                        <msab:GasView.value>
+                            <hmi:SeBinding Path="Tags.Node[view.msab].Items[zagazovannost1_NKPR].Value" StringFormat="0.0">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Double>0</system:Double>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </msab:GasView.value>
+                        <msab:GasView.valueFill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Red" Offset="0.5"/>
+                                <GradientStop Color="#FFFFDC00" Offset="0.8"/>
+                                <GradientStop Color="#FF0CFF00" Offset="1"/>
+                            </LinearGradientBrush>
+                        </msab:GasView.valueFill>
+                    </msab:GasView>
+                    <se:StatusText Canvas.Left="9" Canvas.Top="865" FontSize="14" Foreground="Black" Height="20"   Text="НКПР" TextAlignment="Center" TextWrapping="Wrap" Width="64" FontFamily="Tahoma" FontWeight="Bold" Grid.Row="3" VerticalAlignment="Bottom" >
+                        <se:StatusText.MessageID>
+                            <hmi:Bind Path="Tags.Node[view.msab.gas1.settings].Items[units].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Int32>0</system:Int32>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:StatusText.MessageID>
+                        <se:StatusText.MessageNode>
+                            <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Message" Path="msab_gas_units"/>
+                        </se:StatusText.MessageNode>
+                    </se:StatusText>
+                </Grid>
+            </Viewbox>
+            <Viewbox Margin="740,22,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="173" Width="105">
+                <Grid Margin="5,0,10,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <se:StatusText Canvas.Left="88" Canvas.Top="583" FontSize="20" Foreground="Black" Height="27"  Text="H₂S" TextAlignment="Center" TextWrapping="Wrap" Width="65" FontFamily="Tahoma" FontWeight="Bold" Grid.Row="1">
+                        <se:StatusText.MessageID>
+                            <hmi:Bind Path="Tags.Node[view.msab.gas2.settings].Items[units].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Int32>0</system:Int32>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:StatusText.MessageID>
+                        <se:StatusText.MessageNode>
+                            <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Message" Path="msab_gaz_name"/>
+                        </se:StatusText.MessageNode>
+                    </se:StatusText>
+                    <msab:GasView HorizontalAlignment="Left" VerticalAlignment="Top" Height="269" Canvas.Left="88" Canvas.Top="616" Width="65" majorTickCost="20" units=" " Grid.Row="2" Grid.RowSpan="2">
+                        <msab:GasView.maximum>
+                            <hmi:Bind Path="Expressions.Node[msab.gas2].Items[1].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Double>100</system:Double>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </msab:GasView.maximum>
+                        <msab:GasView.value>
+                            <hmi:SeBinding Path="Tags.Node[view.msab].Items[zagazovannost2_H2S].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Double>0</system:Double>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </msab:GasView.value>
+                        <msab:GasView.valueFill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Red" Offset="0.5"/>
+                                <GradientStop Color="#FFFFDC00" Offset="0.8"/>
+                                <GradientStop Color="#FF0CFF00" Offset="1"/>
+                            </LinearGradientBrush>
+                        </msab:GasView.valueFill>
+                    </msab:GasView>
+                    <se:StatusText Canvas.Left="88" Canvas.Top="865" FontSize="14" Foreground="Black" Height="20"  Text="H₂S" TextAlignment="Center" TextWrapping="Wrap" Width="65" FontFamily="Tahoma" FontWeight="Bold" Grid.Row="3" VerticalAlignment="Bottom">
+                        <se:StatusText.MessageID>
+                            <hmi:Bind Path="Tags.Node[view.msab.gas2.settings].Items[units].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Int32>0</system:Int32>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:StatusText.MessageID>
+                        <se:StatusText.MessageNode>
+                            <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Message" Path="msab_gas_units"/>
+                        </se:StatusText.MessageNode>
+                    </se:StatusText>
+                </Grid>
+            </Viewbox>
+
+            <Viewbox Margin="91,212,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="173" Width="105">
+                <Grid Margin="5,0,10,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <se:StatusText Canvas.Left="171" Canvas.Top="583" FontSize="20" Foreground="Black" Height="27" Text="НКПР" TextAlignment="Center" TextWrapping="Wrap" Width="65" FontFamily="Tahoma" FontWeight="Bold" Grid.Row="1">
+                        <se:StatusText.MessageID>
+                            <hmi:Bind Path="Tags.Node[view.msab.gas3.settings].Items[units].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Int32>0</system:Int32>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:StatusText.MessageID>
+                        <se:StatusText.MessageNode>
+                            <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Message" Path="msab_gaz_name"/>
+                        </se:StatusText.MessageNode>
+                    </se:StatusText>
+                    <msab:GasView HorizontalAlignment="Left" VerticalAlignment="Top" Height="269" Canvas.Left="171" Canvas.Top="616" Width="65" majorTickCost="20" units=" " Grid.Row="2" Grid.RowSpan="2">
+                        <msab:GasView.maximum>
+                            <hmi:Bind Path="Expressions.Node[msab.gas3].Items[1].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Double>100</system:Double>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </msab:GasView.maximum>
+                        <msab:GasView.value>
+                            <hmi:Bind Path="Tags.Node[view.msab].Items[zagazovannost2_NKPR].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Double>0</system:Double>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </msab:GasView.value>
+                        <msab:GasView.valueFill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Red" Offset="0.5"/>
+                                <GradientStop Color="#FFFFDC00" Offset="0.8"/>
+                                <GradientStop Color="#FF0CFF00" Offset="1"/>
+                            </LinearGradientBrush>
+                        </msab:GasView.valueFill>
+                    </msab:GasView>
+                    <se:StatusText Canvas.Left="171" Canvas.Top="865" FontSize="14" Foreground="Black" Height="20" Text="НКПР" TextAlignment="Center" TextWrapping="Wrap" Width="65" FontFamily="Tahoma" FontWeight="Bold" Grid.Row="3" VerticalAlignment="Bottom">
+                        <se:StatusText.MessageID>
+                            <hmi:Bind Path="Tags.Node[view.msab.gas3.settings].Items[units].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Int32>0</system:Int32>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:StatusText.MessageID>
+                        <se:StatusText.MessageNode>
+                            <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Message" Path="msab_gas_units"/>
+                        </se:StatusText.MessageNode>
+                    </se:StatusText>
+                </Grid>
+            </Viewbox>
+
+            <Viewbox Margin="740,212,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="173" Width="105">
+                <Grid Margin="5,0,10,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <se:StatusText Canvas.Left="253" Canvas.Top="583" FontSize="20" Foreground="Black" Height="27" Text="H₂S" TextAlignment="Center" TextWrapping="Wrap" Width="65" FontFamily="Tahoma" FontWeight="Bold" Grid.Row="1">
+                        <se:StatusText.MessageID>
+                            <hmi:Bind Path="Tags.Node[view.msab.gas4.settings].Items[units].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Int32>0</system:Int32>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:StatusText.MessageID>
+                        <se:StatusText.MessageNode>
+                            <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Message" Path="msab_gaz_name"/>
+                        </se:StatusText.MessageNode>
+                    </se:StatusText>
+                    <msab:GasView HorizontalAlignment="Left" VerticalAlignment="Top" Height="269" Canvas.Left="253" Canvas.Top="616" Width="65" majorTickCost="20" units=" " Grid.Row="2" Grid.RowSpan="2">
+                        <msab:GasView.maximum>
+                            <hmi:Bind Path="Expressions.Node[msab.gas4].Items[1].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Double>100</system:Double>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </msab:GasView.maximum>
+                        <msab:GasView.value>
+                            <hmi:SeBinding Path="Tags.Node[view.msab].Items[zagazovannost3_H2S].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Double>0</system:Double>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </msab:GasView.value>
+                        <msab:GasView.valueFill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Red" Offset="0.5"/>
+                                <GradientStop Color="#FFFFDC00" Offset="0.8"/>
+                                <GradientStop Color="#FF0CFF00" Offset="1"/>
+                            </LinearGradientBrush>
+                        </msab:GasView.valueFill>
+                    </msab:GasView>
+                    <se:StatusText Canvas.Left="253" Canvas.Top="865" FontSize="14" Foreground="Black" Height="20" Text="H₂S" TextAlignment="Center" TextWrapping="Wrap" Width="65" FontFamily="Tahoma" FontWeight="Bold" Grid.Row="3" VerticalAlignment="Bottom">
+                        <se:StatusText.MessageID>
+                            <hmi:Bind Path="Tags.Node[view.msab.gas4.settings].Items[units].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Int32>0</system:Int32>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:StatusText.MessageID>
+                        <se:StatusText.MessageNode>
+                            <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Message" Path="msab_gas_units"/>
+                        </se:StatusText.MessageNode>
+                    </se:StatusText>
+                </Grid>
+            </Viewbox>
+
+            <Viewbox Margin="91,404,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="173" Width="105">
+                <Grid Margin="5,0,10,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <se:StatusText Canvas.Left="332" Canvas.Top="583" FontSize="20" Foreground="Black" Height="27" Text="H₂S" TextAlignment="Center" TextWrapping="Wrap" Width="65" FontFamily="Tahoma" FontWeight="Bold" Grid.Row="1">
+                        <se:StatusText.MessageID>
+                            <hmi:Bind Path="Tags.Node[view.msab.gas5.settings].Items[units].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Int32>0</system:Int32>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:StatusText.MessageID>
+                        <se:StatusText.MessageNode>
+                            <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Message" Path="msab_gaz_name"/>
+                        </se:StatusText.MessageNode>
+                    </se:StatusText>
+                    <msab:GasView HorizontalAlignment="Left" VerticalAlignment="Top" Height="269" Canvas.Left="332" Canvas.Top="616" Width="65" majorTickCost="20" units=" " Grid.Row="2" Grid.RowSpan="2">
+                        <msab:GasView.maximum>
+                            <hmi:Bind Path="Expressions.Node[msab.gas5].Items[1].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Double>100</system:Double>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </msab:GasView.maximum>
+                        <msab:GasView.value>
+                            <hmi:SeBinding Path="Tags.Node[view.msab].Items[zagazovannost4_H2S].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Double>0</system:Double>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </msab:GasView.value>
+                        <msab:GasView.valueFill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Red" Offset="0.5"/>
+                                <GradientStop Color="#FFFFDC00" Offset="0.8"/>
+                                <GradientStop Color="#FF0CFF00" Offset="1"/>
+                            </LinearGradientBrush>
+                        </msab:GasView.valueFill>
+                    </msab:GasView>
+                    <se:StatusText Canvas.Left="332" Canvas.Top="865" FontSize="14" Foreground="Black" Height="20" Text="H₂S" TextAlignment="Center" TextWrapping="Wrap" Width="65" FontFamily="Tahoma" FontWeight="Bold" Grid.Row="3" VerticalAlignment="Bottom">
+                        <se:StatusText.MessageID>
+                            <hmi:Bind Path="Tags.Node[view.msab.gas5.settings].Items[units].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Int32>0</system:Int32>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:StatusText.MessageID>
+                        <se:StatusText.MessageNode>
+                            <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Message" Path="msab_gas_units"/>
+                        </se:StatusText.MessageNode>
+                    </se:StatusText>
+                </Grid>
+            </Viewbox>
+
+            <Viewbox Margin="740,404,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="173" Width="105">
+                <Grid Margin="5,0,10,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <se:StatusText Canvas.Left="413" Canvas.Top="583" FontSize="20" Foreground="Black" Height="27" Text="H₂S" TextAlignment="Center" TextWrapping="Wrap" Width="65" FontFamily="Tahoma" FontWeight="Bold" Grid.Row="1">
+                        <se:StatusText.MessageID>
+                            <hmi:Bind Path="Tags.Node[view.msab.gas6.settings].Items[units].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Int32>0</system:Int32>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:StatusText.MessageID>
+                        <se:StatusText.MessageNode>
+                            <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Message" Path="msab_gaz_name"/>
+                        </se:StatusText.MessageNode>
+                    </se:StatusText>
+                    <msab:GasView HorizontalAlignment="Left" VerticalAlignment="Top" Height="269" Canvas.Left="413" Canvas.Top="616" Width="65" majorTickCost="20" units=" " Grid.Row="2" Grid.RowSpan="2">
+                        <msab:GasView.maximum>
+                            <hmi:Bind Path="Expressions.Node[msab.gas6].Items[1].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Double>100</system:Double>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </msab:GasView.maximum>
+                        <msab:GasView.value>
+                            <hmi:SeBinding Path="Tags.Node[view.msab].Items[zagazovannost3_NKPR].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Double>0</system:Double>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </msab:GasView.value>
+                        <msab:GasView.valueFill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Red" Offset="0.5"/>
+                                <GradientStop Color="#FFFFDC00" Offset="0.8"/>
+                                <GradientStop Color="#FF0CFF00" Offset="1"/>
+                            </LinearGradientBrush>
+                        </msab:GasView.valueFill>
+                    </msab:GasView>
+                    <se:StatusText Canvas.Left="413" Canvas.Top="865" FontSize="14" Foreground="Black" Height="20" Text="H₂S" TextAlignment="Center" TextWrapping="Wrap" Width="65" FontFamily="Tahoma" FontWeight="Bold" Grid.Row="3" VerticalAlignment="Bottom">
+                        <se:StatusText.MessageID>
+                            <hmi:Bind Path="Tags.Node[view.msab.gas6.settings].Items[units].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Int32>0</system:Int32>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:StatusText.MessageID>
+                        <se:StatusText.MessageNode>
+                            <hmi:HmiNodeDescriptor Comment="{x:Null}" ItemType="Message" Path="msab_gas_units"/>
+                        </se:StatusText.MessageNode>
+                    </se:StatusText>
+                </Grid>
+            </Viewbox>
+
+
+            <TextBlock Margin="214,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" TextAlignment="Center" Height="24" HorizontalAlignment="Left" FontWeight="Bold" Text="ДАТЧИК 1"/>
+            <TextBlock Margin="867,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" TextAlignment="Center" Height="24" HorizontalAlignment="Left" FontWeight="Bold" Text="ДАТЧИК 2"/>
+            <TextBlock Margin="214,213,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" TextAlignment="Center" Height="24" HorizontalAlignment="Left" FontWeight="Bold" Text="ДАТЧИК 3"/>
+            <TextBlock Margin="867,213,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" TextAlignment="Center" Height="24" HorizontalAlignment="Left" FontWeight="Bold" Text="ДАТЧИК 4"/>
+            <TextBlock Margin="214,408,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" TextAlignment="Center" Height="24" HorizontalAlignment="Left" FontWeight="Bold" Text="ДАТЧИК 5"/>
+            <TextBlock Margin="867,408,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" TextAlignment="Center" Height="24" HorizontalAlignment="Left" FontWeight="Bold" Text="ДАТЧИК 6"/>
+            <TextBlock HorizontalAlignment="Left" Margin="214,72,0,0" TextWrapping="Wrap" Text="КАНАЛ ДАТЧИКА" VerticalAlignment="Top" FontSize="18"/>
+
+            <ngo:NGOComboBox Height="40" 
+                             ItemsSource="{StaticResource Tanks}"
+                             Width="180" 
+                             FontSize="20" 
+                             FontWeight="Bold"                             
+                             HorizontalContentAlignment="Center" 
+                             VerticalContentAlignment="Center" 
+                             Margin="400,63,0,0"
+                             HorizontalAlignment="Left" 
+                             VerticalAlignment="Top">
+                <ngo:NGOComboBox.ReadIndex>
+                    <hmi:Bind Path="Tags.Node[view.msab.gas1.settings].Items[channel].Value">
+                        <hmi:Bind.FallbackValue>
+                            <system:Int32>-1</system:Int32>
+                        </hmi:Bind.FallbackValue>
+                    </hmi:Bind>
+                </ngo:NGOComboBox.ReadIndex>
+                <ngo:NGOComboBox.WriteIndex>
+                    <hmi:Bind Path="Tags.Node[write.msab.gas1.settings].Items[channel].Value">
+                        <hmi:Bind.FallbackValue>
+                            <system:Int32>-1</system:Int32>
+                        </hmi:Bind.FallbackValue>
+                    </hmi:Bind>
+                </ngo:NGOComboBox.WriteIndex>
+            </ngo:NGOComboBox>
+
+            <TextBlock HorizontalAlignment="Left" Margin="214,132,0,0" TextWrapping="Wrap" Text="ТИП ДАТЧИКА" VerticalAlignment="Top" FontSize="18"/>
+
+            <ngo:NGOComboBox Height="40" 
+                             ItemsSource="{StaticResource Tanks}"
+                Width="180" 
+                FontSize="20" 
+                FontWeight="Bold" 
+                HorizontalContentAlignment="Center" 
+                VerticalContentAlignment="Center" 
+                Margin="400,250,0,0"
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top">
+                <ngo:NGOComboBox.ReadIndex>
+                    <hmi:Bind Path="Tags.Node[view.msab.gas3.settings].Items[channel].Value">
+                        <hmi:Bind.FallbackValue>
+                            <system:Int32>-1</system:Int32>
+                        </hmi:Bind.FallbackValue>
+                    </hmi:Bind>
+                </ngo:NGOComboBox.ReadIndex>
+                <ngo:NGOComboBox.WriteIndex>
+                    <hmi:Bind Path="Tags.Node[write.msab.gas3.settings].Items[channel].Value">
+                        <hmi:Bind.FallbackValue>
+                            <system:Int32>-1</system:Int32>
+                        </hmi:Bind.FallbackValue>
+                    </hmi:Bind>
+                </ngo:NGOComboBox.WriteIndex>
+            </ngo:NGOComboBox>
+
+            <TextBlock HorizontalAlignment="Left" 
+                       Margin="214,263,0,0" 
+                       TextWrapping="Wrap" 
+                       Text="КАНАЛ ДАТЧИКА" 
+                       VerticalAlignment="Top" 
+                       FontSize="18" />
+
+            <TextBlock HorizontalAlignment="Left" 
+                Margin="214,458,0,0" 
+                TextWrapping="Wrap" 
+                Text="КАНАЛ ДАТЧИКА" 
+                VerticalAlignment="Top" 
+                FontSize="18" />
+
+            <ngo:NGOComboBox Height="40" 
+                             ItemsSource="{StaticResource Tanks}"
+                Width="180" 
+                FontSize="20" 
+                FontWeight="Bold" 
+                HorizontalContentAlignment="Center" 
+                VerticalContentAlignment="Center" 
+                Margin="400,449,0,0"
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top">
+                <ngo:NGOComboBox.ReadIndex>
+                    <hmi:Bind Path="Tags.Node[view.msab.gas5.settings].Items[channel].Value">
+                        <hmi:Bind.FallbackValue>
+                            <system:Int32>-1</system:Int32>
+                        </hmi:Bind.FallbackValue>
+                    </hmi:Bind>
+                </ngo:NGOComboBox.ReadIndex>
+                <ngo:NGOComboBox.WriteIndex>
+                    <hmi:Bind Path="Tags.Node[write.msab.gas5.settings].Items[channel].Value">
+                        <hmi:Bind.FallbackValue>
+                            <system:Int32>-1</system:Int32>
+                        </hmi:Bind.FallbackValue>
+                    </hmi:Bind>
+                </ngo:NGOComboBox.WriteIndex>
+            </ngo:NGOComboBox>
+            <TextBlock HorizontalAlignment="Left" Margin="867,72,0,0" TextWrapping="Wrap" Text="КАНАЛ ДАТЧИКА" VerticalAlignment="Top" FontSize="18"/>
+            <ngo:NGOComboBox Height="40" 
+                ItemsSource="{StaticResource Tanks}"
+                Width="180" 
+                FontSize="20" 
+                FontWeight="Bold" 
+                HorizontalContentAlignment="Center" 
+                VerticalContentAlignment="Center" 
+                Margin="1053,59,0,0"
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top">
+                <ngo:NGOComboBox.ReadIndex>
+                    <hmi:Bind Path="Tags.Node[view.msab.gas2.settings].Items[channel].Value">
+                        <hmi:Bind.FallbackValue>
+                            <system:Int32>-1</system:Int32>
+                        </hmi:Bind.FallbackValue>
+                    </hmi:Bind>
+                </ngo:NGOComboBox.ReadIndex>
+                <ngo:NGOComboBox.WriteIndex>
+                    <hmi:Bind Path="Tags.Node[write.msab.gas2.settings].Items[channel].Value">
+                        <hmi:Bind.FallbackValue>
+                            <system:Int32>-1</system:Int32>
+                        </hmi:Bind.FallbackValue>
+                    </hmi:Bind>
+                </ngo:NGOComboBox.WriteIndex>
+            </ngo:NGOComboBox>
+            <ngo:NGOComboBox Height="40" 
+                ItemsSource="{StaticResource Tanks}"
+                Width="180" 
+                FontSize="20" 
+                FontWeight="Bold" 
+                HorizontalContentAlignment="Center" 
+                VerticalContentAlignment="Center" 
+                Margin="1053,250,0,0"
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top">
+                <ngo:NGOComboBox.ReadIndex>
+                    <hmi:Bind Path="Tags.Node[view.msab.gas4.settings].Items[channel].Value">
+                        <hmi:Bind.FallbackValue>
+                            <system:Int32>-1</system:Int32>
+                        </hmi:Bind.FallbackValue>
+                    </hmi:Bind>
+                </ngo:NGOComboBox.ReadIndex>
+                <ngo:NGOComboBox.WriteIndex>
+                    <hmi:Bind Path="Tags.Node[write.msab.gas4.settings].Items[channel].Value">
+                        <hmi:Bind.FallbackValue>
+                            <system:Int32>-1</system:Int32>
+                        </hmi:Bind.FallbackValue>
+                    </hmi:Bind>
+                </ngo:NGOComboBox.WriteIndex>
+            </ngo:NGOComboBox>
+            <TextBlock HorizontalAlignment="Left" 
+                Margin="867,263,0,0" 
+                TextWrapping="Wrap" 
+                Text="КАНАЛ ДАТЧИКА" 
+                VerticalAlignment="Top" 
+                FontSize="18" />
+            <ngo:NGOComboBox Height="40" 
+                ItemsSource="{StaticResource Tanks}"
+                Width="180" 
+                FontSize="20" 
+                FontWeight="Bold" 
+                HorizontalContentAlignment="Center" 
+                VerticalContentAlignment="Center" 
+                Margin="1053,449,0,0"
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top">
+                <ngo:NGOComboBox.ReadIndex>
+                    <hmi:Bind Path="Tags.Node[view.msab.gas6.settings].Items[channel].Value">
+                        <hmi:Bind.FallbackValue>
+                            <system:Int32>-1</system:Int32>
+                        </hmi:Bind.FallbackValue>
+                    </hmi:Bind>
+                </ngo:NGOComboBox.ReadIndex>
+                <ngo:NGOComboBox.WriteIndex>
+                    <hmi:Bind Path="Tags.Node[write.msab.gas6.settings].Items[channel].Value">
+                        <hmi:Bind.FallbackValue>
+                            <system:Int32>-1</system:Int32>
+                        </hmi:Bind.FallbackValue>
+                    </hmi:Bind>
+                </ngo:NGOComboBox.WriteIndex>
+            </ngo:NGOComboBox>
+            <TextBlock HorizontalAlignment="Left" 
+                Margin="867,458,0,0" 
+                TextWrapping="Wrap" 
+                Text="КАНАЛ ДАТЧИКА" 
+                VerticalAlignment="Top" 
+                FontSize="18" />
+
+            <ngo:NGOComboBox Height="40" 
+                ItemsSource="{StaticResource Dens}"
+                Width="180" 
+                FontSize="20" 
+                FontWeight="Bold" 
+                HorizontalContentAlignment="Center" 
+                VerticalContentAlignment="Center" 
+                Margin="400,127,0,0"
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top">
+                <ngo:NGOComboBox.ReadIndex>
+                    <hmi:Bind Path="Tags.Node[view.msab.gas1.settings].Items[units].Value">
+                        <hmi:Bind.FallbackValue>
+                            <system:Int32>-1</system:Int32>
+                        </hmi:Bind.FallbackValue>
+                    </hmi:Bind>
+                </ngo:NGOComboBox.ReadIndex>
+                <ngo:NGOComboBox.WriteIndex>
+                    <hmi:Bind Path="Tags.Node[write.msab.gas1.settings].Items[units].Value">
+                        <hmi:Bind.FallbackValue>
+                            <system:Int32>-1</system:Int32>
+                        </hmi:Bind.FallbackValue>
+                    </hmi:Bind>
+                </ngo:NGOComboBox.WriteIndex>
+            </ngo:NGOComboBox>
+            <ngo:NGOComboBox Height="40" 
+                ItemsSource="{StaticResource Dens}"
+                Width="180" 
+                FontSize="20" 
+                FontWeight="Bold" 
+                HorizontalContentAlignment="Center" 
+                VerticalContentAlignment="Center" 
+                Margin="400,315,0,0"
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top">
+                <ngo:NGOComboBox.ReadIndex>
+                    <hmi:Bind Path="Tags.Node[view.msab.gas3.settings].Items[units].Value">
+                        <hmi:Bind.FallbackValue>
+                            <system:Int32>-1</system:Int32>
+                        </hmi:Bind.FallbackValue>
+                    </hmi:Bind>
+                </ngo:NGOComboBox.ReadIndex>
+                <ngo:NGOComboBox.WriteIndex>
+                    <hmi:Bind Path="Tags.Node[write.msab.gas3.settings].Items[units].Value">
+                        <hmi:Bind.FallbackValue>
+                            <system:Int32>-1</system:Int32>
+                        </hmi:Bind.FallbackValue>
+                    </hmi:Bind>
+                </ngo:NGOComboBox.WriteIndex>
+            </ngo:NGOComboBox>
+            <ngo:NGOComboBox Height="40" 
+                ItemsSource="{StaticResource Dens}"
+                Width="180" 
+                FontSize="20" 
+                FontWeight="Bold" 
+                HorizontalContentAlignment="Center" 
+                VerticalContentAlignment="Center" 
+                Margin="400,514,0,0"
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top">
+                <ngo:NGOComboBox.ReadIndex>
+                    <hmi:Bind Path="Tags.Node[view.msab.gas5.settings].Items[units].Value">
+                        <hmi:Bind.FallbackValue>
+                            <system:Int32>-1</system:Int32>
+                        </hmi:Bind.FallbackValue>
+                    </hmi:Bind>
+                </ngo:NGOComboBox.ReadIndex>
+                <ngo:NGOComboBox.WriteIndex>
+                    <hmi:Bind Path="Tags.Node[write.msab.gas5.settings].Items[units].Value">
+                        <hmi:Bind.FallbackValue>
+                            <system:Int32>-1</system:Int32>
+                        </hmi:Bind.FallbackValue>
+                    </hmi:Bind>
+                </ngo:NGOComboBox.WriteIndex>
+            </ngo:NGOComboBox>
+
+            <TextBlock HorizontalAlignment="Left" Margin="214,323,0,0" TextWrapping="Wrap" Text="ТИП ДАТЧИКА" VerticalAlignment="Top" FontSize="18"/>
+            <TextBlock HorizontalAlignment="Left" Margin="214,524,0,0" TextWrapping="Wrap" Text="ТИП ДАТЧИКА" VerticalAlignment="Top" FontSize="18"/>
+            <TextBlock HorizontalAlignment="Left" Margin="867,132,0,0" TextWrapping="Wrap" Text="ТИП ДАТЧИКА" VerticalAlignment="Top" FontSize="18"/>
+            <ngo:NGOComboBox Height="40" 
+                ItemsSource="{StaticResource Dens}"
+                Width="180" 
+                FontSize="20" 
+                FontWeight="Bold" 
+                HorizontalContentAlignment="Center" 
+                VerticalContentAlignment="Center" 
+                Margin="1053,127,0,0"
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top">
+                <ngo:NGOComboBox.ReadIndex>
+                    <hmi:Bind Path="Tags.Node[view.msab.gas2.settings].Items[units].Value">
+                        <hmi:Bind.FallbackValue>
+                            <system:Int32>-1</system:Int32>
+                        </hmi:Bind.FallbackValue>
+                    </hmi:Bind>
+                </ngo:NGOComboBox.ReadIndex>
+                <ngo:NGOComboBox.WriteIndex>
+                    <hmi:Bind Path="Tags.Node[write.msab.gas2.settings].Items[units].Value">
+                        <hmi:Bind.FallbackValue>
+                            <system:Int32>-1</system:Int32>
+                        </hmi:Bind.FallbackValue>
+                    </hmi:Bind>
+                </ngo:NGOComboBox.WriteIndex>
+            </ngo:NGOComboBox>
+            <TextBlock HorizontalAlignment="Left" Margin="867,320,0,0" TextWrapping="Wrap" Text="ТИП ДАТЧИКА" VerticalAlignment="Top" FontSize="18"/>
+            <ngo:NGOComboBox Height="40" 
+                ItemsSource="{StaticResource Dens}"
+                Width="180" 
+                FontSize="20" 
+                FontWeight="Bold" 
+                HorizontalContentAlignment="Center" 
+                VerticalContentAlignment="Center" 
+                Margin="1053,315,0,0"
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top">
+                <ngo:NGOComboBox.ReadIndex>
+                    <hmi:Bind Path="Tags.Node[view.msab.gas4.settings].Items[units].Value">
+                        <hmi:Bind.FallbackValue>
+                            <system:Int32>-1</system:Int32>
+                        </hmi:Bind.FallbackValue>
+                    </hmi:Bind>
+                </ngo:NGOComboBox.ReadIndex>
+                <ngo:NGOComboBox.WriteIndex>
+                    <hmi:Bind Path="Tags.Node[write.msab.gas4.settings].Items[units].Value">
+                        <hmi:Bind.FallbackValue>
+                            <system:Int32>-1</system:Int32>
+                        </hmi:Bind.FallbackValue>
+                    </hmi:Bind>
+                </ngo:NGOComboBox.WriteIndex>
+            </ngo:NGOComboBox>
+            <TextBlock HorizontalAlignment="Left" Margin="867,519,0,0" TextWrapping="Wrap" Text="ТИП ДАТЧИКА" VerticalAlignment="Top" FontSize="18"/>
+            <ngo:NGOComboBox Height="40" 
+                ItemsSource="{StaticResource Dens}"
+                Width="180" 
+                FontSize="20" 
+                FontWeight="Bold" 
+                HorizontalContentAlignment="Center" 
+                VerticalContentAlignment="Center" 
+                Margin="1053,514,0,0"
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top">
+                <ngo:NGOComboBox.ReadIndex>
+                    <hmi:Bind Path="Tags.Node[view.msab.gas6.settings].Items[units].Value">
+                        <hmi:Bind.FallbackValue>
+                            <system:Int32>-1</system:Int32>
+                        </hmi:Bind.FallbackValue>
+                    </hmi:Bind>
+                </ngo:NGOComboBox.ReadIndex>
+                <ngo:NGOComboBox.WriteIndex>
+                    <hmi:Bind Path="Tags.Node[write.msab.gas6.settings].Items[units].Value">
+                        <hmi:Bind.FallbackValue>
+                            <system:Int32>-1</system:Int32>
+                        </hmi:Bind.FallbackValue>
+                    </hmi:Bind>
+                </ngo:NGOComboBox.WriteIndex>
+            </ngo:NGOComboBox>
+
+
+        </Grid>
+    </Grid>
+</UserControl>

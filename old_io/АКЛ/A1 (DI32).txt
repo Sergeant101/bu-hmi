@@ -1,0 +1,128 @@
+﻿311018
+8
+lang|RU|0 (:2 ) В кабине бурильщика отжата кнопка SB4 "Стоп/Деблокировка насоса 1"
+lang|EN|0 (:2 ) Not push button "Stop mud pump 1" on drillers console
+311018
+9
+lang|RU|1 (:3 ) В кабине бурильщика отжата кнопка SB5 "Стоп/Деблокировка насоса 2"
+lang|EN|1 (:3 ) Not push button "Stop mud pump 2" on drillers console
+311018
+10
+lang|RU|2 (:4 ) В кабине бурильщика нажата кнопка SB8 "Пуск/Деблокировка основной лебедки"
+lang|EN|2 (:4 ) Not push button "Stop mud pump 3" on drillers console
+311018
+11
+lang|RU|3 (:5 ) В кабине бурильщика переключатель SA2 в положении "Задать скорость ротора вправо"
+lang|EN|3 (:5 ) Rotation Rotary to rigth on drillers console
+311018
+12
+lang|RU|4 (:6 ) В кабине бурильщика переключатель SA2 в положении "Задать скорость ротора влево"
+lang|EN|4 (:6 ) Rotation Rotary to left on drillers console
+311018
+13
+lang|RU|5 (:7 ) В кабине бурильщика нажата кнопка SB10 "Пуск/Деблокировка доп. привода"
+lang|EN|5 (:7 ) Lever pushed of top drive
+311018
+14
+lang|RU|6 (:8 ) В кабине бурильщика отжата кнопка SB2 "Стоп/Деблокировка ротора"
+lang|EN|6 (:8 ) IBOP of Top drive closed
+311018
+15
+lang|RU|7 (:9 ) В кабине бурильщика нажата кнопка SB1 "Пуск/Деблокировка ротора"
+lang|EN|7 (:9 ) Pipe grab of Top drive closed
+311018
+0
+lang|RU|0 (:12 ) В кабине бурильщика командоаппарат КА1 не в положении "паркинг"
+lang|EN|0 (:12 ) Add speed of mud pump 1 on drillers console
+311018
+1
+lang|RU|1 (:13 ) В кабине бурильщика переключатель SA3 в положении "Увеличить скорость привода насоса 1"
+lang|EN|1 (:13 ) Reduce speed of mud pump 1 on drillers console
+311018
+2
+lang|RU|2 (:14 ) В кабине бурильщика переключатель SA4 в положении "Увеличить скорость привода насоса 2"
+lang|EN|2 (:14 ) Add speed of mud pump 2 on drillers console
+311018
+3
+lang|RU|3 (:15 ) В кабине бурильщика переключатель SA3 в положении "Уменьшить скорость привода насоса 1"
+lang|EN|3 (:15 ) Reduce speed of mud pump 2 on drillers console
+311018
+4
+lang|RU|4 (:16 ) В кабине бурильщика переключатель SA4 в положении "Уменьшить скорость привода насоса 2"
+lang|EN|4 (:16 ) Add speed of mud pump 3 on drillers console
+311018
+5
+lang|RU|5 (:17 ) Резерв
+lang|EN|5 (:17 ) Reduce speed of mud pump 3  on drillers console
+311018
+6
+lang|RU|6 (:18 ) Резерв
+lang|EN|6 (:18 ) Not emergency stop of mud pumps on drillers console
+311018
+7
+lang|RU|7 (:19 ) Включен пускатель 420КМ1 вентилятора обдува двигателя ротора МР-МВ
+lang|EN|7 (:19 ) Not push button "Drawwarks brake" on drillers console
+311019
+8
+lang|RU|0 (:22 ) Включен пускатель 422К1 обогрева двигателя ротора МР-ЕК
+lang|EN|0 (:22 ) Switch on "Start/Unlock"of Rotor on drillers console
+311019
+9
+lang|RU|1 (:23 ) В кабине бурильщика отжата кнопка SB3 "Аварийный стоп буровой установки"
+lang|EN|1 (:23 ) Switch on "Stop"of Rotor on drillers console
+311019
+10
+lang|RU|2 (:24 ) В кабине бурильщика переключатель SA7 в положении "Бурение"
+lang|EN|2 (:24 ) Increase speed of Rotor on drillers console
+311019
+11
+lang|RU|3 (:25 ) В кабине бурильщика переключатель SA7 в положении "СПО"
+lang|EN|3 (:25 ) Reduce speed of  Rotor on drillers console
+311019
+12
+lang|RU|4 (:26 ) Резерв
+lang|EN|4 (:26 ) Increase torque of Rotor on drillers console
+311019
+13
+lang|RU|5 (:27 ) Резерв
+lang|EN|5 (:27 ) Reduce torque of  Rotor on drillers console
+311019
+14
+lang|RU|6 (:28 ) Резерв
+lang|EN|6 (:28 ) Not a raised rotary table
+311019
+15
+lang|RU|7 (:29 ) Включен конечный выключатель SQP "Нет отрыва стола ротора"
+lang|EN|7 (:29 ) Air pressure sensor MR ON
+311019
+0
+lang|RU|0 (:32 ) Сигнал с командоконтроллера ПУ1-SA "Разрешение включения вспом. лебедки МЛВ1"
+lang|EN|0 (:32 ) Push button "Start/Unlock" main drive drawworks
+311019
+1
+lang|RU|1 (:33 ) Сигнал с командоконтроллера ПУ1-SA "Подъём вспом. лебедки МЛВ1 на 1-ой скорости"
+lang|EN|1 (:33 ) Not push button "Stop" main drive drawworks
+311019
+2
+lang|RU|2 (:34 ) Сигнал с командоконтроллера ПУ1-SA "Спуск вспом. лебедки МЛВ1 на 1-ой скорости"
+lang|EN|2 (:34 ) Push button "Start/Unlock" aux. drive drawworks
+311019
+3
+lang|RU|3 (:35 ) Сигнал с командоконтроллера ПУ1-SA "Движение вспом. лебедки МЛВ1 на 2-ой скорости"
+lang|EN|3 (:35 ) Not push button "Stop" aux. drive drawworks
+311019
+4
+lang|RU|4 (:36 ) Сигнал с командоконтроллера ПУ1-SA "Движение вспом. лебедки МЛВ1 на 3-ой скорости"
+lang|EN|4 (:36 ) Not push button "Emergency Stop of Drilling Rig"
+311019
+5
+lang|RU|5 (:37 ) Нажата кнопка поста управления ПУ1-SB "Пуск вспом. лебедки МЛВ1"
+lang|EN|5 (:37 ) Drum is not in position "parking"
+311019
+6
+lang|RU|6 (:38 ) Отжата кнопка поста управления ПУ1-SB "Стоп вспом. лебедки МЛВ1"
+lang|EN|6 (:38 ) Drawworks mode is drilling
+311019
+7
+lang|RU|7 (:39 ) Есть избыточное давление в двигателе ротора МР (обдув включен)
+lang|EN|7 (:39 ) Drawworks mode is Round-Trip

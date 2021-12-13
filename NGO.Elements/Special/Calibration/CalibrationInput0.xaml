@@ -1,0 +1,191 @@
+﻿<Window x:Class="NGO.Elements.Special.Calibration.CalibrationInput0"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:hmi="http://schemas.monokot.com/hmi/"
+        xmlns:se="http://schemas.monokot.com/se/"
+        xmlns:calibration="clr-namespace:NGO.Elements.Special.Calibration"
+        Title="Настройка статической характеристики датчика веса" Height="555" Width="825" 
+        ResizeMode="NoResize">
+    <Grid>
+        <calibration:Calibration Height="555" titleAxisX="Вес, т" titleAxisY="Ток, А" maximumX="20" minimumX="0" maximumY="120" majorStepX="5" majorStepY="20">
+            <calibration:Calibration.points>
+                <calibration:CalibrationPoint x="{hmi:SeBinding Tags.Node[view.msab.sensor_weight].Items[x1].Value, FallbackValue=0, StringFormat=0.00}" xWrite="{hmi:SeBinding Tags.Node[write.msab.sensor_weight].Items[x1].WriteCommand, FallbackValue=''}" y="{hmi:SeBinding Tags.Node[view.msab.sensor_weight].Items[y1].Value, FallbackValue=0, StringFormat=0.00}" yWrite="{hmi:SeBinding Tags.Node[write.msab.sensor_weight].Items[y1].Value.writeCommand, FallbackValue=''}"/>
+                <calibration:CalibrationPoint x="{hmi:SeBinding Tags.Node[view.msab.sensor_weight].Items[x2].Value, FallbackValue=0, StringFormat=0.00}" xWrite="{hmi:SeBinding Tags.Node[write.msab.sensor_weight].Items[x2].WriteCommand, FallbackValue=''}" y="{hmi:SeBinding Tags.Node[view.msab.sensor_weight].Items[y2].Value, FallbackValue=0, StringFormat=0.00}" yWrite="{hmi:SeBinding Tags.Node[write.msab.sensor_weight].Items[y2].Value.writeCommand, FallbackValue=''}"/>
+                <calibration:CalibrationPoint x="{hmi:SeBinding Tags.Node[view.msab.sensor_weight].Items[x3].Value, FallbackValue=0, StringFormat=0.00}" xWrite="{hmi:SeBinding Tags.Node[write.msab.sensor_weight].Items[x3].WriteCommand, FallbackValue=''}" y="{hmi:SeBinding Tags.Node[view.msab.sensor_weight].Items[y3].Value, FallbackValue=0, StringFormat=0.00}" yWrite="{hmi:SeBinding Tags.Node[write.msab.sensor_weight].Items[y3].Value.writeCommand, FallbackValue=''}"/>
+                <calibration:CalibrationPoint x="{hmi:SeBinding Tags.Node[view.msab.sensor_weight].Items[x4].Value, FallbackValue=0, StringFormat=0.00}" xWrite="{hmi:SeBinding Tags.Node[write.msab.sensor_weight].Items[x4].WriteCommand, FallbackValue=''}" y="{hmi:SeBinding Tags.Node[view.msab.sensor_weight].Items[y4].Value, FallbackValue=0, StringFormat=0.00}" yWrite="{hmi:SeBinding Tags.Node[write.msab.sensor_weight].Items[y4].Value.writeCommand, FallbackValue=''}"/>
+                <calibration:CalibrationPoint x="{hmi:SeBinding Tags.Node[view.msab.sensor_weight].Items[x5].Value, FallbackValue=0, StringFormat=0.00}" xWrite="{hmi:SeBinding Tags.Node[write.msab.sensor_weight].Items[x5].WriteCommand, FallbackValue=''}" y="{hmi:SeBinding Tags.Node[view.msab.sensor_weight].Items[y5].Value, FallbackValue=0, StringFormat=0.00}" yWrite="{hmi:SeBinding Tags.Node[write.msab.sensor_weight].Items[y5].Value.writeCommand, FallbackValue=''}"/>
+                <calibration:CalibrationPoint x="{hmi:SeBinding Tags.Node[view.msab.sensor_weight].Items[x6].Value, FallbackValue=0, StringFormat=0.00}" xWrite="{hmi:SeBinding Tags.Node[write.msab.sensor_weight].Items[x6].WriteCommand, FallbackValue=''}" y="{hmi:SeBinding Tags.Node[view.msab.sensor_weight].Items[y6].Value, FallbackValue=0, StringFormat=0.00}" yWrite="{hmi:SeBinding Tags.Node[write.msab.sensor_weight].Items[y6].Value.writeCommand, FallbackValue=''}"/>
+            </calibration:Calibration.points>
+            <calibration:Calibration.LayoutTransform>
+                <ScaleTransform ScaleX="0.95" ScaleY=".95"/>
+            </calibration:Calibration.LayoutTransform>
+        </calibration:Calibration>
+        <Grid HorizontalAlignment="Left" Height="442" VerticalAlignment="Top" Width="288" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="117*"/>
+                <ColumnDefinition Width="40*"/>
+                <ColumnDefinition Width="98*"/>
+                <ColumnDefinition Width="33*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Напряжение, В" Height="16" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Скорость" Height="16" VerticalAlignment="Center"/>
+
+            <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding modules[tags_mod].Items[db_weight_u_read23].Value, FallbackValue=0, StringFormat=0.00}" Height="16" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding modules[tags_mod].Items[db_weight_u_read24].Value, FallbackValue=0, StringFormat=0.00}" Height="16" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding modules[tags_mod].Items[db_weight_u_read25].Value, FallbackValue=0, StringFormat=0.00}" Height="16" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding modules[tags_mod].Items[db_weight_u_read26].Value, FallbackValue=0, StringFormat=0.00}" Height="16" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="5" Grid.Column="0" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding modules[tags_mod].Items[db_weight_u_read27].Value, FallbackValue=0, StringFormat=0.00}" Height="16" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="6" Grid.Column="0" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding modules[tags_mod].Items[db_weight_u_read28].Value, FallbackValue=0, StringFormat=0.00}" Height="16" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="7" Grid.Column="0" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding modules[tags_mod].Items[db_weight_u_read29].Value, FallbackValue=0, StringFormat=0.00}" Height="16" VerticalAlignment="Center"/>
+
+            <TextBlock Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding modules[tags_mod].Items[db_weight_u_read30].Value, FallbackValue=0, StringFormat=0.##}" Height="16" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding modules[tags_mod].Items[db_weight_u_read31].Value, FallbackValue=0, StringFormat=0.##}" Height="16" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding modules[tags_mod].Items[db_weight_u_read32].Value, FallbackValue=0, StringFormat=0.##}" Height="16" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="4" Grid.Column="2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding modules[tags_mod].Items[db_weight_u_read33].Value, FallbackValue=0, StringFormat=0.##}" Height="16" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="5" Grid.Column="2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding modules[tags_mod].Items[db_weight_u_read34].Value, FallbackValue=0, StringFormat=0.##}" Height="16" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="6" Grid.Column="2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding modules[tags_mod].Items[db_weight_u_read35].Value, FallbackValue=0, StringFormat=0.##}" Height="16" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="7" Grid.Column="2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding modules[tags_mod].Items[db_weight_u_read36].Value, FallbackValue=0, StringFormat=0.##}" Height="16" VerticalAlignment="Center"/>
+
+            <Button Grid.Row="1" Grid.Column="1" Command="{Binding ShowKeypadCmd, ElementName=keypad_jstk_hepler_dr_u1}" IsEnabled="{Binding modules[plug_mod].Items[PermissionPlugin].levels[1].access, FallbackValue=false}">
+                <Image Stretch="None" Source="/NGO.Elements;component/Content/Icon/calc-icon.png" />
+            </Button>
+
+            <se:CtrlKeypad x:Name="keypad_jstk_hepler_dr_u1" Multiplier="1000" EnterCommand="{Binding modules[tags_mod].Items[db_weight_u23].WriteCommand, FallbackValue=''}" WindowTitle="ВВЕДИТЕ ЗНАЧЕНИЕ" WindowMessage="" Height="Auto" Width="Auto" Grid.Row="1" Grid.Column="1">
+                <se:CtrlKeypad.Rules>
+                    <hmi:RangeValidationRule maximumValue="10" minimumValue="0"/>
+                </se:CtrlKeypad.Rules>
+            </se:CtrlKeypad>
+
+            <Button Grid.Row="2" Grid.Column="1" Command="{Binding ShowKeypadCmd, ElementName=keypad_jstk_hepler_dr_u2}" IsEnabled="{Binding modules[plug_mod].Items[PermissionPlugin].levels[1].access, FallbackValue=false}">
+                <Image Stretch="None" Source="/NGO.Elements;component/Content/Icon/calc-icon.png" />
+            </Button>
+            <se:CtrlKeypad x:Name="keypad_jstk_hepler_dr_u2" Multiplier="1000" EnterCommand="{Binding modules[tags_mod].Items[db_weight_u24].WriteCommand, FallbackValue=''}" WindowTitle="ВВЕДИТЕ ЗНАЧЕНИЕ" WindowMessage="" Height="Auto" Width="Auto" Grid.Row="2" Grid.Column="1">
+                <se:CtrlKeypad.Rules>
+                    <hmi:RangeValidationRule maximumValue="10" minimumValue="0"/>
+                </se:CtrlKeypad.Rules>
+            </se:CtrlKeypad>
+
+            <Button Grid.Row="3" Grid.Column="1" Command="{Binding ShowKeypadCmd, ElementName=keypad_jstk_hepler_dr_u3}" IsEnabled="{Binding modules[plug_mod].Items[PermissionPlugin].levels[1].access, FallbackValue=false}">
+                <Image Stretch="None" Source="/NGO.Elements;component/Content/Icon/calc-icon.png" />
+            </Button>
+            <se:CtrlKeypad x:Name="keypad_jstk_hepler_dr_u3" Multiplier="1000" EnterCommand="{Binding modules[tags_mod].Items[db_weight_u25].WriteCommand, FallbackValue=''}" WindowTitle="ВВЕДИТЕ ЗНАЧЕНИЕ" WindowMessage="" Height="Auto" Width="Auto" Grid.Row="3" Grid.Column="1">
+                <se:CtrlKeypad.Rules>
+                    <hmi:RangeValidationRule maximumValue="10" minimumValue="0"/>
+                </se:CtrlKeypad.Rules>
+            </se:CtrlKeypad>
+
+            <Button Grid.Row="4" Grid.Column="1" Command="{Binding ShowKeypadCmd, ElementName=keypad_jstk_hepler_dr_u4}" IsEnabled="{Binding modules[plug_mod].Items[PermissionPlugin].levels[1].access, FallbackValue=false}">
+                <Image Stretch="None" Source="/NGO.Elements;component/Content/Icon/calc-icon.png" />
+            </Button>
+            <se:CtrlKeypad x:Name="keypad_jstk_hepler_dr_u4" Multiplier="1000" EnterCommand="{Binding modules[tags_mod].Items[db_weight_u26].WriteCommand, FallbackValue=''}" WindowTitle="ВВЕДИТЕ ЗНАЧЕНИЕ" WindowMessage="" Height="Auto" Width="Auto" Grid.Row="4" Grid.Column="1">
+                <se:CtrlKeypad.Rules>
+                    <hmi:RangeValidationRule maximumValue="10" minimumValue="0"/>
+                </se:CtrlKeypad.Rules>
+            </se:CtrlKeypad>
+
+            <Button Grid.Row="5" Grid.Column="1" Command="{Binding ShowKeypadCmd, ElementName=keypad_jstk_hepler_dr_u5}">
+                <Image Stretch="None" Source="/NGO.Elements;component/Content/Icon/calc-icon.png" />
+            </Button>
+
+            <se:CtrlKeypad x:Name="keypad_jstk_hepler_dr_u5" Multiplier="1000" EnterCommand="{Binding modules[tags_mod].Items[db_weight_u27].WriteCommand, FallbackValue=''}" WindowTitle="ВВЕДИТЕ ЗНАЧЕНИЕ" WindowMessage="" Height="Auto" Width="Auto" Grid.Row="5" Grid.Column="1">
+                <se:CtrlKeypad.Rules>
+                    <hmi:RangeValidationRule maximumValue="10" minimumValue="0"/>
+                </se:CtrlKeypad.Rules>
+            </se:CtrlKeypad>
+
+            <Button Grid.Row="6" Grid.Column="1" Command="{Binding ShowKeypadCmd, ElementName=keypad_jstk_hepler_dr_u6}">
+                <Image Stretch="None" Source="/NGO.Elements;component/Content/Icon/calc-icon.png" />
+            </Button>
+            <se:CtrlKeypad x:Name="keypad_jstk_hepler_dr_u6" Multiplier="1000" EnterCommand="{Binding modules[tags_mod].Items[db_weight_u28].WriteCommand, FallbackValue=''}" WindowTitle="ВВЕДИТЕ ЗНАЧЕНИЕ" WindowMessage="" Height="Auto" Width="Auto" Grid.Row="6" Grid.Column="1">
+                <se:CtrlKeypad.Rules>
+                    <hmi:RangeValidationRule maximumValue="10" minimumValue="0"/>
+                </se:CtrlKeypad.Rules>
+            </se:CtrlKeypad>
+            <Button Grid.Row="7" Grid.Column="1" Command="{Binding ShowKeypadCmd, ElementName=keypad_jstk_hepler_dr_u7}">
+                <Image Stretch="None" Source="/NGO.Elements;component/Content/Icon/calc-icon.png" />
+            </Button>
+            <se:CtrlKeypad x:Name="keypad_jstk_hepler_dr_u7" Multiplier="1000" EnterCommand="{Binding modules[tags_mod].Items[db_weight_u29].WriteCommand, FallbackValue=''}" WindowTitle="ВВЕДИТЕ ЗНАЧЕНИЕ" WindowMessage="" Height="Auto" Width="Auto" Grid.Row="7" Grid.Column="1">
+                <se:CtrlKeypad.Rules>
+                    <hmi:RangeValidationRule maximumValue="10" minimumValue="0"/>
+                </se:CtrlKeypad.Rules>
+            </se:CtrlKeypad>
+
+            <Button Grid.Row="1" Grid.Column="3" Command="{Binding ShowKeypadCmd, ElementName=keypad_jstk_hepler_dr_s1}" IsEnabled="{Binding modules[plug_mod].Items[PermissionPlugin].levels[1].access, FallbackValue=false}">
+                <Image Stretch="None" Source="/NGO.Elements;component/Content/Icon/calc-icon.png" />
+            </Button>
+            <se:CtrlKeypad x:Name="keypad_jstk_hepler_dr_s1" Multiplier="1" EnterCommand="{Binding modules[tags_mod].Items[db_weight_u30].WriteCommand, FallbackValue=''}" WindowTitle="ВВЕДИТЕ ЗНАЧЕНИЕ" WindowMessage="" Height="Auto" Width="Auto" Grid.Row="1" Grid.Column="3">
+                <se:CtrlKeypad.Rules>
+                    <hmi:RangeValidationRule maximumValue="1500" minimumValue="-1500"/>
+                </se:CtrlKeypad.Rules>
+            </se:CtrlKeypad>
+
+
+            <Button Grid.Row="2" Grid.Column="3" Command="{Binding ShowKeypadCmd, ElementName=keypad_jstk_hepler_dr_s2}" IsEnabled="{Binding modules[plug_mod].Items[PermissionPlugin].levels[1].access, FallbackValue=false}">
+                <Image Stretch="None" Source="/NGO.Elements;component/Content/Icon/calc-icon.png" />
+            </Button>
+            <se:CtrlKeypad x:Name="keypad_jstk_hepler_dr_s2" Multiplier="1" EnterCommand="{Binding modules[tags_mod].Items[db_weight_u31].WriteCommand, FallbackValue=''}" WindowTitle="ВВЕДИТЕ ЗНАЧЕНИЕ" WindowMessage="" Height="Auto" Width="Auto" Grid.Row="2" Grid.Column="3">
+                <se:CtrlKeypad.Rules>
+                    <hmi:RangeValidationRule maximumValue="1500" minimumValue="-1500"/>
+                </se:CtrlKeypad.Rules>
+            </se:CtrlKeypad>
+
+            <Button Grid.Row="3" Grid.Column="3" Command="{Binding ShowKeypadCmd, ElementName=keypad_jstk_hepler_dr_s3}" IsEnabled="{Binding modules[plug_mod].Items[PermissionPlugin].levels[1].access, FallbackValue=false}">
+                <Image Stretch="None" Source="/NGO.Elements;component/Content/Icon/calc-icon.png" />
+            </Button>
+            <se:CtrlKeypad x:Name="keypad_jstk_hepler_dr_s3" Multiplier="1" EnterCommand="{Binding modules[tags_mod].Items[db_weight_u32].WriteCommand, FallbackValue=''}" WindowTitle="ВВЕДИТЕ ЗНАЧЕНИЕ" WindowMessage="" Height="Auto" Width="Auto" Grid.Row="3" Grid.Column="3">
+                <se:CtrlKeypad.Rules>
+                    <hmi:RangeValidationRule maximumValue="1500" minimumValue="-1500"/>
+                </se:CtrlKeypad.Rules>
+            </se:CtrlKeypad>
+            <Button Grid.Row="4" Grid.Column="3" Command="{Binding ShowKeypadCmd, ElementName=keypad_jstk_hepler_dr_s4}" IsEnabled="{Binding modules[plug_mod].Items[PermissionPlugin].levels[1].access, FallbackValue=false}">
+                <Image Stretch="None" Source="/NGO.Elements;component/Content/Icon/calc-icon.png" />
+            </Button>
+            <se:CtrlKeypad x:Name="keypad_jstk_hepler_dr_s4" Multiplier="1" EnterCommand="{Binding modules[tags_mod].Items[db_weight_u33].WriteCommand, FallbackValue=''}" WindowTitle="ВВЕДИТЕ ЗНАЧЕНИЕ" WindowMessage="" Height="Auto" Width="Auto" Grid.Row="4" Grid.Column="3">
+                <se:CtrlKeypad.Rules>
+                    <hmi:RangeValidationRule maximumValue="1500" minimumValue="-1500"/>
+                </se:CtrlKeypad.Rules>
+            </se:CtrlKeypad>
+
+            <Button Grid.Row="5" Grid.Column="3" Command="{Binding ShowKeypadCmd, ElementName=keypad_jstk_hepler_dr_s5}" IsEnabled="{Binding modules[plug_mod].Items[PermissionPlugin].levels[1].access, FallbackValue=false}">
+                <Image Stretch="None" Source="/NGO.Elements;component/Content/Icon/calc-icon.png" />
+            </Button>
+            <se:CtrlKeypad x:Name="keypad_jstk_hepler_dr_s5" Multiplier="1" EnterCommand="{Binding modules[tags_mod].Items[db_weight_u34].WriteCommand, FallbackValue=''}" WindowTitle="ВВЕДИТЕ ЗНАЧЕНИЕ" WindowMessage="" Height="Auto" Width="Auto" Grid.Row="5" Grid.Column="3">
+                <se:CtrlKeypad.Rules>
+                    <hmi:RangeValidationRule maximumValue="1500" minimumValue="-1500"/>
+                </se:CtrlKeypad.Rules>
+            </se:CtrlKeypad>
+
+            <Button Grid.Row="6" Grid.Column="3" Command="{Binding ShowKeypadCmd, ElementName=keypad_jstk_hepler_dr_s6}" IsEnabled="{Binding modules[plug_mod].Items[PermissionPlugin].levels[1].access, FallbackValue=false}">
+                <Image Stretch="None" Source="/NGO.Elements;component/Content/Icon/calc-icon.png" />
+            </Button>
+            <se:CtrlKeypad x:Name="keypad_jstk_hepler_dr_s6" Multiplier="1" EnterCommand="{Binding modules[tags_mod].Items[db_weight_u36].WriteCommand, FallbackValue=''}" WindowTitle="ВВЕДИТЕ ЗНАЧЕНИЕ" WindowMessage="" Height="Auto" Width="Auto" Grid.Row="6" Grid.Column="3">
+                <se:CtrlKeypad.Rules>
+                    <hmi:RangeValidationRule maximumValue="1500" minimumValue="-1500"/>
+                </se:CtrlKeypad.Rules>
+            </se:CtrlKeypad>
+
+            <Button Grid.Row="7" Grid.Column="3" Command="{Binding ShowKeypadCmd, ElementName=keypad_jstk_hepler_dr_s7}" IsEnabled="{Binding modules[plug_mod].Items[PermissionPlugin].levels[1].access, FallbackValue=false}">
+                <Image Stretch="None" Source="/NGO.Elements;component/Content/Icon/calc-icon.png" />
+            </Button>
+            <se:CtrlKeypad x:Name="keypad_jstk_hepler_dr_s7" Multiplier="1" EnterCommand="{Binding modules[tags_mod].Items[db_weight_u37].WriteCommand, FallbackValue=''}" WindowTitle="ВВЕДИТЕ ЗНАЧЕНИЕ" WindowMessage="" Height="Auto" Width="Auto" Grid.Row="7" Grid.Column="3">
+                <se:CtrlKeypad.Rules>
+                    <hmi:RangeValidationRule maximumValue="1500" minimumValue="-1500"/>
+                </se:CtrlKeypad.Rules>
+            </se:CtrlKeypad>
+
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="VFD.Frames.FrmPdf"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:wpfPdfViewer="clr-namespace:WPFPdfViewer;assembly=WPFPdfViewer"
+             mc:Ignorable="d" 
+             d:DesignHeight="630" d:DesignWidth="1020">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="684*" />
+        </Grid.ColumnDefinitions>
+        <TreeView Name="CatalogsView" SelectedValuePath="{Binding ElementName=_uc, Path=currentItem}" FontSize="18" ItemsSource="{Binding}" Width="315" Grid.Column="0">
+            <TreeView.ItemContainerStyle>
+                <Style TargetType="{x:Type TreeViewItem}">
+                    <Setter Property="IsSelected" Value="{Binding Path=isSelected}"/>
+                </Style>
+            </TreeView.ItemContainerStyle>
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate ItemsSource = "{Binding Path=files}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="{Binding Path=img}" Width="48" />
+                        <Label Content="{Binding Path=name}" Margin="5,0,0,0" VerticalContentAlignment="Center" FontFamily="Tahoma" />
+                    </StackPanel>
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
+        </TreeView>
+        <Button Name="btnHideCatalogs" FontSize="18" Width="45" Grid.Column="1" Click="Button_Click_2">
+            <Image Source="/NGO.Elements;component/Content/Icon/arrow (left).png" />
+        </Button>
+        <wpfPdfViewer:PdfViewer Name="Pdf" Grid.Column="2" />
+    </Grid>
+</UserControl>

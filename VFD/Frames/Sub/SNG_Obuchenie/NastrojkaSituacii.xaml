@@ -1,0 +1,817 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:hmi="http://schemas.monokot.com/hmi/"
+             xmlns:se="http://schemas.monokot.com/se/"
+
+    xmlns:ConfigurateSituation="clr-namespace:NGO.Elements.Special.ConfigurateSituation;assembly=NGO.Elements"
+             x:Class="VFD.Frames.Sub.SNG_Obuchenie.NastrojkaSituacii"
+             mc:Ignorable="d" 
+             Height="810" Width="1270">
+    <se:HmiTabControl HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" TabHorizontalAlignment="Center">
+        <se:HmiTabItem Header="ГАЗОНЕФТЕВОДОПРОЯВЛЕНИЯ" Width="400" Height="40">
+            <Grid Background="Gainsboro" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <ConfigurateSituation:ConfigureSituationButton Margin="10,10,0,0" Content="ИЗМЕНЕНИЕ ПОТОКА НА ВЫХОДЕ&#xD;&#xA;И УРОВНЯ ПЖ В ЕМКОСТЯХ" text="ИЗМЕНЕНИЕ ПОТОКА НА ВЫХОДЕ И УРОВНЯ ПЖ В ЕМКОСТЯХ"  startCommand="{hmi:SeBinding Tags.Node[situacii.write].Items[Tag1].WriteCommand}" situationCode="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="155" Width="605" FontFamily="Tahoma" FontSize="24">
+                    <ConfigurateSituation:ConfigureSituationButton.uiElements>
+                        <Grid HorizontalAlignment="Stretch" Height="40" Margin="0,0,0,0" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="400"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition MinWidth="80"/>
+                                <ColumnDefinition Width="100*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ НАЧАЛА&#xD;&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center" />
+                            <TextBlock Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ ОКОНЧАНИЯ&#xD;&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="5" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ИЗМЕНЕНИЕ ПАРАМЕТРА, %" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="8" Grid.ColumnSpan="1" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ФАКТИЧЕСКОЕ&#xD;&#xA;ЗНАЧЕНИЕ" VerticalAlignment="Center" TextAlignment="Center"/>
+                        </Grid>
+
+                        <ConfigurateSituation:ConfigureItemControl start="5" end="15" delta="20" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="РАСХОД НА ВЫХОДЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl start="8" end="25" delta="15" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="УРОВЕНЬ В ПРИЕМНЫХ ЕМКОСТЯХ"/>
+                        <ConfigurateSituation:ConfigureItemControl start="1" end="4" delta="20" Background="Gainsboro" textColumnWidth="400"  Margin="0,2.5,0,2.5" text="МЕХ. СКОРОСТЬ БУРЕНИЯ"/>
+                    </ConfigurateSituation:ConfigureSituationButton.uiElements>
+                </ConfigurateSituation:ConfigureSituationButton>
+                <ConfigurateSituation:ConfigureSituationButton Margin="10,196,0,0" Content="ПЕРЕЛИВ ИЗ СКВАЖИНЫ&#xD;&#xA;ПРИ ОТСУТСТВИИ ЦИРКУЛЯЦИИ" text="ПЕРЕЛИВ ИЗ СКВАЖИНЫ ПРИ ОТСУТСТВИИ ЦИРКУЛЯЦИИ"  startCommand="{hmi:SeBinding Tags.Node[situacii.write].Items[Tag1].WriteCommand}" situationCode="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="155" Width="605" FontFamily="Tahoma" FontSize="24">
+                    <ConfigurateSituation:ConfigureSituationButton.uiElements>
+                        <Grid HorizontalAlignment="Stretch" Height="40" Margin="0,0,0,0" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="400"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition MinWidth="80"/>
+                                <ColumnDefinition Width="100*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ НАЧАЛА&#xD;&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center" />
+                            <TextBlock Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ ОКОНЧАНИЯ&#xD;&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="5" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Margin="5" TextWrapping="Wrap" Text="ИЗМЕНЕНИЕ ПАРАМЕТРА, %" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="8" Grid.ColumnSpan="1" HorizontalAlignment="Stretch" Margin="5" TextWrapping="Wrap" Text="ФАКТИЧЕСКОЕ&#xD;&#xA;ЗНАЧЕНИЕ" VerticalAlignment="Center" TextAlignment="Center"/>
+                        </Grid>
+
+                        <ConfigurateSituation:ConfigureItemControl Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="РАСХОД НА ВЫХОДЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="ДАВЛЕНИЕ НА ВХОДЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="УРОВЕНЬ В ПРИЕМНЫХ ЕМКОСТЯХ"/>
+                        <ConfigurateSituation:ConfigureItemControl Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="РАСХОД НА ВЫХОДЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="СОДЕРЖАНИЕ ГАЗА НА ВЫХОДЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl Background="Gainsboro" textColumnWidth="400"  Margin="0,2.5,0,2.5" text="МЕХ. СКОРОСТЬ БУРЕНИЯ"/>
+                    </ConfigurateSituation:ConfigureSituationButton.uiElements>
+                </ConfigurateSituation:ConfigureSituationButton>
+                <ConfigurateSituation:ConfigureSituationButton Margin="10,383,0,0" Content="СНИЖЕНИЕ УРОВНЯ В СКВАЖИНЕ&#xD;&#xA;ПРИ ОТСУТСТВИИ ЦИРКУЛЯЦИИ" text="СНИЖЕНИЕ УРОВНЯ В СКВАЖИНЕ ПРИ ОТСУТСТВИИ ЦИРКУЛЯЦИИ"  startCommand="{hmi:SeBinding Tags.Node[situacii.write].Items[Tag1].WriteCommand}" situationCode="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="155" Width="605" FontFamily="Tahoma" FontSize="24">
+                    <ConfigurateSituation:ConfigureSituationButton.uiElements>
+                        <Grid HorizontalAlignment="Stretch" Height="40" Margin="0,0,0,0" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="400"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition MinWidth="80"/>
+                                <ColumnDefinition Width="100*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ НАЧАЛА&#xD;&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center" />
+                            <TextBlock Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ ОКОНЧАНИЯ&#xD;&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="5" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Margin="5" TextWrapping="Wrap" Text="ИЗМЕНЕНИЕ ПАРАМЕТРА, %" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="8" Grid.ColumnSpan="1" HorizontalAlignment="Stretch" Margin="5" TextWrapping="Wrap" Text="ФАКТИЧЕСКОЕ&#xD;&#xA;ЗНАЧЕНИЕ" VerticalAlignment="Center" TextAlignment="Center"/>
+                        </Grid>
+
+                        <ConfigurateSituation:ConfigureItemControl Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="РАСХОД НА ВЫХОДЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="РАСХОД ДИФФЕРЕНЦИАЛЬНЫЙ"/>
+                        <ConfigurateSituation:ConfigureItemControl Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="УРОВЕНЬ В ПРИЕМНЫХ ЕМКОСТЯХ"/>
+                        <ConfigurateSituation:ConfigureItemControl Background="Gainsboro" textColumnWidth="400"  Margin="0,2.5,0,2.5" text="МЕХ. СКОРОСТЬ БУРЕНИЯ"/>
+                        <ConfigurateSituation:ConfigureItemControl Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="ПЛОТНОСТЬ РАСТВОРА НА ВХОДЕ И НА ВЫХОДЕ"/>
+                    </ConfigurateSituation:ConfigureSituationButton.uiElements>
+                </ConfigurateSituation:ConfigureSituationButton>
+                <ConfigurateSituation:ConfigureSituationButton Margin="652,10,0,0" Content="РЕЗКОЕ ИЛИ ПЛАВНОЕ СНИЖЕНИЕ ДАВЛЕНИЯ ПЖ&#xD;&#xA;НА ВХОДЕ С ОДНОВРЕМЕННЫМ &#xD;&#xA;РОСТОМ ЧИСЛА ХОДОВ&#xD;&#xA;НАСОСА (ПРИ ДИЗЕЛЬНОМ ПРИВОДЕ)" text="РЕЗКОЕ ИЛИ ПЛАВНОЕ СНИЖЕНИЕ ДАВЛЕНИЯ ПЖ&#xD;&#xA;НА ВХОДЕ С ОДНОВРЕМЕННЫМ &#xD;&#xA;РОСТОМ ЧИСЛА ХОДОВ&#xD;&#xA;НАСОСА (ПРИ ДИЗЕЛЬНОМ ПРИВОДЕ)"  startCommand="{hmi:SeBinding Tags.Node[situacii.write].Items[Tag1].WriteCommand}" situationCode="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="155" Width="606" FontFamily="Tahoma" FontSize="24">
+                    <ConfigurateSituation:ConfigureSituationButton.uiElements>
+                        <Grid HorizontalAlignment="Stretch" Height="40" Margin="0,0,0,0" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="400"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition MinWidth="80"/>
+                                <ColumnDefinition Width="100*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ НАЧАЛА&#xD;&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center" />
+                            <TextBlock Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ ОКОНЧАНИЯ&#xD;&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="5" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Margin="5" TextWrapping="Wrap" Text="ИЗМЕНЕНИЕ ПАРАМЕТРА, %" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="8" Grid.ColumnSpan="1" HorizontalAlignment="Stretch" Margin="5" TextWrapping="Wrap" Text="ФАКТИЧЕСКОЕ&#xD;&#xA;ЗНАЧЕНИЕ" VerticalAlignment="Center" TextAlignment="Center"/>
+                        </Grid>
+
+                        <ConfigurateSituation:ConfigureItemControl Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="ДАВЛЕНИЕ НА ВХОДЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="РАСХОД НА ВЫХОДЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl Background="Gainsboro" textColumnWidth="400"  Margin="0,2.5,0,2.5" text="МЕХ. СКОРОСТЬ БУРЕНИЯ"/>
+                    </ConfigurateSituation:ConfigureSituationButton.uiElements>
+                </ConfigurateSituation:ConfigureSituationButton>
+                <ConfigurateSituation:ConfigureSituationButton Margin="652,196,0,0" Content="УВЕЛИЧЕНИЕ УРОВНЯ ПЖ В ЕМКОСТЯХ&#xD;&#xA;И СНИЖЕНИЕ ТЕМПЕРАТУРЫ ПЖ НА ВЫХОДЕ" text="УВЕЛИЧЕНИЕ УРОВНЯ ПЖ В ЕМКОСТЯХ&#xD;&#xA;И СНИЖЕНИЕ ТЕМПЕРАТУРЫ ПЖ НА ВЫХОДЕ"  startCommand="{hmi:SeBinding Tags.Node[situacii.write].Items[Tag1].WriteCommand}" situationCode="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="155" Width="606" FontFamily="Tahoma" FontSize="24">
+                    <ConfigurateSituation:ConfigureSituationButton.uiElements>
+                        <Grid HorizontalAlignment="Stretch" Height="40" Margin="0,0,0,0" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="400"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition MinWidth="80"/>
+                                <ColumnDefinition Width="100*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ НАЧАЛА&#xD;&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center" />
+                            <TextBlock Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ ОКОНЧАНИЯ&#xD;&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="5" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Margin="5" TextWrapping="Wrap" Text="ИЗМЕНЕНИЕ ПАРАМЕТРА, %" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="8" Grid.ColumnSpan="1" HorizontalAlignment="Stretch" Margin="5" TextWrapping="Wrap" Text="ФАКТИЧЕСКОЕ&#xD;&#xA;ЗНАЧЕНИЕ" VerticalAlignment="Center" TextAlignment="Center"/>
+                        </Grid>
+
+                        <ConfigurateSituation:ConfigureItemControl Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="СОДЕРЖАНИЕ ГАЗА НА ВЫХОДЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl Background="Gainsboro" textColumnWidth="400"  Margin="0,2.5,0,2.5" text="ПЛОТНОСТЬ РАСТВОРА НА ВХОДЕ И НА ВЫХОДЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="УРОВЕНЬ В ПРИЕМНЫХ ЕМКОСТЯХ"/>
+                    </ConfigurateSituation:ConfigureSituationButton.uiElements>
+                </ConfigurateSituation:ConfigureSituationButton>
+                <ConfigurateSituation:ConfigureSituationButton Margin="652,383,0,0" Content="ВЫПЛЕСКИВАНИЕ ПЖ ИЗ СКВАЖИНЫ,&#xD;&#xA;ПОВЫШЕНИЕ УРОВНЯ ПЖ В ЕМКОСТЯХ, &#xD;&#xA;ИЗМЕНЕНИЕ РАСХОДА ПЖ НА ВЫХОДЕ" text="ВЫПЛЕСКИВАНИЕ ПЖ ИЗ СКВАЖИНЫ,&#xD;&#xA;ПОВЫШЕНИЕ УРОВНЯ ПЖ В ЕМКОСТЯХ, &#xD;&#xA;ИЗМЕНЕНИЕ РАСХОДА ПЖ НА ВЫХОДЕ"  startCommand="{hmi:SeBinding Tags.Node[situacii.write].Items[Tag1].WriteCommand}" situationCode="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="155" Width="606" FontFamily="Tahoma" FontSize="24">
+                    <ConfigurateSituation:ConfigureSituationButton.uiElements>
+                        <Grid HorizontalAlignment="Stretch" Height="40" Margin="0,0,0,0" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="400"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition MinWidth="80"/>
+                                <ColumnDefinition Width="100*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ НАЧАЛА&#xD;&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center" />
+                            <TextBlock Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ ОКОНЧАНИЯ&#xD;&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="5" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Margin="5" TextWrapping="Wrap" Text="ИЗМЕНЕНИЕ ПАРАМЕТРА, %" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="8" Grid.ColumnSpan="1" HorizontalAlignment="Stretch" Margin="5" TextWrapping="Wrap" Text="ФАКТИЧЕСКОЕ&#xD;&#xA;ЗНАЧЕНИЕ" VerticalAlignment="Center" TextAlignment="Center"/>
+                        </Grid>
+                        <ConfigurateSituation:ConfigureItemControl Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="СОДЕРЖАНИЕ ГАЗА НА ВЫХОДЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl Background="Gainsboro" textColumnWidth="400"  Margin="0,2.5,0,2.5" text="ПЛОТНОСТЬ РАСТВОРА НА ВХОДЕ И НА ВЫХОДЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="УРОВЕНЬ В ПРИЕМНЫХ ЕМКОСТЯХ"/>
+                        <ConfigurateSituation:ConfigureItemControl Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="РАСХОД НА ВЫХОДЕ"/>
+                    </ConfigurateSituation:ConfigureSituationButton.uiElements>
+                </ConfigurateSituation:ConfigureSituationButton>
+                <ConfigurateSituation:ConfigureSituationButton Margin="10,569,0,0" Content="МЕДЛЕННОЕ СНИЖЕНИЕ УРОВНЯ ПЖ" text="МЕДЛЕННОЕ СНИЖЕНИЕ УРОВНЯ ПЖ"  startCommand="{hmi:SeBinding Tags.Node[situacii.write].Items[Tag1].WriteCommand}" situationCode="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="155" Width="605" FontFamily="Tahoma" FontSize="24">
+                    <ConfigurateSituation:ConfigureSituationButton.uiElements>
+                        <Grid HorizontalAlignment="Stretch" Height="40" Margin="0,0,0,0" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="400"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition MinWidth="80"/>
+                                <ColumnDefinition Width="100*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ НАЧАЛА&#xD;&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center" />
+                            <TextBlock Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ ОКОНЧАНИЯ&#xD;&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="5" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Margin="5" TextWrapping="Wrap" Text="ИЗМЕНЕНИЕ ПАРАМЕТРА, %" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="8" Grid.ColumnSpan="1" HorizontalAlignment="Stretch" Margin="5" TextWrapping="Wrap" Text="ФАКТИЧЕСКОЕ&#xD;&#xA;ЗНАЧЕНИЕ" VerticalAlignment="Center" TextAlignment="Center"/>
+                        </Grid>
+
+                        <ConfigurateSituation:ConfigureItemControl Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="РАСХОД НА ВЫХОДЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="РАСХОД ДИФФЕРЕНЦИАЛЬНЫЙ"/>
+                        <ConfigurateSituation:ConfigureItemControl Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="УРОВЕНЬ В ПРИЕМНЫХ ЕМКОСТЯХ"/>
+                        <ConfigurateSituation:ConfigureItemControl Background="Gainsboro" textColumnWidth="400"  Margin="0,2.5,0,2.5" text="МЕХ. СКОРОСТЬ БУРЕНИЯ"/>
+                    </ConfigurateSituation:ConfigureSituationButton.uiElements>
+                </ConfigurateSituation:ConfigureSituationButton>
+            </Grid>
+        </se:HmiTabItem>
+        <se:HmiTabItem Header="СПУСКОПОДЪЕМНЫЕ ОПЕРАЦИИ" Margin="5,0,0,0" Width="400" Height="40">
+            <Grid Background="Gainsboro" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <ConfigurateSituation:ConfigureSituationButton Content="НАРУШЕНИЕ БАЛАНСА ОБЪЕМОВ ПОДНЯТЫХ&#xD;&#xA;(СПУЩЕННЫХ) ТРУБ И ДОЛИВАНИЯ ИЛИ &#xD;&#xA;ВЫТЕСНЕНИЯ ПЖ ИЗ СКВАЖИНЫ." text="НАРУШЕНИЕ БАЛАНСА ОБЪЕМОВ ПОДНЯТЫХ&#xD;&#xA;(СПУЩЕННЫХ) ТРУБ И ДОЛИВАНИЯ ИЛИ &#xD;&#xA;ВЫТЕСНЕНИЯ ПЖ ИЗ СКВАЖИНЫ."  startCommand="{hmi:SeBinding Tags.Node[situacii.write].Items[Tag1].WriteCommand}" situationCode="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="155" Width="605" FontFamily="Tahoma" FontSize="24" Margin="10,10,0,0">
+                    <ConfigurateSituation:ConfigureSituationButton.uiElements>
+                        <Grid HorizontalAlignment="Stretch" Height="40" Margin="0,0,0,0" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="400"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition MinWidth="80"/>
+                                <ColumnDefinition Width="100*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ НАЧАЛА&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center" />
+                            <TextBlock Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ ОКОНЧАНИЯ&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="5" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ИЗМЕНЕНИЕ ПАРАМЕТРА, %" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="8" Grid.ColumnSpan="1" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ФАКТИЧЕСКОЕ&#xA;ЗНАЧЕНИЕ" VerticalAlignment="Center" TextAlignment="Center"/>
+                        </Grid>
+
+                        <ConfigurateSituation:ConfigureItemControl start="5" end="15" delta="20" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="РАСХОД НА ВЫХОДЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl start="8" end="25" delta="15" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="УРОВЕНЬ В ПРИЕМНЫХ ЕМКОСТЯХ"/>
+                        <ConfigurateSituation:ConfigureItemControl start="8" end="25" delta="15" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="УРОВЕНЬ В ДОЛИВНОЙ ЕМКОСТИ"/>
+                        <ConfigurateSituation:ConfigureItemControl start="1" end="4" delta="20" Background="Gainsboro" textColumnWidth="400"  Margin="0,2.5,0,2.5" text="МЕХ. СКОРОСТЬ БУРЕНИЯ"/>
+                    </ConfigurateSituation:ConfigureSituationButton.uiElements>
+                </ConfigurateSituation:ConfigureSituationButton>
+                <ConfigurateSituation:ConfigureSituationButton Content="ПРИ СПУСКЕ ОБЪЕМ ВЫТЕСНЕННОЙ ПЖ МЕНЬШЕ&#xD;&#xA;ОБЪЕМА МЕТАЛЛА СПУЩЕННЫХ ТРУБ. &#xD;&#xA;НАБЛЮДАЕТСЯ СНИЖЕНИЕ УРОВНЯ ПЖ В СКВАЖИНЕ." text="ПРИ СПУСКЕ ОБЪЕМ ВЫТЕСНЕННОЙ ПЖ МЕНЬШЕ&#xD;&#xA;ОБЪЕМА МЕТАЛЛА СПУЩЕННЫХ ТРУБ. &#xD;&#xA;НАБЛЮДАЕТСЯ СНИЖЕНИЕ УРОВНЯ ПЖ В СКВАЖИНЕ."  startCommand="{hmi:SeBinding Tags.Node[situacii.write].Items[Tag1].WriteCommand}" situationCode="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="155" Width="605" FontFamily="Tahoma" FontSize="24" Margin="10,200,0,0">
+                    <ConfigurateSituation:ConfigureSituationButton.uiElements>
+                        <Grid HorizontalAlignment="Stretch" Height="40" Margin="0,0,0,0" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="400"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition MinWidth="80"/>
+                                <ColumnDefinition Width="100*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ НАЧАЛА&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center" />
+                            <TextBlock Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ ОКОНЧАНИЯ&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="5" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ИЗМЕНЕНИЕ ПАРАМЕТРА, %" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="8" Grid.ColumnSpan="1" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ФАКТИЧЕСКОЕ&#xA;ЗНАЧЕНИЕ" VerticalAlignment="Center" TextAlignment="Center"/>
+                        </Grid>
+
+                        <ConfigurateSituation:ConfigureItemControl start="5" end="15" delta="20" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="РАСХОД НА ВХОДЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl start="8" end="25" delta="15" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="РАСХОД НА ВЫХОДЕ"/>
+                    </ConfigurateSituation:ConfigureSituationButton.uiElements>
+                </ConfigurateSituation:ConfigureSituationButton>
+                <ConfigurateSituation:ConfigureSituationButton Content="ПРИ ПОДЪЁМЕ КНБК ПРЕВЫШЕНИЕ&#xD;&#xA;ВЕСА НА КРЮКЕ (ЗАТЯЖКИ)." text="ПРИ ПОДЪЁМЕ КНБК ПРЕВЫШЕНИЕ&#xD;&#xA;ВЕСА НА КРЮКЕ (ЗАТЯЖКИ)."  startCommand="{hmi:SeBinding Tags.Node[situacii.write].Items[Tag1].WriteCommand}" situationCode="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="170" Width="605" FontFamily="Tahoma" FontSize="24" Margin="10,390,0,0">
+                    <ConfigurateSituation:ConfigureSituationButton.uiElements>
+                        <Grid HorizontalAlignment="Stretch" Height="40" Margin="0,0,0,0" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="400"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition MinWidth="80"/>
+                                <ColumnDefinition Width="100*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ НАЧАЛА&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center" />
+                            <TextBlock Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ ОКОНЧАНИЯ&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="5" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ИЗМЕНЕНИЕ ПАРАМЕТРА, %" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="8" Grid.ColumnSpan="1" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ФАКТИЧЕСКОЕ&#xA;ЗНАЧЕНИЕ" VerticalAlignment="Center" TextAlignment="Center"/>
+                        </Grid>
+
+                        <ConfigurateSituation:ConfigureItemControl start="5" end="15" delta="20" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="ВЕС НА КРЮКЕ"/>
+                    </ConfigurateSituation:ConfigureSituationButton.uiElements>
+                </ConfigurateSituation:ConfigureSituationButton>
+                <ConfigurateSituation:ConfigureSituationButton Content="ЗАТЯЖКИ ПРИ ПОДЪЕМЕ И ПОСАДКИ&#xD;&#xA;ПРИ СПУСКЕ. ПОДКЛИНКИ СОХРАНЯЮТСЯ&#xD;&#xA;ИЛИ УВЕЛИЧИВАЮТСЯ, КОЛЕБАНИЯ ДАВЛЕНИЯ&#xD;&#xA;НА ФОНЕ ОБЩЕГО РОСТА. СНИЖЕНИЕ&#xD;&#xA;СКОРОСТИ ПОТОКА. В ШЛАМЕ АНОМАЛЬНОЕ&#xD;&#xA;КОЛИЧЕСТВО ОБВАЛЬНОЙ ПОРОДЫ. &#xD;&#xA;РОСТ ДАВЛЕНИЯ ДО ПОТЕРИ ЦИРКУЛЯЦИИ." text="ЗАТЯЖКИ ПРИ ПОДЪЕМЕ И ПОСАДКИ&#xD;&#xA;ПРИ СПУСКЕ. ПОДКЛИНКИ СОХРАНЯЮТСЯ&#xD;&#xA;ИЛИ УВЕЛИЧИВАЮТСЯ, КОЛЕБАНИЯ ДАВЛЕНИЯ&#xD;&#xA;НА ФОНЕ ОБЩЕГО РОСТА. СНИЖЕНИЕ&#xD;&#xA;СКОРОСТИ ПОТОКА. В ШЛАМЕ АНОМАЛЬНОЕ&#xD;&#xA;КОЛИЧЕСТВО ОБВАЛЬНОЙ ПОРОДЫ. &#xD;&#xA;РОСТ ДАВЛЕНИЯ ДО ПОТЕРИ ЦИРКУЛЯЦИИ."  startCommand="{hmi:SeBinding Tags.Node[situacii.write].Items[Tag1].WriteCommand}" situationCode="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="345" Width="605" FontFamily="Tahoma" FontSize="24" Margin="650,10,0,0">
+                    <ConfigurateSituation:ConfigureSituationButton.uiElements>
+                        <Grid HorizontalAlignment="Stretch" Height="40" Margin="0,0,0,0" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="400"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition MinWidth="80"/>
+                                <ColumnDefinition Width="100*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ НАЧАЛА&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center" />
+                            <TextBlock Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ ОКОНЧАНИЯ&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="5" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ИЗМЕНЕНИЕ ПАРАМЕТРА, %" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="8" Grid.ColumnSpan="1" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ФАКТИЧЕСКОЕ&#xA;ЗНАЧЕНИЕ" VerticalAlignment="Center" TextAlignment="Center"/>
+                        </Grid>
+
+                        <ConfigurateSituation:ConfigureItemControl start="5" end="15" delta="20" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="ДАВЛЕНИЕ НА ВХОДЕ"/>
+                    </ConfigurateSituation:ConfigureSituationButton.uiElements>
+                </ConfigurateSituation:ConfigureSituationButton>
+            </Grid>
+
+        </se:HmiTabItem>
+        <se:HmiTabItem Header="БУРЕНИЕ, ПРОРАБОТКА, ПРОМЫВКА" Margin="5,0,0,0" Width="400" Height="40">
+            <Grid Background="Gainsboro" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <ConfigurateSituation:ConfigureSituationButton Margin="10,10,0,0" Content="ВЕС НА КРЮКЕ И ДАВЛЕНИЕ НА ВХОДЕ В НОРМЕ. &#xA;ПОДКЛИНКИ ОТСУТСТВУЮТ.  СКОРОСТЬ ПРОХОДКИ СНИЗИЛАСЬ." text="ВЕС НА КРЮКЕ И ДАВЛЕНИЕ НА ВХОДЕ В НОРМЕ. &#xD;&#xA;ПОДКЛИНКИ ОТСУТСТВУЮТ. &#xD;&#xA;СКОРОСТЬ ПРОХОДКИ СНИЗИЛАСЬ."  startCommand="{hmi:SeBinding Tags.Node[situacii.write].Items[Tag1].WriteCommand}" situationCode="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="605" FontFamily="Tahoma" FontSize="14">
+                    <ConfigurateSituation:ConfigureSituationButton.uiElements>
+                        <Grid HorizontalAlignment="Stretch" Height="40" Margin="0,0,0,0" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="400"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition MinWidth="80"/>
+                                <ColumnDefinition Width="100*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ НАЧАЛА&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center" />
+                            <TextBlock Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ ОКОНЧАНИЯ&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="5" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ИЗМЕНЕНИЕ ПАРАМЕТРА, %" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="8" Grid.ColumnSpan="1" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ФАКТИЧЕСКОЕ&#xA;ЗНАЧЕНИЕ" VerticalAlignment="Center" TextAlignment="Center"/>
+                        </Grid>
+
+                        <ConfigurateSituation:ConfigureItemControl start="5" end="15" delta="20" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="ДАВЛЕНИЕ НА ВХОДЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl start="8" end="25" delta="15" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="ВЕС НА КРЮКЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl start="8" end="25" delta="15" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="КРУТЯЩИЙ МОМЕНТ НА РОТОРЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl start="1" end="4" delta="20" Background="Gainsboro" textColumnWidth="400"  Margin="0,2.5,0,2.5" text="МЕХ. СКОРОСТЬ БУРЕНИЯ"/>
+                    </ConfigurateSituation:ConfigureSituationButton.uiElements>
+                </ConfigurateSituation:ConfigureSituationButton>
+                <ConfigurateSituation:ConfigureSituationButton Margin="10,75,0,0" Content="ВЕС НА КРЮКЕ И ДАВЛЕНИЕ НА ВХОДЕ В НОРМЕ.&#xA;ПОЯВЛЯЮТСЯ ВЫСОКОАМПЛИТУДНЫЕ УВЕЛИЧЕНИЯ МОМЕНТА &#xD;&#xA;И ПОДКЛИНКИ. СКОРОСТЬ ПРОХОДКИ ПАДАЕТ." text="ВЕС НА КРЮКЕ И ДАВЛЕНИЕ НА ВХОДЕ В НОРМЕ.&#xA;ПОЯВЛЯЮТСЯ ВЫСОКОАМПЛИТУДНЫЕ&#xA;УВЕЛИЧЕНИЯ МОМЕНТА И ПОДКЛИНКИ. СКОРОСТЬ ПРОХОДКИ ПАДАЕТ."  startCommand="{hmi:SeBinding Tags.Node[situacii.write].Items[Tag1].WriteCommand}" situationCode="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="66" Width="605" FontFamily="Tahoma" FontSize="14">
+                    <ConfigurateSituation:ConfigureSituationButton.uiElements>
+                        <Grid HorizontalAlignment="Stretch" Height="40" Margin="0,0,0,0" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="400"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition MinWidth="80"/>
+                                <ColumnDefinition Width="100*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ НАЧАЛА&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center" />
+                            <TextBlock Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ ОКОНЧАНИЯ&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="5" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ИЗМЕНЕНИЕ ПАРАМЕТРА, %" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="8" Grid.ColumnSpan="1" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ФАКТИЧЕСКОЕ&#xA;ЗНАЧЕНИЕ" VerticalAlignment="Center" TextAlignment="Center"/>
+                        </Grid>
+
+                        <ConfigurateSituation:ConfigureItemControl start="5" end="15" delta="20" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="ДАВЛЕНИЕ НА ВХОДЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl start="8" end="25" delta="15" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="ВЕС НА КРЮКЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl start="8" end="25" delta="15" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="КРУТЯЩИЙ МОМЕНТ НА РОТОРЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl start="1" end="4" delta="20" Background="Gainsboro" textColumnWidth="400"  Margin="0,2.5,0,2.5" text="МЕХ. СКОРОСТЬ БУРЕНИЯ"/>
+                    </ConfigurateSituation:ConfigureSituationButton.uiElements>
+                </ConfigurateSituation:ConfigureSituationButton>
+                <ConfigurateSituation:ConfigureSituationButton Margin="10,150,0,0" Content="КРИВАЯ КРУТЯЩЕГО МОМЕНТА И ДАВЛЕНИЯ ПЖ ПРИОБРЕТАЕТ &#xD;&#xA;ХАРАКТЕРНЫЙ «ПИЛООБРАЗНЫЙ»  ВИД С ШИРОКОЙ&#xD;&#xA;АМПЛИТУДОЙ КОЛЕБАНИЙ." text="КРИВАЯ КРУТЯЩЕГО МОМЕНТА И ДАВЛЕНИЯ ПЖ &#xD;&#xA;ПРИОБРЕТАЕТ ХАРАКТЕРНЫЙ «ПИЛООБРАЗНЫЙ» &#xD;&#xA;ВИД С ШИРОКОЙ АМПЛИТУДОЙ КОЛЕБАНИЙ."  startCommand="{hmi:SeBinding Tags.Node[situacii.write].Items[Tag1].WriteCommand}" situationCode="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="73" Width="605" FontFamily="Tahoma" FontSize="14">
+                    <ConfigurateSituation:ConfigureSituationButton.uiElements>
+                        <Grid HorizontalAlignment="Stretch" Height="40" Margin="0,0,0,0" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="400"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition MinWidth="80"/>
+                                <ColumnDefinition Width="100*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ НАЧАЛА&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center" />
+                            <TextBlock Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ ОКОНЧАНИЯ&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="5" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ИЗМЕНЕНИЕ ПАРАМЕТРА, %" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="8" Grid.ColumnSpan="1" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ФАКТИЧЕСКОЕ&#xA;ЗНАЧЕНИЕ" VerticalAlignment="Center" TextAlignment="Center"/>
+                        </Grid>
+
+                        <ConfigurateSituation:ConfigureItemControl start="5" end="15" delta="20" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="ДАВЛЕНИЕ НА ВХОДЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl start="8" end="25" delta="15" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="КРУТЯЩИЙ МОМЕНТ НА РОТОРЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl start="1" end="4" delta="20" Background="Gainsboro" textColumnWidth="400"  Margin="0,2.5,0,2.5" text="МЕХ. СКОРОСТЬ БУРЕНИЯ"/>
+                    </ConfigurateSituation:ConfigureSituationButton.uiElements>
+                </ConfigurateSituation:ConfigureSituationButton>
+                <ConfigurateSituation:ConfigureSituationButton Margin="10,233,0,0" Content="ПРИ УСТАНОВКЕ ДОЛОТА НА ЗАБОЙ ВНОВЬ ВОЗНИКАЮТ &#xD;&#xA;ПОДКЛИНКИ, СКОРОСТЬ ПРОХОДКИ СНИЖАЕТСЯ." text="ПРИ УСТАНОВКЕ ДОЛОТА НА ЗАБОЙ&#xD;&#xA;ВНОВЬ ВОЗНИКАЮТ ПОДКЛИНКИ,&#xD;&#xA;СКОРОСТЬ ПРОХОДКИ СНИЖАЕТСЯ."  startCommand="{hmi:SeBinding Tags.Node[situacii.write].Items[Tag1].WriteCommand}" situationCode="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="59" Width="605" FontFamily="Tahoma" FontSize="14">
+                    <ConfigurateSituation:ConfigureSituationButton.uiElements>
+                        <Grid HorizontalAlignment="Stretch" Height="40" Margin="0,0,0,0" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="400"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition MinWidth="80"/>
+                                <ColumnDefinition Width="100*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ НАЧАЛА&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center" />
+                            <TextBlock Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ ОКОНЧАНИЯ&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="5" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ИЗМЕНЕНИЕ ПАРАМЕТРА, %" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="8" Grid.ColumnSpan="1" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ФАКТИЧЕСКОЕ&#xA;ЗНАЧЕНИЕ" VerticalAlignment="Center" TextAlignment="Center"/>
+                        </Grid>
+
+                        <ConfigurateSituation:ConfigureItemControl start="5" end="15" delta="20" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="ДАВЛЕНИЕ НА ВХОДЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl start="8" end="25" delta="15" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="КРУТЯЩИЙ МОМЕНТ НА РОТОРЕ"/>
+                    </ConfigurateSituation:ConfigureSituationButton.uiElements>
+                </ConfigurateSituation:ConfigureSituationButton>
+                <ConfigurateSituation:ConfigureSituationButton Margin="10,298,0,0" Content="РАСХОД ПЖ НА ВЫХОДЕ СНИЖАЕТСЯ ДАВЛЕНИЕ СНИЖАЕТСЯ. &#xD;&#xA;ВОЗМОЖНЫ СКАЧКИ И КОЛЕБАНИЯ. ПАРАМЕТРЫ ПЖ СТАБИЛЬНЫ." text="РАСХОД ПЖ НА ВЫХОДЕ СНИЖАЕТСЯ &#xD;&#xA;ОДНОВРЕМЕННО СО СНИЖЕНИЕМ ДАВЛЕНИЯ. &#xD;&#xA;НА ФОНЕ ОБЩЕГО СНИЖЕНИЯ ДАВЛЕНИЯ &#xD;&#xA;ВОЗМОЖНЫ СКАЧКИ И КОЛЕБАНИЯ. &#xD;&#xA;ПАРАМЕТРЫ ПЖ СТАБИЛЬНЫ."  startCommand="{hmi:SeBinding Tags.Node[situacii.write].Items[Tag1].WriteCommand}" situationCode="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="64" Width="605" FontFamily="Tahoma" FontSize="14">
+                    <ConfigurateSituation:ConfigureSituationButton.uiElements>
+                        <Grid HorizontalAlignment="Stretch" Height="40" Margin="0,0,0,0" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="400"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition MinWidth="80"/>
+                                <ColumnDefinition Width="100*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ НАЧАЛА&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center" />
+                            <TextBlock Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ ОКОНЧАНИЯ&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="5" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ИЗМЕНЕНИЕ ПАРАМЕТРА, %" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="8" Grid.ColumnSpan="1" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ФАКТИЧЕСКОЕ&#xA;ЗНАЧЕНИЕ" VerticalAlignment="Center" TextAlignment="Center"/>
+                        </Grid>
+
+                        <ConfigurateSituation:ConfigureItemControl start="5" end="15" delta="20" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="ДАВЛЕНИЕ НА ВХОДЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl start="8" end="25" delta="15" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="РАСХОД НА ВХОДЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl start="1" end="4" delta="20" Background="Gainsboro" textColumnWidth="400"  Margin="0,2.5,0,2.5" text="РАСХОД НА ВЫХОДЕ"/>
+                    </ConfigurateSituation:ConfigureSituationButton.uiElements>
+                </ConfigurateSituation:ConfigureSituationButton>
+                <ConfigurateSituation:ConfigureSituationButton Margin="10,504,0,0" Content="ПОСТЕПЕННОЕ (ВОЗМОЖНО РЕЗКОЕ) СНИЖЕНИЕ &#xA;ДАВЛЕНИЯ ПРИ ПОСТОЯННОМ РАСХОДЕ ПЖ &#xA;НА ВХОДЕ. СНИЖЕНИЕ ТЕМПЕРАТУРЫ." text="ПОСТЕПЕННОЕ (ВОЗМОЖНО РЕЗКОЕ) СНИЖЕНИЕ &#xA;ДАВЛЕНИЯ ПРИ ПОСТОЯННОМ РАСХОДЕ ПЖ &#xD;&#xA;НА ВХОДЕ. ВОЗМОЖНО СНИЖЕНИЕ ТЕМПЕРАТУРЫ."  startCommand="{hmi:SeBinding Tags.Node[situacii.write].Items[Tag1].WriteCommand}" situationCode="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="92" Width="605" FontFamily="Tahoma" FontSize="14">
+                    <ConfigurateSituation:ConfigureSituationButton.uiElements>
+                        <Grid HorizontalAlignment="Stretch" Height="40" Margin="0,0,0,0" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="400"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition MinWidth="80"/>
+                                <ColumnDefinition Width="100*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ НАЧАЛА&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center" />
+                            <TextBlock Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ ОКОНЧАНИЯ&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="5" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ИЗМЕНЕНИЕ ПАРАМЕТРА, %" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="8" Grid.ColumnSpan="1" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ФАКТИЧЕСКОЕ&#xA;ЗНАЧЕНИЕ" VerticalAlignment="Center" TextAlignment="Center"/>
+                        </Grid>
+
+                        <ConfigurateSituation:ConfigureItemControl start="5" end="15" delta="20" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="ДАВЛЕНИЕ НА ВХОДЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl start="8" end="25" delta="15" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="РАСХОД НА ВХОДЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl start="1" end="4" delta="20" Background="Gainsboro" textColumnWidth="400"  Margin="0,2.5,0,2.5" text="РАСХОД НА ВЫХОДЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl start="1" end="4" delta="20" Background="Gainsboro" textColumnWidth="400"  Margin="0,2.5,0,2.5" text="ВЕС НА КРЮКЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl start="1" end="4" delta="20" Background="Gainsboro" textColumnWidth="400"  Margin="0,2.5,0,2.5" text="МЕХ. СКОРОСТЬ БУРЕНИЯ"/>
+                    </ConfigurateSituation:ConfigureSituationButton.uiElements>
+                </ConfigurateSituation:ConfigureSituationButton>
+                <ConfigurateSituation:ConfigureSituationButton Margin="10,605,0,0" Content="ВЕС НА КРЮКЕ В НОРМЕ.&#xD;&#xA;ДАВЛЕНИЕ ПЖ РЕЗКО СНИЗИЛОСЬ" text="ВЕС НА КРЮКЕ В НОРМЕ.&#xD;&#xA;ДАВЛЕНИЕ ПЖ РЕЗКО СНИЗИЛОСЬ"  startCommand="{hmi:SeBinding Tags.Node[situacii.write].Items[Tag1].WriteCommand}" situationCode="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="69" Width="605" FontFamily="Tahoma" FontSize="14">
+                    <ConfigurateSituation:ConfigureSituationButton.uiElements>
+                        <Grid HorizontalAlignment="Stretch" Height="40" Margin="0,0,0,0" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="400"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition MinWidth="80"/>
+                                <ColumnDefinition Width="100*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ НАЧАЛА&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center" />
+                            <TextBlock Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ ОКОНЧАНИЯ&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="5" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ИЗМЕНЕНИЕ ПАРАМЕТРА, %" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="8" Grid.ColumnSpan="1" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ФАКТИЧЕСКОЕ&#xA;ЗНАЧЕНИЕ" VerticalAlignment="Center" TextAlignment="Center"/>
+                        </Grid>
+
+                        <ConfigurateSituation:ConfigureItemControl start="5" end="15" delta="20" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="ДАВЛЕНИЕ НА ВХОДЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl start="8" end="25" delta="15" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="ВЕС НА КРЮКЕ"/>
+                    </ConfigurateSituation:ConfigureSituationButton.uiElements>
+                </ConfigurateSituation:ConfigureSituationButton>
+                <ConfigurateSituation:ConfigureSituationButton Margin="10,679,0,0" Content="ВЕС НА КРЮКЕ В НОРМЕ.&#xA;ДАВЛЕНИЕ ПЖ ПЛАВНО СНИЖАЕТСЯ." text="ВЕС НА КРЮКЕ В НОРМЕ.&#xA;ДАВЛЕНИЕ ПЖ ПРОДОЛЖАЕТ ПЛАВНО СНИЖАЕТСЯ."  startCommand="{hmi:SeBinding Tags.Node[situacii.write].Items[Tag1].WriteCommand}" situationCode="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="71" Width="605" FontFamily="Tahoma" FontSize="14">
+                    <ConfigurateSituation:ConfigureSituationButton.uiElements>
+                        <Grid HorizontalAlignment="Stretch" Height="40" Margin="0,0,0,0" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="400"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition MinWidth="80"/>
+                                <ColumnDefinition Width="100*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ НАЧАЛА&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center" />
+                            <TextBlock Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ ОКОНЧАНИЯ&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="5" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ИЗМЕНЕНИЕ ПАРАМЕТРА, %" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="8" Grid.ColumnSpan="1" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ФАКТИЧЕСКОЕ&#xA;ЗНАЧЕНИЕ" VerticalAlignment="Center" TextAlignment="Center"/>
+                        </Grid>
+
+                        <ConfigurateSituation:ConfigureItemControl start="5" end="15" delta="20" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="ДАВЛЕНИЕ НА ВХОДЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl start="8" end="25" delta="15" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="ВЕС НА КРЮКЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl start="1" end="4" delta="20" Background="Gainsboro" textColumnWidth="400"  Margin="0,2.5,0,2.5" text="МЕХ. СКОРОСТЬ БУРЕНИЯ"/>
+                    </ConfigurateSituation:ConfigureSituationButton.uiElements>
+                </ConfigurateSituation:ConfigureSituationButton>
+                <ConfigurateSituation:ConfigureSituationButton Margin="640,10,0,0" Content="ПЛАВНЫЕ КОЛЕБАНИЯ ДАВЛЕНИЯ. КОЛЕБАНИЯ РАСХОДА ПЖ НА&#xA;ВЫХОДЕ И УРОВНЯ В ЕМКОСТЯХ. РИТМИЧНЫЕ&#xA;ПО ЦИКЛУ КОЛЕБАНИЯ ВЯЗКОСТИ И ГАЗОСОДЕРЖАНИЯ ПЖ." text="ПЛАВНЫЕ КОЛЕБАНИЯ ДАВЛЕНИЯ ВОЗМОЖНЫ&#xD;&#xA;ОДНОВРЕМЕННО КОЛЕБАНИЯ РАСХОДА ПЖ НА&#xD;&#xA;ВЫХОДЕ И УРОВНЯ В ЕМКОСТЯХ. РИТМИЧНЫЕ&#xD;&#xA;ПО ЦИКЛУ КОЛЕБАНИЯ ВЯЗКОСТИ&#xD;&#xA;И ГАЗОСОДЕРЖАНИЯ ПЖ."  startCommand="{hmi:SeBinding Tags.Node[situacii.write].Items[Tag1].WriteCommand}" situationCode="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="605" FontFamily="Tahoma" FontSize="14">
+                    <ConfigurateSituation:ConfigureSituationButton.uiElements>
+                        <Grid HorizontalAlignment="Stretch" Height="40" Margin="0,0,0,0" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="400"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition MinWidth="80"/>
+                                <ColumnDefinition Width="100*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ НАЧАЛА&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center" />
+                            <TextBlock Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ ОКОНЧАНИЯ&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="5" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ИЗМЕНЕНИЕ ПАРАМЕТРА, %" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="8" Grid.ColumnSpan="1" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ФАКТИЧЕСКОЕ&#xA;ЗНАЧЕНИЕ" VerticalAlignment="Center" TextAlignment="Center"/>
+                        </Grid>
+
+                        <ConfigurateSituation:ConfigureItemControl start="5" end="15" delta="20" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="ДАВЛЕНИЕ НА ВХОДЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl start="5" end="15" delta="20" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="РАСХОД НА ВЫХОДЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl start="5" end="15" delta="20" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="УРОВЕНЬ В ПРИЕМНЫХ ЕМКОСТЯХ"/>
+                        <ConfigurateSituation:ConfigureItemControl start="5" end="15" delta="20" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="СОДЕРЖАНИЕ ГАЗА НА ВЫХОДЕ"/>
+                    </ConfigurateSituation:ConfigureSituationButton.uiElements>
+                </ConfigurateSituation:ConfigureSituationButton>
+                <ConfigurateSituation:ConfigureSituationButton Margin="640,75,0,0" Content="МЕДЛЕННОЕ УВЕЛИЧЕНИЕ ДАВЛЕНИЯ ПЖ НА ВХОДЕ.&#xD;&#xA;ОСТАЛЬНЫЕ ПАРАМЕТРЫ СТАБИЛЬНЫ" text="МЕДЛЕННОЕ УВЕЛИЧЕНИЕ ДАВЛЕНИЯ ПЖ НА ВХОДЕ.&#xD;&#xA;ОСТАЛЬНЫЕ ПАРАМЕТРЫ СТАБИЛЬНЫ"  startCommand="{hmi:SeBinding Tags.Node[situacii.write].Items[Tag1].WriteCommand}" situationCode="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="66" Width="605" FontFamily="Tahoma" FontSize="14">
+                    <ConfigurateSituation:ConfigureSituationButton.uiElements>
+                        <Grid HorizontalAlignment="Stretch" Height="40" Margin="0,0,0,0" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="400"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition MinWidth="80"/>
+                                <ColumnDefinition Width="100*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ НАЧАЛА&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center" />
+                            <TextBlock Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ ОКОНЧАНИЯ&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="5" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ИЗМЕНЕНИЕ ПАРАМЕТРА, %" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="8" Grid.ColumnSpan="1" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ФАКТИЧЕСКОЕ&#xA;ЗНАЧЕНИЕ" VerticalAlignment="Center" TextAlignment="Center"/>
+                        </Grid>
+
+                        <ConfigurateSituation:ConfigureItemControl start="5" end="15" delta="20" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="ДАВЛЕНИЕ НА ВХОДЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl start="8" end="25" delta="15" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="КРУТЯЩИЙ МОМЕНТ НА РОТОРЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl start="1" end="4" delta="20" Background="Gainsboro" textColumnWidth="400"  Margin="0,2.5,0,2.5" text="ВЕС НА КРЮКЕ"/>
+                    </ConfigurateSituation:ConfigureSituationButton.uiElements>
+                </ConfigurateSituation:ConfigureSituationButton>
+                <ConfigurateSituation:ConfigureSituationButton Margin="640,150,0,0" Content="ДАВЛЕНИЕ ПЖ РАСТЕТ. ВОЗНИКАЮТ НЕБОЛЬШИЕ ЗАТЯЖКИ &#xD;&#xA;ПРИ ПОДЪЕМЕ ИНСТРУМЕНТА И УВЕЛИЧЕНИЕ КРУТЯЩЕГО &#xD;&#xA;МОМЕНТА, СКОРОСТЬ БУРЕНИЯ  СНИЖАЕТСЯ. ПРИ ПРОМЫВКЕ &#xD;&#xA;СКВАЖИНЫ ДАВЛЕНИЕ СНИЖАЕТСЯ  ДО НОРМАЛЬНОГО. &#xD;&#xA;В ШЛАМЕ ВОЗМОЖНО ПОВЫШЕННОЕ &#xD;&#xA;СОДЕРЖАНИЕ ОБВАЛЬНОЙ ПОРОДЫ." text="ДАВЛЕНИЕ ПЖ РАСТЕТ. ВОЗНИКАЮТ НЕБОЛЬШИЕ ЗАТЯЖКИ &#xD;&#xA;ПРИ ПОДЪЕМЕ ИНСТРУМЕНТА И УВЕЛИЧЕНИЕ КРУТЯЩЕГО &#xD;&#xA;МОМЕНТА, СКОРОСТЬ БУРЕНИЯ  СНИЖАЕТСЯ. ПРИ ПРОМЫВКЕ &#xD;&#xA;СКВАЖИНЫ ДАВЛЕНИЕ СНИЖАЕТСЯ  ДО НОРМАЛЬНОГО. &#xD;&#xA;В ШЛАМЕ ВОЗМОЖНО ПОВЫШЕННОЕ &#xD;&#xA;СОДЕРЖАНИЕ ОБВАЛЬНОЙ ПОРОДЫ."  startCommand="{hmi:SeBinding Tags.Node[situacii.write].Items[Tag1].WriteCommand}" situationCode="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="142" Width="605" FontFamily="Tahoma" FontSize="14">
+                    <ConfigurateSituation:ConfigureSituationButton.uiElements>
+                        <Grid HorizontalAlignment="Stretch" Height="40" Margin="0,0,0,0" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="400"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition MinWidth="80"/>
+                                <ColumnDefinition Width="100*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ НАЧАЛА&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center" />
+                            <TextBlock Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ ОКОНЧАНИЯ&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="5" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ИЗМЕНЕНИЕ ПАРАМЕТРА, %" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="8" Grid.ColumnSpan="1" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ФАКТИЧЕСКОЕ&#xA;ЗНАЧЕНИЕ" VerticalAlignment="Center" TextAlignment="Center"/>
+                        </Grid>
+
+                        <ConfigurateSituation:ConfigureItemControl start="5" end="15" delta="20" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="ДАВЛЕНИЕ НА ВХОДЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl start="8" end="25" delta="15" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="КРУТЯЩИЙ МОМЕНТ НА РОТОРЕ"/>
+                    </ConfigurateSituation:ConfigureSituationButton.uiElements>
+                </ConfigurateSituation:ConfigureSituationButton>
+                <ConfigurateSituation:ConfigureSituationButton Margin="640,298,0,0" Content="ДАВЛЕНИЕ РАСТЕТ, ДО КРИТИЧЕСКОГО,&#xA;ПРИСУТСТВУЮТ ЗАТЯЖКИ, ПОСАДКИ И КОЛЕБАНИЯ СОХРАНЯЮТСЯ МОМЕНТА." text="ДАВЛЕНИЕ ПРОДОЛЖАЕТ РАСТИ, ВОЗМОЖНО, ДО КРИТИЧЕСКОГО,&#xD;&#xA;ЗАТЯЖКИ, ПОСАДКИ И КОЛЕБАНИЯ МОМЕНТА СОХРАНЯЮТСЯ."  startCommand="{hmi:SeBinding Tags.Node[situacii.write].Items[Tag1].WriteCommand}" situationCode="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="64" Width="605" FontFamily="Tahoma" FontSize="14">
+                    <ConfigurateSituation:ConfigureSituationButton.uiElements>
+                        <Grid HorizontalAlignment="Stretch" Height="40" Margin="0,0,0,0" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="400"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition MinWidth="80"/>
+                                <ColumnDefinition Width="100*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ НАЧАЛА&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center" />
+                            <TextBlock Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ ОКОНЧАНИЯ&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="5" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ИЗМЕНЕНИЕ ПАРАМЕТРА, %" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="8" Grid.ColumnSpan="1" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ФАКТИЧЕСКОЕ&#xA;ЗНАЧЕНИЕ" VerticalAlignment="Center" TextAlignment="Center"/>
+                        </Grid>
+
+                        <ConfigurateSituation:ConfigureItemControl start="5" end="15" delta="20" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="ДАВЛЕНИЕ НА ВХОДЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl start="8" end="25" delta="15" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="КРУТЯЩИЙ МОМЕНТ НА РОТОРЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl start="1" end="4" delta="20" Background="Gainsboro" textColumnWidth="400"  Margin="0,2.5,0,2.5" text="ВЕС НА КРЮКЕ"/>
+                    </ConfigurateSituation:ConfigureSituationButton.uiElements>
+                </ConfigurateSituation:ConfigureSituationButton>
+                <ConfigurateSituation:ConfigureSituationButton Margin="640,504,0,0" Content="ДАВЛЕНИЕ РАСТЕТ, СКАЧКООБРАЗНО&#xA;И ДО ПОТЕРИ ЦИРКУЛЯЦИИ. КОЛЕБАНИЙ МОМЕНТА, ЗАТЯЖЕК&#xA;И ПОСАДОК НЕ НАБЛЮДАЕТСЯ, ВОЗМОЖНО, УВЕЛИЧЕНИЕ КРУТЯЩЕГО&#xA;МОМЕНТА. ПРИ РАСХАЖИВАНИИ ДАВЛЕНИЕ СТАБИЛИЗИРУЕТСЯ ИЛИ&#xA;СКАЧКООБРАЗНО СНИЖАЕТСЯ." text="ДАВЛЕНИЕ РАСТЕТ, СКАЧКООБРАЗНО&#xA;И ДО ПОТЕРИ ЦИРКУЛЯЦИИ. КОЛЕБАНИЙ МОМЕНТА, ЗАТЯЖЕК&#xA;И ПОСАДОК НЕ НАБЛЮДАЕТСЯ, ВОЗМОЖНО, УВЕЛИЧЕНИЕ КРУТЯЩЕГО&#xA;МОМЕНТА. ПРИ РАСХАЖИВАНИИ ДАВЛЕНИЕ СТАБИЛИЗИРУЕТСЯ ИЛИ&#xA;СКАЧКООБРАЗНО СНИЖАЕТСЯ."  startCommand="{hmi:SeBinding Tags.Node[situacii.write].Items[Tag1].WriteCommand}" situationCode="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="92" Width="605" FontFamily="Tahoma" FontSize="14">
+                    <ConfigurateSituation:ConfigureSituationButton.uiElements>
+                        <Grid HorizontalAlignment="Stretch" Height="40" Margin="0,0,0,0" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="400"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition MinWidth="80"/>
+                                <ColumnDefinition Width="100*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ НАЧАЛА&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center" />
+                            <TextBlock Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ ОКОНЧАНИЯ&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="5" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ИЗМЕНЕНИЕ ПАРАМЕТРА, %" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="8" Grid.ColumnSpan="1" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ФАКТИЧЕСКОЕ&#xA;ЗНАЧЕНИЕ" VerticalAlignment="Center" TextAlignment="Center"/>
+                        </Grid>
+
+                        <ConfigurateSituation:ConfigureItemControl start="5" end="15" delta="20" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="ДАВЛЕНИЕ НА ВХОДЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl start="8" end="25" delta="15" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="КРУТЯЩИЙ МОМЕНТ НА РОТОРЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl start="1" end="4" delta="20" Background="Gainsboro" textColumnWidth="400"  Margin="0,2.5,0,2.5" text="МЕХ. СКОРОСТЬ БУРЕНИЯ"/>
+                    </ConfigurateSituation:ConfigureSituationButton.uiElements>
+                </ConfigurateSituation:ConfigureSituationButton>
+                <ConfigurateSituation:ConfigureSituationButton Margin="640,605,0,0" Content="РЕЗКОЕ СНИЖЕНИЕ МЕХАНИЧЕСКОЙ СКОРОСТИ&#xD;&#xA;БУРЕНИЯ ДО ОПРЕДЕЛЕННОЙ ВЕЛИЧИНЫ.&#xD;&#xA;ВОЗМОЖНО СНИЖЕНИЕ КРУТЯЩЕГО МОМЕНТА." text="РЕЗКОЕ СНИЖЕНИЕ МЕХАНИЧЕСКОЙ СКОРОСТИ&#xD;&#xA;БУРЕНИЯ ДО ОПРЕДЕЛЕННОЙ ВЕЛИЧИНЫ.&#xD;&#xA;ВОЗМОЖНО СНИЖЕНИЕ КРУТЯЩЕГО МОМЕНТА."  startCommand="{hmi:SeBinding Tags.Node[situacii.write].Items[Tag1].WriteCommand}" situationCode="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="69" Width="605" FontFamily="Tahoma" FontSize="14">
+                    <ConfigurateSituation:ConfigureSituationButton.uiElements>
+                        <Grid HorizontalAlignment="Stretch" Height="40" Margin="0,0,0,0" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="400"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition MinWidth="80"/>
+                                <ColumnDefinition Width="100*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ НАЧАЛА&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center" />
+                            <TextBlock Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ ОКОНЧАНИЯ&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="5" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ИЗМЕНЕНИЕ ПАРАМЕТРА, %" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="8" Grid.ColumnSpan="1" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ФАКТИЧЕСКОЕ&#xA;ЗНАЧЕНИЕ" VerticalAlignment="Center" TextAlignment="Center"/>
+                        </Grid>
+
+                        <ConfigurateSituation:ConfigureItemControl start="8" end="25" delta="15" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="КРУТЯЩИЙ МОМЕНТ НА РОТОРЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl start="1" end="4" delta="20" Background="Gainsboro" textColumnWidth="400"  Margin="0,2.5,0,2.5" text="МЕХ. СКОРОСТЬ БУРЕНИЯ"/>
+                    </ConfigurateSituation:ConfigureSituationButton.uiElements>
+                </ConfigurateSituation:ConfigureSituationButton>
+                <ConfigurateSituation:ConfigureSituationButton Margin="640,679,0,0" Content="CКОРОСТЬ БУРЕНИЯ СУЩЕСТВЕННО ПАДАЕТ.&#xA;КРУТЯЩИЙ МОМЕНТ СНИЖАЕТСЯ.&#xD;&#xA;ОСТАЛЬНЫЕ ПАРАМЕТРЫ СТАБИЛЬНЫ." text="CКОРОСТЬ БУРЕНИЯ СУЩЕСТВЕННО ПАДАЕТ.&#xA;КРУТЯЩИЙ МОМЕНТ СНИЖАЕТСЯ.&#xD;&#xA;ОСТАЛЬНЫЕ ПАРАМЕТРЫ СТАБИЛЬНЫ."  startCommand="{hmi:SeBinding Tags.Node[situacii.write].Items[Tag1].WriteCommand}" situationCode="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="71" Width="605" FontFamily="Tahoma" FontSize="14">
+                    <ConfigurateSituation:ConfigureSituationButton.uiElements>
+                        <Grid HorizontalAlignment="Stretch" Height="40" Margin="0,0,0,0" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="400"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition MinWidth="80"/>
+                                <ColumnDefinition Width="100*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ НАЧАЛА&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center" />
+                            <TextBlock Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ ОКОНЧАНИЯ&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="5" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ИЗМЕНЕНИЕ ПАРАМЕТРА, %" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="8" Grid.ColumnSpan="1" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ФАКТИЧЕСКОЕ&#xA;ЗНАЧЕНИЕ" VerticalAlignment="Center" TextAlignment="Center"/>
+                        </Grid>
+
+                        <ConfigurateSituation:ConfigureItemControl start="8" end="25" delta="15" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="КРУТЯЩИЙ МОМЕНТ НА РОТОРЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl start="1" end="4" delta="20" Background="Gainsboro" textColumnWidth="400"  Margin="0,2.5,0,2.5" text="МЕХ. СКОРОСТЬ БУРЕНИЯ"/>
+                    </ConfigurateSituation:ConfigureSituationButton.uiElements>
+                </ConfigurateSituation:ConfigureSituationButton>
+                <ConfigurateSituation:ConfigureSituationButton Margin="10,372,0,0" Content="ПАРАМЕТРЫ ПЖ НА ВЫХОДЕ СТАБИЛЬНЫ. ДАВЛЕНИЕ ПЖ СТАБИЛИЗИРОВАЛОСЬ &#xD;&#xA;НА БОЛЕЕ НИЗКОМ УРОВНЕ ИЛИ ПРОДОЛЖАЕТ СНИЖАТЬСЯ, РАСХОД&#xD;&#xA;НА ВХОДЕ И ВЫХОДЕ СНИЖАЕТСЯ. НА ФОНЕ ОБЩЕГО СНИЖЕНИЯ&#xD;&#xA;ДАВЛЕНИЯ ПЖ НА ВХОДЕ НАБЛЮДАЮТСЯ КОЛЕБАНИЯ С&#xD;&#xA;ЧАСТОТОЙ ПОДАЧИ НАСОСА, РАСХОД НА ВХОДЕ И ВЫХОДЕ СНИЖАЕТСЯ.&#xD;&#xA;СНИЖЕНИЕ ПЛОТНОСТИ И ПОВЫШЕНИЕ ГАЗОСОДЕРЖАНИЯ ПЖ НА ВЫХОДЕ&#xD;&#xA;ПОСЛЕ ЦИКЛА ЦИРКУЛЯЦИЙ." text="ПАРАМЕТРЫ ПЖ НА ВЫХОДЕ СТАБИЛЬНЫ. ДАВЛЕНИЕ ПЖ СТАБИЛИЗИРОВАЛОСЬ &#xD;&#xA;НА БОЛЕЕ НИЗКОМ УРОВНЕ ИЛИ ПРОДОЛЖАЕТ СНИЖАТЬСЯ, РАСХОД&#xD;&#xA;НА ВХОДЕ И ВЫХОДЕ СНИЖАЕТСЯ. НА ФОНЕ ОБЩЕГО СНИЖЕНИЯ&#xD;&#xA;ДАВЛЕНИЯ ПЖ НА ВХОДЕ НАБЛЮДАЮТСЯ КОЛЕБАНИЯ С&#xD;&#xA;ЧАСТОТОЙ ПОДАЧИ НАСОСА, РАСХОД НА ВХОДЕ И ВЫХОДЕ СНИЖАЕТСЯ.&#xD;&#xA;СНИЖЕНИЕ ПЛОТНОСТИ И ПОВЫШЕНИЕ ГАЗОСОДЕРЖАНИЯ ПЖ НА ВЫХОДЕ&#xD;&#xA;ПОСЛЕ ЦИКЛА ЦИРКУЛЯЦИЙ."  startCommand="{hmi:SeBinding Tags.Node[situacii.write].Items[Tag1].WriteCommand}" situationCode="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="127" Width="605" FontFamily="Tahoma" FontSize="14">
+                    <ConfigurateSituation:ConfigureSituationButton.uiElements>
+                        <Grid HorizontalAlignment="Stretch" Height="40" Margin="0,0,0,0" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="400"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition MinWidth="80"/>
+                                <ColumnDefinition Width="100*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ НАЧАЛА&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center" />
+                            <TextBlock Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ ОКОНЧАНИЯ&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="5" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ИЗМЕНЕНИЕ ПАРАМЕТРА, %" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="8" Grid.ColumnSpan="1" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ФАКТИЧЕСКОЕ&#xA;ЗНАЧЕНИЕ" VerticalAlignment="Center" TextAlignment="Center"/>
+                        </Grid>
+
+                        <ConfigurateSituation:ConfigureItemControl start="5" end="15" delta="20" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="ДАВЛЕНИЕ НА ВХОДЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl start="8" end="25" delta="15" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="РАСХОД НА ВХОДЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl start="1" end="4" delta="20" Background="Gainsboro" textColumnWidth="400"  Margin="0,2.5,0,2.5" text="РАСХОД НА ВЫХОДЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl start="1" end="4" delta="20" Background="Gainsboro" textColumnWidth="400"  Margin="0,2.5,0,2.5" text="ПЛОТНОСТЬ РАСТВОРА"/>
+                        <ConfigurateSituation:ConfigureItemControl start="1" end="4" delta="20" Background="Gainsboro" textColumnWidth="400"  Margin="0,2.5,0,2.5" text="СОДЕРЖАНИЕ ГАЗА НА ВЫХОДЕ"/>
+                    </ConfigurateSituation:ConfigureSituationButton.uiElements>
+                </ConfigurateSituation:ConfigureSituationButton>
+                <ConfigurateSituation:ConfigureSituationButton Margin="640,372,0,0" Content="ДАВЛЕНИЕ ПРОДОЛЖАЕТ РАСТИ, ПОЯВЛЯЮТСЯ&#xD;&#xA;КОЛЕБАНИЯ КРУТЯЩЕГО МОМЕНТА ПРИ ОБЩЕМ ЕГО&#xD;&#xA;УВЕЛИЧЕНИИ, НАБЛЮДАЮТСЯ ЗАТЯЖКИ ПРИ ПОДЪЕМЕ&#xD;&#xA;И ПОСАДКИ  ПРИ СПУСКЕ. ПРИ РАСХАЖИВАНИИ РОСТ&#xD;&#xA;ДАВЛЕНИЯ ПРЕКРАТИЛСЯ, ВОЗМОЖНО, ЕГО СНИЖЕНИЕ.&#xD;&#xA;ЗАТЯЖКИ И ПОСАДКИ СНИЖАЮТСЯ, КОЛЕБАНИЯ МОМЕНТА&#xD;&#xA;ИСЧЕЗЛИ." text="ДАВЛЕНИЕ ПРОДОЛЖАЕТ РАСТИ, ПОЯВЛЯЮТСЯ&#xD;&#xA;КОЛЕБАНИЯ КРУТЯЩЕГО МОМЕНТА ПРИ ОБЩЕМ ЕГО&#xD;&#xA;УВЕЛИЧЕНИИ, НАБЛЮДАЮТСЯ ЗАТЯЖКИ ПРИ ПОДЪЕМЕ&#xD;&#xA;И ПОСАДКИ  ПРИ СПУСКЕ. ПРИ РАСХАЖИВАНИИ РОСТ&#xD;&#xA;ДАВЛЕНИЯ ПРЕКРАТИЛСЯ, ВОЗМОЖНО, ЕГО СНИЖЕНИЕ.&#xD;&#xA;ЗАТЯЖКИ И ПОСАДКИ СНИЖАЮТСЯ, КОЛЕБАНИЯ МОМЕНТА&#xD;&#xA;ИСЧЕЗЛИ."  startCommand="{hmi:SeBinding Tags.Node[situacii.write].Items[Tag1].WriteCommand}" situationCode="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="127" Width="605" FontFamily="Tahoma" FontSize="14">
+                    <ConfigurateSituation:ConfigureSituationButton.uiElements>
+                        <Grid HorizontalAlignment="Stretch" Height="40" Margin="0,0,0,0" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="400"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100*" MinWidth="80"/>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition MinWidth="80"/>
+                                <ColumnDefinition Width="100*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ НАЧАЛА&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center" />
+                            <TextBlock Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ВРЕМЯ ОКОНЧАНИЯ&#xA;ИЗМЕНЕНИЯ ПАРАМЕТРА, С" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="5" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ИЗМЕНЕНИЕ ПАРАМЕТРА, %" VerticalAlignment="Center" TextAlignment="Center"  />
+                            <TextBlock Grid.Column="8" Grid.ColumnSpan="1" HorizontalAlignment="Stretch"  Margin="5" TextWrapping="Wrap" Text="ФАКТИЧЕСКОЕ&#xA;ЗНАЧЕНИЕ" VerticalAlignment="Center" TextAlignment="Center"/>
+                        </Grid>
+
+                        <ConfigurateSituation:ConfigureItemControl start="5" end="15" delta="20" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="ДАВЛЕНИЕ НА ВХОДЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl start="8" end="25" delta="15" Background="Gainsboro" textColumnWidth="400" Margin="0,2.5,0,2.5" text="КРУТЯЩИЙ МОМЕНТ НА РОТОРЕ"/>
+                        <ConfigurateSituation:ConfigureItemControl start="1" end="4" delta="20" Background="Gainsboro" textColumnWidth="400"  Margin="0,2.5,0,2.5" text="ВЕС НА КРЮКЕ"/>
+                    </ConfigurateSituation:ConfigureSituationButton.uiElements>
+                </ConfigurateSituation:ConfigureSituationButton>
+            </Grid>
+        </se:HmiTabItem>
+    </se:HmiTabControl>
+
+</UserControl>

@@ -1,0 +1,802 @@
+﻿<UserControl x:Class="_54056.Frames.NastrojkaDatchikovNasosov"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:hmi="http://schemas.monokot.com/hmi/"
+             xmlns:se="http://schemas.monokot.com/se/"
+             xmlns:style="clr-namespace:NGO.Elements.style;assembly=NGO.Elements"
+             xmlns:System="clr-namespace:System;assembly=mscorlib"
+             xmlns:msab="clr-namespace:NGO.Elements.Gauges.Small.Msab;assembly=NGO.Elements"
+             xmlns:pump1="clr-namespace:NGO.Elements.Gauges.Small.Pump1;assembly=NGO.Elements"
+             xmlns:pump2="clr-namespace:NGO.Elements.Gauges.Small.Pump2;assembly=NGO.Elements"
+             xmlns:pump3="clr-namespace:NGO.Elements.Gauges.Small.Pump3;assembly=NGO.Elements"
+             xmlns:drawwork="clr-namespace:NGO.Elements.Gauges.Small.Drawwork;assembly=NGO.Elements"
+             xmlns:rotor="clr-namespace:NGO.Elements.Gauges.Small.Rotor;assembly=NGO.Elements"
+             mc:Ignorable="d"  Width="1280" Height="770">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Monokot.ScadaExtension.Wpf;component/Themes/Controls/IndustrialStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <ObjectDataProvider x:Key="visibilityProvider" MethodName="Parse" ObjectType="{x:Type System:Enum}">
+                <ObjectDataProvider.MethodParameters>
+                    <x:Type TypeName="Visibility" />
+                    <System:String>Visible</System:String>
+                </ObjectDataProvider.MethodParameters>
+            </ObjectDataProvider>
+
+            <Viewbox x:Key="white_calc_16x" x:Shared="False">
+                <Path Fill="Black" 
+              Margin="10" 
+              SnapsToDevicePixels="True" 
+              Data="F1 M 30.083,10.000 C 30.083,11.105 29.188,12.000 28.083,12.000 L 7.917,12.000 C 6.812,12.000 5.917,11.105 5.917,10.000 L 5.917,8.000 C 5.917,6.895 6.812,6.000 7.917,6.000 L 28.083,6.000 C 29.188,6.000 30.083,6.895 30.083,8.000 L 30.083,10.000 Z M 30.042,22.000 C 30.042,23.105 29.146,24.000 28.042,24.000 L 26.042,24.000 C 24.937,24.000 24.042,23.105 24.042,22.000 L 24.042,20.000 C 24.042,18.895 24.937,18.000 26.042,18.000 L 28.042,18.000 C 29.146,18.000 30.042,18.895 30.042,20.000 L 30.042,22.000 Z M 30.042,31.000 C 30.042,32.105 29.146,33.000 28.042,33.000 L 26.042,33.000 C 24.937,33.000 24.042,32.105 24.042,31.000 L 24.042,29.000 C 24.042,27.895 24.937,27.000 26.042,27.000 L 28.042,27.000 C 29.146,27.000 30.042,27.895 30.042,29.000 L 30.042,31.000 Z M 30.042,40.000 C 30.042,41.105 29.146,42.000 28.042,42.000 L 26.042,42.000 C 24.937,42.000 24.042,41.105 24.042,40.000 L 24.042,38.000 C 24.042,36.895 24.937,36.000 26.042,36.000 L 28.042,36.000 C 29.146,36.000 30.042,36.895 30.042,38.000 L 30.042,40.000 Z M 21.042,22.000 C 21.042,23.105 20.146,24.000 19.042,24.000 L 17.042,24.000 C 15.937,24.000 15.042,23.105 15.042,22.000 L 15.042,20.000 C 15.042,18.895 15.937,18.000 17.042,18.000 L 19.042,18.000 C 20.146,18.000 21.042,18.895 21.042,20.000 L 21.042,22.000 Z M 21.042,31.000 C 21.042,32.105 20.146,33.000 19.042,33.000 L 17.042,33.000 C 15.937,33.000 15.042,32.105 15.042,31.000 L 15.042,29.000 C 15.042,27.895 15.937,27.000 17.042,27.000 L 19.042,27.000 C 20.146,27.000 21.042,27.895 21.042,29.000 L 21.042,31.000 Z M 21.042,40.000 C 21.042,41.105 20.146,42.000 19.042,42.000 L 17.042,42.000 C 15.937,42.000 15.042,41.105 15.042,40.000 L 15.042,38.000 C 15.042,36.895 15.937,36.000 17.042,36.000 L 19.042,36.000 C 20.146,36.000 21.042,36.895 21.042,38.000 L 21.042,40.000 Z M 11.958,22.000 C 11.958,23.105 11.063,24.000 9.958,24.000 L 7.958,24.000 C 6.854,24.000 5.958,23.105 5.958,22.000 L 5.958,20.000 C 5.958,18.895 6.854,18.000 7.958,18.000 L 9.958,18.000 C 11.063,18.000 11.958,18.895 11.958,20.000 L 11.958,22.000 Z M 11.958,31.000 C 11.958,32.105 11.063,33.000 9.958,33.000 L 7.958,33.000 C 6.854,33.000 5.958,32.105 5.958,31.000 L 5.958,29.000 C 5.958,27.895 6.854,27.000 7.958,27.000 L 9.958,27.000 C 11.063,27.000 11.958,27.895 11.958,29.000 L 11.958,31.000 Z M 11.958,40.000 C 11.958,41.105 11.063,42.000 9.958,42.000 L 7.958,42.000 C 6.854,42.000 5.958,41.105 5.958,40.000 L 5.958,38.000 C 5.958,36.895 6.854,36.000 7.958,36.000 L 9.958,36.000 C 11.063,36.000 11.958,36.895 11.958,38.000 L 11.958,40.000 Z M 33.000,0.000 L 3.000,0.000 C 1.343,0.000 0.000,1.343 0.000,3.000 L 0.000,45.000 C 0.000,46.657 1.343,48.000 3.000,48.000 L 33.000,48.000 C 34.657,48.000 36.000,46.657 36.000,45.000 L 36.000,3.000 C 36.000,1.343 34.657,0.000 33.000,0.000 Z"/>
+            </Viewbox>
+
+            <Style x:Key="PressureKeypadButton" TargetType="se:KeypadButton">
+                <Setter Property="IsPositive" Value="True"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate>
+                            <Button Content="{StaticResource white_calc_16x}"/>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+        </ResourceDictionary>
+
+    </UserControl.Resources>
+    <se:HmiTabControl Margin="0">
+        <se:HmiTabItem Header="ДИАПАЗОНЫ" Height="32" Width="130" FontSize="18">
+            <Grid Background="Gainsboro" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="768" Width="1272">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+
+                <style:cool_rect Margin="0" Grid.Column="0"/>
+                <style:cool_rect Margin="0" Grid.Column="1"/>
+                <style:cool_rect Margin="0" Grid.Column="2"/>
+
+                <TextBlock Margin="5,10,5,0" TextWrapping="Wrap" Text="НАСОС 1" VerticalAlignment="Top" FontSize="18" TextAlignment="Center" Height="24"/>
+                <TextBlock Margin="0,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" TextAlignment="Center" Height="24" Text="ДАВЛЕНИЕ В СОЖ"/>
+                <pump1:Pump1DavlenieVPodshipnikah HorizontalAlignment="Left" Margin="10,63,0,0" VerticalAlignment="Top" Height="100" Width="100"/>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="191,111,0,0" VerticalAlignment="Top" Width="52">
+                    <se:KeypadButton.Value>
+                        <hmi:Bind Path="Tags.Node[write.pump1.presets.davlenieVPodshipnikah].Items[min_w].Value">
+                            <hmi:Bind.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <TextBlock HorizontalAlignment="Left" Margin="127,102,0,0" TextWrapping="Wrap" Text="Min =" VerticalAlignment="Top" FontSize="18" Height="24" Width="48"/>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="326,111,0,0" VerticalAlignment="Top" Width="52">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump1.presets.davlenieVPodshipnikah].Items[max_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <TextBlock HorizontalAlignment="Left" Margin="262,102,0,0" TextWrapping="Wrap" Text="Max =" VerticalAlignment="Top" FontSize="18" Height="24" Width="51"/>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="191,73,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump1.presets.davlenieVPodshipnikah].Items[min].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="326,73,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump1.presets.davlenieVPodshipnikah].Items[max].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <pump1:Pump1DavlenieVSOZH HorizontalAlignment="Left" Margin="10,205,0,0" VerticalAlignment="Top" Height="100" Width="100"/>
+                <TextBlock Margin="5,34,5,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" TextAlignment="Center" Text="ДАВЛЕНИЕ СМАЗКИ" Height="24"/>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="191,255,0,0" VerticalAlignment="Top" Width="52">
+                    <se:KeypadButton.Value>
+                        <hmi:Bind Path="Tags.Node[write.pump1.presets.davlenieVSOZH].Items[min_w].Value">
+                            <hmi:Bind.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <TextBlock HorizontalAlignment="Left" Margin="127,246,0,0" TextWrapping="Wrap" Text="Min =" VerticalAlignment="Top" FontSize="18" Height="24" Width="48"/>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="326,255,0,0" VerticalAlignment="Top" Width="52">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump1.presets.davlenieVSOZH].Items[max_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <TextBlock HorizontalAlignment="Left" Margin="262,246,0,0" TextWrapping="Wrap" Text="Max =" VerticalAlignment="Top" FontSize="18" Height="24" Width="51"/>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="191,217,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump1.presets.davlenieVSOZH].Items[min].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="326,217,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump1.presets.davlenieVSOZH].Items[max].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <TextBlock Margin="5,10,5,0" TextWrapping="Wrap" Text="НАСОС 2" VerticalAlignment="Top" FontSize="18" TextAlignment="Center" Grid.Column="1" Height="24"/>
+                <TextBlock Margin="0,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" TextAlignment="Center" Grid.Column="1" Height="24" Text="ДАВЛЕНИЕ В СОЖ"/>
+                <pump2:Pump2DavlenieVPodshipnikah HorizontalAlignment="Left" Margin="10,63,0,0" VerticalAlignment="Top" Height="100" Width="100" Grid.Column="1"/>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="191,111,0,0" VerticalAlignment="Top" Width="52" Grid.Column="1">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump2.presets.davlenieVPodshipnikah].Items[min_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <TextBlock HorizontalAlignment="Left" Margin="127,102,0,0" TextWrapping="Wrap" Text="Min =" VerticalAlignment="Top" FontSize="18" Grid.Column="1" Height="24" Width="48"/>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="326,111,0,0" VerticalAlignment="Top" Width="52" Grid.Column="1">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump2.presets.davlenieVPodshipnikah].Items[max_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <TextBlock HorizontalAlignment="Left" Margin="262,102,0,0" TextWrapping="Wrap" Text="Max =" VerticalAlignment="Top" FontSize="18" Grid.Column="1" Height="24" Width="51"/>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="191,73,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White" Grid.Column="1">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump2.presets.davlenieVPodshipnikah].Items[min].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="326,73,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White" Grid.Column="1">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump2.presets.davlenieVPodshipnikah].Items[max].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <pump2:Pump2DavlenieVSOZH HorizontalAlignment="Left" Margin="10,203,0,0" VerticalAlignment="Top" Height="100" Width="100" Grid.Column="1"/>
+                <TextBlock Margin="5,34,5,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" TextAlignment="Center" Text="ДАВЛЕНИЕ СМАЗКИ" Grid.Column="1" Height="24"/>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="191,253,0,0" VerticalAlignment="Top" Width="52" Grid.Column="1">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump2.presets.davlenieVSOZH].Items[min_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <TextBlock HorizontalAlignment="Left" Margin="127,244,0,0" TextWrapping="Wrap" Text="Min =" VerticalAlignment="Top" FontSize="18" Grid.Column="1" Height="24" Width="48"/>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="326,253,0,0" VerticalAlignment="Top" Width="52" Grid.Column="1">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump2.presets.davlenieVSOZH].Items[max_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <TextBlock HorizontalAlignment="Left" Margin="262,244,0,0" TextWrapping="Wrap" Text="Max =" VerticalAlignment="Top" FontSize="18" Grid.Column="1" Height="24" Width="51"/>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="191,215,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White" Grid.Column="1">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump2.presets.davlenieVSOZH].Items[min].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="326,215,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White" Grid.Column="1">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump2.presets.davlenieVSOZH].Items[max].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <TextBlock Margin="5,10,5,0" TextWrapping="Wrap" Text="НАСОС 3" VerticalAlignment="Top" FontSize="18" TextAlignment="Center" Grid.Column="2" Height="24"/>
+                <TextBlock Margin="5,34,5,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" TextAlignment="Center" Text="ДАВЛЕНИЕ СМАЗКИ" Grid.Column="2" Height="24"/>
+                <pump3:Pump3DavlenieVPodshipnikah HorizontalAlignment="Left" Margin="10,63,0,0" VerticalAlignment="Top" Height="100" Width="100" Grid.Column="2"/>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="191,111,0,0" VerticalAlignment="Top" Width="52" Grid.Column="2">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump3.presets.davlenieVPodshipnikah].Items[min_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <TextBlock HorizontalAlignment="Left" Margin="127,102,0,0" TextWrapping="Wrap" Text="Min =" VerticalAlignment="Top" FontSize="18" Grid.Column="2" Height="24" Width="48"/>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="326,111,0,0" VerticalAlignment="Top" Width="52" Grid.Column="2">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump3.presets.davlenieVPodshipnikah].Items[max_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <TextBlock HorizontalAlignment="Left" Margin="262,102,0,0" TextWrapping="Wrap" Text="Max =" VerticalAlignment="Top" FontSize="18" Grid.Column="2" Height="24" Width="51"/>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="191,73,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White" Grid.Column="2">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump3.presets.davlenieVPodshipnikah].Items[min].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="326,73,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White" Grid.Column="2">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump3.presets.davlenieVPodshipnikah].Items[max].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <pump3:Pump3DavlenieVSOZH HorizontalAlignment="Left" Margin="10,203,0,0" VerticalAlignment="Top" Height="100" Width="100" Grid.Column="2"/>
+                <TextBlock Margin="5,173,5,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" TextAlignment="Center" Grid.Column="2" Height="24" Text="ДАВЛЕНИЕ В СОЖ"/>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="191,253,0,0" VerticalAlignment="Top" Width="52" Grid.Column="2">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump3.presets.davlenieVSOZH].Items[min_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <TextBlock HorizontalAlignment="Left" Margin="127,244,0,0" TextWrapping="Wrap" Text="Min =" VerticalAlignment="Top" FontSize="18" Grid.Column="2" Height="24" Width="48"/>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="326,253,0,0" VerticalAlignment="Top" Width="52" Grid.Column="2">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump3.presets.davlenieVSOZH].Items[max_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <TextBlock HorizontalAlignment="Left" Margin="262,244,0,0" TextWrapping="Wrap" Text="Max =" VerticalAlignment="Top" FontSize="18" Grid.Column="2" Height="24" Width="51"/>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="191,215,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White" Grid.Column="2">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump3.presets.davlenieVSOZH].Items[min].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="326,215,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White" Grid.Column="2">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump3.presets.davlenieVSOZH].Items[max].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <pump1:Pump1DavlenieNaVhode HorizontalAlignment="Left" Margin="10,385,0,0" VerticalAlignment="Top" Height="100" Width="100"/>
+                <TextBlock Margin="0,355,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" TextAlignment="Center" Height="24" Text="ДАВЛЕНИЕ НА ВХОДЕ"/>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="191,435,0,0" VerticalAlignment="Top" Width="52">
+                    <se:KeypadButton.Value>
+                        <hmi:Bind Path="Tags.Node[write.pump1.presets.davlenieNaVhode].Items[min_w].Value">
+                            <hmi:Bind.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <TextBlock HorizontalAlignment="Left" Margin="127,426,0,0" TextWrapping="Wrap" Text="Min =" VerticalAlignment="Top" FontSize="18" Height="24" Width="48"/>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="326,435,0,0" VerticalAlignment="Top" Width="52">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump1.presets.davlenieNaVhode].Items[max_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+
+
+                <TextBlock HorizontalAlignment="Left" Margin="262,426,0,0" TextWrapping="Wrap" Text="Max =" VerticalAlignment="Top" FontSize="18" Height="24" Width="51"/>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="191,397,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump1.presets.davlenieNaVhode].Items[min].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="326,397,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump1.presets.davlenieNaVhode].Items[max].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+
+                <pump2:Pump2DavlenieNaVhode Grid.Column="1" HorizontalAlignment="Left" Margin="10,385,0,0" VerticalAlignment="Top" Height="100" Width="100"/>
+
+                <TextBlock Margin="0,353,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" TextAlignment="Center" Grid.Column="1" Height="24" Text="ДАВЛЕНИЕ НА ВХОДЕ"/>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="191,433,0,0" VerticalAlignment="Top" Width="52" Grid.Column="1">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump2.presets.davlenieNaVhode].Items[min_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <TextBlock HorizontalAlignment="Left" Margin="127,424,0,0" TextWrapping="Wrap" Text="Min =" VerticalAlignment="Top" FontSize="18" Grid.Column="1" Height="24" Width="48"/>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="326,433,0,0" VerticalAlignment="Top" Width="52" Grid.Column="1">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump2.presets.davlenieNaVhode].Items[max_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <TextBlock HorizontalAlignment="Left" Margin="262,424,0,0" TextWrapping="Wrap" Text="Max =" VerticalAlignment="Top" FontSize="18" Grid.Column="1" Height="24" Width="51"/>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="191,395,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White" Grid.Column="1">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump2.presets.davlenieNaVhode].Items[min].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="326,395,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White" Grid.Column="1">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump2.presets.davlenieNaVhode].Items[max].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <pump3:Pump3DavlenieNaVhode HorizontalAlignment="Left" Margin="10,383,0,0" VerticalAlignment="Top" Height="100" Width="100" Grid.Column="2"/>
+                <TextBlock Margin="5,353,5,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" TextAlignment="Center" Grid.Column="2" Height="24" Text="ДАВЛЕНИЕ НА ВХОДЕ"/>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="191,433,0,0" VerticalAlignment="Top" Width="52" Grid.Column="2">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump3.presets.davlenieNaVhode].Items[min_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <TextBlock HorizontalAlignment="Left" Margin="127,424,0,0" TextWrapping="Wrap" Text="Min =" VerticalAlignment="Top" FontSize="18" Grid.Column="2" Height="24" Width="48"/>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="326,433,0,0" VerticalAlignment="Top" Width="52" Grid.Column="2">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump3.presets.davlenieNaVhode].Items[max_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <TextBlock HorizontalAlignment="Left" Margin="262,424,0,0" TextWrapping="Wrap" Text="Max =" VerticalAlignment="Top" FontSize="18" Grid.Column="2" Height="24" Width="51"/>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="191,395,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White" Grid.Column="2">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump3.presets.davlenieNaVhode].Items[min].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="326,395,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White" Grid.Column="2">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump3.presets.davlenieNaVhode].Items[max].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+            </Grid>
+        </se:HmiTabItem>
+        <se:HmiTabItem Header="ПРЕДЕЛЫ" Height="32" Width="130" FontSize="18" Margin="5,0,0,0">
+            <Grid Background="Gainsboro" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="768" Width="1272">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+
+                <style:cool_rect Margin="0" Grid.Column="0"/>
+                <style:cool_rect Margin="0" Grid.Column="1"/>
+                <style:cool_rect Margin="0" Grid.Column="2"/>
+                <TextBlock Margin="5,10,5,0" TextWrapping="Wrap" Text="НАСОС 1" VerticalAlignment="Top" FontSize="18" TextAlignment="Center" Height="24"/>
+                <pump1:Pump1DavlenieVSOZH HorizontalAlignment="Left" Margin="10,203,0,0" VerticalAlignment="Top" Height="100" Width="100"/>
+                <TextBlock Margin="0,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" TextAlignment="Center" Height="24" Text="ДАВЛЕНИЕ В СОЖ"/>
+                <TextBlock Margin="5,34,5,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" TextAlignment="Center" Text="ДАВЛЕНИЕ СМАЗКИ" Height="24"/>
+                <pump1:Pump1DavlenieVPodshipnikah HorizontalAlignment="Left" Margin="10,63,0,0" VerticalAlignment="Top" Height="100" Width="100"/>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="127,111,0,0" VerticalAlignment="Top" Width="52">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump1.presets.davlenieVPodshipnikah].Items[fault_min_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="191,111,0,0" VerticalAlignment="Top" Width="52">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump1.presets.davlenieVPodshipnikah].Items[alarm_min_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="324,111,0,0" VerticalAlignment="Top" Width="52">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump1.presets.davlenieVPodshipnikah].Items[fault_max_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="257,111,0,0" VerticalAlignment="Top" Width="52">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump1.presets.davlenieVPodshipnikah].Items[alarm_max_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="127,73,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump1.presets.davlenieVPodshipnikah].Items[fault_min].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="191,73,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump1.presets.davlenieVPodshipnikah].Items[alarm_min].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="257,73,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump1.presets.davlenieVPodshipnikah].Items[alarm_max].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="324,73,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump1.presets.davlenieVPodshipnikah].Items[fault_max].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="127,252,0,0" VerticalAlignment="Top" Width="52">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump1.presets.davlenieVSOZH].Items[fault_min_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="191,252,0,0" VerticalAlignment="Top" Width="52">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump1.presets.davlenieVSOZH].Items[alarm_min_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="324,252,0,0" VerticalAlignment="Top" Width="52">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump1.presets.davlenieVSOZH].Items[fault_max_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="257,252,0,0" VerticalAlignment="Top" Width="52">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump1.presets.davlenieVSOZH].Items[alarm_max_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="127,214,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump1.presets.davlenieVSOZH].Items[fault_min].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="191,214,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump1.presets.davlenieVSOZH].Items[alarm_min].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="257,214,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump1.presets.davlenieVSOZH].Items[alarm_max].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="324,214,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump1.presets.davlenieVSOZH].Items[fault_max].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <TextBlock Margin="5,10,5,0" TextWrapping="Wrap" Text="НАСОС 2" VerticalAlignment="Top" FontSize="18" TextAlignment="Center" Grid.Column="1" Height="24"/>
+                <pump2:Pump2DavlenieVSOZH HorizontalAlignment="Left" Margin="10,203,0,0" VerticalAlignment="Top" Height="100" Width="100" Grid.Column="1"/>
+                <TextBlock Margin="0,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" TextAlignment="Center" Grid.Column="1" Height="24" Text="ДАВЛЕНИЕ В СОЖ"/>
+                <TextBlock Margin="5,34,5,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" TextAlignment="Center" Text="ДАВЛЕНИЕ СМАЗКИ" Grid.Column="1" Height="24"/>
+                <pump2:Pump2DavlenieVPodshipnikah HorizontalAlignment="Left" Margin="10,63,0,0" VerticalAlignment="Top" Height="100" Width="100" Grid.Column="1"/>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="127,111,0,0" VerticalAlignment="Top" Width="52" Grid.Column="1">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump2.presets.davlenieVPodshipnikah].Items[fault_min_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="191,111,0,0" VerticalAlignment="Top" Width="52" Grid.Column="1">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump2.presets.davlenieVPodshipnikah].Items[alarm_min_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="257,111,0,0" VerticalAlignment="Top" Width="52" Grid.Column="1">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump2.presets.davlenieVPodshipnikah].Items[alarm_max_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="324,111,0,0" VerticalAlignment="Top" Width="52" Grid.Column="1">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump2.presets.davlenieVPodshipnikah].Items[fault_max_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="127,73,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White" Grid.Column="1">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump2.presets.davlenieVPodshipnikah].Items[fault_min].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="191,73,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White" Grid.Column="1">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump2.presets.davlenieVPodshipnikah].Items[alarm_min].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="257,73,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White" Grid.Column="1">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump2.presets.davlenieVPodshipnikah].Items[alarm_max].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="324,73,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White" Grid.Column="1">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump2.presets.davlenieVPodshipnikah].Items[fault_max].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="127,252,0,0" VerticalAlignment="Top" Width="52" Grid.Column="1">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump2.presets.davlenieVSOZH].Items[fault_min_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="191,252,0,0" VerticalAlignment="Top" Width="52" Grid.Column="1">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump2.presets.davlenieVSOZH].Items[alarm_min_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="257,252,0,0" VerticalAlignment="Top" Width="52" Grid.Column="1">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump2.presets.davlenieVSOZH].Items[alarm_max_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="324,252,0,0" VerticalAlignment="Top" Width="52" Grid.Column="1">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump2.presets.davlenieVSOZH].Items[fault_max_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="127,214,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White" Grid.Column="1">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump2.presets.davlenieVSOZH].Items[fault_min].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="191,214,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White" Grid.Column="1">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump2.presets.davlenieVSOZH].Items[alarm_min].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="257,214,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White" Grid.Column="1">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump2.presets.davlenieVSOZH].Items[alarm_max].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="324,214,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White" Grid.Column="1">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump2.presets.davlenieVSOZH].Items[fault_max].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <TextBlock Margin="5,10,5,0" TextWrapping="Wrap" Text="НАСОС 3" VerticalAlignment="Top" FontSize="18" TextAlignment="Center" Grid.Column="2" Height="24"/>
+                <pump3:Pump3DavlenieVSOZH HorizontalAlignment="Left" Margin="10,203,0,0" VerticalAlignment="Top" Height="100" Width="100" Grid.Column="2"/>
+                <TextBlock Margin="5,173,5,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" TextAlignment="Center" Grid.Column="2" Height="24" Text="ДАВЛЕНИЕ В СОЖ"/>
+                <TextBlock Margin="5,34,5,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" TextAlignment="Center" Text="ДАВЛЕНИЕ СМАЗКИ" Grid.Column="2" Height="24"/>
+                <pump3:Pump3DavlenieVPodshipnikah HorizontalAlignment="Left" Margin="10,63,0,0" VerticalAlignment="Top" Height="100" Width="100" Grid.Column="2"/>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="130,111,0,0" VerticalAlignment="Top" Width="52" Grid.Column="2">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump3.presets.davlenieVPodshipnikah].Items[fault_min_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="194,111,0,0" VerticalAlignment="Top" Width="52" Grid.Column="2">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump3.presets.davlenieVPodshipnikah].Items[alarm_min_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="260,111,0,0" VerticalAlignment="Top" Width="52" Grid.Column="2">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump3.presets.davlenieVPodshipnikah].Items[alarm_max_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="327,111,0,0" VerticalAlignment="Top" Width="52" Grid.Column="2">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump3.presets.davlenieVPodshipnikah].Items[fault_max_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="130,73,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White" Grid.Column="2">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump3.presets.davlenieVPodshipnikah].Items[fault_min].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="194,73,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White" Grid.Column="2">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump3.presets.davlenieVPodshipnikah].Items[alarm_min].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="260,73,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White" Grid.Column="2">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump3.presets.davlenieVPodshipnikah].Items[alarm_max].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="327,73,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White" Grid.Column="2">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump3.presets.davlenieVPodshipnikah].Items[fault_max].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="130,252,0,0" VerticalAlignment="Top" Width="52" Grid.Column="2">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump3.presets.davlenieVSOZH].Items[fault_min_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="194,252,0,0" VerticalAlignment="Top" Width="52" Grid.Column="2">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump3.presets.davlenieVSOZH].Items[alarm_min_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="260,252,0,0" VerticalAlignment="Top" Width="52" Grid.Column="2">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump3.presets.davlenieVSOZH].Items[alarm_max_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="327,252,0,0" VerticalAlignment="Top" Width="52" Grid.Column="2">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump3.presets.davlenieVSOZH].Items[fault_max_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="130,214,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White" Grid.Column="2">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump3.presets.davlenieVSOZH].Items[fault_min].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="194,214,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White" Grid.Column="2">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump3.presets.davlenieVSOZH].Items[alarm_min].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="260,214,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White" Grid.Column="2">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump3.presets.davlenieVSOZH].Items[alarm_max].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="327,214,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White" Grid.Column="2">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump3.presets.davlenieVSOZH].Items[fault_max].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <pump1:Pump1DavlenieNaVhode HorizontalAlignment="Left" Margin="10,384,0,0" VerticalAlignment="Top" Height="100" Width="100"/>
+                <TextBlock Margin="0,354,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" TextAlignment="Center" Height="24" Text="ДАВЛЕНИЕ НА ВХОДЕ"/>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="127,433,0,0" VerticalAlignment="Top" Width="52">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump1.presets.davlenieNaVhode].Items[fault_min_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="191,433,0,0" VerticalAlignment="Top" Width="52">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump1.presets.davlenieNaVhode].Items[alarm_min_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="257,433,0,0" VerticalAlignment="Top" Width="52">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump1.presets.davlenieNaVhode].Items[alarm_max_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="324,433,0,0" VerticalAlignment="Top" Width="52">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump1.presets.davlenieNaVhode].Items[fault_max_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="127,395,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump1.presets.davlenieNaVhode].Items[fault_min].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="191,395,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump1.presets.davlenieNaVhode].Items[alarm_min].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="257,395,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump1.presets.davlenieNaVhode].Items[alarm_max].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="324,395,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump1.presets.davlenieNaVhode].Items[fault_max].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <pump2:Pump2DavlenieNaVhode Grid.Column="1" HorizontalAlignment="Left" Margin="10,384,0,0" VerticalAlignment="Top" Height="100" Width="100"/>
+                <TextBlock Margin="0,354,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" TextAlignment="Center" Grid.Column="1" Height="24" Text="ДАВЛЕНИЕ НА ВХОДЕ"/>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="127,433,0,0" VerticalAlignment="Top" Width="52" Grid.Column="1">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump2.presets.davlenieNaVhode].Items[fault_min_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="191,433,0,0" VerticalAlignment="Top" Width="52" Grid.Column="1">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump2.presets.davlenieNaVhode].Items[alarm_min_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="257,433,0,0" VerticalAlignment="Top" Width="52" Grid.Column="1">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump2.presets.davlenieNaVhode].Items[alarm_max_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="324,433,0,0" VerticalAlignment="Top" Width="52" Grid.Column="1">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump2.presets.davlenieNaVhode].Items[fault_max_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="127,395,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White" Grid.Column="1">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump2.presets.davlenieNaVhode].Items[fault_min].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="191,395,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White" Grid.Column="1">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump2.presets.davlenieNaVhode].Items[alarm_min].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="257,395,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White" Grid.Column="1">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump2.presets.davlenieNaVhode].Items[alarm_max].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="324,395,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White" Grid.Column="1">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump2.presets.davlenieNaVhode].Items[fault_max].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <pump3:Pump3DavlenieNaVhode HorizontalAlignment="Left" Margin="10,384,0,0" VerticalAlignment="Top" Height="100" Width="100" Grid.Column="2" Grid.RowSpan="1"/>
+                <TextBlock Margin="5,354,5,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" TextAlignment="Center" Grid.Column="2" Height="24" Text="ДАВЛЕНИЕ НА ВХОДЕ"/>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="130,433,0,0" VerticalAlignment="Top" Width="52" Grid.Column="2">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump3.presets.davlenieNaVhode].Items[fault_min_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="194,433,0,0" VerticalAlignment="Top" Width="52" Grid.Column="2">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump3.presets.davlenieNaVhode].Items[alarm_min_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="260,433,0,0" VerticalAlignment="Top" Width="52" Grid.Column="2">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump3.presets.davlenieNaVhode].Items[alarm_max_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <se:KeypadButton HorizontalAlignment="Left" Margin="327,433,0,0" VerticalAlignment="Top" Width="52" Grid.Column="2">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.pump3.presets.davlenieNaVhode].Items[fault_max_w].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="130,395,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White" Grid.Column="2">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump3.presets.davlenieNaVhode].Items[fault_min].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="194,395,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White" Grid.Column="2">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump3.presets.davlenieNaVhode].Items[alarm_min].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="260,395,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White" Grid.Column="2">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump3.presets.davlenieNaVhode].Items[alarm_max].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="327,395,0,0" VerticalAlignment="Top" Width="52" CornerRadius="3" Background="White" Grid.Column="2">
+                    <Label Content="{hmi:SeBinding Tags.Node[view.main_drives.pump3.presets.davlenieNaVhode].Items[fault_max].Value, FallbackValue=Label}" Margin="0" ContentStringFormat="{}{0:0.00}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+
+
+            </Grid>
+        </se:HmiTabItem>
+    </se:HmiTabControl>
+</UserControl>

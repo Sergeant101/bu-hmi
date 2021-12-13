@@ -1,0 +1,128 @@
+﻿311010
+8
+lang|RU|0 (:2 ) Сигнал перегрева контейнера НКУ с датчика ВК3
+lang|EN|0 (:2 ) Not push button "Stop mud pump 1" on drillers console
+311010
+9
+lang|RU|1 (:3 ) Сигнал высокой влажности контейнера НКУ с датчика ВL
+lang|EN|1 (:3 ) Not push button "Stop mud pump 2" on drillers console
+311010
+10
+lang|RU|2 (:4 ) Включен автоматический выключатель QF1 "Питание от трансформатора Т1-400В"
+lang|EN|2 (:4 ) Not push button "Stop mud pump 3" on drillers console
+311010
+11
+lang|RU|3 (:5 ) Включен автоматический выключатель QF2 "Питание от аварийной ДЭС"
+lang|EN|3 (:5 ) Rotation Rotary to rigth on drillers console
+311010
+12
+lang|RU|4 (:6 ) Резерв
+lang|EN|4 (:6 ) Rotation Rotary to left on drillers console
+311010
+13
+lang|RU|5 (:7 ) Собрана цепь нулевого расцепителя (реле 1K1)
+lang|EN|5 (:7 ) Lever pushed of top drive
+311010
+14
+lang|RU|6 (:8 ) Нет сигнала "Перегрев" датчика температуры ДТ контейнера НКУ (реле 1К3 цепи нулевого расцепителя)
+lang|EN|6 (:8 ) IBOP of Top drive closed
+311010
+15
+lang|RU|7 (:9 ) Отжата аварийная кнопка SB1 контейнера НКУ (реле 1К4 цепи нулевого расцепителя)
+lang|EN|7 (:9 ) Pipe grab of Top drive closed
+311010
+0
+lang|RU|0 (:12 ) Отжата аварийная кнопка SB2 контейнера НКУ (реле 1К5 цепи нулевого расцепителя)
+lang|EN|0 (:12 ) Add speed of mud pump 1 on drillers console
+311010
+1
+lang|RU|1 (:13 ) Нет сигнала "Пожар" от реле К102 контейнера НКУ (реле 1К6 цепи нулевого расцепителя)
+lang|EN|1 (:13 ) Reduce speed of mud pump 1 on drillers console
+311010
+2
+lang|RU|2 (:14 ) Включен автоматический выключатель 42QF1 "Питание 400В контейнера КТУ"
+lang|EN|2 (:14 ) Add speed of mud pump 2 on drillers console
+311010
+3
+lang|RU|3 (:15 ) Включен автоматический выключатель 671QF1 "Питание 400В компрессорного блока БК"
+lang|EN|3 (:15 ) Reduce speed of mud pump 2 on drillers console
+311010
+4
+lang|RU|4 (:16 ) Включен автоматический выключатель 673QF1 "Питание 400В автомата на 63А"
+lang|EN|4 (:16 ) Add speed of mud pump 3 on drillers console
+311010
+5
+lang|RU|5 (:17 ) Включен автоматический выключатель 615QF1 "Питание 400В монтажных электрокалориферов"
+lang|EN|5 (:17 ) Reduce speed of mud pump 3  on drillers console
+311010
+6
+lang|RU|6 (:18 ) Включен автоматический выключатель 616QF1 "Питание 400В монтажных электрокалориферов"
+lang|EN|6 (:18 ) Not emergency stop of mud pumps on drillers console
+311010
+7
+lang|RU|7 (:19 ) Включен автоматический выключатель 677QF1 "Аварийное питание 400В модуля управления СВП"
+lang|EN|7 (:19 ) Not push button "Drawwarks brake" on drillers console
+311011
+8
+lang|RU|0 (:22 ) Включен автоматический выключатель 698QF1 "Питание 400В топливо-масленной установки ТМУ"
+lang|EN|0 (:22 ) Switch on "Start/Unlock"of Rotor on drillers console
+311011
+9
+lang|RU|1 (:23 ) Включен автоматический выключатель 674QF1 "Питание котельной"
+lang|EN|1 (:23 ) Switch on "Stop"of Rotor on drillers console
+311011
+10
+lang|RU|2 (:24 ) Включен автоматический выключатель 65QF1 "Питание 400В пульта насосов ПН"
+lang|EN|2 (:24 ) Increase speed of Rotor on drillers console
+311011
+11
+lang|RU|3 (:25 ) Включен автоматический выключатель 66QF1 "Питание 400В шкафа АКЛ"
+lang|EN|3 (:25 ) Reduce speed of  Rotor on drillers console
+311011
+12
+lang|RU|4 (:26 ) Включен автоматический выключатель 60QF1 "Питание 400В шкафа ШЛБ"
+lang|EN|4 (:26 ) Increase torque of Rotor on drillers console
+311011
+13
+lang|RU|5 (:27 ) Включен автоматический выключатель 27QF1 "Питание 400В собственных нужд аварийной ДЭС"
+lang|EN|5 (:27 ) Reduce torque of  Rotor on drillers console
+311011
+14
+lang|RU|6 (:28 ) Включен автоматический выключатель 56QF1 "Питание 400В собственных КРУ трансформатора Т2"
+lang|EN|6 (:28 ) Not a raised rotary table
+311011
+15
+lang|RU|7 (:29 ) Включен автоматический выключатель 37QF1 "Питание 400В шкафа БДЕ"
+lang|EN|7 (:29 ) Air pressure sensor MR ON
+311011
+0
+lang|RU|0 (:32 ) Включен автоматический выключатель 37QF1 "Питание 400В ФКУ"
+lang|EN|0 (:32 ) Push button "Start/Unlock" main drive drawworks
+311011
+1
+lang|RU|1 (:33 ) Резерв
+lang|EN|1 (:33 ) Not push button "Stop" main drive drawworks
+311011
+2
+lang|RU|2 (:34 ) Резерв
+lang|EN|2 (:34 ) Push button "Start/Unlock" aux. drive drawworks
+311011
+3
+lang|RU|3 (:35 ) Резерв
+lang|EN|3 (:35 ) Not push button "Stop" aux. drive drawworks
+311011
+4
+lang|RU|4 (:36 ) Резерв
+lang|EN|4 (:36 ) Not push button "Emergency Stop of Drilling Rig"
+311011
+5
+lang|RU|5 (:37 ) Резерв
+lang|EN|5 (:37 ) Drum is not in position "parking"
+311011
+6
+lang|RU|6 (:38 ) Включен пускатель 500КМ1 на входе преобразователя вспом. лебедки 1
+lang|EN|6 (:38 ) Drawworks mode is drilling
+311011
+7
+lang|RU|7 (:39 ) Включен пускатель 520КМ1 на входе преобразователя вспом. лебедки 2
+lang|EN|7 (:39 ) Drawworks mode is Round-Trip

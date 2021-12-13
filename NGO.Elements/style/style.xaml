@@ -1,0 +1,1131 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib"
+                    xmlns:hmi="http://schemas.monokot.com/hmi/"
+                    xmlns:se="http://schemas.monokot.com/se/">
+
+
+    <!--<Style TargetType="se:VisualBox" x:Key="VB_LedStyle">
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="BorderThickness" Value="3"/>
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFCFCFCF" Offset="0"/>
+                    <GradientStop Color="#FFC3C3C3" Offset="1"/>
+                    <GradientStop Color="#FF9E9E9E" Offset="0.243"/>
+                    <GradientStop Color="#FFA0A0A0" Offset="0.778"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background" Value="#FF4EF74E"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Viewbox
+                                    SnapsToDevicePixels="True"
+                                    Width="{Binding ActualWidth,RelativeSource={RelativeSource AncestorType=se:VisualBox}}"
+                                    Height="{Binding ActualHeight,RelativeSource={RelativeSource AncestorType=se:VisualBox}}">
+                        <Grid
+                                    Width="50"
+                                    Height="50">
+
+                            <Ellipse 
+                                        VerticalAlignment="Stretch"
+                                        HorizontalAlignment="Stretch"
+                                        Margin="0"
+                                        Fill="{TemplateBinding BorderBrush}"/>
+
+                            <Ellipse 
+                                        VerticalAlignment="Stretch"
+                                        HorizontalAlignment="Stretch"
+                                        Margin="{TemplateBinding BorderThickness}">
+                                <Ellipse.Fill>
+                                    <PriorityBinding>
+                                        <Binding RelativeSource="{RelativeSource AncestorType=se:VisualBox}" Path="VisualStateCollection.CurrentState.Background" />
+                                        <Binding RelativeSource="{RelativeSource AncestorType=se:VisualBox}" Path="Background" />
+                                    </PriorityBinding>
+                                </Ellipse.Fill>
+                            </Ellipse>
+
+
+                            <Ellipse 
+                                        VerticalAlignment="Stretch"
+                                        HorizontalAlignment="Stretch"
+                                        Margin="{TemplateBinding BorderThickness}">
+                                <Ellipse.Fill>
+                                    <RadialGradientBrush GradientOrigin="0.25,0.25">
+                                        <GradientStop Color="Transparent" Offset="1"/>
+                                        <GradientStop Color="#99FFFFFF"/>
+                                    </RadialGradientBrush>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                        </Grid>
+                    </Viewbox>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="se:VisualBox" x:Key="VB_LampStyle">
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="BorderThickness" Value="4"/>
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFECECEC" Offset="0"/>
+                    <GradientStop Color="#FFB2B2B2" Offset="0.711"/>
+                    <GradientStop Color="#FF9E9E9E" Offset="0.26"/>
+                    <GradientStop Color="#FFC1C0C0" Offset="0.34"/>
+                    <GradientStop Color="#FFEAEAEA" Offset="0.514"/>
+                    <GradientStop Color="#FFE6E6E6" Offset="0.96"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background" Value="Gold"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Viewbox
+                                    SnapsToDevicePixels="True"
+                                    Width="{Binding ActualWidth,RelativeSource={RelativeSource AncestorType=se:VisualBox}}"
+                                    Height="{Binding ActualHeight,RelativeSource={RelativeSource AncestorType=se:VisualBox}}">
+                        <Grid
+                                    Width="50"
+                                    Height="50">
+
+                            <Ellipse 
+                                        VerticalAlignment="Stretch"
+                                        HorizontalAlignment="Stretch"
+                                        Margin="0"
+                                        Fill="{TemplateBinding BorderBrush}"/>
+
+                            <Ellipse 
+                                        VerticalAlignment="Stretch"
+                                        HorizontalAlignment="Stretch"
+                                        Margin="{TemplateBinding BorderThickness}"
+                                        >
+                                <Ellipse.Fill>
+                                    <PriorityBinding>
+                                        <Binding RelativeSource="{RelativeSource AncestorType=se:VisualBox}" Path="VisualStateCollection.CurrentState.Background" />
+                                        <Binding RelativeSource="{RelativeSource AncestorType=se:VisualBox}" Path="Background" />
+                                    </PriorityBinding>
+                                </Ellipse.Fill>
+                            </Ellipse>
+
+                            <Ellipse 
+                                        VerticalAlignment="Stretch"
+                                        HorizontalAlignment="Stretch"
+                                        Margin="{TemplateBinding BorderThickness}">
+                                <Ellipse.Fill>
+                                    <RadialGradientBrush GradientOrigin="0.25,0.25">
+                                        <GradientStop Color="Transparent" Offset="1"/>
+                                        <GradientStop Color="#99FFFFFF"/>
+                                    </RadialGradientBrush>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                        </Grid>
+                    </Viewbox>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>-->
+
+
+    <SolidColorBrush x:Key="RedBrush" Color="Red"/>
+    <SolidColorBrush x:Key="SolidBorderBrush" Color="#403740" />
+    <LinearGradientBrush x:Key="SelectedBrush" EndPoint="0,1" StartPoint="0,0">
+        <GradientStop Color="#FF9CE8FF" Offset="0"/>
+        <GradientStop Color="#FFBFFFFF" Offset="0.5"/>
+        <GradientStop Color="#FF61D6FF" Offset="0.5"/>
+        <GradientStop Color="#FF98ECFF" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="DisabledBackgroundBrush" Color="#FFC9C9C9" />
+    <SolidColorBrush x:Key="DisabledBorderBrush" Color="#FFF7F7F7" />
+    <SolidColorBrush x:Key="DisabledForegroundBrush" Color="#FFC9C9C9" />
+
+
+
+    <BitmapImage x:Key="orange-button-normal" UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/orange-button-(normal).png"></BitmapImage>
+    <BitmapImage x:Key="orange-button-push" UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/orange-button-(push).png"></BitmapImage>
+    <BitmapImage x:Key="orange-button-selected" UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/orange-button-(select).png"></BitmapImage>
+    
+
+
+    <BitmapImage x:Key="left-top-normal"          UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/normal/black-button-(normal)_01.png"         />
+    <BitmapImage x:Key="left-bg-normal"           UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/normal/black-button-(normal)_04.png"         />
+    <BitmapImage x:Key="left-bottom-normal"       UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/normal/black-button-(normal)_07.png"         />
+    <BitmapImage x:Key="right-top-normal"         UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/normal/black-button-(normal)_03.png"         />
+    <BitmapImage x:Key="right-bg-normal"          UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/normal/black-button-(normal)_06.png"         />
+    <BitmapImage x:Key="right-bottom-normal"      UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/normal/black-button-(normal)_09.png"         />
+    <BitmapImage x:Key="top-normal"               UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/normal/black-button-(normal)_02.png"         />
+    <BitmapImage x:Key="center-normal"            UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/normal/black-button-(normal)_05.png"         />
+    <BitmapImage x:Key="bottom-normal"            UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/normal/black-button-(normal)_08.png"         />
+    <BitmapImage x:Key="left-top-push"            UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/push/black-button-(push)_01.png"             />
+    <BitmapImage x:Key="left-bg-push"             UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/push/black-button-(push)_04.png"             />
+    <BitmapImage x:Key="left-bottom-push"         UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/push/black-button-(push)_07.png"             />
+    <BitmapImage x:Key="right-top-push"           UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/push/black-button-(push)_03.png"             />
+    <BitmapImage x:Key="right-bg-push"            UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/push/black-button-(push)_06.png"             />
+    <BitmapImage x:Key="right-bottom-push"        UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/push/black-button-(push)_09.png"             />
+    <BitmapImage x:Key="top-push"                 UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/push/black-button-(push)_02.png"             />
+    <BitmapImage x:Key="center-push"              UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/push/black-button-(push)_05.png"             />
+    <BitmapImage x:Key="bottom-push"              UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/push/black-button-(push)_08.png"             />
+    <BitmapImage x:Key="left-top-selected"        UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/selected/black-button-(selected)_01.png"     />
+    <BitmapImage x:Key="left-bg-selected"         UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/selected/black-button-(selected)_04.png"     />
+    <BitmapImage x:Key="left-bottom-selected"     UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/selected/black-button-(selected)_07.png"     />
+    <BitmapImage x:Key="right-top-selected"       UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/selected/black-button-(selected)_03.png"     />
+    <BitmapImage x:Key="right-bg-selected"        UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/selected/black-button-(selected)_06.png"     />
+    <BitmapImage x:Key="right-bottom-selected"    UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/selected/black-button-(selected)_09.png"     />
+    <BitmapImage x:Key="top-selected"             UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/selected/black-button-(selected)_02.png"     />
+    <BitmapImage x:Key="center-selected"          UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/selected/black-button-(selected)_05.png"     />
+    <BitmapImage x:Key="bottom-selected"          UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/selected/black-button-(selected)_08.png"     />
+    <BitmapImage x:Key="left-top-disable"         UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/disable/black-button-(disable)_01.png"       />
+    <BitmapImage x:Key="left-bg-disable"          UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/disable/black-button-(disable)_04.png"       />
+    <BitmapImage x:Key="left-bottom-disable"      UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/disable/black-button-(disable)_07.png"       />
+    <BitmapImage x:Key="right-top-disable"        UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/disable/black-button-(disable)_03.png"       />
+    <BitmapImage x:Key="right-bg-disable"         UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/disable/black-button-(disable)_06.png"       />
+    <BitmapImage x:Key="right-bottom-disable"     UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/disable/black-button-(disable)_09.png"       />
+    <BitmapImage x:Key="top-disable"              UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/disable/black-button-(disable)_02.png"       />
+    <BitmapImage x:Key="center-disable"           UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/disable/black-button-(disable)_05.png"       />
+    <BitmapImage x:Key="bottom-disable"           UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/disable/black-button-(disable)_08.png"       />
+
+
+
+    <Style x:Key="ngo_scada_switch_window_style" TargetType="se:ScadaButton">
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="se:ScadaButton">
+                    <Border CornerRadius="3" Margin="-1" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}">
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="{StaticResource SelectedBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="default_led_style" TargetType="se:StatusImage">
+        <Setter Property="DefaultImage" Value="/NGO.Elements;component/Content/LED/led_alarm.png"></Setter>
+        <Setter Property="FineImage" Value="/NGO.Elements;component/Content/LED/led_work.png"></Setter>
+        <Setter Property="DangerImage" Value="/NGO.Elements;component/Content/LED/led_emer.png"></Setter>
+    </Style>
+
+    <Style x:Key="bypass_led_style" TargetType="se:StatusImage">
+        <Setter Property="DefaultImage" Value="/NGO.Elements;component/Content/LED/led_work.png"></Setter>
+        <Setter Property="FineImage" Value="/NGO.Elements;component/Content/LED/led_work.png"></Setter>
+        <Setter Property="DangerImage" Value="/NGO.Elements;component/Content/LED/led_emer.png"></Setter>
+    </Style>
+
+    <Style x:Key="one_bit_led_style" TargetType="se:StatusImage">
+        <Setter Property="DefaultImage" Value="/NGO.Elements;component/Content/LED/led_emer.png"></Setter>
+        <Setter Property="FineImage" Value="/NGO.Elements;component/Content/LED/led_work.png"></Setter>
+        <Setter Property="DangerImage" Value="/NGO.Elements;component/Content/LED/led_emer.png"></Setter>
+    </Style>
+
+    <Style x:Key="ngo_button_style" TargetType="{x:Type Button}">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="12"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="13"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="12"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="12"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Name="l_top"      Grid.Row="0" Grid.Column="0" Source="{StaticResource left-top-normal}"    HorizontalAlignment="Stretch" SnapsToDevicePixels="True" Margin="0" Stretch="None"/>
+                        <Image Name="l_bg"       Grid.Row="1" Grid.Column="0" Source="{StaticResource left-bg-normal}"     HorizontalAlignment="Stretch" SnapsToDevicePixels="True" Margin="0" Stretch="Fill"/>
+                        <Image Name="l_bottom"   Grid.Row="2" Grid.Column="0" Source="{StaticResource left-bottom-normal}" HorizontalAlignment="Stretch" SnapsToDevicePixels="True" Margin="0" Stretch="None"/>
+
+                        <Image Name="bottom"     Grid.Row="2" Grid.Column="1" Source="{StaticResource bottom-normal}"       HorizontalAlignment="Stretch" SnapsToDevicePixels="True" Margin="-1,0,-1,0"  Stretch="Fill"/>
+
+                        <Image Name="r_top"      Grid.Row="0" Grid.Column="2" Source="{StaticResource right-top-normal}"    HorizontalAlignment="Stretch" SnapsToDevicePixels="True" Margin="0"  Stretch="None"/>
+                        <Image Name="r_bg"       Grid.Row="1" Grid.Column="2" Source="{StaticResource right-bg-normal}"     HorizontalAlignment="Stretch" SnapsToDevicePixels="True" Margin="0"  Stretch="Fill"/>
+                        <Image Name="r_bottom"   Grid.Row="2" Grid.Column="2" Source="{StaticResource right-bottom-normal}" HorizontalAlignment="Stretch" SnapsToDevicePixels="True" Margin="0"  Stretch="None"/>
+
+                        <Image Name="top"        Grid.Row="0" Grid.Column="1" Source="{StaticResource top-normal}"    HorizontalAlignment="Stretch"  Margin="-1,0,-1,0"  Stretch="Fill"/>
+                        <Grid  Grid.Row="1" Grid.Column="1">
+                            <Image Name="center" Source="{StaticResource center-normal}" Stretch="Fill" SnapsToDevicePixels="True"/>
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True" />
+                        </Grid>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="l_top"      Property="Source" Value="{StaticResource left-top-push}"/>
+                            <Setter TargetName="l_bg"       Property="Source" Value="{StaticResource left-bg-push}"     />
+                            <Setter TargetName="l_bottom"   Property="Source" Value="{StaticResource left-bottom-push}" />
+
+                            <Setter TargetName="top"        Property="Source" Value="{StaticResource top-push}"         />
+                            <Setter TargetName="center"     Property="Source" Value="{StaticResource center-push}"      />
+                            <Setter TargetName="bottom"     Property="Source" Value="{StaticResource bottom-push}"      />
+
+
+                            <Setter TargetName="r_top"      Property="Source" Value="{StaticResource right-top-push}"   />
+                            <Setter TargetName="r_bg"       Property="Source" Value="{StaticResource right-bg-push}"    />
+                            <Setter TargetName="r_bottom"   Property="Source" Value="{StaticResource right-bottom-push}"/>
+                        </Trigger>
+
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground" Value="#ADADAD"/>
+                            <Setter TargetName="l_top"      Property="Source" Value="{StaticResource left-top-disable}"/>
+                            <Setter TargetName="l_bg"       Property="Source" Value="{StaticResource left-bg-disable}"     />
+                            <Setter TargetName="l_bottom"   Property="Source" Value="{StaticResource left-bottom-disable}" />
+
+                            <Setter TargetName="top"        Property="Source" Value="{StaticResource top-disable}"         />
+                            <Setter TargetName="center"     Property="Source" Value="{StaticResource center-disable}"      />
+                            <Setter TargetName="bottom"     Property="Source" Value="{StaticResource bottom-disable}"      />
+
+
+                            <Setter TargetName="r_top"      Property="Source" Value="{StaticResource right-top-disable}"   />
+                            <Setter TargetName="r_bg"       Property="Source" Value="{StaticResource right-bg-disable}"    />
+                            <Setter TargetName="r_bottom"   Property="Source" Value="{StaticResource right-bottom-disable}"/>
+
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ngo_scada_button_style" TargetType="se:ScadaButton">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="se:ScadaButton">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="12"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="13"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="12"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="12"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Name="l_top"      Grid.Row="0" Grid.Column="0" Source="{StaticResource left-top-normal}"    HorizontalAlignment="Stretch" Stretch="Uniform" SnapsToDevicePixels="True"/>
+                        <Image Name="l_bg"       Grid.Row="1" Grid.Column="0" Source="{StaticResource left-bg-normal}"     HorizontalAlignment="Stretch" Stretch="Fill"    SnapsToDevicePixels="True" Margin="0,-1,0,-1"/>
+                        <Image Name="l_bottom"   Grid.Row="2" Grid.Column="0" Source="{StaticResource left-bottom-normal}" HorizontalAlignment="Stretch" Stretch="Uniform" SnapsToDevicePixels="True"/>
+
+                        <Image Name="top"        Grid.Row="0" Grid.Column="1" Source="{StaticResource top-normal}"    HorizontalAlignment="Stretch"   Stretch="Fill"  SnapsToDevicePixels="True"  Margin="-1,0,-1,0"/>
+                        <Grid  Grid.Row="1" Grid.Column="1"                                      Margin="-1,-1,-1,-1">
+                            <Image Name="center"   Source="{StaticResource center-normal}"    HorizontalAlignment="Stretch" Stretch="Fill"   SnapsToDevicePixels="True"   Margin="-1,0,-1,0"/>
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True" />
+                        </Grid>
+                        <Image Name="bottom"     Grid.Row="2" Grid.Column="1" Source="{StaticResource bottom-normal}"  HorizontalAlignment="Stretch"  SnapsToDevicePixels="True"  Stretch="Fill"  Margin="0,0,0,0"/>
+
+
+                        <Image Name="r_top"      Grid.Row="0" Grid.Column="2" Source="{StaticResource right-top-normal}"    HorizontalAlignment="Stretch" SnapsToDevicePixels="True" Stretch="None" />
+                        <Image Name="r_bg"       Grid.Row="1" Grid.Column="2" Source="{StaticResource right-bg-normal}"     HorizontalAlignment="Stretch" SnapsToDevicePixels="True" Stretch="Fill" Margin="0,-1,0,-1"/>
+                        <Image Name="r_bottom"   Grid.Row="2" Grid.Column="2" Source="{StaticResource right-bottom-normal}" HorizontalAlignment="Stretch" SnapsToDevicePixels="True" Stretch="None"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="l_top"      Property="Source" Value="{StaticResource left-top-push}"/>
+                            <Setter TargetName="l_bg"       Property="Source" Value="{StaticResource left-bg-push}"     />
+                            <Setter TargetName="l_bottom"   Property="Source" Value="{StaticResource left-bottom-push}" />
+
+                            <Setter TargetName="top"        Property="Source" Value="{StaticResource top-push}"         />
+                            <Setter TargetName="center"     Property="Source" Value="{StaticResource center-push}"      />
+                            <Setter TargetName="bottom"     Property="Source" Value="{StaticResource bottom-push}"      />
+
+
+                            <Setter TargetName="r_top"      Property="Source" Value="{StaticResource right-top-push}"   />
+                            <Setter TargetName="r_bg"       Property="Source" Value="{StaticResource right-bg-push}"    />
+                            <Setter TargetName="r_bottom"   Property="Source" Value="{StaticResource right-bottom-push}"/>
+                        </Trigger>
+
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="l_top"      Property="Source" Value="{StaticResource left-top-selected}"/>
+                            <Setter TargetName="l_bg"       Property="Source" Value="{StaticResource left-bg-selected}"     />
+                            <Setter TargetName="l_bottom"   Property="Source" Value="{StaticResource left-bottom-selected}" />
+
+                            <Setter TargetName="top"        Property="Source" Value="{StaticResource top-selected}"         />
+                            <Setter TargetName="center"     Property="Source" Value="{StaticResource center-selected}"      />
+                            <Setter TargetName="bottom"     Property="Source" Value="{StaticResource bottom-selected}"      />
+
+
+                            <Setter TargetName="r_top"      Property="Source" Value="{StaticResource right-top-selected}"   />
+                            <Setter TargetName="r_bg"       Property="Source" Value="{StaticResource right-bg-selected}"    />
+                            <Setter TargetName="r_bottom"   Property="Source" Value="{StaticResource right-bottom-selected}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground" Value="#ADADAD"/>
+                            <!--<Setter Property="Background" Value="{StaticResource img_scada_button_disable_small}"/>-->
+
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ssu_button_style" TargetType="se:ScadaButton">
+        <Setter Property="Foreground" Value="Transparent"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="se:ScadaButton">
+                    <Image Name="img" Source="{StaticResource orange-button-normal}"/>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="img"      Property="Source" Value="{StaticResource orange-button-push}"/>
+                        </Trigger>
+
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="img"      Property="Source" Value="{StaticResource orange-button-selected}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style x:Key="ring_button_style" TargetType="se:ScadaButton">
+        <Setter Property="Foreground" Value="Transparent"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="se:ScadaButton">
+                    <Image Name="img" Source="pack://application:,,,/NGO.Elements;component/Content/Buttons/ring-button-(normal).png"/>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="img"      Property="Source" Value="pack://application:,,,/NGO.Elements;component/Content/Buttons/ring-button-(push).png"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--/ buttons style  close-->
+
+    <Style x:Key="TabItemStyle" TargetType="{x:Type TabItem}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabItem}">
+                    <Grid>
+                        <Border Name="Border" Margin="0,0,-4,0" BorderBrush="{StaticResource SolidBorderBrush}" BorderThickness="1,1,1,1" CornerRadius="2,12,0,0" Background="DarkGray">
+                            <ContentPresenter x:Name="ContentSite" VerticalAlignment="Center" HorizontalAlignment="Center" ContentSource="Header" Margin="12,2,12,2" RecognizesAccessKey="True"/>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Panel.ZIndex" Value="100" />
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource SelectedBrush}" />
+                            <Setter TargetName="Border" Property="BorderThickness" Value="1,1,1,0" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource DisabledBackgroundBrush}" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource DisabledBorderBrush}" />
+                            <Setter TargetName="Border" Property="BorderThickness" Value="1,1,1,0" />
+                            <Setter Property="Foreground" Value="{StaticResource SolidBorderBrush}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <!--<Style x:Key="ButtonFocusVisual">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>-->
+
+    <ImageBrush x:Key="img_scada_button_small"          ImageSource="/NGO.Elements;component/Content/Buttons/black-button-2-(normal)-small.png"/>
+    <ImageBrush x:Key="img_scada_button_push_small"     ImageSource="/NGO.Elements;component/Content/Buttons/black-button-2-(push)-small.png"/>
+    <ImageBrush x:Key="img_scada_button_disable_small"  ImageSource="/NGO.Elements;component/Content/Buttons/black-button-2-(normal)-small-disable.png"/>
+
+    <ImageBrush x:Key="img_scada_button_middle"          ImageSource="/NGO.Elements;component/Content/Buttons/black-button-(normal)-middle.png"/>
+    <ImageBrush x:Key="img_scada_button_push_middle"     ImageSource="/NGO.Elements;component/Content/Buttons/black-button-(push)-middle.png"/>
+    <ImageBrush x:Key="img_scada_button_disable_middle"  ImageSource="/NGO.Elements;component/Content/Buttons/black-button-(normal)-middle-disable.png"/>
+    <ImageBrush x:Key="img_scada_button_selected_middle" ImageSource="/NGO.Elements;component/Content/Buttons/black-button-(selected)-middle.png"/>
+
+
+    <LinearGradientBrush x:Key="border"  EndPoint="0.5,1" StartPoint="0.5,0">
+        <LinearGradientBrush.RelativeTransform>
+            <TransformGroup>
+                <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                <RotateTransform Angle="26.565" CenterY="0.5" CenterX="0.5"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </LinearGradientBrush.RelativeTransform>
+        <GradientStop Color="#FF5B5A5A" Offset="0.007"/>
+        <GradientStop Color="Gray" Offset="0.997"/>
+        <GradientStop Color="#FF5F5F5F" Offset="0.694"/>
+        <GradientStop Color="#FF7E7E7E" Offset="0.316"/>
+    </LinearGradientBrush>
+
+    <Style x:Key="ngo_small_button_style" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="{StaticResource img_scada_button_small}"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Border x:Name="Border" Background="{TemplateBinding Background}"/>
+                        <ContentPresenter
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                Margin="{TemplateBinding Padding}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                RecognizesAccessKey="True" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="{StaticResource img_scada_button_push_small}"/>
+                        </Trigger>
+
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground" Value="#ADADAD"/>
+                            <Setter Property="Background" Value="{StaticResource img_scada_button_disable_small}"/>
+
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ngo_middle_button_style" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="{StaticResource img_scada_button_middle}"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Border x:Name="Border" Background="{TemplateBinding Background}"/>
+                        <ContentPresenter
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                Margin="{TemplateBinding Padding}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                RecognizesAccessKey="True" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="{StaticResource img_scada_button_push_middle}"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground" Value="#ADADAD"/>
+                            <Setter Property="Background" Value="{StaticResource img_scada_button_disable_middle}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ngo_middle_button_style_swt" TargetType="se:ScadaButton">
+        <Setter Property="Background" Value="{StaticResource img_scada_button_middle}"/>
+        <!--<Setter Property="normalBackground" Value="{StaticResource img_scada_button_middle}"/>-->
+
+        <!--<Setter Property="selectedBackground" Value="{StaticResource img_scada_button_selected_middle}"/>-->
+
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="se:ScadaButton">
+                    <Grid>
+                        <Border x:Name="Border" Background="{TemplateBinding Background}"/>
+                        <ContentPresenter
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                Margin="{TemplateBinding Padding}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                RecognizesAccessKey="True" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="{StaticResource img_scada_button_push_middle}"/>
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="{StaticResource img_scada_button_middle}"/>
+                        </Trigger>
+
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <!--ListBox scrollbar style-->
+    <SolidColorBrush x:Key="ScrollBarDisabledBackground" Color="#F4F4F4"/>
+    <Style x:Key="VerticalScrollBarPageButton" TargetType="{x:Type RepeatButton}">
+        <Setter Property="OverridesDefaultStyle" Value="true"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Focusable" Value="false"/>
+        <Setter Property="IsTabStop" Value="false"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RepeatButton}">
+                    <Rectangle Fill="{TemplateBinding Background}" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ScrollBarThumb" TargetType="{x:Type Thumb}">
+        <Setter Property="OverridesDefaultStyle" Value="true"/>
+        <Setter Property="IsTabStop" Value="false"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Thumb}">
+                    <Border Background="#FF868686" BorderThickness="0,0,1,0" Height="Auto" CornerRadius="6" Width="Auto"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="HorizontalScrollStyle" TargetType="{x:Type ScrollBar}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ScrollBar}">
+                    <Grid x:Name="Bg" Background="{TemplateBinding Background}" Height="10" SnapsToDevicePixels="true">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Track x:Name="PART_Track" IsDirectionReversed="true" IsEnabled="{TemplateBinding IsMouseOver}">
+                            <Track.DecreaseRepeatButton>
+                                <RepeatButton Command="{x:Static ScrollBar.PageUpCommand}" Style="{StaticResource VerticalScrollBarPageButton}"/>
+                            </Track.DecreaseRepeatButton>
+                            <Track.IncreaseRepeatButton>
+                                <RepeatButton Command="{x:Static ScrollBar.PageDownCommand}" Style="{StaticResource VerticalScrollBarPageButton}"/>
+                            </Track.IncreaseRepeatButton>
+                            <Track.Thumb>
+                                <Thumb Style="{StaticResource ScrollBarThumb}" Cursor="Hand"/>
+                            </Track.Thumb>
+                        </Track>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Background" TargetName="Bg" Value="{StaticResource ScrollBarDisabledBackground}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="AppleStyleVerticalScrollBarStyle" TargetType="{x:Type ScrollBar}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ScrollBar}">
+                    <Grid x:Name="Bg" SnapsToDevicePixels="true" Width="30" HorizontalAlignment="Right" Margin="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Track x:Name="PART_Track" IsDirectionReversed="true" IsEnabled="{TemplateBinding IsMouseOver}">
+                            <Track.DecreaseRepeatButton>
+                                <RepeatButton Command="{x:Static ScrollBar.PageUpCommand}" Style="{StaticResource VerticalScrollBarPageButton}" />
+                            </Track.DecreaseRepeatButton>
+                            <Track.IncreaseRepeatButton>
+                                <RepeatButton Command="{x:Static ScrollBar.PageDownCommand}" Style="{StaticResource VerticalScrollBarPageButton}"/>
+                            </Track.IncreaseRepeatButton>
+                            <Track.Thumb>
+                                <Thumb Style="{DynamicResource ScrollBarThumb}" Cursor="Hand"/>
+                            </Track.Thumb>
+                        </Track>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <ControlTemplate x:Key="AppleStyleScrollBarStyle" TargetType="{x:Type ScrollViewer}">
+        <Grid x:Name="Grid" Background="{TemplateBinding Background}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Rectangle x:Name="Corner" Grid.Column="1" Fill="{x:Null}" Grid.Row="1"/>
+            <ScrollContentPresenter x:Name="PART_ScrollContentPresenter" CanContentScroll="{TemplateBinding CanContentScroll}"   
+                      CanHorizontallyScroll="False" CanVerticallyScroll="False"   
+                      ContentTemplate="{TemplateBinding ContentTemplate}"   
+                      Content="{TemplateBinding Content}" Grid.Column="0"   
+                      Margin="{TemplateBinding Padding}" Grid.Row="0"/>
+            <ScrollBar x:Name="PART_VerticalScrollBar" Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"   
+              AutomationProperties.AutomationId="VerticalScrollBar" Cursor="Arrow" Grid.Column="1"   
+              Maximum="{TemplateBinding ScrollableHeight}" Minimum="0" Grid.Row="0"   
+              Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"   
+              ViewportSize="{TemplateBinding ViewportHeight}" Style="{DynamicResource AppleStyleVerticalScrollBarStyle}"   
+                Background="{x:Null}" Width="Auto" Margin="0"/>
+            <ScrollBar x:Name="PART_HorizontalScrollBar" Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"   
+              AutomationProperties.AutomationId="HorizontalScrollBar" Cursor="Arrow" Grid.Column="0"   
+              Maximum="{TemplateBinding ScrollableWidth}" Minimum="0" Orientation="Horizontal" Grid.Row="1"   
+              Value="{Binding HorizontalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"   
+              ViewportSize="{TemplateBinding ViewportWidth}" Style="{DynamicResource HorizontalScrollStyle}"/>
+        </Grid>
+    </ControlTemplate>
+
+
+
+    <ControlTemplate x:Key="ValidationToolTipTemplate">
+        <Grid x:Name="Root" Margin="5,0" RenderTransformOrigin="0,0" Opacity="0">
+            <Grid.RenderTransform>
+                <TranslateTransform x:Name="xform" X="-25"/>
+            </Grid.RenderTransform>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup Name="OpenStates">
+                    <VisualStateGroup.Transitions>
+                        <VisualTransition GeneratedDuration="0"/>
+                        <VisualTransition To="Open" GeneratedDuration="0:0:0.2">
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetName="xform" Storyboard.TargetProperty="X" To="0" Duration="0:0:0.2">
+                                    <DoubleAnimation.EasingFunction>
+                                        <BackEase Amplitude=".3" EasingMode="EaseOut"/>
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                                <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0.2"/>
+                            </Storyboard>
+                        </VisualTransition>
+                    </VisualStateGroup.Transitions>
+                    <VisualState x:Name="Closed">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" To="0" Duration="0"/>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Open">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="xform" Storyboard.TargetProperty="X" To="0" Duration="0"/>
+                            <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" To="1" Duration="0"/>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+
+            <Border Margin="4,4,-4,-4" Background="#052A2E31" CornerRadius="5"/>
+            <Border Margin="3,3,-3,-3" Background="#152A2E31" CornerRadius="4"/>
+            <Border Margin="2,2,-2,-2" Background="#252A2E31" CornerRadius="3"/>
+            <Border Margin="1,1,-1,-1" Background="#352A2E31" CornerRadius="2"/>
+
+            <Border Background="#FFDC000C" CornerRadius="2"/>
+            <Border CornerRadius="2">
+                <TextBlock 
+                  UseLayoutRounding="false" 
+                  Foreground="White" Margin="8,4,8,4" MaxWidth="250" TextWrapping="Wrap" Text="{hmi:SeBinding (Validation.Errors)[0].ErrorContent}"/>
+            </Border>
+        </Grid>
+    </ControlTemplate>
+    
+    <Style x:Key="msdn_listbox_style" TargetType="ListBox">
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Background" Value="#FFFFFFFF" />
+        <Setter Property="Foreground" Value="#FF000000"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Top" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="BorderThickness" Value="1" />
+        <!--<Setter Property="TabNavigation" Value="Once" />-->
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                    <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                    <GradientStop Color="#FF718597" Offset="0.375"/>
+                    <GradientStop Color="#FF617584" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListBox">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="ValidationStates">
+                                <VisualState x:Name="Valid"/>
+                                <VisualState x:Name="InvalidUnfocused">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ValidationErrorElement" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0" >
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Visible</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="InvalidFocused">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ValidationErrorElement" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0" >
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Visible</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="validationTooltip" Storyboard.TargetProperty="IsOpen">
+                                            <DiscreteObjectKeyFrame KeyTime="0" >
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <system:Boolean>True</system:Boolean>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border CornerRadius="2" 
+			                BorderBrush="{TemplateBinding BorderBrush}"
+			                BorderThickness="{TemplateBinding BorderThickness}">
+                            <ScrollViewer Template="{StaticResource AppleStyleScrollBarStyle}" x:Name="ScrollViewer" Padding="{TemplateBinding Padding}" Background="{TemplateBinding Background}" BorderBrush="Transparent" BorderThickness="0">
+                                <ItemsPresenter />
+                            </ScrollViewer>
+                        </Border>
+                        <Border x:Name="ValidationErrorElement" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="2" BorderBrush="#FFDB000C" Visibility="Collapsed">
+                            <ToolTipService.ToolTip>
+                                <ToolTip x:Name="validationTooltip" Template="{StaticResource ValidationToolTipTemplate}" Placement="Right" 
+                                             PlacementTarget="{Binding RelativeSource={RelativeSource TemplatedParent}}" 
+                                             DataContext="{Binding RelativeSource={RelativeSource TemplatedParent}}">
+                                    <ToolTip.Triggers>
+                                        <EventTrigger RoutedEvent="Canvas.Loaded">
+                                            <EventTrigger.Actions>
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="validationTooltip" Storyboard.TargetProperty="IsHitTestVisible">
+                                                            <DiscreteObjectKeyFrame KeyTime="0" >
+                                                                <DiscreteObjectKeyFrame.Value>
+                                                                    <system:Boolean>true</system:Boolean>
+                                                                </DiscreteObjectKeyFrame.Value>
+                                                            </DiscreteObjectKeyFrame>
+                                                        </ObjectAnimationUsingKeyFrames>
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger.Actions>
+                                        </EventTrigger>
+                                    </ToolTip.Triggers>
+                                </ToolTip>
+                            </ToolTipService.ToolTip>
+                            <Grid Width="10" Height="10" HorizontalAlignment="Right" Margin="0,-4,-4,0" VerticalAlignment="Top" Background="Transparent">
+                                <Path Margin="-1,3,0,0" Data="M 1,0 L6,0 A 2,2 90 0 1 8,2 L8,7 z" Fill="#FFDC000C"/>
+                                <Path Margin="-1,3,0,0" Data="M 0,0 L2,0 L 8,6 L8,8" Fill="#ffffff"/>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <SolidColorBrush x:Key="MainBackground" Color="#FFC9C9C9"/>
+    <SolidColorBrush x:Key="ColorFor" Color="#FFC9C9C9"/>
+    <SolidColorBrush x:Key="TemniiSerii" Color="#FF818181"/>
+    <SolidColorBrush x:Key="LaitoviiSerii" Color="#FFA6A6A6"/>
+    <SolidColorBrush x:Key="SvetliiSerii" Color="#FFD8D8D8"/>
+    <SolidColorBrush x:Key="DefaultGray" Color="Silver" />
+
+    <SolidColorBrush x:Key="LedOkBrush" Color="Chartreuse"/>
+    <SolidColorBrush x:Key="LedBadBrush" Color="Red"/>
+    
+    <Style TargetType="se:VisualBox" x:Key="VB_LedStyle">
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="BorderThickness" Value="3"/>
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFCFCFCF" Offset="0"/>
+                    <GradientStop Color="#FFC3C3C3" Offset="1"/>
+                    <GradientStop Color="#FF9E9E9E" Offset="0.243"/>
+                    <GradientStop Color="#FFA0A0A0" Offset="0.778"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background" Value="#FF4EF74E"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Viewbox
+                                    SnapsToDevicePixels="True"
+                                    Width="{Binding ActualWidth,RelativeSource={RelativeSource AncestorType=se:VisualBox}}"
+                                    Height="{Binding ActualHeight,RelativeSource={RelativeSource AncestorType=se:VisualBox}}">
+                        <Grid
+                                    Width="50"
+                                    Height="50">
+
+                            <Ellipse 
+                                        VerticalAlignment="Stretch"
+                                        HorizontalAlignment="Stretch"
+                                        Margin="0"
+                                        Fill="{TemplateBinding BorderBrush}"/>
+
+                            <Ellipse 
+                                        VerticalAlignment="Stretch"
+                                        HorizontalAlignment="Stretch"
+                                        Margin="{TemplateBinding BorderThickness}">
+                                <Ellipse.Fill>
+                                    <PriorityBinding>
+                                        <Binding RelativeSource="{RelativeSource AncestorType=se:VisualBox}" Path="VisualStateCollection.CurrentState.Background" />
+                                        <Binding RelativeSource="{RelativeSource AncestorType=se:VisualBox}" Path="Background" />
+                                    </PriorityBinding>
+                                </Ellipse.Fill>
+                            </Ellipse>
+
+
+                            <Ellipse 
+                                        VerticalAlignment="Stretch"
+                                        HorizontalAlignment="Stretch"
+                                        Margin="{TemplateBinding BorderThickness}">
+                                <Ellipse.Fill>
+                                    <RadialGradientBrush GradientOrigin="0.25,0.25">
+                                        <GradientStop Color="Transparent" Offset="1"/>
+                                        <GradientStop Color="#99FFFFFF"/>
+                                    </RadialGradientBrush>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                        </Grid>
+                    </Viewbox>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="se:VisualBox" x:Key="VB_LampStyle">
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="BorderThickness" Value="4"/>
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFECECEC" Offset="0"/>
+                    <GradientStop Color="#FFB2B2B2" Offset="0.711"/>
+                    <GradientStop Color="#FF9E9E9E" Offset="0.26"/>
+                    <GradientStop Color="#FFC1C0C0" Offset="0.34"/>
+                    <GradientStop Color="#FFEAEAEA" Offset="0.514"/>
+                    <GradientStop Color="#FFE6E6E6" Offset="0.96"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background" Value="Gold"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Viewbox
+                                    SnapsToDevicePixels="True"
+                                    Width="{Binding ActualWidth,RelativeSource={RelativeSource AncestorType=se:VisualBox}}"
+                                    Height="{Binding ActualHeight,RelativeSource={RelativeSource AncestorType=se:VisualBox}}">
+                        <Grid
+                                    Width="50"
+                                    Height="50">
+
+                            <Ellipse 
+                                        VerticalAlignment="Stretch"
+                                        HorizontalAlignment="Stretch"
+                                        Margin="0"
+                                        Fill="{TemplateBinding BorderBrush}"/>
+
+                            <Ellipse 
+                                        VerticalAlignment="Stretch"
+                                        HorizontalAlignment="Stretch"
+                                        Margin="{TemplateBinding BorderThickness}"
+                                        >
+                                <Ellipse.Fill>
+                                    <PriorityBinding>
+                                        <Binding RelativeSource="{RelativeSource AncestorType=se:VisualBox}" Path="VisualStateCollection.CurrentState.Background" />
+                                        <Binding RelativeSource="{RelativeSource AncestorType=se:VisualBox}" Path="Background" />
+                                    </PriorityBinding>
+                                </Ellipse.Fill>
+                            </Ellipse>
+
+                            <Ellipse 
+                                        VerticalAlignment="Stretch"
+                                        HorizontalAlignment="Stretch"
+                                        Margin="{TemplateBinding BorderThickness}">
+                                <Ellipse.Fill>
+                                    <RadialGradientBrush GradientOrigin="0.25,0.25">
+                                        <GradientStop Color="Transparent" Offset="1"/>
+                                        <GradientStop Color="#99FFFFFF"/>
+                                    </RadialGradientBrush>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                        </Grid>
+                    </Viewbox>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <SolidColorBrush x:Key="MediaBoxFineSolidColorBrush" Color="#FF5AA452"/>
+    <SolidColorBrush x:Key="MediaBoxEmergencySolidColorBrush" Color="Red"/>
+    <SolidColorBrush x:Key="MediaBoxAttentionSolidColorBrush" Color="Gold"/>
+    <SolidColorBrush x:Key="MediaBoxAlarmSolidColorBrush" Color="#FFFF7900"/>
+
+    <SolidColorBrush x:Key="DefaultState" Color="Gray"/>
+    <SolidColorBrush x:Key="FineState" Color="Green"/>
+    <SolidColorBrush x:Key="AttentionState" Color="Gold"/>
+    <SolidColorBrush x:Key="EmergencyState" Color="Red"/>
+    <SolidColorBrush x:Key="ModelState" Color="LightBlue"/>
+
+
+    <Style TargetType="Button" x:Key="MetalBorderStdButton" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <ControlTemplate.Resources>
+                        <DataTemplate x:Key="{x:Type system:Object}">
+                            <ContentPresenter Content="{Binding}" />
+                        </DataTemplate>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Grid.Resources>
+                            <DataTemplate x:Key="{x:Type system:String}">
+                                <TextBlock Text="{Binding}" TextAlignment="Center"/>
+                            </DataTemplate>
+                        </Grid.Resources>
+                        <Rectangle Name="Base" RadiusX="3" Fill="{TemplateBinding Background}" RadiusY="3" StrokeThickness="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Rectangle.Stroke>
+                                <LinearGradientBrush StartPoint="0.0681002,1.01392" EndPoint="1.41069,1.01392">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.0681002" CenterY="1.01392" AngleX="-9.91223" AngleY="0"/>
+                                            <RotateTransform CenterX="0.0681002" CenterY="1.01392" Angle="-49.9561"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <LinearGradientBrush.GradientStops>
+                                        <GradientStop Color="#FF494949" Offset="0"/>
+                                        <GradientStop Color="#FF999595" Offset="0.229719"/>
+                                        <GradientStop Color="#FF555256" Offset="0.264045"/>
+                                        <GradientStop Color="#FF8F8F91" Offset="0.38115"/>
+                                        <GradientStop Color="#FFB9B9B9" Offset="0.522472"/>
+                                        <GradientStop Color="#FF8C8D8D" Offset="0.729158"/>
+                                        <GradientStop Color="#FF4F4F4F" Offset="0.876404"/>
+                                        <GradientStop Color="#FFD0D2D3" Offset="1"/>
+                                    </LinearGradientBrush.GradientStops>
+                                </LinearGradientBrush>
+                            </Rectangle.Stroke>
+
+                        </Rectangle>
+                        <Rectangle Name="Effect" RadiusX="0.5" RadiusY="0.5" StrokeThickness="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="3">
+                            <Rectangle.Stroke>
+                                <LinearGradientBrush StartPoint="0.500003,1.01091" EndPoint="0.500003,-0.0109067">
+                                    <LinearGradientBrush.GradientStops>
+                                        <GradientStop Color="#7FCDCDCD" Offset="0"/>
+                                        <GradientStop Color="#5A9E9E9E" Offset="0.0888752"/>
+                                        <GradientStop Color="#5A545454" Offset="0.16"/>
+                                        <GradientStop Color="#5A5C5C5C" Offset="0.211739"/>
+                                        <GradientStop Color="#5A646464" Offset="0.3"/>
+                                        <GradientStop Color="#7F979393" Offset="0.461632"/>
+                                        <GradientStop Color="#99A8A8A8" Offset="0.855"/>
+                                        <GradientStop Color="#99B2B2B2" Offset="0.87385"/>
+                                        <GradientStop Color="#FFFFFFFF" Offset="1"/>
+                                    </LinearGradientBrush.GradientStops>
+                                </LinearGradientBrush>
+                            </Rectangle.Stroke>
+                        </Rectangle>
+
+                        <ContentPresenter RecognizesAccessKey="True" Content="{TemplateBinding ContentControl.Content}"
+                                                  TextBlock.TextAlignment="Center"
+                                          ContentTemplate="{Binding RelativeSource={RelativeSource Self}, Path=Content}" 
+                                          ContentStringFormat="{TemplateBinding ContentControl.ContentStringFormat}" 
+                                          Name="contentPresenter" Margin="{TemplateBinding Control.Padding}" 
+                                          HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" 
+                                          VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" 
+                                          SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" Focusable="False" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="ButtonBase.IsPressed" Value="True">
+                            <Setter Property="Stroke" TargetName="Effect">
+                                <Setter.Value>
+                                    <LinearGradientBrush StartPoint="0.500003,1.01091" EndPoint="0.500003,-0.0109067">
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStop Color="#7FCDCDCD" Offset="1"/>
+                                            <GradientStop Color="#5A9E9E9E" Offset="0.87385"/>
+                                            <GradientStop Color="#5A545454" Offset="0.855"/>
+                                            <GradientStop Color="#5A5C5C5C" Offset="0.3"/>
+                                            <GradientStop Color="#5A646464" Offset="0.211739"/>
+                                            <GradientStop Color="#7F979393" Offset="0.461632"/>
+                                            <GradientStop Color="#99A8A8A8" Offset="0.16"/>
+                                            <GradientStop Color="#99B2B2B2" Offset="0.0888752"/>
+                                            <GradientStop Color="#FFFFFFFF" Offset="0"/>
+                                        </LinearGradientBrush.GradientStops>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="ButtonBase.IsEnabled" Value="False">
+                            <Setter Property="Fill" TargetName="Base" Value="#FFC3C3C3"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="Background" Value="{StaticResource DarkGradientBrush}"/>
+
+    </Style>
+</ResourceDictionary>

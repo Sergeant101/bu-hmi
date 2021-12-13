@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="NGO.Elements.Linear.Position.BlockPosition"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             d:DesignHeight="645" d:DesignWidth="100" Foreground="White" FontSize="16" 
+             xmlns:my="clr-namespace:System;assembly=mscorlib"
+             xmlns:se="http://schemas.monokot.com/se/"
+             xmlns:hmi="http://schemas.monokot.com/hmi/">
+    <Grid Background="Black">
+        <Rectangle HorizontalAlignment="Left" Name="rectangle1" Stroke="Black" Width="6" Margin="32,0,0,0">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Red" Offset="0.028" />
+                    <GradientStop Color="Yellow" Offset="0.121" />
+                    <GradientStop Color="Yellow" Offset="0.879" />
+                    <GradientStop Color="Red" Offset="0.964" />
+                    <GradientStop Color="Lime" Offset="0.797" />
+                    <GradientStop Color="Lime" Offset="0.199" />
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <se:LinearScale Margin="0,12,27,12" Name="LinearScale1" HorizontalScaleAlignment="Center" Minimum="-2" Maximum="42" MajorTickCost="2" MajorTickBrush="White" MinorTickBrush="{x:Null}" ShowStick="False" MajorTickLength="20" FontFamily="Tahoma" FontWeight="Bold" FontSize="18"/>
+        <se:PositionBar Margin="0,12" Name="positionBar1" Minimum="{Binding ElementName=seScale1, Path=minimum}" Maximum="{Binding ElementName=seScale1, Path=maximum}">
+            <se:PositionBar.Elements>
+                <se:ValueElement HorizontalAlignment="Left" Name="valueElement1" VerticalAlignment="Top" Height="30" Width="90" Value="{hmi:SeBinding Path=Tags.Node[rig_tb_pos].Value, FallbackValue=0, StringFormat=0.00}" Background="White" FontSize="18" FontFamily="Tahoma" Position="{hmi:SeBinding Path=Tags.Node[rig_tb_pos].Value, FallbackValue=0}" />
+                <se:StripElement Width="90" Position="{hmi:SeBinding Path=Tags.Node[rig_tb_pz].Value, FallbackValue=0}" Fill="Gold" />
+                <se:StripElement Width="90" Position="{hmi:SeBinding Path=Tags.Node[rig_tb_bottom].Value, FallbackValue=0}" Fill="Red" />
+                <se:StripElement Width="90" Fill="Red">
+                    <se:StripElement.Position>
+                        <hmi:SeBinding Path="Tags.Node[rig_tb_top].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <my:Double>0.123</my:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:StripElement.Position>
+                </se:StripElement>
+
+            </se:PositionBar.Elements>
+        </se:PositionBar>
+
+    </Grid>
+</UserControl>

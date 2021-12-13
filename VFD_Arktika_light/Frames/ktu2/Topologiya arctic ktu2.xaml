@@ -1,0 +1,924 @@
+﻿<UserControl x:Class="VFD_Arktika_light.Frames.ktu2.Topologiya"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:se="http://schemas.monokot.com/se/"
+             xmlns:hmi="http://schemas.monokot.com/hmi/"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d" 
+             d:DesignHeight="840" d:DesignWidth="1280">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/NGO.Elements;component/Style/superVfd_styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Canvas>
+
+        <Border Background="{DynamicResource LaitoviiSerii}" CornerRadius="5" Canvas.Left="537" Canvas.Top="564" Height="270" BorderThickness="1" BorderBrush="Black" Width="406" />
+        <Border Background="{DynamicResource LaitoviiSerii}" CornerRadius="5" Canvas.Left="537" Height="578" BorderThickness="1" BorderBrush="Black" Width="729" Canvas.Top="4" />
+        <Border Background="{DynamicResource LaitoviiSerii}" CornerRadius="5" Canvas.Left="958" Height="238" BorderThickness="1" BorderBrush="Black" Width="308" Canvas.Top="596" />
+        <Border Background="{DynamicResource LaitoviiSerii}" CornerRadius="5" Canvas.Left="537" Canvas.Top="564" Height="270" BorderThickness="1" Width="416" />
+
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="4" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="180" Canvas.Left="1047" Canvas.Top="187" SnapsToDevicePixels="True" CornerRadius="0" RenderTransformOrigin="0.5,0.5">
+            <se:VisualBox.RenderTransform>
+                <TransformGroup>
+                    <RotateTransform Angle="90"/>
+                </TransformGroup>
+            </se:VisualBox.RenderTransform>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.helperdrawwork1.vfd].Items[icmp].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="4" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="394" Canvas.Left="829" Canvas.Top="290" SnapsToDevicePixels="True" CornerRadius="0">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.helperdrawwork2.vfd].Items[icmp].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="4" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="182" Canvas.Left="795" Canvas.Top="463" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" CornerRadius="0">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.main_drives.rotor.vfd].Items[icmp].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="4" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="354" Canvas.Left="789" Canvas.Top="495" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" CornerRadius="0">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.main_drives.drawwork.motor1].Items[online].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="4" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="146" Canvas.Left="582" Canvas.Top="278" SnapsToDevicePixels="True" CornerRadius="0">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.network].Items[net_nport2].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="4" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="206" Canvas.Left="481" Canvas.Top="177" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" CornerRadius="0">
+            <se:VisualBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </se:VisualBox.RenderTransform>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.network].Items[net_nport2].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="4" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="54" Canvas.Left="867" Canvas.Top="420" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" CornerRadius="0">
+            <se:VisualBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </se:VisualBox.RenderTransform>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.main_drives.aux.vfd].Items[icmp].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="4" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="110" Canvas.Left="1087" Canvas.Top="441" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" CornerRadius="0">
+            <se:VisualBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </se:VisualBox.RenderTransform>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.main_drives.drawwork.motor1].Items[online].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="4" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="102" Canvas.Left="924" Canvas.Top="414" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" CornerRadius="0">
+            <se:VisualBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </se:VisualBox.RenderTransform>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.main_drives.rotor.vfd].Items[icmp].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="4" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="140" Canvas.Left="992" Canvas.Top="409" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" CornerRadius="0">
+            <se:VisualBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </se:VisualBox.RenderTransform>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.main_drives.rectifier].Items[icmp].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="4" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="426" Canvas.Left="641" Canvas.Top="771" SnapsToDevicePixels="True" CornerRadius="0">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.network].Items[net_dc1].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="4" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="310" Canvas.Left="829" Canvas.Top="276" SnapsToDevicePixels="True" CornerRadius="0">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.helperdrawwork1.vfd].Items[icmp].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="4" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="224" Canvas.Left="1109" Canvas.Top="179" SnapsToDevicePixels="True" RenderTransformOrigin="0.5,0.5" CornerRadius="0">
+            <se:VisualBox.RenderTransform>
+                <TransformGroup>
+                    <RotateTransform Angle="-90"/>
+                </TransformGroup>
+            </se:VisualBox.RenderTransform>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.helperdrawwork2.vfd].Items[icmp].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="4" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="246" Canvas.Left="636" Canvas.Top="748" SnapsToDevicePixels="True" CornerRadius="0">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.network].Items[akl_et200sp].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="4" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="531" Canvas.Left="641" Canvas.Top="786" SnapsToDevicePixels="True" CornerRadius="0">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.network].Items[net_dc2].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="4" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="76" Canvas.Left="1132" Canvas.Top="749" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" CornerRadius="0">
+            <se:VisualBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </se:VisualBox.RenderTransform>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.network].Items[net_dc2].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="4" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="62" Canvas.Left="1034" Canvas.Top="742" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" CornerRadius="0">
+            <se:VisualBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </se:VisualBox.RenderTransform>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.network].Items[net_dc1].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="4" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="143" Canvas.Left="628" Canvas.Top="730" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" CornerRadius="0">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.network].Items[net_msab].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="4" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="148" Canvas.Left="868" Canvas.Top="173" SnapsToDevicePixels="True" RenderTransformOrigin="0.5,0.5" CornerRadius="0">
+            <se:VisualBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </se:VisualBox.RenderTransform>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.network].Items[net_plc1].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="6" VerticalAlignment="Top" Width="96" Canvas.Left="714" Canvas.Top="310" SnapsToDevicePixels="True" Background="{StaticResource GreenBusBrush}" CornerRadius="0"/>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="4" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="280" Canvas.Left="784" Canvas.Top="478" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" CornerRadius="0">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.main_drives.rectifier].Items[icmp].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="4" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="68" Canvas.Left="846" Canvas.Top="715" SnapsToDevicePixels="True" RenderTransformOrigin="0.5,0.5" CornerRadius="0">
+            <se:VisualBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </se:VisualBox.RenderTransform>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.network].Items[akl_et200sp].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="4" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="149" Canvas.Left="969" Canvas.Top="187" SnapsToDevicePixels="True" CornerRadius="0" RenderTransformOrigin="0.5,0.5">
+            <se:VisualBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </se:VisualBox.RenderTransform>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.network].Items[nku_et200sp].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="4" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="216" Canvas.Left="829" Canvas.Top="260" SnapsToDevicePixels="True" CornerRadius="0">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.network].Items[nku_et200sp].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="20" Canvas.Left="686" Canvas.Top="804" Style="{DynamicResource VB_LampStyle}" Background="{DynamicResource MediaBoxEmergencySolidColorBrush}">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{DynamicResource LedOkBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.msab].Items[online].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="4" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="160" Canvas.Left="592" Canvas.Top="190" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" CornerRadius="0">
+            <se:VisualBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </se:VisualBox.RenderTransform>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.network].Items[net_wifi1].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="4" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="146" Canvas.Left="752" Canvas.Top="159" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" CornerRadius="0">
+            <se:VisualBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </se:VisualBox.RenderTransform>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.network].Items[net_pc2].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="4" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="42" Canvas.Left="748" Canvas.Top="711" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" CornerRadius="0">
+            <se:VisualBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </se:VisualBox.RenderTransform>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.network].Items[net_msab].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="4" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="76" Canvas.Left="820" Canvas.Top="446" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" CornerRadius="0">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.main_drives.aux.vfd].Items[icmp].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="4" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="44" Canvas.Left="670" Canvas.Top="268" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" CornerRadius="0">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.network].Items[net_wifi1].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+
+        <!--<Image Height="75" Canvas.Left="999" Canvas.Top="498" Width="180" Source="/NGO.Elements;component/Content/VFD/Network/compact logix.png"/>-->
+        <TextBlock Canvas.Left="1221" TextWrapping="Wrap" Text="КТУ 2" FontSize="14" Canvas.Top="12"/>
+        <TextBlock Height="39" Canvas.Left="716" TextWrapping="Wrap" FontSize="14" Canvas.Top="795" TextAlignment="Center" Text="СВЯЗЬ С  СКПБ (MODBUS TCP)" Width="99"/>
+        <TextBlock Canvas.Left="1240" TextWrapping="Wrap" Text="КБ" FontSize="14" Canvas.Top="604"/>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="4" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="437" Canvas.Left="789" Canvas.Top="515" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" CornerRadius="0">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.main_drives.drawwork.motor1].Items[online].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="4" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="118" Canvas.Left="1165" Canvas.Top="458" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" CornerRadius="0">
+            <se:VisualBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </se:VisualBox.RenderTransform>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.main_drives.drawwork.motor1].Items[online].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="4" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="124" Canvas.Left="820" Canvas.Top="246" SnapsToDevicePixels="True" RenderTransformOrigin="0.5,0.5" CornerRadius="0">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.network].Items[net_plc1].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="6" VerticalAlignment="Top" Width="142" Canvas.Left="738" Canvas.Top="386" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" Background="{StaticResource GreenBusBrush}" CornerRadius="0">
+            <se:VisualBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </se:VisualBox.RenderTransform>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="6" VerticalAlignment="Top" Width="142" Canvas.Left="577" Canvas.Top="612" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" Background="{StaticResource GreenBusBrush}" CornerRadius="0">
+            <se:VisualBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </se:VisualBox.RenderTransform>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="6" VerticalAlignment="Top" Width="135" Canvas.Left="646" Canvas.Top="544" SnapsToDevicePixels="True" Background="{StaticResource GreenBusBrush}" CornerRadius="0"/>
+        <Image Height="95" Canvas.Left="865" Canvas.Top="336" Width="60" Source="/NGO.Elements;component/Content/VFD/Network/abb_panel.png"/>
+        <Image Height="95" Canvas.Left="1032" Canvas.Top="336" Width="60" Source="/NGO.Elements;component/Content/VFD/Network/abb_panel.png"/>
+        <Image Height="95" Canvas.Left="945" Canvas.Top="336" Width="60" Source="/NGO.Elements;component/Content/VFD/Network/abb_panel.png"/>
+        <Image Height="95" Canvas.Left="1112" Canvas.Top="336" Width="60" Source="/NGO.Elements;component/Content/VFD/Network/abb_panel.png"/>
+        <Image Height="76" Canvas.Left="878" Canvas.Top="60" Width="114" Source="/NGO.Elements;component/Content/VFD/Network/cpu-319.png"/>
+        <Image Height="140" Canvas.Left="774" Canvas.Top="195" Width="66" Source="/NGO.Elements;component/Content/VFD/Network/moxa-EDS-508.png"/>
+        <Image Height="128" Canvas.Left="605" Canvas.Top="669" Width="65" Source="/NGO.Elements;component/Content/VFD/Network/moxa-EDS-508.png"/>
+        <Image Height="104" Canvas.Left="725" Canvas.Top="627" Width="90" Source="/NGO.Elements;component/Content/VFD/Network/GW-7663.png"/>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="4" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="54" Canvas.Left="675" Canvas.Top="499" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" CornerRadius="0">
+            <se:VisualBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </se:VisualBox.RenderTransform>
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.main_drives.chopper].Items[icmp].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="4" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="87" Canvas.Left="700" Canvas.Top="525" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" CornerRadius="0">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.main_drives.chopper].Items[icmp].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <Image Height="95" Canvas.Left="673" Canvas.Top="415" Width="60" Source="/NGO.Elements;component/Content/VFD/Network/abb_panel.png"/>
+        <Image Height="80" Canvas.Left="661" Canvas.Top="423" Width="80" Source="/NGO.Elements;component/Content/VFD/Network/red-circle.png">
+            <Image.Visibility>
+                <hmi:Bind Path="Tags.Node[view.main_drives.chopper].Items[icmp].Value">
+                    <hmi:Bind.Converter>
+                        <hmi:BoolToVisibilityConverter FalseValue="Visible" TrueValue="Hidden"/>
+                    </hmi:Bind.Converter>
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Image.Visibility>
+        </Image>
+        <TextBlock Height="18" Canvas.Left="679" TextWrapping="Wrap" Text="ТР (.24)" FontSize="14" Canvas.Top="390"/>
+        <Image Height="75" Canvas.Left="1026" Canvas.Top="655" Width="80" Source="/NGO.Elements;component/Content/VFD/Network/dc.png"/>
+        <Image Height="75" Canvas.Left="1131" Canvas.Top="655" Width="80" Source="/NGO.Elements;component/Content/VFD/Network/dc.png"/>
+        <Image Height="94" Canvas.Left="1103" Canvas.Top="60" Width="63" Source="/NGO.Elements;component/Content/VFD/Network/abb_panel.png"/>
+        <Image Height="94" Canvas.Left="1189" Canvas.Top="60" Width="63" Source="/NGO.Elements;component/Content/VFD/Network/abb_panel.png"/>
+        <Image Height="75" Canvas.Left="566" Canvas.Top="64" Width="34" Source="/NGO.Elements;component/Content/VFD/Network/moxa-MGATE.png"/>
+        <Image Height="140" Canvas.Left="778" Canvas.Top="422" Width="65" Source="/NGO.Elements;component/Content/VFD/Network/moxa-EDS-508.png"/>
+        <Image Canvas.Left="829" Canvas.Top="630" Source="/NGO.Elements;component/Content/VFD/Network/et200sp.png"/>
+        <Image Height="78" Canvas.Left="994" Canvas.Top="58" Width="99" Source="/NGO.Elements;component/Content/VFD/Network/et200sp.png"/>
+        <Image Height="75" Canvas.Left="653" Canvas.Top="70" Width="36" Source="/NGO.Elements;component/Content/VFD/Network/moxa-awk.png"/>
+        <Image Height="66" Canvas.Left="788" Canvas.Top="66" Width="80" Source="/NGO.Elements;component/Content/VFD/Network/hmi.png"/>
+        <Image Height="140" Canvas.Left="690" Canvas.Top="195" Width="65" Source="/NGO.Elements;component/Content/VFD/Network/moxa-EDS-508.png"/>
+        <Image Height="95" Canvas.Left="1194" Canvas.Top="336" Width="60" Source="/NGO.Elements;component/Content/VFD/Network/abb_panel.png"/>
+        <Image Height="80" Canvas.Left="1026" Canvas.Top="651" Width="80" Source="/NGO.Elements;component/Content/VFD/Network/red-circle.png">
+            <Image.Visibility>
+                <hmi:Bind  Path="Tags.Node[view.network].Items[net_dc1].Value">
+                    <hmi:Bind.Converter>
+                        <hmi:BoolToVisibilityConverter FalseValue="Visible" TrueValue="Hidden"/>
+                    </hmi:Bind.Converter>
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Image.Visibility>
+        </Image>
+        <Image Height="80" Canvas.Left="1131" Canvas.Top="651" Width="80" Source="/NGO.Elements;component/Content/VFD/Network/red-circle.png">
+            <Image.Visibility>
+                <hmi:Bind  Path="Tags.Node[view.network].Items[net_dc2].Value">
+                    <hmi:Bind.Converter>
+                        <hmi:BoolToVisibilityConverter FalseValue="Visible" TrueValue="Hidden"/>
+                    </hmi:Bind.Converter>
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Image.Visibility>
+        </Image>
+        <Image Height="80" Canvas.Left="899" Canvas.Top="58" Width="80" Source="/NGO.Elements;component/Content/VFD/Network/red-circle.png">
+            <Image.Visibility>
+                <hmi:Bind  Path="Tags.Node[view.network].Items[net_plc1].Value">
+                    <hmi:Bind.Converter>
+                        <hmi:BoolToVisibilityConverter FalseValue="Visible" TrueValue="Hidden"/>
+                    </hmi:Bind.Converter>
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Image.Visibility>
+        </Image>
+        <Image Height="80" Canvas.Left="767" Canvas.Top="230" Width="80" Source="/NGO.Elements;component/Content/VFD/Network/red-circle.png">
+            <Image.Visibility>
+                <hmi:Bind  Path="Tags.Node[view.network].Items[net_swt1].Value">
+                    <hmi:Bind.Converter>
+                        <hmi:BoolToVisibilityConverter FalseValue="Visible" TrueValue="Hidden"/>
+                    </hmi:Bind.Converter>
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Image.Visibility>
+        </Image>
+        <Image Height="80" Canvas.Left="1020" Canvas.Top="344" Width="80" Source="/NGO.Elements;component/Content/VFD/Network/red-circle.png">
+            <Image.Visibility>
+                <hmi:Bind Path="Tags.Node[view.main_drives.rectifier].Items[icmp].Value">
+                    <hmi:Bind.Converter>
+                        <hmi:BoolToVisibilityConverter FalseValue="Visible" TrueValue="Hidden"/>
+                    </hmi:Bind.Converter>
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Image.Visibility>
+        </Image>
+        <Image Height="80" Canvas.Left="936" Canvas.Top="344" Width="80" Source="/NGO.Elements;component/Content/VFD/Network/red-circle.png">
+            <Image.Visibility>
+                <hmi:Bind Path="Tags.Node[view.main_drives.rotor.vfd].Items[icmp].Value">
+                    <hmi:Bind.Converter>
+                        <hmi:BoolToVisibilityConverter FalseValue="Visible" TrueValue="Hidden"/>
+                    </hmi:Bind.Converter>
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Image.Visibility>
+        </Image>
+        <Image Height="80" Canvas.Left="1104" Canvas.Top="344" Width="80" Source="/NGO.Elements;component/Content/VFD/Network/red-circle.png">
+            <Image.Visibility>
+                <hmi:Bind  Path="Tags.Node[view.main_drives.drawwork.motor1].Items[online].Value">
+                    <hmi:Bind.Converter>
+                        <hmi:BoolToVisibilityConverter FalseValue="Visible" TrueValue="Hidden"/>
+                    </hmi:Bind.Converter>
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Image.Visibility>
+        </Image>
+        <Image Height="80" Canvas.Left="853" Canvas.Top="344" Width="80" Source="/NGO.Elements;component/Content/VFD/Network/red-circle.png">
+            <Image.Visibility>
+                <hmi:Bind Path="Tags.Node[view.main_drives.aux.vfd].Items[icmp].Value">
+                    <hmi:Bind.Converter>
+                        <hmi:BoolToVisibilityConverter FalseValue="Visible" TrueValue="Hidden"/>
+                    </hmi:Bind.Converter>
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Image.Visibility>
+        </Image>
+        <Image Height="80" Canvas.Left="596" Canvas.Top="698" Width="80" Source="/NGO.Elements;component/Content/VFD/Network/red-circle.png">
+            <Image.Visibility>
+                <hmi:Bind  Path="Tags.Node[view.network].Items[net_swt3].Value">
+                    <hmi:Bind.Converter>
+                        <hmi:BoolToVisibilityConverter FalseValue="Visible" TrueValue="Hidden"/>
+                    </hmi:Bind.Converter>
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Image.Visibility>
+        </Image>
+        <Image Height="80" Canvas.Left="730" Canvas.Top="632" Width="80" Source="/NGO.Elements;component/Content/VFD/Network/red-circle.png">
+            <Image.Visibility>
+                <hmi:Bind  Path="Tags.Node[view.network].Items[net_msab].Value">
+                    <hmi:Bind.Converter>
+                        <hmi:BoolToVisibilityConverter FalseValue="Visible" TrueValue="Hidden"/>
+                    </hmi:Bind.Converter>
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Image.Visibility>
+        </Image>
+        <Image Height="80" Canvas.Left="1096" Canvas.Top="68" Width="80" Source="/NGO.Elements;component/Content/VFD/Network/red-circle.png">
+            <Image.Visibility>
+                <hmi:Bind Path="Tags.Node[view.helperdrawwork1.vfd].Items[icmp].Value">
+                    <hmi:Bind.Converter>
+                        <hmi:BoolToVisibilityConverter FalseValue="Visible" TrueValue="Hidden"/>
+                    </hmi:Bind.Converter>
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Image.Visibility>
+        </Image>
+        <Image Height="80" Canvas.Left="1180" Canvas.Top="68" Width="80" Source="/NGO.Elements;component/Content/VFD/Network/red-circle.png">
+            <Image.Visibility>
+                <hmi:Bind Path="Tags.Node[view.helperdrawwork2.vfd].Items[icmp].Value">
+                    <hmi:Bind.Converter>
+                        <hmi:BoolToVisibilityConverter FalseValue="Visible" TrueValue="Hidden"/>
+                    </hmi:Bind.Converter>
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Image.Visibility>
+        </Image>
+        <Image Height="80" Canvas.Left="544" Canvas.Top="68" Width="80" Source="/NGO.Elements;component/Content/VFD/Network/red-circle.png">
+            <Image.Visibility>
+                <hmi:Bind  Path="Tags.Node[view.network].Items[net_nport2].Value">
+                    <hmi:Bind.Converter>
+                        <hmi:BoolToVisibilityConverter FalseValue="Visible" TrueValue="Hidden"/>
+                    </hmi:Bind.Converter>
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Image.Visibility>
+        </Image>
+        <Image Height="80" Canvas.Left="841" Canvas.Top="632" Width="80" Source="/NGO.Elements;component/Content/VFD/Network/red-circle.png">
+            <Image.Visibility>
+                <hmi:Bind  Path="Tags.Node[view.network].Items[akl_et200sp].Value">
+                    <hmi:Bind.Converter>
+                        <hmi:BoolToVisibilityConverter FalseValue="Visible" TrueValue="Hidden"/>
+                    </hmi:Bind.Converter>
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Image.Visibility>
+        </Image>
+        <Image Height="80" Canvas.Left="770" Canvas.Top="455" Width="80" Source="/NGO.Elements;component/Content/VFD/Network/red-circle.png">
+            <Image.Visibility>
+                <hmi:Bind Path="Tags.Node[view.network].Items[net_swt2].Value">
+                    <hmi:Bind.Converter>
+                        <hmi:BoolToVisibilityConverter FalseValue="Visible" TrueValue="Hidden"/>
+                    </hmi:Bind.Converter>
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Image.Visibility>
+        </Image>
+        <Image Height="80" Canvas.Left="1004" Width="80" Source="/NGO.Elements;component/Content/VFD/Network/red-circle.png" Canvas.Top="56">
+            <Image.Visibility>
+                <hmi:Bind  Path="Tags.Node[view.network].Items[nku_et200sp].Value">
+                    <hmi:Bind.Converter>
+                        <hmi:BoolToVisibilityConverter FalseValue="Visible" TrueValue="Hidden"/>
+                    </hmi:Bind.Converter>
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Image.Visibility>
+        </Image>
+        <Image Height="80" Canvas.Left="632" Canvas.Top="68" Width="80" Source="/NGO.Elements;component/Content/VFD/Network/red-circle.png">
+            <Image.Visibility>
+                <hmi:Bind  Path="Tags.Node[view.network].Items[net_wifi1].Value">
+                    <hmi:Bind.Converter>
+                        <hmi:BoolToVisibilityConverter FalseValue="Visible" TrueValue="Hidden"/>
+                    </hmi:Bind.Converter>
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Image.Visibility>
+        </Image>
+        <Image Height="80" Canvas.Left="785" Canvas.Top="56" Width="80" Source="/NGO.Elements;component/Content/VFD/Network/red-circle.png">
+            <Image.Visibility>
+                <hmi:Bind Path="Tags.Node[view.network].Items[net_pc2].Value">
+                    <hmi:Bind.Converter>
+                        <hmi:BoolToVisibilityConverter FalseValue="Visible" TrueValue="Hidden"/>
+                    </hmi:Bind.Converter>
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Image.Visibility>
+        </Image>
+        <Image Height="80" Canvas.Left="682" Canvas.Top="230" Width="80" Source="/NGO.Elements;component/Content/VFD/Network/red-circle.png">
+            <Image.Visibility>
+                <hmi:Bind  Path="Tags.Node[view.network].Items[net_swt7].Value">
+                    <hmi:Bind.Converter>
+                        <hmi:BoolToVisibilityConverter FalseValue="Visible" TrueValue="Hidden"/>
+                    </hmi:Bind.Converter>
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Image.Visibility>
+        </Image>
+        <Image Height="80" Canvas.Left="1186" Canvas.Top="344" Width="80" Source="/NGO.Elements;component/Content/VFD/Network/red-circle.png">
+            <Image.Visibility>
+                <hmi:Bind  Path="Tags.Node[view.main_drives.drawwork.motor1].Items[online].Value">
+                    <hmi:Bind.Converter>
+                        <hmi:BoolToVisibilityConverter FalseValue="Visible" TrueValue="Hidden"/>
+                    </hmi:Bind.Converter>
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </Image.Visibility>
+        </Image>
+        <TextBlock Canvas.Left="774" TextWrapping="Wrap" Text="SWT1&#xA;(.10)" Canvas.Top="164" FontSize="14"/>
+        <TextBlock Canvas.Left="1039" TextWrapping="Wrap" Text="БП 2 (.21)" FontSize="14" Canvas.Top="311"/>
+        <TextBlock Canvas.Left="959" TextWrapping="Wrap" Text="Р (.14)" FontSize="14" Canvas.Top="311"/>
+        <TextBlock Canvas.Left="1119" TextWrapping="Wrap" Text="Л1 (.15)" FontSize="14" Canvas.Top="311"/>
+        <TextBlock Height="18" Canvas.Left="871" TextWrapping="Wrap" Text="ДП (.17)" FontSize="14" Canvas.Top="311"/>
+        <TextBlock Height="24" Canvas.Left="1041" TextWrapping="Wrap" Text="ПБ 1 (.51)" FontSize="14" Canvas.Top="640"/>
+        <TextBlock Canvas.Left="726" TextWrapping="Wrap" Text="GW-7663 (.43)" FontSize="14" Canvas.Top="608"/>
+        <TextBlock Height="24" Canvas.Left="1145" TextWrapping="Wrap" Text="ПБ 2 (.52)" FontSize="14" Canvas.Top="640"/>
+        <TextBlock Height="20" Canvas.Left="911" TextWrapping="Wrap" Text="CPU-319 (.2)" Canvas.Top="40" FontSize="14"/>
+        <TextBlock Canvas.Left="652" TextWrapping="Wrap" Text="SWT3&#xA;(.50)" FontSize="14" Canvas.Top="631"/>
+        <TextBlock Canvas.Left="1099" TextWrapping="Wrap" Text="ВСЛ1 (.25)" FontSize="14" Canvas.Top="42"/>
+        <TextBlock Canvas.Left="1183" TextWrapping="Wrap" Text="ВСЛ2 (.26)" FontSize="14" Canvas.Top="42"/>
+        <TextBlock Height="17" Canvas.Left="542" TextWrapping="Wrap" Text="MGate 2 (.46)" Canvas.Top="40" FontSize="14"/>
+        <TextBlock Canvas.Left="762" TextWrapping="Wrap" Text="SWT2&#xD;&#xA;(.20)" Canvas.Top="390" FontSize="14"/>
+        <TextBlock Canvas.Left="838" TextWrapping="Wrap" Text="ET200SP (.35)" FontSize="14" Canvas.Top="608"/>
+        <TextBlock Height="24" Canvas.Left="1006" TextWrapping="Wrap" Text="ET200SP (.33)" FontSize="14" Canvas.Top="40"/>
+        <TextBlock Height="17" Canvas.Left="631" TextWrapping="Wrap" Text="WI-FI 2  (.41)" Canvas.Top="40" FontSize="14"/>
+        <TextBlock Height="18" Canvas.Left="800" TextWrapping="Wrap" Text="ПК 2 (.54)" Canvas.Top="44" FontSize="14"/>
+        <TextBlock Canvas.Left="690" TextWrapping="Wrap" Text="SWT7 &#xD;&#xA;(.110)" Canvas.Top="164" FontSize="14"/>
+        <TextBlock Canvas.Left="1200" TextWrapping="Wrap" Text="Л2 (.16)" FontSize="14" Canvas.Top="311"/>
+
+    </Canvas>
+</UserControl>

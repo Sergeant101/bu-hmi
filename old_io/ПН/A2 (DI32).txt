@@ -1,0 +1,128 @@
+﻿311030
+8
+lang|RU|0 (:2 ) Взведен предохранительный клапан SQH21 насоса 2
+lang|EN|0 (:2 ) Circuit breaker rectifier QF1 on
+311030
+9
+lang|RU|1 (:3 ) Включен конечный выключатель SQK21 кожуха передачи Н2
+lang|EN|1 (:3 ) Circuit breaker 42QF1 on
+311030
+10
+lang|RU|2 (:4 ) Включен конечный выключатель SQK22 кожуха передачи Н2
+lang|EN|2 (:4 ) Emergency control circuit (Emergency STOP SB2 in VFD by relay K21)
+311030
+11
+lang|RU|3 (:5 ) Включен конечный выключатель SQK23 кожуха передачи Н2 (резерв)
+lang|EN|3 (:5 ) Emergency control circuit (Emergency STOP SB3 in VFD by relay K22)
+311030
+12
+lang|RU|4 (:6 ) Включен пускатель 207KM1 вентилятора обдува МН2-МВ
+lang|EN|4 (:6 ) Emergency control circuit (Fire alarm in VFD by relay K23)
+311030
+13
+lang|RU|5 (:7 ) Включен пускатель 212KM1 насоса смазки редуктора Н2
+lang|EN|5 (:7 ) Emergency control circuit (Power supply by relay K24)
+311030
+14
+lang|RU|6 (:8 ) Включен пускатель 208KM1 насоса смазки и охлаждения штоков Н2
+lang|EN|6 (:8 ) Emergency control circuit (50% gassed by relay K25)
+311030
+15
+lang|RU|7 (:9 ) Включен пускатель 205K2 обогрева Н2
+lang|EN|7 (:9 ) Emergency control circuit (emergency stop SB12 driller's cabin by relay K19)
+311030
+0
+lang|RU|0 (:12 ) Нажата кнопка "Пуск/Деблокировка насоса 2"
+lang|EN|0 (:12 ) Emergency control circuit (Temperature sensor in VFD by relay K26)
+311030
+1
+lang|RU|1 (:13 ) Нажата кнопка "Пуск насоса 2 на малой скорости"
+lang|EN|1 (:13 ) Not low level in oil hydraulic unit
+311030
+2
+lang|RU|2 (:14 ) Переключатель 201SA1 в положении "Увеличение скорости привода насоса 2"
+lang|EN|2 (:14 ) Limit level in oil hydraulic unit
+311030
+3
+lang|RU|3 (:15 ) Переключатель 201SA1 в положении "Уменьшение скорости привода насоса 2"
+lang|EN|3 (:15 ) Oil hydraulic unit filter F1 is dirty in oil hydraulic unit
+311030
+4
+lang|RU|4 (:16 ) Переключатель 201SA2 в положении "Управление насосом 2 с пульта бурильщика"
+lang|EN|4 (:16 ) Oil hydraulic unit filter F2 is dirty in oil hydraulic unit
+311030
+5
+lang|RU|5 (:17 ) Переключатель 201SA2 в положении "Управление насосом 2 с пульта насосов"
+lang|EN|5 (:17 ) Spare
+311030
+6
+lang|RU|6 (:18 ) Резерв
+lang|EN|6 (:18 ) Select CPU1
+311030
+7
+lang|RU|7 (:19 ) Резерв
+lang|EN|7 (:19 ) Select CPU2
+311031
+8
+lang|RU|0 (:22 ) Резерв
+lang|EN|0 (:22 ) Circuit breaker QF1 on in MG-PSC (GEN1)
+311031
+9
+lang|RU|1 (:23 ) Резерв
+lang|EN|1 (:23 ) Sensor air pressure MDW1 ON
+311031
+10
+lang|RU|2 (:24 ) Отжата кнопка 201SB3 "Стоп насоса 2"
+lang|EN|2 (:24 ) No excess of pressure in manifold (signal SMPD)
+311031
+11
+lang|RU|3 (:25 ) Есть избыточное давление в двигателе МН2 (обдув включен)
+lang|EN|3 (:25 ) Sensor air pressure MDW2 ON/
+311031
+12
+lang|RU|4 (:26 ) Резерв
+lang|EN|4 (:26 ) Drawworks oil filter  is dirty
+311031
+13
+lang|RU|5 (:27 ) Резерв
+lang|EN|5 (:27 ) Circuit breaker QF2 on in MG-PSC (GEN2)
+311031
+14
+lang|RU|6 (:28 ) Резерв
+lang|EN|6 (:28 ) Circuit breaker QF3 on in MG-PSC (GEN3)
+311031
+15
+lang|RU|7 (:29 ) Резерв
+lang|EN|7 (:29 ) Circuit breaker QF4 on in MG-PSC (GEN4)
+311031
+0
+lang|RU|0 (:32 ) Резерв
+lang|EN|0 (:32 ) Circuit breaker QF5 on in MG-PSC (690VAC)
+311031
+1
+lang|RU|1 (:33 ) Резерв
+lang|EN|1 (:33 ) Circuit breaker QF6 on in MG-PSC (400VAC)
+311031
+2
+lang|RU|2 (:34 ) Резерв
+lang|EN|2 (:34 ) Circuit breaker QF7 on in MG-PSC (TopDrive)
+311031
+3
+lang|RU|3 (:35 ) Резерв
+lang|EN|3 (:35 ) Circuit breaker QF8 on in MG-PSC (control circuits 1)
+311031
+4
+lang|RU|4 (:36 ) Резерв
+lang|EN|4 (:36 ) Circuit breaker QF9 on in MG-PSC (control circuits 2)
+311031
+5
+lang|RU|5 (:37 ) Резерв
+lang|EN|5 (:37 ) Overheat in VFD
+311031
+6
+lang|RU|6 (:38 ) Резерв
+lang|EN|6 (:38 ) High humidity in VFD
+311031
+7
+lang|RU|7 (:39 ) Резерв
+lang|EN|7 (:39 ) SQ3 PCP-ON

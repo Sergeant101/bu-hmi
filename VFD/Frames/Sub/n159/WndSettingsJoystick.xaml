@@ -1,0 +1,134 @@
+﻿<Window x:Class="VFD.Frames.Sub.n159.WndSettingsJoystick"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VFD.Frames.Sub.n159"
+        xmlns:style="clr-namespace:NGO.Elements.style;assembly=NGO.Elements" 
+        xmlns:Calibration="clr-namespace:NGO.Elements.Special.Calibration;assembly=NGO.Elements" 
+        xmlns:hmi="http://schemas.monokot.com/hmi/" xmlns:System="clr-namespace:System;assembly=mscorlib"
+        xmlns:se="http://schemas.monokot.com/se/" 
+        mc:Ignorable="d"
+        Title="WndSettingsJoystick" SizeToContent="WidthAndHeight" WindowStyle="None" ResizeMode="NoResize">
+    <Grid>
+
+        <style:cool_rect Height="415" VerticalAlignment="Top" HorizontalAlignment="Left" Width="861"/>
+
+        <TextBlock TextWrapping="Wrap" Text="Настройка джойстика вспомогательной лебедки" FontSize="18" TextAlignment="Center" Margin="20,7,0,0" Height="22" VerticalAlignment="Top" HorizontalAlignment="Left" Width="794"/>
+        <Calibration:Calibration x:Name="JoysticVslCalibration" minimumX="0"  majorStepX="1"  titleAxisX="U, В" titleAxisY="Скорость, обр/мин" maximumX="10" minimumY="-2000" maximumY="2000" majorStepY="500" filename="joystick_vsl" axisYvisibility="Collapsed" axisYcolor="Transparent" Margin="20,36,0,0" Height="358" VerticalAlignment="Top" HorizontalAlignment="Left" Width="825">
+            <Calibration:Calibration.LayoutTransform>
+                <ScaleTransform ScaleX="1" ScaleY="1" />
+            </Calibration:Calibration.LayoutTransform>
+            <Calibration:Calibration.points>
+
+                <Calibration:CalibrationPoint x="0" y="0" Visibility="Collapsed"/>
+
+                <Calibration:CalibrationPoint xEditorVisible="Hidden" y="0" yEditorVisible="Hidden" Visibility="Collapsed">
+                    <Calibration:CalibrationPoint.x>
+                        <hmi:SeBinding  Path="Tags.Node[view.helperdrawwork1.Joystick].Items[porog_kz].Value" StringFormat="0.000">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>-1</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </Calibration:CalibrationPoint.x>
+                </Calibration:CalibrationPoint>
+
+                <Calibration:CalibrationPoint xWrite="{hmi:SeBinding Tags.Node[write.helperdrawwork1.Joystick].Items[porog_kz].WriteCommand}" 
+                y="-1500" 
+                yEditorVisible="Hidden">
+                    <Calibration:CalibrationPoint.x>
+                        <hmi:SeBinding  Path="Tags.Node[view.helperdrawwork1.Joystick].Items[porog_kz].Value" StringFormat="0.000">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>-1</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </Calibration:CalibrationPoint.x>
+                </Calibration:CalibrationPoint>
+
+                <Calibration:CalibrationPoint xWrite="{hmi:SeBinding Tags.Node[write.helperdrawwork1.Joystick].Items[porog_Vmin].WriteCommand}" 
+                y="-1500" 
+                yEditorVisible="Hidden">
+                    <Calibration:CalibrationPoint.x>
+                        <hmi:SeBinding  Path="Tags.Node[view.helperdrawwork1.Joystick].Items[porog_Vmin].Value" StringFormat="0.000">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>-1</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </Calibration:CalibrationPoint.x>
+                </Calibration:CalibrationPoint>
+
+                <Calibration:CalibrationPoint xWrite="{hmi:SeBinding Tags.Node[write.helperdrawwork1.Joystick].Items[porog_lyuft_snizu].WriteCommand}" 
+                y="0" 
+                yEditorVisible="Hidden">
+                    <Calibration:CalibrationPoint.x>
+                        <hmi:SeBinding  Path="Tags.Node[view.helperdrawwork1.Joystick].Items[porog_lyuft_snizu].Value" StringFormat="0.000">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>-1</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </Calibration:CalibrationPoint.x>
+                </Calibration:CalibrationPoint>
+
+                <Calibration:CalibrationPoint xWrite="{hmi:SeBinding Tags.Node[write.helperdrawwork1.Joystick].Items[porog_lyuft_sverhu].WriteCommand}" 
+                y="0" 
+                yEditorVisible="Hidden">
+                    <Calibration:CalibrationPoint.x>
+                        <hmi:SeBinding  Path="Tags.Node[view.helperdrawwork1.Joystick].Items[porog_lyuft_sverhu].Value" StringFormat="0.000">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>-1</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </Calibration:CalibrationPoint.x>
+                </Calibration:CalibrationPoint>
+
+                <Calibration:CalibrationPoint y="1500" 
+                yEditorVisible="Hidden" 
+                xWrite="{hmi:SeBinding Tags.Node[write.helperdrawwork1.Joystick].Items[porog_Vmax].WriteCommand}">
+                    <Calibration:CalibrationPoint.x>
+                        <hmi:SeBinding  Path="Tags.Node[view.helperdrawwork1.Joystick].Items[porog_Vmax].Value" StringFormat="0.000">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>-1</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </Calibration:CalibrationPoint.x>
+                </Calibration:CalibrationPoint>
+
+                <Calibration:CalibrationPoint xWrite="{hmi:SeBinding Tags.Node[write.helperdrawwork1.Joystick].Items[porog_hh].WriteCommand}" 
+                y="1500" 
+                yEditorVisible="Hidden">
+                    <Calibration:CalibrationPoint.x>
+                        <hmi:SeBinding  Path="Tags.Node[view.helperdrawwork1.Joystick].Items[porog_hh].Value" StringFormat="0.000">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>-1</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </Calibration:CalibrationPoint.x>
+                </Calibration:CalibrationPoint>
+
+                <Calibration:CalibrationPoint xWrite="{hmi:SeBinding Tags.Node[write.helperdrawwork1.Joystick].Items[porog_hh].WriteCommand}" 
+                xEditorVisible="Hidden" y="0" 
+                yEditorVisible="Hidden" 
+                Visibility="Collapsed">
+                    <Calibration:CalibrationPoint.x>
+                        <hmi:SeBinding  Path="Tags.Node[view.helperdrawwork1.Joystick].Items[porog_hh].Value" StringFormat="0.000">
+                            <hmi:SeBinding.FallbackValue>
+                                <System:Double>-1</System:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </Calibration:CalibrationPoint.x>
+                </Calibration:CalibrationPoint>
+
+                <Calibration:CalibrationPoint x="10" y="0" Visibility="Collapsed"/>
+
+            </Calibration:Calibration.points>
+        </Calibration:Calibration>
+        <TextBlock TextWrapping="Wrap" Text="ПОРОГ КЗ" FontSize="18" Margin="185,58,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBlock TextWrapping="Wrap" Text="МАКСИМУМ ВНИЗ" FontSize="18" Margin="185,102,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBlock TextWrapping="Wrap" Text="ЛЮФТ НУЛЯ ВНИЗ" FontSize="18" Margin="185,149,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBlock TextWrapping="Wrap" Text="ЛЮФТ НУЛЯ ВВЕРХ" FontSize="18" Margin="185,194,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBlock TextWrapping="Wrap" Text="МАКСИМУМ ВВЕРХ" FontSize="18" Margin="185,241,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBlock TextWrapping="Wrap" Text="ПОРОГ ОБРЫВА" FontSize="18" Margin="185,286,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <se:ValueDisplay Height="52" x:Name="numericDisplay13_Copy2" HeaderBackground="Black" Label="В" Value="{hmi:Bind FallbackValue=0.0, Path=Tags.Node[view.helperdrawwork1.Joystick].Items[tekushchee_znachenie].Value}" ValueBackground="White" ValueForeground="Black" Header="НАПРЯЖЕНИЕ" FontFamily="Tahoma" ValueFontSize="20" Margin="584,342,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="103" />
+        <Button Style="{StaticResource MetalBorderStdButton}" Content="НАЗАД" HorizontalAlignment="Right" Margin="0,342,16,21" VerticalAlignment="Stretch" Width="135" Click="Back_Click" FontSize="18"/>
+    </Grid>
+</Window>

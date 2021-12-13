@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="NGO.Elements.Special.IO.VfdModule"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:io="clr-namespace:NGO.Elements.Special.IO"
+             mc:Ignorable="d" 
+             xmlns:hmi="http://schemas.monokot.com/hmi/"
+             
+             d:DesignHeight="366" d:DesignWidth="514"
+             Background="Gainsboro"
+             Name="_uc">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../style/io_style.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="260*"/>
+            <RowDefinition Height="70" />
+        </Grid.RowDefinitions>
+        <TabControl Name="tabControl3" Style="{StaticResource io_tab_control_style}" SelectedItem="{Binding ElementName=_uc, Path=module.selectedPlcModule, UpdateSourceTrigger=PropertyChanged}"  FlowDirection="LeftToRight" TabStripPlacement="Left" ItemsSource="{Binding ElementName=_uc, Path=module.inputsOutputs, UpdateSourceTrigger=PropertyChanged}" Grid.Row="0" Grid.RowSpan="2" Margin="0,0,0,0" FontFamily="Tahoma"/>
+        <Button Content="НАЗАД" Name="button1" Foreground="Black" Command="{Binding ElementName=_uc,Path=backCommand}" FontSize="18" Margin="5,0,0,0" Grid.Row="1" Height="60" VerticalAlignment="Center" HorizontalAlignment="Left" Width="130" />
+
+    </Grid>
+</UserControl>

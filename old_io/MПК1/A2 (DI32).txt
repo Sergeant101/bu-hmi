@@ -1,0 +1,128 @@
+﻿311004
+8
+lang|RU|0 (:2 ) Сигнал допустимой температуры в шкафу АКЛ с датчика ВК1
+lang|EN|0 (:2 ) Circuit breaker rectifier QF1 on
+311004
+9
+lang|RU|1 (:3 ) Сигнал допустимой температуры в пульте насосов ПН с датчика ВК1
+lang|EN|1 (:3 ) Circuit breaker 42QF1 on
+311004
+10
+lang|RU|2 (:4 ) Сигнал перегрева контейнера КТУ с датчика ВК1
+lang|EN|2 (:4 ) Emergency control circuit (Emergency STOP SB2 in VFD by relay K21)
+311004
+11
+lang|RU|3 (:5 ) Сигнал высокой влажности контейнера КТУ с датчика ВL
+lang|EN|3 (:5 ) Emergency control circuit (Emergency STOP SB3 in VFD by relay K22)
+311004
+12
+lang|RU|4 (:6 ) Сигнал перегрева тормозных резисторов ТР1 и ТР2 с датчиков ВК2 и ВК3
+lang|EN|4 (:6 ) Emergency control circuit (Fire alarm in VFD by relay K23)
+311004
+13
+lang|RU|5 (:7 ) Сигнал давления воздуха обдува тормозных резисторов ТР1 с датчика SP1  
+lang|EN|5 (:7 ) Emergency control circuit (Power supply by relay K24)
+311004
+14
+lang|RU|6 (:8 ) Сигнал давления воздуха обдува тормозных резисторов ТР2 с датчика SP2
+lang|EN|6 (:8 ) Emergency control circuit (50% gassed by relay K25)
+311004
+15
+lang|RU|7 (:9 ) Резерв
+lang|EN|7 (:9 ) Emergency control circuit (emergency stop SB12 driller's cabin by relay K19)
+311004
+0
+lang|RU|0 (:12 ) Резерв
+lang|EN|0 (:12 ) Emergency control circuit (Temperature sensor in VFD by relay K26)
+311004
+1
+lang|RU|1 (:13 ) Резерв
+lang|EN|1 (:13 ) Not low level in oil hydraulic unit
+311004
+2
+lang|RU|2 (:14 ) Резерв
+lang|EN|2 (:14 ) Limit level in oil hydraulic unit
+311004
+3
+lang|RU|3 (:15 ) Резерв
+lang|EN|3 (:15 ) Oil hydraulic unit filter F1 is dirty in oil hydraulic unit
+311004
+4
+lang|RU|4 (:16 ) Резерв
+lang|EN|4 (:16 ) Oil hydraulic unit filter F2 is dirty in oil hydraulic unit
+311004
+5
+lang|RU|5 (:17 ) Резерв
+lang|EN|5 (:17 ) Spare
+311004
+6
+lang|RU|6 (:18 ) Резерв
+lang|EN|6 (:18 ) Select CPU1
+311004
+7
+lang|RU|7 (:19 ) Резерв
+lang|EN|7 (:19 ) Select CPU2
+311005
+8
+lang|RU|0 (:22 ) Резерв
+lang|EN|0 (:22 ) Circuit breaker QF1 on in MG-PSC (GEN1)
+311005
+9
+lang|RU|1 (:23 ) Резерв
+lang|EN|1 (:23 ) Sensor air pressure MDW1 ON
+311005
+10
+lang|RU|2 (:24 ) Резерв
+lang|EN|2 (:24 ) No excess of pressure in manifold (signal SMPD)
+311005
+11
+lang|RU|3 (:25 ) Включен пускатель БУВ-КМ1 обдува тормозных резисторов ТР1  
+lang|EN|3 (:25 ) Sensor air pressure MDW2 ON/
+311005
+12
+lang|RU|4 (:26 ) Включен пускатель БУВ-КМ2 обдува тормозных резисторов ТР2 (резерв)
+lang|EN|4 (:26 ) Drawworks oil filter  is dirty
+311005
+13
+lang|RU|5 (:27 ) Резерв
+lang|EN|5 (:27 ) Circuit breaker QF2 on in MG-PSC (GEN2)
+311005
+14
+lang|RU|6 (:28 ) Резерв
+lang|EN|6 (:28 ) Circuit breaker QF3 on in MG-PSC (GEN3)
+311005
+15
+lang|RU|7 (:29 ) Резерв
+lang|EN|7 (:29 ) Circuit breaker QF4 on in MG-PSC (GEN4)
+311005
+0
+lang|RU|0 (:32 ) Резерв
+lang|EN|0 (:32 ) Circuit breaker QF5 on in MG-PSC (690VAC)
+311005
+1
+lang|RU|1 (:33 ) Резерв
+lang|EN|1 (:33 ) Circuit breaker QF6 on in MG-PSC (400VAC)
+311005
+2
+lang|RU|2 (:34 ) Сигнал "Running" от привода основной лебедки 2 (реле К51 шкафа ШУЛ2) (Резерв)
+lang|EN|2 (:34 ) Circuit breaker QF7 on in MG-PSC (TopDrive)
+311005
+3
+lang|RU|3 (:35 ) Сигнал "Running" от привода основной лебедки 1 (реле К21 шкафа ШУЛ1)
+lang|EN|3 (:35 ) Circuit breaker QF8 on in MG-PSC (control circuits 1)
+311005
+4
+lang|RU|4 (:36 ) Сигнал "Running" от привода доп. привода (реле К22 шкафа ШРДП)
+lang|EN|4 (:36 ) Circuit breaker QF9 on in MG-PSC (control circuits 2)
+311005
+5
+lang|RU|5 (:37 ) Сигнал "Running" от привода ротора (реле К1 шкафа ШУР)
+lang|EN|5 (:37 ) Overheat in VFD
+311005
+6
+lang|RU|6 (:38 ) Сигнал "Running" от привода насоса 1 (реле К1 шкафа ШУН1)
+lang|EN|6 (:38 ) High humidity in VFD
+311005
+7
+lang|RU|7 (:39 ) Сигнал "Running" от привода насоса 2 (реле К1 шкафа ШУН2)
+lang|EN|7 (:39 ) SQ3 PCP-ON

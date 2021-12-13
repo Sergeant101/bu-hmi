@@ -1,0 +1,316 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:io="clr-namespace:NGO.Elements.Special.IO;assembly=NGO.Elements"
+             xmlns:se="http://schemas.monokot.com/se/"
+             xmlns:scheme="clr-namespace:NGO.Elements.Scheme;assembly=NGO.Elements"
+             xmlns:hmi="http://schemas.monokot.com/hmi/" 
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:sngObuchenie="clr-namespace:VFD.Frames.Sub.SNG_Obuchenie"
+    x:Class="VFD.Frames.FrmAutomation"
+             mc:Ignorable="d" 
+             d:DesignHeight="840" d:DesignWidth="1280">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/NGO.Elements;component/Style/superVfd_styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <TabControl HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TabStripPlacement="Right" >
+        <TabItem Header="ВХОДЫ/ВЫХОДЫ" FontSize="20">
+            <TabItem.LayoutTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TabItem.LayoutTransform>
+            <Grid Background="#FFC9C9C9">
+                <io:IOView HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" ioFolder="\data\io\"/>
+            </Grid>
+        </TabItem>
+        <TabItem Header="ПИТАНИЕ" FontSize="20">
+            <TabItem.LayoutTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TabItem.LayoutTransform>
+            <sngObuchenie:SLD/>
+        </TabItem>
+        <TabItem Header="ТОПОЛОГИЯ СЕТИ" FontSize="20">
+            <TabItem.LayoutTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TabItem.LayoutTransform>
+            <sngObuchenie:Topologiya></sngObuchenie:Topologiya>
+        </TabItem>
+        <TabItem FontSize="20" Header="НУЛЕВОЙ РАСЦЕПИТЕЛЬ" RenderTransformOrigin="0.5,0.5">
+            <TabItem.LayoutTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TabItem.LayoutTransform>
+            <Canvas>
+                <se:ScadaButton FontFamily="Arial" FontSize="18" Height="63" HorizontalAlignment="Center" Canvas.Top="617" VerticalAlignment="Top" Width="216" PushCommand="{hmi:SeBinding FallbackValue='', Path=modules[tags_mod].Items[db_write_db302_13_7].WriteCommand}" ReleasedCommand="{hmi:SeBinding FallbackValue='', Path=modules[tags_mod].Items[db_write_db302_13_7].WriteCommand}" Canvas.Left="979" Margin="0">
+                    <TextBlock Text="ВЗЯТЬ РЕЛЕ НА КОНТРОЛЬ" TextAlignment="Center" TextWrapping="Wrap" Margin="-4"/>
+                </se:ScadaButton>
+                <se:VisualBox HorizontalAlignment="Center" VerticalAlignment="Center" Width="25" Height="25" BorderBrush="{x:Null}" Canvas.Left="757" Canvas.Top="356">
+                    <se:VisualBox.Background>
+                        <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_normal.png"/>
+                    </se:VisualBox.Background>
+                    <se:VisualBox.VisualStateCollection>
+                        <se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem.Value>
+                                <hmi:SeBinding  Path="Tags.Node[view.scheme].Items[tag100].Value">
+                                    <hmi:SeBinding.FallbackValue>
+                                        <system:Boolean>False</system:Boolean>
+                                    </hmi:SeBinding.FallbackValue>
+                                </hmi:SeBinding>
+                            </se:VisualBoxStateItem.Value>
+                            <se:VisualBoxStateItem.Background>
+                                <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_fine.png" Stretch="Uniform"/>
+                            </se:VisualBoxStateItem.Background>
+                        </se:VisualBoxStateItem>
+                    </se:VisualBox.VisualStateCollection>
+                </se:VisualBox>
+                <se:VisualBox HorizontalAlignment="Center" VerticalAlignment="Center" Width="25" Height="25" BorderBrush="{x:Null}" Canvas.Left="757" Canvas.Top="396">
+                    <se:VisualBox.Background>
+                        <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_normal.png"/>
+                    </se:VisualBox.Background>
+                    <se:VisualBox.VisualStateCollection>
+                        <se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem.Value>
+                                <hmi:SeBinding  Path="Tags.Node[view.scheme].Items[tag101].Value">
+                                    <hmi:SeBinding.FallbackValue>
+                                        <system:Boolean>False</system:Boolean>
+                                    </hmi:SeBinding.FallbackValue>
+                                </hmi:SeBinding>
+                            </se:VisualBoxStateItem.Value>
+                            <se:VisualBoxStateItem.Background>
+                                <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_fine.png" Stretch="Uniform"/>
+                            </se:VisualBoxStateItem.Background>
+                        </se:VisualBoxStateItem>
+                    </se:VisualBox.VisualStateCollection>
+                </se:VisualBox>
+                <se:VisualBox HorizontalAlignment="Center" VerticalAlignment="Center" Width="25" Height="25" BorderBrush="{x:Null}" Canvas.Left="757" Canvas.Top="436">
+                    <se:VisualBox.Background>
+                        <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_normal.png"/>
+                    </se:VisualBox.Background>
+                    <se:VisualBox.VisualStateCollection>
+                        <se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem.Value>
+                                <hmi:SeBinding  Path="Tags.Node[view.scheme].Items[tag102].Value">
+                                    <hmi:SeBinding.FallbackValue>
+                                        <system:Boolean>False</system:Boolean>
+                                    </hmi:SeBinding.FallbackValue>
+                                </hmi:SeBinding>
+                            </se:VisualBoxStateItem.Value>
+                            <se:VisualBoxStateItem.Background>
+                                <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_fine.png" Stretch="Uniform"/>
+                            </se:VisualBoxStateItem.Background>
+                        </se:VisualBoxStateItem>
+                    </se:VisualBox.VisualStateCollection>
+                </se:VisualBox>
+                <se:VisualBox HorizontalAlignment="Center" VerticalAlignment="Center" Width="25" Height="25" BorderBrush="{x:Null}" Canvas.Left="757" Canvas.Top="476">
+                    <se:VisualBox.Background>
+                        <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_normal.png"/>
+                    </se:VisualBox.Background>
+                    <se:VisualBox.VisualStateCollection>
+                        <se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem.Value>
+                                <hmi:SeBinding  Path="Tags.Node[view.scheme].Items[tag103].Value">
+                                    <hmi:SeBinding.FallbackValue>
+                                        <system:Boolean>False</system:Boolean>
+                                    </hmi:SeBinding.FallbackValue>
+                                </hmi:SeBinding>
+                            </se:VisualBoxStateItem.Value>
+                            <se:VisualBoxStateItem.Background>
+                                <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_fine.png" Stretch="Uniform"/>
+                            </se:VisualBoxStateItem.Background>
+                        </se:VisualBoxStateItem>
+                    </se:VisualBox.VisualStateCollection>
+                </se:VisualBox>
+                <se:VisualBox HorizontalAlignment="Center" VerticalAlignment="Center" Width="25" Height="25" BorderBrush="{x:Null}" Canvas.Left="757" Canvas.Top="516">
+                    <se:VisualBox.Background>
+                        <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_normal.png"/>
+                    </se:VisualBox.Background>
+                    <se:VisualBox.VisualStateCollection>
+                        <se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem.Value>
+                                <hmi:SeBinding  Path="Tags.Node[view.scheme].Items[tag104].Value">
+                                    <hmi:SeBinding.FallbackValue>
+                                        <system:Boolean>False</system:Boolean>
+                                    </hmi:SeBinding.FallbackValue>
+                                </hmi:SeBinding>
+                            </se:VisualBoxStateItem.Value>
+                            <se:VisualBoxStateItem.Background>
+                                <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_fine.png" Stretch="Uniform"/>
+                            </se:VisualBoxStateItem.Background>
+                        </se:VisualBoxStateItem>
+                    </se:VisualBox.VisualStateCollection>
+                </se:VisualBox>
+                <se:VisualBox HorizontalAlignment="Center" VerticalAlignment="Center" Width="25" Height="25" BorderBrush="{x:Null}" Canvas.Left="757" Canvas.Top="556">
+                    <se:VisualBox.Background>
+                        <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_normal.png"/>
+                    </se:VisualBox.Background>
+                    <se:VisualBox.VisualStateCollection>
+                        <se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem.Value>
+                                <hmi:SeBinding  Path="Tags.Node[view.scheme].Items[tag105].Value">
+                                    <hmi:SeBinding.FallbackValue>
+                                        <system:Boolean>False</system:Boolean>
+                                    </hmi:SeBinding.FallbackValue>
+                                </hmi:SeBinding>
+                            </se:VisualBoxStateItem.Value>
+                            <se:VisualBoxStateItem.Background>
+                                <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_fine.png" Stretch="Uniform"/>
+                            </se:VisualBoxStateItem.Background>
+                        </se:VisualBoxStateItem>
+                    </se:VisualBox.VisualStateCollection>
+                </se:VisualBox>
+                <se:VisualBox HorizontalAlignment="Center" VerticalAlignment="Center" Width="25" Height="25" BorderBrush="{x:Null}" Canvas.Left="975" Canvas.Top="356">
+                    <se:VisualBox.Background>
+                        <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_normal.png"/>
+                    </se:VisualBox.Background>
+                    <se:VisualBox.VisualStateCollection>
+                        <se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem.Value>
+                                <hmi:SeBinding  Path="Tags.Node[view.scheme].Items[tag106].Value">
+                                    <hmi:SeBinding.FallbackValue>
+                                        <system:Boolean>False</system:Boolean>
+                                    </hmi:SeBinding.FallbackValue>
+                                </hmi:SeBinding>
+                            </se:VisualBoxStateItem.Value>
+                            <se:VisualBoxStateItem.Background>
+                                <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_fine.png" Stretch="Uniform"/>
+                            </se:VisualBoxStateItem.Background>
+                        </se:VisualBoxStateItem>
+                    </se:VisualBox.VisualStateCollection>
+                </se:VisualBox>
+                <se:VisualBox  HorizontalAlignment="Center" VerticalAlignment="Center" Width="25" Height="25" BorderBrush="{x:Null}" Canvas.Left="975" Canvas.Top="396">
+                    <se:VisualBox.Background>
+                        <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_normal.png"/>
+                    </se:VisualBox.Background>
+                    <se:VisualBox.VisualStateCollection>
+                        <se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem.Value>
+                                <hmi:SeBinding  Path="Tags.Node[view.scheme].Items[tag107].Value">
+                                    <hmi:SeBinding.FallbackValue>
+                                        <system:Boolean>False</system:Boolean>
+                                    </hmi:SeBinding.FallbackValue>
+                                </hmi:SeBinding>
+                            </se:VisualBoxStateItem.Value>
+                            <se:VisualBoxStateItem.Background>
+                                <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_fine.png" Stretch="Uniform"/>
+                            </se:VisualBoxStateItem.Background>
+                        </se:VisualBoxStateItem>
+                    </se:VisualBox.VisualStateCollection>
+                </se:VisualBox>
+                <TextBlock TextWrapping="Wrap" FontSize="16" TextDecorations="Underline" TextAlignment="Center" Height="22" Canvas.Left="757" Canvas.Top="308" Width="438"><Run Language="ru-ru" Text="Нулевой расцепитель:"/></TextBlock>
+                <TextBlock TextWrapping="Wrap" FontSize="16" Text="КТУ SB2" Height="22" Canvas.Left="790" Canvas.Top="396" Width="187"/>
+                <TextBlock TextWrapping="Wrap" FontSize="16" Text="КТУ Перегрев" Height="22" Canvas.Left="790" Canvas.Top="436" Width="187"/>
+                <TextBlock TextWrapping="Wrap" FontSize="16" Text="КТУ Пожар" Height="22" Canvas.Left="790" Canvas.Top="476" Width="185"/>
+                <TextBlock TextWrapping="Wrap" FontSize="16" Text="КТУ SB3" Height="22" Canvas.Left="790" Canvas.Top="516" Width="172"/>
+                <TextBlock TextWrapping="Wrap" FontSize="16" Text="Кабина SB" Height="22" Canvas.Left="790" Canvas.Top="556" Width="187"/>
+                <TextBlock TextWrapping="Wrap" FontSize="16" Text="НКУ Перегрев" Height="22" Canvas.Left="1008" Canvas.Top="356" Width="187"/>
+                <TextBlock TextWrapping="Wrap" FontSize="16" Text="НКУ Пожар" Height="22" Canvas.Left="1008" Canvas.Top="396" Width="187"/>
+                <TextBlock TextWrapping="Wrap" FontSize="16" Text="КТУ SB1" Height="22" Canvas.Left="790" Canvas.Top="356" Width="187"/>
+                <se:VisualBox  HorizontalAlignment="Center" VerticalAlignment="Center" Width="25" Height="25" BorderBrush="{x:Null}" Canvas.Left="975" Canvas.Top="436">
+                    <se:VisualBox.Background>
+                        <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_normal.png"/>
+                    </se:VisualBox.Background>
+                    <se:VisualBox.VisualStateCollection>
+                        <se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem.Value>
+                                <hmi:SeBinding  Path="Tags.Node[view.scheme].Items[tag108].Value">
+                                    <hmi:SeBinding.FallbackValue>
+                                        <system:Boolean>False</system:Boolean>
+                                    </hmi:SeBinding.FallbackValue>
+                                </hmi:SeBinding>
+                            </se:VisualBoxStateItem.Value>
+                            <se:VisualBoxStateItem.Background>
+                                <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_fine.png" Stretch="Uniform"/>
+                            </se:VisualBoxStateItem.Background>
+                        </se:VisualBoxStateItem>
+                    </se:VisualBox.VisualStateCollection>
+                </se:VisualBox>
+                <TextBlock TextWrapping="Wrap" FontSize="16" Text="НКУ SB5" Height="22" Canvas.Left="1008" Canvas.Top="436" Width="187"/>
+                <se:VisualBox  HorizontalAlignment="Center" VerticalAlignment="Center" Width="25" Height="25" BorderBrush="{x:Null}" Canvas.Left="975" Canvas.Top="476">
+                    <se:VisualBox.Background>
+                        <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_normal.png"/>
+                    </se:VisualBox.Background>
+                    <se:VisualBox.VisualStateCollection>
+                        <se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem.Value>
+                                <hmi:SeBinding  Path="Tags.Node[view.scheme].Items[tag109].Value">
+                                    <hmi:SeBinding.FallbackValue>
+                                        <system:Boolean>False</system:Boolean>
+                                    </hmi:SeBinding.FallbackValue>
+                                </hmi:SeBinding>
+                            </se:VisualBoxStateItem.Value>
+                            <se:VisualBoxStateItem.Background>
+                                <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_fine.png" Stretch="Uniform"/>
+                            </se:VisualBoxStateItem.Background>
+                        </se:VisualBoxStateItem>
+                    </se:VisualBox.VisualStateCollection>
+                </se:VisualBox>
+                <TextBlock TextWrapping="Wrap" FontSize="16" Text="НКУ SB4" Height="22" Canvas.Left="1008" Canvas.Top="476" Width="187"/>
+                <se:VisualBox  HorizontalAlignment="Center" VerticalAlignment="Center" Width="25" Height="25" BorderBrush="{x:Null}" Canvas.Left="975" Canvas.Top="516">
+                    <se:VisualBox.Background>
+                        <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_normal.png"/>
+                    </se:VisualBox.Background>
+                    <se:VisualBox.VisualStateCollection>
+                        <se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem.Value>
+                                <hmi:SeBinding  Path="Tags.Node[view.scheme].Items[tag110].Value">
+                                    <hmi:SeBinding.FallbackValue>
+                                        <system:Boolean>False</system:Boolean>
+                                    </hmi:SeBinding.FallbackValue>
+                                </hmi:SeBinding>
+                            </se:VisualBoxStateItem.Value>
+                            <se:VisualBoxStateItem.Background>
+                                <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_fine.png" Stretch="Uniform"/>
+                            </se:VisualBoxStateItem.Background>
+                        </se:VisualBoxStateItem>
+                    </se:VisualBox.VisualStateCollection>
+                </se:VisualBox>
+                <TextBlock TextWrapping="Wrap" FontSize="16" Text="50% НКПР" Height="22" Canvas.Left="1008" Canvas.Top="516" Width="187"/>
+                <se:VisualBox  HorizontalAlignment="Center" VerticalAlignment="Center" Width="25" Height="25" BorderBrush="{x:Null}" Canvas.Left="975" Canvas.Top="556">
+                    <se:VisualBox.Background>
+                        <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_normal.png"/>
+                    </se:VisualBox.Background>
+                    <se:VisualBox.VisualStateCollection>
+                        <se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem.Value>
+                                <hmi:SeBinding  Path="Tags.Node[view.scheme].Items[tag111].Value">
+                                    <hmi:SeBinding.FallbackValue>
+                                        <system:Boolean>False</system:Boolean>
+                                    </hmi:SeBinding.FallbackValue>
+                                </hmi:SeBinding>
+                            </se:VisualBoxStateItem.Value>
+                            <se:VisualBoxStateItem.Background>
+                                <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_fine.png" Stretch="Uniform"/>
+                            </se:VisualBoxStateItem.Background>
+                        </se:VisualBoxStateItem>
+                    </se:VisualBox.VisualStateCollection>
+                </se:VisualBox>
+                <TextBlock TextWrapping="Wrap" FontSize="16" Text="220 В" Height="22" Canvas.Left="1008" Canvas.Top="556" Width="187"/>
+            </Canvas>
+        </TabItem>
+
+    </TabControl>
+</UserControl>

@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="NGO.Elements.MSAB.GasView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             xmlns:se="http://schemas.monokot.com/se/"
+             xmlns:hmi="http://schemas.monokot.com/hmi/"
+             d:DesignHeight="234" d:DesignWidth="79" Name="_self">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80*" />
+            <RowDefinition Height="20*" />
+        </Grid.RowDefinitions>
+        <Border Grid.RowSpan="2" BorderThickness="1" BorderBrush="Black" Background="#FFBABABA" />
+        <se:LevelBar Level="{Binding ElementName=_self, Path=value}"  Name="levelBar1" Maximum="{Binding ElementName=scale, Path=Maximum}" Minimum="{Binding ElementName=scale, Path=Minimum}" Margin="0,10" Fill="{Binding ElementName=_self, Path=valueFill}"/>
+        <se:LinearScale Grid.Row="0" Grid.Column="0" Name="scale" MajorTickBrush="Black" Foreground="Black" MajorTickLength="20" MinorTickBrush="Black" MinorTickLength="10" Maximum="{Binding ElementName=_self, Path=maximum}" Minimum="{Binding ElementName=_self, Path=minimum}" MajorTickCost="{Binding ElementName=_self,Path=majorTickCost}" ScaleLabelsStringFormat="{}{0:0}" MinorTickCost="{Binding ElementName=_self, Path=minorTickCost}" MinorTickThickness="2" MajorTickThickness="2" ShowStick="False" Margin="0,10" />
+        <Rectangle Grid.Row="1" Fill="White" Margin="3" RadiusX="5" RadiusY="5" />
+        <Viewbox Grid.Row="1" Margin="4">
+            <StackPanel Orientation="Vertical">
+            <TextBlock FontWeight="Medium" Text="{Binding ElementName=_self, Path=value, StringFormat=0, FallbackValue=A}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="28" />
+            <TextBlock FontWeight="Medium" Text="{Binding ElementName=_self, Path=units, StringFormat=0, FallbackValue=d}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" />
+            </StackPanel>
+        </Viewbox>
+    </Grid>
+</UserControl>

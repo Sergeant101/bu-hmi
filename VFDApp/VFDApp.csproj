@@ -1,0 +1,1071 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C41993B0-B239-47B2-B842-A50E0ADC35CE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VFDApp</RootNamespace>
+    <AssemblyName>VFDApp</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.AcroPDFLib">
+      <HintPath>..\..\Tds\libs\AxInterop.AcroPDFLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.AcroPDFLib">
+      <HintPath>..\..\Tds\libs\Interop.AcroPDFLib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Monokot.Hmi.Core">
+      <HintPath>C:\Program Files (x86)\Monokot\SCADA Extension\v8\bin\dotnet40\se\Monokot.Hmi.Core.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Monokot.Hmi.StdProviders">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Monokot.Hmi.Wpf">
+      <HintPath>C:\Program Files (x86)\Monokot\SCADA Extension\v8\bin\dotnet40\se\Monokot.Hmi.Wpf.dll</HintPath>
+      <Private>False</Private>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Monokot.ScadaExtension.Extended">
+      <HintPath>C:\Program Files (x86)\Monokot\SCADA Extension\v8\bin\dotnet40\se\Monokot.ScadaExtension.Extended.dll</HintPath>
+      <Private>False</Private>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Monokot.ScadaExtension.Opc">
+      <HintPath>C:\Program Files (x86)\Monokot\SCADA Extension\v8\bin\dotnet40\se\Monokot.ScadaExtension.Opc.dll</HintPath>
+      <Private>False</Private>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Monokot.ScadaExtension.Wpf">
+      <HintPath>C:\Program Files (x86)\Monokot\SCADA Extension\v8\bin\dotnet40\se\Monokot.ScadaExtension.Wpf.dll</HintPath>
+      <Private>False</Private>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Monokot.ScadaExtension.WpfComponents">
+      <HintPath>C:\Program Files (x86)\Monokot\SCADA Extension\v8\bin\dotnet40\se\Monokot.ScadaExtension.WpfComponents.dll</HintPath>
+      <Private>False</Private>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WPFPdfViewer">
+      <HintPath>..\..\Tds\libs\WPFPdfViewer.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="..\54053\FrmSettingsClimat_54053.xaml">
+      <Link>54053\FrmSettingsClimat_54053.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\54053\SLD_54053.xaml">
+      <Link>54053\SLD_54053.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\54053\SLD_KTU_54053.xaml">
+      <Link>54053\SLD_KTU_54053.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\54053\Topologiya_54053.xaml">
+      <Link>54053\Topologiya_54053.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\54056\Frames\FrmPlavnyjPusk bngre.xaml">
+      <Link>54056\FrmPlavnyjPusk bngre.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\54056\Frames\FrmPumps bngre.xaml">
+      <Link>54056\FrmPumps bngre.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\54056\Frames\ktu1\FrmPlavnyjPusk bngre ktu1.xaml">
+      <Link>54056\ktu1\FrmPlavnyjPusk bngre ktu1.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\54056\Frames\ktu1\SLD bngre ktu1.xaml">
+      <Link>54056\ktu1\SLD bngre ktu1.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\54056\Frames\ktu1\Topologiya bngre ktu1.xaml">
+      <Link>54056\ktu1\Topologiya bngre ktu1.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\54056\Frames\ktu2\FrmPlavnyjPusk bngre ktu2.xaml">
+      <Link>54056\ktu2\FrmPlavnyjPusk bngre ktu2.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\54056\Frames\ktu2\SLD bngre ktu2.xaml">
+      <Link>54056\ktu2\SLD bngre ktu2.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\54056\Frames\ktu2\Topologiya bngre ktu2.xaml">
+      <Link>54056\ktu2\Topologiya bngre ktu2.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\54056\Frames\NastrojkaDatchikovNasosov.xaml">
+      <Link>54056\NastrojkaDatchikovNasosov.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\54056\Frames\NulevojRascepitel bngre.xaml">
+      <Link>54056\NulevojRascepitel bngre.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\54056\Frames\SLD bngre.xaml">
+      <Link>54056\SLD bngre.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\54056\Frames\Topologiya bngre.xaml">
+      <Link>54056\Topologiya bngre.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\DC\Frames\ArcticLight\FrmDrillingSNG.xaml">
+      <Link>DC\FrmDrillingSNG.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\DC\Frames\n159\FrmRotor_dc.xaml">
+      <Link>DC\FrmRotor_dc.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\MUBR\NastrojkaNaporomerov.xaml">
+      <Link>MUBR\NastrojkaNaporomerov.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD\Frames\FrmPdf.xaml">
+      <Link>Common\FrmPdf.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD\Frames\FrmTrends.xaml">
+      <Link>54038\FrmTrends.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD\Frames\Sub\n159\CepiAvarijnogoOtklyucheniyaPitaniya bu.xaml">
+      <Link>54038\CepiAvarijnogoOtklyucheniyaPitaniya bu.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD\Frames\Sub\n159\CepiAvarijnogoOtklyucheniyaPitaniya bu2.xaml">
+      <Link>54038\CepiAvarijnogoOtklyucheniyaPitaniya bu2.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD\Frames\Sub\n159\Drawwork_SNG.xaml">
+      <Link>54038\Drawwork_SNG.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD\Frames\Sub\n159\FrmArhiv.xaml">
+      <Link>54038\FrmArhiv.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD\Frames\Sub\n159\FrmBajpasy.xaml">
+      <Link>54038\FrmBajpasy.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD\Frames\Sub\n159\FrmHelperDrawwork1.xaml">
+      <Link>54038\FrmHelperDrawwork1.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD\Frames\Sub\n159\FrmHelperDrawwork2.xaml">
+      <Link>54038\FrmHelperDrawwork2.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD\Frames\Sub\n159\FrmPlavnyjPusk.xaml">
+      <Link>54038\FrmPlavnyjPusk.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD\Frames\Sub\n159\FrmPumps.xaml">
+      <Link>54038\FrmPumps.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD\Frames\Sub\n159\FrmRotor.xaml">
+      <Link>54038\FrmRotor.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD\Frames\Sub\n159\FrmSettingsClimat.xaml">
+      <Link>54038\FrmSettingsClimat.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD\Frames\Sub\n159\FrmSettingsMomentHydro.xaml">
+      <Link>54038\FrmSettingsMomentHydro.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD\Frames\Sub\n159\FrmTanks.xaml">
+      <Link>54038\FrmTanks.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD\Frames\Sub\n159\FrmVfd.xaml">
+      <Link>54038\FrmVfd.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD\Frames\Sub\n159\NastrojkaDatchikov.xaml">
+      <Link>54038\NastrojkaDatchikov.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD\Frames\Sub\n159\NastrojkaEmkostej.xaml">
+      <Link>54038\NastrojkaEmkostej.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD\Frames\Sub\n159\NastrojkaEmkostejDiapazonov.xaml">
+      <Link>54038\NastrojkaEmkostejDiapazonov.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD\Frames\Sub\n159\NastrojkaEmkostejOtobrajenia.xaml">
+      <Link>54038\NastrojkaEmkostejOtobrajenia.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD\Frames\Sub\n159\NatrojkaGazOtobrazenie.xaml">
+      <Link>54038\NatrojkaGazOtobrazenie.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD\Frames\Sub\n159\NulevojRascepitel.xaml">
+      <Link>54038\NulevojRascepitel.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD\Frames\Sub\n159\Pozicionirovanie.xaml">
+      <Link>54038\Pozicionirovanie.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD\Frames\Sub\n159\SLD.xaml">
+      <Link>54038\SLD.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD\Frames\Sub\n159\Topologiya.xaml">
+      <Link>54038\Topologiya.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD\Frames\Sub\n159\WndSettingsJoystick.xaml">
+      <Link>54038\WndSettingsJoystick.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\vfd\frames\sub\sng_obuchenie\FrmSettingsWeight.xaml">
+      <Link>SNG_Obuchenie\FrmSettingsWeight.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_160\Frames\CepiAvarijnogoOtklyucheniyaPitaniya bu 160.xaml">
+      <Link>54042\CepiAvarijnogoOtklyucheniyaPitaniya bu 160.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_160\Frames\CepiAvarijnogoOtklyucheniyaPitaniyaKru2 160.xaml">
+      <Link>54042\CepiAvarijnogoOtklyucheniyaPitaniyaKru2 160.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_160\Frames\FrmArhiv 160.xaml">
+      <Link>54042\FrmArhiv 160.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_160\Frames\FrmBajpasy 160.xaml">
+      <Link>54042\FrmBajpasy 160.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_160\Frames\FrmKru 160.xaml">
+      <Link>54042\FrmKru 160.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_160\Frames\FrmPlavnyjPusk 160.xaml">
+      <Link>54042\FrmPlavnyjPusk 160.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_160\Frames\FrmPumps 160.xaml">
+      <Link>54042\FrmPumps 160.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_160\Frames\FrmSettingsClimat 160.xaml">
+      <Link>54042\FrmSettingsClimat 160.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_160\Frames\FrmTrends 160.xaml">
+      <Link>54042\FrmTrends 160.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_160\Frames\FrmVfd 160.xaml">
+      <Link>54042\FrmVfd 160.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_160\Frames\ktu1\FrmKru 160 ktu1.xaml">
+      <Link>54042\ktu1\FrmKru 160 ktu1.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_160\Frames\ktu1\FrmPlavnyjPusk 160 ktu1.xaml">
+      <Link>54042\ktu1\FrmPlavnyjPusk 160 ktu1.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_160\Frames\ktu1\FrmVfd 160 ktu1.xaml">
+      <Link>54042\ktu1\FrmVfd 160 ktu1.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_160\Frames\ktu1\NulevojRascepitel 160 ktu1.xaml">
+      <Link>54042\ktu1\NulevojRascepitel 160 ktu1.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_160\Frames\ktu1\SLD 160 ktu1.xaml">
+      <Link>54042\ktu1\SLD 160 ktu1.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_160\Frames\ktu1\Topologiya 160 ktu1.xaml">
+      <Link>54042\ktu1\Topologiya 160 ktu1.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_160\Frames\ktu1\Topologiya_MB_RTU 160 ktu1.xaml">
+      <Link>54042\ktu1\Topologiya_MB_RTU 160 ktu1.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_160\Frames\ktu2\FrmKru 160 ktu2.xaml">
+      <Link>54042\ktu2\FrmKru 160 ktu2.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_160\Frames\ktu2\FrmPlavnyjPusk 160 ktu2.xaml">
+      <Link>54042\ktu2\FrmPlavnyjPusk 160 ktu2.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_160\Frames\ktu2\FrmVfd 160 ktu2.xaml">
+      <Link>54042\ktu2\FrmVfd 160 ktu2.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_160\Frames\ktu2\NulevojRascepitel 160 ktu2.xaml">
+      <Link>54042\ktu2\NulevojRascepitel 160 ktu2.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_160\Frames\ktu2\SLD 160 ktu2.xaml">
+      <Link>54042\ktu2\SLD 160 ktu2.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_160\Frames\ktu2\Topologiya 160 ktu2.xaml">
+      <Link>54042\ktu2\Topologiya 160 ktu2.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_160\Frames\ktu2\Topologiya_MB_RTU 160 ktu2.xaml">
+      <Link>54042\ktu2\Topologiya_MB_RTU 160 ktu2.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_160\Frames\NulevojRascepitel 160.xaml">
+      <Link>54042\NulevojRascepitel 160.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_160\Frames\SLD 160.xaml">
+      <Link>54042\SLD 160.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_160\Frames\Topologiya 160.xaml">
+      <Link>54042\Topologiya 160.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_160\Frames\Topologiya_MB_RTU 160.xaml">
+      <Link>54042\Topologiya_MB_RTU 160.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_Arktika_light\Frames\CepiAvarijnogoOtklyucheniyaPitaniya bu arctic.xaml">
+      <Link>54044\CepiAvarijnogoOtklyucheniyaPitaniya bu arctic.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_Arktika_light\Frames\CepiAvarijnogoOtklyucheniyaPitaniyaKru2 arctic.xaml">
+      <Link>54044\CepiAvarijnogoOtklyucheniyaPitaniyaKru2 arctic.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_Arktika_light\Frames\Drawwork_SNG arctic.xaml">
+      <Link>54044\Drawwork_SNG arctic.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_Arktika_light\Frames\FrmArhiv arctic.xaml">
+      <Link>54044\FrmArhiv arctic.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_Arktika_light\Frames\FrmBajpasy arctic.xaml">
+      <Link>54044\FrmBajpasy arctic.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_Arktika_light\Frames\FrmKru arctic.xaml">
+      <Link>54044\FrmKru arctic.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_Arktika_light\Frames\FrmMcc arctic.xaml">
+      <Link>54044\FrmMcc arctic.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_Arktika_light\Frames\FrmParametry arctic.xaml">
+      <Link>54044\FrmParametry arctic.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_Arktika_light\Frames\FrmPlavnyjPusk arctic.xaml">
+      <Link>54044\FrmPlavnyjPusk arctic.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_Arktika_light\Frames\FrmPumps arctic.xaml">
+      <Link>54044\FrmPumps arctic.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_Arktika_light\Frames\FrmSettingsClimat arctic.xaml">
+      <Link>54044\FrmSettingsClimat arctic.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_Arktika_light\Frames\FrmSettingsWeight arctic.xaml">
+      <Link>54044\FrmSettingsWeight arctic.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_Arktika_light\Frames\FrmTanks arctic.xaml">
+      <Link>54044\FrmTanks arctic.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_Arktika_light\Frames\FrmTrends arctic.xaml">
+      <Link>54044\FrmTrends arctic.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_Arktika_light\Frames\FrmVfd arctic.xaml">
+      <Link>54044\FrmVfd arctic.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_Arktika_light\Frames\ktu1\FrmPlavnyjPusk arctic ktu1.xaml">
+      <Link>54044\ktu1\FrmPlavnyjPusk arctic ktu1.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_Arktika_light\Frames\ktu1\FrmVfd arctic ktu1.xaml">
+      <Link>54044\ktu1\FrmVfd arctic ktu1.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_Arktika_light\Frames\ktu1\NulevojRascepitel arctic ktu1.xaml">
+      <Link>54044\ktu1\NulevojRascepitel arctic ktu1.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_Arktika_light\Frames\ktu1\SLD arctic ktu1.xaml">
+      <Link>54044\ktu1\SLD arctic ktu1.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_Arktika_light\Frames\ktu1\Topologiya arctic ktu1.xaml">
+      <Link>54044\ktu1\Topologiya arctic ktu1.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_Arktika_light\Frames\ktu1\Topologiya_MB_RTU arctic ktu1.xaml">
+      <Link>54044\ktu1\Topologiya_MB_RTU arctic ktu1.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_Arktika_light\Frames\ktu2\FrmPlavnyjPusk arctic ktu2.xaml">
+      <Link>54044\ktu2\FrmPlavnyjPusk arctic ktu2.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_Arktika_light\Frames\ktu2\FrmVfd arctic ktu2.xaml">
+      <Link>54044\ktu2\FrmVfd arctic ktu2.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_Arktika_light\Frames\ktu2\NulevojRascepitel arctic ktu2.xaml">
+      <Link>54044\ktu2\NulevojRascepitel arctic ktu2.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_Arktika_light\Frames\ktu2\SLD arctic ktu2.xaml">
+      <Link>54044\ktu2\SLD arctic ktu2.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_Arktika_light\Frames\ktu2\Topologiya arctic ktu2.xaml">
+      <Link>54044\ktu2\Topologiya arctic ktu2.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_Arktika_light\Frames\ktu2\Topologiya_MB_RTU arctic ktu2.xaml">
+      <Link>54044\ktu2\Topologiya_MB_RTU arctic ktu2.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_Arktika_light\Frames\MainFrame arctic.xaml">
+      <Link>54044\MainFrame arctic.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_Arktika_light\Frames\NulevojRascepitel arctic.xaml">
+      <Link>54044\NulevojRascepitel arctic.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_Arktika_light\Frames\SLD arctic.xaml">
+      <Link>54044\SLD arctic.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_Arktika_light\Frames\Topologiya arctic.xaml">
+      <Link>54044\Topologiya arctic.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\VFD_Arktika_light\Frames\Topologiya_MB_RTU arctic.xaml">
+      <Link>54044\Topologiya_MB_RTU arctic.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="54052\Drawwork_SNG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="..\54053\FrmSettingsClimat_54053.xaml.cs">
+      <Link>54053\FrmSettingsClimat_54053.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\54053\SLD_54053.xaml.cs">
+      <Link>54053\SLD_54053.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\54053\SLD_KTU_54053.xaml.cs">
+      <Link>54053\SLD_KTU_54053.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\54053\Topologiya_54053.xaml.cs">
+      <Link>54053\Topologiya_54053.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\54056\Frames\FrmPlavnyjPusk bngre.xaml.cs">
+      <Link>54056\FrmPlavnyjPusk bngre.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\54056\Frames\FrmPumps bngre.xaml.cs">
+      <Link>54056\FrmPumps bngre.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\54056\Frames\ktu1\FrmPlavnyjPusk bngre ktu1.xaml.cs">
+      <Link>54056\ktu1\FrmPlavnyjPusk bngre ktu1.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\54056\Frames\ktu1\SLD bngre ktu1.xaml.cs">
+      <Link>54056\ktu1\SLD bngre ktu1.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\54056\Frames\ktu1\Topologiya bngre ktu1.xaml.cs">
+      <Link>54056\ktu1\Topologiya bngre ktu1.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\54056\Frames\ktu2\FrmPlavnyjPusk bngre ktu2.xaml.cs">
+      <Link>54056\ktu2\FrmPlavnyjPusk bngre ktu2.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\54056\Frames\ktu2\SLD bngre ktu2.xaml.cs">
+      <Link>54056\ktu2\SLD bngre ktu2.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\54056\Frames\ktu2\Topologiya bngre ktu2.xaml.cs">
+      <Link>54056\ktu2\Topologiya bngre ktu2.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\54056\Frames\NastrojkaDatchikovNasosov.xaml.cs">
+      <Link>54056\NastrojkaDatchikovNasosov.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\54056\Frames\NulevojRascepitel bngre.xaml.cs">
+      <Link>54056\NulevojRascepitel bngre.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\54056\Frames\SLD bngre.xaml.cs">
+      <Link>54056\SLD bngre.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\54056\Frames\Topologiya bngre.xaml.cs">
+      <Link>54056\Topologiya bngre.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\DC\Frames\ArcticLight\FrmDrillingSNG.xaml.cs">
+      <Link>DC\FrmDrillingSNG.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\DC\Frames\n159\FrmRotor_dc.xaml.cs">
+      <Link>DC\FrmRotor_dc.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\MUBR\NastrojkaNaporomerov.xaml.cs">
+      <Link>MUBR\NastrojkaNaporomerov.xaml.cs</Link>
+      <DependentUpon>NastrojkaNaporomerov.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD\Frames\FrmPdf.xaml.cs">
+      <Link>Common\FrmPdf.xaml.cs</Link>
+      <DependentUpon>FrmPdf.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD\Frames\FrmTrends.xaml.cs">
+      <Link>54038\FrmTrends.xaml.cs</Link>
+      <DependentUpon>FrmTrends.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD\Frames\Sub\n159\CepiAvarijnogoOtklyucheniyaPitaniya bu.xaml.cs">
+      <Link>54038\CepiAvarijnogoOtklyucheniyaPitaniya bu.xaml.cs</Link>
+      <DependentUpon>CepiAvarijnogoOtklyucheniyaPitaniya bu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD\Frames\Sub\n159\CepiAvarijnogoOtklyucheniyaPitaniya bu2.xaml.cs">
+      <Link>54038\CepiAvarijnogoOtklyucheniyaPitaniya bu2.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\VFD\Frames\Sub\n159\Drawwork_SNG.xaml.cs">
+      <Link>54038\Drawwork_SNG.xaml.cs</Link>
+      <DependentUpon>Drawwork_SNG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD\Frames\Sub\n159\FrmArhiv.xaml.cs">
+      <Link>54038\FrmArhiv.xaml.cs</Link>
+      <DependentUpon>FrmArhiv.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD\Frames\Sub\n159\FrmBajpasy.xaml.cs">
+      <Link>54038\FrmBajpasy.xaml.cs</Link>
+      <DependentUpon>FrmBajpasy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD\Frames\Sub\n159\FrmHelperDrawwork1.xaml.cs">
+      <Link>54038\FrmHelperDrawwork1.xaml.cs</Link>
+      <DependentUpon>FrmHelperDrawwork1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD\Frames\Sub\n159\FrmHelperDrawwork2.xaml.cs">
+      <Link>54038\FrmHelperDrawwork2.xaml.cs</Link>
+      <DependentUpon>FrmHelperDrawwork2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD\Frames\Sub\n159\FrmPlavnyjPusk.xaml.cs">
+      <Link>54038\FrmPlavnyjPusk.xaml.cs</Link>
+      <DependentUpon>FrmPlavnyjPusk.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD\Frames\Sub\n159\FrmPumps.xaml.cs">
+      <Link>54038\FrmPumps.xaml.cs</Link>
+      <DependentUpon>FrmPumps.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD\Frames\Sub\n159\FrmRotor.xaml.cs">
+      <Link>54038\FrmRotor.xaml.cs</Link>
+      <DependentUpon>FrmRotor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD\Frames\Sub\n159\FrmSettingsClimat.xaml.cs">
+      <Link>54038\FrmSettingsClimat.xaml.cs</Link>
+      <DependentUpon>FrmSettingsClimat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD\Frames\Sub\n159\FrmSettingsMomentHydro.xaml.cs">
+      <Link>54038\FrmSettingsMomentHydro.xaml.cs</Link>
+      <DependentUpon>FrmSettingsMomentHydro.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD\Frames\Sub\n159\FrmTanks.xaml.cs">
+      <Link>54038\FrmTanks.xaml.cs</Link>
+      <DependentUpon>FrmTanks.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD\Frames\Sub\n159\FrmVfd.xaml.cs">
+      <Link>54038\FrmVfd.xaml.cs</Link>
+      <DependentUpon>FrmVfd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD\Frames\Sub\n159\NastrojkaDatchikov.xaml.cs">
+      <Link>54038\NastrojkaDatchikov.xaml.cs</Link>
+      <DependentUpon>NastrojkaDatchikov.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD\Frames\Sub\n159\NastrojkaEmkostej.xaml.cs">
+      <Link>54038\NastrojkaEmkostej.xaml.cs</Link>
+      <DependentUpon>NastrojkaEmkostej.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD\Frames\Sub\n159\NastrojkaEmkostejDiapazonov.xaml.cs">
+      <Link>54038\NastrojkaEmkostejDiapazonov.xaml.cs</Link>
+      <DependentUpon>NastrojkaEmkostejDiapazonov.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD\Frames\Sub\n159\NastrojkaEmkostejOtobrajenia.xaml.cs">
+      <Link>54038\NastrojkaEmkostejOtobrajenia.xaml.cs</Link>
+      <DependentUpon>NastrojkaEmkostejOtobrajenia.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD\Frames\Sub\n159\NatrojkaGazOtobrazenie.xaml.cs">
+      <Link>54038\NatrojkaGazOtobrazenie.xaml.cs</Link>
+      <DependentUpon>NatrojkaGazOtobrazenie.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD\Frames\Sub\n159\NulevojRascepitel.xaml.cs">
+      <Link>54038\NulevojRascepitel.xaml.cs</Link>
+      <DependentUpon>NulevojRascepitel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD\Frames\Sub\n159\Pozicionirovanie.xaml.cs">
+      <Link>54038\Pozicionirovanie.xaml.cs</Link>
+      <DependentUpon>Pozicionirovanie.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD\Frames\Sub\n159\SLD.xaml.cs">
+      <Link>54038\SLD.xaml.cs</Link>
+      <DependentUpon>SLD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD\Frames\Sub\n159\Topologiya.xaml.cs">
+      <Link>54038\Topologiya.xaml.cs</Link>
+      <DependentUpon>Topologiya.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD\Frames\Sub\n159\WndSettingsJoystick.xaml.cs">
+      <Link>54038\WndSettingsJoystick.xaml.cs</Link>
+      <DependentUpon>WndSettingsJoystick.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\vfd\frames\sub\sng_obuchenie\FrmSettingsWeight.xaml.cs">
+      <Link>SNG_Obuchenie\FrmSettingsWeight.xaml.cs</Link>
+      <DependentUpon>FrmSettingsWeight.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD_160\Frames\CepiAvarijnogoOtklyucheniyaPitaniya bu 160.xaml.cs">
+      <Link>54042\CepiAvarijnogoOtklyucheniyaPitaniya bu 160.xaml.cs</Link>
+      <DependentUpon>CepiAvarijnogoOtklyucheniyaPitaniya bu 160.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD_160\Frames\CepiAvarijnogoOtklyucheniyaPitaniyaKru2 160.xaml.cs">
+      <Link>54042\CepiAvarijnogoOtklyucheniyaPitaniyaKru2 160.xaml.cs</Link>
+      <DependentUpon>CepiAvarijnogoOtklyucheniyaPitaniyaKru2 160.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD_160\Frames\FrmArhiv 160.xaml.cs">
+      <Link>54042\FrmArhiv 160.xaml.cs</Link>
+      <DependentUpon>FrmArhiv 160.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD_160\Frames\FrmBajpasy 160.xaml.cs">
+      <Link>54042\FrmBajpasy 160.xaml.cs</Link>
+      <DependentUpon>FrmBajpasy 160.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD_160\Frames\FrmKru 160.xaml.cs">
+      <Link>54042\FrmKru 160.xaml.cs</Link>
+      <DependentUpon>FrmKru 160.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD_160\Frames\FrmPlavnyjPusk 160.xaml.cs">
+      <Link>54042\FrmPlavnyjPusk 160.xaml.cs</Link>
+      <DependentUpon>FrmPlavnyjPusk 160.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD_160\Frames\FrmPumps 160.xaml.cs">
+      <Link>54042\FrmPumps 160.xaml.cs</Link>
+      <DependentUpon>FrmPumps 160.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD_160\Frames\FrmSettingsClimat 160.xaml.cs">
+      <Link>54042\FrmSettingsClimat 160.xaml.cs</Link>
+      <DependentUpon>FrmSettingsClimat 160.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD_160\Frames\FrmTrends 160.xaml.cs">
+      <Link>54042\FrmTrends 160.xaml.cs</Link>
+      <DependentUpon>FrmTrends 160.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD_160\Frames\FrmVfd 160.xaml.cs">
+      <Link>54042\FrmVfd 160.xaml.cs</Link>
+      <DependentUpon>FrmVfd 160.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD_160\Frames\ktu1\FrmKru 160 ktu1.xaml.cs">
+      <Link>54042\ktu1\FrmKru 160 ktu1.xaml.cs</Link>
+      <DependentUpon>FrmKru 160 ktu1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD_160\Frames\ktu1\FrmPlavnyjPusk 160 ktu1.xaml.cs">
+      <Link>54042\ktu1\FrmPlavnyjPusk 160 ktu1.xaml.cs</Link>
+      <DependentUpon>FrmPlavnyjPusk 160 ktu1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD_160\Frames\ktu1\FrmVfd 160 ktu1.xaml.cs">
+      <Link>54042\ktu1\FrmVfd 160 ktu1.xaml.cs</Link>
+      <DependentUpon>FrmVfd 160 ktu1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD_160\Frames\ktu1\NulevojRascepitel 160 ktu1.xaml.cs">
+      <Link>54042\ktu1\NulevojRascepitel 160 ktu1.xaml.cs</Link>
+      <DependentUpon>NulevojRascepitel 160 ktu1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD_160\Frames\ktu1\SLD 160 ktu1.xaml.cs">
+      <Link>54042\ktu1\SLD 160 ktu1.xaml.cs</Link>
+      <DependentUpon>SLD 160 ktu1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD_160\Frames\ktu1\Topologiya 160 ktu1.xaml.cs">
+      <Link>54042\ktu1\Topologiya 160 ktu1.xaml.cs</Link>
+      <DependentUpon>Topologiya 160 ktu1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD_160\Frames\ktu1\Topologiya_MB_RTU 160 ktu1.xaml.cs">
+      <Link>54042\ktu1\Topologiya_MB_RTU 160 ktu1.xaml.cs</Link>
+      <DependentUpon>Topologiya_MB_RTU 160 ktu1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD_160\Frames\ktu2\FrmKru 160 ktu2.xaml.cs">
+      <Link>54042\ktu2\FrmKru 160 ktu2.xaml.cs</Link>
+      <DependentUpon>FrmKru 160 ktu2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD_160\Frames\ktu2\FrmPlavnyjPusk 160 ktu2.xaml.cs">
+      <Link>54042\ktu2\FrmPlavnyjPusk 160 ktu2.xaml.cs</Link>
+      <DependentUpon>FrmPlavnyjPusk 160 ktu2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD_160\Frames\ktu2\FrmVfd 160 ktu2.xaml.cs">
+      <Link>54042\ktu2\FrmVfd 160 ktu2.xaml.cs</Link>
+      <DependentUpon>FrmVfd 160 ktu2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD_160\Frames\ktu2\NulevojRascepitel 160 ktu2.xaml.cs">
+      <Link>54042\ktu2\NulevojRascepitel 160 ktu2.xaml.cs</Link>
+      <DependentUpon>NulevojRascepitel 160 ktu2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD_160\Frames\ktu2\SLD 160 ktu2.xaml.cs">
+      <Link>54042\ktu2\SLD 160 ktu2.xaml.cs</Link>
+      <DependentUpon>SLD 160 ktu2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD_160\Frames\ktu2\Topologiya 160 ktu2.xaml.cs">
+      <Link>54042\ktu2\Topologiya 160 ktu2.xaml.cs</Link>
+      <DependentUpon>Topologiya 160 ktu2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD_160\Frames\ktu2\Topologiya_MB_RTU 160 ktu2.xaml.cs">
+      <Link>54042\ktu2\Topologiya_MB_RTU 160 ktu2.xaml.cs</Link>
+      <DependentUpon>Topologiya_MB_RTU 160 ktu2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD_160\Frames\NulevojRascepitel 160.xaml.cs">
+      <Link>54042\NulevojRascepitel 160.xaml.cs</Link>
+      <DependentUpon>NulevojRascepitel 160.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD_160\Frames\SLD 160.xaml.cs">
+      <Link>54042\SLD 160.xaml.cs</Link>
+      <DependentUpon>SLD 160.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD_160\Frames\Topologiya 160.xaml.cs">
+      <Link>54042\Topologiya 160.xaml.cs</Link>
+      <DependentUpon>Topologiya 160.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD_160\Frames\Topologiya_MB_RTU 160.xaml.cs">
+      <Link>54042\Topologiya_MB_RTU 160.xaml.cs</Link>
+      <DependentUpon>Topologiya_MB_RTU 160.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\VFD_Arktika_light\Frames\CepiAvarijnogoOtklyucheniyaPitaniya bu arctic.xaml.cs">
+      <Link>54044\CepiAvarijnogoOtklyucheniyaPitaniya bu arctic.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\VFD_Arktika_light\Frames\CepiAvarijnogoOtklyucheniyaPitaniyaKru2 arctic.xaml.cs">
+      <Link>54044\CepiAvarijnogoOtklyucheniyaPitaniyaKru2 arctic.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\VFD_Arktika_light\Frames\Drawwork_SNG arctic.xaml.cs">
+      <Link>54044\Drawwork_SNG arctic.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\VFD_Arktika_light\Frames\FrmArhiv arctic.xaml.cs">
+      <Link>54044\FrmArhiv arctic.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\VFD_Arktika_light\Frames\FrmBajpasy arctic.xaml.cs">
+      <Link>54044\FrmBajpasy arctic.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\VFD_Arktika_light\Frames\FrmKru arctic.xaml.cs">
+      <Link>54044\FrmKru arctic.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\VFD_Arktika_light\Frames\FrmMcc arctic.xaml.cs">
+      <Link>54044\FrmMcc arctic.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\VFD_Arktika_light\Frames\FrmParametry arctic.xaml.cs">
+      <Link>54044\FrmParametry arctic.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\VFD_Arktika_light\Frames\FrmPlavnyjPusk arctic.xaml.cs">
+      <Link>54044\FrmPlavnyjPusk arctic.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\VFD_Arktika_light\Frames\FrmPumps arctic.xaml.cs">
+      <Link>54044\FrmPumps arctic.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\VFD_Arktika_light\Frames\FrmSettingsClimat arctic.xaml.cs">
+      <Link>54044\FrmSettingsClimat arctic.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\VFD_Arktika_light\Frames\FrmSettingsWeight arctic.xaml.cs">
+      <Link>54044\FrmSettingsWeight arctic.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\VFD_Arktika_light\Frames\FrmTanks arctic.xaml.cs">
+      <Link>54044\FrmTanks arctic.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\VFD_Arktika_light\Frames\FrmTrends arctic.xaml.cs">
+      <Link>54044\FrmTrends arctic.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\VFD_Arktika_light\Frames\FrmVfd arctic.xaml.cs">
+      <Link>54044\FrmVfd arctic.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\VFD_Arktika_light\Frames\ktu1\FrmPlavnyjPusk arctic ktu1.xaml.cs">
+      <Link>54044\ktu1\FrmPlavnyjPusk arctic ktu1.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\VFD_Arktika_light\Frames\ktu1\FrmVfd arctic ktu1.xaml.cs">
+      <Link>54044\ktu1\FrmVfd arctic ktu1.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\VFD_Arktika_light\Frames\ktu1\NulevojRascepitel arctic ktu1.xaml.cs">
+      <Link>54044\ktu1\NulevojRascepitel arctic ktu1.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\VFD_Arktika_light\Frames\ktu1\SLD arctic ktu1.xaml.cs">
+      <Link>54044\ktu1\SLD arctic ktu1.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\VFD_Arktika_light\Frames\ktu1\Topologiya arctic ktu1.xaml.cs">
+      <Link>54044\ktu1\Topologiya arctic ktu1.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\VFD_Arktika_light\Frames\ktu1\Topologiya_MB_RTU arctic ktu1.xaml.cs">
+      <Link>54044\ktu1\Topologiya_MB_RTU arctic ktu1.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\VFD_Arktika_light\Frames\ktu2\FrmPlavnyjPusk arctic ktu2.xaml.cs">
+      <Link>54044\ktu2\FrmPlavnyjPusk arctic ktu2.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\VFD_Arktika_light\Frames\ktu2\FrmVfd arctic ktu2.xaml.cs">
+      <Link>54044\ktu2\FrmVfd arctic ktu2.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\VFD_Arktika_light\Frames\ktu2\NulevojRascepitel arctic ktu2.xaml.cs">
+      <Link>54044\ktu2\NulevojRascepitel arctic ktu2.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\VFD_Arktika_light\Frames\ktu2\SLD arctic ktu2.xaml.cs">
+      <Link>54044\ktu2\SLD arctic ktu2.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\VFD_Arktika_light\Frames\ktu2\Topologiya arctic ktu2.xaml.cs">
+      <Link>54044\ktu2\Topologiya arctic ktu2.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\VFD_Arktika_light\Frames\ktu2\Topologiya_MB_RTU arctic ktu2.xaml.cs">
+      <Link>54044\ktu2\Topologiya_MB_RTU arctic ktu2.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\VFD_Arktika_light\Frames\MainFrame arctic.xaml.cs">
+      <Link>54044\MainFrame arctic.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\VFD_Arktika_light\Frames\NulevojRascepitel arctic.xaml.cs">
+      <Link>54044\NulevojRascepitel arctic.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\VFD_Arktika_light\Frames\SLD arctic.xaml.cs">
+      <Link>54044\SLD arctic.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\VFD_Arktika_light\Frames\Topologiya arctic.xaml.cs">
+      <Link>54044\Topologiya arctic.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\VFD_Arktika_light\Frames\Topologiya_MB_RTU arctic.xaml.cs">
+      <Link>54044\Topologiya_MB_RTU arctic.xaml.cs</Link>
+    </Compile>
+    <Compile Include="54052\Drawwork_SNG.xaml.cs">
+      <DependentUpon>Drawwork_SNG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NGO.Elements\NGO.Elements.csproj">
+      <Project>{d126c3e5-88dc-4769-b62d-045007c55ba2}</Project>
+      <Name>NGO.Elements</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <!--<ItemGroup>
+    <Content Include="..\.scadae\Scripts\Scripts.js">
+      <Link>Scripts.js</Link>
+    </Content>
+  </ItemGroup>-->
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

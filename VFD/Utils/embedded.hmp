@@ -1,0 +1,84 @@
+{
+  "$type": "Monokot.Hmi.Core.Framework.HmpFile, Monokot.Hmi.Core",
+  "modules": {
+    "$type": "Monokot.Hmi.Core.Infrastructure.ReadOnlyDictionary`2[[System.String, mscorlib],[Monokot.Hmi.Core.Framework.HmiModule, Monokot.Hmi.Core]], Monokot.Hmi.Core",
+    "emb_mod": {
+      "$type": "Monokot.Hmi.Core.Framework.EmbeddedModule, Monokot.Hmi.Core",
+      "sync": {
+        "$type": "System.Object, mscorlib"
+      },
+      "moduleID": "emb_mod",
+      "objects": {
+        "$type": "Monokot.Hmi.Core.Infrastructure.ObservableDictionary`2[[System.String, mscorlib],[Monokot.Hmi.Core.Fundamental.IHmiEmbeddedObject, Monokot.Hmi.Core]], Monokot.Hmi.Core",
+        "Main_FC": {
+          "$type": "Monokot.Hmi.Core.Embedded.Gui.FramesController, Monokot.Hmi.Core",
+          "frames": {
+            "$type": "Monokot.Hmi.Core.Infrastructure.ObservableDictionary`2[[System.String, mscorlib],[Monokot.Hmi.Core.Embedded.Gui.FrameDefinition, Monokot.Hmi.Core]], Monokot.Hmi.Core",
+            "VFD.Frames.FrmDPPlant": {
+              "$type": "Monokot.Hmi.Core.Embedded.Gui.FrameDefinition, Monokot.Hmi.Core",
+              "typeName": "VFD.Frames.FrmDPPlant",
+              "parameters": null,
+              "index": 3
+            },
+            "VFD.Frames.FrmTrends": {
+              "$type": "Monokot.Hmi.Core.Embedded.Gui.FrameDefinition, Monokot.Hmi.Core",
+              "typeName": "VFD.Frames.FrmTrends",
+              "parameters": null,
+              "index": 9
+            },
+            "VFD.Frames.FrmAutomation": {
+              "$type": "Monokot.Hmi.Core.Embedded.Gui.FrameDefinition, Monokot.Hmi.Core",
+              "typeName": "VFD.Frames.FrmAutomation",
+              "parameters": null,
+              "index": 5
+            },
+            "VFD.Frames.FrmDrives": {
+              "$type": "Monokot.Hmi.Core.Embedded.Gui.FrameDefinition, Monokot.Hmi.Core",
+              "typeName": "VFD.Frames.FrmDrives",
+              "parameters": null,
+              "index": 4
+            },
+            "VFD.Frames.FrmDataBase": {
+              "$type": "Monokot.Hmi.Core.Embedded.Gui.FrameDefinition, Monokot.Hmi.Core",
+              "typeName": "VFD.Frames.FrmDataBase",
+              "parameters": null,
+              "index": 2
+            },
+            "VFD.Frames.FrmMain": {
+              "$type": "Monokot.Hmi.Core.Embedded.Gui.FrameDefinition, Monokot.Hmi.Core",
+              "typeName": "VFD.Frames.FrmMain",
+              "parameters": null,
+              "index": 1
+            },
+            "VFD.Frames.FrmSetup": {
+              "$type": "Monokot.Hmi.Core.Embedded.Gui.FrameDefinition, Monokot.Hmi.Core",
+              "typeName": "VFD.Frames.FrmSetup",
+              "parameters": null,
+              "index": 8
+            },
+            "VFD.Frames.FrmVfd": {
+              "$type": "Monokot.Hmi.Core.Embedded.Gui.FrameDefinition, Monokot.Hmi.Core",
+              "typeName": "VFD.Frames.FrmVfd",
+              "parameters": null,
+              "index": 10
+            },
+            "VFD.Frames.FrmPdf": {
+              "$type": "Monokot.Hmi.Core.Embedded.Gui.FrameDefinition, Monokot.Hmi.Core",
+              "typeName": "VFD.Frames.FrmPdf",
+              "parameters": null,
+              "index": 7
+            },
+            "VFD.Frames.FrmMSAB": {
+              "$type": "Monokot.Hmi.Core.Embedded.Gui.FrameDefinition, Monokot.Hmi.Core",
+              "typeName": "VFD.Frames.FrmMSAB",
+              "parameters": null,
+              "index": 6
+            }
+          },
+          "guid": "ae454db1-17bb-4c52-8500-285bf42ee0a1",
+          "name": "Main_FC"
+        }
+      }
+    }
+  }
+}

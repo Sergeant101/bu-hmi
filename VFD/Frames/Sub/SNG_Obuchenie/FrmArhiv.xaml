@@ -1,0 +1,852 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:Custom="http://schemas.monokot.com/hmi/" xmlns:Fundamental="clr-namespace:Monokot.Hmi.Core.Fundamental;assembly=Monokot.Hmi.Core"
+    x:Class="VFD.Frames.Sub.SNG_Obuchenie.FrmArhiv" 
+    xmlns:se="http://schemas.monokot.com/se/"
+             mc:Ignorable="d" 
+            d:DesignHeight="840" d:DesignWidth="1200">
+    <Grid>
+
+        <se:HmiTabControl HorizontalAlignment="Stretch" Margin="0,10,0,0" VerticalAlignment="Stretch" TabHorizontalAlignment="Center">
+            <se:HmiTabItem Header="ПРИВОДЫ" Width="150">
+                <se:HmiTabControl HorizontalAlignment="Stretch" Margin="0,10,0,0" VerticalAlignment="Stretch" TabHorizontalAlignment="Left" TabStripPlacement="Top">
+                    <se:HmiTabItem RenderTransformOrigin="0.5,0.5" Header="АВАРИИ" Width="200" Height="35">
+                        <Grid Background="Gainsboro">
+                            <se:AlarmViewer FontSize="16" Margin="0,10,0,0">
+                                <se:AlarmViewer.AlarmClasses>
+                                    <se:AlarmClassDescriptor AlarmClassID="aux_emergency"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="drawwork_emergency"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="pump1_emergency"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="pump2_emergency"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="rotor_emergency"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="vspom_leb1_emer"/>
+                                </se:AlarmViewer.AlarmClasses>
+                                <se:AlarmViewer.Columns>
+                                    <se:OnTimeColumn Header="ДАТА/ВРЕМЯ" />
+                                    <se:AlarmClassColumn Header="ИСТОЧНИК" />
+                                    <se:MessageColumn Header="СООБЩЕНИЕ" />
+                                    <se:MessageIDColumn Header="КОД" />
+                                </se:AlarmViewer.Columns>
+                            </se:AlarmViewer>
+                        </Grid>
+                    </se:HmiTabItem>
+                    <se:HmiTabItem Header="ГОТОВНОСТИ" RenderTransformOrigin="0.5,0.5" Width="200" Height="35">
+                        <Grid Background="Gainsboro">
+                            <se:AlarmViewer FontSize="16" Margin="0,0,0,0">
+                                <se:AlarmViewer.AlarmClasses>
+                                    <se:AlarmClassDescriptor AlarmClassID="aux_readiness"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="drawwork_readiness"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="pump1_readiness"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="pump2_readiness"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="rotor_readiness"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="vspom_leb1_ready"/>
+                                </se:AlarmViewer.AlarmClasses>
+                                <se:AlarmViewer.Columns>
+                                    <se:OnTimeColumn Header="ДАТА/ВРЕМЯ" />
+                                    <se:AlarmClassColumn Header="ИСТОЧНИК" />
+                                    <se:MessageColumn Header="СООБЩЕНИЕ" />
+                                    <se:MessageIDColumn Header="КОД" />
+                                </se:AlarmViewer.Columns>
+                            </se:AlarmViewer>
+                        </Grid>
+                    </se:HmiTabItem>
+                    <se:HmiTabItem RenderTransformOrigin="0.5,0.5" Width="200" Header="ПРЕОБРАЗОВАТЕЛИ" Height="35">
+                        <se:HmiTabControl Margin="0,10,0,0">
+                            <se:HmiTabItem Header="АВАРИИ" Width="250" Margin="0">
+                                <se:AlarmViewer FontSize="16">
+                                    <se:AlarmViewer.AlarmClasses>
+
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_aux_faults"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_chopper_faults"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_drawwork_motor1_faults"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_drawwork_motor2_faults"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_pump1_faults"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_pump2_faults"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_rectifier_faults"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_rotor_faults"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_tds_faults"/>
+
+                                        <!--<se:AlarmClassDescriptor AlarmClassID="aux_emergency"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="aux_readiness"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="bypass"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_lebedka1"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_nasos1"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_nasos2"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_rotor"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_skpb"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_svp"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_vspomlebedka"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="Diagnostics"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="drawwork_emergency"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="drawwork_readiness"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="Errors"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="pump1_emergency"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="pump1_readiness"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="pump2_emergency"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="pump2_readiness"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="rotor_emergency"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="rotor_readiness"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="status"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="transformator1"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_aux_alarms"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_chopper_alarms"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_aux"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_chopper"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_lebedka1"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_lebedka2"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_pump1"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_pump2"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_rectifier"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_rotor"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_drawwork_motor1_alarms"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_drawwork_motor2_alarms"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_pump1_alarms"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_pump2_alarms"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_rectifier_alarms"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_rotor_alarms"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_aux"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_chopper"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_lebedka1"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_lebedka2"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_pump1"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_pump2"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_rectifier"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_rotor"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_ustavki"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vspom_leb1_emer"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vspom_leb1_ready"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="Warnings"/>-->
+                                    </se:AlarmViewer.AlarmClasses>
+
+                                    <se:AlarmViewer.Columns>
+                                        <se:OnTimeColumn Header="ДАТА/ВРЕМЯ" />
+                                        <se:AlarmClassColumn Header="ИСТОЧНИК" />
+                                        <se:MessageColumn Header="СООБЩЕНИЕ" />
+                                        <se:MessageIDColumn Header="КОД" />
+                                    </se:AlarmViewer.Columns>
+
+                                </se:AlarmViewer>
+                            </se:HmiTabItem>
+                            <se:HmiTabItem Header="ПРЕДУПРЕЖДЕНИЯ" Margin="5,0,0,0" Width="250">
+                                <se:AlarmViewer FontSize="16">
+                                    <se:AlarmViewer.AlarmClasses>
+
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_aux_alarms"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_chopper_alarms"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_drawwork_motor1_alarms"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_drawwork_motor2_alarms"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_pump1_alarms"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_pump2_alarms"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_rectifier_alarms"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_rotor_faults"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_tds_alarms"/>
+
+
+                                        <!--<se:AlarmClassDescriptor AlarmClassID="aux_emergency"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="aux_readiness"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="bypass"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_lebedka1"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_nasos1"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_nasos2"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_rotor"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_skpb"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_svp"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_vspomlebedka"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="Diagnostics"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="drawwork_emergency"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="drawwork_readiness"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="Errors"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="pump1_emergency"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="pump1_readiness"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="pump2_emergency"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="pump2_readiness"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="rotor_emergency"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="rotor_readiness"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="status"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="transformator1"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_aux_faults"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_chopper_faults"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_aux"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_chopper"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_lebedka1"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_lebedka2"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_pump1"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_pump2"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_rectifier"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_rotor"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_drawwork_motor1_faults"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_drawwork_motor2_faults"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_pump1_faults"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_pump2_faults"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_rectifier_faults"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_rotor_faults"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_aux"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_chopper"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_lebedka1"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_lebedka2"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_pump1"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_pump2"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_rectifier"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_rotor"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_ustavki"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vspom_leb1_emer"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vspom_leb1_ready"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="Warnings"/>-->
+                                    </se:AlarmViewer.AlarmClasses>
+
+                                    <se:AlarmViewer.Columns>
+                                        <se:OnTimeColumn Header="ДАТА/ВРЕМЯ" />
+                                        <se:AlarmClassColumn Header="ИСТОЧНИК" />
+                                        <se:MessageColumn Header="СООБЩЕНИЕ" />
+                                        <se:MessageIDColumn Header="КОД" />
+                                    </se:AlarmViewer.Columns>
+                                </se:AlarmViewer>
+                            </se:HmiTabItem>
+
+
+                            <se:HmiTabItem Header="СЛОВО СОСТОЯНИЯ" Margin="5,0,0,0" Width="250" Visibility="Collapsed">
+                                <se:AlarmViewer FontSize="16">
+                                    <se:AlarmViewer.AlarmClasses>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_aux"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_chopper"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_lebedka1"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_lebedka2"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_pump1"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_pump2"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_rectifier"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_rotor"/>
+                                        <!--<se:AlarmClassDescriptor AlarmClassID="aux_emergency"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="aux_readiness"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="bypass"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_lebedka1"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_nasos1"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_nasos2"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_rotor"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_skpb"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_svp"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_vspomlebedka"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="Diagnostics"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="drawwork_emergency"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="drawwork_readiness"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="Errors"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="pump1_emergency"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="pump1_readiness"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="pump2_emergency"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="pump2_readiness"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="rotor_emergency"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="rotor_readiness"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="status"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="transformator1"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_aux_alarms"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_aux_faults"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_chopper_alarms"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_chopper_faults"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_aux"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_chopper"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_lebedka1"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_lebedka2"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_pump1"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_pump2"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_rectifier"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_rotor"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_drawwork_motor1_alarms"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_drawwork_motor1_faults"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_drawwork_motor2_alarms"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_drawwork_motor2_faults"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_pump1_alarms"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_pump1_faults"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_pump2_alarms"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_pump2_faults"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_rectifier_alarms"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_rectifier_faults"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_rotor_alarms"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_rotor_faults"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_ustavki"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vspom_leb1_emer"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vspom_leb1_ready"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="Warnings"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_tds_alarms"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_tds_faults"/>-->
+                                    </se:AlarmViewer.AlarmClasses>
+
+                                    <se:AlarmViewer.Columns>
+                                        <se:OnTimeColumn Header="ДАТА/ВРЕМЯ" />
+                                        <se:AlarmClassColumn Header="ИСТОЧНИК" />
+                                        <se:MessageColumn Header="СООБЩЕНИЕ" />
+                                        <se:MessageIDColumn Header="КОД" />
+                                    </se:AlarmViewer.Columns>
+                                </se:AlarmViewer>
+                            </se:HmiTabItem>
+                            <se:HmiTabItem Header="СЛОВО УПРАВЛЕНИЯ" Margin="5,0,0,0" Width="250" Visibility="Collapsed">
+                                <se:AlarmViewer FontSize="16">
+                                    <se:AlarmViewer.AlarmClasses>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_aux"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_chopper"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_lebedka1"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_lebedka2"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_pump1"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_pump2"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_rectifier"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_rotor"/>
+
+                                        <!--<se:AlarmClassDescriptor AlarmClassID="aux_emergency"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="aux_readiness"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="bypass"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_lebedka1"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_nasos1"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_nasos2"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_rotor"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_skpb"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_svp"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_vspomlebedka"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="Diagnostics"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="drawwork_emergency"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="drawwork_readiness"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="Errors"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="pump1_emergency"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="pump1_readiness"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="pump2_emergency"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="pump2_readiness"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="rotor_emergency"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="rotor_readiness"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="status"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="transformator1"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_aux_alarms"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_aux_faults"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_chopper_alarms"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_chopper_faults"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_drawwork_motor1_alarms"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_drawwork_motor1_faults"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_drawwork_motor2_alarms"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_drawwork_motor2_faults"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_pump1_alarms"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_pump1_faults"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_pump2_alarms"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_pump2_faults"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_rectifier_alarms"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_rectifier_faults"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_rotor_alarms"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_rotor_faults"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_aux"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_chopper"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_lebedka1"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_lebedka2"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_pump1"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_pump2"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_rectifier"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_rotor"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_ustavki"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vspom_leb1_emer"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vspom_leb1_ready"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="Warnings"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_tds_alarms"/>
+                                        <se:AlarmClassDescriptor AlarmClassID="vfd_tds_faults"/>-->
+                                    </se:AlarmViewer.AlarmClasses>
+
+                                    <se:AlarmViewer.Columns>
+                                        <se:OnTimeColumn Header="ДАТА/ВРЕМЯ" />
+                                        <se:AlarmClassColumn Header="ИСТОЧНИК" />
+                                        <se:MessageColumn Header="СООБЩЕНИЕ" />
+                                        <se:MessageIDColumn Header="КОД" />
+                                    </se:AlarmViewer.Columns>
+
+                                </se:AlarmViewer>
+                            </se:HmiTabItem>
+                        </se:HmiTabControl>
+                    </se:HmiTabItem>
+                </se:HmiTabControl>
+            </se:HmiTabItem>
+            <se:HmiTabItem Header="ВСПОМ. МЕХАНИЗМЫ" Margin="5,0,0,0" Width="220" Visibility="Collapsed">
+                <se:HmiTabControl HorizontalAlignment="Stretch" Margin="0,10,0,0" VerticalAlignment="Stretch" TabHorizontalAlignment="Right" TabStripPlacement="Right">
+                    <se:HmiTabItem Margin="0,5,0,0" Header="ЭНЕРГОБЛОК" Width="160">
+                        <se:HmiTabItem.LayoutTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </se:HmiTabItem.LayoutTransform>
+                        <Grid Background="Gainsboro">
+                            <se:AlarmViewer HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" FontSize="16">
+                                <se:AlarmViewer.AlarmClasses>
+                                    <se:AlarmClassDescriptor AlarmClassID="transformator1"/>
+
+                                    <!--<se:AlarmClassDescriptor AlarmClassID="aux_emergency"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="aux_readiness"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="bypass"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_lebedka1"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_nasos1"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_nasos2"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_rotor"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_skpb"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_svp"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_vspomlebedka"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="Diagnostics"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="drawwork_emergency"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="drawwork_readiness"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="Errors"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="pump1_emergency"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="pump1_readiness"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="pump2_emergency"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="pump2_readiness"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="rotor_emergency"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="rotor_readiness"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="status"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="vfd_aux_alarms"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="vfd_aux_faults"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="vfd_chopper_alarms"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="vfd_chopper_faults"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_aux"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_chopper"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_lebedka1"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_lebedka2"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_pump1"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_pump2"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_rectifier"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_rotor"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="vfd_drawwork_motor1_alarms"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="vfd_drawwork_motor1_faults"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="vfd_drawwork_motor2_alarms"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="vfd_drawwork_motor2_faults"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="vfd_pump1_alarms"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="vfd_pump1_faults"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="vfd_pump2_alarms"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="vfd_pump2_faults"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="vfd_rectifier_alarms"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="vfd_rectifier_faults"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="vfd_rotor_alarms"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="vfd_rotor_faults"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_aux"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_chopper"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_lebedka1"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_lebedka2"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_pump1"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_pump2"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_rectifier"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_rotor"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="vfd_ustavki"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="vspom_leb1_emer"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="vspom_leb1_ready"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="Warnings"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="vfd_tds_alarms"/>
+                                    <se:AlarmClassDescriptor AlarmClassID="vfd_tds_faults"/>-->
+                                </se:AlarmViewer.AlarmClasses>
+
+                                <se:AlarmViewer.Columns>
+                                    <se:OnTimeColumn Header="ДАТА/ВРЕМЯ" />
+                                    <se:AlarmClassColumn Header="ИСТОЧНИК" />
+                                    <se:MessageColumn Header="СООБЩЕНИЕ" />
+                                    <se:MessageIDColumn Header="КОД" />
+                                </se:AlarmViewer.Columns>
+
+                            </se:AlarmViewer>
+                        </Grid>
+                    </se:HmiTabItem>
+                    <se:HmiTabItem RenderTransformOrigin="0.5,0.5" Header="КОМПРЕССОРЫ" Margin="0,5,0,0" Width="160">
+                        <se:HmiTabItem.LayoutTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </se:HmiTabItem.LayoutTransform>
+                        <Grid Background="Gainsboro"/>
+                    </se:HmiTabItem>
+
+                </se:HmiTabControl>
+            </se:HmiTabItem>
+
+            <se:HmiTabItem Header="ДЕЙСТВИЯ ПЕРСОНАЛА" Width="250" Margin="5,0,0,0">
+                <Grid>
+                    <se:AlarmViewer HorizontalAlignment="Stretch" Margin="0,10,0,0" VerticalAlignment="Stretch" FontSize="16">
+                        <se:AlarmViewer.AlarmClasses>
+                            <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_lebedka1"/>
+                            <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_nasos1"/>
+                            <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_nasos2"/>
+                            <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_rotor"/>
+                            <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_skpb"/>
+                            <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_svp"/>
+                            <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_vspomlebedka"/>
+
+                            <!--<se:AlarmClassDescriptor AlarmClassID="aux_emergency"/>
+                            <se:AlarmClassDescriptor AlarmClassID="aux_readiness"/>
+                            <se:AlarmClassDescriptor AlarmClassID="bypass"/>
+                            <se:AlarmClassDescriptor AlarmClassID="Diagnostics"/>
+                            <se:AlarmClassDescriptor AlarmClassID="drawwork_emergency"/>
+                            <se:AlarmClassDescriptor AlarmClassID="drawwork_readiness"/>
+                            <se:AlarmClassDescriptor AlarmClassID="Errors"/>
+                            <se:AlarmClassDescriptor AlarmClassID="pump1_emergency"/>
+                            <se:AlarmClassDescriptor AlarmClassID="pump1_readiness"/>
+                            <se:AlarmClassDescriptor AlarmClassID="pump2_emergency"/>
+                            <se:AlarmClassDescriptor AlarmClassID="pump2_readiness"/>
+                            <se:AlarmClassDescriptor AlarmClassID="rotor_emergency"/>
+                            <se:AlarmClassDescriptor AlarmClassID="rotor_readiness"/>
+                            <se:AlarmClassDescriptor AlarmClassID="status"/>
+                            <se:AlarmClassDescriptor AlarmClassID="transformator1"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_aux_alarms"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_aux_faults"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_chopper_alarms"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_chopper_faults"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_aux"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_chopper"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_lebedka1"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_lebedka2"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_pump1"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_pump2"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_rectifier"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_rotor"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_drawwork_motor1_alarms"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_drawwork_motor1_faults"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_drawwork_motor2_alarms"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_drawwork_motor2_faults"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_pump1_alarms"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_pump1_faults"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_pump2_alarms"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_pump2_faults"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_rectifier_alarms"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_rectifier_faults"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_rotor_alarms"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_rotor_faults"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_aux"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_chopper"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_lebedka1"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_lebedka2"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_pump1"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_pump2"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_rectifier"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_rotor"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_ustavki"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vspom_leb1_emer"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vspom_leb1_ready"/>
+                            <se:AlarmClassDescriptor AlarmClassID="Warnings"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_tds_alarms"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_tds_faults"/>-->
+                        </se:AlarmViewer.AlarmClasses>
+
+                        <se:AlarmViewer.Columns>
+                            <se:OnTimeColumn Header="ДАТА/ВРЕМЯ" />
+                            <se:AlarmClassColumn Header="ИСТОЧНИК" />
+                            <se:MessageColumn Header="СООБЩЕНИЕ" />
+                            <se:MessageIDColumn Header="КОД" />
+                            <se:DurationColumn Header="ДЛИТЕЛЬНОСТЬ" />
+                        </se:AlarmViewer.Columns>
+
+                    </se:AlarmViewer>
+                </Grid>
+            </se:HmiTabItem>
+            <se:HmiTabItem Header="ШУНТИРОВКА" Margin="5,0,0,0" Width="150">
+                <Grid>
+                    <se:AlarmViewer HorizontalAlignment="Stretch" Margin="0,10,0,0" VerticalAlignment="Stretch" FontSize="16" TimeIntervalHandling="Overlaps">
+                        <se:AlarmViewer.AlarmClasses>
+                            <se:AlarmClassDescriptor AlarmClassID="bypass"/>
+
+                            <!--<se:AlarmClassDescriptor AlarmClassID="aux_emergency"/>
+                            <se:AlarmClassDescriptor AlarmClassID="aux_readiness"/>
+                            <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_lebedka1"/>
+                            <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_nasos1"/>
+                            <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_nasos2"/>
+                            <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_rotor"/>
+                            <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_skpb"/>
+                            <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_svp"/>
+                            <se:AlarmClassDescriptor AlarmClassID="dejstviya_personala_vspomlebedka"/>
+                            <se:AlarmClassDescriptor AlarmClassID="Diagnostics"/>
+                            <se:AlarmClassDescriptor AlarmClassID="drawwork_emergency"/>
+                            <se:AlarmClassDescriptor AlarmClassID="drawwork_readiness"/>
+                            <se:AlarmClassDescriptor AlarmClassID="Errors"/>
+                            <se:AlarmClassDescriptor AlarmClassID="pump1_emergency"/>
+                            <se:AlarmClassDescriptor AlarmClassID="pump1_readiness"/>
+                            <se:AlarmClassDescriptor AlarmClassID="pump2_emergency"/>
+                            <se:AlarmClassDescriptor AlarmClassID="pump2_readiness"/>
+                            <se:AlarmClassDescriptor AlarmClassID="rotor_emergency"/>
+                            <se:AlarmClassDescriptor AlarmClassID="rotor_readiness"/>
+                            <se:AlarmClassDescriptor AlarmClassID="status"/>
+                            <se:AlarmClassDescriptor AlarmClassID="transformator1"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_aux_alarms"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_aux_faults"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_chopper_alarms"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_chopper_faults"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_aux"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_chopper"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_lebedka1"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_lebedka2"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_pump1"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_pump2"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_rectifier"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_control_word_rotor"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_drawwork_motor1_alarms"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_drawwork_motor1_faults"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_drawwork_motor2_alarms"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_drawwork_motor2_faults"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_pump1_alarms"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_pump1_faults"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_pump2_alarms"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_pump2_faults"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_rectifier_alarms"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_rectifier_faults"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_rotor_alarms"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_rotor_faults"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_aux"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_chopper"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_lebedka1"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_lebedka2"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_pump1"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_pump2"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_rectifier"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_status_word_rotor"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_tds_alarms"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_tds_faults"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vfd_ustavki"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vspom_leb1_emer"/>
+                            <se:AlarmClassDescriptor AlarmClassID="vspom_leb1_ready"/>
+                            <se:AlarmClassDescriptor AlarmClassID="Warnings"/>-->
+                        </se:AlarmViewer.AlarmClasses>
+                        <se:AlarmViewer.Columns>
+                            <se:OnTimeColumn Header="ДАТА/ВРЕМЯ (БЛОК)" Width="160" />
+                            <se:AlarmClassColumn Header="ИСТОЧНИК" />
+                            <se:MessageColumn Header="СООБЩЕНИЕ" />
+                            <se:MessageIDColumn Header="КОД" />
+                            <se:OffTimeColumn Header="ДАТА/ВРЕМЯ (РАЗБЛОК)" Width="190" />
+                            <se:DurationColumn Header="ДЛИТЕЛЬНОСТЬ" />
+                        </se:AlarmViewer.Columns>
+                    </se:AlarmViewer>
+                </Grid>
+            </se:HmiTabItem>
+
+
+            <se:HmiTabItem Header="ГРАФИКИ" Margin="5,0,0,0" Width="150">
+                <se:HmiTabControl Margin="0,10,0,0" TabHorizontalAlignment="Center">
+                    <se:HmiTabItem Header="ГЛАВНЫЕ ПРИВОДА" Width="220" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                        <se:HmiTabControl TabStripPlacement="Left">
+                            <se:HmiTabItem Header="НАСОС 1" RenderTransformOrigin="0.5,0.5" Width="100" Margin="0,5,0,0" Height="35" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                                <se:HmiTabItem.LayoutTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="-90"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </se:HmiTabItem.LayoutTransform>
+                                <Grid>
+                                    <se:TrendViewer Background="#FFECECEC" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical">
+                                        <se:TrendViewer.TrendNodes>
+                                            <Custom:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="pump1"/>
+                                        </se:TrendViewer.TrendNodes>
+                                    </se:TrendViewer>
+                                </Grid>
+                            </se:HmiTabItem>
+                            <se:HmiTabItem Header="НАСОС 2" Width="100" Margin="0,5,0,0" Height="35" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                                <se:HmiTabItem.LayoutTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="-90"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </se:HmiTabItem.LayoutTransform>
+                                <Grid>
+                                    <se:TrendViewer Background="#FFECECEC" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                                        <se:TrendViewer.TrendNodes>
+                                            <Custom:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="pump2"/>
+                                        </se:TrendViewer.TrendNodes>
+                                    </se:TrendViewer>
+                                </Grid>
+                            </se:HmiTabItem>
+                            <se:HmiTabItem Header="ЛЕБЕДКА" Width="100" Margin="0,5,0,0" Height="35" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                                <se:HmiTabItem.LayoutTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="-90"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </se:HmiTabItem.LayoutTransform>
+                                <Grid>
+                                    <se:TrendViewer Background="#FFECECEC" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical">
+                                        <se:TrendViewer.TrendNodes>
+                                            <Custom:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="drawwork"/>
+                                        </se:TrendViewer.TrendNodes>
+                                    </se:TrendViewer>
+                                </Grid>
+                            </se:HmiTabItem>
+                            <se:HmiTabItem Header="РОТОР" Width="100" Margin="0,5,0,0" Height="35" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                                <se:HmiTabItem.LayoutTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="-90"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </se:HmiTabItem.LayoutTransform>
+                                <Grid>
+                                    <se:TrendViewer Background="#FFECECEC" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical">
+                                        <se:TrendViewer.TrendNodes>
+                                            <Custom:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="rotor"/>
+                                        </se:TrendViewer.TrendNodes>
+                                    </se:TrendViewer>
+                                </Grid>
+                            </se:HmiTabItem>
+                            <se:HmiTabItem Header="ВСП" Width="100" Margin="0,5,0,0" Height="35" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Visibility="Collapsed">
+                                <se:HmiTabItem.LayoutTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="-90"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </se:HmiTabItem.LayoutTransform>
+                                <Grid>
+                                    <se:TrendViewer Background="#FFECECEC" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical">
+                                        <se:TrendViewer.TrendNodes>
+                                            <Custom:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="tds"/>
+                                        </se:TrendViewer.TrendNodes>
+                                    </se:TrendViewer>
+                                </Grid>
+                            </se:HmiTabItem>
+                            <se:HmiTabItem Header="ДП" Width="100" Margin="0,5,0,0" Height="35" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                                <se:HmiTabItem.LayoutTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="-90"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </se:HmiTabItem.LayoutTransform>
+                                <Grid>
+                                    <se:TrendViewer Background="#FFECECEC" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical">
+                                        <se:TrendViewer.TrendNodes>
+                                            <Custom:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="aux"/>
+                                        </se:TrendViewer.TrendNodes>
+                                    </se:TrendViewer>
+                                </Grid>
+                            </se:HmiTabItem>
+                            <se:HmiTabItem Header="ВСЛ" Width="100" Height="35" Margin="0,5,0,0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                                <se:HmiTabItem.LayoutTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="-90"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </se:HmiTabItem.LayoutTransform>
+                                <Grid>
+                                    <se:TrendViewer Background="#FFECECEC" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical">
+                                        <se:TrendViewer.TrendNodes>
+                                            <Custom:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="helperDrawwork1"/>
+                                        </se:TrendViewer.TrendNodes>
+                                    </se:TrendViewer>
+                                </Grid>
+                            </se:HmiTabItem>
+                        </se:HmiTabControl>
+                    </se:HmiTabItem>
+                    <se:HmiTabItem Header="ЭНЕРГОБЛОК" Margin="5,0,0,0" Width="220" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Visibility="Collapsed">
+                        <se:HmiTabControl TabStripPlacement="Left">
+                            <se:HmiTabItem Header="КРУ" Width="200" Margin="0,5,0,0" Height="35" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                                <se:HmiTabItem.LayoutTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="-90"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </se:HmiTabItem.LayoutTransform>
+                                <Grid>
+                                    <se:TrendViewer Background="#FFECECEC" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical">
+                                        <se:TrendViewer.TrendNodes>
+                                            <Custom:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="kru"/>
+                                        </se:TrendViewer.TrendNodes>
+                                    </se:TrendViewer>
+                                </Grid>
+                            </se:HmiTabItem>
+                            <se:HmiTabItem Header="БКТ Т1" Margin="0,5,0,0" Width="200" Height="35" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                                <se:HmiTabItem.LayoutTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="-90"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </se:HmiTabItem.LayoutTransform>
+                                <Grid>
+                                    <se:TrendViewer Background="#FFECECEC" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical">
+                                        <se:TrendViewer.TrendNodes>
+                                            <Custom:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="transformator1"/>
+                                        </se:TrendViewer.TrendNodes>
+                                    </se:TrendViewer>
+                                </Grid>
+                            </se:HmiTabItem>
+                            <se:HmiTabItem Header="МУЛЬТИМЕТР 690В" Margin="0,5,0,0" Width="200" Height="35" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                                <se:HmiTabItem.LayoutTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="-90"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </se:HmiTabItem.LayoutTransform>
+                                <Grid>
+                                    <se:TrendViewer Background="#FFECECEC" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical">
+                                        <se:TrendViewer.TrendNodes>
+                                            <Custom:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="multimetr1"/>
+                                        </se:TrendViewer.TrendNodes>
+                                    </se:TrendViewer>
+                                </Grid>
+                            </se:HmiTabItem>
+                            <se:HmiTabItem Header="МУЛЬТИМЕТР 400В" Margin="0,5,0,0" Width="200" Height="35" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                                <se:HmiTabItem.LayoutTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="-90"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </se:HmiTabItem.LayoutTransform>
+                                <Grid>
+                                    <se:TrendViewer Background="#FFECECEC" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical">
+                                        <se:TrendViewer.TrendNodes>
+                                            <Custom:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="multimetr2"/>
+                                        </se:TrendViewer.TrendNodes>
+                                    </se:TrendViewer>
+                                </Grid>
+                            </se:HmiTabItem>
+                        </se:HmiTabControl>
+                    </se:HmiTabItem>
+                    <se:HmiTabItem Header="БУРЕНИЕ" Margin="5,0,0,0" Width="220" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                        <Grid>
+                            <se:TrendViewer Background="#FFECECEC" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical">
+                                <se:TrendViewer.TrendNodes>
+                                    <Custom:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="drilling"/>
+                                </se:TrendViewer.TrendNodes>
+                            </se:TrendViewer>
+                        </Grid>
+                    </se:HmiTabItem>
+                    <se:HmiTabItem Header="СЕТЕВЫЕ СИГНАЛЫ" Margin="5,0,0,0" Width="220" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                        <Grid>
+                            <se:TrendViewer Background="#FFECECEC" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical">
+                                <se:TrendViewer.TrendNodes>
+                                    <Custom:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="signals"/>
+                                </se:TrendViewer.TrendNodes>
+                            </se:TrendViewer>
+                        </Grid>
+                    </se:HmiTabItem>
+                    <se:HmiTabItem Header="ГИДРОРАСКРЕПИТЕЛЬ" Margin="5,0,0,0" Width="220" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                        <Grid>
+                            <se:TrendViewer Background="#FFECECEC" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Mode="Historical">
+                                <se:TrendViewer.TrendNodes>
+                                    <Custom:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="mashinnyj_klyuch"/>
+                                    <!--<Custom:HmiNodeDescriptor Comment="{x:Null}" ItemType="Trend" Path="gksh"/>-->
+                                </se:TrendViewer.TrendNodes>
+                            </se:TrendViewer>
+                        </Grid>
+                    </se:HmiTabItem>
+
+                </se:HmiTabControl>
+            </se:HmiTabItem>
+        </se:HmiTabControl>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,128 @@
+﻿311008
+8
+lang|RU|0 (:2 ) Включить питание пульта насосов ПН (реле 90К3)
+lang|EN|0 (:2 ) Switch on led "Stop mud pump 1" in VFD house
+311008
+9
+lang|RU|1 (:3 ) Включить питание шкафа АКЛ (реле 90К1)
+lang|EN|1 (:3 ) Switch on led "Work mud pump 1" in VFD house
+311008
+10
+lang|RU|2 (:4 ) Включить обогрев пульта насосов ПН (реле 90К4)
+lang|EN|2 (:4 ) Switch on led "Emergency mud pump 1" in VFD house
+311008
+11
+lang|RU|3 (:5 ) Включить обогрев шкафа АКЛ (реле 90К2)
+lang|EN|3 (:5 ) Switch on led "Stop mud pump 2" in VFD house
+311008
+12
+lang|RU|4 (:6 ) Резерв
+lang|EN|4 (:6 ) Switch on led "Work mud pump 2" in VFD house
+311008
+13
+lang|RU|5 (:7 ) Резерв
+lang|EN|5 (:7 ) Switch on led "Emergency mud pump 2" in VFD house
+311008
+14
+lang|RU|6 (:8 ) Резерв
+lang|EN|6 (:8 ) Switch on led "Start/Stop/Unlock" main drawworks on drillers console
+311008
+15
+lang|RU|7 (:9 ) Резерв
+lang|EN|7 (:9 ) Switch on led "Start/Stop/Unlock" aux. drawworks on drillers console
+311008
+0
+lang|RU|0 (:12 ) Резерв
+lang|EN|0 (:12 ) Switch on led "Stop mud pump 3" in VFD house
+311008
+1
+lang|RU|1 (:13 ) Резерв
+lang|EN|1 (:13 ) Switch on led "Work mud pump 3" in VFD house
+311008
+2
+lang|RU|2 (:14 ) Резерв
+lang|EN|2 (:14 ) Switch on led "Emergency mud pump 3" in VFD house
+311008
+3
+lang|RU|3 (:15 ) Резерв
+lang|EN|3 (:15 ) Switch on fan brake resistirs
+311008
+4
+lang|RU|4 (:16 ) Резерв
+lang|EN|4 (:16 ) Spare
+311008
+5
+lang|RU|5 (:17 ) Резерв
+lang|EN|5 (:17 ) Spare
+311008
+6
+lang|RU|6 (:18 ) Резерв
+lang|EN|6 (:18 ) Spare
+311008
+7
+lang|RU|7 (:19 ) Резерв
+lang|EN|7 (:19 ) Spare
+311009
+8
+lang|RU|0 (:22 ) Зажечь жёлтый светодиод 101HL1 "СТОП насоса 1"
+lang|EN|0 (:22 ) Switch on led "Stop drawworks 1" in VFD house
+311009
+9
+lang|RU|1 (:23 ) Зажечь зелёный светодиод 101HL2 "РАБОТА насоса 1"
+lang|EN|1 (:23 ) Switch on led "Work drawworks 1" in VFD house
+311009
+10
+lang|RU|2 (:24 ) Зажечь красный светодиод 101HL3 "АВАРИЯ насоса 1"
+lang|EN|2 (:24 ) Switch on led "Emergency drawworks 1" in VFD house
+311009
+11
+lang|RU|3 (:25 ) Зажечь жёлтый светодиод 201HL1 "СТОП насоса 2"
+lang|EN|3 (:25 ) Switch on led "Stop drawworks 2" in VFD house
+311009
+12
+lang|RU|4 (:26 ) Зажечь зелёный светодиод 201HL2 "РАБОТА насоса 2"
+lang|EN|4 (:26 ) Switch on led "Work drawworks 2" in VFD house
+311009
+13
+lang|RU|5 (:27 ) Зажечь красный светодиод 201HL3 "АВАРИЯ насоса 2"
+lang|EN|5 (:27 ) Switch on led "Emergency drawworks 2" in VFD house
+311009
+14
+lang|RU|6 (:28 ) Резерв
+lang|EN|6 (:28 ) Switch on led "Stop aux. drive" in VFD house
+311009
+15
+lang|RU|7 (:29 ) Резерв
+lang|EN|7 (:29 ) Switch on led "Work aux. drive" in VFD house
+311009
+0
+lang|RU|0 (:32 ) Резерв
+lang|EN|0 (:32 ) Switch on led "Emergency aux. drive" in VFD house
+311009
+1
+lang|RU|1 (:33 ) Резерв
+lang|EN|1 (:33 ) Not interlock of aux. drive in VFD house
+311009
+2
+lang|RU|2 (:34 ) Резерв
+lang|EN|2 (:34 ) Not interlock of drawworks 1 in VFD house
+311009
+3
+lang|RU|3 (:35 ) Резерв
+lang|EN|3 (:35 ) Not interlock of drawworks 2 in VFD house
+311009
+4
+lang|RU|4 (:36 ) Резерв
+lang|EN|4 (:36 ) Interlock of mud pump 1 in VFD house
+311009
+5
+lang|RU|5 (:37 ) Остановить привод насоса 1 (реле 101К1)
+lang|EN|5 (:37 ) Interlock of mud pump 2 in VFD house
+311009
+6
+lang|RU|6 (:38 ) Остановить привод насоса 2 (реле 201К1)
+lang|EN|6 (:38 ) Interlock of mud pump 3 in VFD house
+311009
+7
+lang|RU|7 (:39 ) Резерв
+lang|EN|7 (:39 ) Spare

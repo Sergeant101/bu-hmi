@@ -1,0 +1,36 @@
+311227
+303086
+lang|RU|(:2, 3 ) Задание скорости буровой лебедки (0...10В = -Vmax…Vmax)
+    {0:0.###} В = {1:0.#} об / мин
+lang|EN|(:2, 3 ) Temperature of oil (4...20 mАmps = 0...100°C) (MP2)
+    {0:0.###} mAmps = {1:0.##} °C
+311229
+307039
+lang|RU|(:5, 6 ) Задание скорости вспом. лебедки (0...10В = -Vmax…Vmax)
+    {0:0.###} В = {1:0.#} об / мин
+lang|EN|(:5, 6 ) Pressure of drilling mud outlet (4...20 mАmps = 0…400 atm) (MP2)
+    {0:0.###} mAmps = {1:0.#} atm.
+311231
+311581
+lang|RU|(:9, 10) Резерв
+    {0:0.###} мА
+lang|EN|(:9, 10) Temperature of oil (4...20 mАmps = 0...100°C) (MP3)
+    {0:0.###} mAmps = {1:0.##} °C
+311233
+311583
+lang|RU|(:12,13) Резерв
+    {0:0.###} мА
+lang|EN|(:12,13) Pressure of drilling mud outlet (4...20 mАmps = 0…400 atm) (MP3)
+    {0:0.###} mAmps = {1:0.#} atm.
+311235
+311585
+lang|RU|(:15,16) Резерв
+    {0:0.###} мА
+lang|EN|(:15,16) Speed of mud pump 2 (4...20 mAmps = 0...130 spm)
+    {0:0.###} mAmps = {1:0.#} spm
+311237
+311587
+lang|RU|(:18,19) Резерв
+    {0:0.###} мА
+lang|EN|(:18,19) Pressure of drilling mud in manifold (4...20 mАmps = 0…400 atm) (MP2)
+    {0:0.###} mAmps = {1:0.#} atm.

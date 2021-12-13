@@ -1,0 +1,385 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+xmlns:Other="clr-namespace:NGO.Elements.Gauges.Small.Other;assembly=NGO.Elements"
+    xmlns:hmi="http://schemas.monokot.com/hmi/"
+    xmlns:se="http://schemas.monokot.com/se/"
+    
+             xmlns:gauges="clr-namespace:NGO.Elements.Gauges;assembly=NGO.Elements"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:elements="clr-namespace:NGO.Elements;assembly=NGO.Elements" 
+             xmlns:Pump1="clr-namespace:NGO.Elements.Gauges.Small.Pump1;assembly=NGO.Elements" 
+             xmlns:Message="clr-namespace:NGO.Elements.Message;assembly=NGO.Elements"
+             xmlns:buttons="clr-namespace:Monokot.ScadaExtension.Wpf.Controls.Buttons;assembly=Monokot.ScadaExtension.Wpf"
+             xmlns:Msab="clr-namespace:NGO.Elements.Gauges.Small.Msab;assembly=NGO.Elements"
+             x:Class="DC.Frames.SNG.FrmDrillingSNG"
+             mc:Ignorable="d"
+             Background="#FFC9C9C9" 
+             d:DesignWidth="1280" Height="940">
+    <Canvas>
+        <TextBlock Canvas.Left="647" FontFamily="Tahoma" FontSize="20" Height="27" x:Name="textBlock3_Copy1" Text="НАГРУЗКА НА ДОЛОТО" TextAlignment="Center" TextWrapping="Wrap" Canvas.Top="744"/>
+        <buttons:HmiButton Style="{StaticResource MetalBorderButton}"  FontFamily="Arial" FontSize="56" Height="80" HorizontalAlignment="Left"  Canvas.Left="218" Canvas.Top="775" VerticalAlignment="Top" Width="80" hmi:Click.Command="{hmi:SeBinding Tags.Node[write.drawwork].Items[skorost_podachi_menshe].WriteCommand}" Margin="0">
+            <Rectangle Width="30" Height="30">
+                <Rectangle.Fill>
+                    <DrawingBrush>
+                        <DrawingBrush.Drawing>
+                            <DrawingGroup>
+                                <GeometryDrawing Brush="White" Geometry="M 0,4.5 L 0,10 0,6 10,6 10,6 10,0 10,4.5z" />
+                            </DrawingGroup>
+                        </DrawingBrush.Drawing>
+                    </DrawingBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+        </buttons:HmiButton>
+        <buttons:HmiButton Style="{StaticResource MetalBorderButton}"  FontFamily="Arial" FontSize="56" Height="80" HorizontalAlignment="Left"  Canvas.Left="388" Canvas.Top="775" VerticalAlignment="Top" Width="80" hmi:Click.Command="{hmi:SeBinding Tags.Node[write.drawwork].Items[skorost_podachi_bolshe].WriteCommand}" Margin="0">
+            <Rectangle Width="30" Height="30">
+                <Rectangle.Fill>
+                    <DrawingBrush>
+                        <DrawingBrush.Drawing>
+                            <DrawingGroup>
+                                <GeometryDrawing Brush="White" Geometry="F1 M 10,7.5 L 16.5,7.5 16.5,10 10,10 10,16.5 7.5,16.5 7.5,10 1,10 1,7.5 7.5,7.5 7.5,1 10,1z" />
+                            </DrawingGroup>
+                        </DrawingBrush.Drawing>
+                    </DrawingBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+        </buttons:HmiButton>
+
+        <se:ValueDisplay Canvas.Left="6" Canvas.Top="10" FontFamily="Tahoma" Height="60" x:Name="ValueDisplay11" Width="203" HeaderBackground="Black" Label="МПа" Value="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.compressor].Items[pressure_in_system].Value}" ValueForeground="Black" Header="ДАВЛЕНИЕ ВОЗДУХА В СИСТ." />
+        <se:ValueDisplay Canvas.Left="6" Canvas.Top="144" Height="60" x:Name="ValueDisplay13" Width="203" HeaderBackground="Black" Label="м" Value="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.msab].Items[glubina_zaboya].Value}" ValueBackground="White" ValueForeground="Black" Header="ГЛУБИНА ЗАБОЯ" FontFamily="Tahoma" />
+        <se:ValueDisplay Canvas.Left="6" Canvas.Top="78" Height="60" Width="203" HeaderBackground="Black" Label="м" Value="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.msab].Items[glubina_instrumenta].Value}" ValueBackground="White" ValueForeground="Black" Header="ГЛУБИНА ИНСТРУМЕНТА" FontFamily="Tahoma" />
+        <TextBlock Canvas.Left="1060" TextWrapping="Wrap" FontSize="20" HorizontalAlignment="Center" FontFamily="Tahoma" Canvas.Top="350" Text="ДАВЛЕНИЕ В&#xA;МАНИФОЛЬДЕ СКПБ" Width="203" TextAlignment="Center"/>
+        <gauges:GaugeWeight HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="454" Canvas.Top="149" Height="449">
+            <gauges:GaugeWeight.LayoutTransform>
+                <ScaleTransform ScaleX=".85" ScaleY=".85"/>
+            </gauges:GaugeWeight.LayoutTransform>
+        </gauges:GaugeWeight>
+
+
+        <gauges:GaugeSPO Canvas.Left="246" Canvas.Top="550" Width="300" Height="300">
+            <gauges:GaugeSPO.LayoutTransform>
+                <ScaleTransform ScaleX=".65" ScaleY=".65"/>
+            </gauges:GaugeSPO.LayoutTransform>
+        </gauges:GaugeSPO>
+
+
+        <Grid Height="340" Canvas.Left="922" Canvas.Top="331" Width="340" Visibility="Hidden">
+            <Grid.LayoutTransform>
+                <ScaleTransform ScaleX=".7" ScaleY=".7"/>
+            </Grid.LayoutTransform>
+
+            <Ellipse Width="340" Height="340" Stretch="Fill" Fill="#FF171717"/>
+            <Ellipse Width="320" Height="320" Stretch="Fill" Fill="#FFCDCDCD"/>
+            <Ellipse Width="300" Height="300" Stretch="Fill" Fill="#FF503F53"/>
+
+            <TextBlock FontFamily="Tahoma" FontSize="20" FontWeight="Normal" Foreground="#FFB8B8B8" Height="25" HorizontalAlignment="Center" Margin="97,204,97,111" TextAlignment="Center" VerticalAlignment="Center" Width="146" Visibility="Visible" Text="{hmi:SeBinding modules[tags_mod].Items[Лебедка тип скорости].Text, FallbackValue=м/с}"/>
+            <TextBlock FontFamily="Tahoma" FontSize="16" FontWeight="Normal" Foreground="#FFB8B8B8" Height="60" HorizontalAlignment="Center" Margin="86,250,84,30" TextAlignment="Center" VerticalAlignment="Center" Visibility="Visible" Text="СКОРОСТЬ ПОДАЧИ ИНСТРУМЕНТА" TextWrapping="Wrap"/>
+
+
+            <se:RadialGauge Width="280" Height="280" x:Name="radialGauge1" VerticalAlignment="Center" HorizontalAlignment="Center" MajorTickBrush="#FFB8B8B8" MinorTickBrush="#FFB8B8B8" ShowStick="True" Foreground="#FFB8B8B8" MajorTickCost="0.75" MinorTickCost="0.25" MajorTickThickness="5" MajorTickLength="20" MinorTickLength="15" MinorTickThickness="3" FontSize="20" ScaleLabelsStringFormat="{}{0:0.##}" FontFamily="Tahoma" EndAngle="-30" StartAngle="210" Maximum="{hmi:SeBinding modules[tags_mod].Items[dr_max].Value, FallbackValue=1.5}" Minimum="{hmi:SeBinding modules[tags_mod].Items[dr_min].Value, FallbackValue=-1.5}" UseMajorTickCount="True" UseMinorTickCount="True" MinorTickCount="4" MajorTickCount="5" d:IsLocked="True">
+                <se:RadialGauge.Arrows>
+                    <se:RadialArrow>
+                        <se:RadialArrow.Value>
+                            <hmi:SeBinding Path="modules[tags_mod].Items[dr_real].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Double>0</system:Double>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:RadialArrow.Value>
+                    </se:RadialArrow>
+                    <se:RadialArrow>
+                        <se:RadialArrow.Value>
+                            <hmi:SeBinding Path="modules[tags_mod].Items[dr_reference].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Double>0</system:Double>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:RadialArrow.Value>
+                    </se:RadialArrow>
+                </se:RadialGauge.Arrows>
+            </se:RadialGauge>
+            <Ellipse Width="40" Height="40" Stretch="Fill" Fill="#FF9C9C9C"/>
+
+        </Grid>
+        <TextBlock Canvas.Left="213" FontFamily="Tahoma" FontSize="20" Height="48" x:Name="textBlock3_Copy" Text="СКОРОСТЬ ПОДАЧИ" TextAlignment="Center" TextWrapping="Wrap" Width="255" Canvas.Top="744"/>
+        <!--<se:ScadaButton  BorderBrush="{x:Null}" FontFamily="Tahoma" FontSize="22" Foreground="White" Height="85" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Canvas.Left="726" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="232" Canvas.Top="728" pushCommand="{hmi:SeBinding modules[tags_mod].Items[db_buttons_5_4].WriteCommand, FallbackValue=''}" releasedCommand="{hmi:SeBinding modules[tags_mod].Items[db_buttons_5_4].WriteCommand, FallbackValue=''}" Margin="0">
+            <se:ScadaButton.selected>
+                <hmi:SeBinding Path="modules[tags_mod].Items[rig_rpd].Value">
+                    <hmi:SeBinding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </se:ScadaButton.selected>
+            <TextBlock Text="АВТОМАТИЧЕСКОЕ БУРЕНИЕ" TextWrapping="Wrap" TextAlignment="Center"/>
+        </se:ScadaButton>
+        <se:ScadaButton  BorderBrush="{x:Null}" FontFamily="Tahoma" FontSize="22" Foreground="White" Height="85" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="232" Canvas.Top="775" pushCommand="{hmi:SeBinding modules[tags_mod].Items[db_buttons_5_2].WriteCommand, FallbackValue=''}" releasedCommand="{hmi:SeBinding modules[tags_mod].Items[db_buttons_5_2].WriteCommand, FallbackValue=''}" Canvas.Left="841" Margin="0">
+            <se:ScadaButton.selected>
+                <hmi:SeBinding Path="modules[tags_mod].Items[rig_hand].Value">
+                    <hmi:SeBinding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </se:ScadaButton.selected>
+            <TextBlock Text="РУЧНОЕ БУРЕНИЕ" TextWrapping="Wrap" TextAlignment="Center"/>
+        </se:ScadaButton>-->
+
+        <buttons:HmiButton Style="{StaticResource MetalBorderButton}" FontFamily="Tahoma" FontSize="20" Height="85" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="232" Canvas.Left="1038" Canvas.Top="775" hmi:Click.Command="{hmi:SeBinding Tags.Node[write.drawwork].Items[ruchnoe_vzveshivanie].WriteCommand}" Margin="0" Visibility="Collapsed" >
+            <TextBlock Text="РУЧНОЕ&#xA;ВЗВЕШИВАНИЕ" TextWrapping="Wrap" TextAlignment="Center"/>
+        </buttons:HmiButton>
+        <se:ValueDisplay Canvas.Left="6" Canvas.Top="276" Height="60" x:Name="ValueDisplay6" Width="203" HeaderBackground="Black" Label="л/с" ValueBackground="White" ValueForeground="Black" Header="РАСЧ. РАСХОД Б/Р НА ВХОДЕ" FontFamily="Tahoma" Value="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.main_drives.pump1].Items[summary_feed].Value}"/>
+        <se:ValueDisplay Canvas.Left="6" Canvas.Top="210" Height="60" x:Name="ValueDisplay5" Width="203" HeaderBackground="Black" Label="м³" ValueBackground="White" ValueForeground="Black" Header="ОБЩИЙ ОБЪЕМ Б/Р (СКПБ)" FontFamily="Tahoma" Value="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.msab].Items[summary_volume].Value}"/>
+        <se:ValueDisplay Canvas.Left="6" Canvas.Top="342" Height="60" x:Name="ValueDisplay6_Copy" Width="203" HeaderBackground="Black" Label="л/с" ValueBackground="White" ValueForeground="Black" Header="ФАКТ. РАСХОД Б/Р НА ВХОДЕ" FontFamily="Tahoma" Value="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.msab].Items[raskhod_na_vhode2].Value}"/>
+        <!--<se:StatusImage   Style="{StaticResource default_led_style}" Width="20" Height="20" Canvas.Left="1167" Canvas.Top="418"  isDanger="True">
+            <se:StatusImage.Visibility>
+                <hmi:SeBinding FallbackValue="" Path="modules[tags_mod].Items[уставки_обрыв17].Value">
+                    <hmi:SeBinding.Converter>
+                        <hmi:BooleanToInverseVisibility/>
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </se:StatusImage.Visibility>
+        </se:StatusImage>-->
+        <buttons:HmiButton Style="{StaticResource CircleStartButton}" hmi:Click.Command="{hmi:SeBinding Tags.Node[write.drawwork].Items[rpd_vkl].WriteCommand}" Margin="0" Canvas.Left="1038" Canvas.Top="759" Width="110" Height="101"/>
+        <buttons:HmiButton Style="{StaticResource CircleStopButton}"  hmi:Click.Command="{hmi:SeBinding Tags.Node[write.drawwork].Items[rpd_otkl].WriteCommand}" Margin="0" Canvas.Left="1153" Canvas.Top="759" Width="110" Height="101"/>
+        <TextBlock Canvas.Left="1038" TextWrapping="Wrap" FontSize="20" HorizontalAlignment="Center" FontFamily="Tahoma" Canvas.Top="710" Width="225" TextAlignment="Center"><Run Language="ru-ru" Text="АВТОМАТИЧЕСКОЕ БУРЕНИЕ"/></TextBlock>
+        <!--<Message:ShortAuxStatusBox Canvas.Top="867" Width="203" Height="50" Canvas.Left="6"/>-->
+        <!--<Message:ShortDrawworkStatusBox Canvas.Left="6" Canvas.Top="747" Height="50" Width="203"/>-->
+        <!--<Message:ShortPump1StatusBox Canvas.Left="6" Canvas.Top="629" Height="50" Width="203"/>-->
+        <!--<Message:ShortPump2StatusBox Canvas.Left="6" Canvas.Top="687" Height="50" Width="203"/>-->
+        <!--<Message:ShortRotorStatusBox Canvas.Left="6" Canvas.Top="807" Height="50" Width="203"/>-->
+        <se:VisualBox HorizontalAlignment="Left" Height="55" VerticalAlignment="Top" Width="228" CornerRadius="5" Background="Gold" Text="НЕ ВЫБРАН РЕЖИМ&#xA; &quot;СПО-0-БУРЕНИЕ&quot;" FontSize="20" Canvas.Left="1041" Canvas.Top="647">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource MediaBoxFineSolidColorBrush}" Text="РУЧНОЕ&#xA;БУРЕНИЕ">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork].Items[manual_drilling].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="{StaticResource MediaBoxFineSolidColorBrush}" Text="АВТОМАТИЧЕСКОЕ&#xA;БУРЕНИЕ">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork].Items[auto_drilling].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="{StaticResource MediaBoxFineSolidColorBrush}" Text="СПУСКОПОДЪЕМНЫЕ&#xA;ОПЕРАЦИИ">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork].Items[rezhim_spo].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <Message:ShortTdsStatusBox Canvas.Top="787" Width="203" Height="65" Canvas.Left="6" Visibility="Hidden"/>
+        <se:ValueDisplay BorderBrush="Black" BorderThickness="1" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" LabelForeground="DarkBlue" Label="МПа" Header="ДАВЛЕНИЕ В МАНИФОЛЬДЕ СКПБ" FontFamily="Tahoma" HeaderFontSize="11" Value="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.msab].Items[davlenie_vlb].Value}" Canvas.Left="1041" Canvas.Top="564" Width="228" Height="70"/>
+
+        <Other:DavlenieVManifoldeVlbSpecial Canvas.Left="1092" Canvas.Top="413" Width="130" Height="130" />
+        <se:ValueDisplay Canvas.Left="518" Canvas.Top="6" FontFamily="Tahoma" Height="70" x:Name="numericDisplay12_Copy" Width="197" HeaderBackground="Black" Label="м" ValueBackground="White" ValueForeground="Black" Header="ВЫСОТА БЛОКА" Value="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.main_drives.drawwork].Items[tb_position].Value}" />
+        <buttons:HmiButton Canvas.Left="218"   Canvas.Top="340" Width="246" Height="64"  Style="{StaticResource MetalBorderButton}"  hmi:Click.Command="{hmi:Bind Path=Tags.Node[write.msab.buttons].Items[btn0].WriteCommand}" Content="ПОДАЧА"    FontFamily="Tahoma" FontSize="22" />
+        <buttons:HmiButton Canvas.Left="218"  Canvas.Top="409" Width="246" Height="65"  Style="{StaticResource MetalBorderButton}"  hmi:Click.Command="{hmi:Bind FallbackValue='', Path=Tags.Node[write.msab.buttons].Items[btn2].WriteCommand}" Content="ВЗВЕШИВАНИЕ ПРИ&#xA;РУЧНОМ БУРЕНИИ"      FontFamily="Tahoma" FontSize="22" />
+        <buttons:HmiButton  Canvas.Top="479" Width="246" Height="64"  Style="{StaticResource MetalBorderButton}"  hmi:Click.Command="{hmi:Bind FallbackValue='', Path=Tags.Node[write.msab.buttons].Items[btn3].WriteCommand}" Content="ТАЛЬ БЛОК"      FontFamily="Tahoma" FontSize="22" Canvas.Left="218" />
+        <se:ValueDisplay Canvas.Left="733" Canvas.Top="6" FontFamily="Tahoma" Height="70" x:Name="numericDisplay12_Copy1" Width="197" HeaderBackground="Black" Label="м" ValueBackground="White" ValueForeground="Black" Header="ВЫСОТА БЛОКА (СКПБ)" Value="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.msab].Items[polozhenie_kryukobloka].Value}" />
+        <buttons:HmiButton Style="{StaticResource MetalBorderButton}"  FontFamily="Arial" FontSize="56" Height="85" HorizontalAlignment="Left" Canvas.Left="803" Canvas.Top="775" VerticalAlignment="Top" Width="80" hmi:Click.Command="{hmi:SeBinding Tags.Node[write.drawwork].Items[nagruzka_na_doloto_bolshe].WriteCommand}">
+            <Rectangle Width="30" Height="30">
+                <Rectangle.Fill>
+                    <DrawingBrush>
+                        <DrawingBrush.Drawing>
+                            <DrawingGroup>
+                                <GeometryDrawing Brush="White" Geometry="F1 M 10,7.5 L 16.5,7.5 16.5,10 10,10 10,16.5 7.5,16.5 7.5,10 1,10 1,7.5 7.5,7.5 7.5,1 10,1z" />
+                            </DrawingGroup>
+                        </DrawingBrush.Drawing>
+                    </DrawingBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+        </buttons:HmiButton>
+        <buttons:HmiButton Style="{StaticResource MetalBorderButton}"  FontFamily="Arial" FontSize="56" Height="85" HorizontalAlignment="Left" Canvas.Left="626" Canvas.Top="775" VerticalAlignment="Top" Width="80" hmi:Click.Command="{hmi:SeBinding Tags.Node[write.drawwork].Items[nagruzka_na_doloto_menshe].WriteCommand}">
+            <Rectangle Width="30" Height="30">
+                <Rectangle.Fill>
+                    <DrawingBrush>
+                        <DrawingBrush.Drawing>
+                            <DrawingGroup>
+                                <GeometryDrawing Brush="White" Geometry="M 0,4.5 L 0,10 0,6 10,6 10,6 10,0 10,4.5z" />
+                            </DrawingGroup>
+                        </DrawingBrush.Drawing>
+                    </DrawingBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+        </buttons:HmiButton>
+        <gauges:GaugePump1 Height="300" HorizontalAlignment="Left" Canvas.Left="223" x:Name="gaugePump11" VerticalAlignment="Top" Width="300" RenderTransformOrigin="0.5,0.5">
+            <gauges:GaugePump1.LayoutTransform>
+                <ScaleTransform ScaleX="0.8" ScaleY="0.8"/>
+            </gauges:GaugePump1.LayoutTransform>
+        </gauges:GaugePump1>
+        <gauges:GaugePump2 Height="87" HorizontalAlignment="Left" Canvas.Left="1025" x:Name="gaugePump21" VerticalAlignment="Top" Width="300" Canvas.Top="4" RenderTransformOrigin="0.5,0.5">
+            <gauges:GaugePump2.LayoutTransform>
+                <ScaleTransform ScaleX="0.8" ScaleY="0.8"/>
+            </gauges:GaugePump2.LayoutTransform>
+        </gauges:GaugePump2>
+        <buttons:HmiButton Style="{StaticResource MetalBorderButton}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="80" Width="80" FontSize="36" hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pump1].Items[skorost_bolshe].WriteCommand}" Canvas.Left="388" Canvas.Top="247">
+            <Rectangle Width="30" Height="30">
+                <Rectangle.Fill>
+                    <DrawingBrush>
+                        <DrawingBrush.Drawing>
+                            <DrawingGroup>
+                                <GeometryDrawing Brush="White" Geometry="F1 M 10,7.5 L 16.5,7.5 16.5,10 10,10 10,16.5 7.5,16.5 7.5,10 1,10 1,7.5 7.5,7.5 7.5,1 10,1z" />
+                            </DrawingGroup>
+                        </DrawingBrush.Drawing>
+                    </DrawingBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+        </buttons:HmiButton>
+        <buttons:HmiButton Style="{StaticResource MetalBorderButton}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="80" Width="80" FontSize="36" hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pump1].Items[skorost_menshe].WriteCommand}" Canvas.Left="218" Canvas.Top="247">
+            <Rectangle Width="30" Height="30">
+                <Rectangle.Fill>
+                    <DrawingBrush>
+                        <DrawingBrush.Drawing>
+                            <DrawingGroup>
+                                <GeometryDrawing Brush="White" Geometry="M 0,4.5 L 0,10 0,6 10,6 10,6 10,0 10,4.5z" />
+                            </DrawingGroup>
+                        </DrawingBrush.Drawing>
+                    </DrawingBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+        </buttons:HmiButton>
+        <buttons:HmiButton Style="{StaticResource MetalBorderButton}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="80" Width="80" FontSize="36" hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pump2].Items[skorost_bolshe].WriteCommand}" Canvas.Left="1189" Canvas.Top="247">
+            <Rectangle Width="30" Height="30">
+                <Rectangle.Fill>
+                    <DrawingBrush>
+                        <DrawingBrush.Drawing>
+                            <DrawingGroup>
+                                <GeometryDrawing Brush="White" Geometry="F1 M 10,7.5 L 16.5,7.5 16.5,10 10,10 10,16.5 7.5,16.5 7.5,10 1,10 1,7.5 7.5,7.5 7.5,1 10,1z" />
+                            </DrawingGroup>
+                        </DrawingBrush.Drawing>
+                    </DrawingBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+        </buttons:HmiButton>
+        <buttons:HmiButton Style="{StaticResource MetalBorderButton}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="80" Width="80" FontSize="36" hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pump2].Items[skorost_menshe].WriteCommand}" Canvas.Left="1018" Canvas.Top="247">
+            <Rectangle Width="30" Height="30">
+                <Rectangle.Fill>
+                    <DrawingBrush>
+                        <DrawingBrush.Drawing>
+                            <DrawingGroup>
+                                <GeometryDrawing Brush="White" Geometry="M 0,4.5 L 0,10 0,6 10,6 10,6 10,0 10,4.5z" />
+                            </DrawingGroup>
+                        </DrawingBrush.Drawing>
+                    </DrawingBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+        </buttons:HmiButton>
+        <buttons:KeypadButton Style="{StaticResource MetalBorderStdButton}" FontFamily="Arial" Message="{hmi:Bind FallbackValue=ВВЕДИТЕ ЗНАЧЕНИЕ, Path=Expressions.Node[ustavki.drawwork].Items[8].Value}"  Title="НАГРУЗКА НА ДОЛОТО" FontSize="56" Height="85" HorizontalAlignment="Left"  Canvas.Left="714" Canvas.Top="775" VerticalAlignment="Top" Width="80"  Margin="0">
+            <buttons:KeypadButton.Value>
+                <hmi:Bind Path="Tags.Node[write.drawwork].Items[calc_nagruzka_na_doloto].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Double>0</system:Double>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </buttons:KeypadButton.Value>
+            <Viewbox>
+                <Path Fill="White" 
+                    Margin="10" 
+                    SnapsToDevicePixels="True" 
+                    Data="F1 M 30.083,10.000 C 30.083,11.105 29.188,12.000 28.083,12.000 L 7.917,12.000 C 6.812,12.000 5.917,11.105 5.917,10.000 L 5.917,8.000 C 5.917,6.895 6.812,6.000 7.917,6.000 L 28.083,6.000 C 29.188,6.000 30.083,6.895 30.083,8.000 L 30.083,10.000 Z M 30.042,22.000 C 30.042,23.105 29.146,24.000 28.042,24.000 L 26.042,24.000 C 24.937,24.000 24.042,23.105 24.042,22.000 L 24.042,20.000 C 24.042,18.895 24.937,18.000 26.042,18.000 L 28.042,18.000 C 29.146,18.000 30.042,18.895 30.042,20.000 L 30.042,22.000 Z M 30.042,31.000 C 30.042,32.105 29.146,33.000 28.042,33.000 L 26.042,33.000 C 24.937,33.000 24.042,32.105 24.042,31.000 L 24.042,29.000 C 24.042,27.895 24.937,27.000 26.042,27.000 L 28.042,27.000 C 29.146,27.000 30.042,27.895 30.042,29.000 L 30.042,31.000 Z M 30.042,40.000 C 30.042,41.105 29.146,42.000 28.042,42.000 L 26.042,42.000 C 24.937,42.000 24.042,41.105 24.042,40.000 L 24.042,38.000 C 24.042,36.895 24.937,36.000 26.042,36.000 L 28.042,36.000 C 29.146,36.000 30.042,36.895 30.042,38.000 L 30.042,40.000 Z M 21.042,22.000 C 21.042,23.105 20.146,24.000 19.042,24.000 L 17.042,24.000 C 15.937,24.000 15.042,23.105 15.042,22.000 L 15.042,20.000 C 15.042,18.895 15.937,18.000 17.042,18.000 L 19.042,18.000 C 20.146,18.000 21.042,18.895 21.042,20.000 L 21.042,22.000 Z M 21.042,31.000 C 21.042,32.105 20.146,33.000 19.042,33.000 L 17.042,33.000 C 15.937,33.000 15.042,32.105 15.042,31.000 L 15.042,29.000 C 15.042,27.895 15.937,27.000 17.042,27.000 L 19.042,27.000 C 20.146,27.000 21.042,27.895 21.042,29.000 L 21.042,31.000 Z M 21.042,40.000 C 21.042,41.105 20.146,42.000 19.042,42.000 L 17.042,42.000 C 15.937,42.000 15.042,41.105 15.042,40.000 L 15.042,38.000 C 15.042,36.895 15.937,36.000 17.042,36.000 L 19.042,36.000 C 20.146,36.000 21.042,36.895 21.042,38.000 L 21.042,40.000 Z M 11.958,22.000 C 11.958,23.105 11.063,24.000 9.958,24.000 L 7.958,24.000 C 6.854,24.000 5.958,23.105 5.958,22.000 L 5.958,20.000 C 5.958,18.895 6.854,18.000 7.958,18.000 L 9.958,18.000 C 11.063,18.000 11.958,18.895 11.958,20.000 L 11.958,22.000 Z M 11.958,31.000 C 11.958,32.105 11.063,33.000 9.958,33.000 L 7.958,33.000 C 6.854,33.000 5.958,32.105 5.958,31.000 L 5.958,29.000 C 5.958,27.895 6.854,27.000 7.958,27.000 L 9.958,27.000 C 11.063,27.000 11.958,27.895 11.958,29.000 L 11.958,31.000 Z M 11.958,40.000 C 11.958,41.105 11.063,42.000 9.958,42.000 L 7.958,42.000 C 6.854,42.000 5.958,41.105 5.958,40.000 L 5.958,38.000 C 5.958,36.895 6.854,36.000 7.958,36.000 L 9.958,36.000 C 11.063,36.000 11.958,36.895 11.958,38.000 L 11.958,40.000 Z M 33.000,0.000 L 3.000,0.000 C 1.343,0.000 0.000,1.343 0.000,3.000 L 0.000,45.000 C 0.000,46.657 1.343,48.000 3.000,48.000 L 33.000,48.000 C 34.657,48.000 36.000,46.657 36.000,45.000 L 36.000,3.000 C 36.000,1.343 34.657,0.000 33.000,0.000 Z"/>
+            </Viewbox>
+        </buttons:KeypadButton>
+        <buttons:KeypadButton Style="{StaticResource MetalBorderStdButton}" FontFamily="Arial" Message="{hmi:Bind FallbackValue=ВВЕДИТЕ ЗНАЧЕНИЕ, Path=Expressions.Node[ustavki.drawwork].Items[7].Value}"  Title="СКОРОСТЬ ПОДАЧИ" FontSize="56" Height="80" HorizontalAlignment="Left"  Canvas.Left="303" Canvas.Top="775" VerticalAlignment="Top" Width="80"  Margin="0">
+            <buttons:KeypadButton.Value>
+                <hmi:Bind Path="Tags.Node[write.drawwork].Items[calc_skorost_podachi].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Double>0</system:Double>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </buttons:KeypadButton.Value>
+            <Viewbox>
+                <Path Fill="White" 
+                    Margin="10" 
+                    SnapsToDevicePixels="True" 
+                    Data="F1 M 30.083,10.000 C 30.083,11.105 29.188,12.000 28.083,12.000 L 7.917,12.000 C 6.812,12.000 5.917,11.105 5.917,10.000 L 5.917,8.000 C 5.917,6.895 6.812,6.000 7.917,6.000 L 28.083,6.000 C 29.188,6.000 30.083,6.895 30.083,8.000 L 30.083,10.000 Z M 30.042,22.000 C 30.042,23.105 29.146,24.000 28.042,24.000 L 26.042,24.000 C 24.937,24.000 24.042,23.105 24.042,22.000 L 24.042,20.000 C 24.042,18.895 24.937,18.000 26.042,18.000 L 28.042,18.000 C 29.146,18.000 30.042,18.895 30.042,20.000 L 30.042,22.000 Z M 30.042,31.000 C 30.042,32.105 29.146,33.000 28.042,33.000 L 26.042,33.000 C 24.937,33.000 24.042,32.105 24.042,31.000 L 24.042,29.000 C 24.042,27.895 24.937,27.000 26.042,27.000 L 28.042,27.000 C 29.146,27.000 30.042,27.895 30.042,29.000 L 30.042,31.000 Z M 30.042,40.000 C 30.042,41.105 29.146,42.000 28.042,42.000 L 26.042,42.000 C 24.937,42.000 24.042,41.105 24.042,40.000 L 24.042,38.000 C 24.042,36.895 24.937,36.000 26.042,36.000 L 28.042,36.000 C 29.146,36.000 30.042,36.895 30.042,38.000 L 30.042,40.000 Z M 21.042,22.000 C 21.042,23.105 20.146,24.000 19.042,24.000 L 17.042,24.000 C 15.937,24.000 15.042,23.105 15.042,22.000 L 15.042,20.000 C 15.042,18.895 15.937,18.000 17.042,18.000 L 19.042,18.000 C 20.146,18.000 21.042,18.895 21.042,20.000 L 21.042,22.000 Z M 21.042,31.000 C 21.042,32.105 20.146,33.000 19.042,33.000 L 17.042,33.000 C 15.937,33.000 15.042,32.105 15.042,31.000 L 15.042,29.000 C 15.042,27.895 15.937,27.000 17.042,27.000 L 19.042,27.000 C 20.146,27.000 21.042,27.895 21.042,29.000 L 21.042,31.000 Z M 21.042,40.000 C 21.042,41.105 20.146,42.000 19.042,42.000 L 17.042,42.000 C 15.937,42.000 15.042,41.105 15.042,40.000 L 15.042,38.000 C 15.042,36.895 15.937,36.000 17.042,36.000 L 19.042,36.000 C 20.146,36.000 21.042,36.895 21.042,38.000 L 21.042,40.000 Z M 11.958,22.000 C 11.958,23.105 11.063,24.000 9.958,24.000 L 7.958,24.000 C 6.854,24.000 5.958,23.105 5.958,22.000 L 5.958,20.000 C 5.958,18.895 6.854,18.000 7.958,18.000 L 9.958,18.000 C 11.063,18.000 11.958,18.895 11.958,20.000 L 11.958,22.000 Z M 11.958,31.000 C 11.958,32.105 11.063,33.000 9.958,33.000 L 7.958,33.000 C 6.854,33.000 5.958,32.105 5.958,31.000 L 5.958,29.000 C 5.958,27.895 6.854,27.000 7.958,27.000 L 9.958,27.000 C 11.063,27.000 11.958,27.895 11.958,29.000 L 11.958,31.000 Z M 11.958,40.000 C 11.958,41.105 11.063,42.000 9.958,42.000 L 7.958,42.000 C 6.854,42.000 5.958,41.105 5.958,40.000 L 5.958,38.000 C 5.958,36.895 6.854,36.000 7.958,36.000 L 9.958,36.000 C 11.063,36.000 11.958,36.895 11.958,38.000 L 11.958,40.000 Z M 33.000,0.000 L 3.000,0.000 C 1.343,0.000 0.000,1.343 0.000,3.000 L 0.000,45.000 C 0.000,46.657 1.343,48.000 3.000,48.000 L 33.000,48.000 C 34.657,48.000 36.000,46.657 36.000,45.000 L 36.000,3.000 C 36.000,1.343 34.657,0.000 33.000,0.000 Z"/>
+            </Viewbox>
+        </buttons:KeypadButton>
+        <buttons:KeypadButton Style="{StaticResource MetalBorderStdButton}" FontFamily="Arial" Message="{hmi:Bind FallbackValue=ВВЕДИТЕ ЗНАЧЕНИЕ, Path=Expressions.Node[ustavki.pump1].Items[7].Value}"  Title="СКОРОСТЬ НАСОСА 1" FontSize="56" Height="80" HorizontalAlignment="Left"  Canvas.Left="303" Canvas.Top="247" VerticalAlignment="Top" Width="80"  Margin="0">
+            <buttons:KeypadButton.IsEnabled>
+                <hmi:Bind Path="Tags.Node[view.main_drives.pump1.presets].Items[calc_skorost_vidimost].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>false</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </buttons:KeypadButton.IsEnabled>
+            <buttons:KeypadButton.Value>
+                <hmi:Bind Path="Tags.Node[write.pump1].Items[calc_skorost].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Double>0</system:Double>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </buttons:KeypadButton.Value>
+            <Viewbox>
+                <Path Fill="White" 
+                    Margin="10" 
+                    SnapsToDevicePixels="True" 
+                    Data="F1 M 30.083,10.000 C 30.083,11.105 29.188,12.000 28.083,12.000 L 7.917,12.000 C 6.812,12.000 5.917,11.105 5.917,10.000 L 5.917,8.000 C 5.917,6.895 6.812,6.000 7.917,6.000 L 28.083,6.000 C 29.188,6.000 30.083,6.895 30.083,8.000 L 30.083,10.000 Z M 30.042,22.000 C 30.042,23.105 29.146,24.000 28.042,24.000 L 26.042,24.000 C 24.937,24.000 24.042,23.105 24.042,22.000 L 24.042,20.000 C 24.042,18.895 24.937,18.000 26.042,18.000 L 28.042,18.000 C 29.146,18.000 30.042,18.895 30.042,20.000 L 30.042,22.000 Z M 30.042,31.000 C 30.042,32.105 29.146,33.000 28.042,33.000 L 26.042,33.000 C 24.937,33.000 24.042,32.105 24.042,31.000 L 24.042,29.000 C 24.042,27.895 24.937,27.000 26.042,27.000 L 28.042,27.000 C 29.146,27.000 30.042,27.895 30.042,29.000 L 30.042,31.000 Z M 30.042,40.000 C 30.042,41.105 29.146,42.000 28.042,42.000 L 26.042,42.000 C 24.937,42.000 24.042,41.105 24.042,40.000 L 24.042,38.000 C 24.042,36.895 24.937,36.000 26.042,36.000 L 28.042,36.000 C 29.146,36.000 30.042,36.895 30.042,38.000 L 30.042,40.000 Z M 21.042,22.000 C 21.042,23.105 20.146,24.000 19.042,24.000 L 17.042,24.000 C 15.937,24.000 15.042,23.105 15.042,22.000 L 15.042,20.000 C 15.042,18.895 15.937,18.000 17.042,18.000 L 19.042,18.000 C 20.146,18.000 21.042,18.895 21.042,20.000 L 21.042,22.000 Z M 21.042,31.000 C 21.042,32.105 20.146,33.000 19.042,33.000 L 17.042,33.000 C 15.937,33.000 15.042,32.105 15.042,31.000 L 15.042,29.000 C 15.042,27.895 15.937,27.000 17.042,27.000 L 19.042,27.000 C 20.146,27.000 21.042,27.895 21.042,29.000 L 21.042,31.000 Z M 21.042,40.000 C 21.042,41.105 20.146,42.000 19.042,42.000 L 17.042,42.000 C 15.937,42.000 15.042,41.105 15.042,40.000 L 15.042,38.000 C 15.042,36.895 15.937,36.000 17.042,36.000 L 19.042,36.000 C 20.146,36.000 21.042,36.895 21.042,38.000 L 21.042,40.000 Z M 11.958,22.000 C 11.958,23.105 11.063,24.000 9.958,24.000 L 7.958,24.000 C 6.854,24.000 5.958,23.105 5.958,22.000 L 5.958,20.000 C 5.958,18.895 6.854,18.000 7.958,18.000 L 9.958,18.000 C 11.063,18.000 11.958,18.895 11.958,20.000 L 11.958,22.000 Z M 11.958,31.000 C 11.958,32.105 11.063,33.000 9.958,33.000 L 7.958,33.000 C 6.854,33.000 5.958,32.105 5.958,31.000 L 5.958,29.000 C 5.958,27.895 6.854,27.000 7.958,27.000 L 9.958,27.000 C 11.063,27.000 11.958,27.895 11.958,29.000 L 11.958,31.000 Z M 11.958,40.000 C 11.958,41.105 11.063,42.000 9.958,42.000 L 7.958,42.000 C 6.854,42.000 5.958,41.105 5.958,40.000 L 5.958,38.000 C 5.958,36.895 6.854,36.000 7.958,36.000 L 9.958,36.000 C 11.063,36.000 11.958,36.895 11.958,38.000 L 11.958,40.000 Z M 33.000,0.000 L 3.000,0.000 C 1.343,0.000 0.000,1.343 0.000,3.000 L 0.000,45.000 C 0.000,46.657 1.343,48.000 3.000,48.000 L 33.000,48.000 C 34.657,48.000 36.000,46.657 36.000,45.000 L 36.000,3.000 C 36.000,1.343 34.657,0.000 33.000,0.000 Z"/>
+            </Viewbox>
+        </buttons:KeypadButton>
+        <buttons:KeypadButton Style="{StaticResource MetalBorderStdButton}" FontFamily="Arial" Message="{hmi:Bind FallbackValue=ВВЕДИТЕ ЗНАЧЕНИЕ, Path=Expressions.Node[ustavki.pump2].Items[7].Value}"  Title="СКОРОСТЬ НАСОСА 2" FontSize="56" Height="80" HorizontalAlignment="Left"  Canvas.Left="1104" Canvas.Top="248" VerticalAlignment="Top" Width="80"  Margin="0">
+            <buttons:KeypadButton.IsEnabled>
+                <hmi:Bind Path="Tags.Node[view.main_drives.pump2.presets].Items[calc_skorost_vidimost].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>false</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </buttons:KeypadButton.IsEnabled>
+            <buttons:KeypadButton.Value>
+                <hmi:Bind Path="Tags.Node[write.pump2].Items[calc_skorost].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Double>0</system:Double>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </buttons:KeypadButton.Value>
+            <Viewbox>
+                <Path Fill="White" 
+                    Margin="10" 
+                    SnapsToDevicePixels="True" 
+                    Data="F1 M 30.083,10.000 C 30.083,11.105 29.188,12.000 28.083,12.000 L 7.917,12.000 C 6.812,12.000 5.917,11.105 5.917,10.000 L 5.917,8.000 C 5.917,6.895 6.812,6.000 7.917,6.000 L 28.083,6.000 C 29.188,6.000 30.083,6.895 30.083,8.000 L 30.083,10.000 Z M 30.042,22.000 C 30.042,23.105 29.146,24.000 28.042,24.000 L 26.042,24.000 C 24.937,24.000 24.042,23.105 24.042,22.000 L 24.042,20.000 C 24.042,18.895 24.937,18.000 26.042,18.000 L 28.042,18.000 C 29.146,18.000 30.042,18.895 30.042,20.000 L 30.042,22.000 Z M 30.042,31.000 C 30.042,32.105 29.146,33.000 28.042,33.000 L 26.042,33.000 C 24.937,33.000 24.042,32.105 24.042,31.000 L 24.042,29.000 C 24.042,27.895 24.937,27.000 26.042,27.000 L 28.042,27.000 C 29.146,27.000 30.042,27.895 30.042,29.000 L 30.042,31.000 Z M 30.042,40.000 C 30.042,41.105 29.146,42.000 28.042,42.000 L 26.042,42.000 C 24.937,42.000 24.042,41.105 24.042,40.000 L 24.042,38.000 C 24.042,36.895 24.937,36.000 26.042,36.000 L 28.042,36.000 C 29.146,36.000 30.042,36.895 30.042,38.000 L 30.042,40.000 Z M 21.042,22.000 C 21.042,23.105 20.146,24.000 19.042,24.000 L 17.042,24.000 C 15.937,24.000 15.042,23.105 15.042,22.000 L 15.042,20.000 C 15.042,18.895 15.937,18.000 17.042,18.000 L 19.042,18.000 C 20.146,18.000 21.042,18.895 21.042,20.000 L 21.042,22.000 Z M 21.042,31.000 C 21.042,32.105 20.146,33.000 19.042,33.000 L 17.042,33.000 C 15.937,33.000 15.042,32.105 15.042,31.000 L 15.042,29.000 C 15.042,27.895 15.937,27.000 17.042,27.000 L 19.042,27.000 C 20.146,27.000 21.042,27.895 21.042,29.000 L 21.042,31.000 Z M 21.042,40.000 C 21.042,41.105 20.146,42.000 19.042,42.000 L 17.042,42.000 C 15.937,42.000 15.042,41.105 15.042,40.000 L 15.042,38.000 C 15.042,36.895 15.937,36.000 17.042,36.000 L 19.042,36.000 C 20.146,36.000 21.042,36.895 21.042,38.000 L 21.042,40.000 Z M 11.958,22.000 C 11.958,23.105 11.063,24.000 9.958,24.000 L 7.958,24.000 C 6.854,24.000 5.958,23.105 5.958,22.000 L 5.958,20.000 C 5.958,18.895 6.854,18.000 7.958,18.000 L 9.958,18.000 C 11.063,18.000 11.958,18.895 11.958,20.000 L 11.958,22.000 Z M 11.958,31.000 C 11.958,32.105 11.063,33.000 9.958,33.000 L 7.958,33.000 C 6.854,33.000 5.958,32.105 5.958,31.000 L 5.958,29.000 C 5.958,27.895 6.854,27.000 7.958,27.000 L 9.958,27.000 C 11.063,27.000 11.958,27.895 11.958,29.000 L 11.958,31.000 Z M 11.958,40.000 C 11.958,41.105 11.063,42.000 9.958,42.000 L 7.958,42.000 C 6.854,42.000 5.958,41.105 5.958,40.000 L 5.958,38.000 C 5.958,36.895 6.854,36.000 7.958,36.000 L 9.958,36.000 C 11.063,36.000 11.958,36.895 11.958,38.000 L 11.958,40.000 Z M 33.000,0.000 L 3.000,0.000 C 1.343,0.000 0.000,1.343 0.000,3.000 L 0.000,45.000 C 0.000,46.657 1.343,48.000 3.000,48.000 L 33.000,48.000 C 34.657,48.000 36.000,46.657 36.000,45.000 L 36.000,3.000 C 36.000,1.343 34.657,0.000 33.000,0.000 Z"/>
+            </Viewbox>
+        </buttons:KeypadButton>
+        <buttons:HmiButton Style="{StaticResource MetalBorderButton}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="71" Width="412" FontSize="20" hmi:Click.Command="{hmi:SeBinding Tags.Node[write.pump1].Items[sinhronnoe_upravlenie].WriteCommand}" Canvas.Left="518" Canvas.Top="81">
+
+            <buttons:HmiButton.VisualStateCollection>
+                <se:HmiButtonState Background="#FF56A856">
+                    <se:HmiButtonState.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.pump1].Items[sync].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:HmiButtonState.Value>
+                </se:HmiButtonState>
+            </buttons:HmiButton.VisualStateCollection>
+            <se:VisualBox Text="СИНХРОННОЕ УПРАВЛЕНИЕ&#xA;(В ЗАПРЕТЕ)" BorderBrush="{x:Null}">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Text="СИНХРОННОЕ УПРАВЛЕНИЕ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Expressions.Node[].Items[1].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+        </buttons:HmiButton>
+        <se:ValueDisplay Canvas.Left="10" Canvas.Top="407" Height="60" x:Name="numericDisplay4" Width="199" HeaderBackground="Black" LabelForeground="#FF041752" Label="%" ValueBackground="White" ValueForeground="Black" Header="РАСХОД НА ВЫХОДЕ" Value="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.msab].Items[raskhod_na_vyhode].Value}"/>
+        <se:ValueDisplay Canvas.Left="10" Canvas.Top="542" FontFamily="Tahoma" Width="199" HeaderBackground="Black" LabelForeground="#FF041752" Label="м/ч" ValueBackground="White" ValueForeground="Black" Header="СКОРОСТЬ ПРОХОДКИ" Value="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.msab].Items[skorost_prohodki].Value}" Height="66" />
+        <se:ValueDisplay Canvas.Left="10" Canvas.Top="475" x:Name="numericDisplay4_Copy" Width="199" HeaderBackground="Black" LabelForeground="#FF041752" Label="%" ValueBackground="White" ValueForeground="Black" Header="ИЗМ. РАСХОДА НА ВЫХОДЕ" Value="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.msab].Items[izmenenie_raskhoda_na_vyhode].Value}" Height="60"/>
+    </Canvas>
+</UserControl>

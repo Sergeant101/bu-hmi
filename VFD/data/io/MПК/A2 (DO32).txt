@@ -1,0 +1,128 @@
+311008
+8
+lang|RU|0 (:2 ) Разрешение работы привода вспом. лебедки 1
+lang|EN|0 (:2 ) Switch on led "Stop mud pump 1" in VFD house
+311008
+9
+lang|RU|1 (:3 ) Подъем вспом. лебедки 1 на 1-ой скорости
+lang|EN|1 (:3 ) Switch on led "Work mud pump 1" in VFD house
+311008
+10
+lang|RU|2 (:4 ) Спуск вспом. лебедки 1 на 1-ой скорости
+lang|EN|2 (:4 ) Switch on led "EmergENcy mud pump 1" in VFD house
+311008
+11
+lang|RU|3 (:5 ) Вспом. лебедка 1 2-я скорость
+lang|EN|3 (:5 ) Switch on led "Stop mud pump 2" in VFD house
+311008
+12
+lang|RU|4 (:6 ) Вспом. лебедка 1 3-я скорость
+lang|EN|4 (:6 ) Switch on led "Work mud pump 2" in VFD house
+311008
+13
+lang|RU|5 (:7 ) Включить вспом. лебедку 1
+lang|EN|5 (:7 ) Switch on led "EmergENcy mud pump 2" in VFD house
+311008
+14
+lang|RU|6 (:8 ) Резерв
+lang|EN|6 (:8 ) Switch on led "Start/Stop/Unlock" main drawworks on drillers console
+311008
+15
+lang|RU|7 (:9 ) Резерв
+lang|EN|7 (:9 ) Switch on led "Start/Stop/Unlock" aux. drawworks on drillers console
+311008
+0
+lang|RU|0 (:12 ) Включить питание активных клеммников шкафа АКЛ
+lang|EN|0 (:12 ) Switch on led "Stop mud pump 3" in VFD house
+311008
+1
+lang|RU|1 (:13 ) Включить обогрев активных клеммников шкафа АКЛ
+lang|EN|1 (:13 ) Switch on led "Work mud pump 3" in VFD house
+311008
+2
+lang|RU|2 (:14 ) Резерв
+lang|EN|2 (:14 ) Switch on led "EmergENcy mud pump 3" in VFD house
+311008
+3
+lang|RU|3 (:15 ) Резерв
+lang|EN|3 (:15 ) Switch on fan brake resistirs
+311008
+4
+lang|RU|4 (:16 ) Резерв
+lang|EN|4 (:16 ) Spare
+311008
+5
+lang|RU|5 (:17 ) Резерв
+lang|EN|5 (:17 ) Spare
+311008
+6
+lang|RU|6 (:18 ) Включить обдув тормозных резисторов (резерв)
+lang|EN|6 (:18 ) Spare
+311008
+7
+lang|RU|7 (:19 ) Резерв
+lang|EN|7 (:19 ) Spare
+311009
+8
+lang|RU|0 (:22 ) Включть светодиод "СТОП осн. лебедки"
+lang|EN|0 (:22 ) Switch on led "Stop drawworks 1" in VFD house
+311009
+9
+lang|RU|1 (:23 ) Включить светодиод "РАБОТА осн. лебедки"
+lang|EN|1 (:23 ) Switch on led "Work drawworks 1" in VFD house
+311009
+10
+lang|RU|2 (:24 ) Вкл. светодиод "АВАРИЯ осн. лебедки"
+lang|EN|2 (:24 ) Switch on led "EmergENcy drawworks 1" in VFD house
+311009
+11
+lang|RU|3 (:25 ) Включть светодиод "СТОП доп. привода"
+lang|EN|3 (:25 ) Switch on led "Stop drawworks 2" in VFD house
+311009
+12
+lang|RU|4 (:26 ) Включить светодиод "РАБОТА доп. привода"
+lang|EN|4 (:26 ) Switch on led "Work drawworks 2" in VFD house
+311009
+13
+lang|RU|5 (:27 ) Вкл. светодиод "АВАРИЯ доп. привода"
+lang|EN|5 (:27 ) Switch on led "EmergENcy drawworks 2" in VFD house
+311009
+14
+lang|RU|6 (:28 ) Отключить трансформатор Т1 от PLC 
+lang|EN|6 (:28 ) Switch on led "Stop aux. drive" in VFD house
+311009
+15
+lang|RU|7 (:29 ) Имитация 50% НКПР
+lang|EN|7 (:29 ) Switch on led "Work aux. drive" in VFD house
+311009
+0
+lang|RU|0 (:32 ) Резерв
+lang|EN|0 (:32 ) Switch on led "EmergENcy aux. drive" in VFD house
+311009
+1
+lang|RU|1 (:33 ) Резерв
+lang|EN|1 (:33 ) Not interlock of aux. drive in VFD house
+311009
+2
+lang|RU|2 (:34 ) Резерв
+lang|EN|2 (:34 ) Not interlock of drawworks 1 in VFD house
+311009
+3
+lang|RU|3 (:35 ) Резерв
+lang|EN|3 (:35 ) Not interlock of drawworks 2 in VFD house
+311009
+4
+lang|RU|4 (:36 ) Резерв
+lang|EN|4 (:36 ) Interlock of mud pump 1 in VFD house
+311009
+5
+lang|RU|5 (:37 ) Нет останова доп. привода лебедки
+lang|EN|5 (:37 ) Interlock of mud pump 2 in VFD house
+311009
+6
+lang|RU|6 (:38 ) Нет останова осн. привода лебедки
+lang|EN|6 (:38 ) Interlock of mud pump 3 in VFD house
+311009
+7
+lang|RU|7 (:39 ) Резерв
+lang|EN|7 (:39 ) Spare

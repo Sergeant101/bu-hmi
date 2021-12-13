@@ -1,0 +1,743 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:view="clr-namespace:Monokot.ScadaExtension.Wpf.Controls.Trends.View;assembly=Monokot.ScadaExtension.Wpf"
+    
+             xmlns:se="http://schemas.monokot.com/se/"
+             xmlns:hmi="http://schemas.monokot.com/hmi/"
+    
+             xmlns:Fundamental="clr-namespace:Monokot.Hmi.Core.Fundamental;assembly=Monokot.Hmi.Core" 
+             x:Class="VFD.Frames.Sub.SNG.FrmMnemoVent"
+    
+             mc:Ignorable="d" 
+    
+             Background="#FFC9C9C9"
+             d:DesignHeight="900" d:DesignWidth="1280">
+    <Canvas>
+        <Rectangle Fill="#FF8D857F" Height="312" Canvas.Left="150" Stroke="Black" StrokeThickness="3" Canvas.Top="115" Width="985"/>
+        <Rectangle Fill="#FFAAAAAA" Height="296" Canvas.Left="160" Stroke="Black" StrokeThickness="3" Canvas.Top="124" Width="969"/>
+        <Rectangle Fill="#FF8D857F" Height="8"   Canvas.Left="322" Stroke="Black" StrokeThickness="2" Canvas.Top="190" Width="653"/>
+        <Rectangle Fill="White" Height="13" Canvas.Left="472" Stroke="Black" StrokeThickness="3" Canvas.Top="188" Width="60" RenderTransformOrigin="0.5,0.5"/>
+        <Rectangle Fill="White" Height="13" Canvas.Left="614" Stroke="Black" StrokeThickness="3" Canvas.Top="188" Width="60" RenderTransformOrigin="0.5,0.5"/>
+        <Rectangle Fill="White" Height="13" Canvas.Left="740" Stroke="Black" StrokeThickness="3" Canvas.Top="188" Width="60" RenderTransformOrigin="0.5,0.5"/>
+        <Rectangle Fill="White" Height="13" Canvas.Left="860" Stroke="Black" StrokeThickness="3" Canvas.Top="188" Width="60" RenderTransformOrigin="0.5,0.5"/>
+
+        <Rectangle Fill="#FF8D857F" Height="294" Canvas.Left="317" Stroke="Black" StrokeThickness="2" Canvas.Top="125" Width="8"/>
+        <Rectangle Fill="#FF8D857F" Height="295" Canvas.Left="970" Stroke="Black" StrokeThickness="2" Canvas.Top="125" Width="8"/>
+        <Rectangle Fill="White" Height="61" Canvas.Left="518" Stroke="Black" StrokeThickness="3" Canvas.Top="391" Width="14" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Fill="White" Height="61" Canvas.Left="766" Stroke="Black" StrokeThickness="3" Canvas.Top="391" Width="14" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Fill="White" Height="61" Canvas.Left="1066" Stroke="Black" StrokeThickness="3" Canvas.Top="391" Width="14" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Fill="White" Height="61" Canvas.Left="1066" Stroke="Black" StrokeThickness="3" Canvas.Top="90" Width="14" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Fill="White" Height="267" Canvas.Left="1123" Stroke="Black" StrokeThickness="3" Canvas.Top="135" Width="14"/>
+        <Rectangle Fill="White" Height="61" Canvas.Left="883" Stroke="Black" StrokeThickness="3" Canvas.Top="90" Width="14" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Fill="White" Height="61" Canvas.Left="763" Stroke="Black" StrokeThickness="3" Canvas.Top="90" Width="14" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Fill="White" Height="61" Canvas.Left="637" Stroke="Black" StrokeThickness="3" Canvas.Top="90" Width="14" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Fill="White" Height="61" Canvas.Left="496" Stroke="Black" StrokeThickness="3" Canvas.Top="90" Width="14" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Fill="White" Height="61" Canvas.Left="359" Stroke="Black" StrokeThickness="3" Canvas.Top="90" Width="13" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Fill="White" Height="13" Canvas.Left="335" Stroke="Black" StrokeThickness="3" Canvas.Top="188" Width="60" RenderTransformOrigin="0.5,0.5"/>
+        <Rectangle Fill="White" Height="94" Canvas.Left="313" Stroke="Black" StrokeThickness="3" Canvas.Top="300" Width="14"/>
+        <Grid Height="49" Canvas.Left="181" Canvas.Top="393" Width="49" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Rectangle Fill="#FFD3CCB5" Stroke="Black" StrokeThickness="3"/>
+            <Rectangle Fill="Black" Stroke="Black"  Margin="23,0" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform  Angle="{hmi:SeBinding modules[tags_mod].Items[вентиляция_положение_притока2_минус_90].Value, FallbackValue=45}"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Ellipse Fill="White" HorizontalAlignment="Center" Height="20"  Stroke="Black" StrokeThickness="3" VerticalAlignment="Center" Width="20"/>
+
+        </Grid>
+        <Grid Height="49" Canvas.Left="181" Canvas.Top="92" Width="49" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Rectangle Fill="#FFD3CCB5" Stroke="Black" StrokeThickness="3"/>
+            <Rectangle Fill="Black" Stroke="Black"  Margin="23,0" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="{hmi:SeBinding modules[tags_mod].Items[вентиляция_положение_притока1_минус_90].Value, FallbackValue=90}"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Ellipse Fill="White" HorizontalAlignment="Center" Height="20"  Stroke="Black" StrokeThickness="3" VerticalAlignment="Center" Width="20"/>
+
+        </Grid>
+        <Grid Height="49" Canvas.Left="296" Canvas.Top="214" Width="49" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Rectangle Fill="#FFD3CCB5" Stroke="Black" StrokeThickness="3"/>
+            <Rectangle Fill="Black" Stroke="Black"  Margin="23,0" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="{hmi:SeBinding modules[tags_mod].Items[вентиляция_положение_притока3].Value, FallbackValue=90}"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Ellipse Fill="White" HorizontalAlignment="Center" Height="20"  Stroke="Black" StrokeThickness="3" VerticalAlignment="Center" Width="20"/>
+
+        </Grid>
+        <Rectangle Fill="White" Height="75" Canvas.Left="182" Stroke="Black" StrokeThickness="3" Canvas.Top="261" Width="75"/>
+        <Rectangle Fill="White" Height="75" Canvas.Left="1042" Stroke="Black" StrokeThickness="3" Canvas.Top="148" Width="75"/>
+        <Rectangle Fill="White" Height="75" Canvas.Left="1042" Stroke="Black" StrokeThickness="3" Canvas.Top="230" Width="75"/>
+        <Rectangle Fill="White" Height="75" Canvas.Left="1042" Stroke="Black" StrokeThickness="3" Canvas.Top="312" Width="75"/>
+        <Ellipse Fill="#FF68FF00" Height="20" Canvas.Left="347" Stroke="Black" StrokeThickness="3" Canvas.Top="382" Width="21"/>
+        <Ellipse Fill="#FF68FF00" Height="21" Canvas.Left="465" Stroke="Black" StrokeThickness="3" Canvas.Top="284" Width="20"/>
+        <Ellipse Fill="#FF68FF00" Height="21" Canvas.Left="860" Stroke="Black" StrokeThickness="3" Canvas.Top="284" Width="20"/>
+        <Ellipse Fill="#FF68FF00" Height="20" Canvas.Left="988" Stroke="Black" StrokeThickness="3" Canvas.Top="172" Width="21"/>
+        <Ellipse Fill="#FF68FF00" Height="21" Canvas.Left="988" Stroke="Black" StrokeThickness="3" Canvas.Top="250" Width="21"/>
+        <Ellipse Fill="#FF68FF00" Height="20" Canvas.Left="988" Stroke="Black" StrokeThickness="3" Canvas.Top="336" Width="21"/>
+        <Rectangle Fill="#FF0281E8" Height="15" Canvas.Left="240" StrokeThickness="1" Canvas.Top="340" Width="718">
+            <Rectangle.Visibility>
+                <hmi:SeBinding FallbackValue="Visible" Path="modules[tags_mod].Items[вентиляция_циркуляция_холодная].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter/>
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </Rectangle.Visibility>
+        </Rectangle>
+        <Rectangle Fill="#FFFF2E00" Height="14" Canvas.Left="650" StrokeThickness="1" Canvas.Top="388" Width="131">
+            <Rectangle.Visibility>
+                <hmi:SeBinding FallbackValue="Visible" Path="modules[tags_mod].Items[вентиляция_окно_вытяжки].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter/>
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </Rectangle.Visibility>
+        </Rectangle>
+        <Rectangle Fill="#FF0281E8" Height="181" Canvas.Left="566" StrokeThickness="1" Canvas.Top="160" Width="15">
+            <Rectangle.Visibility>
+                <hmi:SeBinding FallbackValue="Visible" Path="modules[tags_mod].Items[вентиляция_циркуляция_холодная].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter/>
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </Rectangle.Visibility>
+        </Rectangle>
+        <Rectangle Fill="#FF0281E8" Height="181" Canvas.Left="429" StrokeThickness="1" Canvas.Top="160" Width="15">
+            <Rectangle.Visibility>
+                <hmi:SeBinding FallbackValue="Visible" Path="modules[tags_mod].Items[вентиляция_циркуляция_холодная].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter/>
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </Rectangle.Visibility>
+        </Rectangle>
+        <Rectangle Fill="#FF0281E8" Height="59" Canvas.Left="195" StrokeThickness="1" Canvas.Top="335" Width="15"/>
+        <Rectangle Fill="#FF0281E8" Height="122" Canvas.Left="195" StrokeThickness="1" Canvas.Top="140" Width="15"/>
+        <Rectangle Fill="#FF0281E8" Height="181" Canvas.Left="943" StrokeThickness="1" Canvas.Top="160" Width="15">
+            <Rectangle.Visibility>
+                <hmi:SeBinding FallbackValue="Visible" Path="modules[tags_mod].Items[вентиляция_циркуляция_холодная].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter/>
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </Rectangle.Visibility>
+        </Rectangle>
+        <Rectangle Fill="#FFFF2E00" Height="15" Canvas.Left="507"  StrokeThickness="1" Canvas.Top="146" Width="74"/>
+        <Rectangle Fill="#FFFF2E00" Height="15" Canvas.Left="370"  StrokeThickness="1" Canvas.Top="146" Width="74"/>
+        <Rectangle Fill="#FFFF2E00" Height="15" Canvas.Left="240"  StrokeThickness="1" Canvas.Top="235" Width="57">
+            <Rectangle.Visibility>
+                <hmi:SeBinding FallbackValue="Visible" Path="modules[tags_mod].Items[вентиляция_циркуляция_горячая].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter/>
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </Rectangle.Visibility>
+        </Rectangle>
+        <Rectangle Fill="#FF0281E8" Height="181" Canvas.Left="708" StrokeThickness="1" Canvas.Top="160" Width="15">
+            <Rectangle.Visibility>
+                <hmi:SeBinding FallbackValue="Visible" Path="modules[tags_mod].Items[вентиляция_циркуляция_холодная].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter/>
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </Rectangle.Visibility>
+        </Rectangle>
+        <Rectangle Fill="#FFFF2E00" Height="15" Canvas.Left="649" StrokeThickness="1" Canvas.Top="146" Width="74"/>
+        <Rectangle Fill="#FF0281E8" Height="181" Canvas.Left="834" StrokeThickness="1" Canvas.Top="160" Width="15">
+            <Rectangle.Visibility>
+                <hmi:SeBinding FallbackValue="Visible" Path="modules[tags_mod].Items[вентиляция_циркуляция_холодная].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter/>
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </Rectangle.Visibility>
+        </Rectangle>
+        <Rectangle Fill="#FFFF2E00" Height="15" Canvas.Left="775" StrokeThickness="1" Canvas.Top="146" Width="74"/>
+        <Rectangle Fill="#FFFF2E00" Height="15" Canvas.Left="894" StrokeThickness="1" Canvas.Top="146" Width="64"/>
+        <Rectangle Fill="#FFFF2E00" Height="27" Canvas.Left="226" StrokeThickness="1" Canvas.Top="235" Width="15"/>
+        <Rectangle Fill="#FF0281E8" Height="20" Canvas.Left="226" StrokeThickness="1" Canvas.Top="335" Width="15">
+            <Rectangle.Visibility>
+                <hmi:SeBinding FallbackValue="Visible" Path="modules[tags_mod].Items[вентиляция_циркуляция_холодная].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter/>
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </Rectangle.Visibility>
+        </Rectangle>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Text="{hmi:SeBinding modules[tags_mod].Items[вентиляция_температура_под_полом].Value, FallbackValue=(ххх), StringFormat=0.0 °С}" Canvas.Left="342" Canvas.Top="357"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Text="{hmi:SeBinding modules[tags_mod].Items[вентиляция_температура1_под_потолком].Value, FallbackValue=(ххх), StringFormat=0.0 °С}" Canvas.Left="460" Canvas.Top="309"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Text="{hmi:SeBinding modules[tags_mod].Items[вентиляция_температура2_под_потолком].Value, FallbackValue=(ххх), StringFormat=0.0 °С}" Canvas.Left="854" Canvas.Top="259"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Text="{hmi:SeBinding modules[tags_mod].Items[вентиляция_температура_резистора1].Value, FallbackValue=(ххх), StringFormat=0.0 °С}" Canvas.Left="983" Canvas.Top="148"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Text="{hmi:SeBinding modules[tags_mod].Items[вентиляция_температура_резистора2].Value, FallbackValue=(ххх), StringFormat=0.0 °С}" Canvas.Left="983" Canvas.Top="226"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Text="{hmi:SeBinding modules[tags_mod].Items[вентиляция_температура_резистора3].Value, FallbackValue=(ххх), StringFormat=0.0 °С}" Canvas.Left="983" Canvas.Top="310"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Text="{hmi:SeBinding modules[tags_mod].Items[вентиляция_скорость_обдува3].Value, FallbackValue=(ххх), StringFormat=(0.#)}" Canvas.Left="1047" Canvas.Top="340" Width="70"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" Text="Скорость" Canvas.Left="1046" Canvas.Top="316" Width="70" Height="24"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Text="{hmi:SeBinding modules[tags_mod].Items[вентиляция_скорость_обдува2].Value, FallbackValue=(ххх), StringFormat=(0.#)}" Canvas.Left="1047" Canvas.Top="262" Width="70"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" Text="Скорость" Canvas.Left="1046" Canvas.Top="238" Width="70" Height="24"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Text="{hmi:SeBinding modules[tags_mod].Items[вентиляция_скорость_обдува1].Value, FallbackValue=(ххх), StringFormat=(0.#)}" Canvas.Left="1047" Canvas.Top="180" Width="70"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" Text="Скорость" Canvas.Left="1046" Canvas.Top="156" Width="70" Height="24"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Text="{hmi:SeBinding modules[tags_mod].Items[вентиляция_положение_притока1].Value, FallbackValue=(ххх), StringFormat=Положение \{0\} °}" Canvas.Left="230" Canvas.Top="64"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Text="{hmi:SeBinding modules[tags_mod].Items[вентиляция_положение_притока2].Value, FallbackValue=(ххх), StringFormat=Положение \{0\} °}" Canvas.Left="220" Canvas.Top="449"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Text="{hmi:SeBinding modules[tags_mod].Items[вентиляция_положение_притока3].Value, FallbackValue=(ххх), StringFormat=Положение \{0\} °}" Canvas.Left="335" Canvas.Top="269"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Text="{hmi:SeBinding modules[tags_mod].Items[вентиляция_скорость_обдува4].Value, FallbackValue=(ххх), StringFormat=(0.#)}" Canvas.Left="191" Canvas.Top="288" Width="70"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" Text="Скорость" Canvas.Left="190" Canvas.Top="271" Width="70" Height="24"/>
+        <Path Data="M20.125,32L0.5,12.375L10.3125,12.375L10.3125,-10L29.9375,-10L29.9375,12.375L39.75,12.375z" StrokeThickness="1" Fill="#FF0281E8" Canvas.Left="190" Canvas.Top="444" Height="34" Stretch="Fill" Width="25" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Path Data="M20.125,32L0.5,12.375L10.3125,12.375L10.3125,-50L29.9375,-50L29.9375,12.375L39.75,12.375z" StrokeThickness="1" Fill="#FFFF2E00" Canvas.Left="352" Canvas.Top="62" Height="92.25" Stretch="Fill" Width="25" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+            <Path.Visibility>
+                <hmi:SeBinding FallbackValue="Visible" Path="modules[tags_mod].Items[вентиляция_пч1_лето].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter/>
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </Path.Visibility>
+        </Path>
+        <Path Data="M20.125,32L0.5,12.375L10.3125,12.375L10.3125,-50L29.9375,-50L29.9375,12.375L39.75,12.375z"  StrokeThickness="1" Fill="#FFFF2E00" Canvas.Left="489" Canvas.Top="62" Height="92.167" Stretch="Fill" Width="25" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+            <Path.Visibility>
+                <hmi:SeBinding FallbackValue="Visible" Path="modules[tags_mod].Items[вентиляция_пч2_лето].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter/>
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </Path.Visibility>
+        </Path>
+        <Path Data="M20.125,32L0.5,12.375L10.3125,12.375L10.3125,-50L29.9375,-50L29.9375,12.375L39.75,12.375z"  StrokeThickness="1" Fill="#FFFF2E00" Canvas.Left="631" Canvas.Top="62" Height="92.167" Stretch="Fill" Width="25" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+            <Path.Visibility>
+                <hmi:SeBinding FallbackValue="Visible" Path="modules[tags_mod].Items[вентиляция_пч3_лето].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter/>
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </Path.Visibility>
+        </Path>
+        <Path Data="M20.125,32L0.5,12.375L10.3125,12.375L10.3125,-50L29.9375,-50L29.9375,12.375L39.75,12.375z" StrokeThickness="1" Fill="#FFFF2E00" Canvas.Left="757" Canvas.Top="62" Height="92" Stretch="Fill" Width="25" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+            <Path.Visibility>
+                <hmi:SeBinding FallbackValue="Visible" Path="modules[tags_mod].Items[вентиляция_пч4_лето].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter/>
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </Path.Visibility>
+        </Path>
+        <Path Data="M20.125,32L0.5,12.375L10.3125,12.375L10.3125,-50L29.9375,-50L29.9375,12.375L39.75,12.375z" StrokeThickness="1" Fill="#FFFF2E00" Canvas.Left="876" Canvas.Top="62" Height="92.25" Stretch="Fill" Width="25" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+            <Path.Visibility>
+                <hmi:SeBinding FallbackValue="Visible" Path="modules[tags_mod].Items[вентиляция_пч5_лето].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter/>
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </Path.Visibility>
+        </Path>
+        <Rectangle Fill="Black" Height="13" Canvas.Left="335" Stroke="Black" StrokeThickness="3" Canvas.Top="114" Width="60" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.Visibility>
+                <hmi:SeBinding FallbackValue="Visible" Path="modules[tags_mod].Items[вентиляция_пч1_лето].Value">
+                    <hmi:SeBinding.Converter>
+                        <hmi:BooleanToInverseVisibility/>
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </Rectangle.Visibility>
+        </Rectangle>
+        <Rectangle Fill="Black" Height="13" Canvas.Left="472" Stroke="Black" StrokeThickness="3" Canvas.Top="114" Width="60" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.Visibility>
+                <hmi:SeBinding FallbackValue="Visible" Path="modules[tags_mod].Items[вентиляция_пч2_лето].Value">
+                    <hmi:SeBinding.Converter>
+                        <hmi:BooleanToInverseVisibility/>
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </Rectangle.Visibility>
+        </Rectangle>
+        <Rectangle Fill="Black" Height="13" Canvas.Left="614" Stroke="Black" StrokeThickness="3" Canvas.Top="114" Width="60" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.Visibility>
+                <hmi:SeBinding FallbackValue="Visible" Path="modules[tags_mod].Items[вентиляция_пч3_лето].Value">
+                    <hmi:SeBinding.Converter>
+                        <hmi:BooleanToInverseVisibility/>
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </Rectangle.Visibility>
+        </Rectangle>
+        <Rectangle Fill="Black" Height="13" Canvas.Left="740" Stroke="Black" StrokeThickness="3" Canvas.Top="114" Width="60" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.Visibility>
+                <hmi:SeBinding FallbackValue="Visible" Path="modules[tags_mod].Items[вентиляция_пч4_лето].Value">
+                    <hmi:SeBinding.Converter>
+                        <hmi:BooleanToInverseVisibility/>
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </Rectangle.Visibility>
+        </Rectangle>
+        <Rectangle Fill="Black" Height="13" Canvas.Left="860" Stroke="Black" StrokeThickness="3" Canvas.Top="114" Width="60" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.Visibility>
+                <hmi:SeBinding FallbackValue="Visible" Path="modules[tags_mod].Items[вентиляция_пч5_лето].Value">
+                    <hmi:SeBinding.Converter>
+                        <hmi:BooleanToInverseVisibility/>
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </Rectangle.Visibility>
+        </Rectangle>
+        <Path Data="M20.125,32L0.5,12.375L10.3125,12.375L10.3125,-40L29.9375,-40L29.9375,12.375L39.75,12.375z" StrokeThickness="1" Fill="#FFFF2E00" Canvas.Left="352" Canvas.Top="154" Height="81" Stretch="Fill" Width="25" RenderTransformOrigin="0.5,0.5">
+            <Path.Visibility>
+                <hmi:SeBinding FallbackValue="Visible" Path="modules[tags_mod].Items[вентиляция_пч1_зима].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter/>
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </Path.Visibility>
+        </Path>
+        <Path Data="M20.125,32L0.5,12.375L10.3125,12.375L10.3125,-40L29.9375,-40L29.9375,12.375L39.75,12.375z" StrokeThickness="1" Fill="#FFFF2E00" Canvas.Left="489" Canvas.Top="154" Height="81" Stretch="Fill" Width="25" RenderTransformOrigin="0.5,0.5">
+            <Path.Visibility>
+                <hmi:SeBinding FallbackValue="Visible" Path="modules[tags_mod].Items[вентиляция_пч2_зима].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter/>
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </Path.Visibility>
+        </Path>
+        <Path Data="M20.125,32L0.5,12.375L10.3125,12.375L10.3125,-40L29.9375,-40L29.9375,12.375L39.75,12.375z" StrokeThickness="1" Fill="#FFFF2E00" Canvas.Left="631" Canvas.Top="153.833" Height="81.167" Stretch="Fill" Width="25" RenderTransformOrigin="0.5,0.5">
+            <Path.Visibility>
+                <hmi:SeBinding FallbackValue="Visible" Path="modules[tags_mod].Items[вентиляция_пч3_зима].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter/>
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </Path.Visibility>
+        </Path>
+        <Path Data="M20.125,32L0.5,12.375L10.3125,12.375L10.3125,-40L29.9375,-40L29.9375,12.375L39.75,12.375z" StrokeThickness="1" Fill="#FFFF2E00" Canvas.Left="757" Canvas.Top="153" Height="82" Stretch="Fill" Width="25" RenderTransformOrigin="0.5,0.5">
+            <Path.Visibility>
+                <hmi:SeBinding FallbackValue="Visible" Path="modules[tags_mod].Items[вентиляция_пч4_зима].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter/>
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </Path.Visibility>
+        </Path>
+        <Path Data="M20.125,32L0.5,12.375L10.3125,12.375L10.3125,-40L29.9375,-40L29.9375,12.375L39.75,12.375z" StrokeThickness="1" Fill="#FFFF2E00" Canvas.Left="876" Canvas.Top="153" Height="82" Stretch="Fill" Width="25" RenderTransformOrigin="0.5,0.5">
+            <Path.Visibility>
+                <hmi:SeBinding FallbackValue="Visible" Path="modules[tags_mod].Items[вентиляция_пч5_зима].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter/>
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </Path.Visibility>
+        </Path>
+        <Rectangle Fill="Black" Height="13" Canvas.Left="335" Stroke="Black" StrokeThickness="3" Canvas.Top="188" Width="60" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.Visibility>
+                <hmi:SeBinding FallbackValue="Visible" Path="modules[tags_mod].Items[вентиляция_пч1_зима].Value">
+                    <hmi:SeBinding.Converter>
+                        <hmi:BooleanToInverseVisibility/>
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </Rectangle.Visibility>
+        </Rectangle>
+        <Rectangle Fill="Black" Height="13" Canvas.Left="472" Stroke="Black" StrokeThickness="3" Canvas.Top="188" Width="60" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.Visibility>
+                <hmi:SeBinding FallbackValue="Visible" Path="modules[tags_mod].Items[вентиляция_пч2_зима].Value">
+                    <hmi:SeBinding.Converter>
+                        <hmi:BooleanToInverseVisibility/>
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </Rectangle.Visibility>
+        </Rectangle>
+        <Rectangle Fill="Black" Height="13" Canvas.Left="614" Stroke="Black" StrokeThickness="3" Canvas.Top="188" Width="60" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.Visibility>
+                <hmi:SeBinding FallbackValue="Visible" Path="modules[tags_mod].Items[вентиляция_пч3_зима].Value">
+                    <hmi:SeBinding.Converter>
+                        <hmi:BooleanToInverseVisibility/>
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </Rectangle.Visibility>
+        </Rectangle>
+        <Rectangle Fill="Black" Height="13" Canvas.Left="740" Stroke="Black" StrokeThickness="3" Canvas.Top="188" Width="60" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.Visibility>
+                <hmi:SeBinding FallbackValue="Visible" Path="modules[tags_mod].Items[вентиляция_пч4_зима].Value">
+                    <hmi:SeBinding.Converter>
+                        <hmi:BooleanToInverseVisibility/>
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </Rectangle.Visibility>
+        </Rectangle>
+        <Rectangle Fill="Black" Height="13" Canvas.Left="860" Stroke="Black" StrokeThickness="3" Canvas.Top="188" Width="60" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.Visibility>
+                <hmi:SeBinding FallbackValue="Visible" Path="modules[tags_mod].Items[вентиляция_пч5_зима].Value">
+                    <hmi:SeBinding.Converter>
+                        <hmi:BooleanToInverseVisibility/>
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </Rectangle.Visibility>
+        </Rectangle>
+        <Path Data="M20.125,32L0.5,12.375L10.3125,12.375L10.3125,12.375L39.75,12.375z" StrokeThickness="1" Fill="#FF0281E8" Canvas.Left="621" Canvas.Top="385" Height="21.356" Stretch="Fill" Width="25.084" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+            <Path.Visibility>
+                <hmi:SeBinding FallbackValue="Visible" Path="modules[tags_mod].Items[вентиляция_окно_приточки].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter/>
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </Path.Visibility>
+        </Path>
+        <Rectangle Fill="#FF0281E8" Height="92" Canvas.Left="515" StrokeThickness="1" Canvas.Top="388" Width="14">
+            <Rectangle.Visibility>
+                <hmi:SeBinding FallbackValue="Visible" Path="modules[tags_mod].Items[вентиляция_окно_приточки].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter/>
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </Rectangle.Visibility>
+        </Rectangle>
+        <Rectangle Fill="#FF0281E8" Height="14" Canvas.Left="515" StrokeThickness="1" Canvas.Top="388" Width="110">
+            <Rectangle.Visibility>
+                <hmi:SeBinding FallbackValue="Visible" Path="modules[tags_mod].Items[вентиляция_окно_приточки].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter/>
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </Rectangle.Visibility>
+        </Rectangle>
+        <Rectangle Fill="#FFFF2E00" Height="72" Canvas.Left="767" StrokeThickness="1" Canvas.Top="388" Width="14">
+            <Rectangle.Visibility>
+                <hmi:SeBinding FallbackValue="Visible" Path="modules[tags_mod].Items[вентиляция_окно_вытяжки].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter/>
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </Rectangle.Visibility>
+        </Rectangle>
+        <Path Data="M20.125,32L0.5,12.375L10.3125,12.375L10.3125,12.375L39.75,12.375z" StrokeThickness="1" Fill="#FFFF2E00" Canvas.Left="762" Canvas.Top="459.5" Height="21.356" Stretch="Fill" Width="25.084" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+            <Path.Visibility>
+                <hmi:SeBinding FallbackValue="Visible" Path="modules[tags_mod].Items[вентиляция_окно_вытяжки].Value">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter/>
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </Path.Visibility>
+        </Path>
+        <Rectangle Fill="Black" Height="13" Canvas.Left="495" Stroke="Black" StrokeThickness="3" Canvas.Top="415" Width="60" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.Visibility>
+                <hmi:SeBinding FallbackValue="Visible" Path="modules[tags_mod].Items[вентиляция_окно_приточки].Value">
+                    <hmi:SeBinding.Converter>
+                        <hmi:BooleanToInverseVisibility/>
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </Rectangle.Visibility>
+        </Rectangle>
+        <Rectangle Fill="Black" Height="13" Canvas.Left="743" Stroke="Black" StrokeThickness="3" Canvas.Top="415" Width="60" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.Visibility>
+                <hmi:SeBinding FallbackValue="Visible" Path="modules[tags_mod].Items[вентиляция_окно_вытяжки].Value">
+                    <hmi:SeBinding.Converter>
+                        <hmi:BooleanToInverseVisibility/>
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </Rectangle.Visibility>
+        </Rectangle>
+        <Path Data="M20.125,32L0.5,12.375L10.3125,12.375L10.3125,-50L29.9375,-50L29.9375,12.375L39.75,12.375z" StrokeThickness="1" Fill="#FF0281E8" Canvas.Left="1145" Canvas.Top="305" Height="85" Stretch="Fill" Width="25" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Path Data="M20.125,32L0.5,12.375L10.3125,12.375L10.3125,-50L29.9375,-50L29.9375,12.375L39.75,12.375z" StrokeThickness="1" Fill="#FF0281E8" Canvas.Left="1145" Canvas.Top="225" Height="85" Stretch="Fill" Width="25" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Path Data="M20.125,32L0.5,12.375L10.3125,12.375L10.3125,-50L29.9375,-50L29.9375,12.375L39.75,12.375z" StrokeThickness="1" Fill="#FF0281E8" Canvas.Left="1145" Canvas.Top="140" Height="85" Stretch="Fill" Width="25" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Path Data="M20.125,32L0.5,12.375L10.3125,12.375L10.3125,-50L29.9375,-50L29.9375,12.375L39.75,12.375z" StrokeThickness="1" Fill="#FFFF2E00" Canvas.Left="1065" Canvas.Top="62" Height="85" Stretch="Fill" Width="25" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Path Data="M20.125,32L0.5,12.375L10.3125,12.375L10.3125,-50L29.9375,-50L29.9375,12.375L39.75,12.375z" StrokeThickness="1" Fill="#FFFF2E00" Canvas.Left="1065" Canvas.Top="388" Height="85" Stretch="Fill" Width="25" RenderTransformOrigin="0.5,0.5"/>
+        <TextBlock Canvas.Left="155" TextWrapping="Wrap" Text="Вентиляция модуля ЧП" Canvas.Top="15" FontWeight="Bold" Height="30" Width="987" FontSize="18" TextAlignment="Center"/>
+
+        <se:TrendViewer Height="290" Canvas.Left="0" Canvas.Top="550" Width="1065" Background="White" FontSize="10">
+            <se:TrendViewer.LayoutTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1.2" ScaleY="1.2"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </se:TrendViewer.LayoutTransform>
+            <se:TrendViewer.TrendNodes>
+                <hmi:HmiNodeDescriptor Comment="temperature" ItemType="Trend" Path="temperature"/>
+            </se:TrendViewer.TrendNodes>
+        </se:TrendViewer>
+
+        <Polygon Points="6,0 19,0 19,22 25,22 12.5,42 0,22 6,22" Canvas.Left="192" Canvas.Top="48" Height="42" Width="25" Fill="#FF0281E8" />
+        <Path Data="M20.125,32L0.5,12.375L10.3125,12.375L10.3125,12.375L39.75,12.375z" StrokeThickness="1" Fill="#FFFF2E00" Canvas.Left="875.5" Canvas.Top="147.572" Height="11.856" Stretch="Fill" Width="25.084" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="270"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Path Data="M20.125,32L0.5,12.375L10.3125,12.375L10.3125,12.375L39.75,12.375z" StrokeThickness="1" Fill="#FFFF2E00" Canvas.Left="757" Canvas.Top="148.072" Height="11.856" Stretch="Fill" Width="25.084" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="270"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Path Data="M20.125,32L0.5,12.375L10.3125,12.375L10.3125,12.375L39.75,12.375z" StrokeThickness="1" Fill="#FFFF2E00" Canvas.Left="631.083" Canvas.Top="148.072" Height="11.856" Stretch="Fill" Width="25.084" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="270"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Path Data="M20.125,32L0.5,12.375L10.3125,12.375L10.3125,12.375L39.75,12.375z" StrokeThickness="1" Fill="#FFFF2E00" Canvas.Left="488.667" Canvas.Top="148.072" Height="11.856" Stretch="Fill" Width="25.084" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="270"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Path Data="M20.125,32L0.5,12.375L10.3125,12.375L10.3125,12.375L39.75,12.375z" StrokeThickness="1" Fill="#FFFF2E00" Canvas.Left="352.333" Canvas.Top="148.072" Height="11.856" Stretch="Fill" Width="25.084" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="270"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Path Data="M20.125,32L0.5,12.375L10.3125,12.375L10.3125,-50L29.9375,-50L29.9375,12.375L39.75,12.375z" StrokeThickness="1" Fill="#FFFF2E00" Canvas.Left="830" Canvas.Top="199" Height="92.25" Stretch="Fill" Width="25" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-270"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Path Data="M20.125,32L0.5,12.375L10.3125,12.375L10.3125,-50L29.9375,-50L29.9375,12.375L39.75,12.375z" StrokeThickness="1" Fill="#FFFF2E00" Canvas.Left="711" Canvas.Top="199" Height="92.25" Stretch="Fill" Width="25" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-270"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Path Data="M20.125,32L0.5,12.375L10.3125,12.375L10.3125,-50L29.9375,-50L29.9375,12.375L39.75,12.375z" StrokeThickness="1" Fill="#FFFF2E00" Canvas.Left="585" Canvas.Top="199" Height="92.25" Stretch="Fill" Width="25" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-270"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Path Data="M20.125,32L0.5,12.375L10.3125,12.375L10.3125,-50L29.9375,-50L29.9375,12.375L39.75,12.375z" StrokeThickness="1" Fill="#FFFF2E00" Canvas.Left="443" Canvas.Top="199" Height="92.25" Stretch="Fill" Width="25" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-270"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Text="{hmi:SeBinding modules[tags_mod].Items[вентиляция_скорость_обдува5].Value, FallbackValue=(ххх), StringFormat=(0.#)}" Canvas.Left="191" Canvas.Top="306" Width="70"/>
+
+    </Canvas>
+</UserControl>

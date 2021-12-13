@@ -1,0 +1,128 @@
+﻿311032
+8
+lang|RU|0 (:2 ) Зажечь светодиод кнопки 101SB1 в режиме "Работа/Сборка/Авария насоса 1"
+lang|EN|0 (:2 ) Switch on led "Stop mud pump 1" in VFD house
+311032
+9
+lang|RU|1 (:3 ) Включить вентилятор обдува МН1-МВ (реле 107K1, пускатель 107KМ1)
+lang|EN|1 (:3 ) Switch on led "Work mud pump 1" in VFD house
+311032
+10
+lang|RU|2 (:4 ) Включить насос 112М1 смазки редуктора Н1 (реле 112K1, пускатель 112KМ1)
+lang|EN|2 (:4 ) Switch on led "Emergency mud pump 1" in VFD house
+311032
+11
+lang|RU|3 (:5 ) Включить насос 108МС1 смазки и охлаждения штоков Н1 (реле 108K1, пускатель 108KМ1)
+lang|EN|3 (:5 ) Switch on led "Stop mud pump 2" in VFD house
+311032
+12
+lang|RU|4 (:6 ) Включить обогрев МН1-ЕК (реле 105K1, пускатель 105K2)
+lang|EN|4 (:6 ) Switch on led "Work mud pump 2" in VFD house
+311032
+13
+lang|RU|5 (:7 ) Включить звонок (реле 122K1)
+lang|EN|5 (:7 ) Switch on led "Emergency mud pump 2" in VFD house
+311032
+14
+lang|RU|6 (:8 ) Резерв
+lang|EN|6 (:8 ) Switch on led "Start/Stop/Unlock" main drawworks on drillers console
+311032
+15
+lang|RU|7 (:9 ) Включить двигатель подпорного насоса 113М (реле 113K2, 113K3)
+lang|EN|7 (:9 ) Switch on led "Start/Stop/Unlock" aux. drawworks on drillers console
+311032
+0
+lang|RU|0 (:12 ) Зажечь светодиод кнопки 201SB1 в режиме "Работа/Сборка/Авария насоса 2"
+lang|EN|0 (:12 ) Switch on led "Stop mud pump 3" in VFD house
+311032
+1
+lang|RU|1 (:13 ) Включить вентилятор обдува МН2-МВ (реле 207K1, пускатель 207KМ1)
+lang|EN|1 (:13 ) Switch on led "Work mud pump 3" in VFD house
+311032
+2
+lang|RU|2 (:14 ) Включить насос 212М1 смазки редуктора Н2 (реле 212K1, пускатель 212KМ1)
+lang|EN|2 (:14 ) Switch on led "Emergency mud pump 3" in VFD house
+311032
+3
+lang|RU|3 (:15 ) Включить насос 208МС1 смазки и охлаждения штоков Н2 (реле 208K1, пускатель 208KМ1)
+lang|EN|3 (:15 ) Switch on fan brake resistirs
+311032
+4
+lang|RU|4 (:16 ) Включить обогрев МН2-ЕК (реле 205K1, пускатель 205K2)
+lang|EN|4 (:16 ) Spare
+311032
+5
+lang|RU|5 (:17 ) Резерв
+lang|EN|5 (:17 ) Spare
+311032
+6
+lang|RU|6 (:18 ) Резерв
+lang|EN|6 (:18 ) Spare
+311032
+7
+lang|RU|7 (:19 ) Включить двигатель подпорного насоса 123М (реле 123K2, 123K3)
+lang|EN|7 (:19 ) Spare
+311033
+8
+lang|RU|0 (:22 ) Резерв
+lang|EN|0 (:22 ) Switch on led "Stop drawworks 1" in VFD house
+311033
+9
+lang|RU|1 (:23 ) Резерв
+lang|EN|1 (:23 ) Switch on led "Work drawworks 1" in VFD house
+311033
+10
+lang|RU|2 (:24 ) Резерв
+lang|EN|2 (:24 ) Switch on led "Emergency drawworks 1" in VFD house
+311033
+11
+lang|RU|3 (:25 ) Резерв
+lang|EN|3 (:25 ) Switch on led "Stop drawworks 2" in VFD house
+311033
+12
+lang|RU|4 (:26 ) Резерв
+lang|EN|4 (:26 ) Switch on led "Work drawworks 2" in VFD house
+311033
+13
+lang|RU|5 (:27 ) Резерв
+lang|EN|5 (:27 ) Switch on led "Emergency drawworks 2" in VFD house
+311033
+14
+lang|RU|6 (:28 ) Резерв
+lang|EN|6 (:28 ) Switch on led "Stop aux. drive" in VFD house
+311033
+15
+lang|RU|7 (:29 ) Резерв
+lang|EN|7 (:29 ) Switch on led "Work aux. drive" in VFD house
+311033
+0
+lang|RU|0 (:32 ) Резерв
+lang|EN|0 (:32 ) Switch on led "Emergency aux. drive" in VFD house
+311033
+1
+lang|RU|1 (:33 ) Резерв
+lang|EN|1 (:33 ) Not interlock of aux. drive in VFD house
+311033
+2
+lang|RU|2 (:34 ) Резерв
+lang|EN|2 (:34 ) Not interlock of drawworks 1 in VFD house
+311033
+3
+lang|RU|3 (:35 ) Резерв
+lang|EN|3 (:35 ) Not interlock of drawworks 2 in VFD house
+311033
+4
+lang|RU|4 (:36 ) Резерв
+lang|EN|4 (:36 ) Interlock of mud pump 1 in VFD house
+311033
+5
+lang|RU|5 (:37 ) Резерв
+lang|EN|5 (:37 ) Interlock of mud pump 2 in VFD house
+311033
+6
+lang|RU|6 (:38 ) Резерв
+lang|EN|6 (:38 ) Interlock of mud pump 3 in VFD house
+311033
+7
+lang|RU|7 (:39 ) Резерв
+lang|EN|7 (:39 ) Spare

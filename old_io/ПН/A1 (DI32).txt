@@ -1,0 +1,128 @@
+﻿311028
+8
+lang|RU|0 (:2 ) Взведен предохранительный клапан SQH11 насоса 1
+lang|EN|0 (:2 ) Not push button "Stop mud pump 1" on drillers console
+311028
+9
+lang|RU|1 (:3 ) Включен конечный выключатель SQK11 кожуха передачи Н1
+lang|EN|1 (:3 ) Not push button "Stop mud pump 2" on drillers console
+311028
+10
+lang|RU|2 (:4 ) Включен конечный выключатель SQK12 кожуха передачи Н1
+lang|EN|2 (:4 ) Not push button "Stop mud pump 3" on drillers console
+311028
+11
+lang|RU|3 (:5 ) Включен конечный выключатель SQK13 кожуха передачи Н1 (резерв)
+lang|EN|3 (:5 ) Rotation Rotary to rigth on drillers console
+311028
+12
+lang|RU|4 (:6 ) Включен пускатель 107KM1 вентилятора обдува МН1-МВ
+lang|EN|4 (:6 ) Rotation Rotary to left on drillers console
+311028
+13
+lang|RU|5 (:7 ) Включен пускатель 112KM1 насоса смазки редуктора Н1
+lang|EN|5 (:7 ) Lever pushed of top drive
+311028
+14
+lang|RU|6 (:8 ) Включен пускатель 108KM1 насоса смазки и охлаждения штоков Н1
+lang|EN|6 (:8 ) IBOP of Top drive closed
+311028
+15
+lang|RU|7 (:9 ) Включен пускатель 105K2 обогрева Н1
+lang|EN|7 (:9 ) Pipe grab of Top drive closed
+311028
+0
+lang|RU|0 (:12 ) Нажата кнопка 101SB1 "Пуск/Деблокировка насоса 1"
+lang|EN|0 (:12 ) Add speed of mud pump 1 on drillers console
+311028
+1
+lang|RU|1 (:13 ) Нажата кнопка 101SB2 "Пуск насоса 1 на малой скорости"
+lang|EN|1 (:13 ) Reduce speed of mud pump 1 on drillers console
+311028
+2
+lang|RU|2 (:14 ) Нажата кнопка 101SB3 "Аварийный стоп буровых насосов"
+lang|EN|2 (:14 ) Add speed of mud pump 2 on drillers console
+311028
+3
+lang|RU|3 (:15 ) Нажата кнопка SB6 "Звонок бурильщику"
+lang|EN|3 (:15 ) Reduce speed of mud pump 2 on drillers console
+311028
+4
+lang|RU|4 (:16 ) Перегрев пульта насосов ПН (сигнал датчика ВК2)
+lang|EN|4 (:16 ) Add speed of mud pump 3 on drillers console
+311028
+5
+lang|RU|5 (:17 ) Высокая влажность в пульте насосов ПН (Резерв)
+lang|EN|5 (:17 ) Reduce speed of mud pump 3  on drillers console
+311028
+6
+lang|RU|6 (:18 ) Переключатель 101SA1 в положении "Увеличение скорости привода насоса 1"
+lang|EN|6 (:18 ) Not emergency stop of mud pumps on drillers console
+311028
+7
+lang|RU|7 (:19 ) Переключатель 101SA1 в положении "Уменьшение скорости привода насоса 1"
+lang|EN|7 (:19 ) Not push button "Drawwarks brake" on drillers console
+311029
+8
+lang|RU|0 (:22 ) Переключатель 101SA2 в положении "Управление насосом 1 с пульта бурильщика"
+lang|EN|0 (:22 ) Switch on "Start/Unlock"of Rotor on drillers console
+311029
+9
+lang|RU|1 (:23 ) Переключатель 101SA2 в положении "Управление насосом 1 с пульта насосов"
+lang|EN|1 (:23 ) Switch on "Stop"of Rotor on drillers console
+311029
+10
+lang|RU|2 (:24 ) Отжата кнопка 101SB4 "Стоп насоса 1"
+lang|EN|2 (:24 ) Increase speed of Rotor on drillers console
+311029
+11
+lang|RU|3 (:25 ) Есть избыточное давление в двигателе МН1 (обдув включен)
+lang|EN|3 (:25 ) Reduce speed of  Rotor on drillers console
+311029
+12
+lang|RU|4 (:26 ) Резерв
+lang|EN|4 (:26 ) Increase torque of Rotor on drillers console
+311029
+13
+lang|RU|5 (:27 ) Резерв
+lang|EN|5 (:27 ) Reduce torque of  Rotor on drillers console
+311029
+14
+lang|RU|6 (:28 ) Резерв
+lang|EN|6 (:28 ) Not a raised rotary table
+311029
+15
+lang|RU|7 (:29 ) Резерв
+lang|EN|7 (:29 ) Air pressure sensor MR ON
+311029
+0
+lang|RU|0 (:32 ) Резерв
+lang|EN|0 (:32 ) Push button "Start/Unlock" main drive drawworks
+311029
+1
+lang|RU|1 (:33 ) Резерв
+lang|EN|1 (:33 ) Not push button "Stop" main drive drawworks
+311029
+2
+lang|RU|2 (:34 ) Резерв
+lang|EN|2 (:34 ) Push button "Start/Unlock" aux. drive drawworks
+311029
+3
+lang|RU|3 (:35 ) Резерв
+lang|EN|3 (:35 ) Not push button "Stop" aux. drive drawworks
+311029
+4
+lang|RU|4 (:36 ) Резерв
+lang|EN|4 (:36 ) Not push button "Emergency Stop of Drilling Rig"
+311029
+5
+lang|RU|5 (:37 ) Резерв
+lang|EN|5 (:37 ) Drum is not in position "parking"
+311029
+6
+lang|RU|6 (:38 ) Резерв
+lang|EN|6 (:38 ) Drawworks mode is drilling
+311029
+7
+lang|RU|7 (:39 ) Резерв
+lang|EN|7 (:39 ) Drawworks mode is Round-Trip

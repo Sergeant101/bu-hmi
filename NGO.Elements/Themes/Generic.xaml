@@ -1,0 +1,57 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:special="clr-namespace:NGO.Elements.Special.IndustrialSwitchButton"
+                    xmlns:buttons="clr-namespace:Monokot.ScadaExtension.Wpf.Controls.Buttons;assembly=Monokot.ScadaExtension.Wpf">
+    
+    
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Monokot.ScadaExtension.Wpf;component/Themes/Controls/IndustrialStyles.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/NGO.Elements;component/Special/NGOComboBox/Style.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style TargetType="{x:Type special:IndustrialSwitchButton}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <ControlTemplate.Resources>
+                        <Style TargetType="{x:Type RadioButton}" >
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type RadioButton}">
+                                        <buttons:HmiButton Command="{TemplateBinding Command}" Background="Transparent">
+                                        <StackPanel Orientation="Vertical" Background="Transparent" VerticalAlignment="Top">
+                                            <!--Text element-->
+                                            <TextBlock Margin="0,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                                            <ContentPresenter />
+                                            </TextBlock>
+                                                <BulletDecorator Cursor="Hand" Name="BulletDecorator" Visibility="Collapsed">
+                                            </BulletDecorator>
+                                        </StackPanel>
+                                        </buttons:HmiButton>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </ControlTemplate.Resources>
+                    <Grid Margin="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="{Binding footerHeight, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <RowDefinition Height="0.7*"/>
+                        </Grid.RowDefinitions>
+                        <Rectangle Grid.Row="1" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Fill="{TemplateBinding Background}"/>
+                        <ItemsControl Grid.Row="0" ItemsSource="{Binding Items, RelativeSource={RelativeSource TemplatedParent}}">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <Grid />
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                        </ItemsControl>
+
+                        <!--<StackPanel IsItemsHost="True" Orientation="Horizontal" Grid.Row="0" Margin="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.RowSpan="2"/>-->
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

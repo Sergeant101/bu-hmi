@@ -1,0 +1,92 @@
+﻿<UserControl x:Class="NGO.Elements.Special.BrakeScheme.BrakeDisk"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="100">
+    <Viewbox>
+        <Canvas Height="100" Width="100">
+            <Canvas Height="100" Width="100" Name="off" Visibility="Visible">
+                <Rectangle Width="38" Height="25" Canvas.Left="30" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Canvas.Top="16" StrokeThickness="3"/>
+                <Path Width="55.125" Height="4.029" Canvas.Left="21" Canvas.Top="51" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 340.452,547.213L 357.08,547.213" StrokeThickness="3"/>
+                <Path Width="9.624" Height="9.633" Canvas.Left="73.521" Canvas.Top="48.517" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 358.934,547.213C 358.934,546.7 358.52,546.272 358.007,546.272C 357.492,546.272 357.08,546.7 357.08,547.213C 357.08,547.727 357.492,548.127 358.007,548.127C 358.52,548.127 358.934,547.727 358.934,547.213 Z " StrokeThickness="3"/>
+                <Path Width="12.125" Height="4.029" Canvas.Left="59.25" Canvas.Top="73" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 354.313,555.057L 357.08,555.057" StrokeThickness="3"/>
+                <Path Width="9.624" Height="9.626" Canvas.Left="66.834" Canvas.Top="71.187" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 358.934,555.057C 358.934,554.542 358.52,554.116 358.007,554.116C 357.492,554.116 357.08,554.542 357.08,555.057C 357.08,555.57 357.492,555.969 358.007,555.969C 358.52,555.969 358.934,555.57 358.934,555.057 Z " StrokeThickness="3"/>
+                <Path Width="2.668" Height="26.768" Canvas.Left="58.916" Canvas.Top="63.088" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 354.313,558.793L 354.313,551.321" StrokeThickness="3"/>
+                <Path Width="19.875" Height="2.75" Canvas.Left="13" Canvas.Top="29.125" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 343.219,539.37L 340.452,539.37" StrokeThickness="3"/>
+                <Path Width="9.626" Height="9.548" Canvas.Top="26.226" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 340.452,539.37C 340.452,538.856 340.039,538.459 339.525,538.459C 339.027,538.459 338.599,538.856 338.599,539.37C 338.599,539.885 339.027,540.286 339.525,540.286C 340.039,540.286 340.452,539.885 340.452,539.37 Z " Canvas.Left="6.062" StrokeThickness="3"/>
+                <Path Width="9.626" Height="9.633" Canvas.Top="48.517" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 340.452,547.213C 340.452,546.7 340.039,546.272 339.525,546.272C 339.027,546.272 338.599,546.7 338.599,547.213C 338.599,547.727 339.027,548.127 339.525,548.127C 340.039,548.127 340.452,547.727 340.452,547.213 Z " Canvas.Left="14.52" StrokeThickness="3"/>
+                <Path Width="12.284" Height="4.029" Canvas.Left="28.062" Canvas.Top="73" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 343.219,555.057L 340.452,555.057" StrokeThickness="3"/>
+                <Path Width="9.626" Height="9.626" Canvas.Top="71.187" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 340.452,555.057C 340.452,554.542 340.039,554.116 339.525,554.116C 339.027,554.116 338.599,554.542 338.599,555.057C 338.599,555.57 339.027,555.969 339.525,555.969C 340.039,555.969 340.452,555.57 340.452,555.057 Z " Canvas.Left="22.249" StrokeThickness="3"/>
+                <Path Width="4.029" Height="26.824" Canvas.Left="38.284" Canvas.Top="63.116" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 343.219,558.793L 343.219,551.321" StrokeThickness="3"/>
+                <Path Width="4.124" Height="18.285" Canvas.Left="21" Canvas.Top="55.875" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 339.525,554.116L 339.525,548.126" StrokeThickness="3" RenderTransformOrigin="0.5,0.5">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-21.955"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                </Path>
+                <Path x:Name="Line_115" Width="4.124" Height="20.02" Canvas.Left="12.625" Canvas.Top="33.25" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 339.525,546.272L 339.525,540.285" StrokeThickness="3" RenderTransformOrigin="0.5,0.5">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-22.904"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                </Path>
+                <Path x:Name="Line_108_Copy" Width="19.876" Height="2.75" Canvas.Left="63.936" Canvas.Top="29.125" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 343.219,539.37L 340.452,539.37" StrokeThickness="3"/>
+                <Path x:Name="Path_109_Copy" Width="9.626" Height="9.548" Canvas.Top="26.226" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 340.452,539.37C 340.452,538.856 340.039,538.459 339.525,538.459C 339.027,538.459 338.599,538.856 338.599,539.37C 338.599,539.885 339.027,540.286 339.525,540.286C 340.039,540.286 340.452,539.885 340.452,539.37 Z " Canvas.Left="82.312" StrokeThickness="3"/>
+                <Path x:Name="Line_115_Copy" Width="4.124" Height="20.02" Canvas.Left="80.625" Canvas.Top="33" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 339.525,546.272L 339.525,540.285" StrokeThickness="3" RenderTransformOrigin="0.5,0.5">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="22.904"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                </Path>
+                <Path x:Name="Line_114_Copy" Width="4.124" Height="18.285" Canvas.Left="74.375" Canvas.Top="56.375" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 339.525,554.116L 339.525,548.126" StrokeThickness="3" RenderTransformOrigin="0.5,0.5">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="21.955"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                </Path>
+            </Canvas>
+            <Canvas  Name="on" Visibility="Hidden">
+                <Rectangle   Width="38" Height="25" Canvas.Left="30" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Canvas.Top="16" StrokeThickness="3"/>
+                <Path Width="55.125" Height="4.029" Canvas.Left="21" Canvas.Top="51" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 340.452,547.213L 357.08,547.213" StrokeThickness="3"/>
+                <Path Width="9.624" Height="9.633" Canvas.Left="73.521" Canvas.Top="48.517" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 358.934,547.213C 358.934,546.7 358.52,546.272 358.007,546.272C 357.492,546.272 357.08,546.7 357.08,547.213C 357.08,547.727 357.492,548.127 358.007,548.127C 358.52,548.127 358.934,547.727 358.934,547.213 Z " StrokeThickness="3"/>
+                <Path Width="12.125" Height="4.029" Canvas.Left="64" Canvas.Top="73" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 354.313,555.057L 357.08,555.057" StrokeThickness="3"/>
+                <Path Width="9.624" Height="9.626" Canvas.Left="74.187" Canvas.Top="71.187" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 358.934,555.057C 358.934,554.542 358.52,554.116 358.007,554.116C 357.492,554.116 357.08,554.542 357.08,555.057C 357.08,555.57 357.492,555.969 358.007,555.969C 358.52,555.969 358.934,555.57 358.934,555.057 Z " StrokeThickness="3"/>
+                <Path Width="2.668" Height="26.768" Canvas.Left="64.166" Canvas.Top="63.116" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 354.313,558.793L 354.313,551.321" StrokeThickness="3"/>
+                <Path Width="10.751" Height="2.75" Canvas.Left="22.187" Canvas.Top="29.125" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 343.219,539.37L 340.452,539.37" StrokeThickness="3"/>
+                <Path Width="9.626" Height="9.548" Canvas.Top="26.226" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 340.452,539.37C 340.452,538.856 340.039,538.459 339.525,538.459C 339.027,538.459 338.599,538.856 338.599,539.37C 338.599,539.885 339.027,540.286 339.525,540.286C 340.039,540.286 340.452,539.885 340.452,539.37 Z " Canvas.Left="15.187" StrokeThickness="3"/>
+                <Path Width="9.626" Height="9.633" Canvas.Top="48.517" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 340.452,547.213C 340.452,546.7 340.039,546.272 339.525,546.272C 339.027,546.272 338.599,546.7 338.599,547.213C 338.599,547.727 339.027,548.127 339.525,548.127C 340.039,548.127 340.452,547.727 340.452,547.213 Z " Canvas.Left="14.52" StrokeThickness="3"/>
+                <Path Width="12.284" Height="4.029" Canvas.Left="22.5" Canvas.Top="73.028" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 343.219,555.057L 340.452,555.057" StrokeThickness="3"/>
+                <Path Width="9.626" Height="9.626" Canvas.Top="71.187" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 340.452,555.057C 340.452,554.542 340.039,554.116 339.525,554.116C 339.027,554.116 338.599,554.542 338.599,555.057C 338.599,555.57 339.027,555.969 339.525,555.969C 340.039,555.969 340.452,555.57 340.452,555.057 Z " Canvas.Left="15.187" StrokeThickness="3"/>
+                <Path Width="4.029" Height="26.824" Canvas.Left="32.5" Canvas.Top="63.116" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 343.219,558.793L 343.219,551.321" StrokeThickness="3"/>
+                <Path Width="4.124" Height="18.285" Canvas.Left="18.063" Canvas.Top="56.25" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 339.525,554.116L 339.525,548.126" StrokeThickness="3" RenderTransformOrigin="0.5,0.5">
+                </Path>
+                <Path Width="4.124" Height="20.02" Canvas.Left="16.876" Canvas.Top="33" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 339.525,546.272L 339.525,540.285" StrokeThickness="3" RenderTransformOrigin="0.5,0.5">
+                </Path>
+                <Path Width="12.063" Height="2.75" Canvas.Left="64.062" Canvas.Top="29.125" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 343.219,539.37L 340.452,539.37" StrokeThickness="3"/>
+                <Path Width="9.626" Height="9.548" Canvas.Top="26.226" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 340.452,539.37C 340.452,538.856 340.039,538.459 339.525,538.459C 339.027,538.459 338.599,538.856 338.599,539.37C 338.599,539.885 339.027,540.286 339.525,540.286C 340.039,540.286 340.452,539.885 340.452,539.37 Z " Canvas.Left="74.188" StrokeThickness="3"/>
+                <Path Width="4.124" Height="20.02" Canvas.Left="78.063" Canvas.Top="33" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 339.525,546.272L 339.525,540.285" StrokeThickness="3" RenderTransformOrigin="0.5,0.5">
+                </Path>
+                <Path Width="4.124" Height="18.285" Canvas.Left="76.812" Canvas.Top="56" Stretch="Fill" StrokeLineJoin="Round" Stroke="Black" Data="F1 M 339.525,554.116L 339.525,548.126" StrokeThickness="3" RenderTransformOrigin="0.5,0.5">
+                </Path>
+            </Canvas>
+        </Canvas>
+    </Viewbox>
+</UserControl>

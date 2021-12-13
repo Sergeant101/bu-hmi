@@ -1,0 +1,38 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:position="clr-namespace:NGO.Elements.Linear.Position;assembly=NGO.Elements"
+             xmlns:Gauges="clr-namespace:NGO.Elements.Gauges;assembly=NGO.Elements"
+    xmlns:hmi="http://schemas.monokot.com/hmi/" 
+    xmlns:se="http://schemas.monokot.com/se/" 
+             xmlns:System="clr-namespace:System;assembly=mscorlib"
+             x:Class="DC.Frames.FrmWeight" 
+             mc:Ignorable="d" 
+             Height="857" Width="1167">
+    <Canvas>
+
+        <position:Deep HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="1073" Canvas.Top="12" Height="760" Width="84"/>
+
+        <Gauges:GaugeWeight Canvas.Left="383" Canvas.Top="-8"/>
+        <position:ComplexBlockPosition Canvas.Left="315" Canvas.Top="12" Height="834" Width="85"/>
+        <Gauges:GaugeRotor2 Canvas.Left="6" Canvas.Top="12"/>
+        <se:HmiButton Style="{StaticResource MetalBorderButton}" Canvas.Left="420" Canvas.Top="776" FontSize="10" Height="73" Width="297" hmi:Click.Command="{hmi:SeBinding Tags.Node[write.drawwork].Items[hand_drill_weighting].WriteCommand}" >
+            <TextBlock Text="ВЗВЕШИВАНИЕ ПРИ&#xA;РУЧНОМ БУРЕНИИ" TextAlignment="Center" FontSize="20" Margin="-5"/>
+        </se:HmiButton>
+        <se:ValueDisplay HorizontalAlignment="Left" VerticalAlignment="Top" Width="296" Height="70" BorderBrush="Black" BorderThickness="1" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" LabelForeground="DarkBlue" Label="м" Header="ВЫСОТА БЛОКА (СКПБ)" FontFamily="Tahoma" HeaderFontSize="11" Canvas.Left="10" Canvas.Top="779" Value="{hmi:Bind Tags.Node[view.main_drives.drawwork].Items[tb_pos_msab].Value, FallbackValue=0}"/>
+
+        <se:ValueDisplay BorderBrush="Black" BorderThickness="1" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" LabelForeground="DarkBlue" Label="атм" Header="ДАВЛЕНИЕ В МАНИФОЛЬДЕ" FontFamily="Tahoma" HeaderFontSize="11" Value="{hmi:Bind Tags.Node[view.msab].Items[pressure_in_manifold].Value, FallbackValue=0}" Canvas.Left="10" Canvas.Top="629" Width="296" Height="70"/>
+        <se:ValueDisplay HorizontalAlignment="Left" VerticalAlignment="Top" Width="296" Height="70" BorderBrush="Black" BorderThickness="1" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" LabelForeground="DarkBlue" Label="шт" Header="КОЛИЧЕСТВО СВЕЧЕЙ" FontFamily="Tahoma" HeaderFontSize="11" Value="{hmi:Bind Tags.Node[view.msab].Items[pipe_count].Value, FallbackValue=0}" Canvas.Left="10" Canvas.Top="705"/>
+        <se:ValueDisplay HorizontalAlignment="Left" VerticalAlignment="Top" Width="249" Height="70" BorderBrush="Black" BorderThickness="1" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" LabelForeground="DarkBlue" Label="м" Header="ГЛУБИНА ЗАБОЯ" FontFamily="Tahoma" HeaderFontSize="11" Value="{hmi:Bind Tags.Node[view.msab].Items[deep].Value, FallbackValue=0}" Canvas.Left="908" Canvas.Top="779"/>
+        <se:HmiButton Style="{StaticResource MetalBorderButton}" Canvas.Left="736" Canvas.Top="777" FontSize="10" Height="72" Width="147" hmi:Click.Command="{hmi:SeBinding Tags.Node[write.msab].Items[resset_tb].WriteCommand}" >
+            <TextBlock Text="ТАЛЬ БЛОК" TextAlignment="Center" FontSize="20" Margin="-5"/>
+        </se:HmiButton>
+        <se:ValueDisplay HorizontalAlignment="Right" VerticalAlignment="Top" Width="296" Height="70" BorderBrush="Black" BorderThickness="1" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" LabelForeground="DarkBlue" Label="кН х м" Header="МОМЕНТ" FontFamily="Tahoma" HeaderFontSize="11" Value="{hmi:Bind Tags.Node[view.main_drives.rotor].Items[torque_0_100].Value, FallbackValue=0}" Canvas.Left="10" Canvas.Top="317"/>
+        <se:HmiButton Style="{StaticResource MetalBorderButton}" Canvas.Left="420" Canvas.Top="690" FontSize="10" Height="67" Width="297" hmi:Click.Command="{hmi:SeBinding Tags.Node[write.msab].Items[deep_update].WriteCommand}" >
+            <TextBlock Text="УСТАНОВИТЬ ГЛУБИНУ ЗАБОЯ = ГЛУБИНЕ ИНСТРУМЕНТА" TextWrapping="Wrap" TextAlignment="Center" FontSize="18" Margin="-10"/>
+        </se:HmiButton>
+
+    </Canvas>
+</UserControl>

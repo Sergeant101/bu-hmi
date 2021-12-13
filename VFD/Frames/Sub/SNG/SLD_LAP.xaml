@@ -1,0 +1,1036 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ext="clr-namespace:Monokot.ScadaExtension.Extended.Controls.Schemas;assembly=Monokot.ScadaExtension.Extended"
+             xmlns:System="clr-namespace:System;assembly=mscorlib" 
+             xmlns:scheme="clr-namespace:NGO.Elements.Scheme;assembly=NGO.Elements"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:se="http://schemas.monokot.com/se/"
+             xmlns:hmi="http://schemas.monokot.com/hmi/"
+             
+             x:Class="VFD.Frames.Sub.SNG.SLD_LAP"
+             mc:Ignorable="d" 
+             Height="900" Width="1280">
+    <UserControl.Resources>
+
+        <!--<Style x:Key="bypass_led_style" TargetType="{x:Type se:StatusImage}">
+            <Setter Property="defaultImage" Value="/NGO.Elements;component/Content/LED/led_work.png"/>
+            <Setter Property="fineImage" Value="/NGO.Elements;component/Content/LED/led_work.png"/>
+            <Setter Property="dangerImage" Value="/NGO.Elements;component/Content/LED/led_emer.png"/>
+        </Style>
+        <Style x:Key="default_led_style" TargetType="{x:Type se:StatusImage}">
+            <Setter Property="defaultImage" Value="/NGO.Elements;component/Content/LED/led_alarm.png"/>
+            <Setter Property="fineImage" Value="/NGO.Elements;component/Content/LED/led_work.png"/>
+            <Setter Property="dangerImage" Value="/NGO.Elements;component/Content/LED/led_emer.png"/>
+        </Style>-->
+        <BitmapImage x:Key="left-top-push"            UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/push/black-button-(push)_01.png"             />
+        <BitmapImage x:Key="left-bg-push"             UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/push/black-button-(push)_04.png"             />
+        <BitmapImage x:Key="left-bottom-push"         UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/push/black-button-(push)_07.png"             />
+        <BitmapImage x:Key="top-push"                 UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/push/black-button-(push)_02.png"             />
+        <BitmapImage x:Key="center-push"              UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/push/black-button-(push)_05.png"             />
+        <BitmapImage x:Key="bottom-push"              UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/push/black-button-(push)_08.png"             />
+        <BitmapImage x:Key="right-top-push"           UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/push/black-button-(push)_03.png"             />
+        <BitmapImage x:Key="right-bg-push"            UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/push/black-button-(push)_06.png"             />
+        <BitmapImage x:Key="right-bottom-push"        UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/push/black-button-(push)_09.png"             />
+        <BitmapImage x:Key="left-top-selected"        UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/selected/black-button-(selected)_01.png"     />
+        <BitmapImage x:Key="left-bg-selected"         UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/selected/black-button-(selected)_04.png"     />
+        <BitmapImage x:Key="left-bottom-selected"     UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/selected/black-button-(selected)_07.png"     />
+        <BitmapImage x:Key="top-selected"             UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/selected/black-button-(selected)_02.png"     />
+        <BitmapImage x:Key="center-selected"          UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/selected/black-button-(selected)_05.png"     />
+        <BitmapImage x:Key="bottom-selected"          UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/selected/black-button-(selected)_08.png"     />
+        <BitmapImage x:Key="right-top-selected"       UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/selected/black-button-(selected)_03.png"     />
+        <BitmapImage x:Key="right-bg-selected"        UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/selected/black-button-(selected)_06.png"     />
+        <BitmapImage x:Key="right-bottom-selected"    UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/selected/black-button-(selected)_09.png"     />
+        <BitmapImage x:Key="left-top-normal"          UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/normal/black-button-(normal)_01.png"         />
+        <BitmapImage x:Key="left-bg-normal"           UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/normal/black-button-(normal)_04.png"         />
+        <BitmapImage x:Key="left-bottom-normal"       UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/normal/black-button-(normal)_07.png"         />
+        <BitmapImage x:Key="top-normal"               UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/normal/black-button-(normal)_02.png"         />
+        <BitmapImage x:Key="center-normal"            UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/normal/black-button-(normal)_05.png"         />
+        <BitmapImage x:Key="bottom-normal"            UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/normal/black-button-(normal)_08.png"         />
+        <BitmapImage x:Key="right-top-normal"         UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/normal/black-button-(normal)_03.png"         />
+        <BitmapImage x:Key="right-bg-normal"          UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/normal/black-button-(normal)_06.png"         />
+        <BitmapImage x:Key="right-bottom-normal"      UriSource="pack://application:,,,/NGO.Elements;component/Content/Buttons/ngo_style_button/normal/black-button-(normal)_09.png"         />
+        <Style x:Key="ngo_scada_button_style" TargetType="{x:Type se:ScadaButton}">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type se:ScadaButton}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="12"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="13"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="12"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="12"/>
+                            </Grid.ColumnDefinitions>
+                            <Image x:Name="l_top"      Grid.Row="0" Grid.Column="0" Source="{StaticResource left-top-normal}"    HorizontalAlignment="Stretch" Stretch="Uniform" SnapsToDevicePixels="True"/>
+                            <Image x:Name="l_bg"       Grid.Row="1" Grid.Column="0" Source="{StaticResource left-bg-normal}"     HorizontalAlignment="Stretch" Stretch="Fill"    SnapsToDevicePixels="True" Margin="0,-1,0,-1"/>
+                            <Image x:Name="l_bottom"   Grid.Row="2" Grid.Column="0" Source="{StaticResource left-bottom-normal}" HorizontalAlignment="Stretch" Stretch="Uniform" SnapsToDevicePixels="True"/>
+
+                            <Image x:Name="top"        Grid.Row="0" Grid.Column="1" Source="{StaticResource top-normal}"    HorizontalAlignment="Stretch"   Stretch="Fill"  SnapsToDevicePixels="True"  Margin="-1,0,-1,0"/>
+                            <Grid  Grid.Row="1" Grid.Column="1"                                      Margin="-1,-1,-1,-1">
+                                <Image x:Name="center"   Source="{StaticResource center-normal}"    HorizontalAlignment="Stretch" Stretch="Fill"   SnapsToDevicePixels="True"   Margin="-1,0,-1,0"/>
+                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+        							Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True" />
+                            </Grid>
+                            <Image x:Name="bottom"     Grid.Row="2" Grid.Column="1" Source="{StaticResource bottom-normal}"  HorizontalAlignment="Stretch"  SnapsToDevicePixels="True"  Stretch="Fill"  Margin="0,0,0,0"/>
+
+
+                            <Image x:Name="r_top"      Grid.Row="0" Grid.Column="2" Source="{StaticResource right-top-normal}"    HorizontalAlignment="Stretch" SnapsToDevicePixels="True" Stretch="None" />
+                            <Image x:Name="r_bg"       Grid.Row="1" Grid.Column="2" Source="{StaticResource right-bg-normal}"     HorizontalAlignment="Stretch" SnapsToDevicePixels="True" Stretch="Fill" Margin="0,-1,0,-1"/>
+                            <Image x:Name="r_bottom"   Grid.Row="2" Grid.Column="2" Source="{StaticResource right-bottom-normal}" HorizontalAlignment="Stretch" SnapsToDevicePixels="True" Stretch="None"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="l_top"      Property="Source" Value="{StaticResource left-top-push}"/>
+                                <Setter TargetName="l_bg"       Property="Source" Value="{StaticResource left-bg-push}"     />
+                                <Setter TargetName="l_bottom"   Property="Source" Value="{StaticResource left-bottom-push}" />
+
+                                <Setter TargetName="top"        Property="Source" Value="{StaticResource top-push}"         />
+                                <Setter TargetName="center"     Property="Source" Value="{StaticResource center-push}"      />
+                                <Setter TargetName="bottom"     Property="Source" Value="{StaticResource bottom-push}"      />
+
+
+                                <Setter TargetName="r_top"      Property="Source" Value="{StaticResource right-top-push}"   />
+                                <Setter TargetName="r_bg"       Property="Source" Value="{StaticResource right-bg-push}"    />
+                                <Setter TargetName="r_bottom"   Property="Source" Value="{StaticResource right-bottom-push}"/>
+                            </Trigger>
+
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter TargetName="l_top"      Property="Source" Value="{StaticResource left-top-selected}"/>
+                                <Setter TargetName="l_bg"       Property="Source" Value="{StaticResource left-bg-selected}"     />
+                                <Setter TargetName="l_bottom"   Property="Source" Value="{StaticResource left-bottom-selected}" />
+
+                                <Setter TargetName="top"        Property="Source" Value="{StaticResource top-selected}"         />
+                                <Setter TargetName="center"     Property="Source" Value="{StaticResource center-selected}"      />
+                                <Setter TargetName="bottom"     Property="Source" Value="{StaticResource bottom-selected}"      />
+
+
+                                <Setter TargetName="r_top"      Property="Source" Value="{StaticResource right-top-selected}"   />
+                                <Setter TargetName="r_bg"       Property="Source" Value="{StaticResource right-bg-selected}"    />
+                                <Setter TargetName="r_bottom"   Property="Source" Value="{StaticResource right-bottom-selected}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="#ADADAD"/>
+                                <!--<Setter Property="Background" Value="{StaticResource img_scada_button_disable_small}"/>-->
+
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </UserControl.Resources>
+    <Canvas Background="#FFF4F4F5" x:Name="lap">
+        <Border BorderBrush="Black" Background="LightGray" BorderThickness="1" Height="240" Canvas.Left="437" Canvas.Top="450" Width="765" CornerRadius="5"/>
+        <Border BorderBrush="Black" Background="LightGray" BorderThickness="1" Height="240" Canvas.Left="123" Canvas.Top="450" Width="284" CornerRadius="5"/>
+        <ext:VerticalWire Canvas.Top="559"     Canvas.Left="1047" Height="170" thickness="2" />
+        <scheme:QF Canvas.Left="133" Canvas.Top="509"  Width="23" Height="23">
+            <scheme:QF.isOpen>
+                <Binding Path="modules[tags_mod].Items[sld_q8].Value">
+                    <Binding.Converter>
+                        <hmi:BooleanToInverseVisibility/>
+                    </Binding.Converter>
+                    <Binding.FallbackValue>
+                        <System:Boolean>True</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <scheme:QF Canvas.Left="251" Canvas.Top="532" Width="23" Height="23" RenderTransformOrigin="0.5,0.5" electricType="QS">
+            <scheme:QF.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1" />
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </scheme:QF.RenderTransform>
+            <scheme:QF.isOpen>
+                <Binding Path="modules[tags_mod].Items[sld_q10].Value">
+                    <Binding.Converter>
+                        <hmi:BooleanToInverseVisibility/>
+                    </Binding.Converter>
+                    <Binding.FallbackValue>
+                        <System:Boolean>True</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+
+        <Border BorderBrush="Black" Background="LightGray" BorderThickness="1" Height="100" Canvas.Left="123" Canvas.Top="66" Width="285" CornerRadius="5"/>
+        <Border BorderBrush="Black" Background="LightGray" BorderThickness="1" Height="100" Canvas.Left="498" Canvas.Top="66" Width="450" CornerRadius="5"/>
+        <ext:VerticalWire Canvas.Top="54"     Canvas.Left="168" Height="70" thickness="2" />
+        <ext:VerticalWire Canvas.Top="162"     Canvas.Left="168" Height="29" thickness="2" />
+        <ext:VerticalWire Canvas.Top="111"     Canvas.Left="558" Height="15" thickness="2" />
+        <ext:HorizontalWire     Canvas.Left="172" Canvas.Top="186" Width="92" thickness="2"/>
+        <ext:VerticalWire Canvas.Top="111"     Canvas.Left="258" Height="80" thickness="2" />
+        <ext:HorizontalBus     Canvas.Left="228" Canvas.Top="104" Width="150" tileHeight="15" secondColor="{Binding modules[tags_mod].Items[sld_bus1 (медиа)].color, FallbackValue=Gray}"/>
+        <ext:VerticalWire Canvas.Top="111"     Canvas.Left="318" Height="80" thickness="2" />
+        <ext:HorizontalWire     Canvas.Left="322" Canvas.Top="186" Width="242" thickness="2" />
+        <ext:VerticalWire Canvas.Top="165"     Canvas.Left="558" Height="27" thickness="2" />
+        <ext:HorizontalBus     Canvas.Left="531" Canvas.Top="104" Width="390" tileHeight="15" secondColor="{Binding modules[tags_mod].Items[sld_bus2 (медиа)].color, FallbackValue=Gray}" />
+        <ext:VerticalWire Canvas.Top="111"     Canvas.Left="617" Height="16" thickness="2" />
+        <ext:VerticalWire Canvas.Top="111"     Canvas.Left="677" Height="16" thickness="2" Width="3" />
+        <ext:VerticalWire Canvas.Top="111"     Canvas.Left="737" Height="16" thickness="2" />
+        <ext:VerticalWire Canvas.Top="111"     Canvas.Left="797" Height="16" thickness="2" />
+        <ext:VerticalWire Canvas.Top="114"     Canvas.Left="868" Height="13" thickness="2" />
+        <ext:VerticalWire Canvas.Top="165"     Canvas.Left="617" Height="36" thickness="2" />
+        <ext:VerticalWire Canvas.Top="165"     Canvas.Left="677" Height="36" thickness="2" />
+        <ext:VerticalWire Canvas.Top="165"     Canvas.Left="737" Height="81" Width="60" thickness="2" />
+        <ext:VerticalWire Canvas.Top="165"     Canvas.Left="797" Height="96" thickness="2.3" />
+        <ext:VerticalWire Canvas.Top="165"     Canvas.Left="868" Height="201" thickness="2" />
+        <ext:HorizontalWire     Canvas.Left="157" Canvas.Top="255" Width="646" thickness="2" />
+        <ext:VerticalWire Canvas.Top="259"     Canvas.Left="153" Height="251" Width="15" thickness="2" />
+        <ext:VerticalWire Canvas.Top="548"     Canvas.Left="153" Height="37" thickness="2" />
+        <ext:HorizontalBus     Canvas.Left="153" Canvas.Top="553" Width="98" tileHeight="15" secondColor="{Binding modules[tags_mod].Items[sld_bus3 (медиа)].color, FallbackValue=Gray}"/>
+        <ext:VerticalWire Canvas.Top="549"     Canvas.Left="303" Height="180" thickness="2" />
+        <ext:VerticalWire Canvas.Top="561"     Canvas.Left="371" Height="15" thickness="2" />
+        <ext:VerticalWire Canvas.Top="615"     Canvas.Left="371" Height="15" thickness="2" />
+        <ext:HorizontalWire     Canvas.Left="376" Canvas.Top="624" Width="113" thickness="2"/>
+        <ext:VerticalWire Canvas.Top="611"     Canvas.Left="483" Height="19" thickness="2" />
+        <ext:VerticalWire Canvas.Top="560"     Canvas.Left="483" Height="12" thickness="2" />
+        <ext:HorizontalBus     Canvas.Left="453" Canvas.Top="553" Width="90" tileHeight="15" secondColor="{Binding modules[tags_mod].Items[sld_bus5 (медиа)].color, FallbackValue=Gray}"/>
+        <ext:VerticalWire Canvas.Top="405"     Canvas.Left="303"  Height="104" thickness="1.6" />
+        <ext:VerticalWire Canvas.Top="559"     Canvas.Left="598" Height="180" thickness="2" />
+        <ext:VerticalWire Canvas.Top="559"     Canvas.Left="688" Height="180" thickness="2" />
+        <ext:VerticalWire Canvas.Top="559"     Canvas.Left="778" Height="180" thickness="2" />
+        <ext:VerticalWire Canvas.Top="559"     Canvas.Left="868" Height="180" thickness="2" />
+        <ext:VerticalWire Canvas.Top="559"     Canvas.Left="958" Height="180" thickness="2" />
+        <ext:VerticalWire Canvas.Top="559"     Canvas.Left="1138" Height="105" thickness="2" />
+        <se:StatusImage Canvas.Left="278" DangerImage="/Vfd_app;component/Img/Scheme/dpp-red.png" DefaultImage="/Vfd_app;component/Img/Scheme/dpp-yellow.png" FineImage="/Vfd_app;component/Img/Scheme/dpp-green.png" NormalImage="/Vfd_app;component/Img/Scheme/dpp-yellow.png" Canvas.Top="313" Width="61" Height="102" />
+        <se:StatusImage Canvas.Left="853" Canvas.Top="345" DangerImage="/Vfd_app;component/Img/Scheme/t3-red.png" DefaultImage="/Vfd_app;component/Img/Scheme/t3-yellow.png" FineImage="/Vfd_app;component/Img/Scheme/t3-green.png" IsNormal="False" NormalImage="/Vfd_app;component/Img/Scheme/t3-yellow.png"     Width="40" Height="40" >
+            <se:StatusImage.IsDanger>
+                <Binding Path="modules[tags_mod].Items[sld_dev3_red].Value">
+                    <Binding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </se:StatusImage.IsDanger>
+            <se:StatusImage.IsFine>
+                <Binding Path="modules[tags_mod].Items[sld_dev3_green].Value">
+                    <Binding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </se:StatusImage.IsFine>
+        </se:StatusImage>
+        <ext:VerticalWire Canvas.Top="385"     Canvas.Left="858" Height="25" thickness="2" />
+        <ext:HorizontalWire     Canvas.Left="836" Canvas.Top="405" Width="28" thickness="2"/>
+        <ext:VerticalWire Canvas.Top="410"     Canvas.Left="832" Height="54" thickness="2" />
+        <ext:VerticalWire Canvas.Top="385"     Canvas.Left="877" Height="25" thickness="2" />
+        <ext:HorizontalWire     Canvas.Left="881" Canvas.Top="405" Width="28" thickness="2"/>
+        <ext:VerticalWire Canvas.Top="410"     Canvas.Left="903" Height="54" thickness="2" />
+        <se:StatusImage Canvas.Left="817" Canvas.Top="504" DangerImage="/Vfd_app;component/Img/Scheme/acdc-red.png" DefaultImage="/Vfd_app;component/Img/Scheme/acdc-yellow.png" FineImage="/Vfd_app;component/Img/Scheme/acdc-green.png" IsNormal="False" NormalImage="/Vfd_app;component/Img/Scheme/acdc-yellow.png"     Width="40" Height="40" >
+            <se:StatusImage.IsFine>
+                <Binding Path="modules[tags_mod].Items[sld_dev12_green].Value">
+                    <Binding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </se:StatusImage.IsFine>
+            <se:StatusImage.IsDanger>
+                <Binding Path="modules[tags_mod].Items[sld_dev12_red].Value">
+                    <Binding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </se:StatusImage.IsDanger>
+        </se:StatusImage>
+        <ext:VerticalWire Canvas.Top="544"     Canvas.Left="832" Height="15" thickness="2" />
+        <se:StatusImage Canvas.Left="888" Canvas.Top="504" DangerImage="/Vfd_app;component/Img/Scheme/acdc-red.png" DefaultImage="/Vfd_app;component/Img/Scheme/acdc-yellow.png" FineImage="/Vfd_app;component/Img/Scheme/acdc-green.png" IsNormal="False" NormalImage="/Vfd_app;component/Img/Scheme/acdc-yellow.png"     Width="40" Height="40" >
+            <se:StatusImage.IsFine>
+                <Binding Path="modules[tags_mod].Items[sld_dev13_green].Value">
+                    <Binding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </se:StatusImage.IsFine>
+            <se:StatusImage.IsDanger>
+                <Binding Path="modules[tags_mod].Items[sld_dev13_red].Value">
+                    <Binding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </se:StatusImage.IsDanger>
+        </se:StatusImage>
+        <ext:VerticalWire Canvas.Top="544"     Canvas.Left="903" Height="15" thickness="2" />
+        <ext:HorizontalBus     Canvas.Left="558" Canvas.Top="553" Width="630" tileHeight="15" secondColor="{Binding modules[tags_mod].Items[sld_bus6 (медиа)].color, FallbackValue=Gray}" />
+        <se:StatusImage Canvas.Left="278" Canvas.Top="585" DangerImage="/Vfd_app;component/Img/Scheme/converter-red.png" DefaultImage="/Vfd_app;component/Img/Scheme/converter-yellow.png" FineImage="/Vfd_app;component/Img/Scheme/converter-green.png" IsNormal="False" NormalImage="/Vfd_app;component/Img/Scheme/converter-yellow.png"     Height="50" Width="60" >
+            <se:StatusImage.IsFine>
+                <Binding Path="modules[tags_mod].Items[sld_dev4_green].Value">
+                    <Binding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </se:StatusImage.IsFine>
+            <se:StatusImage.IsDanger>
+                <Binding Path="modules[tags_mod].Items[sld_dev4_red].Value">
+                    <Binding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </se:StatusImage.IsDanger>
+        </se:StatusImage>
+        <se:StatusImage Canvas.Left="278" Canvas.Top="705" DangerImage="/Vfd_app;component/Img/Scheme/motor-red.png" DefaultImage="/Vfd_app;component/Img/Scheme/motor-yellow.png" FineImage="/Vfd_app;component/Img/Scheme/motor-green.png" IsNormal="False" NormalImage="/Vfd_app;component/Img/Scheme/motor-yellow.png"     Width="60" Height="60" >
+            <se:StatusImage.IsFine>
+                <Binding Path="modules[tags_mod].Items[sld_m1_green].Value">
+                    <Binding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </se:StatusImage.IsFine>
+            <se:StatusImage.IsDanger>
+                <Binding Path="modules[tags_mod].Items[sld_m1_red].Value">
+                    <Binding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </se:StatusImage.IsDanger>
+        </se:StatusImage>
+        <se:StatusImage Canvas.Left="573" Canvas.Top="705" DangerImage="/Vfd_app;component/Img/Scheme/motor-red.png" DefaultImage="/Vfd_app;component/Img/Scheme/motor-yellow.png" FineImage="/Vfd_app;component/Img/Scheme/motor-green.png" IsNormal="False" NormalImage="/Vfd_app;component/Img/Scheme/motor-yellow.png"     Width="60" Height="60" >
+            <se:StatusImage.IsDanger>
+                <Binding Path="modules[tags_mod].Items[sld_m2_red].Value">
+                    <Binding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </se:StatusImage.IsDanger>
+            <se:StatusImage.IsFine>
+                <Binding Path="modules[tags_mod].Items[sld_m2_green].Value">
+                    <Binding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </se:StatusImage.IsFine>
+        </se:StatusImage>
+        <se:StatusImage Canvas.Left="663" Canvas.Top="705" DangerImage="/Vfd_app;component/Img/Scheme/motor-red.png" DefaultImage="/Vfd_app;component/Img/Scheme/motor-yellow.png" FineImage="/Vfd_app;component/Img/Scheme/motor-green.png" IsNormal="False" NormalImage="/Vfd_app;component/Img/Scheme/motor-yellow.png"     Width="60" Height="60" >
+            <se:StatusImage.IsFine>
+                <Binding Path="modules[tags_mod].Items[sld_m3_green].Value">
+                    <Binding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </se:StatusImage.IsFine>
+            <se:StatusImage.IsDanger>
+                <Binding Path="modules[tags_mod].Items[sld_m3_red].Value">
+                    <Binding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </se:StatusImage.IsDanger>
+        </se:StatusImage>
+        <se:StatusImage Canvas.Left="753" Canvas.Top="705" DangerImage="/Vfd_app;component/Img/Scheme/motor-red.png" DefaultImage="/Vfd_app;component/Img/Scheme/motor-yellow.png" FineImage="/Vfd_app;component/Img/Scheme/motor-green.png" IsNormal="False" NormalImage="/Vfd_app;component/Img/Scheme/motor-yellow.png"     Width="60" Height="60" >
+            <se:StatusImage.IsFine>
+                <Binding Path="modules[tags_mod].Items[sld_m4_green].Value">
+                    <Binding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </se:StatusImage.IsFine>
+            <se:StatusImage.IsDanger>
+                <Binding Path="modules[tags_mod].Items[sld_m4_red].Value">
+                    <Binding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </se:StatusImage.IsDanger>
+        </se:StatusImage>
+        <se:StatusImage Canvas.Left="843" Canvas.Top="705" DangerImage="/Vfd_app;component/Img/Scheme/motor-red.png" DefaultImage="/Vfd_app;component/Img/Scheme/motor-yellow.png" FineImage="/Vfd_app;component/Img/Scheme/motor-green.png" IsNormal="False" NormalImage="/Vfd_app;component/Img/Scheme/motor-yellow.png"     Width="60" Height="60" >
+            <se:StatusImage.IsDanger>
+                <Binding Path="modules[tags_mod].Items[sld_m5_red].Value">
+                    <Binding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </se:StatusImage.IsDanger>
+            <se:StatusImage.IsFine>
+                <Binding Path="modules[tags_mod].Items[sld_m5_green].Value">
+                    <Binding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </se:StatusImage.IsFine>
+        </se:StatusImage>
+        <se:StatusImage Canvas.Left="933" Canvas.Top="705" DangerImage="/Vfd_app;component/Img/Scheme/motor-red.png" DefaultImage="/Vfd_app;component/Img/Scheme/motor-yellow.png" FineImage="/Vfd_app;component/Img/Scheme/motor-green.png" IsNormal="False" NormalImage="/Vfd_app;component/Img/Scheme/motor-yellow.png"     Width="60" Height="60" >
+            <se:StatusImage.IsFine>
+                <Binding Path="modules[tags_mod].Items[sld_m6_green].Value">
+                    <Binding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </se:StatusImage.IsFine>
+            <se:StatusImage.IsDanger>
+                <Binding Path="modules[tags_mod].Items[sld_m6_red].Value">
+                    <Binding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </se:StatusImage.IsDanger>
+        </se:StatusImage>
+        <se:StatusImage Canvas.Left="573" Canvas.Top="585" DangerImage="/Vfd_app;component/Img/Scheme/inverter-red.png" DefaultImage="/Vfd_app;component/Img/Scheme/inverter-yellow.png" FineImage="/Vfd_app;component/Img/Scheme/inverter-green.png" IsNormal="False" NormalImage="/Vfd_app;component/Img/Scheme/inverter-yellow.png"     Width="60" Height="50" >
+            <se:StatusImage.IsFine>
+                <Binding Path="modules[tags_mod].Items[sld_dev5_green].Value">
+                    <Binding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </se:StatusImage.IsFine>
+            <se:StatusImage.IsDanger>
+                <Binding Path="modules[tags_mod].Items[sld_dev5_red].Value">
+                    <Binding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </se:StatusImage.IsDanger>
+        </se:StatusImage>
+        <se:StatusImage Canvas.Left="663" Canvas.Top="585" DangerImage="/Vfd_app;component/Img/Scheme/inverter-red.png" DefaultImage="/Vfd_app;component/Img/Scheme/inverter-yellow.png" FineImage="/Vfd_app;component/Img/Scheme/inverter-green.png" IsNormal="False" NormalImage="/Vfd_app;component/Img/Scheme/inverter-yellow.png"     Width="60" Height="50" >
+            <se:StatusImage.IsFine>
+                <Binding Path="modules[tags_mod].Items[sld_dev6_green].Value">
+                    <Binding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </se:StatusImage.IsFine>
+            <se:StatusImage.IsDanger>
+                <Binding Path="modules[tags_mod].Items[sld_dev6_red].Value">
+                    <Binding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </se:StatusImage.IsDanger>
+        </se:StatusImage>
+        <se:StatusImage Canvas.Left="753" Canvas.Top="585" DangerImage="/Vfd_app;component/Img/Scheme/inverter-red.png" DefaultImage="/Vfd_app;component/Img/Scheme/inverter-yellow.png" FineImage="/Vfd_app;component/Img/Scheme/inverter-green.png" IsNormal="False" NormalImage="/Vfd_app;component/Img/Scheme/inverter-yellow.png"     Width="60" Height="50" >
+            <se:StatusImage.IsFine>
+                <Binding Path="modules[tags_mod].Items[sld_dev7_green].Value">
+                    <Binding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </se:StatusImage.IsFine>
+            <se:StatusImage.IsDanger>
+                <Binding Path="modules[tags_mod].Items[sld_dev7_red].Value">
+                    <Binding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </se:StatusImage.IsDanger>
+        </se:StatusImage>
+        <se:StatusImage Canvas.Left="843" Canvas.Top="585" DangerImage="/Vfd_app;component/Img/Scheme/inverter-red.png" DefaultImage="/Vfd_app;component/Img/Scheme/inverter-yellow.png" FineImage="/Vfd_app;component/Img/Scheme/inverter-green.png" IsNormal="False" NormalImage="/Vfd_app;component/Img/Scheme/inverter-yellow.png"     Width="60" Height="50" >
+            <se:StatusImage.IsFine>
+                <Binding Path="modules[tags_mod].Items[sld_dev8_green].Value">
+                    <Binding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </se:StatusImage.IsFine>
+            <se:StatusImage.IsDanger>
+                <Binding Path="modules[tags_mod].Items[sld_dev8_red].Value">
+                    <Binding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </se:StatusImage.IsDanger>
+        </se:StatusImage>
+        <se:StatusImage Canvas.Left="933" Canvas.Top="585" DangerImage="/Vfd_app;component/Img/Scheme/inverter-red.png" DefaultImage="/Vfd_app;component/Img/Scheme/inverter-yellow.png" FineImage="/Vfd_app;component/Img/Scheme/inverter-green.png" IsNormal="False" NormalImage="/Vfd_app;component/Img/Scheme/inverter-yellow.png"     Width="60" Height="50" >
+            <se:StatusImage.IsFine>
+                <Binding Path="modules[tags_mod].Items[sld_dev9_green].Value">
+                    <Binding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </se:StatusImage.IsFine>
+            <se:StatusImage.IsDanger>
+                <Binding Path="modules[tags_mod].Items[sld_dev9_red].Value">
+                    <Binding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </se:StatusImage.IsDanger>
+        </se:StatusImage>
+        <se:StatusImage Canvas.Left="1113" Canvas.Top="585" DangerImage="/Vfd_app;component/Img/Scheme/dcdc-red.png" DefaultImage="/Vfd_app;component/Img/Scheme/dcdc-yellow.png" FineImage="/Vfd_app;component/Img/Scheme/dcdc-green.png" IsNormal="False" NormalImage="/Vfd_app;component/Img/Scheme/dcdc-yellow.png"     Width="60" Height="50" >
+            <se:StatusImage.IsDanger>
+                <Binding Path="modules[tags_mod].Items[sld_dev11_red].Value">
+                    <Binding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </se:StatusImage.IsDanger>
+            <se:StatusImage.IsFine>
+                <Binding Path="modules[tags_mod].Items[sld_dev11_green].Value">
+                    <Binding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </se:StatusImage.IsFine>
+        </se:StatusImage>
+        <se:StatusImage Canvas.Left="1113" Canvas.Top="654" DangerImage="/Vfd_app;component/Img/Scheme/choper-red.png" DefaultImage="/Vfd_app;component/Img/Scheme/choper-yellow.png" FineImage="/Vfd_app;component/Img/Scheme/choper-green.png" IsNormal="False" NormalImage="/Vfd_app;component/Img/Scheme/choper-yellow.png"     Width="60" Height="25" >
+            <se:StatusImage.IsFine>
+                <Binding Path="modules[tags_mod].Items[sld_dev14_green].Value">
+                    <Binding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </se:StatusImage.IsFine>
+            <se:StatusImage.IsDanger>
+                <Binding Path="modules[tags_mod].Items[sld_dev14_red].Value">
+                    <Binding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </se:StatusImage.IsDanger>
+        </se:StatusImage>
+        <se:StatusImage Canvas.Left="730" Canvas.Top="183" DangerImage="/Vfd_app;component/Img/Scheme/t2-red.png" DefaultImage="/Vfd_app;component/Img/Scheme/t2-yellow.png" FineImage="/Vfd_app;component/Img/Scheme/t2-green.png" IsNormal="False" NormalImage="/Vfd_app;component/Img/Scheme/t2-yellow.png"     Width="23" Height="40" >
+            <se:StatusImage.IsDanger>
+                <Binding Path="modules[tags_mod].Items[sld_t1_red].Value">
+                    <Binding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </se:StatusImage.IsDanger>
+            <se:StatusImage.IsFine>
+                <Binding Path="modules[tags_mod].Items[sld_t1_green].Value">
+                    <Binding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </se:StatusImage.IsFine>
+        </se:StatusImage>
+        <se:StatusImage Canvas.Left="146" Canvas.Top="466" DangerImage="/Vfd_app;component/Img/Scheme/t2-red.png" DefaultImage="/Vfd_app;component/Img/Scheme/t2-yellow.png" FineImage="/Vfd_app;component/Img/Scheme/t2-green.png" IsNormal="False" NormalImage="/Vfd_app;component/Img/Scheme/t2-yellow.png"     Width="23" Height="40" >
+            <se:StatusImage.IsDanger>
+                <Binding Path="modules[tags_mod].Items[sld_dev2_red].Value">
+                    <Binding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </se:StatusImage.IsDanger>
+            <se:StatusImage.IsFine>
+                <Binding Path="modules[tags_mod].Items[sld_dev2_green].Value">
+                    <Binding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </se:StatusImage.IsFine>
+        </se:StatusImage>
+        <scheme:QF Canvas.Left="148" Canvas.Top="123" >
+            <scheme:QF.isOpen>
+                <Binding Path="modules[tags_mod].Items[sld_q1].Value">
+                    <Binding.Converter>
+                        <hmi:BooleanToInverseVisibility/>
+                    </Binding.Converter>
+                    <Binding.FallbackValue>
+                        <System:Boolean>True</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <scheme:QF Canvas.Left="538" Canvas.Top="125">
+            <scheme:QF.isOpen>
+                <Binding Path="modules[tags_mod].Items[sld_q2].Value">
+                    <Binding.Converter>
+                        <hmi:BooleanToInverseVisibility/>
+                    </Binding.Converter>
+                    <Binding.FallbackValue>
+                        <System:Boolean>True</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <scheme:QF Canvas.Left="597" Canvas.Top="126" Width="23" Height="23">
+            <scheme:QF.isOpen>
+                <Binding Path="modules[tags_mod].Items[sld_q3].Value">
+                    <Binding.Converter>
+                        <hmi:BooleanToInverseVisibility/>
+                    </Binding.Converter>
+                    <Binding.FallbackValue>
+                        <System:Boolean>True</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <scheme:QF Canvas.Left="657" Canvas.Top="126"  Width="23" Height="23">
+            <scheme:QF.isOpen>
+                <Binding Path="modules[tags_mod].Items[sld_q4].Value">
+                    <Binding.Converter>
+                        <hmi:BooleanToInverseVisibility/>
+                    </Binding.Converter>
+                    <Binding.FallbackValue>
+                        <System:Boolean>True</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <scheme:QF Canvas.Left="717" Canvas.Top="126"  Width="23" Height="23">
+            <scheme:QF.isOpen>
+                <Binding Path="modules[tags_mod].Items[sld_q5].Value">
+                    <Binding.Converter>
+                        <hmi:BooleanToInverseVisibility/>
+                    </Binding.Converter>
+                    <Binding.FallbackValue>
+                        <System:Boolean>True</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <scheme:QF Canvas.Left="777" Canvas.Top="126"  Width="23" Height="23">
+            <scheme:QF.isOpen>
+                <Binding Path="modules[tags_mod].Items[sld_q6].Value">
+                    <Binding.Converter>
+                        <hmi:BooleanToInverseVisibility/>
+                    </Binding.Converter>
+                    <Binding.FallbackValue>
+                        <System:Boolean>True</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <scheme:QF Canvas.Left="849" Canvas.Top="126"  Width="23" Height="23">
+            <scheme:QF.isOpen>
+                <Binding Path="modules[tags_mod].Items[sld_q7].Value">
+                    <Binding.Converter>
+                        <hmi:BooleanToInverseVisibility/>
+                    </Binding.Converter>
+                    <Binding.FallbackValue>
+                        <System:Boolean>True</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <scheme:QF Canvas.Left="133" Canvas.Top="584"  Width="23" Height="23">
+            <scheme:QF.isOpen>
+                <Binding Path="modules[tags_mod].Items[sld_q9].Value">
+                    <Binding.Converter>
+                        <hmi:BooleanToInverseVisibility/>
+                    </Binding.Converter>
+                    <Binding.FallbackValue>
+                        <System:Boolean>True</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <scheme:QF Canvas.Left="284" Canvas.Top="509" Width="23" Height="23">
+            <scheme:QF.isOpen>
+                <Binding Path="modules[tags_mod].Items[sld_q11].Value">
+                    <Binding.Converter>
+                        <hmi:BooleanToInverseVisibility/>
+                    </Binding.Converter>
+                    <Binding.FallbackValue>
+                        <System:Boolean>True</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <scheme:QF Canvas.Left="352" Canvas.Top="575" Width="23" Height="23" >
+            <scheme:QF.isOpen>
+                <Binding Path="modules[tags_mod].Items[sld_q12].Value">
+                    <Binding.Converter>
+                        <hmi:BooleanToInverseVisibility/>
+                    </Binding.Converter>
+                    <Binding.FallbackValue>
+                        <System:Boolean>True</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <scheme:QF Canvas.Left="482" Canvas.Top="571" Width="23" Height="23" RenderTransformOrigin="0.5,0.5">
+            <scheme:QF.isOpen>
+                <Binding Path="modules[tags_mod].Items[sld_q13].Value">
+                    <Binding.Converter>
+                        <hmi:BooleanToInverseVisibility/>
+                    </Binding.Converter>
+                    <Binding.FallbackValue>
+                        <System:Boolean>True</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </scheme:QF.isOpen>
+            <scheme:QF.RenderTransform>
+                <TransformGroup>
+                    <RotateTransform Angle="180"/>
+                </TransformGroup>
+            </scheme:QF.RenderTransform>
+        </scheme:QF>
+        <scheme:QF Canvas.Left="813" Canvas.Top="464" Width="23" Height="23" >
+            <scheme:QF.isOpen>
+                <Binding Path="modules[tags_mod].Items[sld_q14].Value">
+                    <Binding.Converter>
+                        <hmi:BooleanToInverseVisibility/>
+                    </Binding.Converter>
+                    <Binding.FallbackValue>
+                        <System:Boolean>True</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <scheme:QF Canvas.Left="884" Canvas.Top="464" Width="23" Height="23">
+            <scheme:QF.isOpen>
+                <Binding Path="modules[tags_mod].Items[sld_q15].Value">
+                    <Binding.Converter>
+                        <hmi:BooleanToInverseVisibility/>
+                    </Binding.Converter>
+                    <Binding.FallbackValue>
+                        <System:Boolean>True</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <Grid HorizontalAlignment="Left" Height="69" VerticalAlignment="Top" Width="87" Canvas.Left="324" Canvas.Top="328">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock HorizontalAlignment="Center" Margin="0" Grid.Column="1" TextWrapping="Wrap" Text="А" VerticalAlignment="Center" />
+            <TextBlock HorizontalAlignment="Center" Margin="0" Grid.Column="1" TextWrapping="Wrap" Grid.Row="1" Text="В" VerticalAlignment="Center" />
+            <TextBlock HorizontalAlignment="Center" Margin="0" Grid.Column="1" TextWrapping="Wrap" Grid.Row="2" Text="кВт" VerticalAlignment="Center" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="0" VerticalAlignment="Center" Margin="0,0,5,0" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="0" VerticalAlignment="Center" Grid.Row="1" Margin="0,0,5,0" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="0" VerticalAlignment="Center" Grid.Row="2" Margin="0,0,5,0" />
+        </Grid>
+
+        <Grid HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Canvas.Left="271" Canvas.Top="794">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock HorizontalAlignment="Center" Margin="0" Grid.Column="1" TextWrapping="Wrap" Text="А" VerticalAlignment="Center" FontSize="14" />
+            <TextBlock HorizontalAlignment="Center" Margin="0" Grid.Column="1" TextWrapping="Wrap" Grid.Row="1" Text="кВт" VerticalAlignment="Center" FontSize="14" />
+            <TextBlock HorizontalAlignment="Center" Margin="0" Grid.Column="1" TextWrapping="Wrap" Grid.Row="2" Text="об/мин" VerticalAlignment="Center" FontSize="14" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding modules[tags_mod].Items[aux_current].Value, FallbackValue=fb, StringFormat=0.#}" VerticalAlignment="Center" Margin="0,0,5,0" FontSize="14" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding modules[tags_mod].Items[aux_power].Value, FallbackValue=fb, StringFormat=0.#}" VerticalAlignment="Center" Grid.Row="1" Margin="0,0,5,0" FontSize="14" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding modules[tags_mod].Items[aux_rpm].Value, FallbackValue=fb, StringFormat=0.#}" VerticalAlignment="Center" Grid.Row="2" Margin="0,0,5,0" FontSize="14" />
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Canvas.Left="550" Canvas.Top="794">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock HorizontalAlignment="Center" Margin="0" Grid.Column="1" TextWrapping="Wrap" Text="А" VerticalAlignment="Center" FontSize="14" />
+            <TextBlock HorizontalAlignment="Center" Margin="0" Grid.Column="1" TextWrapping="Wrap" Grid.Row="1" Text="кВт" VerticalAlignment="Center" FontSize="14" />
+            <TextBlock HorizontalAlignment="Center" Margin="0" Grid.Column="1" TextWrapping="Wrap" Grid.Row="2" Text="об/мин" VerticalAlignment="Center" FontSize="14" />
+            <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding modules[tags_mod].Items[pump1_drive_current].Value, FallbackValue=fb, StringFormat=0.#}" VerticalAlignment="Center" Margin="0,0,5,0" FontSize="14" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding modules[tags_mod].Items[pump1_drive_power].Value, FallbackValue=fb, StringFormat=0.#}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0" Margin="0,0,5,0" FontSize="14" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding modules[tags_mod].Items[pump1_drive_rpm].Value, FallbackValue=fb, StringFormat=0.#}" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0" Margin="0,0,5,0" FontSize="14" />
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Canvas.Left="641" Canvas.Top="794">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock HorizontalAlignment="Center" Margin="0" Grid.Column="1" TextWrapping="Wrap" Text="А" VerticalAlignment="Center" FontSize="14" />
+            <TextBlock HorizontalAlignment="Center" Margin="0" Grid.Column="1" TextWrapping="Wrap" Grid.Row="1" Text="кВт" VerticalAlignment="Center" FontSize="14" />
+            <TextBlock HorizontalAlignment="Center" Margin="0" Grid.Column="1" TextWrapping="Wrap" Grid.Row="2" Text="об/мин" VerticalAlignment="Center" FontSize="14" />
+            <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding modules[tags_mod].Items[pump2_drive_current].Value, FallbackValue=fb, StringFormat=0.#}" VerticalAlignment="Center" Margin="0,0,5,0" FontSize="14" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding modules[tags_mod].Items[pump2_drive_power].Value, FallbackValue=fb, StringFormat=0.#}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0" Margin="0,0,5,0" FontSize="14"/>
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding modules[tags_mod].Items[pump2_drive_rpm].Value, FallbackValue=fb, StringFormat=0.#}" VerticalAlignment="Center" Grid.Row="2" Margin="0,0,5,0" FontSize="14" />
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Canvas.Left="735" Canvas.Top="794">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock HorizontalAlignment="Center" Margin="0" Grid.Column="1" TextWrapping="Wrap" Text="А" VerticalAlignment="Center" FontSize="14" />
+            <TextBlock HorizontalAlignment="Center" Margin="0" Grid.Column="1" TextWrapping="Wrap" Grid.Row="1" Text="кВт" VerticalAlignment="Center" FontSize="14" />
+            <TextBlock HorizontalAlignment="Center" Margin="0" Grid.Column="1" TextWrapping="Wrap" Grid.Row="2" Text="об/мин" VerticalAlignment="Center" FontSize="14" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding modules[tags_mod].Items[dr_m1_current].Value, FallbackValue=fb, StringFormat=0.#}" VerticalAlignment="Center" Margin="0,0,5,0" FontSize="14" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding modules[tags_mod].Items[dr_m1_power].Value, FallbackValue=fb, StringFormat=0.#}" VerticalAlignment="Center" Grid.Row="1" Margin="0,0,5,0" FontSize="14" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding modules[tags_mod].Items[dr_m1_rpm].Value, FallbackValue=fb, StringFormat=0.#}" VerticalAlignment="Center" Grid.Row="2" Margin="0,0,5,0" FontSize="14" />
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Canvas.Left="824" Canvas.Top="794">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock HorizontalAlignment="Center" Margin="0" Grid.Column="1" TextWrapping="Wrap" Text="А" VerticalAlignment="Center" FontSize="14" />
+            <TextBlock HorizontalAlignment="Center" Margin="0" Grid.Column="1" TextWrapping="Wrap" Grid.Row="1" Text="кВт" VerticalAlignment="Center" FontSize="14" />
+            <TextBlock HorizontalAlignment="Center" Margin="0" Grid.Column="1" TextWrapping="Wrap" Grid.Row="2" Text="об/мин" VerticalAlignment="Center" FontSize="14" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding modules[tags_mod].Items[rt_drive_current].Value, FallbackValue=fb, StringFormat=0.#}" VerticalAlignment="Center" Margin="0,0,5,0" FontSize="14" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding modules[tags_mod].Items[rt_drive_power].Value, FallbackValue=fb, StringFormat=0.#}" VerticalAlignment="Center" Grid.Row="1" Margin="0,0,5,0" FontSize="14" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding modules[tags_mod].Items[rt_drive_rpm].Value, FallbackValue=fb, StringFormat=0.#}" VerticalAlignment="Center" Grid.Row="2" Margin="0,0,5,0" FontSize="14" />
+        </Grid>
+        <TextBlock Canvas.Left="594" TextWrapping="Wrap" Text="Н1" Canvas.Top="770" FontSize="16" FontWeight="Bold"/>
+        <TextBlock Canvas.Left="682" TextWrapping="Wrap" Text="Н2" Canvas.Top="770" FontSize="16" FontWeight="Bold"/>
+        <TextBlock Canvas.Left="774" TextWrapping="Wrap" Text="Л1" Canvas.Top="770" FontSize="16" FontWeight="Bold"/>
+        <TextBlock Canvas.Left="870" TextWrapping="Wrap" Text="Р" Canvas.Top="770" FontSize="16" FontWeight="Bold"/>
+        <TextBlock Canvas.Left="955" TextWrapping="Wrap" Text="Л2" Canvas.Top="770" FontSize="16" FontWeight="Bold"/>
+        <TextBlock Canvas.Left="300" TextWrapping="Wrap" Text="ДП" Canvas.Top="770" FontSize="16" FontWeight="Bold"/>
+
+        <Grid HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Canvas.Left="917" Canvas.Top="794">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock HorizontalAlignment="Center" Margin="0" Grid.Column="1" TextWrapping="Wrap" Text="А" VerticalAlignment="Center" FontSize="14" />
+            <TextBlock HorizontalAlignment="Center" Margin="0" Grid.Column="1" TextWrapping="Wrap" Grid.Row="1" Text="кВт" VerticalAlignment="Center" FontSize="14" />
+            <TextBlock HorizontalAlignment="Center" Margin="0" Grid.Column="1" TextWrapping="Wrap" Grid.Row="2" Text="об/мин" VerticalAlignment="Center" FontSize="14" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding modules[tags_mod].Items[dr_m2_current].Value, FallbackValue=fb, StringFormat=0.#}" VerticalAlignment="Center" Margin="0,0,5,0" FontSize="14" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding modules[tags_mod].Items[dr_m2_power].Value, FallbackValue=fb, StringFormat=0.#}" VerticalAlignment="Center" Grid.Row="1" Margin="0,0,5,0" FontSize="14" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding modules[tags_mod].Items[dr_m2_rpm].Value, FallbackValue=fb, StringFormat=0.#}" VerticalAlignment="Center" Grid.Row="2" Margin="0,0,5,0" FontSize="14" />
+        </Grid>
+        <TextBlock Canvas.Left="1132" TextWrapping="Wrap" Text="Модуль ЧП" Canvas.Top="429" FontWeight="Bold"/>
+        <TextBlock Canvas.Left="369" TextWrapping="Wrap" Text="РУ-0,4" Canvas.Top="429" FontWeight="Bold"/>
+        <TextBlock Canvas.Left="404.5" TextWrapping="Wrap" Text="Однолинейная схема БУ 4000/250 ЭК-БМЧ" Canvas.Top="6" FontSize="24"/>
+        <se:StatusImage Canvas.Left="1022" Canvas.Top="585" DangerImage="/Vfd_app;component/Img/Scheme/converter-red.png" DefaultImage="/Vfd_app;component/Img/Scheme/converter-yellow.png" FineImage="/Vfd_app;component/Img/Scheme/converter-green.png" IsNormal="False" NormalImage="/Vfd_app;component/Img/Scheme/converter-yellow.png"     Height="50" Width="60" >
+            <se:StatusImage.IsDanger>
+                <Binding Path="modules[tags_mod].Items[sld_dev10_red].Value">
+                    <Binding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </se:StatusImage.IsDanger>
+            <se:StatusImage.IsFine>
+                <Binding Path="modules[tags_mod].Items[sld_dev10_green].Value">
+                    <Binding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </se:StatusImage.IsFine>
+        </se:StatusImage>
+        <se:StatusImage Canvas.Left="1022" Canvas.Top="705" DangerImage="/Vfd_app;component/Img/Scheme/motor-red.png" DefaultImage="/Vfd_app;component/Img/Scheme/motor-yellow.png" FineImage="/Vfd_app;component/Img/Scheme/motor-green.png" IsNormal="False" NormalImage="/Vfd_app;component/Img/Scheme/motor-yellow.png"     Width="60" Height="60" >
+            <se:StatusImage.IsFine>
+                <Binding Path="modules[tags_mod].Items[sld_m7_green].Value">
+                    <Binding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </se:StatusImage.IsFine>
+            <se:StatusImage.IsDanger>
+                <Binding Path="modules[tags_mod].Items[sld_m7_red].Value">
+                    <Binding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </Binding.FallbackValue>
+                </Binding>
+            </se:StatusImage.IsDanger>
+        </se:StatusImage>
+        <Grid HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="86" Canvas.Left="904" Canvas.Top="794" Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock HorizontalAlignment="Center" Margin="0" Grid.Column="1" TextWrapping="Wrap" Text="А" VerticalAlignment="Center" FontSize="14" />
+            <TextBlock HorizontalAlignment="Center" Margin="0" Grid.Column="1" TextWrapping="Wrap" Grid.Row="1" Text="кВт" VerticalAlignment="Center" FontSize="14" />
+            <TextBlock HorizontalAlignment="Center" Margin="0" Grid.Column="1" TextWrapping="Wrap" Grid.Row="2" Text="Об/мин" VerticalAlignment="Center" FontSize="14" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding modules[tags_mod].Items[aux_current].Value, FallbackValue=fb, StringFormat=0.#}" VerticalAlignment="Center" Margin="0,0,5,0" FontSize="14" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding modules[tags_mod].Items[aux_power].Value, FallbackValue=fb, StringFormat=0.#}" VerticalAlignment="Center" Grid.Row="1" Margin="0,0,5,0" FontSize="14" />
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding modules[tags_mod].Items[aux_rpm].Value, FallbackValue=fb, StringFormat=0.#}" VerticalAlignment="Center" Grid.Row="2" Margin="0,0,5,0" FontSize="14" />
+        </Grid>
+        <TextBlock Canvas.Left="1037" TextWrapping="Wrap" Text="ВСП" Canvas.Top="770" FontSize="16" FontWeight="Bold"/>
+        <TextBlock Canvas.Left="373" TextWrapping="Wrap" Text="КРУ 1" Canvas.Top="45" FontWeight="Bold"/>
+        <TextBlock Canvas.Left="914" TextWrapping="Wrap" Text="КРУ 2" Canvas.Top="45" FontWeight="Bold"/>
+        <TextBlock Canvas.Left="184" TextWrapping="Wrap" Text="ВВ-6" Canvas.Top="126" FontWeight="Bold"/>
+        <TextBlock Canvas.Left="569" TextWrapping="Wrap" Text="Q1" Canvas.Top="126" FontWeight="Bold"/>
+        <TextBlock Canvas.Left="628" TextWrapping="Wrap" Text="Q4" Canvas.Top="126" FontWeight="Bold"/>
+        <TextBlock Canvas.Left="688" TextWrapping="Wrap" Text="Q5" Canvas.Top="126" FontWeight="Bold"/>
+        <TextBlock Canvas.Left="753" TextWrapping="Wrap" Text="Q6" Canvas.Top="126" FontWeight="Bold"/>
+        <TextBlock Canvas.Left="812" TextWrapping="Wrap" Text="Q7" Canvas.Top="126" FontWeight="Bold"/>
+        <TextBlock Canvas.Left="883" TextWrapping="Wrap" Text="Q8" Canvas.Top="126" FontWeight="Bold"/>
+        <TextBlock Canvas.Left="169" TextWrapping="Wrap" Text="QF1" Canvas.Top="525" FontWeight="Bold"/>
+        <TextBlock Canvas.Left="319" TextWrapping="Wrap" Text="QF2" Canvas.Top="525" FontWeight="Bold"/>
+        <TextBlock Canvas.Left="246" TextWrapping="Wrap" Text="QS1" Canvas.Top="525" FontWeight="Bold"/>
+        <TextBlock Canvas.Left="379" TextWrapping="Wrap" Text="QF1" Canvas.Top="584" FontWeight="Bold"/>
+        <TextBlock Canvas.Left="512" TextWrapping="Wrap" Text="QF1" Canvas.Top="584" FontWeight="Bold"/>
+        <TextBlock Canvas.Left="842" TextWrapping="Wrap" Text="QF1" Canvas.Top="477" FontWeight="Bold"/>
+        <TextBlock Canvas.Left="915" TextWrapping="Wrap" Text="QF2" Canvas.Top="477" FontWeight="Bold"/>
+        <TextBlock Canvas.Left="184" TextWrapping="Wrap" Text="6,3 кВ" Canvas.Top="45" FontWeight="Bold"/>
+        <Border BorderBrush="Black" BorderThickness="1" Height="23" Canvas.Left="131" Canvas.Top="624" Width="54" Background="White"/>
+        <TextBlock Canvas.Left="145" TextWrapping="Wrap" Text="ФКУ" Canvas.Top="627" FontWeight="Bold"/>
+        <ext:HorizontalBus     Canvas.Left="280" Canvas.Top="553" Width="113" Height="60" tileHeight="15" secondColor="{Binding modules[tags_mod].Items[sld_bus4 (медиа)].color, FallbackValue=Gray}"/>
+        <TextBlock Canvas.Left="897" TextWrapping="Wrap" Text="Т2" Canvas.Top="357" FontWeight="Bold"/>
+        <TextBlock Canvas.Left="761" TextWrapping="Wrap" Text="Т3" Canvas.Top="196" FontWeight="Bold"/>
+        <TextBlock Canvas.Left="175" TextWrapping="Wrap" Text="Т1" Canvas.Top="479" FontWeight="Bold"/>
+        <TextBlock Canvas.Left="1010" TextWrapping="Wrap" Canvas.Top="105" Width="96" FontSize="16"><Run Language="ru-ru" Text="РУ04кВ-"/><Run Text="SB1"/></TextBlock>
+        <TextBlock Canvas.Left="1010" TextWrapping="Wrap" Canvas.Top="142" Width="96" FontSize="16"><Run Language="ru-ru" Text="РУ04кВ-"/><Run Text="SB2"/></TextBlock>
+        <TextBlock Canvas.Left="1010" TextWrapping="Wrap" Canvas.Top="179" Width="70" FontSize="16"><Run Language="ru-ru" Text="МЧП-"/><Run Text="SB1"/></TextBlock>
+        <TextBlock Canvas.Left="1010" TextWrapping="Wrap" Canvas.Top="216" Width="172" FontSize="16"><Run Language="ru-ru" Text="МЧП-"/><Run Text="SB2"/><Run Language="ru-ru" Text=" или МПК-"/><Run Text="SB"/></TextBlock>
+        <TextBlock Canvas.Left="1010" TextWrapping="Wrap" Canvas.Top="253" Width="114" FontSize="16"><Run Language="ru-ru" Text="СКПБ (ИВЭ-50)"/></TextBlock>
+        <TextBlock Canvas.Left="1010" TextWrapping="Wrap" Canvas.Top="290" Width="70" FontSize="16"><Run Language="ru-ru" Text="ПБ-"/><Run Text="SB1"/></TextBlock>
+        <TextBlock Canvas.Left="1010" TextWrapping="Wrap" Canvas.Top="323" Width="187" FontSize="16"><Run Language="ru-ru" Text="Пожарная сигнализация "/></TextBlock>
+        <TextBlock Canvas.Left="1010" TextWrapping="Wrap" Canvas.Top="69" Width="159" FontSize="16"><Run Language="ru-ru" Text="Отключение с КРУ2"/></TextBlock>
+        <se:StatusImage    Style="{StaticResource default_led_style}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="25" Height="25" Canvas.Top="66" Canvas.Left="977">
+            <se:StatusImage.IsFine>
+                <hmi:SeBinding Path="modules[tags_mod].Items[db439_68_0_green].Value">
+                    <hmi:SeBinding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </se:StatusImage.IsFine>
+            <se:StatusImage.IsDanger>
+                <hmi:SeBinding Path="modules[tags_mod].Items[db439_68_1_red].Value">
+                    <hmi:SeBinding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </se:StatusImage.IsDanger>
+        </se:StatusImage>
+        <se:StatusImage    Style="{StaticResource default_led_style}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="25" Height="25" Canvas.Top="102" Canvas.Left="977">
+            <se:StatusImage.IsDanger>
+                <hmi:SeBinding Path="modules[tags_mod].Items[db439_68_3_red].Value">
+                    <hmi:SeBinding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </se:StatusImage.IsDanger>
+            <se:StatusImage.IsFine>
+                <hmi:SeBinding Path="modules[tags_mod].Items[db439_68_2_green].Value">
+                    <hmi:SeBinding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </se:StatusImage.IsFine>
+        </se:StatusImage>
+        <se:StatusImage    Style="{StaticResource default_led_style}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="25" Height="25" Canvas.Top="138" Canvas.Left="977">
+            <se:StatusImage.IsDanger>
+                <hmi:SeBinding Path="modules[tags_mod].Items[db439_68_5_red].Value">
+                    <hmi:SeBinding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </se:StatusImage.IsDanger>
+            <se:StatusImage.IsFine>
+                <hmi:SeBinding Path="modules[tags_mod].Items[db439_68_4_green].Value">
+                    <hmi:SeBinding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </se:StatusImage.IsFine>
+        </se:StatusImage>
+        <se:StatusImage    Style="{StaticResource default_led_style}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="25" Height="25" Canvas.Top="176" Canvas.Left="977">
+            <se:StatusImage.IsDanger>
+                <hmi:SeBinding Path="modules[tags_mod].Items[db439_68_7_red].Value">
+                    <hmi:SeBinding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </se:StatusImage.IsDanger>
+            <se:StatusImage.IsFine>
+                <hmi:SeBinding Path="modules[tags_mod].Items[db439_68_6_green].Value">
+                    <hmi:SeBinding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </se:StatusImage.IsFine>
+        </se:StatusImage>
+        <se:StatusImage    Style="{StaticResource default_led_style}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="25" Height="25" Canvas.Top="213" Canvas.Left="977">
+            <se:StatusImage.IsDanger>
+                <hmi:SeBinding Path="modules[tags_mod].Items[db439_69_1_red].Value">
+                    <hmi:SeBinding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </se:StatusImage.IsDanger>
+            <se:StatusImage.IsFine>
+                <hmi:SeBinding Path="modules[tags_mod].Items[db439_69_0_green].Value">
+                    <hmi:SeBinding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </se:StatusImage.IsFine>
+        </se:StatusImage>
+        <se:StatusImage    Style="{StaticResource default_led_style}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="25" Height="25" Canvas.Top="250" Canvas.Left="977">
+            <se:StatusImage.IsDanger>
+                <hmi:SeBinding Path="modules[tags_mod].Items[db439_69_3_red].Value">
+                    <hmi:SeBinding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </se:StatusImage.IsDanger>
+            <se:StatusImage.IsFine>
+                <hmi:SeBinding Path="modules[tags_mod].Items[db439_69_2_green].Value">
+                    <hmi:SeBinding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </se:StatusImage.IsFine>
+        </se:StatusImage>
+        <se:StatusImage    Style="{StaticResource default_led_style}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="25" Height="25" Canvas.Top="287" Canvas.Left="977">
+            <se:StatusImage.IsDanger>
+                <hmi:SeBinding Path="modules[tags_mod].Items[db439_69_5_red].Value">
+                    <hmi:SeBinding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </se:StatusImage.IsDanger>
+            <se:StatusImage.IsFine>
+                <hmi:SeBinding Path="modules[tags_mod].Items[db439_69_4_green].Value">
+                    <hmi:SeBinding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </se:StatusImage.IsFine>
+        </se:StatusImage>
+        <se:StatusImage    Style="{StaticResource default_led_style}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="25" Height="25" Canvas.Top="322" Canvas.Left="977">
+            <se:StatusImage.IsDanger>
+                <hmi:SeBinding Path="modules[tags_mod].Items[db439_69_7_red].Value">
+                    <hmi:SeBinding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </se:StatusImage.IsDanger>
+            <se:StatusImage.IsFine>
+                <hmi:SeBinding Path="modules[tags_mod].Items[db439_69_6_green].Value">
+                    <hmi:SeBinding.FallbackValue>
+                        <System:Boolean>False</System:Boolean>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </se:StatusImage.IsFine>
+        </se:StatusImage>
+        <TextBlock Canvas.Left="1007" TextWrapping="Wrap" Canvas.Top="37" Width="220" FontSize="16" TextDecorations="Underline"><Run Language="ru-ru" Text="Нулевой расцепитель:"/></TextBlock>
+        <se:ScadaButton Style="{StaticResource ngo_scada_button_style}" FontFamily="Arial" FontSize="18" Height="63" HorizontalAlignment="Center" Canvas.Top="357" VerticalAlignment="Top" Width="216" PushCommand="{hmi:SeBinding FallbackValue='', Path=modules[tags_mod].Items[db_write_db302_13_7].WriteCommand}" ReleasedCommand="{hmi:SeBinding FallbackValue='', Path=modules[tags_mod].Items[db_write_db302_13_7].WriteCommand}" Canvas.Left="979" Margin="0">
+            <TextBlock Text="ВЗЯТЬ РЕЛЕ НА КОНТРОЛЬ" TextAlignment="Center" TextWrapping="Wrap" Margin="-4"/>
+        </se:ScadaButton>
+        <TextBlock Canvas.Left="886" TextWrapping="Wrap" Text="6,3 кВ" Canvas.Top="91" FontWeight="Bold"/>
+        <TextBlock Canvas.Left="1156" TextWrapping="Wrap" Text="950 В" Canvas.Top="540" FontWeight="Bold"/>
+        <TextBlock Canvas.Left="511" TextWrapping="Wrap" Text="400 В" Canvas.Top="540" FontWeight="Bold"/>
+        <TextBlock Canvas.Left="361" TextWrapping="Wrap" Text="400 В" Canvas.Top="540" FontWeight="Bold"/>
+        <TextBlock Canvas.Left="343" TextWrapping="Wrap" Text="6,3 кВ" Canvas.Top="91" FontWeight="Bold"/>
+
+    </Canvas>
+</UserControl>

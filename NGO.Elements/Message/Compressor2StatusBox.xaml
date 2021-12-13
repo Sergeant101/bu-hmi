@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="NGO.Elements.Message.Compressor2StatusBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             xmlns:se="http://schemas.monokot.com/se/"
+             xmlns:hmi="http://schemas.monokot.com/hmi/"
+             d:DesignHeight="150" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="38" />
+            <RowDefinition Height="112*" />
+        </Grid.RowDefinitions>
+        <Rectangle Name="background" Stroke="Black" RadiusX="10" RadiusY="10" Grid.RowSpan="2" Fill="White" />
+        <TextBlock xml:space="preserve" Name="labelMsg" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center" Text="{hmi:SeBinding Path=Tags.Node[компрессор2 (код в текст)].Text, FallbackValue=СТАТУС}"  />
+        <TextBlock Name="labelStatus"  VerticalAlignment="Center" TextAlignment="Center" Text="{hmi:SeBinding Path=Tags.Node[компрессор2_статус (код в текст)].Text, FallbackValue=Компрессор 2 статус}"/>
+    </Grid>
+</UserControl>

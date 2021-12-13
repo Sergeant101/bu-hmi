@@ -1,0 +1,32 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:se="http://schemas.monokot.com/se/"
+                    >
+
+    <Style TargetType="se:VisualBox" x:Key="sqk">
+        <Setter Property="Background" Value="Gold"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Viewbox SnapsToDevicePixels="True">
+                            <Path HorizontalAlignment="Stretch" 
+                                  SnapsToDevicePixels="True" Data="F1 M 32,1.19209e-006C 49.6731,1.19209e-006 64,14.3269 64,32C 64,49.6731 49.6731,64 32,64C 14.3269,64 0,49.6731 0,32C 0,14.3269 14.3269,1.19209e-006 32,1.19209e-006 Z M 32,56L 32,8.00002C 18.7452,8.00002 8,18.7452 8,32C 8,45.2548 18.7452,56 32,56 Z " 
+                                  VerticalAlignment="Stretch" 
+                                  Margin="0" 
+                                  Stroke="{TemplateBinding BorderBrush}" StrokeThickness="{TemplateBinding BorderThickness}" >
+                                <Path.Fill>
+                                    <PriorityBinding>
+                                        <Binding RelativeSource="{RelativeSource AncestorType=se:VisualBox}" Path="VisualStateCollection.CurrentState.Background" />
+                                        <Binding RelativeSource="{RelativeSource AncestorType=se:VisualBox}" Path="Background" />
+                                    </PriorityBinding>
+                                </Path.Fill>
+                            </Path>
+                    </Viewbox>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

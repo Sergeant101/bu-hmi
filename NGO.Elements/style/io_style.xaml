@@ -1,0 +1,240 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:io="clr-namespace:NGO.Elements.Special.IO"
+                    xmlns:se="http://schemas.monokot.com/se/"
+                    xmlns:hmi="http://schemas.monokot.com/hmi/"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <SolidColorBrush x:Key="RedBrush" Color="Red"/>
+    <SolidColorBrush x:Key="SolidBorderBrush" Color="#888" />
+    <LinearGradientBrush x:Key="GreenBrush" EndPoint="0,1" StartPoint="0,0">
+        <GradientStop Color="#FF9CFFB7" Offset="0"/>
+        <GradientStop Color="#FFBFFFD1" Offset="0.5"/>
+        <GradientStop Color="#FF61D681" Offset="0.5"/>
+        <GradientStop Color="#FF98ECAF" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="DisabledBackgroundBrush" Color="#EEE" />
+    <SolidColorBrush x:Key="DisabledBorderBrush" Color="#AAA" />
+    <SolidColorBrush x:Key="DisabledForegroundBrush" Color="#888" />
+
+    <system:Double x:Key="digital_FontSize">21</system:Double>
+    <system:Double x:Key="analog_FontSize">21</system:Double>
+    <system:Double x:Key="readies_FontSize">16</system:Double>
+
+
+
+    <DataTemplate x:Key="digitaliotemplate">
+        <Grid>
+            <Rectangle HorizontalAlignment="Left" Height="20" Width="20" Fill="Black">
+                <Rectangle.Visibility>
+                    <Binding Path="tag.Value" FallbackValue="Hidden">
+                        <Binding.Converter>
+                            <hmi:BooleanToInverseVisibility/>
+                        </Binding.Converter>
+                    </Binding>
+                </Rectangle.Visibility>
+            </Rectangle>
+            <Rectangle HorizontalAlignment="Left" Height="20" Width="20" Fill="Lime">
+                <Rectangle.Visibility>
+                    <Binding Path="tag.Value" FallbackValue="Hidden">
+                        <Binding.Converter>
+                            <BooleanToVisibilityConverter/>
+                        </Binding.Converter>
+                    </Binding>
+                </Rectangle.Visibility>
+            </Rectangle>
+            <TextBlock HorizontalAlignment="Left" FontSize="{StaticResource digital_FontSize}"  Margin="25,0,0,0" Text="{Binding selectedMessage}"/>
+        </Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="analogiotemplate">
+        <StackPanel Orientation="Vertical">
+            <TextBlock Margin="5,0,0,0" FontSize="{StaticResource analog_FontSize}" Text="{Binding selectedMessage}" />
+            <TextBlock FontSize="{StaticResource analog_FontSize}" Margin="5,0,0,0" Text="{Binding resultString}" />
+        </StackPanel>
+    </DataTemplate>
+
+
+    <DataTemplate x:Key="errortemplate">
+        <StackPanel Orientation="Vertical">
+            <TextBlock Margin="5,0,0,0"     FontSize="{StaticResource analog_FontSize}" Text="Ошибка при добавлении тэгов! Данный тэг не найден"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <Style  TargetType="{x:Type ListBoxItem}">
+        <Style.Triggers>
+            <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                <Setter Property="Background" Value="#00000000"></Setter>
+            </Trigger>
+            <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                <Setter Property="Background" Value="#19000000"></Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <io:IOTemplateSelector discreteTemplate="{StaticResource digitaliotemplate}" analogTemplate="{StaticResource analogiotemplate}" counterTemplate="{StaticResource analogiotemplate}" failureTemplate="{StaticResource errortemplate}" x:Key="ioTemplateSelector"/>
+
+
+    <DataTemplate x:Key="ready_template">
+        <Grid>
+            <Ellipse HorizontalAlignment="Left" Height="20" Width="20" Fill="Black">
+                <Ellipse.Visibility>
+                    <Binding Path="scadaTag.Value" FallbackValue="Hidden">
+                        <Binding.Converter>
+                            <hmi:BooleanToInverseVisibility/>
+                        </Binding.Converter>
+                    </Binding>
+                </Ellipse.Visibility>
+            </Ellipse>
+            <Ellipse HorizontalAlignment="Left" Height="20" Width="20" Fill="Red">
+                <Ellipse.Visibility>
+                    <Binding Path="scadaTag.Value" FallbackValue="Hidden">
+                        <Binding.Converter>
+                            <BooleanToVisibilityConverter/>
+                        </Binding.Converter>
+                    </Binding>
+                </Ellipse.Visibility>
+            </Ellipse>
+            <TextBlock HorizontalAlignment="Left" FontSize="{StaticResource readies_FontSize}"  Margin="25,0,0,0" Text="{Binding message}"/>
+        </Grid>
+    </DataTemplate>
+
+
+    <Style x:Key="TabItemStyle" TargetType="{x:Type TabItem}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabItem}">
+                    <Grid>
+                        <Border Name="Border" Margin="0,0,0,0" BorderBrush="{StaticResource SolidBorderBrush}" BorderThickness="1,1,1,1" Background="DarkGray">
+                            <ContentPresenter x:Name="ContentSite" VerticalAlignment="Center" HorizontalAlignment="Center" ContentSource="Header" RecognizesAccessKey="True"/>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Panel.ZIndex" Value="100" />
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource GreenBrush}" />
+                            <Setter TargetName="Border" Property="BorderThickness" Value="1,1,1,0" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource DisabledBackgroundBrush}" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource DisabledBorderBrush}" />
+                            <Setter TargetName="Border" Property="BorderThickness" Value="1,1,1,0" />
+                            <Setter Property="Foreground" Value="{StaticResource SolidBorderBrush}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--<Style x:Key="io_tab_item_style" TargetType="{x:Type TabControl}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Grid Name="Grid" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Border Name="Border" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5,0,5,0" BorderThickness="0">
+                            <ContentPresenter x:Name="ContentSite" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0,0,0,0">
+                                <ContentPresenter.Content>
+                                    <TextBlock Name="TextBlock" Text="{hmi:SeBinding name}" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </ContentPresenter.Content>
+                            </ContentPresenter>
+                        </Border>
+                    </Grid>
+                    <DataTemplate.Triggers>
+                        <DataTrigger hmi:SeBinding="{hmi:SeBinding IsSelected, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type TabItem}}}" Value="True">
+                            <Setter Property="Panel.ZIndex" Value="100" />
+                            <Setter TargetName="Border"  Property="Background" Value="PaleVioletRed" />
+                        </DataTrigger>
+                        <DataTrigger hmi:SeBinding="{hmi:SeBinding IsSelected, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type TabItem}}}" Value="False">
+                            <Setter Property="Panel.Background" Value="{StaticResource GreenBrush}" />
+                            <Setter Property="Panel.Background" Value="Brown"></Setter>
+
+                        </DataTrigger>
+                    </DataTemplate.Triggers>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property ="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Grid Height="Auto" Margin="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            -->
+    <!--<RowDefinition Height="1*" />-->
+    <!--
+                            <RowDefinition Height="28*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" Text="{hmi:SeBinding sub_description}" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Tahoma" FontWeight="Bold" FontSize="24"/>
+                        -->
+    <!--<TextBlock Grid.Row="1" Text="{hmi:SeBinding description}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"/>-->
+    <!--
+                        <ListBox Grid.Row="1" AlternationCount="2"  ItemsSource="{hmi:SeBinding tags, UpdateSourceTrigger=PropertyChanged}" ItemTemplateSelector="{StaticResource ioTemplateSelector}" BorderBrush="{x:Null}" FontSize="18"/>
+                    </Grid>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>-->
+
+    <Style x:Key="io_tab_control_style" TargetType="{x:Type TabControl}">
+        <Setter Property="FlowDirection" Value="LeftToRight"/>
+        <Setter Property ="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Grid Height="Auto" Margin="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <!--<RowDefinition Height="1*" />-->
+                            <RowDefinition Height="28*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" Text="{Binding sub_description}" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Tahoma" FontWeight="Bold" FontSize="24"/>
+                        <!--<TextBlock Grid.Row="1" Text="{hmi:SeBinding description}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"/>-->
+                        <ListBox Grid.Row="1" AlternationCount="2"  ItemsSource="{Binding ioCollection, UpdateSourceTrigger=PropertyChanged}" ItemTemplateSelector="{StaticResource ioTemplateSelector}" BorderBrush="{x:Null}" FontSize="18"/>
+                    </Grid>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemContainerStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type TabItem}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="TabItem">
+                                <Grid Height="35" VerticalAlignment="Bottom">
+                                    <Border Name="Border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" Margin="1" 
+                                            BorderThickness="1,1,1,1" CornerRadius="3,0,0,3">
+                                        <ContentPresenter x:Name="ContentSite" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="7,2,12,2" RecognizesAccessKey="True">
+                                            <ContentPresenter.Content>
+                                                <TextBlock Name="TextBlock" Text="{Binding name}" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            </ContentPresenter.Content>
+                                        </ContentPresenter>
+                                    </Border>
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsSelected" Value="False">
+                                        <Setter Property="Panel.ZIndex" Value="90" />
+                                        <Setter Property="Foreground" Value="Black" />
+                                        <Setter TargetName="Border" Property="Margin" Value="0"/>
+                                    </Trigger>
+
+                                    <Trigger Property="IsEnabled" Value="False">
+                                        <Setter Property="Panel.ZIndex" Value="80" />
+                                        <Setter TargetName="Border" Property="BorderBrush" Value="DimGray" />
+                                        <Setter TargetName="Border" Property="Background" Value="DarkGray" />
+                                        <Setter Property="Foreground" Value="Gray" />
+                                    </Trigger>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter Property="Panel.ZIndex" Value="100" />
+                                        <Setter TargetName="Border" Property="Background" Value="{StaticResource GreenBrush}" />
+                                        <Setter Property="Foreground" Value="Black"/>
+                                        <Setter TargetName="Border" Property="Margin" Value="0"/>
+                                        <Setter TargetName="Border" Property="BorderThickness" Value="1,1,0,1"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

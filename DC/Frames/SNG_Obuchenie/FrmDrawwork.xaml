@@ -1,0 +1,469 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+    xmlns:hmi="http://schemas.monokot.com/hmi/"
+    xmlns:se="http://schemas.monokot.com/se/"
+             xmlns:style="clr-namespace:NGO.Elements.style;assembly=NGO.Elements"
+             xmlns:gauges="clr-namespace:NGO.Elements.Gauges;assembly=NGO.Elements"
+             xmlns:position="clr-namespace:NGO.Elements.Linear.Position;assembly=NGO.Elements"
+             xmlns:message="clr-namespace:NGO.Elements.Message;assembly=NGO.Elements"
+             xmlns:smallDrawwork="clr-namespace:NGO.Elements.Gauges.Small.Drawwork;assembly=NGO.Elements"
+             x:Class=" DC.Frames.SNG_Obuchenie.FrmDrawwork"
+             mc:Ignorable="d" 
+             Background="#FFC9C9C9"
+             d:DesignWidth="1280" Height="900">
+    <Viewbox>
+        <Canvas Margin="0,0,0,0" Width="1280" Height="900">
+
+            <style:cool_rect Canvas.Left="909" Canvas.Top="260" Height="74" Width="240"/>
+            <position:ComplexBlockPosition Canvas.Left="1162" Canvas.Top="127" Height="673" Width="107" />
+
+            <se:HmiButton Style="{StaticResource MetalBorderButton}" FontFamily="Tahoma" Height="82" HorizontalAlignment="Left" Canvas.Left="1162" Canvas.Top="35" VerticalAlignment="Top" Width="111" Margin="0" hmi:Click.Command="{hmi:SeBinding Tags.Node[write.drawwork].Items[otbit_vt].WriteCommand}">
+                <TextBlock Text="ОТБИТЬ ВЕРХНЮЮ ТОЧКУ" TextWrapping="Wrap" TextAlignment="Center" FontSize="20" FontFamily="Tahoma"/>
+            </se:HmiButton>
+
+            <se:HmiButton Style="{StaticResource MetalBorderButton}" FontFamily="Tahoma" Height="82" HorizontalAlignment="Left" Canvas.Left="1162" VerticalAlignment="Top" Width="111" Canvas.Top="806" Margin="0" hmi:Click.Command="{hmi:SeBinding Tags.Node[write.drawwork].Items[otbit_nt].WriteCommand}">
+                <TextBlock Text="ОТБИТЬ НИЖНЮЮ ТОЧКУ" TextWrapping="Wrap" TextAlignment="Center" FontSize="20" FontFamily="Tahoma"/>
+            </se:HmiButton>
+            <se:ValueDisplay Canvas.Left="6" Canvas.Top="793" FontFamily="Tahoma" Height="70" Width="146" HeaderBackground="Black" LabelFontSize="16" LabelForeground="#FF041752" Label="м/с" Value="{Binding modules[tags_mod].Items[скпб_скорость_спо].Value, FallbackValue=0.0, StringFormat=0.#}" ValueBackground="White" ValueForeground="Black" Header="Скорость СПО" HeaderFontSize="12" Visibility="Collapsed" />
+            <se:HmiButton Style="{StaticResource MetalBorderButton}" Canvas.Left="182" Canvas.Top="557" Width="225" FontSize="18" Height="100" hmi:Click.Command="{hmi:SeBinding Tags.Node[write.drawwork].Items[obhod_blokirovki_lebedki].WriteCommand}" >
+                <TextBlock TextAlignment="Center" Text="ОБХОД  БЛОКИРОВКИ  ЛЕБЕДКИ" TextWrapping="Wrap" FontSize="20" FontFamily="Tahoma"/>
+            </se:HmiButton>
+            <Grid Canvas.Left="934" Canvas.Top="486"/>
+            <style:cool_rect Width="468" Canvas.Top="30" Canvas.Left="681" Height="227"/>
+            <style:cool_rect Width="475" Canvas.Top="30" Canvas.Left="175" Height="227"/>
+            <style:cool_rect Canvas.Left="175" Canvas.Top="260" Height="74" Width="239"/>
+            <se:VisualBox Canvas.Left="190" Canvas.Top="284" Width="24" Height="25" BorderBrush="Transparent">
+                <se:VisualBox.Background>
+                    <ImageBrush ImageSource="/DC;component/Content/Lamps/led_normal.png"/>
+                </se:VisualBox.Background>
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/DC;component/Content/Lamps/led_fine.png"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork.motor1].Items[blowing_work].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/DC;component/Content/Lamps/led_danger.png"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork.motor1].Items[blowing_emer].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+            </se:VisualBox>
+            <TextBlock Canvas.Left="223" TextWrapping="Wrap" Canvas.Top="282" FontSize="22" FontFamily="Tahoma" Width="163" Text="ОБДУВ МОТОРА"/>
+            <TextBlock Canvas.Left="963" TextWrapping="Wrap" Canvas.Top="269" FontSize="22" FontFamily="Tahoma" Text="ОБОГРЕВ МОТОРА" Width="163" LineHeight="12" />
+            <se:VisualBox Canvas.Left="923" Canvas.Top="284"   Width="24" Height="25" BorderBrush="Transparent">
+                <se:VisualBox.Background>
+                    <ImageBrush ImageSource="/DC;component/Content/Lamps/led_normal.png"/>
+                </se:VisualBox.Background>
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/DC;component/Content/Lamps/led_fine.png"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork.motor1].Items[heating_work].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem>
+                        <se:VisualBoxStateItem.Background>
+                            <ImageBrush ImageSource="/DC;component/Content/Lamps/led_danger.png"/>
+                        </se:VisualBoxStateItem.Background>
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork.motor1].Items[heating_emer].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+            </se:VisualBox>
+            <se:VisualBox HorizontalAlignment="Left" FontFamily="Tahoma" Height="69"  Width="225" CornerRadius="5" Text="МУФТА&#xA;НЕ ОПРЕДЕЛЕНА" FontSize="20" Background="{StaticResource MediaBoxAttentionSolidColorBrush}" Canvas.Left="916" Canvas.Top="410">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Text="МУФТА&#xA;ВКЛЮЧЕНА" Background="{StaticResource MediaBoxFineSolidColorBrush}">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork].Items[mufta_DP_vklyuchena].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem Text="МУФТА&#xA;ОТКЛЮЧЕНА" Background="{StaticResource MediaBoxFineSolidColorBrush}">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork].Items[mufta_DP_otklyuchena].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem Text="МУФТА&#xA;ВКЛЮЧЕНИЕ" Background="{StaticResource MediaBoxAttentionSolidColorBrush}">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork].Items[mufta_DP_vklyuchenie].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem Text="МУФТА&#xA;ВКЛЮЧЕНИЕ (ПРОВОРОТ)" Background="{StaticResource MediaBoxAttentionSolidColorBrush}">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork].Items[mufta_DP_vklyuchenie_provorot].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem Text="МУФТА&#xA;ОТКЛЮЧЕНИЕ" Background="{StaticResource MediaBoxAttentionSolidColorBrush}">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork].Items[mufta_DP_otklyuchenie].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem Text="МУФТА&#xA;ОТКЛЮЧЕНИЕ (ТОРМОЗ)" Background="{StaticResource MediaBoxAttentionSolidColorBrush}">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork].Items[mufta_DP_otklyuchenie_tormoz].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem Text="МУФТА АВАРИЯ&#xA;(ВКЛЮЧИЛАСЬ)" Background="{StaticResource MediaBoxEmergencySolidColorBrush}">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork].Items[mufta_DP_avaria_vkl].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem Text="МУФТА АВАРИЯ&#xA;(ОТКЛЮЧИЛАСЬ)" Background="{StaticResource MediaBoxEmergencySolidColorBrush}">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork].Items[mufta_DP_avaria_otkl].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem Text="МУФТА АВАРИЯ&#xA;(ОБА ДАТЧИКА)" Background="{StaticResource MediaBoxEmergencySolidColorBrush}">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork].Items[mufta_DP_avaria_signaly_s_oboih_datchikov].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+
+                    <se:VisualBoxStateItem Text="МУФТА АВАРИЯ&#xA;(НЕТ СИГНАЛОВ С ДАТЧИКОВ)" Background="{StaticResource MediaBoxEmergencySolidColorBrush}">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork].Items[mufta_DP_avaria_net_signala_s_oboih_datchikov].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+
+                    <se:VisualBoxStateItem Text="МУФТА АВАРИЯ&#xA;(ЕСТЬ РАЗРЕШЕНИЕ)" Background="{StaticResource MediaBoxEmergencySolidColorBrush}">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork].Items[mufta_DP_avaria_est_razreshenie].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+            </se:VisualBox>
+            <se:VisualBox HorizontalAlignment="Left" Height="69" VerticalAlignment="Top" Width="225" CornerRadius="5" Background="Gold" Text="НЕ ВЫБРАН РЕЖИМ&#xA; &quot;СПО-0-БУРЕНИЕ&quot;" FontSize="20" Canvas.Left="916" Canvas.Top="337">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="{StaticResource MediaBoxFineSolidColorBrush}" Text="РУЧНОЕ&#xA;БУРЕНИЕ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork].Items[manual_drilling].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem Background="{StaticResource MediaBoxFineSolidColorBrush}" Text="АВТОМАТИЧЕСКОЕ&#xA;БУРЕНИЕ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork].Items[auto_drilling].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem Background="{StaticResource MediaBoxFineSolidColorBrush}" Text="СПУСКОПОДЪЕМНЫЕ&#xA;ОПЕРАЦИИ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork].Items[rezhim_spo].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+            </se:VisualBox>
+            <gauges:GaugeDrawwork_SNG_Obuchenie Height="380" HorizontalAlignment="Left" VerticalAlignment="Top" Width="490" Canvas.Left="419" FontFamily="Tahoma" Canvas.Top="260" />
+            <Grid HorizontalAlignment="Left" Height="82" VerticalAlignment="Top" Width="465" Canvas.Left="182" Canvas.Top="806" Background="#FFE4E4E4">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock HorizontalAlignment="Right" Margin="0,0,10,0" TextWrapping="Wrap" Text="{hmi:SeBinding Tags.Node[view.main_drives.drawwork.motor1].Items[current].Value, FallbackValue=0}" VerticalAlignment="Center" TextAlignment="Right" FontSize="24" FontFamily="Tahoma"/>
+                <TextBlock HorizontalAlignment="Right" Margin="0,0,10,0" TextWrapping="Wrap" Text="{hmi:SeBinding Tags.Node[view.main_drives.drawwork.motor1].Items[rpm].Value, FallbackValue=0}" VerticalAlignment="Center" TextAlignment="Right" Grid.Row="1" FontSize="24" FontFamily="Tahoma"/>
+                <TextBlock HorizontalAlignment="Left" Margin="5,5,18,5" TextWrapping="Wrap" Text="А" VerticalAlignment="Center" TextAlignment="Right" Grid.Column="1" FontSize="20" FontFamily="Tahoma"/>
+                <TextBlock HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="об/мин" VerticalAlignment="Center" TextAlignment="Right" Grid.Column="1" Grid.Row="1" FontSize="20" FontFamily="Tahoma"/>
+                <TextBlock HorizontalAlignment="Right" Margin="0,0,10,0" TextWrapping="Wrap" Text="{hmi:SeBinding Tags.Node[view.main_drives.drawwork.motor1].Items[temperature].Value, FallbackValue=0}" VerticalAlignment="Center" TextAlignment="Right" FontSize="24" Grid.Row="2" FontFamily="Tahoma"/>
+                <TextBlock Focusable="False" FontFamily="Tahoma" FontSize="20" Foreground="#FF313131" HorizontalAlignment="Left" Text="°С" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2" />
+            </Grid>
+            <TextBlock HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" Text="МОТОР ДП" VerticalAlignment="Top" Width="464" FontSize="22" TextAlignment="Center" Canvas.Left="677" Canvas.Top="779" FontFamily="Tahoma"/>
+            <Grid HorizontalAlignment="Left" Height="82" VerticalAlignment="Top" Width="464" Canvas.Left="677" Canvas.Top="806" Background="#FFE4E4E4">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock HorizontalAlignment="Right" Margin="0,0,10,0" TextWrapping="Wrap" Text="{hmi:SeBinding Tags.Node[view.main_drives.aux].Items[current].Value, FallbackValue=0}" VerticalAlignment="Center" TextAlignment="Right" FontSize="24" FontFamily="Tahoma"/>
+                <TextBlock HorizontalAlignment="Right" Margin="0,0,10,0" TextWrapping="Wrap" Text="{hmi:SeBinding Tags.Node[view.main_drives.aux].Items[rpm].Value, FallbackValue=0}" VerticalAlignment="Center" TextAlignment="Right" Grid.Row="1" FontSize="24" FontFamily="Tahoma"/>
+                <TextBlock HorizontalAlignment="Left" Margin="5,5,18,5" TextWrapping="Wrap" Text="А" VerticalAlignment="Center" TextAlignment="Right" Grid.Column="1" FontSize="20" FontFamily="Tahoma"/>
+                <TextBlock HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="об/мин" VerticalAlignment="Center" TextAlignment="Right" Grid.Column="1" Grid.Row="1" FontSize="20" FontFamily="Tahoma"/>
+            </Grid>
+            <TextBlock Canvas.Left="182" Canvas.Top="779" FontFamily="Tahoma" FontSize="22" Height="30" x:Name="textBlock3" Text="МОТОР ЛЕБЕДКИ" TextAlignment="Center" TextWrapping="Wrap" Width="465"/>
+            <se:VisualBox Canvas.Left="182" Canvas.Top="410" FontFamily="Tahoma" Height="69" x:Name="indicator10_Copy2" Width="225" Text="КОЖУХ&#xA;СДВИНУТ" FontSize="20" CornerRadius="5" Background="{StaticResource MediaBoxAttentionSolidColorBrush}">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="{StaticResource MediaBoxFineSolidColorBrush}" Text="КОЖУХА&#xA;ОДЕТЫ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork].Items[kozhuh_sqkl_zelenyj].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem Background="{StaticResource MediaBoxEmergencySolidColorBrush}" Text="КОЖУХ&#xA;СДВИНУТ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork].Items[kozhuh_sqkl_krasnyj].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+            <se:VisualBox Canvas.Left="182" Canvas.Top="337" FontFamily="Tahoma" Height="69" x:Name="indicator10_Copy" Width="225" Text="ТОРМОЗ&#xA;НЕТ СИГНАЛА" FontSize="20" CornerRadius="5" Background="{StaticResource MediaBoxAttentionSolidColorBrush}">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="{StaticResource MediaBoxFineSolidColorBrush}" Text="ТОРМОЗ&#xA;ЗАТОРМОЖЕН">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.main_drives.drawwork].Items[tormoz_zatormozhen].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem Background="{StaticResource MediaBoxFineSolidColorBrush}" Text="ТОРМОЗ&#xA;РАСТОРМОЖЕН">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.main_drives.drawwork].Items[tormoz_rastormozhen].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem Background="{StaticResource MediaBoxFineSolidColorBrush}" Text="ТОРМОЗ&#xA;РАСТОРМАЖИВАЕТСЯ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.main_drives.drawwork].Items[tormoz_rastormazhivaetsya].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem Background="{StaticResource MediaBoxFineSolidColorBrush}" Text="ТОРМОЗ&#xA;ЗАТОРМАЖИВАЕТСЯ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.main_drives.drawwork].Items[tormoz_zatormazhivaetsya].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem Background="{StaticResource MediaBoxEmergencySolidColorBrush}" Text="ТОРМОЗ&#xA;НЕ РАСТОРМОЗИЛСЯ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.main_drives.drawwork].Items[tormoz_ne_rastormozilsya].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem Background="{StaticResource MediaBoxEmergencySolidColorBrush}" Text="ТОРМОЗ&#xA;НЕ ЗАТОРМОЗИЛСЯ">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.main_drives.drawwork].Items[tormoz_ne_zatormozilsya].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem Background="{StaticResource MediaBoxEmergencySolidColorBrush}" Text="ТОРМОЗ&#xA;ОБРЫВ ДАТЧИКА">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.main_drives.drawwork].Items[tormoz_obryv_datchika].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem Background="{StaticResource MediaBoxEmergencySolidColorBrush}" Text="ТОРМОЗ&#xA;ЗАМЫКАНИЕ ДАТЧИКА">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.main_drives.drawwork].Items[tormoz_kz_datchika].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+
+            </se:VisualBox>
+            <se:VisualBox HorizontalAlignment="Left" Height="69" VerticalAlignment="Top" Width="225" CornerRadius="5" Text="СМАЗКА&#xA;ОТКЛЮЧЕНА" FontSize="20" Canvas.Left="182" Canvas.Top="483" FontFamily="Tahoma" Background="{StaticResource MediaBoxAttentionSolidColorBrush}">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="{StaticResource MediaBoxEmergencySolidColorBrush}" Text="СМАЗКА&#xA;ОТКЛЮЧЕНА">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.main_drives.drawwork.motor1].Items[smazka_avariya].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>True</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem Background="{StaticResource MediaBoxFineSolidColorBrush}" Text="МАСЛОСМАЗКА&#xA;ВКЛЮЧЕНА">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding Path="Tags.Node[view.main_drives.drawwork.motor1].Items[smazka_rabota].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+            </se:VisualBox>
+            <se:ValueDisplay Canvas.Left="1" Canvas.Top="559" FontFamily="Tahoma" Width="170" HeaderBackground="Black" LabelForeground="#FF041752" Label="м/ч" ValueBackground="White" ValueForeground="Black" Header="СКОРОСТЬ ПРОХОДКИ" Value="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.msab].Items[skorost_prohodki].Value}" />
+            <se:ValueDisplay Canvas.Left="1" Canvas.Top="484" FontFamily="Tahoma" Height="70" x:Name="numericDisplay12_Copy" Width="169" HeaderBackground="Black" Label="м" ValueBackground="White" ValueForeground="Black" Header="ВЫСОТА БЛОКА СКПБ" Value="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.main_drives.drawwork].Items[tb_position].Value}" />
+            <se:ValueDisplay Canvas.Left="1" Canvas.Top="257" Height="70" x:Name="numericDisplay13_Copy" Width="169" HeaderBackground="Black" Label="м" ValueBackground="White" ValueForeground="Black" Header="ГЛУБИНА ЗАБОЯ" FontFamily="Tahoma" Value="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.msab].Items[glubina_zaboya].Value}" />
+            <se:ValueDisplay Canvas.Left="1" Canvas.Top="35" FontFamily="Tahoma" Height="70" x:Name="numericDisplay14_Copy" Width="169" HeaderBackground="Black" Label="т" ValueBackground="White" ValueForeground="Black" Header="ОБЩИЙ ВЕС" FontSize="40" Value="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.main_drives.drawwork].Items[drillometer_weight].Value}" />
+            <se:ValueDisplay Canvas.Left="1" Canvas.Top="332" FontFamily="Tahoma" Height="70" x:Name="numericDisplay15_Copy" Width="169" HeaderBackground="Black" Label="кН×м" ValueBackground="White" ValueForeground="Black" Header="УСИЛИЕ ГИДРОКЛЮЧА" Value="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.gksh].Items[moment].Value}" />
+            <se:ValueDisplay Canvas.Left="1" Canvas.Top="407" FontFamily="Tahoma" Height="70" x:Name="numericDisplay16_Copy" Width="169" HeaderBackground="Black" Label="кН×м" ValueBackground="White" ValueForeground="Black" Header="УСИЛИЕ МАШ. КЛЮЧА" Value="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.mashinnyj_klyuch].Items[fakticheskij_moment].Value}" />
+            <se:ValueDisplay Canvas.Left="1" Canvas.Top="110" FontFamily="Tahoma" FontWeight="Normal" Height="67" x:Name="numericDisplay19_Copy" Width="169" HeaderBackground="Black" Label="т" ValueBackground="White" ValueForeground="Black" Header="НАГРУЗКА НА ДОЛОТО" Value="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.main_drives.drawwork].Items[drillometer_workbit_real].Value}" />
+            <se:ValueDisplay Canvas.Left="1" Canvas.Top="182" Height="70" Width="169" HeaderBackground="Black" Label="м" ValueBackground="White" ValueForeground="Black" Header="ГЛУБИНА ИНСТРУМЕНТА" FontFamily="Tahoma" Value="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.msab].Items[glubina_instrumenta].Value}" />
+            <smallDrawwork:DrawworkDavlenieSmazkiDoFiltra Height="120" Width="120" Canvas.Left="753" Canvas.Top="116"/>
+            <smallDrawwork:DrawworkDavlenieSmazkiPosleFiltra Width="120" Height="120" Canvas.Left="984" Canvas.Top="116"/>
+            <smallDrawwork:DrawworkDavlenieVozduhaVSeti Height="120" Width="120" Canvas.Left="237" Canvas.Top="116"/>
+            <smallDrawwork:DrawworkDavlenieVRabochemTormoze Height="120" Width="120" Canvas.Left="467" Canvas.Top="116"/>
+            <TextBlock Canvas.Top="42" TextWrapping="Wrap" TextAlignment="Center" Canvas.Left="426" Height="63" FontSize="22" Text="ДАВЛЕНИЕ ВОЗДУХА&#xA;В ТОРМОЗЕ"/>
+            <TextBlock Canvas.Top="42" TextWrapping="Wrap" TextAlignment="Center" Canvas.Left="198" Height="63" FontSize="22" Text="ДАВЛЕНИЕ ВОЗДУХА&#xA;В СЕТИ"/>
+            <TextBlock Canvas.Top="42" TextWrapping="Wrap" TextAlignment="Center" Canvas.Left="947" Height="63" FontSize="22" Text="ДАВЛЕНИЕ МАСЛА&#xA;ПОСЛЕ ФИЛЬТРА"/>
+            <TextBlock Canvas.Top="42" TextWrapping="Wrap" TextAlignment="Center" Canvas.Left="712" Height="63" FontSize="22" Text="ДАВЛЕНИЕ МАСЛА &#xA;ДО ФИЛЬТРА"/>
+            <message:AuxStatusBox  FontFamily="Tahoma" FontSize="18" Height="80" Width="464" Canvas.Left="677" Canvas.Top="698">
+                <message:AuxStatusBox.hasEmergency>
+                    <hmi:SeBinding Path="Tags.Node[view.main_drives.aux].Items[avariya].Value">
+                        <hmi:SeBinding.FallbackValue>
+                            <system:Boolean>False</system:Boolean>
+                        </hmi:SeBinding.FallbackValue>
+                    </hmi:SeBinding>
+                </message:AuxStatusBox.hasEmergency>
+                <message:AuxStatusBox.hasAlarm>
+                    <hmi:SeBinding Path="Tags.Node[view.main_drives.aux].Items[ne_gotov].Value">
+                        <hmi:SeBinding.FallbackValue>
+                            <system:Boolean>False</system:Boolean>
+                        </hmi:SeBinding.FallbackValue>
+                    </hmi:SeBinding>
+                </message:AuxStatusBox.hasAlarm>
+            </message:AuxStatusBox>
+            <message:DrawworkStatusBox Canvas.Left="181" Canvas.Top="698" FontFamily="Tahoma" FontSize="18" Height="80" Width="475">
+                <message:DrawworkStatusBox.hasEmergency>
+                    <hmi:SeBinding Path="Tags.Node[view.main_drives.drawwork].Items[avariya].Value">
+                        <hmi:SeBinding.FallbackValue>
+                            <system:Boolean>False</system:Boolean>
+                        </hmi:SeBinding.FallbackValue>
+                    </hmi:SeBinding>
+                </message:DrawworkStatusBox.hasEmergency>
+                <message:DrawworkStatusBox.hasAlarm>
+                    <hmi:SeBinding Path="Tags.Node[view.main_drives.drawwork].Items[ne_gotov].Value">
+                        <hmi:SeBinding.FallbackValue>
+                            <system:Boolean>False</system:Boolean>
+                        </hmi:SeBinding.FallbackValue>
+                    </hmi:SeBinding>
+                </message:DrawworkStatusBox.hasAlarm>
+            </message:DrawworkStatusBox>
+            <TextBlock Canvas.Left="181" Canvas.Top="663" FontFamily="Tahoma" FontSize="22" Foreground="Black" Height="28" x:Name="textBlock1" Text="ОСНОВНАЯ ЛЕБЕДКА" TextAlignment="Center" Width="480" />
+            <TextBlock Canvas.Left="677" Canvas.Top="663" FontFamily="Tahoma" FontSize="22" Foreground="Black" Height="28" Text="ДОПОЛНИТЕЛЬНЫЙ ПРИВОД" TextAlignment="Center" Width="472" />
+            <se:VisualBox HorizontalAlignment="Left" Height="68" VerticalAlignment="Top" Width="225" CornerRadius="5" Background="{StaticResource MediaBoxFineSolidColorBrush}" Text="АВТООСТАНОВКА&#xA;ВКЛЮЧЕНА" Canvas.Left="916" Canvas.Top="484">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="{StaticResource MediaBoxAttentionSolidColorBrush}" Text="АВТООСТАНОВКА&#xA;ОТКЛЮЧЕНА">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork.bypass].Items[avtoostanovka_bp].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                    <se:VisualBoxStateItem Background="{StaticResource MediaBoxEmergencySolidColorBrush}" Text="НИЖНЯЯ ТОЧКА&#xA;НЕ ОТБИТА">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork].Items[bottom_point_off].Value">
+                                <hmi:SeBinding.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:SeBinding.FallbackValue>
+                            </hmi:SeBinding>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+            </se:VisualBox>
+        </Canvas>
+    </Viewbox>
+</UserControl>

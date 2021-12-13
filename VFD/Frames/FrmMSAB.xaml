@@ -1,0 +1,164 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:se="http://schemas.monokot.com/se/" 
+             xmlns:msab="clr-namespace:NGO.Elements.MSAB;assembly=NGO.Elements"
+             xmlns:hmi="http://schemas.monokot.com/hmi/"
+             xmlns:gauges="clr-namespace:NGO.Elements.Gauges;assembly=NGO.Elements"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             x:Class="VFD.Frames.FrmMSAB" 
+             mc:Ignorable="d" 
+             d:DesignHeight="840" d:DesignWidth="1280"
+    Background="#FFEBEBEB">
+    <TabControl>
+        <TabItem Header="ЦС">
+            <Grid>
+
+                <se:ValueDisplay HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="196" Height="70" BorderBrush="Black" BorderThickness="1" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" LabelForeground="DarkBlue" Label="ход" Header="Общие ходы насоса 1" FontFamily="Tahoma" HeaderFontSize="11" Value="{hmi:Bind FallbackValue=0, Path=Tags.Node[view.main_drives.pump1].Items[throw].Value}"/>
+                <se:ValueDisplay HorizontalAlignment="Left" Margin="212,10,0,0" VerticalAlignment="Top" Width="196" Height="70" BorderBrush="Black" BorderThickness="1" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" LabelForeground="DarkBlue" Label="ход" Header="Общие ходы насоса 2" FontFamily="Tahoma" HeaderFontSize="11" Value="{hmi:Bind FallbackValue=0, Path=Tags.Node[view.main_drives.pump2].Items[throw].Value}"/>
+                <se:ValueDisplay HorizontalAlignment="Left" Margin="414,10,0,0" VerticalAlignment="Top" Width="196" Height="70" BorderBrush="Black" BorderThickness="1" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" LabelForeground="DarkBlue" Label="ход" Header="Общие ходы" FontFamily="Tahoma" HeaderFontSize="11" Value="{hmi:Bind FallbackValue=0, Path=Tags.Node[view.main_drives.pump1].Items[summary_feed].Value}"/>
+                <se:ValueDisplay HorizontalAlignment="Left" Margin="616,10,0,0" VerticalAlignment="Top" Width="196" Height="70" BorderBrush="Black" BorderThickness="1" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" LabelForeground="DarkBlue" Label="ход" Header="Расход б/р на входе" FontFamily="Tahoma" HeaderFontSize="11" Value="{hmi:Bind Tags.Node[view.msab].Items[throughflow].Value, FallbackValue=0}"/>
+                <se:ValueDisplay HorizontalAlignment="Left" Margin="818,10,0,0" VerticalAlignment="Top" Width="196" Height="70" BorderBrush="Black" BorderThickness="1" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" LabelForeground="DarkBlue" Label="%" Header="Изменение б/р на выходе" FontFamily="Tahoma" HeaderFontSize="11" Value="{hmi:Bind FallbackValue=0, Path=Tags.Node[view.msab].Items[change_outer].Value}"/>
+                <se:ValueDisplay HorizontalAlignment="Left" Margin="1020,10,0,0" VerticalAlignment="Top" Width="196" Height="70" BorderBrush="Black" BorderThickness="1" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" LabelForeground="DarkBlue" Label="л" Header="Общий объем б/р" FontFamily="Tahoma" HeaderFontSize="11" Value="{hmi:Bind FallbackValue=0, Path=Tags.Node[view.msab].Items[summary_volume].Value}"/>
+                <se:ValueDisplay HorizontalAlignment="Left" Margin="10,238,0,0" VerticalAlignment="Top" Width="196" Height="71" BorderBrush="Black" BorderThickness="1" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" LabelForeground="DarkBlue" Label="атм" Header="Давление в манифольде" FontFamily="Tahoma" HeaderFontSize="11" Value="{hmi:Bind FallbackValue=0, Path=Tags.Node[view.main_drives.pump1].Items[pressure_in_manifold].Value}"/>
+                <TextBlock HorizontalAlignment="Left" Margin="10,173,0,0" TextWrapping="Wrap" Text="СВЯЗЬ С СКПБ" VerticalAlignment="Top" FontSize="20" Width="196" TextAlignment="Center" Height="35"/>
+
+                <msab:WideTank HorizontalAlignment="Left" Margin="316,176,0,0" VerticalAlignment="Top" Height="259" Width="176" FontSize="12" levelValue="{hmi:SeBinding Tags.Node[view.msab.tank1].Items[level].Value, FallbackValue=0}" volumeValue="{hmi:SeBinding Tags.Node[view.msab.tank1].Items[volume].Value, FallbackValue=0}"/>
+                <msab:WideTank HorizontalAlignment="Left" Margin="675,176,0,0" VerticalAlignment="Top" Height="259" Width="176" FontSize="12" levelValue="{hmi:SeBinding Tags.Node[view.msab.tank2].Items[level].Value, FallbackValue=0}" volumeValue="{hmi:SeBinding Tags.Node[view.msab.tank2].Items[volume].Value, FallbackValue=0}"/>
+                <msab:WideTank HorizontalAlignment="Left" Margin="1032,176,0,0" VerticalAlignment="Top" Height="259" Width="176" FontSize="12" levelValue="{hmi:SeBinding Tags.Node[view.msab.tank3].Items[level].Value, FallbackValue=0}" volumeValue="{hmi:SeBinding Tags.Node[view.msab.tank3].Items[volume].Value, FallbackValue=0}"/>
+                <msab:WideTank HorizontalAlignment="Left" Margin="74,492,0,0" VerticalAlignment="Top" Height="304" Width="176" FontSize="12" levelValue="{hmi:SeBinding Tags.Node[view.msab.tank4].Items[level].Value, FallbackValue=0}" volumeValue="{hmi:SeBinding Tags.Node[view.msab.tank4].Items[volume].Value, FallbackValue=0}"/>
+                <msab:WideTank HorizontalAlignment="Left" Margin="316,492,0,0" VerticalAlignment="Top" Height="304" Width="176" FontSize="12" levelValue="{hmi:SeBinding Tags.Node[view.msab.tank5].Items[level].Value, FallbackValue=0}" volumeValue="{hmi:SeBinding Tags.Node[view.msab.tank5].Items[volume].Value, FallbackValue=0}"/>
+                <msab:WideTank HorizontalAlignment="Left" Margin="557,492,0,0" VerticalAlignment="Top" Height="304" Width="176" FontSize="12" levelValue="{hmi:SeBinding Tags.Node[view.msab.tank6].Items[level].Value, FallbackValue=0}" volumeValue="{hmi:SeBinding Tags.Node[view.msab.tank6].Items[volume].Value, FallbackValue=0}"/>
+                <msab:WideTank HorizontalAlignment="Left" Margin="799,492,0,0" VerticalAlignment="Top" Height="304" Width="176" FontSize="12" levelValue="{hmi:SeBinding Tags.Node[view.msab.tank7].Items[level].Value, FallbackValue=0}" volumeValue="{hmi:SeBinding Tags.Node[view.msab.tank7].Items[volume].Value, FallbackValue=0}"/>
+                <se:ValueDisplay HorizontalAlignment="Left" Margin="1038,492,0,0" VerticalAlignment="Top" Width="196" Height="71" BorderBrush="Black" BorderThickness="1" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" LabelForeground="DarkBlue" Label="%" Header="Газ Д1 (подроторн. пр.)" FontFamily="Tahoma" HeaderFontSize="11" Value="{hmi:Bind FallbackValue=0, Path=Tags.Node[view.msab].Items[gas1].Value}"/>
+                <se:ValueDisplay HorizontalAlignment="Left" Margin="1038,569,0,0" VerticalAlignment="Top" Width="196" Height="71" BorderBrush="Black" BorderThickness="1" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" LabelForeground="DarkBlue" Label="%" Header="Газ Д2 (ЦС)" FontFamily="Tahoma" HeaderFontSize="11" Value="{hmi:Bind FallbackValue=0, Path=Tags.Node[view.msab].Items[gas2].Value}"/>
+                <se:ValueDisplay HorizontalAlignment="Left" Margin="1038,646,0,0" VerticalAlignment="Top" Width="196" Height="71" BorderBrush="Black" BorderThickness="1" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" LabelForeground="DarkBlue" Label="%" Header="Газ Д3 (ЦС) H2S" FontFamily="Tahoma" HeaderFontSize="11" Value="{hmi:Bind FallbackValue=0, Path=Tags.Node[view.msab].Items[gas3].Value}"/>
+                <se:ValueDisplay HorizontalAlignment="Left" Margin="1038,726,0,0" VerticalAlignment="Top" Width="196" Height="70" BorderBrush="Black" BorderThickness="1" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" LabelForeground="DarkBlue" Label="%" Header="Газ Д4 H2S" FontFamily="Tahoma" HeaderFontSize="11" Value="{hmi:Bind FallbackValue=0, Path=Tags.Node[view.msab].Items[gas4].Value}"/>
+                <TextBlock HorizontalAlignment="Left" Height="32" Margin="316,451,0,0" TextWrapping="Wrap" Text="Емкости бурового раствора" VerticalAlignment="Top" Width="659" FontSize="20" TextAlignment="Center"/>
+                <TextBlock HorizontalAlignment="Left" Height="32" Margin="10,451,0,0" TextWrapping="Wrap" Text="Отсек приготовления" VerticalAlignment="Top" Width="280" FontSize="20" TextAlignment="Center"/>
+                <TextBlock HorizontalAlignment="Left" Height="45" Margin="264,101,0,0" TextWrapping="Wrap" Text="Водяная емкость (МВЕ)" VerticalAlignment="Top" Width="280" FontSize="20" TextAlignment="Center"/>
+                <TextBlock HorizontalAlignment="Left" Height="78" Margin="999,87,0,0" TextWrapping="Wrap" Text="Приемная емкость (МГО 1емк.)" VerticalAlignment="Top" Width="235" FontSize="20" TextAlignment="Center"/>
+                <TextBlock HorizontalAlignment="Left" Height="72" Margin="675,87,0,0" TextWrapping="Wrap" Text="Дегазатор (МГО 2емк.)" VerticalAlignment="Top" Width="182" FontSize="20" TextAlignment="Center"/>
+
+            </Grid>
+        </TabItem>
+        <TabItem Header="ИВЭ-1336">
+            <Grid>
+                <Canvas RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+                    <Canvas.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="0.9" ScaleY="0.9"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Canvas.RenderTransform>
+
+                    <TextBlock Height="58" Canvas.Left="28" TextWrapping="Wrap" Text="Глубина инструмента = глубине забоя" Canvas.Top="429" Width="200" FontSize="20" FontFamily="Tahoma"/>
+                    <TextBlock Height="53" Canvas.Left="463" TextWrapping="Wrap" Text="Обнуление положения блока" Canvas.Top="579" Width="216" FontSize="20" FontFamily="Tahoma" TextAlignment="Center"/>
+                    <TextBlock Height="30" Canvas.Left="20" TextWrapping="Wrap" Text="Отключение сирены" Canvas.Top="762" Width="212" FontSize="20" FontFamily="Tahoma" TextAlignment="Center"/>
+                    <TextBlock Height="53" Canvas.Left="696" TextWrapping="Wrap" Text="Обнуление глубины инструмента." Canvas.Top="579" Width="240" FontSize="20" FontFamily="Tahoma" TextAlignment="Center"/>
+                    <TextBlock Height="52" Canvas.Left="20" TextWrapping="Wrap" Text="Фиксация расхода на выходе" Canvas.Top="579" Width="212" FontSize="20" FontFamily="Tahoma" TextAlignment="Center"/>
+                    <TextBlock Height="52" Canvas.Left="260" TextWrapping="Wrap" Text="Обнуление веса на крюке" Canvas.Top="579" Width="175" FontSize="20" FontFamily="Tahoma" TextAlignment="Center"/>
+                    <TextBlock Height="36" Canvas.Left="966" TextWrapping="Wrap" Text="Яркость табло" Canvas.Top="762" Width="166" FontSize="20" FontFamily="Tahoma" TextAlignment="Center"/>
+                    <se:ScadaButton Canvas.Left="20"   Canvas.Top="492" Width="212" Height="75"   ReleasedCommand="{hmi:SeBinding Tags.Node[write.msab].Items[button1].WriteCommand}" PushCommand="{hmi:SeBinding Tags.Node[write.msab].Items[button1].WriteCommand}" Content="УСТАНОВИТЬ"    FontFamily="Tahoma" FontSize="22" />
+                    <se:ScadaButton Canvas.Left="463"  Canvas.Top="641" Width="216" Height="75"   ReleasedCommand="{hmi:SeBinding Tags.Node[write.msab].Items[button4].WriteCommand, FallbackValue=''}" PushCommand="{hmi:SeBinding Tags.Node[write.msab].Items[button4].WriteCommand, FallbackValue=''}" Content="ОБНУЛИТЬ"      FontFamily="Tahoma" FontSize="22" />
+                    <se:ScadaButton Canvas.Left="19"   Canvas.Top="795" Width="213" Height="75"   ReleasedCommand="{hmi:SeBinding Tags.Node[write.msab].Items[button7].WriteCommand, FallbackValue=''}" PushCommand="{hmi:SeBinding Tags.Node[write.msab].Items[button7].WriteCommand, FallbackValue=''}" Content="ОТКЛЮЧИТЬ"     FontFamily="Tahoma" FontSize="22" />
+                    <se:ScadaButton Canvas.Left="707"  Canvas.Top="641" Width="213" Height="75"   ReleasedCommand="{hmi:SeBinding Tags.Node[write.msab].Items[button5].WriteCommand, FallbackValue=''}" PushCommand="{hmi:SeBinding Tags.Node[write.msab].Items[button5].WriteCommand, FallbackValue=''}" Content="ОБНУЛИТЬ"      FontFamily="Tahoma" FontSize="22" />
+                    <se:ScadaButton Canvas.Left="20"   Canvas.Top="641" Width="212" Height="75"   ReleasedCommand="{hmi:SeBinding Tags.Node[write.msab].Items[button2].WriteCommand}" PushCommand="{hmi:SeBinding Tags.Node[write.msab].Items[button2].WriteCommand}" Content="ЗАФИКСИРОВАТЬ" FontFamily="Tahoma" FontSize="22" />
+                    <se:ScadaButton Canvas.Left="260"  Canvas.Top="641" Width="176" Height="75"   ReleasedCommand="{hmi:SeBinding Tags.Node[write.msab].Items[button3].WriteCommand, FallbackValue=''}" PushCommand="{hmi:SeBinding Tags.Node[write.msab].Items[button3].WriteCommand, FallbackValue=''}" Content="ОБНУЛИТЬ"      FontFamily="Tahoma" FontSize="22" />
+                    <se:ScadaButton Canvas.Left="966"  Canvas.Top="795" Width="75"  Height="75"   ReleasedCommand="{hmi:SeBinding Tags.Node[write.msab].Items[button10].WriteCommand, FallbackValue=''}" PushCommand="{hmi:SeBinding Tags.Node[write.msab].Items[button10].WriteCommand, FallbackValue=''}" Content="+"             FontSize="22" FontFamily="Tahoma" />
+                    <se:ScadaButton Canvas.Left="1057" Canvas.Top="795" Width="75" Height="75"    ReleasedCommand="{hmi:SeBinding Tags.Node[write.msab].Items[button11].WriteCommand, FallbackValue=''}" PushCommand="{hmi:SeBinding Tags.Node[write.msab].Items[button11].WriteCommand, FallbackValue=''}" Content="-"             FontSize="22" FontFamily="Tahoma" />
+                    <se:ScadaButton Canvas.Left="966"  Canvas.Top="641"  Width="166" Height="75"  ReleasedCommand="{hmi:SeBinding Tags.Node[write.msab].Items[button6].WriteCommand, FallbackValue=''}" PushCommand="{hmi:SeBinding Tags.Node[write.msab].Items[button6].WriteCommand, FallbackValue=''}" Content="ВКЛЮЧИТЬ"      FontFamily="Tahoma" FontSize="22" />
+                    <se:ScadaButton Canvas.Left="256"  Canvas.Top="795" Width="75" Height="75"    ReleasedCommand="{hmi:SeBinding Tags.Node[write.msab].Items[button8].WriteCommand, FallbackValue=''}" PushCommand="{hmi:SeBinding Tags.Node[write.msab].Items[button8].WriteCommand, FallbackValue=''}" Content="+"             FontSize="22" FontFamily="Tahoma" />
+                    <se:ScadaButton Canvas.Left="357"  Canvas.Top="795" Width="75" Height="75"    ReleasedCommand="{hmi:SeBinding Tags.Node[write.msab].Items[button9].WriteCommand, FallbackValue=''}" PushCommand="{hmi:SeBinding Tags.Node[write.msab].Items[button9].WriteCommand, FallbackValue=''}" Content="-"             FontSize="22" FontFamily="Tahoma" />
+                    <TextBlock Height="53" Canvas.Left="960" TextWrapping="Wrap" Text="Режим компенсации веса" Canvas.Top="579" Width="180" FontSize="20" TextAlignment="Center" FontFamily="Tahoma"/>
+                    <TextBlock Height="56" Canvas.Left="257" TextWrapping="Wrap" Text="Количество опущенных свечей" Canvas.Top="733" Width="174" FontSize="20" TextAlignment="Center" FontFamily="Tahoma"/>
+                    <TextBlock Height="54" Canvas.Left="451" TextWrapping="Wrap" Text="Изменение на X метров глубины инструмента." Canvas.Top="735" Width="240" FontSize="20" TextAlignment="Center" FontFamily="Tahoma"/>
+                    <TextBlock Height="54" Canvas.Left="696" TextWrapping="Wrap" Text="Изменение на X метров глубины забоя." Canvas.Top="735" Width="240" FontSize="20" TextAlignment="Center" FontFamily="Tahoma"/>
+                    <se:ValueDisplay Canvas.Left="835" Canvas.Top="10" Height="65" x:Name="ValueDisplay4" Width="331" LabelForeground="#FF041752" Label="т" ValueBackground="White" ValueForeground="Black" Header="Вес на крюке 2 (накладной датчик)" ValueFontSize="12" LabelFontSize="16" Value="{hmi:SeBinding FallbackValue=Fallback, Path=Tags.Node[скпб_вес2].Value, StringFormat=0.0}"/>
+                    <se:ValueDisplay Canvas.Left="835" Canvas.Top="80" FontFamily="Tahoma" Height="65" Width="331" ValueFontSize="16" LabelForeground="#FF041752" Label="м" Value="{hmi:SeBinding FallbackValue=Fallback, Path=Tags.Node[rig_tb_pos_msab].Value, StringFormat=0.00}" ValueBackground="White" ValueForeground="Black" Header="Высота талевого блока (СКПБ)" LabelFontSize="12" />
+                    <se:ValueDisplay Canvas.Left="835" Canvas.Top="288" FontFamily="Tahoma" Height="65" Width="331" ValueFontSize="16" LabelForeground="#FF041752" Label="м" Value="{hmi:Bind Tags.Node[rig_depth].Value, FallbackValue=0.0}" ValueBackground="White" ValueForeground="Black" Header="Глубина забоя" LabelFontSize="12" />
+                    <se:ValueDisplay Canvas.Left="835" Canvas.Top="218" FontFamily="Tahoma" Height="65" Width="331" ValueFontSize="16" LabelForeground="#FF041752" Label="м" Value="{hmi:Bind Tags.Node[скпб_глубина_инструмента].Value, FallbackValue=0.0}" ValueBackground="White" ValueForeground="Black" Header="Глубина инструмента" LabelFontSize="12" />
+                    <se:ValueDisplay Canvas.Left="835" Canvas.Top="150" FontFamily="Tahoma" Height="63" Width="331" ValueFontSize="16" LabelForeground="#FF041752" Label="м" Value="{hmi:Bind Tags.Node[скпб_подача_свечи].Value, FallbackValue=0.0}" ValueBackground="White" ValueForeground="Black" Header="Подача свечи" LabelFontSize="12" />
+                    <gauges:GaugeWeight HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="257" Canvas.Top="3" Height="449">
+                        <gauges:GaugeWeight.LayoutTransform>
+                            <ScaleTransform ScaleX="0.8" ScaleY="0.8"/>
+                        </gauges:GaugeWeight.LayoutTransform>
+                    </gauges:GaugeWeight>
+                    <se:RadialGauge Style="{StaticResource RpmGauge}" FontSize="18" Foreground="Black" Height="200" HorizontalAlignment="Left" x:Name="grayGauge3" VerticalAlignment="Top" Width="200" MajorTickBrush="Black" MajorTickCost="10" MajorTickLength="15" Maximum="40" MinorTickLength="10" Canvas.Left="824" Canvas.Top="417" StartAngle="190" EndAngle="-10">
+                        <se:RadialGauge.Ranges>
+                            <se:RadialRange Minimum="0" Maximum="{hmi:SeBinding Tags.Node[уставки_насос_общий_диапазон1].Value}" Fill="GreenYellow" Thickness="5"/>
+                            <se:RadialRange Minimum="{hmi:SeBinding Tags.Node[уставки_насос_общий_диапазон1].Value}" Maximum="{hmi:SeBinding Tags.Node[уставки_насос_общий_диапазон2].Value}" Fill="Gold" Thickness="5"/>
+                            <se:RadialRange Minimum="{hmi:SeBinding Tags.Node[уставки_насос_общий_диапазон2].Value}" Maximum="{hmi:SeBinding Tags.Node[уставки_насос_общий_диапазон3].Value}" Fill="Red" Thickness="5"/>
+                        </se:RadialGauge.Ranges>
+                        <se:RadialGauge.LayoutTransform>
+                            <ScaleTransform ScaleX="0.8" ScaleY=".8"/>
+                        </se:RadialGauge.LayoutTransform>
+                        <se:RadialGauge.Arrows>
+                            <se:RadialArrow Style="{StaticResource RpmRadialArrow}" Value="{hmi:SeBinding Tags.Node[ms_manifold].Value, FallbackValue=0.0, StringFormat=0.#}" />
+                        </se:RadialGauge.Arrows>
+
+                        <!--<TextBlock Text="МПа" TextAlignment="Center" Height="30" Margin="0,147,0,23" ></TextBlock>
+                        <TextBlock Text="{hmi:SeBinding Tags.Node[ms_manifold].Value, FallbackValue=0.00, StringFormat=0.00}" TextAlignment="Center" Margin="0,120,0,48" Height="30"/>-->
+                    </se:RadialGauge>
+                    <se:RadialGauge Style="{StaticResource RpmGauge}" FontSize="18" Foreground="Black" Height="200" HorizontalAlignment="Left" x:Name="grayGauge3_Copy" VerticalAlignment="Top" Width="200" MajorTickCost="10" MajorTickLength="15" Maximum="40" MinorTickLength="10" Canvas.Left="1007" Canvas.Top="415" StartAngle="190" EndAngle="-10">
+                        <se:RadialGauge.Ranges>
+                            <se:RadialRange Minimum="0" Maximum="{hmi:SeBinding Tags.Node[уставки_насос_общий_диапазон1].Value}" Fill="GreenYellow" Thickness="5"/>
+                            <se:RadialRange Minimum="{hmi:SeBinding Tags.Node[уставки_насос_общий_диапазон1].Value}" Maximum="{hmi:SeBinding Tags.Node[уставки_насос_общий_диапазон2].Value}" Fill="Gold" Thickness="5"/>
+                            <se:RadialRange Minimum="{hmi:SeBinding Tags.Node[уставки_насос_общий_диапазон2].Value}" Maximum="{hmi:SeBinding Tags.Node[уставки_насос_общий_диапазон3].Value}" Fill="Red" Thickness="5"/>
+                        </se:RadialGauge.Ranges>
+                        <se:RadialGauge.LayoutTransform>
+                            <ScaleTransform ScaleX="0.8" ScaleY=".8"/>
+                        </se:RadialGauge.LayoutTransform>
+                        <se:RadialGauge.Arrows>
+                            <se:RadialArrow Style="{StaticResource RpmRadialArrow}">
+                                <se:RadialArrow.Value>
+                                    <hmi:SeBinding Path="Tags.Node[давление_манифольда_влб].Value" StringFormat="0.#">
+                                        <hmi:SeBinding.FallbackValue>
+                                            <system:Double>0</system:Double>
+                                        </hmi:SeBinding.FallbackValue>
+                                    </hmi:SeBinding>
+                                </se:RadialArrow.Value>
+                            </se:RadialArrow>
+                        </se:RadialGauge.Arrows>
+                        <!--<TextBlock Text="{hmi:SeBinding Tags.Node[давление_манифольда_влб].Value, FallbackValue=0.00, StringFormat=0.00}" Height="30" TextAlignment="Center" Margin="0,121,0,49"/>
+                        <TextBlock Text="МПа" TextAlignment="Center" Height="30" Margin="0,147,0,23" ></TextBlock>-->
+                    </se:RadialGauge>
+                    <TextBlock Canvas.Left="999" TextWrapping="Wrap" Canvas.Top="358" FontSize="20" HorizontalAlignment="Center" FontFamily="Tahoma" Width="168"><Run Text="    Давление в"/><LineBreak/><Run Text="манифольде ВЛБ"/></TextBlock>
+                    <TextBlock Canvas.Left="835" TextWrapping="Wrap" Canvas.Top="358" FontSize="20" HorizontalAlignment="Center" FontFamily="Tahoma" Width="157"><Run Text="   Давление "/><Run Language="ru-ru" Text="на"/><LineBreak/><Run Language="ru-ru" Text="выходе насосов"/></TextBlock>
+                    <gauges:GaugeRotor2 Height="133" HorizontalAlignment="Center" Canvas.Top="36" x:Name="gaugeRotor21" VerticalAlignment="Top" Width="200" Canvas.Left="6">
+                        <gauges:GaugeRotor2.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX=".8" ScaleY=".8"/>
+                            </TransformGroup>
+                        </gauges:GaugeRotor2.RenderTransform>
+                    </gauges:GaugeRotor2>
+                    <TextBlock FontSize="22" Height="25" HorizontalAlignment="Center" x:Name="textBlock3" Text="Момент ротора" TextAlignment="Center" VerticalAlignment="Top" Width="240" Foreground="Black" FontFamily="Tahoma" Canvas.Left="8" Canvas.Top="8" />
+                    <se:ValueDisplay Canvas.Left="20" Canvas.Top="288" x:Name="ValueDisplay1" Width="212" ValueBackground="White" ValueForeground="Black" Header="Фактический момент ротора" HeaderForeground="White" LabelForeground="#FF041752" LabelFontSize="16" Label="кН х м" Value="{hmi:Bind FallbackValue=0.0, Path=Tags.Node[view.main_drives.rotor].Items[torque].Value}" Height="65" />
+                </Canvas>
+                <se:KeypadButton HorizontalAlignment="Left" Height="70" Margin="700,713,0,0" VerticalAlignment="Top" Width="195">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.msab].Items[button13].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <system:Double>0</system:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+                <se:KeypadButton HorizontalAlignment="Left" Height="70" Margin="480,713,0,0" VerticalAlignment="Top" Width="195">
+                    <se:KeypadButton.Value>
+                        <hmi:SeBinding  Path="Tags.Node[write.msab].Items[button12].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <system:Double>0</system:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:KeypadButton.Value>
+                </se:KeypadButton>
+            </Grid>
+        </TabItem>
+
+    </TabControl>
+</UserControl>

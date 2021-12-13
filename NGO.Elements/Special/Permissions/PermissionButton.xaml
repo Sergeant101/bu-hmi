@@ -1,0 +1,36 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:buttons="clr-namespace:Monokot.ScadaExtension.Wpf.Controls.Standard.Buttons;assembly=Monokot.ScadaExtension.Wpf"
+             xmlns:se="http://schemas.monokot.com/se/"
+             xmlns:hmi="http://schemas.monokot.com/hmi/"
+             x:Class="NGO.Elements.Special.Permissions.PermissionButton"
+             mc:Ignorable="d" 
+             x:Name="_UC"
+             d:DesignHeight="70" d:DesignWidth="230">
+    <!--<UserControl.Resources>
+        <ResourceDictionary Source="../../style/style.xaml"/>
+    </UserControl.Resources>-->
+    <!--<Grid>
+        <buttons:BitmapButton  Content="{Binding logoutText, ElementName=_UC}" Width="auto" Height="auto" PreviewMouseLeftButtonUp="Logout_click" Margin="0,0,0,0">
+            <buttons:BitmapButton.Visibility>
+                <hmi:SeBinding FallbackValue="Hidden" Path="isLogged">
+                    <hmi:SeBinding.Converter>
+                        <BooleanToVisibilityConverter/>
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </buttons:BitmapButton.Visibility>
+            </buttons:BitmapButton>
+            <buttons:BitmapButton Content="{Binding loginText, ElementName=_UC}"  Width="auto" Height="auto" PreviewMouseLeftButtonUp="Button_Click" Margin="0,0,0,0">
+            <buttons:BitmapButton.Visibility>
+                <hmi:SeBinding FallbackValue="Visible" Path="isLogged">
+                    <hmi:SeBinding.Converter>
+                        <hmi:BooleanToInverseVisibility/>
+                    </hmi:SeBinding.Converter>
+                </hmi:SeBinding>
+            </buttons:BitmapButton.Visibility>
+        </buttons:BitmapButton>
+    </Grid>-->
+</UserControl>

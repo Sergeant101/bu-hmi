@@ -1,0 +1,20 @@
+﻿<se:SEWindow x:Class="VFD_160.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:my="clr-namespace:System;assembly=mscorlib"
+        xmlns:hmi="http://schemas.monokot.com/hmi/"
+        xmlns:se="http://schemas.monokot.com/se/"
+        xmlns:frames="clr-namespace:VFD_160.Frames"
+        Title="SCADA VFD Application"
+        WindowState="Normal"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize" 
+        Background="#FFEBEBEB" 
+        Width="1280"
+        Height="1024"
+        Name="_MW"
+        WindowStyle="None">
+    <Grid>
+        <frames:MainFrame/>
+    </Grid>
+</se:SEWindow>

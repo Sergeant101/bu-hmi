@@ -1,0 +1,128 @@
+﻿311024
+8
+lang|RU|0 (:2 ) В кабине бурильщика зажечь светодиод HL1 в режиме "Работа/Сборка/Авария насоса 1"
+lang|EN|0 (:2 ) Switch on led "Stop mud pump 1" in VFD house
+311024
+9
+lang|RU|1 (:3 ) В кабине бурильщика зажечь светодиод HL2 в режиме "Работа/Сборка/Авария насоса 2"
+lang|EN|1 (:3 ) Switch on led "Work mud pump 1" in VFD house
+311024
+10
+lang|RU|2 (:4 ) В кабине бурильщика зажечь светодиод кнопки SB8 в режиме "Работа/Сборка/Авария лебедки"
+lang|EN|2 (:4 ) Switch on led "Emergency mud pump 1" in VFD house
+311024
+11
+lang|RU|3 (:5 ) В кабине бурильщика зажечь светодиод кнопки SB1 в режиме "Работа/Сборка/Авария ротора"
+lang|EN|3 (:5 ) Switch on led "Stop mud pump 2" in VFD house
+311024
+12
+lang|RU|4 (:6 ) Растормозить тормоз гидротолкателя доп. привода (реле К24 пускатель 307КМ1)
+lang|EN|4 (:6 ) Switch on led "Work mud pump 2" in VFD house
+311024
+13
+lang|RU|5 (:7 ) В кабине бурильщика зажечь светодиод кнопки SB10 в режиме "Работа/Сборка/Авария доп. привода"
+lang|EN|5 (:7 ) Switch on led "Emergency mud pump 2" in VFD house
+311024
+14
+lang|RU|6 (:8 ) Резерв
+lang|EN|6 (:8 ) Switch on led "Start/Stop/Unlock" main drawworks on drillers console
+311024
+15
+lang|RU|7 (:9 ) В кабине бурильщика зажечь светодиод кнопки SB12 в режиме "Работа/Сборка/Авария вспом. лебедки"
+lang|EN|7 (:9 ) Switch on led "Start/Stop/Unlock" aux. drawworks on drillers console
+311024
+0
+lang|RU|0 (:12 ) Открыть дисковый затвор в Модуле тонкой очистки (реле 704К3, пускатель 704КМ1)
+lang|EN|0 (:12 ) Switch on led "Stop mud pump 3" in VFD house
+311024
+1
+lang|RU|1 (:13 ) Закрыть дисковый затвор в Модуле тонкой очистки (реле 704К4, пускатель 704КМ2)
+lang|EN|1 (:13 ) Switch on led "Work mud pump 3" in VFD house
+311024
+2
+lang|RU|2 (:14 ) Включить сирену на посту бурильщика (реле К17)
+lang|EN|2 (:14 ) Switch on led "Emergency mud pump 3" in VFD house
+311024
+3
+lang|RU|3 (:15 ) Резерв
+lang|EN|3 (:15 ) Switch on fan brake resistirs
+311024
+4
+lang|RU|4 (:16 ) Резерв
+lang|EN|4 (:16 ) Spare
+311024
+5
+lang|RU|5 (:17 ) Включить вентилятор обдува двигателя ротора МР-МВ (реле 420K2, пускатель 420KМ1)
+lang|EN|5 (:17 ) Spare
+311024
+6
+lang|RU|6 (:18 ) Включить обогрев двигателя ротора МР-ЕК (реле 422K2, пускатель 422K1)
+lang|EN|6 (:18 ) Spare
+311024
+7
+lang|RU|7 (:19 ) Включить вентилятор обдува двигателя лебедки МЛ1-МВ (реле 380K1, пускатель 380KМ1)
+lang|EN|7 (:19 ) Spare
+311025
+8
+lang|RU|0 (:22 ) Включить вентилятор обдува двигателя лебедки МЛ2-МВ (реле 381K1, пускатель 381KМ1)
+lang|EN|0 (:22 ) Switch on led "Stop drawworks 1" in VFD house
+311025
+9
+lang|RU|1 (:23 ) Включить обогрев двигателя лебедки МЛ1-ЕК (реле 382K2, пускатель 382K1)
+lang|EN|1 (:23 ) Switch on led "Work drawworks 1" in VFD house
+311025
+10
+lang|RU|2 (:24 ) Включить обогрев двигателя лебедки МЛ2-ЕК (реле 383K2, пускатель 383K1)
+lang|EN|2 (:24 ) Switch on led "Emergency drawworks 1" in VFD house
+311025
+11
+lang|RU|3 (:25 ) Включить насос смазки лебедки МСЛ (реле 384K1, пускатель 384KМ1)
+lang|EN|3 (:25 ) Switch on led "Stop drawworks 2" in VFD house
+311025
+12
+lang|RU|4 (:26 ) Включить реле 367К1 "Деблокировка противозатаскивателя" (питание реле К10 контроля SQП)
+lang|EN|4 (:26 ) Switch on led "Work drawworks 2" in VFD house
+311025
+13
+lang|RU|5 (:27 ) В блоке аппаратуры БА2 включить пневмовентиль Р1 "Разрешить растормаживание" (реле К33)
+lang|EN|5 (:27 ) Switch on led "Emergency drawworks 2" in VFD house
+311025
+14
+lang|RU|6 (:28 ) В блоке аппаратуры БА2 включить пневмовентиль Р2 "Растормозить тормоз лебедки" (реле К34)
+lang|EN|6 (:28 ) Switch on led "Stop aux. drive" in VFD house
+311025
+15
+lang|RU|7 (:29 ) Резерв
+lang|EN|7 (:29 ) Switch on led "Work aux. drive" in VFD house
+311025
+0
+lang|RU|0 (:32 ) Резерв
+lang|EN|0 (:32 ) Switch on led "Emergency aux. drive" in VFD house
+311025
+1
+lang|RU|1 (:33 ) В блоке аппаратуры БА1 включить пневмовентиль Р1 "Включить муфту ДП" (реле К31)
+lang|EN|1 (:33 ) Not interlock of aux. drive in VFD house
+311025
+2
+lang|RU|2 (:34 ) В блоке аппаратуры БА1 включить пневмовентиль Р2 "Отключить муфту ДП" (реле К32)
+lang|EN|2 (:34 ) Not interlock of drawworks 1 in VFD house
+311025
+3
+lang|RU|3 (:35 ) Резерв
+lang|EN|3 (:35 ) Not interlock of drawworks 2 in VFD house
+311025
+4
+lang|RU|4 (:36 ) Резерв
+lang|EN|4 (:36 ) Interlock of mud pump 1 in VFD house
+311025
+5
+lang|RU|5 (:37 ) Резерв
+lang|EN|5 (:37 ) Interlock of mud pump 2 in VFD house
+311025
+6
+lang|RU|6 (:38 ) В контейнере КТУ-СВП в шкафу ШМПК включить реле 1200К1 "Буровой насос отключен"
+lang|EN|6 (:38 ) Interlock of mud pump 3 in VFD house
+311025
+7
+lang|RU|7 (:39 ) В контейнере КТУ-СВП в шкафу ШМПК включить реле 1200К2 "Буровая лебедка отключена"
+lang|EN|7 (:39 ) Spare

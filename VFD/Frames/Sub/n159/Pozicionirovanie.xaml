@@ -1,0 +1,121 @@
+﻿<UserControl x:Class="VFD.Frames.Sub.n159.Pozicionirovanie"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VFD.Frames.Sub.n159"
+             xmlns:se="http://schemas.monokot.com/se/"
+             xmlns:hmi="http://schemas.monokot.com/hmi/"
+             xmlns:System="clr-namespace:System;assembly=mscorlib" 
+             xmlns:permissions="clr-namespace:NGO.Elements.Special.Permissions.View;assembly=NGO.Elements"
+             xmlns:Lebedka="clr-namespace:NGO.Elements.Lebedka;assembly=NGO.Elements"
+             xmlns:model="clr-namespace:NGO.Elements.Special.Permissions.Model;assembly=NGO.Elements"
+             xmlns:style="clr-namespace:NGO.Elements.style;assembly=NGO.Elements"
+             xmlns:position="clr-namespace:NGO.Elements.Linear.Position;assembly=NGO.Elements"
+             mc:Ignorable="d" 
+             d:DesignHeight="1024" d:DesignWidth="1280"
+             >
+    <Grid  Background="#FFC9C9C9">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="155*"/>
+            <ColumnDefinition Width="101*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="400*"/>
+            <RowDefinition Height="25*"/>
+        </Grid.RowDefinitions>
+        <Canvas Grid.ColumnSpan="2">
+            <Canvas.LayoutTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.97" ScaleY="0.97"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Canvas.LayoutTransform>
+            <style:cool_rect Canvas.Left="275" Height="827" Width="704" Canvas.Top="4"/>
+            <position:ComplexBlockPosition Width="89" Height="778" Canvas.Left="591" Canvas.Top="19"/>
+            <se:ValueDisplay Canvas.Left="685" Canvas.Top="19" Height="70" x:Name="ValueDisplay1" Width="195" HeaderBackground="Black" LabelFontSize="16"  LabelForeground="#FF041752" Label="м" Value="{hmi:SeBinding Tags.Node[view.main_drives.drawwork].Items[verhnij_predel].Value, FallbackValue=0.0, StringFormat=0.00}" ValueBackground="White" ValueForeground="Black" Header="ВЕРХНИЙ ПРЕДЕЛ" HeaderFontSize="12" FontFamily="Tahoma" />
+            <se:KeypadButton Canvas.Left="885" Canvas.Top="19" Width="75" Height="70" Title="ВВЕДИТЕ ЗНАЧЕНИЕ"  Message="ВЕРХНИЙ ПРЕДЕЛ, М">
+                <se:KeypadButton.Value>
+                    <hmi:SeBinding  Path="Tags.Node[write.drawwork].Items[verhnij_predel].Value">
+                        <hmi:SeBinding.FallbackValue>
+                            <System:Double>0</System:Double>
+                        </hmi:SeBinding.FallbackValue>
+                    </hmi:SeBinding>
+                </se:KeypadButton.Value>
+            </se:KeypadButton>
+            <se:ValueDisplay Canvas.Left="685" Canvas.Top="727" Height="70" x:Name="ValueDisplay13_Copy1" Width="195" HeaderBackground="Black" LabelFontSize="16" LabelForeground="#FF041752" Label="м" Value="{hmi:SeBinding Tags.Node[view.main_drives.drawwork].Items[nizhnij_predel].Value, FallbackValue=0.0, StringFormat=0.00}" ValueBackground="White" ValueForeground="Black" Header="НИЖНИЙ ПРЕДЕЛ" HeaderFontSize="12" FontFamily="Tahoma" />
+            <se:ValueDisplay Canvas.Left="685" Canvas.Top="94" Height="70" Width="195" HeaderBackground="Black" LabelFontSize="16" LabelForeground="#FF041752" Label="м" Value="{hmi:SeBinding Tags.Node[view.main_drives.drawwork].Items[tb_max].Value, FallbackValue=0.00, StringFormat=0.00}" ValueBackground="White" ValueForeground="Black" Header="ВЕРХНЯЯ ТОЧКА" HeaderFontSize="12" FontFamily="Tahoma" />
+            <se:ValueDisplay Canvas.Left="685" Canvas.Top="578" Height="70" Width="195" HeaderBackground="Black" LabelFontSize="16" LabelForeground="#FF041752" Label="м" Value="{hmi:SeBinding Tags.Node[view.main_drives.drawwork].Items[tb_min].Value, FallbackValue=0.00, StringFormat=0.00}" ValueBackground="White" ValueForeground="Black" Header="НИЖНЯЯ ТОЧКА" HeaderFontSize="12" FontFamily="Tahoma" />
+            <se:ValueDisplay Canvas.Left="810" Canvas.Top="169" Height="70" x:Name="ValueDisplay13_Copy4" Width="195" HeaderBackground="Black" LabelFontSize="16" LabelForeground="#FF041752" Label="м" Value="{hmi:SeBinding Tags.Node[view.main_drives.drawwork].Items[tormoznoj_put_pered_v_t].Value, FallbackValue=0.00, StringFormat=0.00}" ValueBackground="White" ValueForeground="Black" Header="ТОРМОЗНОЙ ПУТЬ ПЕРЕД В.Т." HeaderFontSize="12" FontFamily="Tahoma" Visibility="Hidden" />
+            <se:KeypadButton Canvas.Left="1010" Canvas.Top="169" Width="75" Height="70" Visibility="Hidden" >
+                <se:KeypadButton.Value>
+                    <hmi:SeBinding  Path="Tags.Node[write.drawwork].Items[tormoznoj_put_pered_v_t].Value">
+                        <hmi:SeBinding.FallbackValue>
+                            <System:Double>0</System:Double>
+                        </hmi:SeBinding.FallbackValue>
+                    </hmi:SeBinding>
+                </se:KeypadButton.Value>
+            </se:KeypadButton>
+            <se:ValueDisplay Canvas.Left="810" Canvas.Top="503" Height="70" x:Name="ValueDisplay13_Copy6" Width="195" HeaderBackground="Black" LabelFontSize="16" LabelForeground="#FF041752" Label="м" Value="{hmi:SeBinding Tags.Node[view.main_drives.drawwork].Items[tormoznoj_put_pered_n_t].Value, FallbackValue=0.00, StringFormat=0.00}" ValueBackground="White" ValueForeground="Black" Header="ТОРМОЗНОЙ ПУТЬ ПЕРЕД Н.Т." HeaderFontSize="12" FontFamily="Tahoma" Visibility="Hidden"/>
+            <se:KeypadButton Canvas.Left="1010" Canvas.Top="503" Width="75" Height="70" Visibility="Hidden" >
+                <se:KeypadButton.Value>
+                    <hmi:SeBinding  Path="Tags.Node[write.drawwork].Items[tormoznoj_put_pered_n_t].Value">
+                        <hmi:SeBinding.FallbackValue>
+                            <System:Double>0</System:Double>
+                        </hmi:SeBinding.FallbackValue>
+                    </hmi:SeBinding>
+                </se:KeypadButton.Value>
+            </se:KeypadButton>
+
+            <se:ValueDisplay Canvas.Left="428" Canvas.Top="578" Height="70" x:Name="ValueDisplay13_Copy7" Width="195" HeaderBackground="Black" LabelFontSize="16" LabelForeground="#FF041752" Label="м/с" Value="{hmi:SeBinding modules[tags_mod].Items[pos_speed_bot].Value, FallbackValue=0.0, StringFormat=0.00}" ValueBackground="White" ValueForeground="Black" Header="Скорость за н.т." HeaderFontSize="12" FontFamily="Tahoma" Visibility="Hidden" />
+            <se:KeypadButton Canvas.Left="628" Canvas.Top="582" Width="75" Height="55" Command="{Binding ShowKeypadCmd, ElementName=keypad_pos_speed_bot}" IsEnabled="{hmi:SeBinding modules[plug_mod].Items[PermissionPlugin].levels[2].access, FallbackValue=false}" Visibility="Hidden"/>
+            <se:CtrlKeypad x:Name="keypad_pos_speed_bot1" Multiplier="100" Canvas.Left="602" Canvas.Top="539" EnterCommand="{hmi:SeBinding modules[tags_mod].Items[db_write_pos_32].WriteCommand, FallbackValue=''}" WindowTitle="ВВЕДИТЕ ЗНАЧЕНИЕ" WindowMessage="" Visibility="Hidden">
+                <se:CtrlKeypad.Rules>
+                    <hmi:RangeValidationRule maximumValue="0.3" minimumValue="0.05"/>
+                </se:CtrlKeypad.Rules>
+            </se:CtrlKeypad>
+            <se:KeypadButton Canvas.Left="885" Canvas.Top="727" Width="75" Height="70" BorderThickness="8" Title="ВВЕДИТЕ ЗНАЧЕНИЕ" Message="НИЖНИЙ ПРЕДЕЛ, М">
+                <se:KeypadButton.Value>
+                    <hmi:SeBinding  Path="Tags.Node[write.drawwork].Items[nizhnij_predel].Value">
+                        <hmi:SeBinding.FallbackValue>
+                            <System:Double>0</System:Double>
+                        </hmi:SeBinding.FallbackValue>
+                    </hmi:SeBinding>
+                </se:KeypadButton.Value>
+            </se:KeypadButton>
+
+            <se:HmiButton VerticalAlignment="Top" Height="46" HorizontalContentAlignment="Left" hmi:Click.Command="{hmi:SeBinding Tags.Node[write.drawwork.bypass].Items[avtoostanovka_bp_w].WriteCommand}" Canvas.Left="303" Canvas.Top="661" Width="275">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5,0,0,0">
+                    <se:VisualBox Style="{StaticResource VB_LedStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Width="22" Height="22">
+                        <se:VisualBox.VisualStateCollection>
+                            <se:VisualBoxStateItem Background="{StaticResource MediaBoxEmergencySolidColorBrush}">
+                                <se:VisualBoxStateItem.Value>
+                                    <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork.bypass].Items[avtoostanovka_bp].Value">
+                                        <hmi:SeBinding.FallbackValue>
+                                            <System:Boolean>False</System:Boolean>
+                                        </hmi:SeBinding.FallbackValue>
+                                    </hmi:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+
+                            </se:VisualBoxStateItem>
+                        </se:VisualBox.VisualStateCollection>
+                    </se:VisualBox>
+                    <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" Margin="5,0,0,0" Text="АВТООСТАНОВКА" FontSize="18"/>
+                </StackPanel>
+            </se:HmiButton>
+
+            <!--<permissions:PermissionButton Canvas.Left="1045" Canvas.Top="833" Width="225" permissionPluginName="PermissionPlugin" Foreground="White" FontSize="20" userName="НАСТРОЙКА ПОЗИЦИОНИРОВАНИЯ" loginText="ВВЕДИТЕ ПАРОЛЬ" logoutText="ВЫХОД" Height="65"/>-->
+            <TextBlock Canvas.Left="303" FontSize="24" TextWrapping="Wrap" Text="ПРИ СБОЕ В РАБОТЕ&#xA;ЭНКОДЕРА ОТКЛЮЧИ&#xA;АВТООСТАНОВКУ" FontWeight="Bold" Canvas.Top="312" TextAlignment="Center"/>
+            <se:HmiButton Canvas.Left="685" Canvas.Top="661" Width="195" FontSize="16" Height="46" hmi:Click.Command="{hmi:SeBinding Tags.Node[write.drawwork].Items[zadat_uroven_pola].WriteCommand}" >
+                <TextBlock TextAlignment="Center" Text="ЗАДАТЬ УРОВЕНЬ ПОЛА" TextWrapping="Wrap"/>
+            </se:HmiButton>
+            <Lebedka:Avtoostanovka_vb HorizontalAlignment="Left" Height="85" VerticalAlignment="Top" Width="275" Canvas.Left="303" Canvas.Top="712"/>
+
+
+        </Canvas>
+        <permissions:PermissionButton userName="usr6" Grid.Row="1" HorizontalAlignment="Right" Width="200" Margin="0,0,10,0" VerticalAlignment="Top" FontSize="20" Height="50" Grid.Column="1"  />
+
+    </Grid>
+</UserControl>

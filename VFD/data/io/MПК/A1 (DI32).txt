@@ -1,0 +1,128 @@
+311002
+8
+lang|RU|0 (:2 ) Включен вытоматический выключатель QF1 (питание 400В от АДЭС)
+lang|EN|0 (:2 ) Not push button "Stop mud pump 1" on drillers console
+311002
+9
+lang|RU|1 (:3 ) Включен автоматический выключатель QF3 (питание 690В от Т1)
+lang|EN|1 (:3 ) Not push button "Stop mud pump 2" on drillers console
+311002
+10
+lang|RU|2 (:4 ) Включен автоматический выключатель QF4 (питание  400В от Т1)
+lang|EN|2 (:4 ) Not push button "Stop mud pump 3" on drillers console
+311002
+11
+lang|RU|3 (:5 ) Нет перегрева тормозных резисторов R1 и R2 (резерв)
+lang|EN|3 (:5 ) Rotation Rotary to rigth on drillers console
+311002
+12
+lang|RU|4 (:6 ) Есть давление воздуха обдува тормозных резисторов R1 (резерв)
+lang|EN|4 (:6 ) Rotation Rotary to left on drillers console
+311002
+13
+lang|RU|5 (:7 ) Включен вакуумный выкючатель Т1
+lang|EN|5 (:7 ) Lever pushed of top drive
+311002
+14
+lang|RU|6 (:8 ) Есть давление воздуха обдува тормозных резисторов R2 (резерв)
+lang|EN|6 (:8 ) IBOP of Top drive closed
+311002
+15
+lang|RU|7 (:9 ) Резерв
+lang|EN|7 (:9 ) Pipe grab of Top drive closed
+311002
+0
+lang|RU|0 (:12 ) Подано питание на трансформатор ШВ1-Т1
+lang|EN|0 (:12 ) Add speed of mud pump 1 on drillers console
+311002
+1
+lang|RU|1 (:13 ) Реле контроля аварийного стопа из КРУ (кнопка SB1)
+lang|EN|1 (:13 ) Reduce speed of mud pump 1 on drillers console
+311002
+2
+lang|RU|2 (:14 ) Реле контроля аварийного стопа из ТР (кнопка SB2)
+lang|EN|2 (:14 ) Add speed of mud pump 2 on drillers console
+311002
+3
+lang|RU|3 (:15 ) Реле контроля аварийного стопа из РУ-0.4кВ  (кнопка SB3)
+lang|EN|3 (:15 ) Reduce speed of mud pump 2 on drillers console
+311002
+4
+lang|RU|4 (:16 ) Реле контроля аварийного стопа из ЧП (кнопка SB4)
+lang|EN|4 (:16 ) Add speed of mud pump 3 on drillers console
+311002
+5
+lang|RU|5 (:17 ) Пожарная сигнализация в модуле энергообеспечения
+lang|EN|5 (:17 ) Reduce speed of mud pump 3  on drillers console
+311002
+6
+lang|RU|6 (:18 ) Изоляция в норме
+lang|EN|6 (:18 ) Not emergENcy stop of mud pumps on drillers console
+311002
+7
+lang|RU|7 (:19 ) Резерв
+lang|EN|7 (:19 ) Not push button "Drawwarks brake" on drillers console
+311003
+8
+lang|RU|0 (:22 ) Нет неисправности БКТ трансформатора Т1
+lang|EN|0 (:22 ) Switch on "Start/Unlock"of Rotor on drillers console
+311003
+9
+lang|RU|1 (:23 ) Перегрев трансформатора Т1
+lang|EN|1 (:23 ) Switch on "Stop"of Rotor on drillers console
+311003
+10
+lang|RU|2 (:24 ) Авария трансформатора Т1
+lang|EN|2 (:24 ) Increase speed of Rotor on drillers console
+311003
+11
+lang|RU|3 (:25 ) Включен пускатель 1 обдува тормозных резисторов R1 (резерв)
+lang|EN|3 (:25 ) Reduce speed of  Rotor on drillers console
+311003
+12
+lang|RU|4 (:26 ) Включен пускатель 2 обдува тормозных резисторов R2 (резерв)
+lang|EN|4 (:26 ) Increase torque of Rotor on drillers console
+311003
+13
+lang|RU|5 (:27 ) Нет высокой температуры в МЭ
+lang|EN|5 (:27 ) Reduce torque of  Rotor on drillers console
+311003
+14
+lang|RU|6 (:28 ) Высокая влажность в МЭ
+lang|EN|6 (:28 ) Not a raised rotary table
+311003
+15
+lang|RU|7 (:29 ) Допустимая температура в шкафу АКЛ
+lang|EN|7 (:29 ) Air pressure sENsor MR ON
+311003
+0
+lang|RU|0 (:32 ) Контроль всей аварийной  цепи при питании от ЛЭП
+lang|EN|0 (:32 ) Push button "Start/Unlock" main drive drawworks
+311003
+1
+lang|RU|1 (:33 ) Контроль всей аварийной  цепи при питании от ДЭС (резерв)
+lang|EN|1 (:33 ) Not push button "Stop" main drive drawworks
+311003
+2
+lang|RU|2 (:34 ) Блокировка дверей трансформатора Т1
+lang|EN|2 (:34 ) Push button "Start/Unlock" aux. drive drawworks
+311003
+3
+lang|RU|3 (:35 ) Сигнал "RUnning" от привода осн. лебедки
+lang|EN|3 (:35 ) Not push button "Stop" aux. drive drawworks
+311003
+4
+lang|RU|4 (:36 ) Сигнал "RUnning" от привода доп. лебедки
+lang|EN|4 (:36 ) Not push button "EmergENcy Stop of Drilling Rig"
+311003
+5
+lang|RU|5 (:37 ) 50% НКПР
+lang|EN|5 (:37 ) DRUm is not in position "parking"
+311003
+6
+lang|RU|6 (:38 ) Реле контроля аварийного стопа из КБ и пожар. Системы
+lang|EN|6 (:38 ) Drawworks mode is drilling
+311003
+7
+lang|RU|7 (:39 ) Есть питание цепи нулевого расцепителя
+lang|EN|7 (:39 ) Drawworks mode is Round-Trip

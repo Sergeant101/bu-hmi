@@ -1,0 +1,131 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:System="clr-namespace:System;assembly=mscorlib"
+             xmlns:se="http://schemas.monokot.com/se/"
+             xmlns:hmi="http://schemas.monokot.com/hmi/"
+             x:Class="NGO.Elements.Gauges.GaugeHelperDrawwork2" 
+             mc:Ignorable="d" 
+             d:DesignHeight="380" d:DesignWidth="380">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Monokot.ScadaExtension.Wpf;component/Themes/Controls/IndustrialStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <Style TargetType="se:RadialArrow"
+                   x:Key="KagvTriangle"
+                   x:Shared="False">
+                <Setter Property="Width" Value="40"/>
+                <Setter Property="Height" Value="80"/>
+                <Setter Property="Background" Value="Black"/>
+                <Setter Property="BorderBrush" Value="Black"/>
+                <Setter Property="RenderTransformOrigin" Value="0.5,1"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate>
+                            <Canvas>
+                                <Canvas.CacheMode>
+                                    <BitmapCache/>
+                                </Canvas.CacheMode>
+                                <Canvas.Background>
+                                    <DrawingBrush Stretch="Fill">
+                                        <DrawingBrush.Drawing>
+                                            <DrawingGroup>
+                                                <DrawingGroup.Children>
+                                                    <GeometryDrawing Brush="{Binding Background, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Control}}}" 
+                                                                     Geometry="F1 M 164.202,824.021L 177.785,643.113L 191.365,824.021L 164.202,824.021 Z ">
+                                                        <GeometryDrawing.Pen>
+                                                            <Pen LineJoin="Miter" 
+                                                                 Brush="{Binding BorderBrush, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Control}}}" />
+                                                        </GeometryDrawing.Pen>
+                                                    </GeometryDrawing>
+                                                </DrawingGroup.Children>
+                                            </DrawingGroup>
+                                        </DrawingBrush.Drawing>
+                                    </DrawingBrush>
+                                </Canvas.Background>
+                            </Canvas>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Canvas>
+        <se:LevelBar Canvas.Left="73" Canvas.Top="320" x:Name="levelBar1" Height="15" Width="234" Maximum="150" Minimum="0" Kind="Horizontal">
+            <se:LevelBar.Level>
+                <hmi:Bind  Path="Tags.Node[view.helperdrawwork2].Items[torque_0_100].Value">
+                    <hmi:Bind.FallbackValue>
+                        <System:Double>0</System:Double>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </se:LevelBar.Level>
+            <se:LevelBar.Fill>
+                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                    <GradientStop Color="Green" Offset="0" />
+                    <GradientStop Color="Yellow" Offset="0.5" />
+                    <GradientStop Color="Red" Offset="1" />
+                </LinearGradientBrush>
+            </se:LevelBar.Fill>
+        </se:LevelBar>
+
+        <Image Height="380" Width="380" Source="/NGO.Elements;component/Content/Gauges/Background/blue%20gauge%202.png" />
+        <Grid Height="380" Width="380">
+            <TextBlock Height="23" HorizontalAlignment="Center" FontFamily="Tahoma" FontWeight="Bold" TextAlignment="Center" FontSize="18" VerticalAlignment="Top" Text="об/мин" Margin="0,100,0,0"/>
+        </Grid>
+        <se:RadialGauge x:Name="seGauge1" Height="340" Width="340" Canvas.Left="22" Canvas.Top="22" MajorTickBrush="White" MinorTickBrush="White" ShowStick="False" Foreground="White" MajorTickCost="500" MinorTickCost="100" MajorTickThickness="5" MajorTickLength="20" MinorTickLength="15" MinorTickThickness="2" FontSize="20" ScaleLabelsStringFormat="{}{0:0.##}" FontFamily="Tahoma" EndAngle="-10" StartAngle="190" MinorTickCount="4" MajorTickCount="5" Maximum="1500" Minimum="-1500">
+            <se:RadialGauge.Arrows>
+                <se:RadialArrow Height="180" Width="32" BorderBrush="Transparent" Style="{StaticResource TriangleRadialArrow}">
+                    <se:RadialArrow.Value>
+                        <hmi:Bind  Path="Tags.Node[view.helperdrawwork2].Items[real].Value">
+                            <hmi:Bind.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:RadialArrow.Value>
+                </se:RadialArrow>
+                <se:RadialArrow Height="180" Width="22" BorderBrush="Transparent" Background="Red" Style="{StaticResource TriangleRadialArrow}" Visibility="Hidden">
+                    <se:RadialArrow.Value>
+                        <hmi:Bind  Path="Tags.Node[view.helperdrawwork2].Items[reference].Value">
+                            <hmi:Bind.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:RadialArrow.Value>
+                </se:RadialArrow>
+                <se:RadialArrow Style="{StaticResource KagvTriangle}" Height="150" Width="10" >
+                    <se:RadialArrow.Value>
+                        <hmi:Bind  Path="Tags.Node[view.helperdrawwork2].Items[zadanie_s_kagv].Value">
+                            <hmi:Bind.FallbackValue>
+                                <System:Double>0</System:Double>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:RadialArrow.Value>
+                </se:RadialArrow>
+            </se:RadialGauge.Arrows>
+        </se:RadialGauge>
+        <TextBlock Height="27" Text="ПЧ" FontFamily="Tahoma" FontWeight="Normal" TextAlignment="Center" FontSize="14" Width="27" VerticalAlignment="Top" Canvas.Top="288" Foreground="Red" Canvas.Left="182">
+            <TextBlock.Visibility>
+                <hmi:Bind Path="Tags.Node[view.helperdrawwork2.vfd].Items[NOT_emer_bit].Value">
+                    <hmi:Bind.Converter>
+                        <BooleanToVisibilityConverter/>
+                    </hmi:Bind.Converter>
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </TextBlock.Visibility></TextBlock>
+
+        <Grid Width="380" Height="380">
+            <Image Height="80" Width="80" Source="/NGO.Elements;component/Content/Gauges/Background/white%20cap%202.png" Canvas.Left="110" Canvas.Top="110" />
+            <TextBlock Height="34" HorizontalAlignment="Center" FontFamily="Tahoma" FontWeight="Bold" TextAlignment="Center" FontSize="30" VerticalAlignment="Center" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.helperdrawwork2.vfd].Items[reference].Value}"/>
+            <TextBlock Height="14" Text="Мощность" FontFamily="Tahoma" FontWeight="Normal" TextAlignment="Center" FontSize="11" Margin="138,0,0,25" HorizontalAlignment="Left" Width="64" VerticalAlignment="Bottom" Foreground="White" />
+            <TextBlock Height="14" Text="%" FontFamily="Tahoma" FontWeight="Normal" TextAlignment="Center" FontSize="11" Margin="226,0,0,25" HorizontalAlignment="Left" Width="17" VerticalAlignment="Bottom" Foreground="White" />
+            <TextBlock Height="14" Text="{hmi:Bind Tags.Node[view.helperdrawwork2].Items[torque_0_100].Value, FallbackValue=0}" FontFamily="Tahoma" FontWeight="Normal" TextAlignment="Center" FontSize="11" Margin="200,0,0,25" HorizontalAlignment="Left" Width="27" VerticalAlignment="Bottom" Foreground="White" />
+        </Grid>
+    </Canvas>
+</UserControl>

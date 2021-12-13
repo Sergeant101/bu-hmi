@@ -1,0 +1,1181 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:se="http://schemas.monokot.com/se/" xmlns:Custom="http://schemas.monokot.com/hmi/" xmlns:System="clr-namespace:System;assembly=mscorlib"
+    x:Class="VFD.Frames.FrmSetup" 
+             mc:Ignorable="d" 
+             d:DesignHeight="840" d:DesignWidth="1280" Background="#FFEBEBEB">
+    <Grid x:Name="grid">
+        <TabControl Margin="0" TabStripPlacement="Right">
+            <TabItem Header="УСТАВКИ" FontSize="20">
+                <TabItem.LayoutTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TabItem.LayoutTransform>
+                <Grid Background="#FFE5E5E5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35*"/>
+                        <RowDefinition Height="48*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <se:ScadaButton Height="35" Margin="2,143,2,0" VerticalAlignment="Top" HorizontalContentAlignment="Left" PushCommand="{Custom:SeBinding Tags.Node[write.pump1].Items[h1].WriteCommand}" ReleasedCommand="{Custom:SeBinding Tags.Node[write.pump1].Items[h1].WriteCommand}">
+                        <StackPanel Orientation="Horizontal" Margin="20,0,0,0">
+                            <se:VisualBox Width="20" Height="20" BorderBrush="{x:Null}">
+                                <se:VisualBox.VisualStateCollection>
+                                    <se:VisualBoxStateItem>
+                                        <se:VisualBoxStateItem.Background>
+                                            <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_fine.png" Stretch="Fill"/>
+                                        </se:VisualBoxStateItem.Background>
+                                        <se:VisualBoxStateItem.Value>
+                                            <Custom:SeBinding  Path="Tags.Node[view.main_drives.pump1.bypass].Items[pin_switch1].Value">
+                                                <Custom:SeBinding.FallbackValue>
+                                                    <System:Boolean>False</System:Boolean>
+                                                </Custom:SeBinding.FallbackValue>
+                                            </Custom:SeBinding>
+                                        </se:VisualBoxStateItem.Value>
+                                    </se:VisualBoxStateItem>
+                                </se:VisualBox.VisualStateCollection>
+                                <se:VisualBox.Background>
+                                    <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_default.png" Stretch="Fill"/>
+                                </se:VisualBox.Background>
+                            </se:VisualBox>
+                            <TextBlock TextWrapping="Wrap" Text="Кожухи насоса 1" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                        </StackPanel>
+                    </se:ScadaButton>
+                    <se:ScadaButton Height="35" Margin="2,183,2,0" VerticalAlignment="Top" HorizontalContentAlignment="Left" PushCommand="{Custom:SeBinding Tags.Node[write.pump1].Items[h3].WriteCommand}" ReleasedCommand="{Custom:SeBinding Tags.Node[write.pump1].Items[h3].WriteCommand}">
+                        <StackPanel Orientation="Horizontal" Margin="20,0,0,0">
+                            <se:VisualBox Width="20" Height="20" BorderBrush="{x:Null}">
+                                <se:VisualBox.VisualStateCollection>
+                                    <se:VisualBoxStateItem>
+                                        <se:VisualBoxStateItem.Value>
+                                            <Custom:SeBinding  Path="Tags.Node[view.main_drives.pump1.bypass].Items[pin_switch3].Value">
+                                                <Custom:SeBinding.FallbackValue>
+                                                    <System:Boolean>False</System:Boolean>
+                                                </Custom:SeBinding.FallbackValue>
+                                            </Custom:SeBinding>
+                                        </se:VisualBoxStateItem.Value>
+                                        <se:VisualBoxStateItem.Background>
+                                            <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_fine.png" Stretch="Fill"/>
+                                        </se:VisualBoxStateItem.Background>
+                                    </se:VisualBoxStateItem>
+                                </se:VisualBox.VisualStateCollection>
+                                <se:VisualBox.Background>
+                                    <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_default.png" Stretch="Fill"/>
+                                </se:VisualBox.Background>
+                            </se:VisualBox>
+                            <TextBlock TextWrapping="Wrap" Text="Предохр. клапан SQH1" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                        </StackPanel>
+                    </se:ScadaButton>
+                    <se:ScadaButton Height="35" Margin="2,142,2,0" VerticalAlignment="Top" PushCommand="{Custom:SeBinding Tags.Node[write.pump2].Items[h1].WriteCommand}" ReleasedCommand="{Custom:SeBinding Tags.Node[write.pump1].Items[h1].WriteCommand}" Grid.Row="1" HorizontalContentAlignment="Left">
+                        <StackPanel Orientation="Horizontal" Margin="20,0,0,0">
+                            <se:VisualBox Width="20" Height="20" BorderBrush="{x:Null}">
+                                <se:VisualBox.VisualStateCollection>
+                                    <se:VisualBoxStateItem>
+                                        <se:VisualBoxStateItem.Value>
+                                            <Custom:SeBinding  Path="Tags.Node[view.main_drives.pump2.bypass].Items[pin_switch1].Value">
+                                                <Custom:SeBinding.FallbackValue>
+                                                    <System:Boolean>False</System:Boolean>
+                                                </Custom:SeBinding.FallbackValue>
+                                            </Custom:SeBinding>
+                                        </se:VisualBoxStateItem.Value>
+                                        <se:VisualBoxStateItem.Background>
+                                            <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_fine.png" Stretch="Fill"/>
+                                        </se:VisualBoxStateItem.Background>
+                                    </se:VisualBoxStateItem>
+                                </se:VisualBox.VisualStateCollection>
+                                <se:VisualBox.Background>
+                                    <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_default.png" Stretch="Fill"/>
+                                </se:VisualBox.Background>
+                            </se:VisualBox>
+                            <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" Margin="20,0,0,0"><Run Text="Кожухи насоса "/><Run Text="2"/></TextBlock>
+                        </StackPanel>
+                    </se:ScadaButton>
+                    <se:ScadaButton Height="35" Margin="2,181,2,0" VerticalAlignment="Top" PushCommand="{Custom:SeBinding Tags.Node[write.pump2].Items[h3].WriteCommand}" ReleasedCommand="{Custom:SeBinding Tags.Node[write.pump2].Items[h3].WriteCommand}" Grid.Row="1" HorizontalContentAlignment="Left">
+                        <StackPanel Orientation="Horizontal" Margin="20,0,0,0">
+                            <se:VisualBox Width="20" Height="20" BorderBrush="{x:Null}">
+                                <se:VisualBox.VisualStateCollection>
+                                    <se:VisualBoxStateItem>
+                                        <se:VisualBoxStateItem.Value>
+                                            <Custom:SeBinding  Path="Tags.Node[view.main_drives.pump2.bypass].Items[pin_switch3].Value">
+                                                <Custom:SeBinding.FallbackValue>
+                                                    <System:Boolean>False</System:Boolean>
+                                                </Custom:SeBinding.FallbackValue>
+                                            </Custom:SeBinding>
+                                        </se:VisualBoxStateItem.Value>
+                                        <se:VisualBoxStateItem.Background>
+                                            <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_fine.png" Stretch="Fill"/>
+                                        </se:VisualBoxStateItem.Background>
+                                    </se:VisualBoxStateItem>
+                                </se:VisualBox.VisualStateCollection>
+                                <se:VisualBox.Background>
+                                    <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_default.png" Stretch="Fill"/>
+                                </se:VisualBox.Background>
+                            </se:VisualBox>
+                            <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" Margin="20,0,0,0"><Run Text="Предохр. клапан SQH"/><Run Text="2"/></TextBlock>
+                        </StackPanel>
+                    </se:ScadaButton>
+                    <se:ScadaButton Height="35" Margin="4,143,2,0" VerticalAlignment="Top" PushCommand="{Custom:SeBinding Tags.Node[write.drawwork].Items[positioning].WriteCommand}" ReleasedCommand="{Custom:SeBinding Tags.Node[write.drawwork].Items[positioning].WriteCommand}" Grid.Column="1" HorizontalContentAlignment="Left">
+                        <StackPanel Orientation="Horizontal" Width="310" Margin="20,0,0,0">
+                            <se:VisualBox Width="20" Height="20" BorderBrush="{x:Null}">
+                                <se:VisualBox.VisualStateCollection>
+                                    <se:VisualBoxStateItem>
+                                        <se:VisualBoxStateItem.Value>
+                                            <Custom:SeBinding  Path="Tags.Node[view.main_drives.drawwork.bypass].Items[pin_switch5].Value">
+                                                <Custom:SeBinding.FallbackValue>
+                                                    <System:Boolean>False</System:Boolean>
+                                                </Custom:SeBinding.FallbackValue>
+                                            </Custom:SeBinding>
+                                        </se:VisualBoxStateItem.Value>
+                                        <se:VisualBoxStateItem.Background>
+                                            <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_fine.png" Stretch="Fill"/>
+                                        </se:VisualBoxStateItem.Background>
+                                    </se:VisualBoxStateItem>
+                                </se:VisualBox.VisualStateCollection>
+                                <se:VisualBox.Background>
+                                    <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_default.png" Stretch="Fill"/>
+                                </se:VisualBox.Background>
+                            </se:VisualBox>
+                            <TextBlock TextWrapping="Wrap" Text="Автоостановка" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                        </StackPanel>
+                    </se:ScadaButton>
+                    <se:ScadaButton Height="35" Margin="4,182,2,0" VerticalAlignment="Top" PushCommand="{Custom:SeBinding Tags.Node[write.drawwork].Items[h].WriteCommand}" ReleasedCommand="{Custom:SeBinding Tags.Node[write.drawwork].Items[h].WriteCommand}" Grid.Column="1" HorizontalContentAlignment="Left">
+                        <StackPanel Orientation="Horizontal" Width="310" Margin="20,0,0,0">
+                            <se:VisualBox Width="20" Height="20" BorderBrush="{x:Null}">
+                                <se:VisualBox.VisualStateCollection>
+                                    <se:VisualBoxStateItem>
+                                        <se:VisualBoxStateItem.Value>
+                                            <Custom:SeBinding  Path="Tags.Node[view.main_drives.drawwork.bypass].Items[pin_switch3].Value">
+                                                <Custom:SeBinding.FallbackValue>
+                                                    <System:Boolean>False</System:Boolean>
+                                                </Custom:SeBinding.FallbackValue>
+                                            </Custom:SeBinding>
+                                        </se:VisualBoxStateItem.Value>
+                                        <se:VisualBoxStateItem.Background>
+                                            <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_fine.png" Stretch="Fill"/>
+                                        </se:VisualBoxStateItem.Background>
+                                    </se:VisualBoxStateItem>
+                                </se:VisualBox.VisualStateCollection>
+                                <se:VisualBox.Background>
+                                    <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_default.png" Stretch="Fill"/>
+                                </se:VisualBox.Background>
+                            </se:VisualBox>
+                            <TextBlock TextWrapping="Wrap" Text="Кожухи, стопор" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                        </StackPanel>
+                    </se:ScadaButton>
+                    <se:ScadaButton Height="35" Margin="4,221,2,0" VerticalAlignment="Top" PushCommand="{Custom:SeBinding Tags.Node[write.drawwork].Items[oiling].WriteCommand}" ReleasedCommand="{Custom:SeBinding Tags.Node[write.drawwork].Items[oiling].WriteCommand}" Grid.Column="1" HorizontalContentAlignment="Left">
+                        <StackPanel Orientation="Horizontal" Width="310" Margin="20,0,0,0">
+                            <se:VisualBox Width="20" Height="20" BorderBrush="{x:Null}">
+                                <se:VisualBox.VisualStateCollection>
+                                    <se:VisualBoxStateItem>
+                                        <se:VisualBoxStateItem.Value>
+                                            <Custom:SeBinding  Path="Tags.Node[view.main_drives.drawwork.bypass].Items[pin_switch4].Value">
+                                                <Custom:SeBinding.FallbackValue>
+                                                    <System:Boolean>False</System:Boolean>
+                                                </Custom:SeBinding.FallbackValue>
+                                            </Custom:SeBinding>
+                                        </se:VisualBoxStateItem.Value>
+                                        <se:VisualBoxStateItem.Background>
+                                            <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_fine.png" Stretch="Fill"/>
+                                        </se:VisualBoxStateItem.Background>
+                                    </se:VisualBoxStateItem>
+                                </se:VisualBox.VisualStateCollection>
+                                <se:VisualBox.Background>
+                                    <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_default.png" Stretch="Fill"/>
+                                </se:VisualBox.Background>
+                            </se:VisualBox>
+                            <TextBlock TextWrapping="Wrap" Text="Давление масла BPC1, ВРС2" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                        </StackPanel>
+                    </se:ScadaButton>
+                    <se:ScadaButton Height="35" Margin="4,261,2,0" VerticalAlignment="Top" PushCommand="{Custom:SeBinding Tags.Node[write.drawwork].Items[tb].WriteCommand}" ReleasedCommand="{Custom:SeBinding Tags.Node[write.drawwork].Items[tb].WriteCommand}" Grid.Column="1" HorizontalContentAlignment="Left">
+                        <StackPanel Orientation="Horizontal" Width="310" Margin="20,0,0,0">
+                            <se:VisualBox Width="20" Height="20" BorderBrush="{x:Null}">
+                                <se:VisualBox.VisualStateCollection>
+                                    <se:VisualBoxStateItem>
+                                        <se:VisualBoxStateItem.Value>
+                                            <Custom:SeBinding  Path="Tags.Node[view.main_drives.drawwork.bypass].Items[pin_switch1].Value">
+                                                <Custom:SeBinding.FallbackValue>
+                                                    <System:Boolean>False</System:Boolean>
+                                                </Custom:SeBinding.FallbackValue>
+                                            </Custom:SeBinding>
+                                        </se:VisualBoxStateItem.Value>
+                                        <se:VisualBoxStateItem.Background>
+                                            <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_fine.png" Stretch="Fill"/>
+                                        </se:VisualBoxStateItem.Background>
+                                    </se:VisualBoxStateItem>
+                                </se:VisualBox.VisualStateCollection>
+                                <se:VisualBox.Background>
+                                    <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_default.png" Stretch="Fill"/>
+                                </se:VisualBox.Background>
+                            </se:VisualBox>
+                            <TextBlock TextWrapping="Wrap" Text="Провисание талевого блока" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                        </StackPanel>
+                    </se:ScadaButton>
+                    <se:ScadaButton Height="35" Margin="4,300,2,0" VerticalAlignment="Top" PushCommand="{Custom:SeBinding Tags.Node[write.drawwork].Items[impuls_sensor].WriteCommand}" ReleasedCommand="{Custom:SeBinding Tags.Node[write.drawwork].Items[impuls_sensor].WriteCommand}" Grid.Column="1" HorizontalContentAlignment="Left">
+                        <StackPanel Orientation="Horizontal" Width="310" Margin="20,0,0,0">
+                            <se:VisualBox Width="20" Height="20" BorderBrush="{x:Null}">
+                                <se:VisualBox.VisualStateCollection>
+                                    <se:VisualBoxStateItem>
+                                        <se:VisualBoxStateItem.Value>
+                                            <Custom:SeBinding  Path="Tags.Node[view.main_drives.drawwork.bypass].Items[pin_switch2].Value">
+                                                <Custom:SeBinding.FallbackValue>
+                                                    <System:Boolean>False</System:Boolean>
+                                                </Custom:SeBinding.FallbackValue>
+                                            </Custom:SeBinding>
+                                        </se:VisualBoxStateItem.Value>
+                                        <se:VisualBoxStateItem.Background>
+                                            <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_fine.png" Stretch="Fill"/>
+                                        </se:VisualBoxStateItem.Background>
+                                    </se:VisualBoxStateItem>
+                                </se:VisualBox.VisualStateCollection>
+                                <se:VisualBox.Background>
+                                    <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_default.png" Stretch="Fill"/>
+                                </se:VisualBox.Background>
+                            </se:VisualBox>
+                            <TextBlock TextWrapping="Wrap" Text="ДИ барабана лебедки" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                        </StackPanel>
+                    </se:ScadaButton>
+                    <Border BorderThickness="1" Height="35" Margin="2,5,2,0" VerticalAlignment="Top" Background="Black">
+                        <TextBlock TextWrapping="Wrap" Text="НАСОС 1" Foreground="Goldenrod" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="28"/>
+                    </Border>
+                    <Border BorderThickness="1" Height="35" Margin="2,5,2,0" VerticalAlignment="Top" Background="Black" Grid.Column="1">
+                        <TextBlock TextWrapping="Wrap" Text="ЛЕБЕДКА" Foreground="Goldenrod" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="28"/>
+                    </Border>
+                    <Border BorderThickness="1" Height="35" Margin="2,5,2,0" VerticalAlignment="Top" Background="Black" Grid.Column="2">
+                        <TextBlock TextWrapping="Wrap" Text="СКПБ" Foreground="Goldenrod" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="28"/>
+                    </Border>
+                    <Border BorderThickness="1" Height="35" Margin="2,5,2,0" VerticalAlignment="Top" Background="Black" Grid.Row="1">
+                        <TextBlock TextWrapping="Wrap" Text="НАСОС 2" Foreground="Goldenrod" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="28"/>
+                    </Border>
+                    <TextBlock HorizontalAlignment="Left" Margin="155,51,0,0" TextWrapping="Wrap" Text="T разгона, сек" VerticalAlignment="Top" FontSize="18"/>
+                    <Border BorderThickness="1" HorizontalAlignment="Left" Height="40" Margin="2,45,0,0" VerticalAlignment="Top" Width="98" Background="White" BorderBrush="Black" CornerRadius="5">
+                        <TextBlock TextWrapping="Wrap" Text="{Custom:SeBinding Tags.Node[view.main_drives.pump1].Items[time_ramp].Value, FallbackValue=НАСОС 1}" Foreground="Black" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12"/>
+                    </Border>
+                    <se:KeypadButton HorizontalAlignment="Left" Margin="105,45,0,0" VerticalAlignment="Top">
+                        <se:KeypadButton.Value>
+                            <Custom:SeBinding  Path="Tags.Node[write.pump1].Items[time_ramp].Value">
+                                <Custom:SeBinding.FallbackValue>
+                                    <System:Double>0</System:Double>
+                                </Custom:SeBinding.FallbackValue>
+                            </Custom:SeBinding>
+                        </se:KeypadButton.Value>
+                    </se:KeypadButton>
+                    <TextBlock HorizontalAlignment="Left" Margin="155,55,0,0" TextWrapping="Wrap" Text="T разгона, сек" VerticalAlignment="Top" FontSize="18" Grid.Row="1"/>
+                    <Border BorderThickness="1" HorizontalAlignment="Left" Height="40" Margin="2,50,0,0" VerticalAlignment="Top" Width="98" Background="White" BorderBrush="Black" CornerRadius="5" Grid.Row="1">
+                        <TextBlock TextWrapping="Wrap" Text="{Custom:SeBinding Tags.Node[view.main_drives.pump2].Items[time_ramp].Value, FallbackValue=НАСОС 1}" Foreground="Black" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12"/>
+                    </Border>
+                    <se:KeypadButton HorizontalAlignment="Left" Margin="105,50,0,0" VerticalAlignment="Top" Grid.Row="1">
+                        <se:KeypadButton.Value>
+                            <Custom:SeBinding  Path="Tags.Node[write.pump2].Items[time_ramp].Value">
+                                <Custom:SeBinding.FallbackValue>
+                                    <System:Double>0</System:Double>
+                                </Custom:SeBinding.FallbackValue>
+                            </Custom:SeBinding>
+                        </se:KeypadButton.Value>
+                    </se:KeypadButton>
+                    <ComboBox HorizontalAlignment="Left" Margin="2,96,0,0" VerticalAlignment="Top" Width="98" FontSize="18"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="105,99,0,0" TextWrapping="Wrap" Text="Диаметр поршня, мм" VerticalAlignment="Top" FontSize="18"/>
+                    <ComboBox HorizontalAlignment="Left" Margin="2,99,0,0" VerticalAlignment="Top" Width="98" FontSize="18" Grid.Row="1"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="105,102,0,0" TextWrapping="Wrap" Text="Диаметр поршня, мм" VerticalAlignment="Top" FontSize="18" Grid.Row="1"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="145,51,0,0" TextWrapping="Wrap" Text="P max, %" VerticalAlignment="Top" FontSize="16" Grid.Column="1"/>
+                    <Border BorderThickness="1" HorizontalAlignment="Left" Height="40" Margin="12,45,0,0" VerticalAlignment="Top" Width="78" Background="White" BorderBrush="Black" CornerRadius="5" Grid.Column="1">
+                        <TextBlock TextWrapping="Wrap" Text="{Custom:SeBinding Tags.Node[view.main_drives.drawwork].Items[power_limit].Value, FallbackValue=НАСОС 1}" Foreground="Black" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12"/>
+                    </Border>
+                    <se:KeypadButton HorizontalAlignment="Left" Margin="95,45,0,0" VerticalAlignment="Top" Grid.Column="1">
+                        <se:KeypadButton.Value>
+                            <Custom:SeBinding  Path="Tags.Node[write.drawwork].Items[power_limit].Value">
+                                <Custom:SeBinding.FallbackValue>
+                                    <System:Double>0</System:Double>
+                                </Custom:SeBinding.FallbackValue>
+                            </Custom:SeBinding>
+                        </se:KeypadButton.Value>
+                    </se:KeypadButton>
+                    <TextBlock HorizontalAlignment="Left" Margin="142,96,0,0" TextWrapping="Wrap" Text="Наложение тормоза, сек" VerticalAlignment="Top" FontSize="16" Grid.Column="1"/>
+                    <Border BorderThickness="1" HorizontalAlignment="Left" Height="40" Margin="12,90,0,0" VerticalAlignment="Top" Width="78" Background="White" BorderBrush="Black" CornerRadius="5" Grid.Column="1">
+                        <TextBlock TextWrapping="Wrap" Text="{Custom:SeBinding Tags.Node[view.main_drives.drawwork].Items[brake_time].Value, FallbackValue=НАСОС 1}" Foreground="Black" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12"/>
+                    </Border>
+                    <se:KeypadButton HorizontalAlignment="Left" Margin="95,90,0,0" VerticalAlignment="Top" Grid.Column="1">
+                        <se:KeypadButton.Value>
+                            <Custom:SeBinding  Path="Tags.Node[write.drawwork].Items[brake_time].Value">
+                                <Custom:SeBinding.FallbackValue>
+                                    <System:Double>0</System:Double>
+                                </Custom:SeBinding.FallbackValue>
+                            </Custom:SeBinding>
+                        </se:KeypadButton.Value>
+                    </se:KeypadButton>
+                    <ComboBox HorizontalAlignment="Left" Margin="9,42,0,0" VerticalAlignment="Top" Width="98" FontSize="18" Grid.Column="2"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="112,45,0,0" TextWrapping="Wrap" Text="Датчик веса" VerticalAlignment="Top" FontSize="18" Grid.Column="2"/>
+                    <Border BorderThickness="1" Height="35" Margin="2,5,2,0" VerticalAlignment="Top" Background="Black" Grid.Column="1" Grid.Row="1">
+                        <TextBlock TextWrapping="Wrap" Text="РОТОР" Foreground="Goldenrod" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="28"/>
+                    </Border>
+                    <Border BorderThickness="1" Height="35" Margin="2,5,2,0" VerticalAlignment="Top" Background="Black" Grid.Column="2" Grid.Row="1">
+                        <TextBlock TextWrapping="Wrap" Text="СВП" Foreground="Goldenrod" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="28"/>
+                    </Border>
+                    <se:ScadaButton Height="35" Margin="4,103,2,0" VerticalAlignment="Top" PushCommand="{Custom:SeBinding Tags.Node[write.rotor].Items[wedges].WriteCommand}" ReleasedCommand="{Custom:SeBinding Tags.Node[write.rotor].Items[wedges].WriteCommand}" Grid.Column="1" Grid.Row="1" HorizontalContentAlignment="Left">
+                        <StackPanel Orientation="Horizontal" Margin="20,0,0,0">
+                            <se:VisualBox Width="20" Height="20" BorderBrush="{x:Null}">
+                                <se:VisualBox.VisualStateCollection>
+                                    <se:VisualBoxStateItem>
+                                        <se:VisualBoxStateItem.Value>
+                                            <Custom:SeBinding  Path="Tags.Node[view.main_drives.rotor.bypass].Items[pin_switch2].Value">
+                                                <Custom:SeBinding.FallbackValue>
+                                                    <System:Boolean>False</System:Boolean>
+                                                </Custom:SeBinding.FallbackValue>
+                                            </Custom:SeBinding>
+                                        </se:VisualBoxStateItem.Value>
+                                        <se:VisualBoxStateItem.Background>
+                                            <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_fine.png" Stretch="Fill"/>
+                                        </se:VisualBoxStateItem.Background>
+                                    </se:VisualBoxStateItem>
+                                </se:VisualBox.VisualStateCollection>
+                                <se:VisualBox.Background>
+                                    <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_default.png" Stretch="Fill"/>
+                                </se:VisualBox.Background>
+                            </se:VisualBox>
+                            <TextBlock TextWrapping="Wrap" Text="Клинья ротора ВРК" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                        </StackPanel>
+                    </se:ScadaButton>
+                    <se:ScadaButton Height="35" Margin="4,142,2,0" VerticalAlignment="Top" PushCommand="{Custom:SeBinding Tags.Node[write.rotor].Items[brake].WriteCommand}" ReleasedCommand="{Custom:SeBinding Tags.Node[write.rotor].Items[brake].WriteCommand}" Grid.Column="1" Grid.Row="1" HorizontalContentAlignment="Left">
+                        <StackPanel Orientation="Horizontal" Margin="20,0,0,0">
+                            <se:VisualBox Width="20" Height="20" BorderBrush="{x:Null}">
+                                <se:VisualBox.VisualStateCollection>
+                                    <se:VisualBoxStateItem>
+                                        <se:VisualBoxStateItem.Value>
+                                            <Custom:SeBinding  Path="Tags.Node[view.main_drives.rotor.bypass].Items[pin_switch1].Value">
+                                                <Custom:SeBinding.FallbackValue>
+                                                    <System:Boolean>False</System:Boolean>
+                                                </Custom:SeBinding.FallbackValue>
+                                            </Custom:SeBinding>
+                                        </se:VisualBoxStateItem.Value>
+                                        <se:VisualBoxStateItem.Background>
+                                            <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_fine.png" Stretch="Fill"/>
+                                        </se:VisualBoxStateItem.Background>
+                                    </se:VisualBoxStateItem>
+                                </se:VisualBox.VisualStateCollection>
+                                <se:VisualBox.Background>
+                                    <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_default.png" Stretch="Fill"/>
+                                </se:VisualBox.Background>
+                            </se:VisualBox>
+                            <TextBlock TextWrapping="Wrap" Text="Тормоз ротора ВРК" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                        </StackPanel>
+                    </se:ScadaButton>
+                    <se:ScadaButton Height="35" Margin="4,181,2,0" VerticalAlignment="Top" PushCommand="{Custom:SeBinding Tags.Node[write.rotor].Items[table].WriteCommand}" ReleasedCommand="{Custom:SeBinding Tags.Node[write.rotor].Items[table].WriteCommand}" Grid.Column="1" Grid.Row="1" HorizontalContentAlignment="Left">
+                        <StackPanel Orientation="Horizontal" Margin="20,0,0,0">
+                            <se:VisualBox Width="20" Height="20" BorderBrush="{x:Null}">
+                                <se:VisualBox.VisualStateCollection>
+                                    <se:VisualBoxStateItem>
+                                        <se:VisualBoxStateItem.Value>
+                                            <Custom:SeBinding  Path="Tags.Node[view.main_drives.rotor.bypass].Items[pin_switch3].Value">
+                                                <Custom:SeBinding.FallbackValue>
+                                                    <System:Boolean>False</System:Boolean>
+                                                </Custom:SeBinding.FallbackValue>
+                                            </Custom:SeBinding>
+                                        </se:VisualBoxStateItem.Value>
+                                        <se:VisualBoxStateItem.Background>
+                                            <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_fine.png" Stretch="Fill"/>
+                                        </se:VisualBoxStateItem.Background>
+                                    </se:VisualBoxStateItem>
+                                </se:VisualBox.VisualStateCollection>
+                                <se:VisualBox.Background>
+                                    <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_default.png" Stretch="Fill"/>
+                                </se:VisualBox.Background>
+                            </se:VisualBox>
+                            <TextBlock TextWrapping="Wrap" Text="Отрыв ротора SQР" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                        </StackPanel>
+                    </se:ScadaButton>
+                    <TextBlock HorizontalAlignment="Left" Margin="145,55,0,0" TextWrapping="Wrap" Text="P max, %" VerticalAlignment="Top" FontSize="16" Grid.Column="1" Grid.Row="1"/>
+                    <Border BorderThickness="1" HorizontalAlignment="Left" Height="40" Margin="12,50,0,0" VerticalAlignment="Top" Width="78" Background="White" BorderBrush="Black" CornerRadius="5" Grid.Column="1" Grid.Row="1">
+                        <TextBlock TextWrapping="Wrap" Text="{Custom:SeBinding Tags.Node[view.main_drives.rotor].Items[power_limit].Value, FallbackValue=НАСОС 1}" Foreground="Black" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12"/>
+                    </Border>
+                    <se:KeypadButton HorizontalAlignment="Left" Margin="95,50,0,0" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1">
+                        <se:KeypadButton.Value>
+                            <Custom:SeBinding  Path="Tags.Node[write.rotor].Items[power_limit].Value">
+                                <Custom:SeBinding.FallbackValue>
+                                    <System:Double>0</System:Double>
+                                </Custom:SeBinding.FallbackValue>
+                            </Custom:SeBinding>
+                        </se:KeypadButton.Value>
+                    </se:KeypadButton>
+                    <se:ScadaButton Height="35" Margin="7,65,2,0" VerticalAlignment="Top" PushCommand="{Custom:SeBinding Tags.Node[write.tds].Items[link].WriteCommand}" ReleasedCommand="{Custom:SeBinding Tags.Node[write.tds].Items[link].WriteCommand}" Grid.Column="2" Grid.Row="1">
+                        <StackPanel Orientation="Horizontal" Width="300" Margin="20,0,0,0">
+                            <se:VisualBox Width="20" Height="20" BorderBrush="{x:Null}">
+                                <se:VisualBox.VisualStateCollection>
+                                    <se:VisualBoxStateItem>
+                                        <se:VisualBoxStateItem.Background>
+                                            <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_fine.png" Stretch="Fill"/>
+                                        </se:VisualBoxStateItem.Background>
+                                    </se:VisualBoxStateItem>
+                                </se:VisualBox.VisualStateCollection>
+                                <se:VisualBox.Background>
+                                    <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_default.png" Stretch="Fill"/>
+                                </se:VisualBox.Background>
+                            </se:VisualBox>
+                            <TextBlock TextWrapping="Wrap" Text="КШЦ (резерв)" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                        </StackPanel>
+                    </se:ScadaButton>
+                    <se:ScadaButton Height="35" Margin="7,103,2,0" VerticalAlignment="Top" Grid.Column="2" Grid.Row="1">
+                        <StackPanel Orientation="Horizontal" Width="300" Margin="20,0,0,0">
+                            <se:VisualBox Width="20" Height="20" BorderBrush="{x:Null}">
+                                <se:VisualBox.VisualStateCollection>
+                                    <se:VisualBoxStateItem>
+                                        <se:VisualBoxStateItem.Background>
+                                            <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_fine.png" Stretch="Fill"/>
+                                        </se:VisualBoxStateItem.Background>
+                                    </se:VisualBoxStateItem>
+                                </se:VisualBox.VisualStateCollection>
+                                <se:VisualBox.Background>
+                                    <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_default.png" Stretch="Fill"/>
+                                </se:VisualBox.Background>
+                            </se:VisualBox>
+                            <TextBlock TextWrapping="Wrap" Text="Захват (резерв)" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                        </StackPanel>
+                    </se:ScadaButton>
+                    <se:ScadaButton Height="35" Margin="7,142,2,0" VerticalAlignment="Top" Grid.Column="2" Grid.Row="1">
+                        <StackPanel Orientation="Horizontal" Width="300" Margin="20,0,0,0">
+                            <se:VisualBox Width="20" Height="20" BorderBrush="{x:Null}">
+                                <se:VisualBox.VisualStateCollection>
+                                    <se:VisualBoxStateItem>
+                                        <se:VisualBoxStateItem.Value>
+                                            <Custom:SeBinding  Path="Tags.Node[view.main_drives.tds].Items[tds_link].Value">
+                                                <Custom:SeBinding.FallbackValue>
+                                                    <System:Boolean>False</System:Boolean>
+                                                </Custom:SeBinding.FallbackValue>
+                                            </Custom:SeBinding>
+                                        </se:VisualBoxStateItem.Value>
+                                        <se:VisualBoxStateItem.Background>
+                                            <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_fine.png" Stretch="Fill"/>
+                                        </se:VisualBoxStateItem.Background>
+                                    </se:VisualBoxStateItem>
+                                </se:VisualBox.VisualStateCollection>
+                                <se:VisualBox.Background>
+                                    <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_default.png" Stretch="Fill"/>
+                                </se:VisualBox.Background>
+                            </se:VisualBox>
+                            <TextBlock TextWrapping="Wrap" Text="Штропа (резерв)" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                        </StackPanel>
+                    </se:ScadaButton>
+                    <TextBlock HorizontalAlignment="Left" Margin="145,80,0,0" TextWrapping="Wrap" Text="Предел давления манифольда, атм" VerticalAlignment="Top" FontSize="16" Grid.Column="2"/>
+                    <Border BorderThickness="1" HorizontalAlignment="Left" Height="40" Margin="12,83,0,0" VerticalAlignment="Top" Width="78" Background="White" BorderBrush="Black" CornerRadius="5" Grid.Column="2">
+                        <TextBlock TextWrapping="Wrap" Text="{Custom:SeBinding Tags.Node[view.msab].Items[setup_pressure_limit].Value, FallbackValue=НАСОС 1}" Foreground="Black" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12"/>
+                    </Border>
+                    <se:KeypadButton HorizontalAlignment="Left" Margin="95,83,0,0" VerticalAlignment="Top" Grid.Column="2">
+                        <se:KeypadButton.Value>
+                            <Custom:SeBinding  Path="Tags.Node[write.msab].Items[manifold_limit].Value">
+                                <Custom:SeBinding.FallbackValue>
+                                    <System:Double>0</System:Double>
+                                </Custom:SeBinding.FallbackValue>
+                            </Custom:SeBinding>
+                        </se:KeypadButton.Value>
+                    </se:KeypadButton>
+                    <TextBlock HorizontalAlignment="Left" Margin="145,135,0,0" TextWrapping="Wrap" Text="Максимальный вес, тонн" VerticalAlignment="Top" FontSize="16" Width="115" Grid.Column="2"/>
+                    <Border BorderThickness="1" HorizontalAlignment="Left" Height="40" Margin="12,138,0,0" VerticalAlignment="Top" Width="78" Background="White" BorderBrush="Black" CornerRadius="5" Grid.Column="2">
+                        <TextBlock TextWrapping="Wrap" Text="{Custom:SeBinding Tags.Node[view.msab].Items[setup_max_weight].Value, FallbackValue=НАСОС 1}" Foreground="Black" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12"/>
+                    </Border>
+                    <se:KeypadButton HorizontalAlignment="Left" Margin="95,138,0,0" VerticalAlignment="Top" Grid.Column="2">
+                        <se:KeypadButton.Value>
+                            <Custom:SeBinding  Path="Tags.Node[write.msab].Items[max_weight].Value">
+                                <Custom:SeBinding.FallbackValue>
+                                    <System:Double>0</System:Double>
+                                </Custom:SeBinding.FallbackValue>
+                            </Custom:SeBinding>
+                        </se:KeypadButton.Value>
+                    </se:KeypadButton>
+                    <se:ScadaButton Height="73" Margin="7,182,2,0" VerticalAlignment="Top" Grid.Column="2" HorizontalContentAlignment="Left">
+                        <StackPanel Orientation="Horizontal" Margin="20,0,0,0">
+                            <se:VisualBox Width="20" Height="20" BorderBrush="{x:Null}">
+                                <se:VisualBox.VisualStateCollection>
+                                    <se:VisualBoxStateItem>
+                                        <se:VisualBoxStateItem.Value>
+                                            <Custom:SeBinding  Path="Tags.Node[view.msab.bypass].Items[pressure_limit].Value">
+                                                <Custom:SeBinding.FallbackValue>
+                                                    <System:Boolean>False</System:Boolean>
+                                                </Custom:SeBinding.FallbackValue>
+                                            </Custom:SeBinding>
+                                        </se:VisualBoxStateItem.Value>
+                                        <se:VisualBoxStateItem.Background>
+                                            <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_fine.png" Stretch="Fill"/>
+                                        </se:VisualBoxStateItem.Background>
+                                    </se:VisualBoxStateItem>
+                                </se:VisualBox.VisualStateCollection>
+                                <se:VisualBox.Background>
+                                    <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_default.png" Stretch="Fill"/>
+                                </se:VisualBox.Background>
+                            </se:VisualBox>
+                            <TextBlock TextWrapping="Wrap" Text="Предел давления манифольда, атм" VerticalAlignment="Center" Margin="20,0,0,0" Width="322"/>
+                        </StackPanel>
+                    </se:ScadaButton>
+                    <se:ScadaButton Height="35" Margin="7,260,2,0" VerticalAlignment="Top" Grid.Column="2" HorizontalContentAlignment="Left">
+                        <StackPanel Orientation="Horizontal" Width="310" Margin="20,0,0,0">
+                            <se:VisualBox Width="20" Height="20" BorderBrush="{x:Null}">
+                                <se:VisualBox.VisualStateCollection>
+                                    <se:VisualBoxStateItem>
+                                        <se:VisualBoxStateItem.Value>
+                                            <Custom:SeBinding  Path="Tags.Node[view.msab.bypass].Items[overwind].Value">
+                                                <Custom:SeBinding.FallbackValue>
+                                                    <System:Boolean>False</System:Boolean>
+                                                </Custom:SeBinding.FallbackValue>
+                                            </Custom:SeBinding>
+                                        </se:VisualBoxStateItem.Value>
+                                        <se:VisualBoxStateItem.Background>
+                                            <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_fine.png" Stretch="Fill"/>
+                                        </se:VisualBoxStateItem.Background>
+                                    </se:VisualBoxStateItem>
+                                </se:VisualBox.VisualStateCollection>
+                                <se:VisualBox.Background>
+                                    <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_default.png" Stretch="Fill"/>
+                                </se:VisualBox.Background>
+                            </se:VisualBox>
+                            <TextBlock TextWrapping="Wrap" Text="Переподъем талевого блока" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                        </StackPanel>
+                    </se:ScadaButton>
+                    <se:ScadaButton Height="35" Margin="7,300,2,0" VerticalAlignment="Top" Grid.Column="2" HorizontalContentAlignment="Left">
+                        <StackPanel Orientation="Horizontal" Width="310" Margin="20,0,0,0">
+                            <se:VisualBox Width="20" Height="20" BorderBrush="{x:Null}">
+                                <se:VisualBox.VisualStateCollection>
+                                    <se:VisualBoxStateItem>
+                                        <se:VisualBoxStateItem.Value>
+                                            <Custom:SeBinding  Path="Tags.Node[view.msab.bypass].Items[overweight].Value">
+                                                <Custom:SeBinding.FallbackValue>
+                                                    <System:Boolean>False</System:Boolean>
+                                                </Custom:SeBinding.FallbackValue>
+                                            </Custom:SeBinding>
+                                        </se:VisualBoxStateItem.Value>
+                                        <se:VisualBoxStateItem.Background>
+                                            <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_fine.png" Stretch="Fill"/>
+                                        </se:VisualBoxStateItem.Background>
+                                    </se:VisualBoxStateItem>
+                                </se:VisualBox.VisualStateCollection>
+                                <se:VisualBox.Background>
+                                    <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_default.png" Stretch="Fill"/>
+                                </se:VisualBox.Background>
+                            </se:VisualBox>
+                            <TextBlock TextWrapping="Wrap" Text="Превышение веса" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                        </StackPanel>
+                    </se:ScadaButton>
+                    <ComboBox Margin="134,221,2,0" Grid.Row="1" VerticalAlignment="Top" SelectedIndex="{Custom:SeBinding Tags.Node[setup].Items[LangCol].Value, FallbackValue=0}">
+                        <ComboBoxItem Content="{Custom:SeBinding Dictionaries.Node[Labels].Items[9].Text, FallbackValue=Русский}"/>
+                        <ComboBoxItem Content="{Custom:SeBinding Dictionaries.Node[Labels].Items[11].Text, FallbackValue=Английский}"/>
+                    </ComboBox>
+                    <TextBlock HorizontalAlignment="Left" Margin="5,224,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Custom:SeBinding Dictionaries.Node[Labels].Items[10].Text, FallbackValue=Язык}" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="МИКРОКЛИМАТ" FontSize="20">
+                <TabItem.LayoutTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TabItem.LayoutTransform>
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border BorderThickness="1" Height="35" Margin="2,5,2,0" VerticalAlignment="Top" Background="Black">
+                        <TextBlock TextWrapping="Wrap" Text="ШКАФ АКЛ" Foreground="Goldenrod" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="28"/>
+                    </Border>
+                    <Border BorderThickness="1" Height="35" Margin="2,5,2,0" VerticalAlignment="Top" Background="Black" Grid.Column="1">
+                        <TextBlock TextWrapping="Wrap" Text="ПУЛЬТ НАСОСОВ" Foreground="Goldenrod" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="28"/>
+                    </Border>
+                    <Border BorderThickness="1" Height="35" Margin="2,5,2,0" VerticalAlignment="Top" Background="Black" Grid.Column="2">
+                        <TextBlock TextWrapping="Wrap" Text="КТУ" Foreground="Goldenrod" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="28"/>
+                    </Border>
+                    <Border BorderThickness="1" Height="25" Margin="2,45,2,0" VerticalAlignment="Top" Background="Black">
+                        <TextBlock TextWrapping="Wrap" Text="датчик температуры" Foreground="Goldenrod" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"/>
+                    </Border>
+                    <Border BorderThickness="1" Height="25" Margin="2,45,2,0" VerticalAlignment="Top" Background="Black" Grid.Column="1">
+                        <TextBlock TextWrapping="Wrap" Text="датчик температуры" Foreground="Goldenrod" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"/>
+                    </Border>
+                    <se:VisualBox Margin="2,76,2,0" VerticalAlignment="Top" CornerRadius="5" Height="49" Text="НЕТ СВЯЗИ">
+                        <se:VisualBox.VisualStateCollection>
+                            <se:VisualBoxStateItem Background="Red" Text="ХОЛОДНО">
+                                <se:VisualBoxStateItem.Value>
+                                    <Custom:SeBinding  Path="Tags.Node[view.climate.drawwork_terminal].Items[temperature_cold].Value">
+                                        <Custom:SeBinding.FallbackValue>
+                                            <System:Boolean>False</System:Boolean>
+                                        </Custom:SeBinding.FallbackValue>
+                                    </Custom:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem Background="Green" Text="НОРМА">
+                                <se:VisualBoxStateItem.Value>
+                                    <Custom:SeBinding  Path="Tags.Node[view.climate.drawwork_terminal].Items[temperature_normal].Value">
+                                        <Custom:SeBinding.FallbackValue>
+                                            <System:Boolean>False</System:Boolean>
+                                        </Custom:SeBinding.FallbackValue>
+                                    </Custom:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem Background="Red" Text="ПЕРЕГРЕВ">
+                                <se:VisualBoxStateItem.Value>
+                                    <Custom:SeBinding  Path="Tags.Node[view.climate.drawwork_terminal].Items[temperature_overheat].Value">
+                                        <Custom:SeBinding.FallbackValue>
+                                            <System:Boolean>False</System:Boolean>
+                                        </Custom:SeBinding.FallbackValue>
+                                    </Custom:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem Background="Red" Text="СБОЙ">
+                                <se:VisualBoxStateItem.Value>
+                                    <Custom:SeBinding  Path="Tags.Node[view.climate.drawwork_terminal].Items[temperature_error].Value">
+                                        <Custom:SeBinding.FallbackValue>
+                                            <System:Boolean>False</System:Boolean>
+                                        </Custom:SeBinding.FallbackValue>
+                                    </Custom:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                        </se:VisualBox.VisualStateCollection>
+                    </se:VisualBox>
+                    <Border BorderThickness="1" Height="25" Margin="2,135,2,0" VerticalAlignment="Top" Background="Black">
+                        <TextBlock TextWrapping="Wrap" Text="обогрев" Foreground="Goldenrod" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"/>
+                    </Border>
+                    <se:VisualBox Margin="2,170,2,0" VerticalAlignment="Top" CornerRadius="5" Height="49" Text="НЕТ СВЯЗИ">
+                        <se:VisualBox.VisualStateCollection>
+                            <se:VisualBoxStateItem Background="Red" Text="НЕ ГРЕЕТ">
+                                <se:VisualBoxStateItem.Value>
+                                    <Custom:SeBinding  Path="Tags.Node[view.climate.drawwork_terminal].Items[heating_off].Value">
+                                        <Custom:SeBinding.FallbackValue>
+                                            <System:Boolean>False</System:Boolean>
+                                        </Custom:SeBinding.FallbackValue>
+                                    </Custom:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem Background="Green" Text="ГРЕЕТ">
+                                <se:VisualBoxStateItem.Value>
+                                    <Custom:SeBinding  Path="Tags.Node[view.climate.drawwork_terminal].Items[heating_mode_on].Value">
+                                        <Custom:SeBinding.FallbackValue>
+                                            <System:Boolean>False</System:Boolean>
+                                        </Custom:SeBinding.FallbackValue>
+                                    </Custom:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                        </se:VisualBox.VisualStateCollection>
+                    </se:VisualBox>
+                    <Border BorderThickness="1" Height="25" Margin="2,230,2,0" VerticalAlignment="Top" Background="Black">
+                        <TextBlock TextWrapping="Wrap" Text="управление" Foreground="Goldenrod" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"/>
+                    </Border>
+                    <se:ScadaButton Height="35" Margin="2,262,2,0" VerticalAlignment="Top" PushCommand="{Custom:SeBinding Tags.Node[write.climate.drawwork_terminal].Items[heating_auto].WriteCommand}" ReleasedCommand="{Custom:SeBinding Tags.Node[write.climate.drawwork_terminal].Items[heating_auto].WriteCommand}">
+                        <StackPanel Orientation="Horizontal" Width="310">
+                            <se:VisualBox Width="20" Height="20" BorderBrush="{x:Null}">
+                                <se:VisualBox.VisualStateCollection>
+                                    <se:VisualBoxStateItem>
+                                        <se:VisualBoxStateItem.Value>
+                                            <Custom:SeBinding  Path="Tags.Node[view.climate.drawwork_terminal].Items[heating_mode_auto].Value">
+                                                <Custom:SeBinding.FallbackValue>
+                                                    <System:Boolean>False</System:Boolean>
+                                                </Custom:SeBinding.FallbackValue>
+                                            </Custom:SeBinding>
+                                        </se:VisualBoxStateItem.Value>
+                                        <se:VisualBoxStateItem.Background>
+                                            <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_fine.png" Stretch="Fill"/>
+                                        </se:VisualBoxStateItem.Background>
+                                    </se:VisualBoxStateItem>
+                                </se:VisualBox.VisualStateCollection>
+                                <se:VisualBox.Background>
+                                    <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_default.png" Stretch="Fill"/>
+                                </se:VisualBox.Background>
+                            </se:VisualBox>
+                            <TextBlock TextWrapping="Wrap" Text="Автомат." VerticalAlignment="Center" Margin="20,0,0,0"/>
+                        </StackPanel>
+                    </se:ScadaButton>
+                    <se:ScadaButton Height="35" Margin="2,302,2,0" VerticalAlignment="Top" PushCommand="{Custom:SeBinding Tags.Node[write.climate.drawwork_terminal].Items[heating_on].WriteCommand}" ReleasedCommand="{Custom:SeBinding Tags.Node[write.climate.drawwork_terminal].Items[heating_on].WriteCommand}">
+                        <StackPanel Orientation="Horizontal" Width="310">
+                            <se:VisualBox Width="20" Height="20" BorderBrush="{x:Null}">
+                                <se:VisualBox.VisualStateCollection>
+                                    <se:VisualBoxStateItem>
+                                        <se:VisualBoxStateItem.Value>
+                                            <Custom:SeBinding  Path="Tags.Node[view.climate.drawwork_terminal].Items[heating_mode_on].Value">
+                                                <Custom:SeBinding.FallbackValue>
+                                                    <System:Boolean>False</System:Boolean>
+                                                </Custom:SeBinding.FallbackValue>
+                                            </Custom:SeBinding>
+                                        </se:VisualBoxStateItem.Value>
+                                        <se:VisualBoxStateItem.Background>
+                                            <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_fine.png" Stretch="Fill"/>
+                                        </se:VisualBoxStateItem.Background>
+                                    </se:VisualBoxStateItem>
+                                </se:VisualBox.VisualStateCollection>
+                                <se:VisualBox.Background>
+                                    <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_default.png" Stretch="Fill"/>
+                                </se:VisualBox.Background>
+                            </se:VisualBox>
+                            <TextBlock TextWrapping="Wrap" Text="Ручн. вкл." VerticalAlignment="Center" Margin="20,0,0,0"/>
+                        </StackPanel>
+                    </se:ScadaButton>
+                    <se:ScadaButton Height="35" Margin="2,342,2,0" VerticalAlignment="Top" PushCommand="{Custom:SeBinding Tags.Node[write.climate.drawwork_terminal].Items[heating_off].WriteCommand}" ReleasedCommand="{Custom:SeBinding Tags.Node[write.climate.drawwork_terminal].Items[heating_off].WriteCommand}">
+                        <StackPanel Orientation="Horizontal" Width="310">
+                            <se:VisualBox Width="20" Height="20" BorderBrush="{x:Null}">
+                                <se:VisualBox.VisualStateCollection>
+                                    <se:VisualBoxStateItem>
+                                        <se:VisualBoxStateItem.Value>
+                                            <Custom:SeBinding  Path="Tags.Node[view.climate.drawwork_terminal].Items[heating_mode_off].Value">
+                                                <Custom:SeBinding.FallbackValue>
+                                                    <System:Boolean>False</System:Boolean>
+                                                </Custom:SeBinding.FallbackValue>
+                                            </Custom:SeBinding>
+                                        </se:VisualBoxStateItem.Value>
+                                        <se:VisualBoxStateItem.Background>
+                                            <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_fine.png" Stretch="Fill"/>
+                                        </se:VisualBoxStateItem.Background>
+                                    </se:VisualBoxStateItem>
+                                </se:VisualBox.VisualStateCollection>
+                                <se:VisualBox.Background>
+                                    <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_default.png" Stretch="Fill"/>
+                                </se:VisualBox.Background>
+                            </se:VisualBox>
+                            <TextBlock TextWrapping="Wrap" Text="Ручн. выкл." VerticalAlignment="Center" Margin="20,0,0,0"/>
+                        </StackPanel>
+                    </se:ScadaButton>
+                    <Border BorderThickness="1" Height="25" Margin="2,386,2,0" VerticalAlignment="Top" Background="Black">
+                        <TextBlock TextWrapping="Wrap" Text="питание" Foreground="Goldenrod" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"/>
+                    </Border>
+                    <se:VisualBox Margin="2,416,2,0" VerticalAlignment="Top" CornerRadius="5" Height="49" Text="НЕТ СВЯЗИ">
+                        <se:VisualBox.VisualStateCollection>
+                            <se:VisualBoxStateItem Background="Red" Text="ОТКЛ.">
+                                <se:VisualBoxStateItem.Value>
+                                    <Custom:SeBinding  Path="Tags.Node[view.climate.drawwork_terminal].Items[sypply_off].Value">
+                                        <Custom:SeBinding.FallbackValue>
+                                            <System:Boolean>False</System:Boolean>
+                                        </Custom:SeBinding.FallbackValue>
+                                    </Custom:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem Background="Green" Text="ВКЛ.">
+                                <se:VisualBoxStateItem.Value>
+                                    <Custom:SeBinding  Path="Tags.Node[view.climate.drawwork_terminal].Items[supply_on].Value">
+                                        <Custom:SeBinding.FallbackValue>
+                                            <System:Boolean>False</System:Boolean>
+                                        </Custom:SeBinding.FallbackValue>
+                                    </Custom:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                        </se:VisualBox.VisualStateCollection>
+                    </se:VisualBox>
+                    <Border BorderThickness="1" Height="25" Margin="2,470,2,0" VerticalAlignment="Top" Background="Black">
+                        <TextBlock TextWrapping="Wrap" Text="управление" Foreground="Goldenrod" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"/>
+                    </Border>
+                    <se:ScadaButton Height="35" Margin="2,501,2,0" VerticalAlignment="Top" PushCommand="{Custom:SeBinding Tags.Node[write.climate.drawwork_terminal].Items[supply_auto].WriteCommand}" ReleasedCommand="{Custom:SeBinding Tags.Node[write.climate.drawwork_terminal].Items[supply_auto].WriteCommand}">
+                        <StackPanel Orientation="Horizontal" Width="310">
+                            <se:VisualBox Width="20" Height="20" BorderBrush="{x:Null}">
+                                <se:VisualBox.VisualStateCollection>
+                                    <se:VisualBoxStateItem>
+                                        <se:VisualBoxStateItem.Value>
+                                            <Custom:SeBinding  Path="Tags.Node[view.climate.drawwork_terminal].Items[supply_mode_auto].Value">
+                                                <Custom:SeBinding.FallbackValue>
+                                                    <System:Boolean>False</System:Boolean>
+                                                </Custom:SeBinding.FallbackValue>
+                                            </Custom:SeBinding>
+                                        </se:VisualBoxStateItem.Value>
+                                        <se:VisualBoxStateItem.Background>
+                                            <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_fine.png" Stretch="Fill"/>
+                                        </se:VisualBoxStateItem.Background>
+                                    </se:VisualBoxStateItem>
+                                </se:VisualBox.VisualStateCollection>
+                                <se:VisualBox.Background>
+                                    <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_default.png" Stretch="Fill"/>
+                                </se:VisualBox.Background>
+                            </se:VisualBox>
+                            <TextBlock TextWrapping="Wrap" Text="Автомат." VerticalAlignment="Center" Margin="20,0,0,0"/>
+                        </StackPanel>
+                    </se:ScadaButton>
+                    <se:ScadaButton Height="35" Margin="2,541,2,0" VerticalAlignment="Top" PushCommand="{Custom:SeBinding Tags.Node[write.climate.drawwork_terminal].Items[supply_on].WriteCommand}" ReleasedCommand="{Custom:SeBinding Tags.Node[write.climate.drawwork_terminal].Items[supply_on].WriteCommand}">
+                        <StackPanel Orientation="Horizontal" Width="310">
+                            <se:VisualBox Width="20" Height="20" BorderBrush="{x:Null}">
+                                <se:VisualBox.VisualStateCollection>
+                                    <se:VisualBoxStateItem>
+                                        <se:VisualBoxStateItem.Value>
+                                            <Custom:SeBinding  Path="Tags.Node[view.climate.drawwork_terminal].Items[supply_mode_on].Value">
+                                                <Custom:SeBinding.FallbackValue>
+                                                    <System:Boolean>False</System:Boolean>
+                                                </Custom:SeBinding.FallbackValue>
+                                            </Custom:SeBinding>
+                                        </se:VisualBoxStateItem.Value>
+                                        <se:VisualBoxStateItem.Background>
+                                            <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_fine.png" Stretch="Fill"/>
+                                        </se:VisualBoxStateItem.Background>
+                                    </se:VisualBoxStateItem>
+                                </se:VisualBox.VisualStateCollection>
+                                <se:VisualBox.Background>
+                                    <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_default.png" Stretch="Fill"/>
+                                </se:VisualBox.Background>
+                            </se:VisualBox>
+                            <TextBlock TextWrapping="Wrap" Text="Ручн. вкл." VerticalAlignment="Center" Margin="20,0,0,0"/>
+                        </StackPanel>
+                    </se:ScadaButton>
+                    <se:ScadaButton Height="35" Margin="2,581,2,0" VerticalAlignment="Top" PushCommand="{Custom:SeBinding Tags.Node[write.climate.drawwork_terminal].Items[supply_off].WriteCommand}" ReleasedCommand="{Custom:SeBinding Tags.Node[write.climate.drawwork_terminal].Items[supply_off].WriteCommand}">
+                        <StackPanel Orientation="Horizontal" Width="310">
+                            <se:VisualBox Width="20" Height="20" BorderBrush="{x:Null}">
+                                <se:VisualBox.VisualStateCollection>
+                                    <se:VisualBoxStateItem>
+                                        <se:VisualBoxStateItem.Value>
+                                            <Custom:SeBinding  Path="Tags.Node[view.climate.drawwork_terminal].Items[supply_mode_off].Value">
+                                                <Custom:SeBinding.FallbackValue>
+                                                    <System:Boolean>False</System:Boolean>
+                                                </Custom:SeBinding.FallbackValue>
+                                            </Custom:SeBinding>
+                                        </se:VisualBoxStateItem.Value>
+                                        <se:VisualBoxStateItem.Background>
+                                            <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_fine.png" Stretch="Fill"/>
+                                        </se:VisualBoxStateItem.Background>
+                                    </se:VisualBoxStateItem>
+                                </se:VisualBox.VisualStateCollection>
+                                <se:VisualBox.Background>
+                                    <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_default.png" Stretch="Fill"/>
+                                </se:VisualBox.Background>
+                            </se:VisualBox>
+                            <TextBlock TextWrapping="Wrap" Text="Ручн. выкл." VerticalAlignment="Center" Margin="20,0,0,0"/>
+                        </StackPanel>
+                    </se:ScadaButton>
+                    <se:VisualBox Margin="2,76,2,0" VerticalAlignment="Top" CornerRadius="5" Height="49" Text="НЕТ СВЯЗИ" Grid.Column="1">
+                        <se:VisualBox.VisualStateCollection>
+                            <se:VisualBoxStateItem Background="Red" Text="ХОЛОДНО">
+                                <se:VisualBoxStateItem.Value>
+                                    <Custom:SeBinding  Path="Tags.Node[view.climate.pump_console.console1].Items[temperature_cold].Value">
+                                        <Custom:SeBinding.FallbackValue>
+                                            <System:Boolean>False</System:Boolean>
+                                        </Custom:SeBinding.FallbackValue>
+                                    </Custom:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem Background="Green" Text="НОРМА">
+                                <se:VisualBoxStateItem.Value>
+                                    <Custom:SeBinding  Path="Tags.Node[view.climate.pump_console.console1].Items[temperature_normal].Value">
+                                        <Custom:SeBinding.FallbackValue>
+                                            <System:Boolean>False</System:Boolean>
+                                        </Custom:SeBinding.FallbackValue>
+                                    </Custom:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem Background="Red" Text="ПЕРЕГРЕВ">
+                                <se:VisualBoxStateItem.Value>
+                                    <Custom:SeBinding  Path="Tags.Node[view.climate.pump_console.console1].Items[temperature_overheat].Value">
+                                        <Custom:SeBinding.FallbackValue>
+                                            <System:Boolean>False</System:Boolean>
+                                        </Custom:SeBinding.FallbackValue>
+                                    </Custom:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem Background="Red" Text="СБОЙ">
+                                <se:VisualBoxStateItem.Value>
+                                    <Custom:SeBinding  Path="Tags.Node[view.climate.pump_console.console1].Items[temperature_error].Value">
+                                        <Custom:SeBinding.FallbackValue>
+                                            <System:Boolean>False</System:Boolean>
+                                        </Custom:SeBinding.FallbackValue>
+                                    </Custom:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                        </se:VisualBox.VisualStateCollection>
+                    </se:VisualBox>
+                    <Border BorderThickness="1" Height="25" Margin="2,135,2,0" VerticalAlignment="Top" Background="Black" Grid.Column="1">
+                        <TextBlock TextWrapping="Wrap" Text="обогрев" Foreground="Goldenrod" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"/>
+                    </Border>
+                    <se:VisualBox Margin="2,170,2,0" VerticalAlignment="Top" CornerRadius="5" Height="49" Text="НЕТ СВЯЗИ" Grid.Column="1">
+                        <se:VisualBox.VisualStateCollection>
+                            <se:VisualBoxStateItem Background="Green" Text="ГРЕЕТ">
+                                <se:VisualBoxStateItem.Value>
+                                    <Custom:SeBinding  Path="Tags.Node[view.climate.pump_console.console1].Items[heating_on].Value">
+                                        <Custom:SeBinding.FallbackValue>
+                                            <System:Boolean>False</System:Boolean>
+                                        </Custom:SeBinding.FallbackValue>
+                                    </Custom:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem Background="Red" Text="НЕ ГРЕЕТ">
+                                <se:VisualBoxStateItem.Value>
+                                    <Custom:SeBinding  Path="Tags.Node[view.climate.pump_console.console1].Items[heating_off].Value">
+                                        <Custom:SeBinding.FallbackValue>
+                                            <System:Boolean>False</System:Boolean>
+                                        </Custom:SeBinding.FallbackValue>
+                                    </Custom:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                        </se:VisualBox.VisualStateCollection>
+                    </se:VisualBox>
+                    <Border BorderThickness="1" Height="25" Margin="2,230,2,0" VerticalAlignment="Top" Background="Black" Grid.Column="1">
+                        <TextBlock TextWrapping="Wrap" Text="управление" Foreground="Goldenrod" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"/>
+                    </Border>
+                    <se:ScadaButton Height="35" Margin="2,262,2,0" VerticalAlignment="Top" PushCommand="{Custom:SeBinding Tags.Node[write.climate.pump_console.console1].Items[heating_auto].WriteCommand}" ReleasedCommand="{Custom:SeBinding Tags.Node[write.climate.pump_console.console1].Items[heating_auto].WriteCommand}" Grid.Column="1">
+                        <StackPanel Orientation="Horizontal" Width="310">
+                            <se:VisualBox Width="20" Height="20" BorderBrush="{x:Null}">
+                                <se:VisualBox.VisualStateCollection>
+                                    <se:VisualBoxStateItem>
+                                        <se:VisualBoxStateItem.Value>
+                                            <Custom:SeBinding  Path="Tags.Node[view.climate.pump_console.console1].Items[heating_mode_auto].Value">
+                                                <Custom:SeBinding.FallbackValue>
+                                                    <System:Boolean>False</System:Boolean>
+                                                </Custom:SeBinding.FallbackValue>
+                                            </Custom:SeBinding>
+                                        </se:VisualBoxStateItem.Value>
+                                        <se:VisualBoxStateItem.Background>
+                                            <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_fine.png" Stretch="Fill"/>
+                                        </se:VisualBoxStateItem.Background>
+                                    </se:VisualBoxStateItem>
+                                </se:VisualBox.VisualStateCollection>
+                                <se:VisualBox.Background>
+                                    <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_default.png" Stretch="Fill"/>
+                                </se:VisualBox.Background>
+                            </se:VisualBox>
+                            <TextBlock TextWrapping="Wrap" Text="Автомат." VerticalAlignment="Center" Margin="20,0,0,0"/>
+                        </StackPanel>
+                    </se:ScadaButton>
+                    <se:ScadaButton Height="35" Margin="2,342,2,0" VerticalAlignment="Top" PushCommand="{Custom:SeBinding Tags.Node[write.climate.pump_console.console1].Items[heating_off].WriteCommand}" ReleasedCommand="{Custom:SeBinding Tags.Node[write.climate.pump_console.console1].Items[heating_off].WriteCommand}" Grid.Column="1">
+                        <StackPanel Orientation="Horizontal" Width="310">
+                            <se:VisualBox Width="20" Height="20" BorderBrush="{x:Null}">
+                                <se:VisualBox.VisualStateCollection>
+                                    <se:VisualBoxStateItem>
+                                        <se:VisualBoxStateItem.Value>
+                                            <Custom:SeBinding  Path="Tags.Node[view.climate.pump_console.console1].Items[heating_mode_off].Value">
+                                                <Custom:SeBinding.FallbackValue>
+                                                    <System:Boolean>False</System:Boolean>
+                                                </Custom:SeBinding.FallbackValue>
+                                            </Custom:SeBinding>
+                                        </se:VisualBoxStateItem.Value>
+                                        <se:VisualBoxStateItem.Background>
+                                            <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_fine.png" Stretch="Fill"/>
+                                        </se:VisualBoxStateItem.Background>
+                                    </se:VisualBoxStateItem>
+                                </se:VisualBox.VisualStateCollection>
+                                <se:VisualBox.Background>
+                                    <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_default.png" Stretch="Fill"/>
+                                </se:VisualBox.Background>
+                            </se:VisualBox>
+                            <TextBlock TextWrapping="Wrap" Text="Ручн. выкл." VerticalAlignment="Center" Margin="20,0,0,0"/>
+                        </StackPanel>
+                    </se:ScadaButton>
+                    <se:ScadaButton Height="35" Margin="2,302,2,0" VerticalAlignment="Top" PushCommand="{Custom:SeBinding Tags.Node[write.climate.pump_console.console1].Items[heating_on].WriteCommand}" ReleasedCommand="{Custom:SeBinding Tags.Node[write.climate.pump_console.console1].Items[heating_on].WriteCommand}" Grid.Column="1">
+                        <StackPanel Orientation="Horizontal" Width="310">
+                            <se:VisualBox Width="20" Height="20" BorderBrush="{x:Null}">
+                                <se:VisualBox.VisualStateCollection>
+                                    <se:VisualBoxStateItem>
+                                        <se:VisualBoxStateItem.Value>
+                                            <Custom:SeBinding  Path="Tags.Node[view.climate.pump_console.console1].Items[heating_mode_on].Value">
+                                                <Custom:SeBinding.FallbackValue>
+                                                    <System:Boolean>False</System:Boolean>
+                                                </Custom:SeBinding.FallbackValue>
+                                            </Custom:SeBinding>
+                                        </se:VisualBoxStateItem.Value>
+                                        <se:VisualBoxStateItem.Background>
+                                            <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_fine.png" Stretch="Fill"/>
+                                        </se:VisualBoxStateItem.Background>
+                                    </se:VisualBoxStateItem>
+                                </se:VisualBox.VisualStateCollection>
+                                <se:VisualBox.Background>
+                                    <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_default.png" Stretch="Fill"/>
+                                </se:VisualBox.Background>
+                            </se:VisualBox>
+                            <TextBlock TextWrapping="Wrap" Text="Ручн. вкл." VerticalAlignment="Center" Margin="20,0,0,0"/>
+                        </StackPanel>
+                    </se:ScadaButton>
+                    <Border BorderThickness="1" Height="25" Margin="2,386,2,0" VerticalAlignment="Top" Background="Black" Grid.Column="1">
+                        <TextBlock TextWrapping="Wrap" Text="питание" Foreground="Goldenrod" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"/>
+                    </Border>
+                    <se:VisualBox Margin="2,416,2,0" VerticalAlignment="Top" CornerRadius="5" Height="49" Text="НЕТ СВЯЗИ" Grid.Column="1">
+                        <se:VisualBox.VisualStateCollection>
+                            <se:VisualBoxStateItem Background="Green" Text="ВКЛ.">
+                                <se:VisualBoxStateItem.Value>
+                                    <Custom:SeBinding  Path="Tags.Node[view.climate.pump_console.console1].Items[supply_on].Value">
+                                        <Custom:SeBinding.FallbackValue>
+                                            <System:Boolean>False</System:Boolean>
+                                        </Custom:SeBinding.FallbackValue>
+                                    </Custom:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem Background="Red" Text="ОТКЛ.">
+                                <se:VisualBoxStateItem.Value>
+                                    <Custom:SeBinding  Path="Tags.Node[view.climate.pump_console.console1].Items[supply_off].Value">
+                                        <Custom:SeBinding.FallbackValue>
+                                            <System:Boolean>False</System:Boolean>
+                                        </Custom:SeBinding.FallbackValue>
+                                    </Custom:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                        </se:VisualBox.VisualStateCollection>
+                    </se:VisualBox>
+                    <Border BorderThickness="1" Height="25" Margin="2,470,2,0" VerticalAlignment="Top" Background="Black" Grid.Column="1">
+                        <TextBlock TextWrapping="Wrap" Text="управление" Foreground="Goldenrod" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"/>
+                    </Border>
+                    <se:ScadaButton Height="35" Margin="2,501,2,0" VerticalAlignment="Top" PushCommand="{Custom:SeBinding Tags.Node[write.climate.pump_console.console1].Items[supply_auto].WriteCommand}" ReleasedCommand="{Custom:SeBinding Tags.Node[write.climate.pump_console.console1].Items[supply_auto].WriteCommand}" Grid.Column="1">
+                        <StackPanel Orientation="Horizontal" Width="310">
+                            <se:VisualBox Width="20" Height="20" BorderBrush="{x:Null}">
+                                <se:VisualBox.VisualStateCollection>
+                                    <se:VisualBoxStateItem>
+                                        <se:VisualBoxStateItem.Value>
+                                            <Custom:SeBinding  Path="Tags.Node[view.climate.pump_console.console1].Items[sypply_mode_auto].Value">
+                                                <Custom:SeBinding.FallbackValue>
+                                                    <System:Boolean>False</System:Boolean>
+                                                </Custom:SeBinding.FallbackValue>
+                                            </Custom:SeBinding>
+                                        </se:VisualBoxStateItem.Value>
+                                        <se:VisualBoxStateItem.Background>
+                                            <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_fine.png" Stretch="Fill"/>
+                                        </se:VisualBoxStateItem.Background>
+                                    </se:VisualBoxStateItem>
+                                </se:VisualBox.VisualStateCollection>
+                                <se:VisualBox.Background>
+                                    <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_default.png" Stretch="Fill"/>
+                                </se:VisualBox.Background>
+                            </se:VisualBox>
+                            <TextBlock TextWrapping="Wrap" Text="Автомат." VerticalAlignment="Center" Margin="20,0,0,0"/>
+                        </StackPanel>
+                    </se:ScadaButton>
+                    <se:ScadaButton Height="35" Margin="2,541,2,0" VerticalAlignment="Top" PushCommand="{Custom:SeBinding Tags.Node[write.climate.pump_console.console1].Items[supply_on].WriteCommand}" ReleasedCommand="{Custom:SeBinding Tags.Node[write.climate.pump_console.console1].Items[supply_on].WriteCommand}" Grid.Column="1">
+                        <StackPanel Orientation="Horizontal" Width="310">
+                            <se:VisualBox Width="20" Height="20" BorderBrush="{x:Null}">
+                                <se:VisualBox.VisualStateCollection>
+                                    <se:VisualBoxStateItem>
+                                        <se:VisualBoxStateItem.Value>
+                                            <Custom:SeBinding  Path="Tags.Node[view.climate.pump_console.console1].Items[supply_mode_on].Value">
+                                                <Custom:SeBinding.FallbackValue>
+                                                    <System:Boolean>False</System:Boolean>
+                                                </Custom:SeBinding.FallbackValue>
+                                            </Custom:SeBinding>
+                                        </se:VisualBoxStateItem.Value>
+                                        <se:VisualBoxStateItem.Background>
+                                            <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_fine.png" Stretch="Fill"/>
+                                        </se:VisualBoxStateItem.Background>
+                                    </se:VisualBoxStateItem>
+                                </se:VisualBox.VisualStateCollection>
+                                <se:VisualBox.Background>
+                                    <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_default.png" Stretch="Fill"/>
+                                </se:VisualBox.Background>
+                            </se:VisualBox>
+                            <TextBlock TextWrapping="Wrap" Text="Ручн. вкл." VerticalAlignment="Center" Margin="20,0,0,0"/>
+                        </StackPanel>
+                    </se:ScadaButton>
+                    <se:ScadaButton Height="35" Margin="2,581,2,0" VerticalAlignment="Top" PushCommand="{Custom:SeBinding Tags.Node[write.climate.pump_console.console1].Items[supply_off].WriteCommand}" ReleasedCommand="{Custom:SeBinding Tags.Node[write.climate.pump_console.console1].Items[supply_off].WriteCommand}" Grid.Column="1">
+                        <StackPanel Orientation="Horizontal" Width="310">
+                            <se:VisualBox Width="20" Height="20" BorderBrush="{x:Null}">
+                                <se:VisualBox.VisualStateCollection>
+                                    <se:VisualBoxStateItem>
+                                        <se:VisualBoxStateItem.Value>
+                                            <Custom:SeBinding  Path="Tags.Node[view.climate.pump_console.console1].Items[supply_mode_off].Value">
+                                                <Custom:SeBinding.FallbackValue>
+                                                    <System:Boolean>False</System:Boolean>
+                                                </Custom:SeBinding.FallbackValue>
+                                            </Custom:SeBinding>
+                                        </se:VisualBoxStateItem.Value>
+                                        <se:VisualBoxStateItem.Background>
+                                            <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_fine.png" Stretch="Fill"/>
+                                        </se:VisualBoxStateItem.Background>
+                                    </se:VisualBoxStateItem>
+                                </se:VisualBox.VisualStateCollection>
+                                <se:VisualBox.Background>
+                                    <ImageBrush ImageSource="/VFD;component/Content/Lamps/led_default.png" Stretch="Fill"/>
+                                </se:VisualBox.Background>
+                            </se:VisualBox>
+                            <TextBlock TextWrapping="Wrap" Text="Ручн. выкл." VerticalAlignment="Center" Margin="20,0,0,0"/>
+                        </StackPanel>
+                    </se:ScadaButton>
+                    <se:VisualBox Margin="2,45,2,0" VerticalAlignment="Top" CornerRadius="5" Height="55" Text="НЕТ СВЯЗИ" Grid.Column="2">
+                        <se:VisualBox.VisualStateCollection>
+                            <se:VisualBoxStateItem Background="Red" Text="ПЕРЕГРЕВ">
+                                <se:VisualBoxStateItem.Value>
+                                    <Custom:SeBinding  Path="Tags.Node[view.climate.vfd].Items[temperature_overheat].Value">
+                                        <Custom:SeBinding.FallbackValue>
+                                            <System:Boolean>False</System:Boolean>
+                                        </Custom:SeBinding.FallbackValue>
+                                    </Custom:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem Background="Green" Text="НЕТ ПЕРЕГРЕВА">
+                                <se:VisualBoxStateItem.Value>
+                                    <Custom:SeBinding  Path="Tags.Node[view.climate.vfd].Items[temperature_normal].Value">
+                                        <Custom:SeBinding.FallbackValue>
+                                            <System:Boolean>False</System:Boolean>
+                                        </Custom:SeBinding.FallbackValue>
+                                    </Custom:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                        </se:VisualBox.VisualStateCollection>
+                    </se:VisualBox>
+                    <se:VisualBox Margin="2,104,2,0" VerticalAlignment="Top" CornerRadius="5" Height="55" Text="НЕТ СВЯЗИ" Grid.Column="2">
+                        <se:VisualBox.VisualStateCollection>
+                            <se:VisualBoxStateItem Background="Green" Text="ВЛАЖНОСТЬ В НОРМЕ">
+                                <se:VisualBoxStateItem.Value>
+                                    <Custom:SeBinding  Path="Tags.Node[view.climate.vfd].Items[humidity_normal].Value">
+                                        <Custom:SeBinding.FallbackValue>
+                                            <System:Boolean>False</System:Boolean>
+                                        </Custom:SeBinding.FallbackValue>
+                                    </Custom:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem Background="Red" Text="ВЫСОКАЯ ВЛАЖНОСТЬ">
+                                <se:VisualBoxStateItem.Value>
+                                    <Custom:SeBinding  Path="Tags.Node[view.climate.vfd].Items[humidity_hight].Value">
+                                        <Custom:SeBinding.FallbackValue>
+                                            <System:Boolean>False</System:Boolean>
+                                        </Custom:SeBinding.FallbackValue>
+                                    </Custom:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                        </se:VisualBox.VisualStateCollection>
+                    </se:VisualBox>
+                    <se:VisualBox Margin="2,164,2,0" VerticalAlignment="Top" CornerRadius="5" Height="55" Text="ГОТОВНОСТЬ ВЕНТИЛЯЦИИ" Background="Green" Grid.Column="2">
+                        <se:VisualBox.VisualStateCollection>
+                            <se:VisualBoxStateItem Background="Red" Text="АВАРИЯ ВЕНТИЛЯЦИИ"/>
+                        </se:VisualBox.VisualStateCollection>
+                    </se:VisualBox>
+                    <Border BorderThickness="1" Height="35" Margin="2,376,2,0" VerticalAlignment="Top" Background="Black" Grid.Column="2">
+                        <TextBlock TextWrapping="Wrap" Text="НКУ" Foreground="Goldenrod" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="28"/>
+                    </Border>
+                    <se:VisualBox Margin="2,416,2,0" VerticalAlignment="Top" CornerRadius="5" Height="55" Text="НЕТ СВЯЗИ" Grid.Column="2">
+                        <se:VisualBox.VisualStateCollection>
+                            <se:VisualBoxStateItem Background="Red" Text="ПЕРЕГРЕВ">
+                                <se:VisualBoxStateItem.Value>
+                                    <Custom:SeBinding  Path="Tags.Node[view.climate.mcc].Items[temperature_overheat].Value">
+                                        <Custom:SeBinding.FallbackValue>
+                                            <System:Boolean>False</System:Boolean>
+                                        </Custom:SeBinding.FallbackValue>
+                                    </Custom:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem Background="Green" Text="НЕТ ПЕРЕГРЕВА">
+                                <se:VisualBoxStateItem.Value>
+                                    <Custom:SeBinding  Path="Tags.Node[view.climate.mcc].Items[temperature_normal].Value">
+                                        <Custom:SeBinding.FallbackValue>
+                                            <System:Boolean>False</System:Boolean>
+                                        </Custom:SeBinding.FallbackValue>
+                                    </Custom:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                        </se:VisualBox.VisualStateCollection>
+                    </se:VisualBox>
+                    <se:VisualBox Margin="2,476,2,0" VerticalAlignment="Top" CornerRadius="5" Height="55" Text="НЕТ СВЯЗИ" Grid.Column="2">
+                        <se:VisualBox.VisualStateCollection>
+                            <se:VisualBoxStateItem Background="Green" Text="ВЛАЖНОСТЬ В НОРМЕ">
+                                <se:VisualBoxStateItem.Value>
+                                    <Custom:SeBinding  Path="Tags.Node[view.climate.mcc].Items[humidity_normal].Value">
+                                        <Custom:SeBinding.FallbackValue>
+                                            <System:Boolean>False</System:Boolean>
+                                        </Custom:SeBinding.FallbackValue>
+                                    </Custom:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                            <se:VisualBoxStateItem Background="Red" Text="ВЫСОКАЯ ВЛАЖНОСТЬ">
+                                <se:VisualBoxStateItem.Value>
+                                    <Custom:SeBinding  Path="Tags.Node[view.climate.mcc].Items[humidity_hight].Value">
+                                        <Custom:SeBinding.FallbackValue>
+                                            <System:Boolean>False</System:Boolean>
+                                        </Custom:SeBinding.FallbackValue>
+                                    </Custom:SeBinding>
+                                </se:VisualBoxStateItem.Value>
+                            </se:VisualBoxStateItem>
+                        </se:VisualBox.VisualStateCollection>
+                    </se:VisualBox>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>

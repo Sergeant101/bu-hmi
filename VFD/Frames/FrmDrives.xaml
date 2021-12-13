@@ -1,0 +1,61 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:elements="clr-namespace:NGO.Elements.Gauges;assembly=NGO.Elements" 
+             xmlns:se="http://schemas.monokot.com/se/" 
+             xmlns:Position="clr-namespace:NGO.Elements.Linear.Position;assembly=NGO.Elements" 
+             xmlns:hmi="http://schemas.monokot.com/hmi/"
+             xmlns:System="clr-namespace:System;assembly=mscorlib"
+             xmlns:message="clr-namespace:NGO.Elements.Message;assembly=NGO.Elements"
+             xmlns:Fundamental="clr-namespace:Monokot.Hmi.Core.Fundamental;assembly=Monokot.Hmi.Core"
+             xmlns:status="clr-namespace:NGO.Elements.Message;assembly=NGO.Elements"
+             xmlns:Generic="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+             xmlns:Wpf="clr-namespace:Monokot.ScadaExtension.Wpf;assembly=Monokot.ScadaExtension.Wpf"
+             xmlns:sub="clr-namespace:VFD.Frames.Sub"
+             xmlns:sng="clr-namespace:VFD.Frames.Sub.SNG"
+             xmlns:sng_obuchenie="clr-namespace:VFD.Frames.Sub.SNG_Obuchenie"
+             x:Class="VFD.Frames.FrmDrives"
+             mc:Ignorable="d" 
+             d:DesignHeight="900" d:DesignWidth="1280">
+    <Grid>
+        <TabControl HorizontalAlignment="Stretch" Margin="0">
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock Text="НАСОСЫ" FontSize="20"/>
+                </TabItem.Header>
+                <sng:FrmPumps/>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock Text="ЛЕБЕДКА" FontSize="20"/>
+                </TabItem.Header>
+                <sng_obuchenie:Drawwork_SNG Background="#FFC9C9C9" Height="850"/>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock Text="РОТОР" FontSize="20"/>
+                </TabItem.Header>
+                <sng:FrmRotor>
+                    <sng:FrmRotor.LayoutTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="0.95" ScaleY="0.95"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </sng:FrmRotor.LayoutTransform>
+                </sng:FrmRotor>
+                
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock Text="ВСПОМ. ЛЕБЕДКА" FontSize="20"/>
+                </TabItem.Header>
+                <sng:HelperDrawworkSNG/>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</UserControl>

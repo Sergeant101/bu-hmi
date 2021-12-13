@@ -1,0 +1,318 @@
+﻿<se:SEWindow
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:my="clr-namespace:System;assembly=mscorlib"
+        xmlns:hmi="http://schemas.monokot.com/hmi/"
+        xmlns:se="http://schemas.monokot.com/se/"
+
+    xmlns:sng="clr-namespace:DC.Frames.SNG"
+    xmlns:n159="clr-namespace:DC.Frames.n159"
+    xmlns:n160="clr-namespace:DC.Frames.n160"
+    xmlns:n163="clr-namespace:DC.Frames.n163"
+    xmlns:arctic="clr-namespace:DC.Frames.ArcticLight"
+    xmlns:bngre="clr-namespace:DC.Frames.Bngre"
+        xmlns:sng_obuchenie="clr-namespace:DC.Frames.SNG_Obuchenie"
+        xmlns:gui="clr-namespace:DC.Frames"
+    xmlns:buttons="clr-namespace:Monokot.ScadaExtension.Wpf.Controls.Buttons;assembly=Monokot.ScadaExtension.Wpf"
+    xmlns:navigation="clr-namespace:Monokot.ScadaExtension.Wpf.Controls.Navigation;assembly=Monokot.ScadaExtension.Wpf"
+    
+    xmlns:complectation="clr-namespace:NGO.Elements.Special.Complectation;assembly=NGO.Elements"
+    
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+        x:Class="DC.MainWindow"
+    Title="SCADA Application" 
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Height="1024" Width="1280"
+    
+    x:Name="_MW"
+        Background="#FFC9C9C9" WindowStyle="None">
+
+    <se:SEWindow.Resources>
+        <complectation:ZakazToVisibilityConverter x:Key="ZakazConverter" />
+
+        <complectation:ZakazType x:Key="Zakaz_159">zakaz54038</complectation:ZakazType>
+        <complectation:ZakazType x:Key="Zakaz_160">zakaz54042</complectation:ZakazType>
+        <complectation:ZakazType x:Key="Arctic">zakaz54044</complectation:ZakazType>
+        <complectation:ZakazType x:Key="Bngre">zakaz54056</complectation:ZakazType>
+    </se:SEWindow.Resources>
+
+    <Canvas>
+        <Border CornerRadius="5" BorderBrush="Black" BorderThickness="1" Background="white" Canvas.Left="8">
+            <TextBlock Text="{hmi:Bind FallbackValue=2016-12-17 13:20:25, Path=Tags.Node[view].Items[time].Value}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10" Foreground="Black" FontSize="20" />
+        </Border>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" Height="49" Canvas.Left="1046" Width="224" Text="ГАЗ" FontSize="24" CornerRadius="5" Background="{DynamicResource DefaultGray}">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{DynamicResource MediaBoxEmergencySolidColorBrush}" Text="ГАЗ" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.msab].Items[gas_alarm].Value">
+                            <hmi:Bind.FallbackValue>
+                                <my:Boolean>False</my:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <!--<se:VisualBoxStateItem Background="{DynamicResource MediaBoxEmergencySolidColorBrush}" Text="ГАЗ" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="AnalogAlarms.Node[GasAlarm].Items[1].Blinking">
+                            <hmi:Bind.FallbackValue>
+                                <my:Boolean>False</my:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="{DynamicResource MediaBoxEmergencySolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="AnalogAlarms.Node[GasAlarm].Items[2].Blinking">
+                            <hmi:Bind.FallbackValue>
+                                <my:Boolean>False</my:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="{DynamicResource MediaBoxEmergencySolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="AnalogAlarms.Node[GasAlarm].Items[3].Blinking">
+                            <hmi:Bind.FallbackValue>
+                                <my:Boolean>False</my:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="{DynamicResource MediaBoxEmergencySolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="AnalogAlarms.Node[GasAlarm].Items[6].Blinking">
+                            <hmi:Bind.FallbackValue>
+                                <my:Boolean>False</my:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>-->
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <!--<se:VisualBox BorderBrush="Black" BorderThickness="1" Height="49" Canvas.Left="817" Width="224" Text="ПОЖАР" FontSize="24" CornerRadius="5" Background="{DynamicResource DefaultGray}">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource MediaBoxAlarmSolidColorBrush}" Text="ПОЖАР" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:SeBinding Path="Tags.Node[view.pozharnaya_sistema].Items[pozhar_alarm].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <my:Boolean>False</my:Boolean>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>-->
+        <navigation:HmiTabControl  
+            Visibility="{Binding Context.HmiTabVisibility, ElementName=_MW}"
+            HighlightBrush="#FF46B42D" Width="1280" Height="970" TabStripPlacement="Bottom" TabHorizontalAlignment="Center" Canvas.Top="55">
+
+            <se:HmiTabItem Margin="0,0,0,0" FontSize="18" Style="{StaticResource MetalBorderedNavigationItem}"  Header="БУРЕНИЕ" Height="70" Width="110">
+                <Grid>
+                    <sng:FrmDrillingSNG Margin="0,0,0,0" Visibility="{Binding ZakazType, ConverterParameter={StaticResource Zakaz_159}, Converter={StaticResource ZakazConverter}, ElementName=_MW}"/>
+                    <n160:FrmDrillingSNG Margin="0,0,0,0" Visibility="{Binding ZakazType, ConverterParameter={StaticResource Zakaz_160}, Converter={StaticResource ZakazConverter}, ElementName=_MW}"/>
+                    <arctic:FrmDrillingSNG Margin="0,0,0,0" Visibility="{Binding ZakazType, ConverterParameter={StaticResource Arctic}, Converter={StaticResource ZakazConverter}, ElementName=_MW}"/>
+                    <arctic:FrmDrillingSNG Margin="0,0,0,0" Visibility="{Binding ZakazType, ConverterParameter={StaticResource Bngre}, Converter={StaticResource ZakazConverter}, ElementName=_MW}"/>
+                </Grid>
+            </se:HmiTabItem>
+            <se:HmiTabItem Margin="5,0,0,0"  FontSize="18" Style="{StaticResource MetalBorderedNavigationItem}"  Header="СПО" Height="70" Width="110">
+                <Grid>
+                    <!--<n159:FrmSpo Margin="0,0,0,0" Width="1280" Height="900" Visibility="{Binding ZakazType, ConverterParameter={StaticResource Zakaz_159}, Converter={StaticResource ZakazConverter}, ElementName=_MW}">
+                        <n159:FrmSpo.LayoutTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="0.94" ScaleY="0.94"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </n159:FrmSpo.LayoutTransform>
+                    </n159:FrmSpo>-->
+                    <n163:FrmSpo Margin="0,0,0,0" Width="1280" Height="900" Visibility="{Binding ZakazType, ConverterParameter={StaticResource Zakaz_159}, Converter={StaticResource ZakazConverter}, ElementName=_MW}">
+                        <n163:FrmSpo.LayoutTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="0.94" ScaleY="0.94"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </n163:FrmSpo.LayoutTransform>
+                    </n163:FrmSpo>
+                    <n159:FrmSpo Margin="0,0,0,0" Width="1280" Height="900" Visibility="{Binding ZakazType, ConverterParameter={StaticResource Zakaz_160}, Converter={StaticResource ZakazConverter}, ElementName=_MW}" d:IsHidden="True">
+                        <n159:FrmSpo.LayoutTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="0.94" ScaleY="0.94"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </n159:FrmSpo.LayoutTransform>
+                    </n159:FrmSpo>
+                    <arctic:FrmSpo Margin="0,0,0,0" Width="1280" Height="900" Visibility="{Binding ZakazType, ConverterParameter={StaticResource Arctic}, Converter={StaticResource ZakazConverter}, ElementName=_MW}" d:IsHidden="True">
+                        <arctic:FrmSpo.LayoutTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="0.94" ScaleY="0.94"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </arctic:FrmSpo.LayoutTransform>
+                    </arctic:FrmSpo>
+                    <arctic:FrmSpo Margin="0,0,0,0" Width="1280" Height="900" Visibility="{Binding ZakazType, ConverterParameter={StaticResource Bngre}, Converter={StaticResource ZakazConverter}, ElementName=_MW}">
+                        <arctic:FrmSpo.LayoutTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="0.94" ScaleY="0.94"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </arctic:FrmSpo.LayoutTransform>
+                    </arctic:FrmSpo>
+                </Grid>
+            </se:HmiTabItem>
+            <se:HmiTabItem Margin="5,0,0,0"  FontSize="18" Style="{StaticResource MetalBorderedNavigationItem}"  Header="НАСОСЫ" Height="70" Width="110">
+
+                <Grid>
+                    <arctic:FrmPumps RenderTransformOrigin="0.5,0.5" Visibility="{Binding ZakazType, ConverterParameter={StaticResource Arctic}, Converter={StaticResource ZakazConverter}, ElementName=_MW}">
+                        <arctic:FrmPumps.LayoutTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="0.95" ScaleY="0.95"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </arctic:FrmPumps.LayoutTransform>
+                    </arctic:FrmPumps>
+
+                    <bngre:FrmPumps RenderTransformOrigin="0.5,0.5" Visibility="{Binding ZakazType, ConverterParameter={StaticResource Bngre}, Converter={StaticResource ZakazConverter}, ElementName=_MW}">
+                        <bngre:FrmPumps.LayoutTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="0.95" ScaleY="0.95"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </bngre:FrmPumps.LayoutTransform>
+                    </bngre:FrmPumps>
+                    
+                    <n159:FrmPumps RenderTransformOrigin="0.5,0.5" Visibility="{Binding ZakazType, ConverterParameter={StaticResource Zakaz_159}, Converter={StaticResource ZakazConverter}, ElementName=_MW}">
+                        <n159:FrmPumps.LayoutTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="0.95" ScaleY="0.95"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </n159:FrmPumps.LayoutTransform>
+                    </n159:FrmPumps>
+
+                    <n159:FrmPumps RenderTransformOrigin="0.5,0.5" Visibility="{Binding ZakazType, ConverterParameter={StaticResource Zakaz_160}, Converter={StaticResource ZakazConverter}, ElementName=_MW}">
+                        <n159:FrmPumps.LayoutTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="0.95" ScaleY="0.95"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </n159:FrmPumps.LayoutTransform>
+                    </n159:FrmPumps>
+                </Grid>
+            </se:HmiTabItem>
+            <se:HmiTabItem Margin="5,0,0,0"  FontSize="18" Style="{StaticResource MetalBorderedNavigationItem}"  Header="ЛЕБЕДКА" Height="70" Width="110">
+                <n163:FrmDrawwork Margin="0,0,0,0" Width="1280" Height="900">
+                    <n163:FrmDrawwork.LayoutTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="0.94" ScaleY="0.94"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </n163:FrmDrawwork.LayoutTransform>
+                </n163:FrmDrawwork>
+                <!--<n159:FrmDrawwork Margin="0,0,0,0" Width="1280" Height="900">
+                    <n159:FrmDrawwork.LayoutTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="0.94" ScaleY="0.94"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </n159:FrmDrawwork.LayoutTransform>
+                </n159:FrmDrawwork>-->
+            </se:HmiTabItem>
+            <se:HmiTabItem Margin="5,0,0,0"  FontSize="18" Style="{StaticResource MetalBorderedNavigationItem}"  Header="РОТОР" Height="70" Width="110">
+                <n159:FrmRotor/>
+            </se:HmiTabItem>
+            <se:HmiTabItem Margin="5,0,0,0"  FontSize="18" Style="{StaticResource MetalBorderedNavigationItem}"  Header="ВСПОМ.&#xA;ЛЕБЕДКИ" Height="70" Width="110">
+                <n159:HelperDrawworksssssssss />
+            </se:HmiTabItem>
+            <se:HmiTabItem Margin="5,0,0,0"  FontSize="18" Style="{StaticResource MetalBorderedNavigationItem}"  Header="ВСПОМ.&#xA;МЕХАНИЗМЫ" Height="70" Width="130">
+                <n159:FrmAuxiliary />
+            </se:HmiTabItem>
+            <se:HmiTabItem Margin="5,0,0,0"  FontSize="18" Style="{StaticResource MetalBorderedNavigationItem}"  Height="70" Width="110" Header="РАСТВОР">
+                <Grid>
+                    <n159:FrmTanks Visibility="{Binding ZakazType, ConverterParameter={StaticResource Zakaz_159}, Converter={StaticResource ZakazConverter}, ElementName=_MW}"/>
+                    <n159:FrmTanks Visibility="{Binding ZakazType, ConverterParameter={StaticResource Zakaz_160}, Converter={StaticResource ZakazConverter}, ElementName=_MW}"/>
+                    <arctic:FrmTanks Visibility="{Binding ZakazType, ConverterParameter={StaticResource Arctic}, Converter={StaticResource ZakazConverter}, ElementName=_MW}"/>
+                    <arctic:FrmTanks Visibility="{Binding ZakazType, ConverterParameter={StaticResource Bngre}, Converter={StaticResource ZakazConverter}, ElementName=_MW}"/>
+                </Grid>
+            </se:HmiTabItem>
+            <!--<se:HmiTabItem Margin="5,0,0,0"  FontSize="18" Style="{StaticResource MetalBorderedNavigationItem}"  Height="70" Width="120" Header="ПУЛЬТ&#xD;&#xA;НАСОСОВ">
+                <sng_obuchenie:Pult_Nasosov FontWeight="Bold"/>
+            </se:HmiTabItem>-->
+            <buttons:HmiButton Margin="5,0,0,0" Height="70" Width="120" Style="{StaticResource MetalBorderButton}" Click="HmiButton_Click" Visibility="Collapsed" >
+                <TextBlock Text="КОМПЬЮТЕР&#xA;МЧП"  FontSize="18" TextWrapping="Wrap" Margin="-5" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalAlignment="Stretch"/>
+            </buttons:HmiButton>
+            <buttons:HmiButton Margin="5,0,0,0" Height="70" Width="120" Click="ScadaButton_Click" Style="{StaticResource MetalBorderButton}" >
+                <TextBlock Text="ПОЧИСТИТЬ ЭКРАН"  FontSize="18" TextWrapping="Wrap" Margin="-5" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalAlignment="Stretch"/>
+            </buttons:HmiButton>
+
+            <Grid Margin="50,0,0,5">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="ЗВОНОК В НБ" HorizontalAlignment="Center" FontSize="18" />
+                <buttons:HmiButton Style="{StaticResource CircleRingButton}" BorderThickness="0" hmi:Click.Command="{hmi:Bind Path=Tags.Node[write].Items[pb_zvonok].WriteCommand}" Width="70" Height="70" Grid.Row="1"/>
+            </Grid>
+        </navigation:HmiTabControl>
+        <gui:FrmWash x:Name="Wash" Visibility="Hidden" />
+        <Grid VerticalAlignment="Center"              
+              HorizontalAlignment="Center"
+              Width="600"
+              Visibility="{Binding Context.MessageVisibility, ElementName=_MW, FallbackValue=Hidden}"
+              Grid.Row="1" Canvas.Left="420" Canvas.Top="468">
+            <Rectangle VerticalAlignment="Stretch" 
+                       Fill="#D88B0000"
+                       
+                       RadiusX="5"
+                       RadiusY="5"
+                       HorizontalAlignment="Stretch" Stroke="#7F000000" />
+
+            <StackPanel>
+                <TextBlock Text="{Binding Context.Message, ElementName=_MW}"
+                           FontSize="32" 
+                           TextWrapping="Wrap" 
+                           TextAlignment="Center" />
+
+                <StackPanel Orientation="Horizontal" 
+                            HorizontalAlignment="Center"
+                            Margin="5">
+
+                    <Button Content="СКРЫТЬ" 
+                            Height="40"
+                            Command="{Binding Context.HideCommand, ElementName=_MW}"
+                            FontSize="25"
+                            Width="220" />
+
+                    <buttons:KeypadButton Content="ВВЕСТИ ПАРОЛЬ"
+                                     Margin="5,0,0,0"
+                                     FontSize="25"
+                                     Value="{Binding Context.EnteredCode, ElementName=_MW}"
+                                     Width="220" />
+
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
+    </Canvas>
+</se:SEWindow>

@@ -1,0 +1,67 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:hmi="http://schemas.monokot.com/hmi/"
+             xmlns:se="http://schemas.monokot.com/se/"
+               xmlns:position="clr-namespace:NGO.Elements.Linear.Position;assembly=NGO.Elements"
+             xmlns:gauges1="clr-namespace:NGO.Elements.Gauges;assembly=NGO.Elements"
+             xmlns:Msab="clr-namespace:NGO.Elements.Gauges.Small.Msab;assembly=NGO.Elements" 
+             xmlns:Other="clr-namespace:NGO.Elements.Gauges.Small.Other;assembly=NGO.Elements"
+             x:Class="VFD.Frames.Sub.SNG.FrmMsabButton" 
+             mc:Ignorable="d" 
+             d:DesignHeight="900" d:DesignWidth="1280">
+    <Canvas>
+        <TextBlock Canvas.Left="28" TextWrapping="Wrap" Text="ГЛУБИНА ИНСТРУМЕНТА &#xD;&#xA;= ГЛУБИНЕ ЗАБОЯ" Canvas.Top="426" FontSize="20" FontFamily="Tahoma"/>
+        <TextBlock Canvas.Left="496" TextWrapping="Wrap" Text="ОБНУЛЕНИЕ&#xD;&#xA;ПОЛОЖЕНИЯ БЛОКА" Canvas.Top="579" FontSize="20" FontFamily="Tahoma" TextAlignment="Center"/>
+        <TextBlock Canvas.Left="20" TextWrapping="Wrap" Text="ОТКЛЮЧЕНИЕ СИРЕНЫ" Canvas.Top="762" FontSize="20" FontFamily="Tahoma" TextAlignment="Center"/>
+        <TextBlock Canvas.Left="740" TextWrapping="Wrap" Text="ОБНУЛЕНИЕ ГЛУБИНЫ&#xD;&#xA;ИНСТРУМЕНТА" Canvas.Top="579" FontSize="20" FontFamily="Tahoma" TextAlignment="Center"/>
+        <TextBlock Canvas.Left="20" TextWrapping="Wrap" Text="ФИКСАЦИЯ РАСХОДА&#xD;&#xA;НА ВЫХОДЕ" Canvas.Top="579" FontSize="20" FontFamily="Tahoma" TextAlignment="Center"/>
+        <TextBlock Canvas.Left="260" TextWrapping="Wrap" Text="ОБНУЛЕНИЕ ВЕСА&#xD;&#xA;НА КРЮКЕ" Canvas.Top="579" FontSize="20" FontFamily="Tahoma" TextAlignment="Center"/>
+        <TextBlock Canvas.Left="991" TextWrapping="Wrap" Text="ЯРКОСТЬ ТАБЛО" Canvas.Top="762" FontSize="20" FontFamily="Tahoma" TextAlignment="Center"/>
+        <se:HmiButton Canvas.Left="20"   Canvas.Top="492" Width="212" Height="75"  Style="{StaticResource MetalBorderButton}"  Command="{Binding modules[tags_mod].Items[db_write_msab_0_0].WriteCommand, FallbackValue=''}" Content="УСТАНОВИТЬ"    FontFamily="Tahoma" FontSize="22" />
+        <se:HmiButton Canvas.Left="469"  Canvas.Top="641" Width="240" Height="75"  Style="{StaticResource MetalBorderButton}"  Command="{Binding modules[tags_mod].Items[db_write_msab_0_1].WriteCommand, FallbackValue=''}" Content="ОБНУЛИТЬ"      FontFamily="Tahoma" FontSize="22" />
+        <se:HmiButton Canvas.Left="19"   Canvas.Top="795" Width="213" Height="75"  Style="{StaticResource MetalBorderButton}"  Command="{Binding modules[tags_mod].Items[db_write_msab_0_2].WriteCommand, FallbackValue=''}" Content="ОТКЛЮЧИТЬ"     FontFamily="Tahoma" FontSize="22" />
+        <se:HmiButton Canvas.Left="726"  Canvas.Top="641" Width="244" Height="75"  Style="{StaticResource MetalBorderButton}"  Command="{Binding modules[tags_mod].Items[db_write_msab_0_3].WriteCommand, FallbackValue=''}" Content="ОБНУЛИТЬ"      FontFamily="Tahoma" FontSize="22" />
+        <se:HmiButton Canvas.Left="20"   Canvas.Top="641" Width="212" Height="75"  Style="{StaticResource MetalBorderButton}"  Command="{Binding modules[tags_mod].Items[db_write_msab_0_4].WriteCommand, FallbackValue=''}" Content="ЗАФИКСИРОВАТЬ" FontFamily="Tahoma" FontSize="22" />
+        <se:HmiButton Canvas.Left="260"  Canvas.Top="641" Width="176" Height="75"  Style="{StaticResource MetalBorderButton}"  Command="{Binding modules[tags_mod].Items[db_write_msab_0_5].WriteCommand, FallbackValue=''}" Content="ОБНУЛИТЬ"      FontFamily="Tahoma" FontSize="22" />
+        <se:HmiButton Canvas.Left="986"  Canvas.Top="795" Width="75"  Height="75"  Style="{StaticResource MetalBorderButton}"  Command="{Binding modules[tags_mod].Items[db_write_msab_0_6].WriteCommand, FallbackValue=''}" Content="+"             FontSize="22" FontFamily="Tahoma" />
+        <se:HmiButton Canvas.Left="1077" Canvas.Top="795" Width="75" Height="75"   Style="{StaticResource MetalBorderButton}"  Command="{Binding modules[tags_mod].Items[db_write_msab_0_7].WriteCommand, FallbackValue=''}" Content="-"             FontSize="22" FontFamily="Tahoma" />
+        <se:HmiButton Canvas.Left="985"  Canvas.Top="641"  Width="166" Height="75" Style="{StaticResource MetalBorderButton}"  Command="{Binding modules[tags_mod].Items[db_write_msab_1_0].WriteCommand, FallbackValue=''}" Content="ВКЛЮЧИТЬ"      FontFamily="Tahoma" FontSize="22" />
+        <se:HmiButton Canvas.Left="256"  Canvas.Top="795" Width="75" Height="75"   Style="{StaticResource MetalBorderButton}"  Command="{Binding modules[tags_mod].Items[db_write_msab_1_1].WriteCommand, FallbackValue=''}" Content="+"             FontSize="22" FontFamily="Tahoma" />
+        <se:HmiButton Canvas.Left="357"  Canvas.Top="795" Width="75" Height="75"   Style="{StaticResource MetalBorderButton}"  Command="{Binding modules[tags_mod].Items[db_write_msab_1_2].WriteCommand, FallbackValue=''}" Content="-"             FontSize="22" FontFamily="Tahoma" />
+        <TextBlock Canvas.Left="984" TextWrapping="Wrap" Text="РЕЖИМ КОМПЕНС.&#xD;&#xA;ВЕСА" Canvas.Top="579" FontSize="20" TextAlignment="Center" FontFamily="Tahoma"/>
+        <TextBlock Canvas.Left="257" TextWrapping="Wrap" Text="КОЛИЧЕСТВО&#xD;&#xA;ОПУЩЕННЫХ СВЕЧЕЙ" Canvas.Top="733" FontSize="20" TextAlignment="Center" FontFamily="Tahoma"/>
+        <TextBlock Canvas.Left="469" TextWrapping="Wrap" Text="ИЗМЕНЕНИЕ НА X МЕТРОВ&#xD;&#xA;ГЛУБИНЫ ИНСТРУМЕНТА" Canvas.Top="735" FontSize="20" TextAlignment="Center" FontFamily="Tahoma"/>
+        <TextBlock Canvas.Left="726" TextWrapping="Wrap" Text="ИЗМЕНЕНИЕ НА X МЕТРОВ&#xD;&#xA;ГЛУБИНЫ ЗАБОЯ" Canvas.Top="735" FontSize="20" TextAlignment="Center" FontFamily="Tahoma"/>
+
+        <se:KeypadButton Canvas.Left="469" Canvas.Top="795" Width="240" Height="75" Command="{Binding showKeypadCmd, ElementName=keypad_msab_x1}" HorizontalContentAlignment="Center"/>
+        <se:KeypadButton Canvas.Left="726" Canvas.Top="795" Width="244" Height="75" Command="{Binding showKeypadCmd, ElementName=keypad_msab_x2}" HorizontalContentAlignment="Center"/>
+
+        <se:ValueDisplay Canvas.Left="835" Canvas.Top="10" Height="65" x:Name="numericDisplay4" Width="331" HeaderBackground="Black" LabelForeground="#FF041752" Label="т" ValueBackground="White" ValueForeground="Black" Header="ВЕС НА КРЮКЕ 2 (НАКЛАДНОЙ ДАТЧИК)" Value="{hmi:Bind Tags.Node[view.msab].Items[ves_na_kryuke2].Value, FallbackValue=Fallback}"/>
+        <se:ValueDisplay Canvas.Left="835" Canvas.Top="80" FontFamily="Tahoma" Height="65" Width="331"  HeaderBackground="Black" LabelForeground="#FF041752" Label="м" Value="{hmi:Bind Tags.Node[view.msab].Items[polozhenie_kryukobloka].Value, FallbackValue=Fallback}" ValueBackground="White" ValueForeground="Black" Header="ВЫСОТА ТАЛЕВОГО БЛОКА (СКПБ)" />
+        <se:ValueDisplay Canvas.Left="835" Canvas.Top="288" FontFamily="Tahoma" Height="65" Width="331" HeaderBackground="Black" LabelForeground="#FF041752" Label="м" ValueBackground="White" ValueForeground="Black" Header="ГЛУБИНА ЗАБОЯ" Value="{hmi:Bind Tags.Node[view.msab].Items[glubina_zaboya].Value, FallbackValue=0}" />
+        <se:ValueDisplay Canvas.Left="835" Canvas.Top="218" FontFamily="Tahoma" Height="65" Width="331" HeaderBackground="Black" LabelForeground="#FF041752" Label="м" ValueBackground="White" ValueForeground="Black" Header="ГЛУБИНА ИНСТРУМЕНТА" Value="{hmi:Bind Tags.Node[view.msab].Items[glubina_instrumenta].Value, FallbackValue=0}" />
+        <se:ValueDisplay Canvas.Left="835" Canvas.Top="150" FontFamily="Tahoma" Height="63" Width="331" HeaderBackground="Black" LabelForeground="#FF041752" Label="м" ValueBackground="White" ValueForeground="Black" Header="ПОДАЧА СВЕЧИ" Value="{hmi:Bind Tags.Node[view.msab].Items[podacha_svechi].Value, FallbackValue=0}" />
+        <position:ComplexBlockPosition Canvas.Left="1181" Canvas.Top="10" Height="860" Width="89" />
+        <gauges1:GaugeWeight HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="257" Canvas.Top="3" Height="449">
+            <gauges1:GaugeWeight.LayoutTransform>
+                <ScaleTransform ScaleX="0.8" ScaleY="0.8"/>
+            </gauges1:GaugeWeight.LayoutTransform>
+        </gauges1:GaugeWeight>
+        <TextBlock Canvas.Left="999" TextWrapping="Wrap" Canvas.Top="358" FontSize="20" HorizontalAlignment="Center" FontFamily="Tahoma" Text="ДАВЛЕНИЕ В&#xD;&#xA;МАНИФОЛЬДЕ ВЛБ" TextAlignment="Center"/>
+        <TextBlock Canvas.Left="798" TextWrapping="Wrap" Canvas.Top="358" FontSize="20" HorizontalAlignment="Center" FontFamily="Tahoma" Text="ДАВЛЕНИЕ НА&#xD;&#xA;ВЫХОДЕ НАСОСОВ" TextAlignment="Center"/>
+        <gauges1:GaugeRotor2 Height="133" HorizontalAlignment="Center" Canvas.Top="36" x:Name="gaugeRotor21" VerticalAlignment="Top" Width="200" Canvas.Left="6">
+            <gauges1:GaugeRotor2.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX=".8" ScaleY=".8"/>
+                </TransformGroup>
+            </gauges1:GaugeRotor2.RenderTransform>
+        </gauges1:GaugeRotor2>
+        <TextBlock FontSize="22" Height="25" HorizontalAlignment="Center" x:Name="textBlock3" Text="Момент ротора" TextAlignment="Center" VerticalAlignment="Top" Width="240" Foreground="Black" FontFamily="Tahoma" Canvas.Left="8" Canvas.Top="8" />
+        <se:ValueDisplay Canvas.Left="8" Canvas.Top="288" x:Name="numericDisplay1" Width="240" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" Header="ФАКТИЧЕСКИЙ МОМЕНТ РОТОРА" HeaderForeground="White" LabelForeground="#FF041752" Label="кН×м" Value="{Binding modules[tags_mod].Items[rt_drive_torque_abs].Value, FallbackValue=0.0, StringFormat=0.0}" Height="65" />
+        <Msab:MsabDavlenieVManifolde HorizontalAlignment="Left" VerticalAlignment="Top" Height="156" Width="156" Canvas.Left="807" Canvas.Top="411"/>
+        <Other:DavlenieVManifoldeVlbSpecial HorizontalAlignment="Left" VerticalAlignment="Top" Height="156" Width="156" Canvas.Left="1005" Canvas.Top="411"/>
+    </Canvas>
+</UserControl>

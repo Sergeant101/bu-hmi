@@ -1,0 +1,128 @@
+﻿311014
+8
+lang|RU|0 (:2 ) Сигнал с командоконтроллера ПУ1-SA "Разрешение включения вспом. лебедки МЛВ1" (реле 505К1)
+lang|EN|0 (:2 ) Drawworks housing closed SQK3
+311014
+9
+lang|RU|1 (:3 ) Сигнал с командоконтроллера ПУ1-SA "Подъём вспом. лебедки МЛВ1 на 1-ой скорости" (реле 505К2)
+lang|EN|1 (:3 ) Drawworks housing closed SQK4
+311014
+10
+lang|RU|2 (:4 ) Сигнал с командоконтроллера ПУ1-SA "Спуск вспом. лебедки МЛВ1 на 1-ой скорости" (505К3)
+lang|EN|2 (:4 ) Drawworks housing closed SQK5
+311014
+11
+lang|RU|3 (:5 ) Сигнал с командоконтроллера ПУ1-SA "Движение вспом. лебедки МЛВ1 на 2-ой скорости" (реле 505К4)
+lang|EN|3 (:5 ) Drawworks housing closed SQK6
+311014
+12
+lang|RU|4 (:6 ) Сигнал с командоконтроллера ПУ1-SA "Движение вспом. лебедки МЛВ1 на 3-ой скорости" (реле 505К5)
+lang|EN|4 (:6 ) Drawworks housing closed SQK7
+311014
+13
+lang|RU|5 (:7 ) Включить пускатель 500КМ1 на входе преобразователся вспом. лебедки МВЛ1 (реле 505К6)
+lang|EN|5 (:7 ) Drawworks housing closed SQK8
+311014
+14
+lang|RU|6 (:8 ) Резерв
+lang|EN|6 (:8 ) Drawworks housing closed SQK9 
+311014
+15
+lang|RU|7 (:9 ) Резерв
+lang|EN|7 (:9 ) Drawworks housing closed SQK10
+311014
+0
+lang|RU|0 (:12 ) Сигнал с командоконтроллера ПУ2-SA "Разрешение включения вспом. лебедки МЛВ2" (реле 507К1)
+lang|EN|0 (:12 ) Drawworks stopper open SQK1
+311014
+1
+lang|RU|1 (:13 ) Сигнал с командоконтроллера ПУ2-SA "Подъём вспом. лебедки МЛВ2 на 1-ой скорости" (реле 507К2)
+lang|EN|1 (:13 ) Overhight sensor closed
+311014
+2
+lang|RU|2 (:14 ) Сигнал с командоконтроллера ПУ2-SA "Спуск вспом. лебедки МЛВ2 на 1-ой скорости" (507К3)
+lang|EN|2 (:14 ) Not overweight SMPD
+311014
+3
+lang|RU|3 (:15 ) Сигнал с командоконтроллера ПУ2-SA "Движение вспом. лебедки МЛВ2 на 2-ой скорости" (реле 507К4)
+lang|EN|3 (:15 ) Switch on slow gearbox
+311014
+4
+lang|RU|4 (:16 ) Сигнал с командоконтроллера ПУ2-SA "Движение вспом. лебедки МЛВ2 на 3-ой скорости" (реле 507К5)
+lang|EN|4 (:16 ) Switch on fast gearbox
+311014
+5
+lang|RU|5 (:17 ) Включить пускатель 500КМ2 на входе преобразователя вспом. лебедки МВЛ2 (реле 507К6)
+lang|EN|5 (:17 ) Aux. drive clutch connected
+311014
+6
+lang|RU|6 (:18 ) Резерв
+lang|EN|6 (:18 ) Aux. drive clutch disconnected
+311014
+7
+lang|RU|7 (:19 ) Резерв
+lang|EN|7 (:19 ) Not overhight tackle block SMPD
+311015
+8
+lang|RU|0 (:22 ) Резерв
+lang|EN|0 (:22 ) Service brake SB1 inhibited
+311015
+9
+lang|RU|1 (:23 ) Резерв
+lang|EN|1 (:23 ) Brake pads SB1 is not worn
+311015
+10
+lang|RU|2 (:24 ) Резерв
+lang|EN|2 (:24 ) Service brake SB2 inhibited
+311015
+11
+lang|RU|3 (:25 ) Резерв
+lang|EN|3 (:25 ) Brake pads SB2 is not worn
+311015
+12
+lang|RU|4 (:26 ) Резерв
+lang|EN|4 (:26 ) Emergency brake EB1 inhibited
+311015
+13
+lang|RU|5 (:27 ) Резерв
+lang|EN|5 (:27 ) Brake pads EB1 is not worn
+311015
+14
+lang|RU|6 (:28 ) Резерв
+lang|EN|6 (:28 ) Emergency brake EB2 inhibited
+311015
+15
+lang|RU|7 (:29 ) Резерв
+lang|EN|7 (:29 ) Brake pads EB2 is not worn
+311015
+0
+lang|RU|0 (:32 ) Резерв
+lang|EN|0 (:32 ) Hydraulic unit pump ON
+311015
+1
+lang|RU|1 (:33 ) Резерв
+lang|EN|1 (:33 ) Bypass circuit ON
+311015
+2
+lang|RU|2 (:34 ) Резерв
+lang|EN|2 (:34 ) 20% gassed SMPD
+311015
+3
+lang|RU|3 (:35 ) Резерв
+lang|EN|3 (:35 ) No overheating brake resistors R1 and R2
+311015
+4
+lang|RU|4 (:36 ) Резерв
+lang|EN|4 (:36 ) Air pressure sensor R1 ON
+311015
+5
+lang|RU|5 (:37 ) Резерв
+lang|EN|5 (:37 ) Air pressure sensor R2 ON
+311015
+6
+lang|RU|6 (:38 ) Резерв
+lang|EN|6 (:38 ) Motor blower R1 ON
+311015
+7
+lang|RU|7 (:39 ) Резерв
+lang|EN|7 (:39 ) Motor blower R2 ON

@@ -1,0 +1,1616 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:hmi="http://schemas.monokot.com/hmi/" 
+             xmlns:se="http://schemas.monokot.com/se/" 
+             xmlns:System="clr-namespace:System;assembly=mscorlib" 
+             xmlns:permissions="clr-namespace:NGO.Elements.Special.Permissions.View;assembly=NGO.Elements"
+             xmlns:model="clr-namespace:NGO.Elements.Special.Permissions.Model;assembly=NGO.Elements"
+             
+             x:Class="VFD.Frames.Sub.n159.Servis.ServisKadr"
+             mc:Ignorable="d"
+             Height="866"
+             Width="1272">
+    <UserControl.Background>
+        <StaticResource ResourceKey="MainBackground"/>
+    </UserControl.Background>
+    <UserControl.Resources>
+        <System:Double x:Key="TextInTableFontSize">16</System:Double>
+    </UserControl.Resources>
+    <se:HmiTabControl x:Name="tg" HighlightBrush="LightGreen">
+        <se:HmiTabItem Header="МОТОЧАСЫ" Height="40" Margin="5,5,0,5" Width="100" >
+            <Grid>
+                <Grid HorizontalAlignment="Center" Height="570" Margin="134,2,134,0" VerticalAlignment="Top" Width="1004">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1.2*"/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="120*"/>
+                        <ColumnDefinition Width="30*"/>
+                        <ColumnDefinition Width="30*"/>
+                        <ColumnDefinition Width="25*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Rectangle Grid.ColumnSpan="3" Fill="#FF403740" HorizontalAlignment="Stretch" Margin="0" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="3" Fill="#FFEEEEEE" HorizontalAlignment="Stretch" Margin="0" Grid.Row="1" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="3" Fill="#FF8BAAB9" HorizontalAlignment="Stretch" Margin="0" Grid.Row="2" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="3" Fill="#FFEEEEEE" HorizontalAlignment="Stretch" Margin="0" Grid.Row="3" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="3" Fill="#FF8BAAB9" HorizontalAlignment="Stretch" Margin="0" Grid.Row="4" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="3" Fill="#FFEEEEEE" HorizontalAlignment="Stretch" Margin="0" Grid.Row="5" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="3" Fill="#FF8BAAB9" HorizontalAlignment="Stretch" Margin="0" Grid.Row="6" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="3" Fill="#FFEEEEEE" HorizontalAlignment="Stretch" Margin="0" Grid.Row="7" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="3" Fill="#FF8BAAB9" HorizontalAlignment="Stretch" Margin="0" Grid.Row="8" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="3" Fill="#FFEEEEEE" HorizontalAlignment="Stretch" Margin="0" Grid.Row="9" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="3" Fill="#FF8BAAB9" HorizontalAlignment="Stretch" Margin="0" Grid.Row="10" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="3" Fill="#FFEEEEEE" HorizontalAlignment="Stretch" Margin="0" Grid.Row="11" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="3" Fill="#FF8BAAB9" HorizontalAlignment="Stretch" Margin="0" Grid.Row="12" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="3" Fill="#FFEEEEEE" HorizontalAlignment="Stretch" Margin="0" Grid.Row="13" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="3" Fill="#FF8BAAB9" HorizontalAlignment="Stretch" Margin="0" Grid.Row="14" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="3" Fill="#FFEEEEEE" HorizontalAlignment="Stretch" Margin="0" Grid.Row="15" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="3" Fill="#FF8BAAB9" HorizontalAlignment="Stretch" Margin="0" Grid.Row="16" d:IsLocked="True"/>
+
+                    <Rectangle Canvas.Top="105" Grid.Row="0" Margin="0,0,0,0" Canvas.Left="295" Fill="#33D9CAC1" Grid.Column="1"/>
+                    <Rectangle Canvas.Top="136" Grid.RowSpan="99" Grid.Row="1" Canvas.Left="295" Fill="#7FC8E0C1" Grid.Column="1"/>
+
+                    <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0" Stroke="Black" Grid.Row="0" Grid.RowSpan="20" Grid.Column="0" Grid.ColumnSpan="3" d:IsLocked="True"/>
+
+                    <TextBlock Grid.Column="0" HorizontalAlignment="Center" TextWrapping="Wrap" Text="НАИМЕНОВАНИЕ ОБОРУДОВАНИЯ" VerticalAlignment="Center" Foreground="White" FontSize="{StaticResource TextInTableFontSize}"/>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="КОЛ-ВО&#xD;&#xA;ВКЛЮЧЕНИЙ" VerticalAlignment="Center" Foreground="White" FontSize="{StaticResource TextInTableFontSize}" TextAlignment="Center"/>
+                    <TextBlock Grid.Column="2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="НАРАБОТКА,&#xD;&#xA;ЧАСЫ" VerticalAlignment="Center" Foreground="White" FontSize="{StaticResource TextInTableFontSize}" TextAlignment="Center"/>
+
+
+                    <TextBlock HorizontalAlignment="Left" Grid.Row="1" TextWrapping="Wrap" Text="ОСНОВНОЙ ДВИГАТЕЛЬ СВП-М1" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Margin="10,0,0,0"/>
+                    <TextBlock HorizontalAlignment="Left" Grid.Row="2" TextWrapping="Wrap" Text="ОСНОВНОЙ ДВИГАТЕЛЬ СВП-М2" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Margin="10,0,0,0"/>
+                    <TextBlock HorizontalAlignment="Left" Grid.Row="3" TextWrapping="Wrap" Text="ВЕНТИЛЯТОР ОБДУВА СВП-М1" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Margin="10,0,0,0"/>
+                    <TextBlock HorizontalAlignment="Left" Grid.Row="4" TextWrapping="Wrap" Text="ВЕНТИЛЯТОР ОБДУВА СВП-М2" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Margin="10,0,0,0"/>
+                    <TextBlock HorizontalAlignment="Left" Grid.Row="5" TextWrapping="Wrap" Text="НАСОС СМАЗКИ" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Margin="10,0,0,0"/>
+                    <TextBlock HorizontalAlignment="Left" Grid.Row="6" TextWrapping="Wrap" Text="ГИДРОАГРЕГАТ" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Margin="10,0,0,0"/>
+                    <TextBlock HorizontalAlignment="Left" Grid.Row="7" TextWrapping="Wrap" Text="РАСПРЕДЕЛИТЕЛЬ МЕХАНИЗМА СТОПОРЕНИЯ Р1.1" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Margin="10,0,0,0"/>
+                    <TextBlock HorizontalAlignment="Left" Grid.Row="8" TextWrapping="Wrap" Text="РАСПРЕДЕЛИТЕЛЬ МЕХАНИЗМА НАПРАВЛЕНИЯ ПОВОРОТА Р1.2" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Margin="10,0,0,0"/>
+                    <TextBlock HorizontalAlignment="Left" Grid.Row="9" TextWrapping="Wrap" Text="РАСПРЕДЕЛИТЕЛЬ МЕХАНИЗМА БЫСТРОГО ПОВОРОТА Р2, Р3" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Margin="10,0,0,0"/>
+                    <TextBlock HorizontalAlignment="Left" Grid.Row="10" TextWrapping="Wrap" Text="РАСПРЕДЕЛИТЕЛЬ ГИДРОЦИЛИНДРА ШАРОВОГО КРАНА Р1.5" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Margin="10,0,0,0"/>
+                    <TextBlock HorizontalAlignment="Left" Grid.Row="11" TextWrapping="Wrap" Text="РАСПРЕДЕЛИТЕЛЬ ТРУБНОГО ЗАЖИМА Р1.6" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Margin="10,0,0,0"/>
+                    <TextBlock HorizontalAlignment="Left" Grid.Row="12" TextWrapping="Wrap" Text="РАСПРЕДЕЛИТЕЛЬ ГИДРОЦИЛИНДРОВ ОТКЛОНЕНИЯ ШТРОПОВ Р1.7" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Margin="10,0,0,0"/>
+                    <TextBlock HorizontalAlignment="Left" Grid.Row="13" TextWrapping="Wrap" Text="РАСПРЕДЕЛИТЕЛЬ ТОРМОЗА ГИДРАВЛИЧЕСКОГО Р1.8" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Margin="10,0,0,0"/>
+                    <TextBlock HorizontalAlignment="Left" Grid.Row="14" TextWrapping="Wrap" Text="РАСПРЕДЕЛИТЕЛЬ ЗАПИРАЮЩЕГО КЛАПАНА НЕЙТРАЛИ Р4,  Р5" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Margin="10,0,0,0"/>
+                    <TextBlock HorizontalAlignment="Left" Grid.Row="15" TextWrapping="Wrap" Text="РАСПРЕДЕЛИТЕЛЬ ЭЛЕВАТОРА (РЕЗЕРВ) Р1.4" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Margin="10,0,0,0"/>
+                    <TextBlock HorizontalAlignment="Left" Grid.Row="16" TextWrapping="Wrap" Text="БУРОВОЙ РУКАВ ВИБРАЦИОННЫЙ" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Margin="10,0,0,0"/>
+
+
+                    <Button Style="{StaticResource MetalBorderStdButton}" IsEnabled="{Binding Source={x:Static model:NgoAuth.auth}, Path=states[usr10].isAuth}" Content="СБРОС" Grid.Column="3" Grid.Row="1" Margin="10,0,2,0" hmi:Click.Command="{hmi:Bind Path=Tags.Node[zapis.motochasy].Items[massiv].WriteCommand}" FontSize="20">
+                        <hmi:Click.Mode>
+                            <hmi:MomentaryMode>
+                                <hmi:MomentaryMode.PressValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>1</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>1</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.PressValue>
+                                <hmi:MomentaryMode.ReleaseValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.ReleaseValue>
+                            </hmi:MomentaryMode>
+                        </hmi:Click.Mode>
+                    </Button>
+                    <Button Style="{StaticResource MetalBorderStdButton}" IsEnabled="{Binding Source={x:Static model:NgoAuth.auth}, Path=states[usr10].isAuth}" Content="СБРОС" Grid.Column="3" Grid.Row="2" Margin="10,0,2,0" hmi:Click.Command="{hmi:Bind Path=Tags.Node[zapis.motochasy].Items[massiv].WriteCommand}" FontSize="20">
+                        <hmi:Click.Mode>
+                            <hmi:MomentaryMode>
+                                <hmi:MomentaryMode.PressValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>2</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>1</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.PressValue>
+                                <hmi:MomentaryMode.ReleaseValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.ReleaseValue>
+                            </hmi:MomentaryMode>
+                        </hmi:Click.Mode>
+                    </Button>
+                    <Button Style="{StaticResource MetalBorderStdButton}" IsEnabled="{Binding Source={x:Static model:NgoAuth.auth}, Path=states[usr10].isAuth}" Content="СБРОС" Grid.Column="3" Grid.Row="3" Margin="10,0,2,0" hmi:Click.Command="{hmi:Bind Path=Tags.Node[zapis.motochasy].Items[massiv].WriteCommand}" FontSize="20">
+                        <hmi:Click.Mode>
+                            <hmi:MomentaryMode>
+                                <hmi:MomentaryMode.PressValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>3</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>1</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.PressValue>
+                                <hmi:MomentaryMode.ReleaseValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.ReleaseValue>
+                            </hmi:MomentaryMode>
+                        </hmi:Click.Mode>
+                    </Button>
+                    <Button Style="{StaticResource MetalBorderStdButton}" IsEnabled="{Binding Source={x:Static model:NgoAuth.auth}, Path=states[usr10].isAuth}" Content="СБРОС" Grid.Column="3" Grid.Row="4" Margin="10,0,2,0" hmi:Click.Command="{hmi:Bind Path=Tags.Node[zapis.motochasy].Items[massiv].WriteCommand}" FontSize="20">
+                        <hmi:Click.Mode>
+                            <hmi:MomentaryMode>
+                                <hmi:MomentaryMode.PressValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>4</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>1</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.PressValue>
+                                <hmi:MomentaryMode.ReleaseValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.ReleaseValue>
+                            </hmi:MomentaryMode>
+                        </hmi:Click.Mode>
+                    </Button>
+                    <Button Style="{StaticResource MetalBorderStdButton}" IsEnabled="{Binding Source={x:Static model:NgoAuth.auth}, Path=states[usr10].isAuth}" Content="СБРОС" Grid.Column="3" Grid.Row="5" Margin="10,0,2,0" hmi:Click.Command="{hmi:Bind Path=Tags.Node[zapis.motochasy].Items[massiv].WriteCommand}" FontSize="20">
+                        <hmi:Click.Mode>
+                            <hmi:MomentaryMode>
+                                <hmi:MomentaryMode.PressValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>5</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>1</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.PressValue>
+                                <hmi:MomentaryMode.ReleaseValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.ReleaseValue>
+                            </hmi:MomentaryMode>
+                        </hmi:Click.Mode>
+                    </Button>
+                    <Button Style="{StaticResource MetalBorderStdButton}" IsEnabled="{Binding Source={x:Static model:NgoAuth.auth}, Path=states[usr10].isAuth}" Content="СБРОС" Grid.Column="3" Grid.Row="6" Margin="10,0,2,0" hmi:Click.Command="{hmi:Bind Path=Tags.Node[zapis.motochasy].Items[massiv].WriteCommand}" FontSize="20">
+                        <hmi:Click.Mode>
+                            <hmi:MomentaryMode>
+                                <hmi:MomentaryMode.PressValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>6</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>1</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.PressValue>
+                                <hmi:MomentaryMode.ReleaseValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.ReleaseValue>
+                            </hmi:MomentaryMode>
+                        </hmi:Click.Mode>
+                    </Button>
+                    <Button Style="{StaticResource MetalBorderStdButton}" IsEnabled="{Binding Source={x:Static model:NgoAuth.auth}, Path=states[usr10].isAuth}" Content="СБРОС" Grid.Column="3" Grid.Row="7" Margin="10,0,2,0" hmi:Click.Command="{hmi:Bind Path=Tags.Node[zapis.motochasy].Items[massiv].WriteCommand}" FontSize="20">
+                        <hmi:Click.Mode>
+                            <hmi:MomentaryMode>
+                                <hmi:MomentaryMode.PressValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>7</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>1</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.PressValue>
+                                <hmi:MomentaryMode.ReleaseValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.ReleaseValue>
+                            </hmi:MomentaryMode>
+                        </hmi:Click.Mode>
+                    </Button>
+                    <Button Style="{StaticResource MetalBorderStdButton}" IsEnabled="{Binding Source={x:Static model:NgoAuth.auth}, Path=states[usr10].isAuth}" Content="СБРОС" Grid.Column="3" Grid.Row="8" Margin="10,0,2,0" hmi:Click.Command="{hmi:Bind Path=Tags.Node[zapis.motochasy].Items[massiv].WriteCommand}" FontSize="20">
+                        <hmi:Click.Mode>
+                            <hmi:MomentaryMode>
+                                <hmi:MomentaryMode.PressValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>8</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>1</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.PressValue>
+                                <hmi:MomentaryMode.ReleaseValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.ReleaseValue>
+                            </hmi:MomentaryMode>
+                        </hmi:Click.Mode>
+                    </Button>
+                    <Button Style="{StaticResource MetalBorderStdButton}" IsEnabled="{Binding Source={x:Static model:NgoAuth.auth}, Path=states[usr10].isAuth}" Content="СБРОС" Grid.Column="3" Grid.Row="9" Margin="10,0,2,0" hmi:Click.Command="{hmi:Bind Path=Tags.Node[zapis.motochasy].Items[massiv].WriteCommand}" FontSize="20">
+                        <hmi:Click.Mode>
+                            <hmi:MomentaryMode>
+                                <hmi:MomentaryMode.PressValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>9</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>1</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.PressValue>
+                                <hmi:MomentaryMode.ReleaseValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.ReleaseValue>
+                            </hmi:MomentaryMode>
+                        </hmi:Click.Mode>
+                    </Button>
+                    <Button Style="{StaticResource MetalBorderStdButton}" IsEnabled="{Binding Source={x:Static model:NgoAuth.auth}, Path=states[usr10].isAuth}" Content="СБРОС" Grid.Column="3" Grid.Row="10" Margin="10,0,2,0" hmi:Click.Command="{hmi:Bind Path=Tags.Node[zapis.motochasy].Items[massiv].WriteCommand}" FontSize="20">
+                        <hmi:Click.Mode>
+                            <hmi:MomentaryMode>
+                                <hmi:MomentaryMode.PressValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>10</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>1</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.PressValue>
+                                <hmi:MomentaryMode.ReleaseValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.ReleaseValue>
+                            </hmi:MomentaryMode>
+                        </hmi:Click.Mode>
+                    </Button>
+                    <Button Style="{StaticResource MetalBorderStdButton}" IsEnabled="{Binding Source={x:Static model:NgoAuth.auth}, Path=states[usr10].isAuth}" Content="СБРОС" Grid.Column="3" Grid.Row="11" Margin="10,0,2,0" hmi:Click.Command="{hmi:Bind Path=Tags.Node[zapis.motochasy].Items[massiv].WriteCommand}" FontSize="20">
+                        <hmi:Click.Mode>
+                            <hmi:MomentaryMode>
+                                <hmi:MomentaryMode.PressValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>11</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>1</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.PressValue>
+                                <hmi:MomentaryMode.ReleaseValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.ReleaseValue>
+                            </hmi:MomentaryMode>
+                        </hmi:Click.Mode>
+                    </Button>
+                    <Button Style="{StaticResource MetalBorderStdButton}" IsEnabled="{Binding Source={x:Static model:NgoAuth.auth}, Path=states[usr10].isAuth}" Content="СБРОС" Grid.Column="3" Grid.Row="12" Margin="10,0,2,0" hmi:Click.Command="{hmi:Bind Path=Tags.Node[zapis.motochasy].Items[massiv].WriteCommand}" FontSize="20">
+                        <hmi:Click.Mode>
+                            <hmi:MomentaryMode>
+                                <hmi:MomentaryMode.PressValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>12</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>1</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.PressValue>
+                                <hmi:MomentaryMode.ReleaseValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.ReleaseValue>
+                            </hmi:MomentaryMode>
+                        </hmi:Click.Mode>
+                    </Button>
+                    <Button Style="{StaticResource MetalBorderStdButton}" IsEnabled="{Binding Source={x:Static model:NgoAuth.auth}, Path=states[usr10].isAuth}" Content="СБРОС" Grid.Column="3" Grid.Row="13" Margin="10,0,2,0" hmi:Click.Command="{hmi:Bind Path=Tags.Node[zapis.motochasy].Items[massiv].WriteCommand}" FontSize="20">
+                        <hmi:Click.Mode>
+                            <hmi:MomentaryMode>
+                                <hmi:MomentaryMode.PressValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>13</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>1</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.PressValue>
+                                <hmi:MomentaryMode.ReleaseValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.ReleaseValue>
+                            </hmi:MomentaryMode>
+                        </hmi:Click.Mode>
+                    </Button>
+                    <Button Style="{StaticResource MetalBorderStdButton}" IsEnabled="{Binding Source={x:Static model:NgoAuth.auth}, Path=states[usr10].isAuth}" Content="СБРОС" Grid.Column="3" Grid.Row="14" Margin="10,0,2,0" hmi:Click.Command="{hmi:Bind Path=Tags.Node[zapis.motochasy].Items[massiv].WriteCommand}" FontSize="20">
+                        <hmi:Click.Mode>
+                            <hmi:MomentaryMode>
+                                <hmi:MomentaryMode.PressValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>14</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>1</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.PressValue>
+                                <hmi:MomentaryMode.ReleaseValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.ReleaseValue>
+                            </hmi:MomentaryMode>
+                        </hmi:Click.Mode>
+                    </Button>
+                    <Button Style="{StaticResource MetalBorderStdButton}" IsEnabled="{Binding Source={x:Static model:NgoAuth.auth}, Path=states[usr10].isAuth}" Content="СБРОС" Grid.Column="3" Grid.Row="15" Margin="10,0,2,0" hmi:Click.Command="{hmi:Bind Path=Tags.Node[zapis.motochasy].Items[massiv].WriteCommand}" FontSize="20">
+                        <hmi:Click.Mode>
+                            <hmi:MomentaryMode>
+                                <hmi:MomentaryMode.PressValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>15</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>1</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.PressValue>
+                                <hmi:MomentaryMode.ReleaseValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.ReleaseValue>
+                            </hmi:MomentaryMode>
+                        </hmi:Click.Mode>
+                    </Button>
+
+                    <Button Style="{StaticResource MetalBorderStdButton}" IsEnabled="{Binding Source={x:Static model:NgoAuth.auth}, Path=states[usr10].isAuth}" Content="СБРОС" Grid.Column="3" Grid.Row="16" Margin="10,0,2,0" hmi:Click.Command="{hmi:Bind Path=Tags.Node[zapis.motochasy].Items[massiv].WriteCommand}" FontSize="20">
+                        <hmi:Click.Mode>
+                            <hmi:MomentaryMode>
+                                <hmi:MomentaryMode.PressValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>21</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>1</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.PressValue>
+                                <hmi:MomentaryMode.ReleaseValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.ReleaseValue>
+                            </hmi:MomentaryMode>
+                        </hmi:Click.Mode>
+                    </Button>
+
+                    <TextBlock HorizontalAlignment="Center" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Grid.Column="1" Text="{hmi:Bind FallbackValue=0, Path=Expressions.Node[servis.kolichestvo_vklyuchenij].Items[1].Value}"/>
+                    <TextBlock HorizontalAlignment="Center" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Grid.Column="1" Text="{hmi:Bind FallbackValue=0, Path=Expressions.Node[servis.kolichestvo_vklyuchenij].Items[2].Value}"/>
+                    <TextBlock HorizontalAlignment="Center" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Grid.Column="1" Text="{hmi:Bind FallbackValue=0, Path=Expressions.Node[servis.kolichestvo_vklyuchenij].Items[3].Value}"/>
+                    <TextBlock HorizontalAlignment="Center" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Grid.Column="1" Text="{hmi:Bind FallbackValue=0, Path=Expressions.Node[servis.kolichestvo_vklyuchenij].Items[4].Value}"/>
+                    <TextBlock HorizontalAlignment="Center" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Grid.Column="1" Text="{hmi:Bind FallbackValue=0, Path=Expressions.Node[servis.kolichestvo_vklyuchenij].Items[5].Value}"/>
+                    <TextBlock HorizontalAlignment="Center" Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Grid.Column="1" Text="{hmi:Bind FallbackValue=0, Path=Expressions.Node[servis.kolichestvo_vklyuchenij].Items[6].Value}"/>
+                    <TextBlock HorizontalAlignment="Center" Grid.Row="7" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Grid.Column="1" Text="{hmi:Bind FallbackValue=0, Path=Expressions.Node[servis.kolichestvo_vklyuchenij].Items[7].Value}"/>
+                    <TextBlock HorizontalAlignment="Center" Grid.Row="8" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Grid.Column="1" Text="{hmi:Bind FallbackValue=0, Path=Expressions.Node[servis.kolichestvo_vklyuchenij].Items[8].Value}"/>
+                    <TextBlock HorizontalAlignment="Center" Grid.Row="9" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Grid.Column="1" Text="{hmi:Bind FallbackValue=0, Path=Expressions.Node[servis.kolichestvo_vklyuchenij].Items[9].Value}"/>
+                    <TextBlock HorizontalAlignment="Center" Grid.Row="10" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Grid.Column="1" Text="{hmi:Bind FallbackValue=0, Path=Expressions.Node[servis.kolichestvo_vklyuchenij].Items[10].Value}"/>
+                    <TextBlock HorizontalAlignment="Center" Grid.Row="11" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Grid.Column="1" Text="{hmi:Bind FallbackValue=0, Path=Expressions.Node[servis.kolichestvo_vklyuchenij].Items[11].Value}"/>
+                    <TextBlock HorizontalAlignment="Center" Grid.Row="12" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Grid.Column="1" Text="{hmi:Bind FallbackValue=0, Path=Expressions.Node[servis.kolichestvo_vklyuchenij].Items[12].Value}"/>
+                    <TextBlock HorizontalAlignment="Center" Grid.Row="13" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Grid.Column="1" Text="{hmi:Bind FallbackValue=0, Path=Expressions.Node[servis.kolichestvo_vklyuchenij].Items[13].Value}"/>
+                    <TextBlock HorizontalAlignment="Center" Grid.Row="14" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Grid.Column="1" Text="{hmi:Bind FallbackValue=0, Path=Expressions.Node[servis.kolichestvo_vklyuchenij].Items[14].Value}"/>
+                    <TextBlock HorizontalAlignment="Center" Grid.Row="15" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Grid.Column="1" Text="{hmi:Bind FallbackValue=0, Path=Expressions.Node[servis.kolichestvo_vklyuchenij].Items[15].Value}"/>
+                    <TextBlock HorizontalAlignment="Center" Grid.Row="21" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Grid.Column="1" Text="{hmi:Bind FallbackValue=0, Path=Expressions.Node[servis.kolichestvo_vklyuchenij].Items[21].Value}"/>
+
+                    <TextBlock HorizontalAlignment="Center" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Grid.Column="2" Text="{hmi:Bind FallbackValue=0, Path=Expressions.Node[servis.narabotka].Items[1].Value}"/>
+                    <TextBlock HorizontalAlignment="Center" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Grid.Column="2" Text="{hmi:Bind FallbackValue=0, Path=Expressions.Node[servis.narabotka].Items[2].Value}"/>
+                    <TextBlock HorizontalAlignment="Center" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Grid.Column="2" Text="{hmi:Bind FallbackValue=0, Path=Expressions.Node[servis.narabotka].Items[3].Value}"/>
+                    <TextBlock HorizontalAlignment="Center" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Grid.Column="2" Text="{hmi:Bind FallbackValue=0, Path=Expressions.Node[servis.narabotka].Items[4].Value}"/>
+                    <TextBlock HorizontalAlignment="Center" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Grid.Column="2" Text="{hmi:Bind FallbackValue=0, Path=Expressions.Node[servis.narabotka].Items[5].Value}"/>
+                    <TextBlock HorizontalAlignment="Center" Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Grid.Column="2" Text="{hmi:Bind FallbackValue=0, Path=Expressions.Node[servis.narabotka].Items[6].Value}"/>
+                    <TextBlock HorizontalAlignment="Center" Grid.Row="7" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Grid.Column="2" Text="{hmi:Bind FallbackValue=0, Path=Expressions.Node[servis.narabotka].Items[7].Value}"/>
+                    <TextBlock HorizontalAlignment="Center" Grid.Row="8" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Grid.Column="2" Text="{hmi:Bind FallbackValue=0, Path=Expressions.Node[servis.narabotka].Items[8].Value}"/>
+                    <TextBlock HorizontalAlignment="Center" Grid.Row="9" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Grid.Column="2" Text="{hmi:Bind FallbackValue=0, Path=Expressions.Node[servis.narabotka].Items[9].Value}"/>
+                    <TextBlock HorizontalAlignment="Center" Grid.Row="10" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Grid.Column="2" Text="{hmi:Bind FallbackValue=0, Path=Expressions.Node[servis.narabotka].Items[10].Value}"/>
+                    <TextBlock HorizontalAlignment="Center" Grid.Row="11" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Grid.Column="2" Text="{hmi:Bind FallbackValue=0, Path=Expressions.Node[servis.narabotka].Items[11].Value}"/>
+                    <TextBlock HorizontalAlignment="Center" Grid.Row="12" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Grid.Column="2" Text="{hmi:Bind FallbackValue=0, Path=Expressions.Node[servis.narabotka].Items[12].Value}"/>
+                    <TextBlock HorizontalAlignment="Center" Grid.Row="13" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Grid.Column="2" Text="{hmi:Bind FallbackValue=0, Path=Expressions.Node[servis.narabotka].Items[13].Value}"/>
+                    <TextBlock HorizontalAlignment="Center" Grid.Row="14" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Grid.Column="2" Text="{hmi:Bind FallbackValue=0, Path=Expressions.Node[servis.narabotka].Items[14].Value}"/>
+                    <TextBlock HorizontalAlignment="Center" Grid.Row="15" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Grid.Column="2" Text="{hmi:Bind FallbackValue=0, Path=Expressions.Node[servis.narabotka].Items[15].Value}"/>
+                    <TextBlock HorizontalAlignment="Center" Grid.Row="21" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Grid.Column="2" Text="{hmi:Bind FallbackValue=0, Path=Expressions.Node[servis.narabotka].Items[21].Value}"/>
+                </Grid>
+                <Grid HorizontalAlignment="Center" Height="166" Margin="0,585,0,0" VerticalAlignment="Top" Width="1003">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="120*"/>
+                        <ColumnDefinition Width="30*"/>
+                        <ColumnDefinition Width="30*"/>
+                        <ColumnDefinition Width="25*"/>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Grid.ColumnSpan="3" Fill="#FF403740" HorizontalAlignment="Stretch" Margin="0" d:IsLocked="True"/>
+                    <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="-1" Stroke="Black" Grid.RowSpan="10" Grid.Column="0" Grid.ColumnSpan="3"/>
+                    <Rectangle Grid.ColumnSpan="3" Fill="#FFEEEEEE" HorizontalAlignment="Stretch" Margin="0" Grid.Row="1"/>
+                    <Rectangle Grid.ColumnSpan="3" Fill="#FF8BAAB9" HorizontalAlignment="Stretch" Margin="0" Grid.Row="2" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="3" Fill="#FFEEEEEE" HorizontalAlignment="Stretch" Margin="0" Grid.Row="3"/>
+                    <Rectangle Grid.ColumnSpan="3" Fill="#FF8BAAB9" HorizontalAlignment="Stretch" Margin="0" Grid.Row="4"/>
+                    <Rectangle Grid.RowSpan="99"   Fill="#7FC8E0C1" Grid.Column="1"/>
+
+                    <TextBlock Grid.Column="0" HorizontalAlignment="Center" TextWrapping="Wrap" Text="НАИМЕНОВАНИЕ" VerticalAlignment="Center" Foreground="White" FontSize="{StaticResource TextInTableFontSize}"/>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="ЗНАЧЕНИЕ" VerticalAlignment="Center" Foreground="White" FontSize="{StaticResource TextInTableFontSize}" TextAlignment="Center"/>
+                    <TextBlock Grid.Column="2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="ЕДИНИЦЫ ИЗМЕРЕНИЯ" VerticalAlignment="Center" Foreground="White" FontSize="{StaticResource TextInTableFontSize}" TextAlignment="Center"/>
+
+
+                    <TextBlock Margin="10,0,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ОБЩАЯ НАРАБОТКА СВП" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Grid.Row="1"/>
+                    <TextBlock Margin="10,0,0,0" HorizontalAlignment="Left" Grid.Row="2" TextWrapping="Wrap" Text="ОБОРОТЫ СВП" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}"/>
+                    <TextBlock Margin="10,0,0,0" HorizontalAlignment="Left" Grid.Row="5" TextWrapping="Wrap" Text="СРЕДНЯЯ СКОРОСТЬ" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}"/>
+                    <TextBlock Margin="10,0,0,0" HorizontalAlignment="Left" Grid.Row="3" TextWrapping="Wrap" Text="СРЕДНИЙ МОМЕНТ" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}"/>
+                    <TextBlock Margin="10,0,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" Text="часов" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Grid.ColumnSpan="2" Grid.Column="2" Grid.Row="1"/>
+                    <TextBlock Margin="10,0,0,0" HorizontalAlignment="Left" Grid.Row="2" TextWrapping="Wrap" Text="млн. об." VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Grid.Column="2"/>
+                    <TextBlock Margin="10,0,0,0" HorizontalAlignment="Left" Grid.Row="3" TextWrapping="Wrap" Text="кН х м" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Grid.ColumnSpan="2" Grid.Column="2"/>
+                    <TextBlock Margin="10,0,0,0" HorizontalAlignment="Left" Grid.Row="5" TextWrapping="Wrap" Text="об./мин" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Grid.ColumnSpan="2" Grid.Column="2"/>
+
+                    <TextBlock HorizontalAlignment="Center" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Grid.Column="1" Text="{hmi:Bind FallbackValue=0, Path=Expressions.Node[servis.narabotka].Items[16].Value}"/>
+                    <TextBlock HorizontalAlignment="Center" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Grid.Column="1" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[chtenie.reduktor].Items[kolichestvo_oborotov].Value}"/>
+                    <TextBlock HorizontalAlignment="Center" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Grid.Column="1" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[chtenie.reduktor].Items[srednii_moment].Value}"/>
+                    <TextBlock HorizontalAlignment="Center" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="{StaticResource TextInTableFontSize}" Grid.Column="1" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[chtenie.reduktor].Items[srednaya_skorost].Value}"/>
+
+                    <Button Style="{StaticResource MetalBorderStdButton}"  IsEnabled="{Binding Source={x:Static model:NgoAuth.auth}, Path=states[usr10].isAuth}" Content="СБРОС" Grid.Column="3" Grid.Row="3" Margin="10,25,2,0" hmi:Click.Command="{hmi:Bind Path=Tags.Node[zapis.motochasy].Items[massiv].WriteCommand}" FontSize="20" Grid.RowSpan="2" Height="33">
+                        <hmi:Click.Mode>
+                            <hmi:MomentaryMode>
+                                <hmi:MomentaryMode.PressValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>16</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>1</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.PressValue>
+                                <hmi:MomentaryMode.ReleaseValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.ReleaseValue>
+                            </hmi:MomentaryMode>
+                        </hmi:Click.Mode>
+                    </Button>
+                </Grid>
+
+                <permissions:PermissionButton userName="usr10" HorizontalAlignment="Right" Width="247" Margin="0,0,10,10" VerticalAlignment="Bottom" FontSize="20" Height="50"  />
+            </Grid>
+        </se:HmiTabItem>
+        <se:HmiTabItem Header="ТЕХНИЧЕСКОЕ ОБСЛУЖИВАНИЕ СВП" Height="40" Margin="5,5,0,5" Width="250" >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid HorizontalAlignment="Left" Height="110" Margin="13,4,0,0" VerticalAlignment="Top" Width="296" Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="41*"/>
+                        <ColumnDefinition Width="33*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="4*"/>
+                    </Grid.RowDefinitions>
+                    <Border Background="{hmi:Bind Expressions.Node[servis.to.status.color].Items[1].Value, FallbackValue=#FFF4F4F5}"  Grid.RowSpan="3" BorderBrush="Black" CornerRadius="2" BorderThickness="1" Grid.ColumnSpan="2" d:IsLocked="True" />
+
+                    <Button Style="{StaticResource MetalBorderStdButton}" Content="ПРОЙТИ&#xD;&#xA; СЕРВИС" Grid.Column="1" Grid.Row="1" Margin="10,5,5,5" Grid.RowSpan="2" Click="ezhesmennoe_click" FontSize="18">
+                        <!--<hmi:Click.Mode>
+                            <hmi:MomentaryMode>
+                                <hmi:MomentaryMode.PressValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>17</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>1</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.PressValue>
+                                <hmi:MomentaryMode.ReleaseValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.ReleaseValue>
+                            </hmi:MomentaryMode>
+                        </hmi:Click.Mode>-->
+                    </Button>
+
+                    <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Text="ЕЖЕСМЕННОЕ ТО&#xD;&#xA;(ИЛИ ТО ЧЕРЕЗ 12 ЧАСОВ БУРЕНИЯ)" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2" FontWeight="Bold" TextAlignment="Center"/>
+                    <TextBlock TextWrapping="Wrap"  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Text="{hmi:Bind FallbackValue=do servisa 4 chasa, Path=Expressions.Node[servis.to.status].Items[1].Value}" TextAlignment="Center" />
+                    <TextBlock TextWrapping="Wrap"  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Text="{hmi:Bind FallbackValue=do servisa 4 chasa, Path=Expressions.Node[servis.to].Items[1].Value}" TextAlignment="Center" />
+
+                </Grid>
+                <Grid HorizontalAlignment="Left" Height="110" Margin="12,4,0,0" VerticalAlignment="Top" Width="296" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="41*"/>
+                        <ColumnDefinition Width="33*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="5*"/>
+                    </Grid.RowDefinitions>
+                    <Border Background="{hmi:Bind Expressions.Node[servis.to.status.color].Items[2].Value, FallbackValue=#FFF4F4F5}"  Grid.RowSpan="3" BorderBrush="Black" CornerRadius="2" BorderThickness="1" Grid.ColumnSpan="2" d:IsLocked="True" />
+
+                    <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="ЕЖЕНЕДЕЛЬНОЕ ТО&#xD;&#xA;(ИЛИ ТО ЧЕРЕЗ 170 ЧАСОВ БУРЕНИЯ)" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2" FontWeight="Bold" TextAlignment="Center"/>
+                    <TextBlock TextWrapping="Wrap"  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Text="{hmi:Bind FallbackValue=do servisa 4 chasa, Path=Expressions.Node[servis.to.status].Items[2].Value}" TextAlignment="Center" />
+                    <TextBlock TextWrapping="Wrap"  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Text="{hmi:Bind FallbackValue=do servisa 4 chasa, Path=Expressions.Node[servis.to].Items[2].Value}" TextAlignment="Center" />
+                    <Button Style="{StaticResource MetalBorderStdButton}" Content="ПРОЙТИ&#xD;&#xA; СЕРВИС" Grid.Column="3" Grid.Row="1" Margin="10,5,5,5" Grid.RowSpan="2" Click="ezhenedelnoe_click" FontSize="18">
+                        <!--<hmi:Click.Mode>
+                            <hmi:MomentaryMode>
+                                <hmi:MomentaryMode.PressValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>18</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>1</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.PressValue>
+                                <hmi:MomentaryMode.ReleaseValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.ReleaseValue>
+                            </hmi:MomentaryMode>
+                        </hmi:Click.Mode>-->
+                    </Button>
+                </Grid>
+                <Grid HorizontalAlignment="Left" Height="110" Margin="12,4,0,0" VerticalAlignment="Top" Width="296" Grid.Column="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="41*"/>
+                        <ColumnDefinition Width="33*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="4*"/>
+                    </Grid.RowDefinitions>
+                    <Border Background="{hmi:Bind Expressions.Node[servis.to.status.color].Items[3].Value, FallbackValue=#FFF4F4F5}"  Grid.RowSpan="3" BorderBrush="Black" CornerRadius="2" BorderThickness="1" Grid.ColumnSpan="2" d:IsLocked="True" />
+
+                    <TextBlock TextWrapping="Wrap" Text="ЕЖЕМЕСЯЧНОЕ ТО&#xD;&#xA;(ИЛИ ТО ЧЕРЕЗ 500 ЧАСОВ БУРЕНИЯ)" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2" FontWeight="Bold" TextAlignment="Center"/>
+                    <TextBlock TextWrapping="Wrap"  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Text="{hmi:Bind FallbackValue=do servisa 4 chasa, Path=Expressions.Node[servis.to.status].Items[3].Value}" TextAlignment="Center" />
+                    <TextBlock TextWrapping="Wrap"  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Text="{hmi:Bind FallbackValue=do servisa 4 chasa, Path=Expressions.Node[servis.to].Items[3].Value}" TextAlignment="Center" />
+                    <Button Style="{StaticResource MetalBorderStdButton}" Content="ПРОЙТИ&#xD;&#xA; СЕРВИС" Grid.Column="3" Grid.Row="1" Margin="10,5,5,5"  Grid.RowSpan="2" Click="ezhemesyachnoe_click" FontSize="18">
+                        <!--<hmi:Click.Mode>
+                            <hmi:MomentaryMode>
+                                <hmi:MomentaryMode.PressValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>19</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>1</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.PressValue>
+                                <hmi:MomentaryMode.ReleaseValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.ReleaseValue>
+                            </hmi:MomentaryMode>
+                        </hmi:Click.Mode>-->
+                    </Button>
+                </Grid>
+                <Grid HorizontalAlignment="Left" Height="110" Margin="12,4,0,0" VerticalAlignment="Top" Width="296" Grid.Column="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="41*"/>
+                        <ColumnDefinition Width="33*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="4*"/>
+                    </Grid.RowDefinitions>
+                    <Border Background="{hmi:Bind Expressions.Node[servis.to.status.color].Items[4].Value, FallbackValue=#FFF4F4F5}"  Grid.RowSpan="3" BorderBrush="Black" CornerRadius="2" BorderThickness="1" Grid.ColumnSpan="2" d:IsLocked="True" />
+
+                    <TextBlock TextWrapping="Wrap" Text="ЕЖЕГОДНОЕ ТО&#xD;&#xA;(ИЛИ ТО ЧЕРЕЗ 6000 ЧАСОВ БУРЕНИЯ)" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2" FontWeight="Bold" TextAlignment="Center"/>
+                    <TextBlock TextWrapping="Wrap"  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Text="{hmi:Bind FallbackValue=do servisa 4 chasa, Path=Expressions.Node[servis.to.status].Items[4].Value}" TextAlignment="Center" />
+                    <TextBlock TextWrapping="Wrap"  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Text="{hmi:Bind FallbackValue=do servisa 4 chasa, Path=Expressions.Node[servis.to].Items[4].Value}" TextAlignment="Center" />
+
+                    <Button Style="{StaticResource MetalBorderStdButton}" Content="ПРОЙТИ&#xD;&#xA; СЕРВИС" Grid.Column="3" Grid.Row="1" Margin="10,5,5,5"  Grid.RowSpan="2" Click="ezhegodnoe_click" FontSize="18">
+                        <!--<hmi:Click.Mode>
+                            <hmi:MomentaryMode>
+                                <hmi:MomentaryMode.PressValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>20</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>1</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.PressValue>
+                                <hmi:MomentaryMode.ReleaseValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.ReleaseValue>
+                            </hmi:MomentaryMode>
+                        </hmi:Click.Mode>-->
+                    </Button>
+                </Grid>
+                <Rectangle RadiusX="5" RadiusY="5" Grid.ColumnSpan="4" Fill="White" HorizontalAlignment="Left" Height="687" Margin="13,119,0,0" Stroke="Black" VerticalAlignment="Top" Width="1249"/>
+                <Grid Margin="21,150,101,13" Grid.ColumnSpan="2">
+                    <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="388,58,0,0" TextWrapping="Wrap" Text="Смазывать штропа и уши траверсы густой трубной смазкой" VerticalAlignment="Top" FontSize="9" TextAlignment="Center" Width="87"/>
+                    <TextBlock x:Name="textBlock_Copy2" HorizontalAlignment="Left" Margin="388,130,0,0" TextWrapping="Wrap" Text="Тавотница по одной с каждой стороны 2 качка" VerticalAlignment="Top" FontSize="9" TextAlignment="Center" Width="87"/>
+                    <TextBlock x:Name="textBlock_Copy3" HorizontalAlignment="Left" Margin="388,195,0,0" TextWrapping="Wrap" Text="Ползуны СВП, нанести смазку кистью на нижнюю секцию направляющей" VerticalAlignment="Top" FontSize="9" TextAlignment="Center" Width="95"/>
+                    <TextBlock x:Name="textBlock_Copy4" HorizontalAlignment="Left" Margin="388,297,0,0" TextWrapping="Wrap" Text="Смазывать штропа и уши механизма поворота штропов  густой трубной смазкой" VerticalAlignment="Top" FontSize="9" TextAlignment="Center" Width="87"/>
+                    <TextBlock x:Name="textBlock_Copy5" HorizontalAlignment="Left" Margin="382,393,0,0" TextWrapping="Wrap" Text="Тавотницы для смазки подшипников по две на каждом гидроцилиндре отклонения штропов 1 качок" VerticalAlignment="Top" FontSize="9" TextAlignment="Center" Width="100"/>
+                    <TextBlock x:Name="textBlock_Copy6" HorizontalAlignment="Left" Margin="388,481,0,0" TextWrapping="Wrap" Text="Тавотница по одной с каждой стороны&#xD;&#xA;1 качок" VerticalAlignment="Top" FontSize="9" TextAlignment="Center" Width="87"/>
+                    <TextBlock x:Name="textBlock_Copy7" HorizontalAlignment="Left" Margin="388,541,0,0" TextWrapping="Wrap" Text="Нанести смазку кистью на кулачки шарового крана" VerticalAlignment="Top" FontSize="9" TextAlignment="Center" Width="95"/>
+                    <TextBlock x:Name="textBlock_Copy8" HorizontalAlignment="Left" Margin="388,602,0,0" TextWrapping="Wrap" Text="Нанести смазку кистью на ствол манипулятора трубного" VerticalAlignment="Top" FontSize="9" TextAlignment="Center" Width="95"/>
+                    <TextBlock x:Name="textBlock_Copy9" HorizontalAlignment="Left" Margin="3,487,0,0" TextWrapping="Wrap" Text="Тавотница по одной с каждой стороны 2 качка" VerticalAlignment="Top" FontSize="9" TextAlignment="Center" Width="95"/>
+                    <TextBlock x:Name="textBlock_Copy10" HorizontalAlignment="Left" Margin="3,425,0,0" TextWrapping="Wrap" Text="Тавотница по одной с каждой стороны 2 качка" VerticalAlignment="Top" FontSize="9" TextAlignment="Center" Width="95"/>
+                    <TextBlock x:Name="textBlock_Copy11" HorizontalAlignment="Left" Margin="3,360,0,0" TextWrapping="Wrap" Text="Тавотница по одной с каждой стороны 2 качка" VerticalAlignment="Top" FontSize="9" TextAlignment="Center" Width="95"/>
+                    <TextBlock x:Name="textBlock_Copy12" HorizontalAlignment="Left" Margin="2,270,0,0" TextWrapping="Wrap" Text="Тавотница для смазки подшипника механизма поворота штропов&#xD;&#xA;1 качок" VerticalAlignment="Top" FontSize="9" TextAlignment="Center" Width="101"/>
+                    <TextBlock x:Name="textBlock_Copy13" HorizontalAlignment="Left" Margin="6,199,0,0" TextWrapping="Wrap" Text="Нанести небольшое количество смазки на зубья шестерни" VerticalAlignment="Top" FontSize="9" TextAlignment="Center" Width="95"/>
+                    <TextBlock x:Name="textBlock_Copy14" HorizontalAlignment="Left" Margin="6,155,0,0" TextWrapping="Wrap" Text="Тавотница 2 качка" VerticalAlignment="Top" FontSize="9" TextAlignment="Center" Width="95"/>
+                    <TextBlock x:Name="textBlock_Copy15" HorizontalAlignment="Left" Margin="1,71,0,0" TextWrapping="Wrap" Text="Тавотницы для смазки подшипников по две на каждом гидроцилиндре разгрузки резьбы 2 качка" VerticalAlignment="Top" FontSize="9" TextAlignment="Center" Width="101"/>
+                    <TextBlock x:Name="textBlock_Copy16" HorizontalAlignment="Left" Margin="116,8,0,0" TextWrapping="Wrap" Text="2 тавотницы для смазки уплотнений. Каждые 12 часов бурения" VerticalAlignment="Top" FontSize="9" TextAlignment="Center" Width="95"/>
+                </Grid>
+                <TextBlock Grid.ColumnSpan="2" Grid.Column="2" HorizontalAlignment="Left" Margin="178,154,0,0" TextWrapping="Wrap" Text="1. Трубный зажим необходимо чистить и смазывать каждые 3 месяца, для этого трубный зажим необходимо подвергнуть частичной разборке, как показано на рисунке.&#xD;&#xA;&#xD;&#xA;2. При проведении СПО с промывкой скважины буровым раствором, необходимо промывать трубный зажим от частиц бурового раствора. В зависимости от погодных условий промывку производить водой или паром." VerticalAlignment="Top" Width="440" FontSize="10"/>
+                <TextBlock Grid.ColumnSpan="2" Grid.Column="2" HorizontalAlignment="Left" Margin="178,248,0,0" TextWrapping="Wrap" Text="Общие технические проверки (Ежедневно)&#xD;&#xA;&#xD;&#xA;1. Проверить СВП на наличие ослабленных и изношенных деталей и наличие утечек.&#xD;&#xA;2. Проверить повреждение антифрикционных пластин ползунов.&#xD;&#xA;3. Проверить состояние индикаторов загрязнения масленых фильтров.&#xD;&#xA;4. Проверить ослабленные электрические соединения.&#xD;&#xA;5. Проверить уровни масел вертлюг – редуктора и гидропривода СВП.&#xD;&#xA;6. Проверить вертлюжное уплотнение на наличие течи.&#xD;&#xA;7. Проверить затяжку болтовых соединений и контровочные элементы." VerticalAlignment="Top" FontSize="10"/>
+                <Grid SnapsToDevicePixels="True" Background="AliceBlue" Grid.ColumnSpan="2" Grid.Column="1" HorizontalAlignment="Left" Height="226" Margin="189,561,0,0" VerticalAlignment="Top" Width="345">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Rectangle Grid.ColumnSpan="3" Grid.RowSpan="7" Fill="Black" HorizontalAlignment="Stretch" Margin="-1" d:IsLocked="True"/>
+
+                    <Rectangle Grid.ColumnSpan="3" Fill="#FF403740" HorizontalAlignment="Stretch" Margin="0" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="3" Fill="#FFEEEEEE" HorizontalAlignment="Stretch" Margin="0" Grid.Row="1" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="3" Fill="#FF8BAAB9" HorizontalAlignment="Stretch" Margin="0" Grid.Row="2" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="3" Fill="#FFEEEEEE" HorizontalAlignment="Stretch" Margin="0" Grid.Row="3" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="3" Fill="#FF8BAAB9" HorizontalAlignment="Stretch" Margin="0" Grid.Row="4" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="3" Fill="#FFEEEEEE" HorizontalAlignment="Stretch" Margin="0" Grid.Row="5" d:IsLocked="True"/>
+
+                    <Rectangle Canvas.Top="105" Grid.Row="0" Margin="0,0,0,0" Canvas.Left="295" Fill="#33D9CAC1" Grid.Column="1"/>
+                    <Rectangle Canvas.Top="136" Grid.RowSpan="99" Grid.Row="1" Canvas.Left="295" Fill="#7FC8E0C1" Grid.Column="1"/>
+
+                    <TextBlock Grid.Row="0"  HorizontalAlignment="Stretch" Margin="0,0,0,0" TextWrapping="Wrap" Text="ОПИСАНИЕ" VerticalAlignment="Center" FontSize="9" TextAlignment="Center" Foreground="White"/>
+                    <TextBlock Grid.Row="1" HorizontalAlignment="Stretch" Margin="10,0,0,0" TextWrapping="Wrap" Text="ЗАМЕНА МАСЛА В ВЕРТЛЮГ – РЕДУКТОРЕ И АНАЛИЗ МАСЛА" VerticalAlignment="Center" FontSize="9"/>
+                    <TextBlock Grid.Row="2" HorizontalAlignment="Stretch" Margin="10,0,0,0" TextWrapping="Wrap" Text="ЗАМЕНА ФИЛЬТРО-ЭЛЕМЕНТА МАСЛЕНОГО ФИЛЬТРА В ВЕРТЛЮГ– РЕДУКТОРА" VerticalAlignment="Center" FontSize="9"/>
+                    <TextBlock Grid.Row="3" HorizontalAlignment="Stretch" Margin="10,0,0,0" TextWrapping="Wrap" Text="ЗАМЕНА МАСЛА В ГИДРОПРИВОДЕ СВП" VerticalAlignment="Center" FontSize="9"/>
+                    <TextBlock Grid.Row="4" HorizontalAlignment="Stretch" Margin="10,0,0,0" TextWrapping="Wrap" Text="АНАЛИЗ МАСЛА В ГИДРОПРИВОДЕ СВП" VerticalAlignment="Center" FontSize="9"/>
+                    <TextBlock Grid.Row="5" HorizontalAlignment="Stretch" Margin="10,0,0,0" TextWrapping="Wrap" Text="ЗАМЕНА ФИЛЬТРО-ЭЛЕМЕНТА МАСЛЕНОГО ФИЛЬТРА В ГИДРОПРИВОДЕ СВП" VerticalAlignment="Center" FontSize="9"/>
+
+                    <TextBlock Grid.Row="0" HorizontalAlignment="Stretch" Margin="0,0,0,0" TextWrapping="Wrap" Text="ПЕРИОДИЧНОСТЬ" VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.Column="1" FontSize="9" TextAlignment="Center" Foreground="White"/>
+                    <TextBlock Grid.Row="1" HorizontalAlignment="Stretch" Margin="10,0,0,0" TextWrapping="Wrap" Text="1 РАЗ В 6 МЕСЯЦЕВ ИЛИ РАНЕЕ В ЗАВИСИМОСТИ ОТ РЕЗУЛЬТАТОВ АНАЛИЗА" VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.Column="1" FontSize="9"/>
+                    <TextBlock Grid.Row="2" HorizontalAlignment="Stretch" Margin="10,0,0,0" TextWrapping="Wrap" Text="1 РАЗ В 3 МЕСЯЦА" VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.Column="1" FontSize="9"/>
+                    <TextBlock Grid.Row="3" HorizontalAlignment="Stretch" Margin="10,0,0,0" TextWrapping="Wrap" Text="1 РАЗ В 6 МЕСЯЦЕВ ИЛИ РАНЕЕ В ЗАВИСИМОСТИ ОТ РЕЗУЛЬТАТОВ АНАЛИЗА" VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.Column="1" FontSize="9"/>
+                    <TextBlock Grid.Row="4" HorizontalAlignment="Stretch" Margin="10,0,0,0" TextWrapping="Wrap" Text="1 РАЗ В 6 МЕСЯЦЕВ" VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.Column="1" FontSize="9"/>
+                    <TextBlock Grid.Row="5" HorizontalAlignment="Stretch" Margin="10,0,0,0" TextWrapping="Wrap" Text="1 РАЗ В 3 МЕСЯЦА" VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.Column="1" FontSize="9"/>
+                </Grid>
+                <Grid SnapsToDevicePixels="True" Background="AliceBlue" Grid.ColumnSpan="2" Grid.Column="1" HorizontalAlignment="Left" Height="106" Margin="189,402,0,0" VerticalAlignment="Top" Width="345">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Rectangle Grid.ColumnSpan="3" Grid.RowSpan="4" Fill="Black" HorizontalAlignment="Stretch" Margin="-1" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="3" Fill="#FF403740" HorizontalAlignment="Stretch" Margin="0" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="3" Fill="#FFEEEEEE" HorizontalAlignment="Stretch" Margin="0" Grid.Row="1" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="3" Fill="#FF8BAAB9" HorizontalAlignment="Stretch" Margin="0" Grid.Row="2" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="3" Fill="#FFEEEEEE" HorizontalAlignment="Stretch" Margin="0" Grid.Row="3" d:IsLocked="True"/>
+
+                    <Rectangle Canvas.Top="105" Grid.Row="0" Margin="0,0,0,0" Canvas.Left="295" Fill="#33D9CAC1" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+                    <Rectangle Canvas.Top="136" Grid.RowSpan="99" Grid.Row="1" Canvas.Left="295" Fill="#7FC8E0C1" Grid.Column="1"/>
+
+
+                    <TextBlock Grid.Row="0"  HorizontalAlignment="Stretch" Margin="0,0,0,0" TextWrapping="Wrap" Text="ФИРМА ПРОИЗВОДИТЕЛЬ" VerticalAlignment="Center" FontSize="9" TextAlignment="Center" Foreground="White"/>
+                    <TextBlock Grid.Row="1" HorizontalAlignment="Stretch" Margin="0,0,0,0" TextWrapping="Wrap" Text="ТУ 38.101479-00" VerticalAlignment="Center" FontSize="9" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="2" HorizontalAlignment="Stretch" Margin="0,0,0,0" TextWrapping="Wrap" Text="SHELL" VerticalAlignment="Center" FontSize="9" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="3" HorizontalAlignment="Stretch" Margin="0,0,0,0" TextWrapping="Wrap" Text="EXXONMOBIL" VerticalAlignment="Center" FontSize="9" TextAlignment="Center"/>
+
+                    <TextBlock Grid.Row="0" HorizontalAlignment="Stretch" Margin="0,0,0,0" TextWrapping="Wrap" Text="ТЕМПЕРАТУРА ОКРУЖАЮЩЕЙ СРЕДЫ&#xD;&#xA;- 45°С … + 40°С" VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.Column="1" FontSize="9" TextAlignment="Center" Foreground="White"/>
+                    <TextBlock Grid.Row="1" HorizontalAlignment="Stretch" Margin="0,0,0,0" TextWrapping="Wrap" Text="ВМГ-3" VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.Column="1" FontSize="9" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="2" HorizontalAlignment="Stretch" Margin="0,0,0,0" TextWrapping="Wrap" Text="TELLUS S4 VX 32" VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.Column="1" FontSize="9" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="3" HorizontalAlignment="Stretch" Margin="0,0,0,0" TextWrapping="Wrap" Text="MOBIL DTE 10 EXCEL 32" VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.Column="1" FontSize="9" TextAlignment="Center"/>
+                </Grid>
+                <Grid Background="AliceBlue" SnapsToDevicePixels="True" Grid.ColumnSpan="2" Grid.Column="2" HorizontalAlignment="Left" Height="116" Margin="230,561,0,0" VerticalAlignment="Top" Width="393">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="23*"/>
+                        <RowDefinition Height="22*"/>
+                        <RowDefinition Height="22*"/>
+                        <RowDefinition Height="23*"/>
+                        <RowDefinition Height="22*"/>
+                        <RowDefinition Height="23*"/>
+                    </Grid.RowDefinitions>
+
+                    <Rectangle Grid.ColumnSpan="3" Grid.RowSpan="6" Fill="Black" HorizontalAlignment="Stretch" Margin="-1" d:IsLocked="True"/>
+
+                    <Rectangle Grid.RowSpan="2" Grid.ColumnSpan="3" Fill="#FF403740" HorizontalAlignment="Stretch" Margin="0" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="3" Fill="#FFEEEEEE" HorizontalAlignment="Stretch" Margin="0" Grid.Row="2" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="3" Fill="#FF8BAAB9" HorizontalAlignment="Stretch" Margin="0" Grid.Row="3" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="3" Fill="#FFEEEEEE" HorizontalAlignment="Stretch" Margin="0" Grid.Row="4" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="3" Fill="#FF8BAAB9" HorizontalAlignment="Stretch" Margin="0" Grid.Row="5" d:IsLocked="True"/>
+
+                    <Rectangle Canvas.Top="105" Grid.Row="0" Margin="0,0,0,0" Canvas.Left="295" Fill="#33D9CAC1" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+                    <Rectangle Canvas.Top="136" Grid.RowSpan="99" Grid.Row="1" Canvas.Left="295" Fill="#7FC8E0C1" Grid.Column="1"/>
+
+
+                    <TextBlock Grid.Row="0"  HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="ФИРМА ПРОИЗВОДИТЕЛЬ" VerticalAlignment="Center" FontSize="9" Grid.RowSpan="2" TextAlignment="Center" Foreground="White"/>
+                    <TextBlock Grid.Row="2" HorizontalAlignment="Stretch" Margin="0,4" TextWrapping="Wrap" Text="ГОСТ 21150" VerticalAlignment="Center" FontSize="9" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="3" HorizontalAlignment="Stretch" Margin="0,5" TextWrapping="Wrap" Text="ГОСТ 9433-80" VerticalAlignment="Center" FontSize="9" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="4" HorizontalAlignment="Stretch" Margin="0,4" TextWrapping="Wrap" Text="PETRO-CANADA" VerticalAlignment="Center" FontSize="9" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="5" HorizontalAlignment="Stretch" Margin="0,4" TextWrapping="Wrap" Text="EXXONMOBIL" VerticalAlignment="Center" FontSize="9" TextAlignment="Center"/>
+
+                    <TextBlock Grid.Row="0" HorizontalAlignment="Stretch" Margin="0,3" TextWrapping="Wrap" Text="ТЕМПЕРАТУРА ОКРУЖАЮЩЕЙ СРЕДЫ" VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.Column="1" FontSize="9" TextAlignment="Center" Foreground="White"/>
+                    <TextBlock Grid.Row="0" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="- 45°С … + 10°С" VerticalAlignment="Center" Grid.Column="1" FontSize="9" Grid.RowSpan="3" TextAlignment="Center" Foreground="White"/>
+                    <TextBlock Grid.Row="0" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="- 10°С … + 40°С" VerticalAlignment="Center" Grid.Column="2" FontSize="9" Grid.RowSpan="3" TextAlignment="Center" Foreground="White"/>
+
+                    <TextBlock Grid.Row="2" HorizontalAlignment="Stretch" Margin="0,4" TextWrapping="Wrap" Text="ЛИТОЛ-24" VerticalAlignment="Center" Grid.Column="2" FontSize="9" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="3" HorizontalAlignment="Stretch" Margin="0,5" TextWrapping="Wrap" Text="ЦИАТИМ-221" VerticalAlignment="Center" Grid.Column="1" FontSize="9" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="4" HorizontalAlignment="Stretch" Margin="0,4" TextWrapping="Wrap" Text="PCECISION SYNTHETIC MOLY" VerticalAlignment="Center" Grid.Column="1" FontSize="9" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="5" HorizontalAlignment="Stretch" Margin="0,4" TextWrapping="Wrap" Text="MOBILITH SHC 100" VerticalAlignment="Center" Grid.Column="1" FontSize="9" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="3" HorizontalAlignment="Stretch" Margin="0,5" TextWrapping="Wrap" Text="ЦИАТИМ-221" VerticalAlignment="Center" Grid.Column="2" FontSize="9" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="4" HorizontalAlignment="Stretch" Margin="0,4" TextWrapping="Wrap" Text="PCECISION SYNTHETIC MOLY" VerticalAlignment="Center" Grid.Column="2" FontSize="9" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="5" HorizontalAlignment="Stretch" Margin="0,4" TextWrapping="Wrap" Text="MOBILITH SHC 100" VerticalAlignment="Center" Grid.Column="2" FontSize="9" TextAlignment="Center"/>
+                </Grid>
+                <Grid SnapsToDevicePixels="True" Background="AliceBlue" Grid.ColumnSpan="2" Grid.Column="2" HorizontalAlignment="Left" Height="126" Margin="230,402,0,0" VerticalAlignment="Top" Width="393">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="23*"/>
+                        <RowDefinition Height="22*"/>
+                        <RowDefinition Height="22*"/>
+                        <RowDefinition Height="23*"/>
+                        <RowDefinition Height="22*"/>
+                        <RowDefinition Height="23*"/>
+                    </Grid.RowDefinitions>
+
+                    <Rectangle Grid.ColumnSpan="3" Grid.RowSpan="6" Fill="Black" HorizontalAlignment="Stretch" Margin="-1" d:IsLocked="True"/>
+
+                    <Rectangle Grid.RowSpan="2" Grid.ColumnSpan="3" Fill="#FF403740" HorizontalAlignment="Stretch" Margin="0" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="3" Fill="#FFEEEEEE" HorizontalAlignment="Stretch" Margin="0" Grid.Row="2" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="3" Fill="#FF8BAAB9" HorizontalAlignment="Stretch" Margin="0" Grid.Row="3" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="3" Fill="#FFEEEEEE" HorizontalAlignment="Stretch" Margin="0" Grid.Row="4" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="3" Fill="#FF8BAAB9" HorizontalAlignment="Stretch" Margin="0" Grid.Row="5" d:IsLocked="True"/>
+
+                    <Rectangle Canvas.Top="105" Grid.Row="0" Margin="0,0,0,0" Canvas.Left="295" Fill="#33D9CAC1" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+                    <Rectangle Canvas.Top="136" Grid.RowSpan="99" Grid.Row="1" Canvas.Left="295" Fill="#7FC8E0C1" Grid.Column="1"/>
+
+
+                    <TextBlock Grid.Row="0"  HorizontalAlignment="Stretch" Margin="0,16" TextWrapping="Wrap" Text="ФИРМА ПРОИЗВОДИТЕЛЬ" VerticalAlignment="Center" FontSize="9" Grid.RowSpan="2" TextAlignment="Center" Foreground="White"/>
+                    <TextBlock Grid.Row="2" HorizontalAlignment="Stretch" Margin="0,4" TextWrapping="Wrap" Text="EXXONMOBIL" VerticalAlignment="Center" FontSize="9" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="3" HorizontalAlignment="Stretch" Margin="0,5" TextWrapping="Wrap" Text="SHELL" VerticalAlignment="Center" FontSize="9" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="4" HorizontalAlignment="Stretch" Margin="0,4" TextWrapping="Wrap" Text="TEBOIL" VerticalAlignment="Center" FontSize="9" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="5" HorizontalAlignment="Stretch" Margin="0,4" TextWrapping="Wrap" Text="ВЯЗКОСТЬ ПО ISO 3488" VerticalAlignment="Center" FontSize="9" TextAlignment="Center"/>
+
+                    <TextBlock Grid.Row="0" HorizontalAlignment="Stretch" Margin="0,3" TextWrapping="Wrap" Text="ТЕМПЕРАТУРА ОКРУЖАЮЩЕЙ СРЕДЫ" VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.Column="1" FontSize="9" TextAlignment="Center" Foreground="White"/>
+                    <TextBlock Grid.Row="0" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="- 45°С … + 10°С" VerticalAlignment="Center" Grid.Column="1" FontSize="9" Grid.RowSpan="3" TextAlignment="Center" Foreground="White"/>
+                    <TextBlock Grid.Row="0" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="- 10°С … + 40°С" VerticalAlignment="Center" Grid.Column="2" FontSize="9" Grid.RowSpan="3" TextAlignment="Center" Foreground="White"/>
+
+                    <TextBlock Grid.Row="2" HorizontalAlignment="Stretch" Margin="0,4" TextWrapping="Wrap" Text="MOBILUB 1 SHC 75W-90" VerticalAlignment="Center" Grid.Column="1" FontSize="9" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="3" HorizontalAlignment="Stretch" Margin="0,5" TextWrapping="Wrap" Text="OMALA S4 GX 68" VerticalAlignment="Center" Grid.Column="1" FontSize="9" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="4" HorizontalAlignment="Stretch" Margin="0,4" TextWrapping="Wrap" Text="SYPRES 68" VerticalAlignment="Center" Grid.Column="1" FontSize="9" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="5" HorizontalAlignment="Stretch" Margin="0,4" TextWrapping="Wrap" Text="68" VerticalAlignment="Center" Grid.Column="1" FontSize="9" TextAlignment="Center"/>
+
+                    <TextBlock Grid.Row="2" HorizontalAlignment="Stretch" Margin="0,4" TextWrapping="Wrap" Text="MOBILGEAR SHC XMP 150" VerticalAlignment="Center" Grid.Column="2" FontSize="9" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="3" HorizontalAlignment="Stretch" Margin="0,5" TextWrapping="Wrap" Text="OMALA S4 GX 150" VerticalAlignment="Center" Grid.Column="2" FontSize="9" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="4" HorizontalAlignment="Stretch" Margin="0,4" TextWrapping="Wrap" Text="SYPRES 150" VerticalAlignment="Center" Grid.Column="2" FontSize="9" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="5" HorizontalAlignment="Stretch" Margin="0,4" TextWrapping="Wrap" Text="150" VerticalAlignment="Center" Grid.Column="2" FontSize="9" TextAlignment="Center"/>
+                </Grid>
+                <TextBlock Grid.Row="0"  HorizontalAlignment="Left" Margin="189,385,0,0" TextWrapping="Wrap" Text="МАСЛО ГИДРАВЛИЧЕСКОЕ" VerticalAlignment="Top" FontSize="9" TextAlignment="Center" Grid.Column="1" Grid.ColumnSpan="2" Width="345"/>
+                <TextBlock Grid.Row="0"  HorizontalAlignment="Left" Margin="189,541,0,0" TextWrapping="Wrap" Text="ПРОГРАММА СМАЗКИ" VerticalAlignment="Top" FontSize="9" TextAlignment="Center" Grid.Column="1" Grid.ColumnSpan="2" Width="345"/>
+                <TextBlock Grid.Row="0"  HorizontalAlignment="Left" Margin="230,385,0,0" TextWrapping="Wrap" Text="МАСЛО ТРАНСМИССИОННОЕ" VerticalAlignment="Top" FontSize="9" TextAlignment="Center" Grid.Column="2" Grid.ColumnSpan="2" Width="393"/>
+                <TextBlock Grid.Row="0"  HorizontalAlignment="Left" Margin="230,540,0,0" TextWrapping="Wrap" Text="КОНСИСТЕНТНАЯ СМАЗКА" VerticalAlignment="Top" FontSize="9" TextAlignment="Center" Grid.Column="2" Grid.ColumnSpan="2" Width="393"/>
+                <TextBlock FontSize="20" x:Name="textBlock_Copy" HorizontalAlignment="Center" Margin="238,127,238,0" Text="КАРТА СМАЗКИ" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Tahoma" TextAlignment="Center" Grid.ColumnSpan="2" Grid.Column="1"/>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="20" Margin="201,136,0,0" VerticalAlignment="Top" Width="85" CornerRadius="3" Background="{DynamicResource AttentionState}">
+                    <TextBlock x:Name="textBlock3" TextWrapping="Wrap" Text="Ежедневно" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="20" Margin="92,185,0,0" VerticalAlignment="Top" Width="85" CornerRadius="3" Background="#FF19FF19" Grid.Column="1">
+                    <TextBlock x:Name="textBlock4" TextWrapping="Wrap" Text="Еженедельно" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="20" Margin="92,255,0,0" VerticalAlignment="Top" Width="85" CornerRadius="3" Background="#FF19FF19" Grid.Column="1">
+                    <TextBlock x:Name="textBlock5" TextWrapping="Wrap" Text="Еженедельно" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="20" Margin="92,322,0,0" VerticalAlignment="Top" Width="85" CornerRadius="3" Background="#FF19FF19" Grid.Column="1">
+                    <TextBlock x:Name="textBlock6" TextWrapping="Wrap" Text="Еженедельно" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="20" Margin="92,422,0,0" VerticalAlignment="Top" Width="85" CornerRadius="3" Background="#FF19FF19" Grid.Column="1">
+                    <TextBlock x:Name="textBlock7" TextWrapping="Wrap" Text="Еженедельно" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="20" Margin="92,519,0,0" VerticalAlignment="Top" Width="85" CornerRadius="3" Background="#FF19FF19" Grid.Column="1">
+                    <TextBlock x:Name="textBlock8" TextWrapping="Wrap" Text="Еженедельно" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="20" Margin="92,608,0,0" VerticalAlignment="Top" Width="85" CornerRadius="3" Background="{DynamicResource AttentionState}" Grid.Column="1">
+                    <TextBlock TextWrapping="Wrap" Text="Ежедневно" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="20" Margin="92,671,0,0" VerticalAlignment="Top" Width="85" CornerRadius="3" Background="{DynamicResource AttentionState}" Grid.Column="1">
+                    <TextBlock TextWrapping="Wrap" Text="Ежедневно" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="20" Margin="92,729,0,0" VerticalAlignment="Top" Width="85" CornerRadius="3" Background="#FF19FF19" Grid.Column="1">
+                    <TextBlock x:Name="textBlock9" TextWrapping="Wrap" Text="Еженедельно" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="20" Margin="28,615,0,0" VerticalAlignment="Top" Width="85" CornerRadius="3" Background="{DynamicResource AttentionState}">
+                    <TextBlock TextWrapping="Wrap" Text="Ежедневно" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="20" Margin="28,553,0,0" VerticalAlignment="Top" Width="85" CornerRadius="3" Background="{DynamicResource AttentionState}">
+                    <TextBlock TextWrapping="Wrap" Text="Ежедневно" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="20" Margin="28,490,0,0" VerticalAlignment="Top" Width="85" CornerRadius="3" Background="{DynamicResource AttentionState}">
+                    <TextBlock TextWrapping="Wrap" Text="Ежедневно" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="20" Margin="29,200,0,0" VerticalAlignment="Top" Width="85" CornerRadius="3" Background="#FF19FF19">
+                    <TextBlock x:Name="textBlock10" TextWrapping="Wrap" Text="Еженедельно" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="20" Margin="32,283,0,0" VerticalAlignment="Top" Width="85" CornerRadius="3" Background="#FF19FF19">
+                    <TextBlock x:Name="textBlock11" TextWrapping="Wrap" Text="Еженедельно" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="20" Margin="32,327,0,0" VerticalAlignment="Top" Width="85" CornerRadius="3" Background="#FF19FF19">
+                    <TextBlock x:Name="textBlock12" TextWrapping="Wrap" Text="Еженедельно" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="20" Margin="32,397,0,0" VerticalAlignment="Top" Width="85" CornerRadius="3" Background="#FF19FF19">
+                    <TextBlock x:Name="textBlock13" TextWrapping="Wrap" Text="Еженедельно" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+            </Grid>
+        </se:HmiTabItem>
+        <se:HmiTabItem Header="ТЕХНИЧЕСКОЕ ОБСЛУЖИВАНИЕ КТУ" Width="250" Height="40" Margin="5,5,0,5">
+            <se:HmiTabItem.Visibility>
+                <hmi:Bind Path="AnalogAlarms.Node[].Items[1].Blinking">
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </se:HmiTabItem.Visibility>
+            <Grid>
+                <Grid.Visibility>
+                    <hmi:Bind Path="AnalogAlarms.Node[].Items[1].Blinking">
+                        <hmi:Bind.FallbackValue>
+                            <Visibility>Visible</Visibility>
+                        </hmi:Bind.FallbackValue>
+                    </hmi:Bind>
+                </Grid.Visibility>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid HorizontalAlignment="Left" Height="110" Margin="11,4,0,0" VerticalAlignment="Top" Width="296" Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="41*"/>
+                        <ColumnDefinition Width="33*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="4*"/>
+                    </Grid.RowDefinitions>
+                    <Border Background="{hmi:Bind FallbackValue=#FFF4F4F5, Path=Expressions.Node[servis.ktu.status.color].Items[1].Value}"  Grid.RowSpan="3" BorderBrush="Black" CornerRadius="2" BorderThickness="1" Grid.ColumnSpan="2" d:IsLocked="True" />
+
+                    <Button Style="{StaticResource MetalBorderStdButton}" Content="ПРОЙТИ&#xD;&#xA; СЕРВИС" Grid.Column="1" Grid.Row="1" Margin="10,5,5,5" Grid.RowSpan="2" Click="ezhednevnoe_ktu_click" FontSize="18">
+                        <!--<hmi:Click.Mode>
+                            <hmi:MomentaryMode>
+                                <hmi:MomentaryMode.PressValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>17</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>1</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.PressValue>
+                                <hmi:MomentaryMode.ReleaseValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.ReleaseValue>
+                            </hmi:MomentaryMode>
+                        </hmi:Click.Mode>-->
+                    </Button>
+
+                    <TextBlock TextWrapping="Wrap" Text="ЕЖЕДНЕВНОЕ ТО&#xD;&#xA;(ИЛИ ТО ЧЕРЕЗ 24 ЧАСА БУРЕНИЯ)" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2" FontWeight="Bold" TextAlignment="Center"/>
+                    <TextBlock TextWrapping="Wrap"  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Text="{hmi:Bind FallbackValue=do servisa 4 chasa, Path=Expressions.Node[servis.ktu.status].Items[1].Value}" TextAlignment="Center" />
+                    <TextBlock TextWrapping="Wrap"  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Text="{hmi:Bind FallbackValue=do servisa 4 chasa, Path=Expressions.Node[servis.ktu].Items[1].Value}" TextAlignment="Center" />
+
+                </Grid>
+                <Grid HorizontalAlignment="Left" Height="110" Margin="10,4,0,0" VerticalAlignment="Top" Width="296" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="41*"/>
+                        <ColumnDefinition Width="33*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="5*"/>
+                    </Grid.RowDefinitions>
+                    <Border Background="{hmi:Bind FallbackValue=#FFF4F4F5, Path=Expressions.Node[servis.ktu.status.color].Items[2].Value}"  Grid.RowSpan="3" BorderBrush="Black" CornerRadius="2" BorderThickness="1" Grid.ColumnSpan="2" d:IsLocked="True" />
+
+                    <TextBlock TextWrapping="Wrap" Text="ЕЖЕНЕДЕЛЬНОЕ ТО&#xD;&#xA;(ИЛИ ТО ЧЕРЕЗ 170 ЧАСОВ БУРЕНИЯ)" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2" FontWeight="Bold" TextAlignment="Center"/>
+                    <TextBlock TextWrapping="Wrap"  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Text="{hmi:Bind FallbackValue=do servisa 4 chasa, Path=Expressions.Node[servis.ktu.status].Items[2].Value}" TextAlignment="Center" />
+                    <TextBlock TextWrapping="Wrap"  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Text="{hmi:Bind FallbackValue=do servisa 4 chasa, Path=Expressions.Node[servis.ktu].Items[2].Value}" TextAlignment="Center" />
+                    <Button Style="{StaticResource MetalBorderStdButton}" Content="ПРОЙТИ&#xD;&#xA; СЕРВИС" Grid.Column="3" Grid.Row="1" Margin="10,5,5,5" Grid.RowSpan="2" Click="ezhenedelnoe_ktu_click" FontSize="18"/>
+
+                </Grid>
+                <Grid HorizontalAlignment="Left" Height="110" Margin="10,4,0,0" VerticalAlignment="Top" Width="296" Grid.Column="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="41*"/>
+                        <ColumnDefinition Width="33*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="4*"/>
+                    </Grid.RowDefinitions>
+                    <Border Background="{hmi:Bind FallbackValue=#FFF4F4F5, Path=Expressions.Node[servis.ktu.status.color].Items[3].Value}"  Grid.RowSpan="3" BorderBrush="Black" CornerRadius="2" BorderThickness="1" Grid.ColumnSpan="2" d:IsLocked="True" />
+
+                    <TextBlock TextWrapping="Wrap" Text="ЕЖЕМЕСЯЧНОЕ ТО&#xD;&#xA;(ИЛИ ТО ЧЕРЕЗ 500 ЧАСОВ БУРЕНИЯ)" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2" FontWeight="Bold" TextAlignment="Center"/>
+                    <TextBlock TextWrapping="Wrap"  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Text="{hmi:Bind FallbackValue=do servisa 4 chasa, Path=Expressions.Node[servis.ktu.status].Items[3].Value}" TextAlignment="Center" />
+                    <TextBlock TextWrapping="Wrap"  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Text="{hmi:Bind FallbackValue=do servisa 4 chasa, Path=Expressions.Node[servis.ktu].Items[3].Value}" TextAlignment="Center" />
+                    <Button Style="{StaticResource MetalBorderStdButton}" Content="ПРОЙТИ&#xD;&#xA; СЕРВИС" Grid.Column="3" Grid.Row="1" Margin="10,5,5,5"  Grid.RowSpan="2" Click="ezhemesyachnoe_ktu_click" FontSize="18"/>
+
+
+                </Grid>
+                <Grid HorizontalAlignment="Left" Height="110" Margin="10,4,0,0" VerticalAlignment="Top" Width="296" Grid.Column="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="41*"/>
+                        <ColumnDefinition Width="33*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="4*"/>
+                    </Grid.RowDefinitions>
+                    <Border Background="{hmi:Bind FallbackValue=#FFF4F4F5, Path=Expressions.Node[servis.ktu.status.color].Items[4].Value}"  Grid.RowSpan="3" BorderBrush="Black" CornerRadius="2" BorderThickness="1" Grid.ColumnSpan="2" d:IsLocked="True" />
+
+                    <TextBlock TextWrapping="Wrap" Text="ПОЛУГОДИЧНОЕ ТО&#xD;&#xA;(ИЛИ ТО ЧЕРЕЗ 3000 ЧАСОВ БУРЕНИЯ)" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2" FontWeight="Bold" TextAlignment="Center"/>
+                    <TextBlock TextWrapping="Wrap"  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Text="{hmi:Bind FallbackValue=do servisa 4 chasa, Path=Expressions.Node[servis.ktu.status].Items[4].Value}" TextAlignment="Center" />
+                    <TextBlock TextWrapping="Wrap"  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Text="{hmi:Bind FallbackValue=do servisa 4 chasa, Path=Expressions.Node[servis.ktu].Items[4].Value}" TextAlignment="Center" />
+
+                    <Button Style="{StaticResource MetalBorderStdButton}" Content="ПРОЙТИ&#xD;&#xA; СЕРВИС" Grid.Column="3" Grid.Row="1" Margin="10,5,5,5"  Grid.RowSpan="2" Click="ezhegodnoe_ktu_click" FontSize="18">
+                    </Button>
+                </Grid>
+
+                <Grid SnapsToDevicePixels="True" Background="AliceBlue" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="470" Margin="159,240,0,0" VerticalAlignment="Top" Width="465" Grid.Column="2">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="13*"/>
+                        <ColumnDefinition Width="46*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Rectangle Grid.ColumnSpan="2" Grid.RowSpan="13" Fill="Black" HorizontalAlignment="Stretch" Margin="-2" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="2" Fill="#FF403740" HorizontalAlignment="Stretch" Margin="0" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="2" Fill="#FFEEEEEE" HorizontalAlignment="Stretch" Margin="0" Grid.Row="1" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="2" Fill="#FF8BAAB9" HorizontalAlignment="Stretch" Margin="0" Grid.Row="2" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="2" Fill="#FFEEEEEE" HorizontalAlignment="Stretch" Margin="0" Grid.Row="3" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="2" Fill="#FF8BAAB9" HorizontalAlignment="Stretch" Margin="0" Grid.Row="4" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="2" Fill="#FFEEEEEE" HorizontalAlignment="Stretch" Margin="0" Grid.Row="5" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="2" Fill="#FF8BAAB9" HorizontalAlignment="Stretch" Margin="0" Grid.Row="6" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="2" Fill="#FFEEEEEE" HorizontalAlignment="Stretch" Margin="0" Grid.Row="7" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="2" Fill="#FF8BAAB9" HorizontalAlignment="Stretch" Margin="0" Grid.Row="8" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="2" Fill="#FFEEEEEE" HorizontalAlignment="Stretch" Margin="0" Grid.Row="9" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="2" Fill="#FF8BAAB9" HorizontalAlignment="Stretch" Margin="0" Grid.Row="10" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="2" Fill="#FFEEEEEE" HorizontalAlignment="Stretch" Margin="0" Grid.Row="11" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="2" Fill="#FF8BAAB9" HorizontalAlignment="Stretch" Margin="0" Grid.Row="12" d:IsLocked="True"/>
+
+                    <Rectangle Canvas.Top="105" Grid.Row="0" Margin="0,0,0,0" Canvas.Left="295" Fill="#33D9CAC1" Grid.Column="1"/>
+                    <Rectangle Canvas.Top="136" Grid.RowSpan="12" Grid.Row="1" Canvas.Left="295" Fill="#7FC8E0C1" Grid.Column="1"/>
+
+
+                    <TextBlock Grid.Row="0"  HorizontalAlignment="Stretch" Margin="0,10,0,9" TextWrapping="Wrap" Text="ОБОЗНАЧЕНИЕ" VerticalAlignment="Center" FontSize="14" TextAlignment="Center" Foreground="White" Height="18"/>
+                    <TextBlock Grid.Row="1" HorizontalAlignment="Stretch" Margin="0,9,0,8" TextWrapping="Wrap" Text="ШП1" VerticalAlignment="Center" FontSize="14" TextAlignment="Center" Height="20"/>
+                    <TextBlock Grid.Row="2" HorizontalAlignment="Stretch" Margin="0,8,0,9" TextWrapping="Wrap" Text="ШП2" VerticalAlignment="Center" FontSize="14" TextAlignment="Center" Height="20"/>
+                    <TextBlock Grid.Row="3" HorizontalAlignment="Stretch" Margin="0,9,0,8" TextWrapping="Wrap" Text="ШМПК" VerticalAlignment="Center" FontSize="14" TextAlignment="Center" Height="20"/>
+                    <TextBlock Grid.Row="4" HorizontalAlignment="Stretch" Margin="0,8,0,9" TextWrapping="Wrap" Text="ШУСВП1 ПЧ" VerticalAlignment="Center" FontSize="14" TextAlignment="Center" Height="20"/>
+                    <TextBlock Grid.Row="5" HorizontalAlignment="Stretch" Margin="0,9,0,10" TextWrapping="Wrap" Text="ШУСВП1 ТР" VerticalAlignment="Center" FontSize="14" TextAlignment="Center" Height="18"/>
+                    <TextBlock Grid.Row="6" HorizontalAlignment="Stretch" Margin="0,10,0,9" TextWrapping="Wrap" Text="ШУСВП2 ПЧ" VerticalAlignment="Center" FontSize="14" TextAlignment="Center" Height="18"/>
+                    <TextBlock Grid.Row="7" HorizontalAlignment="Stretch" Margin="0,9,0,8" TextWrapping="Wrap" Text="ШУСВП2 ТР" VerticalAlignment="Center" FontSize="14" TextAlignment="Center" Height="20"/>
+                    <TextBlock Grid.Row="8" HorizontalAlignment="Stretch" Margin="0,10,0,9" TextWrapping="Wrap" Text="ЕК" VerticalAlignment="Center" FontSize="14" TextAlignment="Center" Height="18"/>
+                    <TextBlock Grid.Row="9" HorizontalAlignment="Stretch" Margin="0,9,0,8" TextWrapping="Wrap" Text="МВ1" VerticalAlignment="Center" FontSize="14" TextAlignment="Center" Height="20"/>
+                    <TextBlock Grid.Row="10" HorizontalAlignment="Stretch" Margin="0,10,0,9" TextWrapping="Wrap" Text="МВ2" VerticalAlignment="Center" FontSize="14" TextAlignment="Center" Height="18"/>
+                    <TextBlock Grid.Row="11" HorizontalAlignment="Stretch" Margin="0,11,0,8" TextWrapping="Wrap" Text="ШВР" VerticalAlignment="Center" FontSize="14" TextAlignment="Center" Height="18"/>
+                    <TextBlock Grid.Row="12" HorizontalAlignment="Stretch" Margin="0,9,0,8" TextWrapping="Wrap" Text="ТСН" VerticalAlignment="Center" FontSize="14" TextAlignment="Center" Height="20"/>
+
+                    <TextBlock Grid.Row="0" HorizontalAlignment="Stretch" Margin="0,10,0,9" TextWrapping="Wrap" Text="РАСШИФРОВКА" VerticalAlignment="Center" Grid.Column="1" FontSize="14" TextAlignment="Center" Foreground="White" Height="18"/>
+                    <TextBlock Grid.Row="1" HorizontalAlignment="Stretch" Margin="0,9,0,8" TextWrapping="Wrap" Text="ШКАФ ПИТАНИЯ 0,69 КВ" VerticalAlignment="Center" Grid.Column="1" FontSize="14" TextAlignment="Center" Height="20"/>
+                    <TextBlock Grid.Row="2" HorizontalAlignment="Stretch" Margin="0,8,0,9" TextWrapping="Wrap" Text="ШКАФ ПИТАНИЯ 0,4 КВ" VerticalAlignment="Center" Grid.Column="1" FontSize="14" TextAlignment="Center" Height="20"/>
+                    <TextBlock Grid.Row="3" HorizontalAlignment="Stretch" Margin="0,9,0,8" TextWrapping="Wrap" Text="ШКАФ МИКРОПРОЦЕССОРНОГО КОНТРОЛЛЕРА" VerticalAlignment="Center" Grid.Column="1" FontSize="14" TextAlignment="Center" Height="20"/>
+                    <TextBlock Grid.Row="4" HorizontalAlignment="Stretch" Margin="0,0,0,1" TextWrapping="Wrap" Text="ШКАФ УПРАВЛЕНИЯ ПРЕОБРАЗОВАТЕЛЕМ ЧАСТОТЫ СЕКЦИИ ВЕРХНЕГО ПРИВОДА 1" VerticalAlignment="Center" Grid.Column="1" FontSize="14" TextAlignment="Center" Height="36"/>
+                    <TextBlock Grid.Row="4" HorizontalAlignment="Stretch" Margin="0,36,0,0" TextWrapping="Wrap" Text="ШКАФ УПРАВЛЕНИЯ ТОРМОЗНЫМ РЕЗИСТОРОМ СЕКЦИИ ВЕРХНЕГО ПРИВОДА 1" VerticalAlignment="Center" Grid.Column="1" FontSize="14" TextAlignment="Center" Height="38" Grid.RowSpan="2"/>
+                    <TextBlock Grid.Row="6" HorizontalAlignment="Stretch" Margin="0,0,0,36" TextWrapping="Wrap" Text="ШКАФ УПРАВЛЕНИЯ ПРЕОБРАЗОВАТЕЛЕМ ЧАСТОТЫ СЕКЦИИ ВЕРХНЕГО ПРИВОДА 2" VerticalAlignment="Center" Grid.Column="1" FontSize="14" TextAlignment="Center" Height="38" Grid.RowSpan="2"/>
+                    <TextBlock Grid.Row="7" HorizontalAlignment="Stretch" Margin="0,1,0,0" TextWrapping="Wrap" Text="ШКАФ УПРАВЛЕНИЯ ТОРМОЗНЫМ РЕЗИСТОРОМ СЕКЦИИ ВЕРХНЕГО ПРИВОДА 2" VerticalAlignment="Center" Grid.Column="1" FontSize="14" TextAlignment="Center" Height="36"/>
+                    <TextBlock Grid.Row="8" HorizontalAlignment="Stretch" Margin="0,10,0,9" TextWrapping="Wrap" Text="ОБОГРЕВАТЕЛЬ" VerticalAlignment="Center" Grid.Column="1" FontSize="14" TextAlignment="Center" Height="18"/>
+                    <TextBlock Grid.Row="9" HorizontalAlignment="Stretch" Margin="0,9,0,8" TextWrapping="Wrap" Text="МОТОР ВЕНТИЛЯТОРА 1" VerticalAlignment="Center" Grid.Column="1" FontSize="14" TextAlignment="Center" Height="20"/>
+                    <TextBlock Grid.Row="10" HorizontalAlignment="Stretch" Margin="0,10,0,9" TextWrapping="Wrap" Text="МОТОР ВЕНТИЛЯТОРА 2" VerticalAlignment="Center" Grid.Column="1" FontSize="14" TextAlignment="Center" Height="18"/>
+                    <TextBlock Grid.Row="11" HorizontalAlignment="Stretch" Margin="0,11,0,8" TextWrapping="Wrap" Text="ШКАФ ВЫХОДНЫХ РАЗЪЕМОВ" VerticalAlignment="Center" Grid.Column="1" FontSize="14" TextAlignment="Center" Height="18"/>
+                    <TextBlock Grid.Row="12" HorizontalAlignment="Stretch" Margin="0,9,0,8" TextWrapping="Wrap" Text="ТРАНСФОРМАТОР СОБСТВЕННЫХ НУЖД" VerticalAlignment="Center" Grid.Column="1" FontSize="14" TextAlignment="Center" Height="20"/>
+                </Grid>
+
+
+                <TextBlock FontSize="20" x:Name="textBlock_Copy1" HorizontalAlignment="Center" Margin="0,180,0,0" Text="ПЛАНИРОВКА КТУ-СВП" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Tahoma" TextAlignment="Center" Grid.ColumnSpan="2" Grid.Column="1"/>
+            </Grid>
+        </se:HmiTabItem>
+        <se:HmiTabItem Header="ТЕХНИЧЕСКОЕ ОБСЛУЖИВАНИЕ КТУ" Width="250" Height="40" Margin="5,5,0,5">
+            <se:HmiTabItem.Visibility>
+                <hmi:Bind Path="AnalogAlarms.Node[].Items[2].Blinking">
+                    <hmi:Bind.FallbackValue>
+                        <Visibility>Visible</Visibility>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </se:HmiTabItem.Visibility>
+            <Grid>
+                <Grid.Visibility>
+                    <hmi:Bind Path="AnalogAlarms.Node[].Items[2].Blinking">
+                        <hmi:Bind.FallbackValue>
+                            <Visibility>Visible</Visibility>
+                        </hmi:Bind.FallbackValue>
+                    </hmi:Bind>
+                </Grid.Visibility>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid HorizontalAlignment="Left" Height="110" Margin="11,4,0,0" VerticalAlignment="Top" Width="296" Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="41*"/>
+                        <ColumnDefinition Width="33*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="4*"/>
+                    </Grid.RowDefinitions>
+                    <Border Background="{hmi:Bind FallbackValue=#FFF4F4F5, Path=Expressions.Node[servis.ktu.status.color].Items[1].Value}"  Grid.RowSpan="3" BorderBrush="Black" CornerRadius="2" BorderThickness="1" Grid.ColumnSpan="2" d:IsLocked="True" />
+
+                    <Button Style="{StaticResource MetalBorderStdButton}" Content="ПРОЙТИ&#xD;&#xA; СЕРВИС" Grid.Column="1" Grid.Row="1" Margin="10,5,5,5" Grid.RowSpan="2" Click="ezhednevnoe_reph_ktu_click" FontSize="18">
+                        <!--<hmi:Click.Mode>
+                            <hmi:MomentaryMode>
+                                <hmi:MomentaryMode.PressValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>17</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>1</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.PressValue>
+                                <hmi:MomentaryMode.ReleaseValue>
+                                    <hmi:ObjectActionParameter>
+                                        <hmi:ObjectActionParameter.Value>
+                                            <x:Array Type="System:UInt16">
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                                <System:UInt16>0</System:UInt16>
+                                            </x:Array>
+                                        </hmi:ObjectActionParameter.Value>
+                                    </hmi:ObjectActionParameter>
+                                </hmi:MomentaryMode.ReleaseValue>
+                            </hmi:MomentaryMode>
+                        </hmi:Click.Mode>-->
+                    </Button>
+
+                    <TextBlock TextWrapping="Wrap" Text="ЕЖЕДНЕВНОЕ ТО&#xD;&#xA;(ИЛИ ТО ЧЕРЕЗ 24 ЧАСА БУРЕНИЯ)" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2" FontWeight="Bold" TextAlignment="Center"/>
+                    <TextBlock TextWrapping="Wrap"  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Text="{hmi:Bind FallbackValue=do servisa 4 chasa, Path=Expressions.Node[servis.ktu.status].Items[1].Value}" TextAlignment="Center" />
+                    <TextBlock TextWrapping="Wrap"  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Text="{hmi:Bind FallbackValue=do servisa 4 chasa, Path=Expressions.Node[servis.ktu].Items[1].Value}" TextAlignment="Center" />
+
+                </Grid>
+                <Grid HorizontalAlignment="Left" Height="110" Margin="10,4,0,0" VerticalAlignment="Top" Width="296" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="41*"/>
+                        <ColumnDefinition Width="33*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="5*"/>
+                    </Grid.RowDefinitions>
+                    <Border Background="{hmi:Bind FallbackValue=#FFF4F4F5, Path=Expressions.Node[servis.ktu.status.color].Items[2].Value}"  Grid.RowSpan="3" BorderBrush="Black" CornerRadius="2" BorderThickness="1" Grid.ColumnSpan="2" d:IsLocked="True" />
+
+                    <TextBlock TextWrapping="Wrap" Text="ЕЖЕНЕДЕЛЬНОЕ ТО&#xD;&#xA;(ИЛИ ТО ЧЕРЕЗ 170 ЧАСОВ БУРЕНИЯ)" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2" FontWeight="Bold" TextAlignment="Center"/>
+                    <TextBlock TextWrapping="Wrap"  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Text="{hmi:Bind FallbackValue=do servisa 4 chasa, Path=Expressions.Node[servis.ktu.status].Items[2].Value}" TextAlignment="Center" />
+                    <TextBlock TextWrapping="Wrap"  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Text="{hmi:Bind FallbackValue=do servisa 4 chasa, Path=Expressions.Node[servis.ktu].Items[2].Value}" TextAlignment="Center" />
+                    <Button Style="{StaticResource MetalBorderStdButton}" Content="ПРОЙТИ&#xD;&#xA; СЕРВИС" Grid.Column="3" Grid.Row="1" Margin="10,5,5,5" Grid.RowSpan="2" Click="ezhenedelnoe_reph_ktu_click" FontSize="18"/>
+
+                </Grid>
+                <Grid HorizontalAlignment="Left" Height="110" Margin="10,4,0,0" VerticalAlignment="Top" Width="296" Grid.Column="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="41*"/>
+                        <ColumnDefinition Width="33*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="4*"/>
+                    </Grid.RowDefinitions>
+                    <Border Background="{hmi:Bind FallbackValue=#FFF4F4F5, Path=Expressions.Node[servis.ktu.status.color].Items[3].Value}"  Grid.RowSpan="3" BorderBrush="Black" CornerRadius="2" BorderThickness="1" Grid.ColumnSpan="2" d:IsLocked="True" />
+
+                    <TextBlock TextWrapping="Wrap" Text="ЕЖЕМЕСЯЧНОЕ ТО&#xD;&#xA;(ИЛИ ТО ЧЕРЕЗ 500 ЧАСОВ БУРЕНИЯ)" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2" FontWeight="Bold" TextAlignment="Center"/>
+                    <TextBlock TextWrapping="Wrap"  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Text="{hmi:Bind FallbackValue=do servisa 4 chasa, Path=Expressions.Node[servis.ktu.status].Items[3].Value}" TextAlignment="Center" />
+                    <TextBlock TextWrapping="Wrap"  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Text="{hmi:Bind FallbackValue=do servisa 4 chasa, Path=Expressions.Node[servis.ktu].Items[3].Value}" TextAlignment="Center" />
+                    <Button Style="{StaticResource MetalBorderStdButton}" Content="ПРОЙТИ&#xD;&#xA; СЕРВИС" Grid.Column="3" Grid.Row="1" Margin="10,5,5,5"  Grid.RowSpan="2" Click="ezhemesyachnoe_reph_ktu_click" FontSize="18"/>
+
+
+                </Grid>
+                <Grid HorizontalAlignment="Left" Height="110" Margin="10,4,0,0" VerticalAlignment="Top" Width="296" Grid.Column="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="41*"/>
+                        <ColumnDefinition Width="33*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="4*"/>
+                    </Grid.RowDefinitions>
+                    <Border Background="{hmi:Bind FallbackValue=#FFF4F4F5, Path=Expressions.Node[servis.ktu.status.color].Items[4].Value}"  Grid.RowSpan="3" BorderBrush="Black" CornerRadius="2" BorderThickness="1" Grid.ColumnSpan="2" d:IsLocked="True" />
+
+                    <TextBlock TextWrapping="Wrap" Text="ПОЛУГОДИЧНОЕ ТО&#xD;&#xA;(ИЛИ ТО ЧЕРЕЗ 3000 ЧАСОВ БУРЕНИЯ)" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2" FontWeight="Bold" TextAlignment="Center"/>
+                    <TextBlock TextWrapping="Wrap"  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Text="{hmi:Bind FallbackValue=do servisa 4 chasa, Path=Expressions.Node[servis.ktu.status].Items[4].Value}" TextAlignment="Center" />
+                    <TextBlock TextWrapping="Wrap"  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Text="{hmi:Bind FallbackValue=do servisa 4 chasa, Path=Expressions.Node[servis.ktu].Items[4].Value}" TextAlignment="Center" />
+
+                    <Button Style="{StaticResource MetalBorderStdButton}" Content="ПРОЙТИ&#xD;&#xA; СЕРВИС" Grid.Column="3" Grid.Row="1" Margin="10,5,5,5"  Grid.RowSpan="2" Click="ezhegodnoe_reph_ktu_click" FontSize="18">
+                    </Button>
+
+
+                </Grid>
+
+
+                <TextBlock FontSize="20" HorizontalAlignment="Center" Margin="0,180,0,0" Text="ПЛАНИРОВКА КТУ-СВП" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Tahoma" TextAlignment="Center" Grid.ColumnSpan="2" Grid.Column="1"/>
+
+                <Grid SnapsToDevicePixels="True" Background="AliceBlue" HorizontalAlignment="Left" Height="375" Margin="159,240,0,0" VerticalAlignment="Top" Width="465" Grid.ColumnSpan="2" Grid.Column="2">
+                    <Grid.Visibility>
+                        <hmi:Bind Path="AnalogAlarms.Node[].Items[2].Blinking">
+                            <hmi:Bind.FallbackValue>
+                                <Visibility>Visible</Visibility>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </Grid.Visibility>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="13*"/>
+                        <ColumnDefinition Width="46*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Rectangle Grid.ColumnSpan="2" Grid.RowSpan="13" Fill="Black" HorizontalAlignment="Stretch" Margin="-2" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="2" Fill="#FF403740" HorizontalAlignment="Stretch" Margin="0" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="2" Fill="#FFEEEEEE" HorizontalAlignment="Stretch" Margin="0" Grid.Row="1" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="2" Fill="#FF8BAAB9" HorizontalAlignment="Stretch" Margin="0" Grid.Row="2" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="2" Fill="#FFEEEEEE" HorizontalAlignment="Stretch" Margin="0" Grid.Row="3" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="2" Fill="#FF8BAAB9" HorizontalAlignment="Stretch" Margin="0" Grid.Row="4" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="2" Fill="#FFEEEEEE" HorizontalAlignment="Stretch" Margin="0" Grid.Row="5" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="2" Fill="#FF8BAAB9" HorizontalAlignment="Stretch" Margin="0" Grid.Row="6" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="2" Fill="#FFEEEEEE" HorizontalAlignment="Stretch" Margin="0" Grid.Row="7" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="2" Fill="#FF8BAAB9" HorizontalAlignment="Stretch" Margin="0" Grid.Row="8" d:IsLocked="True"/>
+                    <Rectangle Grid.ColumnSpan="2" Fill="#FFEEEEEE" HorizontalAlignment="Stretch" Margin="0" Grid.Row="9" d:IsLocked="True"/>
+
+                    <Rectangle Canvas.Top="105" Grid.Row="0" Margin="0,0,0,0" Canvas.Left="295" Fill="#33D9CAC1" Grid.Column="1"/>
+                    <Rectangle Canvas.Top="136" Grid.RowSpan="12" Grid.Row="1" Canvas.Left="295" Fill="#7FC8E0C1" Grid.Column="1"/>
+
+
+                    <TextBlock Grid.Row="0"  HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="ОБОЗНАЧЕНИЕ" VerticalAlignment="Center" TextAlignment="Center" Foreground="White" FontSize="14"/>
+                    <TextBlock Grid.Row="1" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="КВВ1, КВВ2" VerticalAlignment="Center" TextAlignment="Center" FontSize="14"/>
+                    <TextBlock Grid.Row="2" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="КВР" VerticalAlignment="Center" TextAlignment="Center" FontSize="14"/>
+                    <TextBlock Grid.Row="3" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="ТВ1" VerticalAlignment="Center" TextAlignment="Center" FontSize="14"/>
+                    <TextBlock Grid.Row="4" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="ТВ2, ТВ3" VerticalAlignment="Center" TextAlignment="Center" FontSize="14"/>
+                    <TextBlock Grid.Row="5" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="РВП" VerticalAlignment="Center" TextAlignment="Center" FontSize="14"/>
+                    <TextBlock Grid.Row="6" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="КВП" VerticalAlignment="Center" TextAlignment="Center" FontSize="14"/>
+                    <TextBlock Grid.Row="7" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="ФПВ" VerticalAlignment="Center" TextAlignment="Center" FontSize="14"/>
+                    <TextBlock Grid.Row="8" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="ВПВ" VerticalAlignment="Center" TextAlignment="Center" FontSize="14"/>
+                    <TextBlock Grid.Row="9" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="РВВ1, РВВ2" VerticalAlignment="Center" TextAlignment="Center" FontSize="14"/>
+
+                    <TextBlock Grid.Row="0" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="РАСШИФРОВКА" VerticalAlignment="Center" Grid.Column="1" TextAlignment="Center" Foreground="White" FontSize="14"/>
+                    <TextBlock Grid.Row="1" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="КЛАПАН ВЫТЯЖНОЙ ВЕНТИЛЯЦИИ" VerticalAlignment="Center" Grid.Column="1" TextAlignment="Center" FontSize="14"/>
+                    <TextBlock Grid.Row="2" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="КЛАПАН РЕЦИРКУЛЯЦИИ" VerticalAlignment="Center" Grid.Column="1" TextAlignment="Center" FontSize="14"/>
+                    <TextBlock Grid.Row="3" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="ВОЗДУШНОЕ ОТОПЛЕНИЕ БК (380В)" VerticalAlignment="Center" Grid.Column="1" TextAlignment="Center" FontSize="14"/>
+                    <TextBlock Grid.Row="4" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="ВОЗДУШНОЕ ОТОПЛЕНИЕ БК" VerticalAlignment="Center" Grid.Column="1" TextAlignment="Center" FontSize="14"/>
+                    <TextBlock Grid.Row="5" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="РЕШЕТКА ПРИТОЧНОЙ ВЕНТИЛЯЦИИ" VerticalAlignment="Center" Grid.Column="1" TextAlignment="Center" FontSize="14"/>
+                    <TextBlock Grid.Row="6" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="КЛАПАН ПРИТОЧНОЙ ВЕНТИЛЯЦИИ" VerticalAlignment="Center" Grid.Column="1" TextAlignment="Center" FontSize="14"/>
+                    <TextBlock Grid.Row="7" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="ФИЛЬТРАЦИЯ НАРУЖНОГО ВОЗДУХА" VerticalAlignment="Center" Grid.Column="1" TextAlignment="Center" FontSize="14"/>
+                    <TextBlock Grid.Row="8" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="ВЕНТИЛЯТОР ПРИТОЧНОЙ ВЕНТИЛЯЦИИ" VerticalAlignment="Center" Grid.Column="1" TextAlignment="Center" FontSize="14"/>
+                    <TextBlock Grid.Row="9" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="РЕШЕТКА ВЫТЯЖНОЙ ВЕНТИЛЯЦИИ" VerticalAlignment="Center" Grid.Column="1" TextAlignment="Center" FontSize="14"/>
+                </Grid>
+            </Grid>
+        </se:HmiTabItem>
+    </se:HmiTabControl>
+</UserControl>

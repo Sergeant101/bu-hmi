@@ -1,0 +1,700 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:NGO.Elements.style"
+                    xmlns:se="http://schemas.monokot.com/se/"
+                    xmlns:ngo="clr-namespace:NGO.Elements.Scheme"
+                    >
+
+    <DrawingBrush x:Key="t3_yellow" Stretch="Uniform"> 
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="Gold" Geometry="F1 M 7.35715,10.5C 11.1442,10.5 14.2143,13.57 14.2143,17.3571C 14.2143,21.1442 11.1442,24.2143 7.35715,24.2143C 3.57005,24.2143 0.500003,21.1442 0.500003,17.3571C 0.500003,13.57 3.57005,10.5 7.35715,10.5 Z "/>
+                    <GeometryDrawing Brush="Gold" Geometry="F1 M 18.9762,10.5C 22.7633,10.5 25.8333,13.57 25.8333,17.3571C 25.8333,21.1442 22.7633,24.2143 18.9762,24.2143C 15.1891,24.2143 12.1191,21.1442 12.1191,17.3571C 12.1191,13.57 15.1891,10.5 18.9762,10.5 Z "/>
+                    <GeometryDrawing Brush="Gold" Geometry="F1 M 13.3571,0.499999C 17.1442,0.499999 20.2143,3.57004 20.2143,7.35714C 20.2143,11.1442 17.1442,14.2143 13.3571,14.2143C 9.57005,14.2143 6.50001,11.1442 6.50001,7.35714C 6.50001,3.57005 9.57005,0.499999 13.3571,0.499999 Z "/>
+                    <GeometryDrawing Geometry="F1 M 7.35714,10.5C 11.1442,10.5 14.2143,13.57 14.2143,17.3571C 14.2143,21.1442 11.1442,24.2143 7.35714,24.2143C 3.57005,24.2143 0.5,21.1442 0.5,17.3571C 0.5,13.57 3.57005,10.5 7.35714,10.5 Z ">
+                        <GeometryDrawing.Pen>
+                            <Pen LineJoin="Round" Brush="#FF000000"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                    <GeometryDrawing Geometry="F1 M 18.9762,10.5C 22.7633,10.5 25.8333,13.57 25.8333,17.3571C 25.8333,21.1442 22.7633,24.2143 18.9762,24.2143C 15.1891,24.2143 12.119,21.1442 12.119,17.3571C 12.119,13.57 15.1891,10.5 18.9762,10.5 Z ">
+                        <GeometryDrawing.Pen>
+                            <Pen LineJoin="Round" Brush="#FF000000"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                    <GeometryDrawing Geometry="F1 M 13.3571,0.499999C 17.1442,0.499999 20.2143,3.57005 20.2143,7.35714C 20.2143,11.1442 17.1442,14.2143 13.3571,14.2143C 9.57005,14.2143 6.5,11.1442 6.5,7.35714C 6.5,3.57005 9.57005,0.499999 13.3571,0.499999 Z ">
+                        <GeometryDrawing.Pen>
+                            <Pen LineJoin="Round" Brush="#FF000000"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+
+    <DrawingBrush x:Key="t3_green" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="Green" Geometry="F1 M 7.35715,10.5C 11.1442,10.5 14.2143,13.57 14.2143,17.3571C 14.2143,21.1442 11.1442,24.2143 7.35715,24.2143C 3.57005,24.2143 0.500003,21.1442 0.500003,17.3571C 0.500003,13.57 3.57005,10.5 7.35715,10.5 Z "/>
+                    <GeometryDrawing Brush="Green" Geometry="F1 M 18.9762,10.5C 22.7633,10.5 25.8333,13.57 25.8333,17.3571C 25.8333,21.1442 22.7633,24.2143 18.9762,24.2143C 15.1891,24.2143 12.1191,21.1442 12.1191,17.3571C 12.1191,13.57 15.1891,10.5 18.9762,10.5 Z "/>
+                    <GeometryDrawing Brush="Green" Geometry="F1 M 13.3571,0.499999C 17.1442,0.499999 20.2143,3.57004 20.2143,7.35714C 20.2143,11.1442 17.1442,14.2143 13.3571,14.2143C 9.57005,14.2143 6.50001,11.1442 6.50001,7.35714C 6.50001,3.57005 9.57005,0.499999 13.3571,0.499999 Z "/>
+                    <GeometryDrawing Geometry="F1 M 7.35714,10.5C 11.1442,10.5 14.2143,13.57 14.2143,17.3571C 14.2143,21.1442 11.1442,24.2143 7.35714,24.2143C 3.57005,24.2143 0.5,21.1442 0.5,17.3571C 0.5,13.57 3.57005,10.5 7.35714,10.5 Z ">
+                        <GeometryDrawing.Pen>
+                            <Pen LineJoin="Round" Brush="#FF000000"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                    <GeometryDrawing Geometry="F1 M 18.9762,10.5C 22.7633,10.5 25.8333,13.57 25.8333,17.3571C 25.8333,21.1442 22.7633,24.2143 18.9762,24.2143C 15.1891,24.2143 12.119,21.1442 12.119,17.3571C 12.119,13.57 15.1891,10.5 18.9762,10.5 Z ">
+                        <GeometryDrawing.Pen>
+                            <Pen LineJoin="Round" Brush="#FF000000"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                    <GeometryDrawing Geometry="F1 M 13.3571,0.499999C 17.1442,0.499999 20.2143,3.57005 20.2143,7.35714C 20.2143,11.1442 17.1442,14.2143 13.3571,14.2143C 9.57005,14.2143 6.5,11.1442 6.5,7.35714C 6.5,3.57005 9.57005,0.499999 13.3571,0.499999 Z ">
+                        <GeometryDrawing.Pen>
+                            <Pen LineJoin="Round" Brush="#FF000000"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+    <DrawingBrush x:Key="t3_orange" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="#FF7C00" Geometry="F1 M 7.35715,10.5C 11.1442,10.5 14.2143,13.57 14.2143,17.3571C 14.2143,21.1442 11.1442,24.2143 7.35715,24.2143C 3.57005,24.2143 0.500003,21.1442 0.500003,17.3571C 0.500003,13.57 3.57005,10.5 7.35715,10.5 Z "/>
+                    <GeometryDrawing Brush="#FF7C00" Geometry="F1 M 18.9762,10.5C 22.7633,10.5 25.8333,13.57 25.8333,17.3571C 25.8333,21.1442 22.7633,24.2143 18.9762,24.2143C 15.1891,24.2143 12.1191,21.1442 12.1191,17.3571C 12.1191,13.57 15.1891,10.5 18.9762,10.5 Z "/>
+                    <GeometryDrawing Brush="#FF7C00" Geometry="F1 M 13.3571,0.499999C 17.1442,0.499999 20.2143,3.57004 20.2143,7.35714C 20.2143,11.1442 17.1442,14.2143 13.3571,14.2143C 9.57005,14.2143 6.50001,11.1442 6.50001,7.35714C 6.50001,3.57005 9.57005,0.499999 13.3571,0.499999 Z "/>
+                    <GeometryDrawing Geometry="F1 M 7.35714,10.5C 11.1442,10.5 14.2143,13.57 14.2143,17.3571C 14.2143,21.1442 11.1442,24.2143 7.35714,24.2143C 3.57005,24.2143 0.5,21.1442 0.5,17.3571C 0.5,13.57 3.57005,10.5 7.35714,10.5 Z ">
+                        <GeometryDrawing.Pen>
+                            <Pen LineJoin="Round" Brush="#FF000000"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                    <GeometryDrawing Geometry="F1 M 18.9762,10.5C 22.7633,10.5 25.8333,13.57 25.8333,17.3571C 25.8333,21.1442 22.7633,24.2143 18.9762,24.2143C 15.1891,24.2143 12.119,21.1442 12.119,17.3571C 12.119,13.57 15.1891,10.5 18.9762,10.5 Z ">
+                        <GeometryDrawing.Pen>
+                            <Pen LineJoin="Round" Brush="#FF000000"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                    <GeometryDrawing Geometry="F1 M 13.3571,0.499999C 17.1442,0.499999 20.2143,3.57005 20.2143,7.35714C 20.2143,11.1442 17.1442,14.2143 13.3571,14.2143C 9.57005,14.2143 6.5,11.1442 6.5,7.35714C 6.5,3.57005 9.57005,0.499999 13.3571,0.499999 Z ">
+                        <GeometryDrawing.Pen>
+                            <Pen LineJoin="Round" Brush="#FF000000"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+    <DrawingBrush x:Key="t3_red" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="Red" Geometry="F1 M 7.35715,10.5C 11.1442,10.5 14.2143,13.57 14.2143,17.3571C 14.2143,21.1442 11.1442,24.2143 7.35715,24.2143C 3.57005,24.2143 0.500003,21.1442 0.500003,17.3571C 0.500003,13.57 3.57005,10.5 7.35715,10.5 Z "/>
+                    <GeometryDrawing Brush="Red" Geometry="F1 M 18.9762,10.5C 22.7633,10.5 25.8333,13.57 25.8333,17.3571C 25.8333,21.1442 22.7633,24.2143 18.9762,24.2143C 15.1891,24.2143 12.1191,21.1442 12.1191,17.3571C 12.1191,13.57 15.1891,10.5 18.9762,10.5 Z "/>
+                    <GeometryDrawing Brush="Red" Geometry="F1 M 13.3571,0.499999C 17.1442,0.499999 20.2143,3.57004 20.2143,7.35714C 20.2143,11.1442 17.1442,14.2143 13.3571,14.2143C 9.57005,14.2143 6.50001,11.1442 6.50001,7.35714C 6.50001,3.57005 9.57005,0.499999 13.3571,0.499999 Z "/>
+                    <GeometryDrawing Geometry="F1 M 7.35714,10.5C 11.1442,10.5 14.2143,13.57 14.2143,17.3571C 14.2143,21.1442 11.1442,24.2143 7.35714,24.2143C 3.57005,24.2143 0.5,21.1442 0.5,17.3571C 0.5,13.57 3.57005,10.5 7.35714,10.5 Z ">
+                        <GeometryDrawing.Pen>
+                            <Pen LineJoin="Round" Brush="#FF000000"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                    <GeometryDrawing Geometry="F1 M 18.9762,10.5C 22.7633,10.5 25.8333,13.57 25.8333,17.3571C 25.8333,21.1442 22.7633,24.2143 18.9762,24.2143C 15.1891,24.2143 12.119,21.1442 12.119,17.3571C 12.119,13.57 15.1891,10.5 18.9762,10.5 Z ">
+                        <GeometryDrawing.Pen>
+                            <Pen LineJoin="Round" Brush="#FF000000"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                    <GeometryDrawing Geometry="F1 M 13.3571,0.499999C 17.1442,0.499999 20.2143,3.57005 20.2143,7.35714C 20.2143,11.1442 17.1442,14.2143 13.3571,14.2143C 9.57005,14.2143 6.5,11.1442 6.5,7.35714C 6.5,3.57005 9.57005,0.499999 13.3571,0.499999 Z ">
+                        <GeometryDrawing.Pen>
+                            <Pen LineJoin="Round" Brush="#FF000000"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+    <DrawingBrush x:Key="t2_yellow" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="Gold" Geometry="F1 M 7.35715,10.5C 11.1442,10.5 14.2143,13.57 14.2143,17.3571C 14.2143,21.1442 11.1442,24.2143 7.35715,24.2143C 3.57005,24.2143 0.500003,21.1442 0.500003,17.3571C 0.500003,13.57 3.57005,10.5 7.35715,10.5 Z "/>
+                    <GeometryDrawing Brush="Gold" Geometry="F1 M 7.35715,0.499999C 11.1442,0.499999 14.2143,3.57004 14.2143,7.35714C 14.2143,11.1442 11.1442,14.2143 7.35715,14.2143C 3.57005,14.2143 0.500008,11.1442 0.500008,7.35714C 0.500008,3.57005 3.57005,0.499999 7.35715,0.499999 Z "/>
+                    <GeometryDrawing Geometry="F1 M 7.35714,10.5C 11.1442,10.5 14.2143,13.57 14.2143,17.3571C 14.2143,21.1442 11.1442,24.2143 7.35714,24.2143C 3.57005,24.2143 0.5,21.1442 0.5,17.3571C 0.5,13.57 3.57005,10.5 7.35714,10.5 Z ">
+                        <GeometryDrawing.Pen>
+                            <Pen LineJoin="Round" Brush="#FF000000"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                    <GeometryDrawing Geometry="F1 M 7.35715,0.499999C 11.1442,0.499999 14.2143,3.57005 14.2143,7.35714C 14.2143,11.1442 11.1442,14.2143 7.35715,14.2143C 3.57005,14.2143 0.500004,11.1442 0.500004,7.35714C 0.500004,3.57005 3.57005,0.499999 7.35715,0.499999 Z ">
+                        <GeometryDrawing.Pen>
+                            <Pen LineJoin="Round" Brush="#FF000000"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+    <DrawingBrush x:Key="t2_green" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="Green" Geometry="F1 M 7.35715,10.5C 11.1442,10.5 14.2143,13.57 14.2143,17.3571C 14.2143,21.1442 11.1442,24.2143 7.35715,24.2143C 3.57005,24.2143 0.500003,21.1442 0.500003,17.3571C 0.500003,13.57 3.57005,10.5 7.35715,10.5 Z "/>
+                    <GeometryDrawing Brush="Green" Geometry="F1 M 7.35715,0.499999C 11.1442,0.499999 14.2143,3.57004 14.2143,7.35714C 14.2143,11.1442 11.1442,14.2143 7.35715,14.2143C 3.57005,14.2143 0.500008,11.1442 0.500008,7.35714C 0.500008,3.57005 3.57005,0.499999 7.35715,0.499999 Z "/>
+                    <GeometryDrawing Geometry="F1 M 7.35714,10.5C 11.1442,10.5 14.2143,13.57 14.2143,17.3571C 14.2143,21.1442 11.1442,24.2143 7.35714,24.2143C 3.57005,24.2143 0.5,21.1442 0.5,17.3571C 0.5,13.57 3.57005,10.5 7.35714,10.5 Z ">
+                        <GeometryDrawing.Pen>
+                            <Pen LineJoin="Round" Brush="#FF000000"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                    <GeometryDrawing Geometry="F1 M 7.35715,0.499999C 11.1442,0.499999 14.2143,3.57005 14.2143,7.35714C 14.2143,11.1442 11.1442,14.2143 7.35715,14.2143C 3.57005,14.2143 0.500004,11.1442 0.500004,7.35714C 0.500004,3.57005 3.57005,0.499999 7.35715,0.499999 Z ">
+                        <GeometryDrawing.Pen>
+                            <Pen LineJoin="Round" Brush="#FF000000"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+    <DrawingBrush x:Key="t2_orange" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="#FF4C00" Geometry="F1 M 7.35715,10.5C 11.1442,10.5 14.2143,13.57 14.2143,17.3571C 14.2143,21.1442 11.1442,24.2143 7.35715,24.2143C 3.57005,24.2143 0.500003,21.1442 0.500003,17.3571C 0.500003,13.57 3.57005,10.5 7.35715,10.5 Z "/>
+                    <GeometryDrawing Brush="#FF4C00" Geometry="F1 M 7.35715,0.499999C 11.1442,0.499999 14.2143,3.57004 14.2143,7.35714C 14.2143,11.1442 11.1442,14.2143 7.35715,14.2143C 3.57005,14.2143 0.500008,11.1442 0.500008,7.35714C 0.500008,3.57005 3.57005,0.499999 7.35715,0.499999 Z "/>
+                    <GeometryDrawing Geometry="F1 M 7.35714,10.5C 11.1442,10.5 14.2143,13.57 14.2143,17.3571C 14.2143,21.1442 11.1442,24.2143 7.35714,24.2143C 3.57005,24.2143 0.5,21.1442 0.5,17.3571C 0.5,13.57 3.57005,10.5 7.35714,10.5 Z ">
+                        <GeometryDrawing.Pen>
+                            <Pen LineJoin="Round" Brush="#FF000000"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                    <GeometryDrawing Geometry="F1 M 7.35715,0.499999C 11.1442,0.499999 14.2143,3.57005 14.2143,7.35714C 14.2143,11.1442 11.1442,14.2143 7.35715,14.2143C 3.57005,14.2143 0.500004,11.1442 0.500004,7.35714C 0.500004,3.57005 3.57005,0.499999 7.35715,0.499999 Z ">
+                        <GeometryDrawing.Pen>
+                            <Pen LineJoin="Round" Brush="#FF000000"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+    <DrawingBrush x:Key="t2_red" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="Red" Geometry="F1 M 7.35715,10.5C 11.1442,10.5 14.2143,13.57 14.2143,17.3571C 14.2143,21.1442 11.1442,24.2143 7.35715,24.2143C 3.57005,24.2143 0.500003,21.1442 0.500003,17.3571C 0.500003,13.57 3.57005,10.5 7.35715,10.5 Z "/>
+                    <GeometryDrawing Brush="Red" Geometry="F1 M 7.35715,0.499999C 11.1442,0.499999 14.2143,3.57004 14.2143,7.35714C 14.2143,11.1442 11.1442,14.2143 7.35715,14.2143C 3.57005,14.2143 0.500008,11.1442 0.500008,7.35714C 0.500008,3.57005 3.57005,0.499999 7.35715,0.499999 Z "/>
+                    <GeometryDrawing Geometry="F1 M 7.35714,10.5C 11.1442,10.5 14.2143,13.57 14.2143,17.3571C 14.2143,21.1442 11.1442,24.2143 7.35714,24.2143C 3.57005,24.2143 0.5,21.1442 0.5,17.3571C 0.5,13.57 3.57005,10.5 7.35714,10.5 Z ">
+                        <GeometryDrawing.Pen>
+                            <Pen LineJoin="Round" Brush="#FF000000"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                    <GeometryDrawing Geometry="F1 M 7.35715,0.499999C 11.1442,0.499999 14.2143,3.57005 14.2143,7.35714C 14.2143,11.1442 11.1442,14.2143 7.35715,14.2143C 3.57005,14.2143 0.500004,11.1442 0.500004,7.35714C 0.500004,3.57005 3.57005,0.499999 7.35715,0.499999 Z ">
+                        <GeometryDrawing.Pen>
+                            <Pen LineJoin="Round" Brush="#FF000000"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+    <Style TargetType="se:VisualBox" x:Key="Motor">
+        <Setter Property="Background" Value="Gold"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Viewbox SnapsToDevicePixels="True">
+                        <Grid Width="40" Height="40" SnapsToDevicePixels="True">
+                            <Ellipse HorizontalAlignment="Stretch" SnapsToDevicePixels="True" VerticalAlignment="Stretch" Margin="0" Stroke="Black" StrokeThickness="1" >
+                                <Ellipse.Fill>
+                                    <PriorityBinding>
+                                        <Binding RelativeSource="{RelativeSource AncestorType=se:VisualBox}" Path="VisualStateCollection.CurrentState.Background" />
+                                        <Binding RelativeSource="{RelativeSource AncestorType=se:VisualBox}" Path="Background" />
+                                    </PriorityBinding>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                            <Ellipse HorizontalAlignment="Stretch" SnapsToDevicePixels="True" VerticalAlignment="Stretch" Margin="8" Stroke="Black" StrokeThickness="1"/>
+                        </Grid>
+                    </Viewbox>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="se:VisualBox" x:Key="Heater">
+        <Setter Property="Background" Value="Gold"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Viewbox>
+                        <Border Width="80" Height="90" BorderBrush="Black" BorderThickness="2">
+                            <Border.Background>
+                                <PriorityBinding>
+                                    <Binding RelativeSource="{RelativeSource AncestorType=se:VisualBox}" Path="VisualStateCollection.CurrentState.Background" />
+                                    <Binding RelativeSource="{RelativeSource AncestorType=se:VisualBox}" Path="Background" />
+                                </PriorityBinding>
+                            </Border.Background>
+                            <Grid>
+                                <Border Width="2" Height="10" Grid.Row="0" Background="Black" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                                <Border Width="30" Height="70" Grid.Row="1" BorderBrush="Black" BorderThickness="2" VerticalAlignment="Center"/>
+                                <Border Width="2" Height="10" Grid.Row="2" Background="Black" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                            </Grid>
+                        </Border>
+                    </Viewbox>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="se:VisualBox" x:Key="Inverter">
+        <Setter Property="Background" Value="Gold"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Viewbox>
+                        <Border Width="80" Height="80">
+                            <Border.Background>
+                                <PriorityBinding>
+                                    <Binding RelativeSource="{RelativeSource AncestorType=se:VisualBox}" Path="VisualStateCollection.CurrentState.Background" />
+                                    <Binding RelativeSource="{RelativeSource AncestorType=se:VisualBox}" Path="Background" />
+                                </PriorityBinding>
+                            </Border.Background>
+                            <Border>
+                                <Border.Background>
+                                    <DrawingBrush Stretch="Uniform">
+                                        <DrawingBrush.Drawing>
+                                            <DrawingGroup>
+                                                <DrawingGroup.Children>
+                                                    <GeometryDrawing Brush="Transparent" Geometry="F1 M 10.6667,14.6667L 117.333,14.6667L 117.333,121.333L 10.6667,121.333L 10.6667,14.6667 Z ">
+                                                        <GeometryDrawing.Pen>
+                                                            <Pen Thickness="2.66667" LineJoin="Round" Brush="#FF000000"/>
+                                                        </GeometryDrawing.Pen>
+                                                    </GeometryDrawing>
+                                                    <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M 117.333,14.6667L 10.6667,121.333">
+                                                        <GeometryDrawing.Pen>
+                                                            <Pen Thickness="2.66667" LineJoin="Round" Brush="#FF000000"/>
+                                                        </GeometryDrawing.Pen>
+                                                    </GeometryDrawing>
+                                                    <GeometryDrawing Brush="#FF000000" Geometry="F1 M 51.84,40.9067C 51.73,43.3517 51.1087,45.2429 49.9763,46.5804C 48.8438,47.9179 47.305,48.5867 45.36,48.5867C 43.675,48.5867 41.63,47.6942 39.225,45.9092C 37.725,44.8142 36.4975,44.2667 35.5425,44.2667C 33.3825,44.2667 32.255,45.7067 32.16,48.5867L 28.8,48.5867C 28.875,46.2267 29.4875,44.3567 30.6375,42.9767C 31.7875,41.5967 33.3425,40.9067 35.3025,40.9067C 36.9425,40.9067 38.7575,41.6192 40.7475,43.0442C 42.7825,44.4992 44.3025,45.2267 45.3075,45.2267C 46.2475,45.2267 47.0037,44.8304 47.5763,44.0379C 48.1488,43.2454 48.45,42.2017 48.48,40.9067L 51.84,40.9067 Z "/>
+                                                    <GeometryDrawing Brush="#FF000000" Geometry="F1 M 99.84,87.5733C 99.73,90.0183 99.1087,91.9096 97.9762,93.2471C 96.8438,94.5846 95.305,95.2533 93.36,95.2533C 91.675,95.2533 89.63,94.3608 87.225,92.5758C 85.725,91.4808 84.4975,90.9333 83.5425,90.9333C 81.3825,90.9333 80.255,92.3733 80.16,95.2533L 76.8,95.2533C 76.875,92.8933 77.4875,91.0233 78.6375,89.6433C 79.7875,88.2633 81.3425,87.5733 83.3025,87.5733C 84.9425,87.5733 86.7575,88.2858 88.7475,89.7108C 90.7825,91.1658 92.3025,91.8933 93.3075,91.8933C 94.2475,91.8933 95.0037,91.4971 95.5762,90.7046C 96.1487,89.9121 96.45,88.8683 96.48,87.5733L 99.84,87.5733 Z "/>
+                                                    <GeometryDrawing Geometry="F1 M 81.4415,100.667L 97.2673,80.6667">
+                                                        <GeometryDrawing.Pen>
+                                                            <Pen Thickness="2.66667" LineJoin="Round" Brush="#FF000000"/>
+                                                        </GeometryDrawing.Pen>
+                                                    </GeometryDrawing>
+                                                </DrawingGroup.Children>
+                                            </DrawingGroup>
+                                        </DrawingBrush.Drawing>
+                                    </DrawingBrush>
+                                </Border.Background>
+                            </Border>
+                        </Border>
+                    </Viewbox>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="se:VisualBox" x:Key="Inverter_DC">
+        <Setter Property="Background" Value="Gold"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Viewbox>
+                        <Border Width="36" Height="29">
+                            <Border.Background>
+                                <PriorityBinding>
+                                    <Binding RelativeSource="{RelativeSource AncestorType=se:VisualBox}" Path="VisualStateCollection.CurrentState.Background" />
+                                    <Binding RelativeSource="{RelativeSource AncestorType=se:VisualBox}" Path="Background" />
+                                </PriorityBinding>
+                            </Border.Background>
+
+                            <Border>
+                                <Border.Background>
+                                    <DrawingBrush Stretch="Uniform">
+                                        <DrawingBrush.Drawing>
+                                            <DrawingGroup>
+                                                <DrawingGroup.Children>
+                                                    <GeometryDrawing Geometry="F1 M 1.33333,1.33333L 49.3333,1.33333L 49.3333,40L 1.33333,40L 1.33333,1.33333 Z ">
+                                                        <GeometryDrawing.Pen>
+                                                            <Pen Thickness="1.33333" LineJoin="Round" Brush="#FF000000"/>
+                                                        </GeometryDrawing.Pen>
+                                                    </GeometryDrawing>
+                                                    <GeometryDrawing Geometry="F1 M 1.33333,40L 49.3333,1.33333">
+                                                        <GeometryDrawing.Pen>
+                                                            <Pen Thickness="1.33333" LineJoin="Round" Brush="#FF000000"/>
+                                                        </GeometryDrawing.Pen>
+                                                    </GeometryDrawing>
+                                                    <GeometryDrawing Geometry="F1 M 8,9.33333L 16,9.33333">
+                                                        <GeometryDrawing.Pen>
+                                                            <Pen Thickness="1.33333" LineJoin="Round" Brush="#FF000000"/>
+                                                        </GeometryDrawing.Pen>
+                                                    </GeometryDrawing>
+                                                    <GeometryDrawing Geometry="F1 M 8,12L 16,12">
+                                                        <GeometryDrawing.Pen>
+                                                            <Pen Thickness="1.33333" LineJoin="Round" Brush="#FF000000"/>
+                                                        </GeometryDrawing.Pen>
+                                                    </GeometryDrawing>
+                                                    <GeometryDrawing Brush="#FF000000" Geometry="F1 M 40.0214,20.9525C 39.6748,20.8075 39.2805,20.735 38.8387,20.735C 37.5971,20.735 36.9763,21.4906 36.9763,23.0018L 36.9763,24.6502L 39.5864,24.6502L 39.5864,26.1727L 36.9763,26.1727L 36.9763,35.5257L 35.2362,35.5257L 35.2362,26.1727L 33.2786,26.1727L 33.2786,24.6502L 35.2362,24.6502L 35.2362,22.8931C 35.2362,21.758 35.5704,20.8607 36.2388,20.2014C 36.9072,19.5421 37.7409,19.2124 38.7401,19.2124C 39.2771,19.2124 39.7042,19.2758 40.0214,19.4027L 40.0214,20.9525 Z "/>
+                                                </DrawingGroup.Children>
+                                            </DrawingGroup>
+                                        </DrawingBrush.Drawing>
+                                    </DrawingBrush>
+                                </Border.Background>
+                            </Border>
+                        </Border>
+                    </Viewbox>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="se:VisualBox" x:Key="Inverter_AC">
+        <Setter Property="Background" Value="Gold"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Viewbox>
+                        <Border Width="36" Height="29">
+                            <Border.Background>
+                                <PriorityBinding>
+                                    <Binding RelativeSource="{RelativeSource AncestorType=se:VisualBox}" Path="VisualStateCollection.CurrentState.Background" />
+                                    <Binding RelativeSource="{RelativeSource AncestorType=se:VisualBox}" Path="Background" />
+                                </PriorityBinding>
+                            </Border.Background>
+
+                            <Border>
+                                <Border.Background>
+                                    <DrawingBrush Stretch="Uniform">
+                                        <DrawingBrush.Drawing>
+                                            <DrawingGroup>
+                                                <DrawingGroup.Children>
+                                                    <GeometryDrawing Geometry="F1 M 1.33333,1.33333L 49.3333,1.33333L 49.3333,40L 1.33333,40L 1.33333,1.33333 Z ">
+                                                        <GeometryDrawing.Pen>
+                                                            <Pen Thickness="1.33333" LineJoin="Round" Brush="#FF000000"/>
+                                                        </GeometryDrawing.Pen>
+                                                    </GeometryDrawing>
+                                                    <GeometryDrawing Geometry="F1 M 1.33333,40L 49.3333,1.33333">
+                                                        <GeometryDrawing.Pen>
+                                                            <Pen Thickness="1.33333" LineJoin="Round" Brush="#FF000000"/>
+                                                        </GeometryDrawing.Pen>
+                                                    </GeometryDrawing>
+                                                    <GeometryDrawing Brush="#FF000000" Geometry="F1 M 40.0214,20.9525C 39.6748,20.8075 39.2805,20.735 38.8387,20.735C 37.5971,20.735 36.9763,21.4906 36.9763,23.0018L 36.9763,24.6502L 39.5864,24.6502L 39.5864,26.1727L 36.9763,26.1727L 36.9763,35.5257L 35.2362,35.5257L 35.2362,26.1727L 33.2786,26.1727L 33.2786,24.6502L 35.2362,24.6502L 35.2362,22.8931C 35.2362,21.758 35.5704,20.8607 36.2388,20.2014C 36.9072,19.5421 37.7409,19.2124 38.7401,19.2124C 39.2771,19.2124 39.7042,19.2758 40.0214,19.4027L 40.0214,20.9525 Z "/>
+                                                    <GeometryDrawing Brush="#FF000000" Geometry="F1 M 17.949,7.9521C 17.8991,9.06004 17.6176,9.91706 17.1044,10.5231C 16.5912,11.1292 15.8939,11.4323 15.0126,11.4323C 14.249,11.4323 13.3223,11.0278 12.2325,10.219C 11.5528,9.72277 10.9965,9.47467 10.5638,9.47467C 9.58499,9.47467 9.07407,10.1272 9.03102,11.4323L 7.50844,11.4323C 7.54243,10.3628 7.81998,9.51546 8.3411,8.89011C 8.86222,8.26477 9.56687,7.9521 10.455,7.9521C 11.1982,7.9521 12.0207,8.27496 12.9224,8.9207C 13.8446,9.58003 14.5334,9.90969 14.9888,9.90969C 15.4147,9.90969 15.7574,9.73013 16.0169,9.37102C 16.2763,9.01189 16.4128,8.53893 16.4264,7.9521L 17.949,7.9521 Z "/>
+                                                </DrawingGroup.Children>
+                                            </DrawingGroup>
+                                        </DrawingBrush.Drawing>
+                                    </DrawingBrush>
+                                </Border.Background>
+                            </Border>
+                        </Border>
+                    </Viewbox>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="se:VisualBox" x:Key="Chopper">
+        <Setter Property="Background" Value="Gold"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Viewbox>
+                        <Border Width="100" Height="40" BorderBrush="Black" BorderThickness="2">
+                            <Border.Background>
+                                <PriorityBinding>
+                                    <Binding RelativeSource="{RelativeSource AncestorType=se:VisualBox}" Path="VisualStateCollection.CurrentState.Background" />
+                                    <Binding RelativeSource="{RelativeSource AncestorType=se:VisualBox}" Path="Background" />
+                                </PriorityBinding>
+                            </Border.Background>
+                            <Grid>
+                                <Border Margin="5,0,0,0" Width="25" Height="2" Grid.Row="0" Background="Black" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                <Border Width="40" Height="25" Grid.Row="1" BorderBrush="Black" BorderThickness="2" VerticalAlignment="Center"/>
+                                <Border Margin="0,0,5,0" Width="25" Height="2" Grid.Row="2" Background="Black" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                            </Grid>
+                        </Border>
+                    </Viewbox>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <ControlTemplate x:Key="normalno_zakrytyj_kontakt" TargetType="{x:Type ngo:QF}">
+        <Viewbox>
+            <Canvas Width="30" Height="40">
+                <Ellipse Height="5" Canvas.Left="16" Stroke="Black" StrokeThickness="1" Canvas.Top="35" Width="5"/>
+                <Ellipse Height="5" Canvas.Left="16" Stroke="Black" StrokeThickness="1" Width="5"/>
+                <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 862.229,79.506 L 862.229,93.679" Stretch="Fill" Width="2" Canvas.Left="17" Canvas.Top="29.062" Height="6.626"/>
+                <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 862.229,93.679 L 873.567,93.679" Height="2.75" Stretch="Fill" Canvas.Top="10" Canvas.Left="18"/>
+                <Path Name="Switch_open" StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 872.150,90.845 L 862.229,110.687" Canvas.Left="18" Canvas.Top="8" Height="22.333" Stretch="Fill" Width="11"/>
+                <Path Name="Switch_close" StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 872.150,90.845 L 862.229,110.687" Canvas.Left="7.5" Canvas.Top="8" Height="22.333" Stretch="Fill" Width="11" RenderTransformOrigin="0.5,0.5">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                </Path>
+                <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 862.229,110.687 L 862.229,124.860" Stretch="Fill" Width="4" Canvas.Left="16" Canvas.Top="4.375" Height="7.625"/>
+
+            </Canvas>
+        </Viewbox>
+        <ControlTemplate.Triggers>
+            <Trigger Property="isOpen" Value="True">
+                <Setter TargetName="Switch_open" Property="Visibility" Value="Hidden"/>
+                <Setter TargetName="Switch_close" Property="Visibility" Value="Visible"/>
+            </Trigger>
+            <Trigger Property="isOpen" Value="False">
+                <Setter TargetName="Switch_open" Property="Visibility" Value="Visible"/>
+                <Setter TargetName="Switch_close" Property="Visibility" Value="Hidden"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="knopka" TargetType="{x:Type ngo:QF}">
+        <Viewbox>
+            <Canvas Width="40" Height="40">
+                <Path Stroke="Black" Name="qf_open" StrokeThickness="2" RenderTransformOrigin="0.965,0.993" Visibility="Hidden">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-30"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                    <Path.Data>
+                        <GeometryGroup>
+                            <LineGeometry  StartPoint="24.5,35.5" EndPoint="24.5,4" />
+                            <LineGeometry  StartPoint="24.5,13" EndPoint="19,13"/>
+                            <LineGeometry  StartPoint="20,27" EndPoint="20,13"/>
+                            <LineGeometry  StartPoint="19,27" EndPoint="24,27"/>
+                        </GeometryGroup>
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="Black" Name="qs_open" StrokeThickness="2" RenderTransformOrigin="0.965,0.993" Visibility="Hidden">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-30"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                    <Path.Data>
+                        <GeometryGroup>
+                            <LineGeometry  StartPoint="24,37" EndPoint="24,3" />
+                        </GeometryGroup>
+                    </Path.Data>
+                </Path>
+                <Ellipse Height="5" Canvas.Left="35" Stroke="Black" StrokeThickness="1" Canvas.Top="23" Width="5"/>
+                <Ellipse Height="5" Stroke="Black" StrokeThickness="1" Width="5" Canvas.Top="23"/>
+                <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 113.882,425.333 L 130.890,425.333" Canvas.Left="27" Stretch="Fill" Width="9" Canvas.Top="25"/>
+                <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 113.882,425.333 L 130.890,425.333" Canvas.Left="4.136" Stretch="Fill" Width="9.728" Canvas.Top="25"/>
+                <Canvas Name="Switch_open" Height="40" Width="40">
+                    <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 113.882,425.333 L 130.890,425.333" Canvas.Left="11.167" Stretch="Fill" Width="18" Canvas.Top="5"/>
+                    <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 130.890,425.333 L 130.890,431.002" Height="7" Stretch="Fill" Canvas.Top="5" Canvas.Left="28.166"/>
+                    <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 130.890,425.333 L 130.890,431.002" Height="7" Stretch="Fill" Canvas.Top="5" Canvas.Left="11.166"/>
+                    <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 130.890,425.333 L 130.890,431.002" Height="16.019" Stretch="Fill" Canvas.Top="5" Canvas.Left="18.166"/>
+                    <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 130.890,425.333 L 130.890,431.002" Height="18.334" Stretch="Fill" Canvas.Top="5" Canvas.Left="22.166"/>
+                    <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 113.882,425.333 L 130.890,425.333" Canvas.Left="10.167" Stretch="Fill" Width="19.272" Canvas.Top="21" RenderTransformOrigin="0.5,0.5">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="25.791"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                    </Path>
+                </Canvas>
+                <Canvas Name="Switch_close" Height="40" Width="40">
+                    <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 113.882,425.333 L 130.890,425.333" Canvas.Left="11.167" Stretch="Fill" Width="18" Canvas.Top="10"/>
+                    <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 130.890,425.333 L 130.890,431.002" Height="7" Stretch="Fill" Canvas.Top="10" Canvas.Left="28.166"/>
+                    <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 130.890,425.333 L 130.890,431.002" Height="7" Stretch="Fill" Canvas.Top="10" Canvas.Left="11.166"/>
+                    <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 130.890,425.333 L 130.890,431.002" Height="16.019" Stretch="Fill" Canvas.Top="10" Canvas.Left="18.166"/>
+                    <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 130.890,425.333 L 130.890,431.002" Height="16" Stretch="Fill" Canvas.Top="10" Canvas.Left="22.166"/>
+                    <Path StrokeThickness="1.0" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 113.882,425.333 L 130.890,425.333" Canvas.Left="10.167" Stretch="Fill" Width="19.272" Canvas.Top="25" RenderTransformOrigin="0.5,0.5"/>
+                </Canvas>
+            </Canvas>
+        </Viewbox>
+        <ControlTemplate.Triggers>
+            <Trigger Property="isOpen" Value="True">
+                <Setter TargetName="Switch_open" Property="Visibility" Value="Visible"/>
+                <Setter TargetName="Switch_close" Property="Visibility" Value="Hidden"/>
+            </Trigger>
+            <Trigger Property="isOpen" Value="False">
+                <Setter TargetName="Switch_open" Property="Visibility" Value="Hidden"/>
+                <Setter TargetName="Switch_close" Property="Visibility" Value="Visible"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="avariinaya_knopka" TargetType="{x:Type ngo:QF}">
+        <Viewbox UseLayoutRounding="True">
+            <Canvas Width="40" Height="40">
+                <Ellipse SnapsToDevicePixels="True" Height="5" Canvas.Left="17" Stroke="Black" StrokeThickness="1" Canvas.Top="35" Width="5" RenderTransformOrigin="0.5,0.5">
+                    <Ellipse.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="90"/>
+                            <TranslateTransform X="-17" Y="-18"/>
+                        </TransformGroup>
+                    </Ellipse.RenderTransform>
+                </Ellipse>
+                <Ellipse SnapsToDevicePixels="True" Height="5" Canvas.Left="17" Stroke="Black" StrokeThickness="1" Width="5" RenderTransformOrigin="0.5,0.5">
+                    <Ellipse.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="90"/>
+                            <TranslateTransform X="18" Y="17"/>
+                        </TransformGroup>
+                    </Ellipse.RenderTransform>
+                </Ellipse>
+                <Path SnapsToDevicePixels="True" StrokeThickness="2.0" Stroke="#ff000000" StrokeMiterLimit="1.0" Data="F1 M 0,0 L 10,0" Stretch="Fill" Canvas.Left="3" Canvas.Top="18" RenderTransformOrigin="0.5,0.5" Width="10"/>
+
+                <Path SnapsToDevicePixels="True" StrokeThickness="2.0" Stroke="#ff000000" StrokeMiterLimit="1.0" Data="F1 M 0,0 L 10,0" Stretch="Fill" Canvas.Top="23" Canvas.Left="5" RenderTransformOrigin="0.5,0.5">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="90"/>
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                </Path>
+
+
+                <Canvas Name="Switch_open" Height="40" Width="40">
+                    <Path StrokeThickness="2" Stroke="#ff000000" StrokeMiterLimit="1.0" Data="F1 M 113,0 L 130,0" Canvas.Left="11" Stretch="Fill" Width="19" Canvas.Top="1"/>
+                    <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 130,425 L 130,431" Height="7" Stretch="Fill" Canvas.Top="1" Canvas.Left="28"/>
+                    <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 130,425 L 130,431" Height="7" Stretch="Fill" Canvas.Top="1" Canvas.Left="11"/>
+                    <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 130,425 L 130,431" Height="15.123" Stretch="Fill" Canvas.Top="1" Canvas.Left="18"/>
+                    <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 130,425 L 130,431" Height="16" Stretch="Fill" Canvas.Top="1" Canvas.Left="22"/>
+                    <Path StrokeThickness="2" Stroke="#ff000000" StrokeMiterLimit="1.0" Data="F1 M 872,111 L 862,91" Canvas.Left="11" Canvas.Top="3" Height="22" Stretch="Fill" Width="11" RenderTransformOrigin="0.5,0.5" StrokeEndLineCap="Round" StrokeStartLineCap="Square">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="-1"/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-90"/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                    </Path>
+                </Canvas>
+                <Canvas Name="Switch_close" Height="40" Width="40">
+                    <Path StrokeThickness="2" Stroke="#ff000000" StrokeMiterLimit="1.0" Data="F1 M 113,0 L 130,0" Canvas.Left="11" Stretch="Fill" Width="19" Canvas.Top="6"/>
+                    <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 130,425 L 130,431" Height="7" Stretch="Fill" Canvas.Top="6.375" Canvas.Left="28"/>
+                    <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 130,425 L 130,431" Height="7" Stretch="Fill" Canvas.Top="6.375" Canvas.Left="11"/>
+                    <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 130,425 L 130,431" Height="18.206" Stretch="Fill" Canvas.Top="6" Canvas.Left="18"/>
+                    <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 130,425 L 130,431" Height="16" Stretch="Fill" Canvas.Top="6.375" Canvas.Left="22"/>
+                    <Path StrokeThickness="2" Stroke="#ff000000" x:Name="Switch_disconnect_Copy" StrokeMiterLimit="1.0" Data="F1 M 872,91 L 862,111" Canvas.Left="10.917" Canvas.Top="13" Height="22" Stretch="Fill" Width="11" RenderTransformOrigin="0.5,0.5" StrokeEndLineCap="Round" StrokeStartLineCap="Square">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="-1"/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                    </Path>
+                </Canvas>
+                <Path SnapsToDevicePixels="True" StrokeThickness="2.0" Stroke="#ff000000" StrokeMiterLimit="1.0" Data="F1 M 0,0 L 10,0" Stretch="Fill" Canvas.Left="26" Canvas.Top="18" RenderTransformOrigin="0.5,0.5" Width="11"/>
+            </Canvas>
+        </Viewbox>
+        <ControlTemplate.Triggers>
+            <Trigger Property="isOpen" Value="True">
+                <Setter TargetName="Switch_open" Property="Visibility" Value="Visible"/>
+                <Setter TargetName="Switch_close" Property="Visibility" Value="Hidden"/>
+            </Trigger>
+            <Trigger Property="isOpen" Value="False">
+                <Setter TargetName="Switch_open" Property="Visibility" Value="Hidden"/>
+                <Setter TargetName="Switch_close" Property="Visibility" Value="Visible"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="vacuum_qs" TargetType="{x:Type ngo:QF}" x:Shared="False">
+        <Viewbox>
+            <Canvas Width="54" Height="54">
+                <Ellipse Height="49" Canvas.Left="2" Stroke="Black" StrokeThickness="2" Canvas.Top="2" Width="49"/>
+                <Path Stroke="Black" x:Name="Switch_open" StrokeThickness="4" Height="25.736" Stretch="Fill" Canvas.Top="15" Canvas.Left="23.625" RenderTransformOrigin="0.494,0.939">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-30"/>
+                            <TranslateTransform X="0.339" Y="-0.101"/>
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                    <Path.Data>
+                        <GeometryGroup>
+                            <LineGeometry  StartPoint="24.5,36" EndPoint="24.5,4" />
+                        </GeometryGroup>
+                    </Path.Data>
+                </Path>
+                <Path Stroke="Black" x:Name="Switch_close" StrokeThickness="4" Height="27.153" Stretch="Fill" Canvas.Top="13.868" Canvas.Left="23.625" RenderTransformOrigin="0.494,0.939">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform X="0.339" Y="-0.101"/>
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                    <Path.Data>
+                        <GeometryGroup>
+                            <LineGeometry  StartPoint="24.5,36" EndPoint="24.5,4" />
+                        </GeometryGroup>
+                    </Path.Data>
+                </Path>
+                <Path Stroke="Black" StrokeThickness="2" Height="18.472" Stretch="Fill" Canvas.Left="25" RenderTransformOrigin="0.494,0.939" Canvas.Top="-1.375">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="0.022"/>
+                            <TranslateTransform X="0.339" Y="-0.101"/>
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                    <Path.Data>
+                        <GeometryGroup>
+                            <LineGeometry  StartPoint="24.5,36" EndPoint="24.5,4" />
+                        </GeometryGroup>
+                    </Path.Data>
+                </Path>
+                <Path Stroke="Black" StrokeThickness="2" Height="17.494" Stretch="Fill" Canvas.Left="25" RenderTransformOrigin="0.494,0.939" Canvas.Top="38">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform X="0.339" Y="-0.101"/>
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                    <Path.Data>
+                        <GeometryGroup>
+                            <LineGeometry  StartPoint="24.5,36" EndPoint="24.5,4" />
+                        </GeometryGroup>
+                    </Path.Data>
+                </Path>
+            </Canvas>
+        </Viewbox>
+        <ControlTemplate.Triggers>
+            <Trigger Property="isOpen" Value="True">
+                <Setter TargetName="Switch_open" Property="Visibility" Value="Visible"/>
+                <Setter TargetName="Switch_close" Property="Visibility" Value="Hidden"/>
+            </Trigger>
+            <Trigger Property="isOpen" Value="False">
+                <Setter TargetName="Switch_open" Property="Visibility" Value="Hidden"/>
+                <Setter TargetName="Switch_close" Property="Visibility" Value="Visible"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+
+</ResourceDictionary>

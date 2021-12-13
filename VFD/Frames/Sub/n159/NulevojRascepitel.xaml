@@ -1,0 +1,868 @@
+﻿<UserControl x:Class="VFD.Frames.Sub.n159.NulevojRascepitel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:se="http://schemas.monokot.com/se/"
+             xmlns:hmi="http://schemas.monokot.com/hmi/"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:scheme="clr-namespace:NGO.Elements.Scheme;assembly=NGO.Elements"
+             mc:Ignorable="d" 
+             Height="900" Width="1280" Background="#FFC9C9C9" >
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/NGO.Elements;component/Style/superVfd_styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Canvas SnapsToDevicePixels="True">
+        <Rectangle Height="455" Canvas.Left="633" StrokeStartLineCap="Round" StrokeEndLineCap="Round" Stroke="#ff000000" StrokeMiterLimit="1.0" Canvas.Top="330" Width="192" Fill="{DynamicResource LaitoviiSerii}" RadiusX="5" RadiusY="5"/>
+        <Rectangle Height="455" StrokeStartLineCap="Round" StrokeEndLineCap="Round" Stroke="#ff000000" StrokeMiterLimit="1.0" Canvas.Top="330" Width="615" Fill="{DynamicResource LaitoviiSerii}" Canvas.Left="10" RadiusX="5" RadiusY="5"/>
+        <Rectangle Height="113" Canvas.Left="644" StrokeStartLineCap="Round" StrokeEndLineCap="Round" Stroke="#ff000000" StrokeThickness="1.0" StrokeMiterLimit="1.0" Canvas.Top="188" Width="170" Fill="{DynamicResource LaitoviiSerii}" RadiusX="5" RadiusY="5"/>
+        <Rectangle Height="162" Canvas.Left="487" StrokeStartLineCap="Round" StrokeEndLineCap="Round" Stroke="#ff000000" StrokeThickness="1.0" StrokeMiterLimit="1.0" Canvas.Top="139" Width="138" Fill="{DynamicResource LaitoviiSerii}" RadiusX="5" RadiusY="5"/>
+        <Rectangle Height="162" Canvas.Left="332" StrokeStartLineCap="Round" StrokeEndLineCap="Round" Stroke="#ff000000" StrokeThickness="1.0" StrokeMiterLimit="1.0" Canvas.Top="139" Width="138" Fill="{DynamicResource LaitoviiSerii}" RadiusX="5" RadiusY="5"/>
+        <Rectangle Height="107" Canvas.Left="63" StrokeStartLineCap="Round" StrokeEndLineCap="Round" Stroke="#ff000000" StrokeThickness="1.0" StrokeMiterLimit="1.0" Canvas.Top="139" Width="234" Fill="{DynamicResource LaitoviiSerii}" RadiusX="5" RadiusY="5"/>
+        <TextBlock Foreground="#ff000000" Canvas.Left="103" Canvas.Top="184" FontSize="8.72" Text="Q1"/>
+        <TextBlock Foreground="#ff000000" Canvas.Left="177" Canvas.Top="184" FontSize="8.72" Text="Q2"/>
+        <TextBlock Foreground="#ff000000" Canvas.Left="103" Canvas.Top="687" FontSize="8.72" Text="QF1"/>
+        <TextBlock Foreground="#ff000000" Canvas.Left="45" Canvas.Top="588" FontSize="8.72" Text="QF2"/>
+        <TextBlock Foreground="#ff000000" Canvas.Left="51" Canvas.Top="729" FontSize="9" Text="~400 В"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round" Data="F1 M 331.415,279.993 L 331.415,560.912" Canvas.Top="104" StrokeDashArray="10 5" Canvas.Left="4"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round" Data="F1 M 345.924,279.993 L 345.924,560.912" Canvas.Top="104" StrokeDashArray="10 5" Canvas.Left="4"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round" Data="F1 M 360.433,279.993 L 360.433,560.912" Canvas.Top="104" StrokeDashArray="10 5" Canvas.Left="4"/>
+        <Path Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round" StrokeDashArray="4,4" Data="F1 M 88.466,578.276 L 470.948,578.276" Canvas.Top="125" Canvas.Left="4"/>
+        <TextBlock Foreground="#ff000000" Canvas.Left="411" Canvas.Top="625" FontSize="8.72" Text="QF2"/>
+        <TextBlock Foreground="#ff000000" Canvas.Left="440" Canvas.Top="625" FontSize="8.72" Text="1K12"/>
+        <TextBlock Foreground="#ff000000" Canvas.Left="282" Canvas.Top="625" FontSize="8.72" Text="SF1"/>
+        <Path Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round" StrokeDashArray="4,4" Data="F1 M 199.908,499.557 L 29.967,499.557" Canvas.Top="104" Canvas.Left="4"/>
+        <TextBlock Foreground="#ff000000" Canvas.Left="280" Canvas.Top="555" FontSize="8.72" Text="QF1"/>
+        <TextBlock Foreground="#ff000000" Canvas.Left="244" Canvas.Top="555" FontSize="8.72" Text="1K13"/>
+        <TextBlock Foreground="#ff000000" Canvas.Left="282" Canvas.Top="419" FontSize="8.72" Text="FU7"/>
+        <TextBlock Foreground="#ff000000" Canvas.Left="282" Canvas.Top="374" FontSize="8.72" Text="FU4"/>
+        <Path Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round" Data="F1 M 250.226,293.885 L 250.226,106.657" Canvas.Top="104" StrokeThickness="2" Canvas.Left="4"/>
+        <TextBlock Foreground="#ff000000" Canvas.Left="467" Canvas.Top="411" FontSize="8.72" Text="SB1"/>
+        <TextBlock Foreground="#ff000000" Canvas.Left="523" Canvas.Top="411" FontSize="8.72" Text="SB2"/>
+        <TextBlock Foreground="#ff000000" Canvas.Left="653" Canvas.Top="411" FontSize="8.72" Text="SB1"/>
+        <TextBlock Foreground="#ff000000" Canvas.Left="708" Canvas.Top="411" FontSize="8.72" Text="SB2"/>
+        <TextBlock Foreground="#ff000000" Canvas.Left="758" Canvas.Top="411" FontSize="8.72" Text="SB3"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round" Data="F1 M 354.722,434.036 L 396.396,434.036" Canvas.Top="104" Canvas.Left="4"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round" Data="F1 M 396.396,434.036 L 396.396,479.106" Canvas.Top="104" Canvas.Left="4"/>
+        <Path Fill="#ff000000" Data=" M 397.284,479.067 C 397.284,478.577 396.886,478.180 396.396,478.180 C 395.906,478.180 395.509,478.577 395.509,479.067 C 395.509,479.558 395.906,479.955 396.396,479.955 C 396.886,479.955 397.284,479.558 397.284,479.067 L 397.284,479.067 Z" Canvas.Top="104" Canvas.Left="4"/>
+        <Path Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round" StrokeDashArray="4 4" Data="F1 M 118.410,103.262 L 118.410,454.487" Height="351.739" Stretch="Fill" Canvas.Left="116" Canvas.Top="212"/>
+        <Path Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round" StrokeDashArray="4,4" Data="F1 M 118.410,454.487 L 199.908,454.487" Canvas.Top="561" Canvas.Left="116" Stretch="Fill" Width="61.916"/>
+        <TextBlock Canvas.Left="718" Canvas.Top="202" FontSize="8.72" FontFamily="Myriad Pro"><Run Text="50%"/></TextBlock>
+        <TextBlock Canvas.Left="715" Canvas.Top="213" FontSize="8.72" FontFamily="Myriad Pro" Text="НКПР"/>
+        <TextBlock RenderTransform="-0.000,1.000,-1.000,-0.000,0.000,0.000" Canvas.Left="495" Canvas.Top="785" FontSize="10.68" FontFamily="Myriad Pro"/>
+        <TextBlock Canvas.Left="403" Canvas.Top="209" FontSize="8.72" FontFamily="Myriad Pro"><Run Text="SB3"/></TextBlock>
+        <TextBlock Canvas.Top="210" Text="1К4 - НАЖАТА АВАРИЙНАЯ КНОПКА У ВХОДНОЙ ДВЕРИ 1 НКУ" Canvas.Left="858"/>
+        <TextBlock Canvas.Left="859" Canvas.Top="250" Text="1К6 - СИГНАЛ ПОЖАР В НКУ ОТ СИСТЕМЫ ПОЖАРНОЙ СИГНАЛИЗАЦИИ"/>
+        <TextBlock Canvas.Left="860" Canvas.Top="270" Text="1К7 - НАЖАТА АВАРИЙНАЯ КНОПКА У ВХОДНОЙ ДВЕРИ 1 КТУ"/>
+        <TextBlock Canvas.Left="936" Canvas.Top="260"/>
+        <TextBlock Canvas.Left="860" Canvas.Top="290" Text="1К8 - НАЖАТА АВАРИЙНАЯ КНОПКА У ВХОДНОЙ ДВЕРИ 2 КТУ"/>
+        <TextBlock Canvas.Left="860" Canvas.Top="310" Text="1К11 - НАЖАТА АВАРИЙНАЯ КНОПКА НА ШКАФУ МПК В КТУ"/>
+        <TextBlock Canvas.Left="941" Canvas.Top="293"/>
+        <TextBlock Canvas.Left="861" Canvas.Top="330" Text="АКЛ-1К12 - АВАРИНОЕ ОТКЛЮЧЕНИЕ ПО СИГНАЛУ СКПБ (50% НКПР)"/>
+        <TextBlock Canvas.Left="861" Canvas.Top="350" Text="1К2 - НАЖАТА АВАРИНАЯ КНОПКА В КАБИНЕ БУРИЛЬЩИКА"/>
+        <TextBlock Canvas.Left="862" Canvas.Top="370" Text="1К9 - ПОВЫШЕНИЕ ТЕМПЕРАТУРЫ В КТУ"/>
+        <TextBlock Canvas.Left="861" Canvas.Top="390" Text="1К10 - СИГНАЛ ПОЖАР В КТУ&#xD;&#xA;            ОТ СИСТЕМЫ ПОЖАРНОЙ СИГНАЛИЗАЦИИ"/>
+        <TextBlock Canvas.Left="513" Canvas.Top="667" FontSize="6.54" FontFamily="Myriad Pro" Text="РАСЦЕПИТЕЛЬ&#xD;&#xA;МИНИМАЛЬНОГО&#xD;&#xA;НАПРЯЖЕНИЯ"/>
+        <TextBlock Canvas.Left="859" Canvas.Top="440" Text="НКУ-ДТ - АВАРИЙНЫЙ СИГНАЛ &quot;ВЫСОКАЯ ТЕМПЕРАТУРА В НКУ&quot;"/>
+        <TextBlock Canvas.Left="859" Canvas.Top="170" Text="1K1 - РЕЛЕ КОНТРОЛЯ АВАРИЙНОЙ ЦЕПИ"/>
+        <TextBlock Canvas.Left="344" Canvas.Top="347" FontSize="8.72" FontFamily="Myriad Pro"><Run Text="SA1"/></TextBlock>
+        <TextBlock Canvas.Left="306" Canvas.Top="359" FontSize="6.54" FontFamily="Myriad Pro" Text="ВЫБОР ЭЛЕКТРОСНАБЖЕНИЯ"/>
+        <scheme:QF Canvas.Left="564" Canvas.Top="413" electricType="QS" RenderTransformOrigin="0.5,0.5">
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.rascepitel].Items[Tag7].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                    <hmi:Bind.Converter>
+                        <hmi:BooleanToInverseConverter/>
+                    </hmi:Bind.Converter>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+            <scheme:QF.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </scheme:QF.RenderTransform>
+        </scheme:QF>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="440" Canvas.Left="598.035" Width="41.93"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeEndLineCap="Square" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="440" Canvas.Left="547.188" Width="12.624" StrokeStartLineCap="Square" StrokeDashCap="Square"/>
+        <scheme:QF Canvas.Left="709" Canvas.Top="217" electricType="QS" RenderTransformOrigin="0.5,0.5" Template="{DynamicResource normalno_zakrytyj_kontakt}">
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.rascepitel].Items[Tag6].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>False</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                    <hmi:Bind.Converter>
+                        <hmi:BooleanToInverseConverter/>
+                    </hmi:Bind.Converter>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+            <scheme:QF.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.7" ScaleY="0.7"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </scheme:QF.RenderTransform>
+        </scheme:QF>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Square" StrokeEndLineCap="Square" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="236" Canvas.Left="429.119" Width="281.763"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Square" StrokeEndLineCap="Square" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="236" Canvas.Left="737" Width="95.188"/>
+        <scheme:QF Canvas.Left="741" Canvas.Top="561" electricType="QS" RenderTransformOrigin="0.5,0.5" Template="{DynamicResource normalno_zakrytyj_kontakt}">
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.rascepitel].Items[Tag9].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>False</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                    <hmi:Bind.Converter>
+                        <hmi:BooleanToInverseConverter/>
+                    </hmi:Bind.Converter>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+            <scheme:QF.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.7" ScaleY="0.7"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </scheme:QF.RenderTransform>
+        </scheme:QF>
+        <scheme:QF Canvas.Left="694" Canvas.Top="561" electricType="QS" RenderTransformOrigin="0.5,0.5" Template="{DynamicResource normalno_zakrytyj_kontakt}">
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.rascepitel].Items[Tag5].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>False</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                    <hmi:Bind.Converter>
+                        <hmi:BooleanToInverseConverter/>
+                    </hmi:Bind.Converter>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+            <scheme:QF.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.7" ScaleY="0.7"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </scheme:QF.RenderTransform>
+        </scheme:QF>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Square" StrokeEndLineCap="Square" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="580" Canvas.Left="360.012" Width="335.976"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Square" StrokeEndLineCap="Square" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="580" Canvas.Left="769.01" Width="79.98"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Square" StrokeEndLineCap="Square" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="580" Canvas.Left="722.194" Width="20.611"/>
+        <scheme:QF Canvas.Left="279" Canvas.Top="560" electricType="QS" RenderTransformOrigin="0.5,0.5" Template="{DynamicResource normalno_zakrytyj_kontakt}">
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.scheme].Items[tag17].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>False</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+            <scheme:QF.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-0.7" ScaleY="-0.7"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </scheme:QF.RenderTransform>
+        </scheme:QF>
+        <scheme:QF Canvas.Left="233" Canvas.Top="556" electricType="QS" RenderTransformOrigin="0.5,0.5" >
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.scheme].Items[tag231].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                    <hmi:Bind.Converter>
+                        <hmi:BooleanToInverseConverter/>
+                    </hmi:Bind.Converter>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+            <scheme:QF.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.7" ScaleY="0.7"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </scheme:QF.RenderTransform>
+        </scheme:QF>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="580" Canvas.Left="307.006" Width="33.988"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="580" Canvas.Left="261.006" Width="19.988"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="580" Canvas.Left="215.003" Width="19.994"/>
+        <scheme:QF Canvas.Left="397" Canvas.Top="630" electricType="QS" RenderTransformOrigin="0.5,0.5" Template="{DynamicResource normalno_zakrytyj_kontakt}">
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.scheme].Items[tag98].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+            <scheme:QF.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.7" ScaleY="-0.7"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </scheme:QF.RenderTransform>
+        </scheme:QF>
+        <scheme:QF Canvas.Left="435" Canvas.Top="626" electricType="QS" RenderTransformOrigin="0.5,0.5" >
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.scheme].Items[tag76].Value">
+                    <hmi:Bind.Converter>
+                        <hmi:BooleanToInverseConverter/>
+                    </hmi:Bind.Converter>
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+            <scheme:QF.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.7" ScaleY="-0.7"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </scheme:QF.RenderTransform>
+        </scheme:QF>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="649" Canvas.Left="361.003" Width="37.994"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="649" Canvas.Left="425.191" Width="11.618"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="649" Canvas.Left="463.096" Width="22.809"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 164.906,122.026 L 164.906,215.569" Canvas.Left="846" Stretch="Fill" Width="5" Canvas.Top="168.107" Height="415.786"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 164.906,122.026 L 164.906,215.569" Canvas.Left="483" Stretch="Fill" Width="5" Canvas.Top="651.1" Height="67.893"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="482" Canvas.Left="438.055" Width="10.89"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="715" Canvas.Left="479.43" Width="11.515"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 164.906,122.026 L 164.906,215.569" Canvas.Left="441" Stretch="Fill" Width="5" Canvas.Top="443.061" Height="41.878"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 164.906,122.026 L 164.906,215.569" Canvas.Left="498" Stretch="Fill" Width="5" Canvas.Top="443.061" Height="41.878"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="482" Canvas.Left="495.055" Width="10.89"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 164.906,122.026 L 164.906,215.569" Canvas.Left="550" Stretch="Fill" Width="5" Canvas.Top="443.061" Height="41.878"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="482" Canvas.Left="547.055" Width="10.89"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 164.906,122.026 L 164.906,215.569" Canvas.Left="600" Stretch="Fill" Width="5" Canvas.Top="443.061" Height="41.878"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="482" Canvas.Left="597.055" Width="10.89"/>
+        <Ellipse Fill="#ff000000" Height="6" Canvas.Left="600" Canvas.Top="441" Width="6"/>
+        <Ellipse Fill="#ff000000" Height="6" Canvas.Left="550" Canvas.Top="440" Width="6"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 164.906,122.026 L 164.906,215.569" Canvas.Left="684" Stretch="Fill" Width="5" Canvas.Top="443.061" Height="41.878"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="482" Canvas.Left="681.055" Width="10.89"/>
+        <Ellipse Fill="#ff000000" Height="6" Canvas.Left="684" Canvas.Top="440" Width="6"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 164.906,122.026 L 164.906,215.569" Canvas.Left="739" Stretch="Fill" Width="5" Canvas.Top="443.061" Height="41.878"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="482" Canvas.Left="736.055" Width="10.89"/>
+        <Ellipse Fill="#ff000000" Height="6" Canvas.Left="738" Canvas.Top="440" Width="6"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 164.906,122.026 L 164.906,215.569" Canvas.Left="790" Stretch="Fill" Width="5" Canvas.Top="443.061" Height="41.878"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="482" Canvas.Left="787.055" Width="10.89"/>
+        <Ellipse Fill="#ff000000" Height="6" Canvas.Left="790" Canvas.Top="440" Width="6"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 164.906,122.026 L 164.906,215.569" Canvas.Left="688" Stretch="Fill" Width="5" Canvas.Top="583.061" Height="41.878"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="622" Canvas.Left="685.055" Width="10.89"/>
+        <Ellipse Fill="#ff000000" Height="6" Canvas.Left="688" Canvas.Top="580" Width="6"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 164.906,122.026 L 164.906,215.569" Canvas.Left="732" Stretch="Fill" Width="5" Canvas.Top="583.061" Height="41.878"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="622" Canvas.Left="729.055" Width="10.89"/>
+        <Ellipse Fill="#ff000000" Height="6" Canvas.Left="732" Canvas.Top="580" Width="6"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 164.906,122.026 L 164.906,215.569" Canvas.Left="777" Stretch="Fill" Width="5" Canvas.Top="583.061" Height="41.878"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="622" Canvas.Left="774.055" Width="10.89"/>
+        <Ellipse Fill="#ff000000" Height="6" Canvas.Left="776" Canvas.Top="580" Width="6"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="8" Stretch="Fill" Canvas.Top="574" Canvas.Left="173.166" Width="11.779"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 164.906,122.026 L 164.906,215.569" Canvas.Left="177" Stretch="Fill" Width="5" Canvas.Top="537.078" Height="41.844"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="535" Canvas.Left="178.128" Width="162.869"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="8" Stretch="Fill" Canvas.Top="619" Canvas.Left="209.368" Width="12"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 164.906,122.026 L 164.906,215.569" Canvas.Left="213" Stretch="Fill" Width="5" Canvas.Top="582.03" Height="40.94"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 164.906,122.026 L 164.906,215.569" Canvas.Left="554" Stretch="Fill" Width="5" Canvas.Top="239.061" Height="41.878"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="278" Canvas.Left="551.055" Width="10.89"/>
+        <Ellipse Fill="#ff000000" Height="6" Canvas.Left="554" Canvas.Top="236" Width="6"/>
+        <se:VisualBox BorderBrush="Black" HorizontalAlignment="Left" Height="17" VerticalAlignment="Top" Width="35" CornerRadius="0" Background="{StaticResource MediaBoxAttentionSolidColorBrush}" Canvas.Left="468" Canvas.Top="692" FontSize="12" Text="QF1">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource MediaBoxFineSolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.scheme].Items[tag17].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" HorizontalAlignment="Left" Height="17" VerticalAlignment="Top" Width="35" CornerRadius="0" Background="{StaticResource MediaBoxAttentionSolidColorBrush}" Canvas.Left="197" Canvas.Top="595" FontSize="12" Text="QF2">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource MediaBoxFineSolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.scheme].Items[tag18].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" HorizontalAlignment="Left" Height="17" VerticalAlignment="Top" Width="35" CornerRadius="0" Background="{StaticResource MediaBoxAttentionSolidColorBrush}" Canvas.Left="585" Canvas.Top="458" FontSize="12" Text="1K6">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource MediaBoxFineSolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.rascepitel].Items[Tag7].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" HorizontalAlignment="Left" Height="17" VerticalAlignment="Top" Width="35" CornerRadius="0" Background="{StaticResource MediaBoxAttentionSolidColorBrush}" Canvas.Left="535" Canvas.Top="458" FontSize="12" Text="1K5">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource MediaBoxFineSolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.rascepitel].Items[Tag12].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" HorizontalAlignment="Left" Height="17" VerticalAlignment="Top" Width="35" CornerRadius="0" Background="{StaticResource MediaBoxAttentionSolidColorBrush}" Canvas.Left="426" Canvas.Top="458" Text="1K3" FontSize="12">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource MediaBoxFineSolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.rascepitel].Items[Tag11].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" HorizontalAlignment="Left" Height="17" VerticalAlignment="Top" Width="35" CornerRadius="0" Background="{StaticResource MediaBoxAttentionSolidColorBrush}" Canvas.Left="669" Canvas.Top="458" FontSize="12" Text="1K7">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource MediaBoxFineSolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.rascepitel].Items[Tag1].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" HorizontalAlignment="Left" Height="17" VerticalAlignment="Top" Width="35" CornerRadius="0" Background="{StaticResource MediaBoxAttentionSolidColorBrush}" Canvas.Left="724" Canvas.Top="458" FontSize="12" Text="1K8">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource MediaBoxFineSolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.rascepitel].Items[Tag2].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" HorizontalAlignment="Left" Height="17" VerticalAlignment="Top" Width="35" CornerRadius="0" Background="{StaticResource MediaBoxAttentionSolidColorBrush}" Canvas.Left="775" Canvas.Top="458" FontSize="12" Text="1K11">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource MediaBoxFineSolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.rascepitel].Items[Tag3].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" HorizontalAlignment="Left" Height="17" VerticalAlignment="Top" Width="35" CornerRadius="0" Background="{StaticResource MediaBoxAttentionSolidColorBrush}" Canvas.Left="673" Canvas.Top="598" FontSize="12" Text="1K10">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource MediaBoxFineSolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.rascepitel].Items[Tag5].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" HorizontalAlignment="Left" Height="17" VerticalAlignment="Top" Width="35" CornerRadius="0" Background="{StaticResource MediaBoxAttentionSolidColorBrush}" Canvas.Left="717" Canvas.Top="598" FontSize="12" Text="1K9">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource MediaBoxFineSolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.rascepitel].Items[Tag9].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" HorizontalAlignment="Left" Height="17" VerticalAlignment="Top" Width="35" CornerRadius="0" Background="{StaticResource MediaBoxAttentionSolidColorBrush}" Canvas.Left="762" Canvas.Top="598" FontSize="12" Text="1K2">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource MediaBoxFineSolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.rascepitel].Items[Tag8].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" HorizontalAlignment="Left" Height="17" VerticalAlignment="Top" Width="35" CornerRadius="0" Background="{StaticResource MediaBoxAttentionSolidColorBrush}" Canvas.Left="162" Canvas.Top="552" FontSize="12" Text="1K1">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource MediaBoxFineSolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.rascepitel].Items[Tag0].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" HorizontalAlignment="Left" Height="17" VerticalAlignment="Top" Width="35" CornerRadius="0" Background="{StaticResource MediaBoxAttentionSolidColorBrush}" Canvas.Left="539" Canvas.Top="254" FontSize="12" Text="1К12">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource MediaBoxFineSolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.rascepitel].Items[Tag6].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="166" Canvas.Left="362.02" Width="486.96"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 164.906,122.026 L 164.906,215.569" Canvas.Left="360" Stretch="Fill" Width="5" Canvas.Top="168.031" Height="70.939"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="236" Canvas.Left="362.043" Width="26.914"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="440" Canvas.Left="493.212" Width="14.575" StrokeStartLineCap="Square" StrokeDashCap="Square"/>
+        <Ellipse Fill="#ff000000" Height="6" Canvas.Left="498" Canvas.Top="440" Width="6"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="440" Canvas.Left="432.144" Width="22.712"/>
+        <scheme:QF Canvas.Left="403" Canvas.Top="421" electricType="QS" RenderTransformOrigin="0.5,0.5" Template="{DynamicResource normalno_zakrytyj_kontakt}">
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.rascepitel].Items[Tag11].Value">
+                    <hmi:Bind.Converter>
+                        <hmi:BooleanToInverseConverter/>
+                    </hmi:Bind.Converter>
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>False</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+            <scheme:QF.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-0.7" ScaleY="0.7"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </scheme:QF.RenderTransform>
+        </scheme:QF>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="440" Canvas.Left="400" Width="6.142"/>
+        <Ellipse Fill="#ff000000" Height="6" Canvas.Left="440" Canvas.Top="440" Width="6"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 164.906,122.026 L 164.906,215.569" Canvas.Left="398" Stretch="Fill" Width="5" Canvas.Top="397.03" Height="46.94"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Square" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="395" Canvas.Left="360.012" Width="40.976"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="395" Canvas.Left="302.012" Width="40.976"/>
+        <scheme:QF Canvas.Left="274" Canvas.Top="372" RenderTransformOrigin="0.5,0.5" isOpen="True" Visibility="Hidden" >
+            <scheme:QF.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.7" ScaleY="-0.7"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </scheme:QF.RenderTransform>
+        </scheme:QF>
+        <Path Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="395" Canvas.Left="254.006" Width="54.738" StrokeThickness="2"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="440" Canvas.Left="302.012" Width="40.976"/>
+        <scheme:QF Canvas.Left="274" Canvas.Top="416" RenderTransformOrigin="0.5,0.5" isOpen="True" Visibility="Hidden" >
+            <scheme:QF.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.7" ScaleY="-0.7"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </scheme:QF.RenderTransform>
+        </scheme:QF>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="440" Canvas.Left="29" Width="286"/>
+        <TextBlock Canvas.Left="859" Canvas.Top="190" Text="1К3 - ПРЕВЫШЕНИЕ ТЕМПЕРАТУРЫ В НКУ"/>
+        <TextBlock Canvas.Top="230" Text="1К5 - НАЖАТА АВАРИЙНАЯ КНОПКА У ВХОДНОЙ ДВЕРИ 2 НКУ" Canvas.Left="858"/>
+        <TextBlock Canvas.Left="859" Canvas.Top="460" Text="НКУ-SB1 - КНОПКА &quot;АВАРИЙНЫЙ СТОП БУ&quot; У ВХОДНОЙ ДВЕРИ 1 НКУ"/>
+        <TextBlock Canvas.Left="859" Canvas.Top="480" Text="НКУ-SB2 - КНОПКА &quot;АВАРИЙНЫЙ СТОП БУ&quot; У ВХОДНОЙ ДВЕРИ 2 НКУ"/>
+        <TextBlock Canvas.Left="859" Canvas.Top="500" Text="НКУ-К102 - АВАРИЙНЫЙ СИГНАЛ &quot;ПОЖАРНАЯ СИГНАЛИЗАЦИЯ НКУ&quot;"/>
+        <TextBlock Canvas.Left="859" Canvas.Top="520" Text="КТУ-SB1 - КНОПКА &quot;АВАРИЙНЫЙ СТОП БУ&quot; КТУ"/>
+        <TextBlock Canvas.Left="859" Canvas.Top="540" Text="КТУ-SB2 - КНОПКА &quot;АВАРИЙНЫЙ СТОП БУ&quot; КТУ"/>
+        <TextBlock Canvas.Left="859" Canvas.Top="560" Text="КТУ-SB3 - КНОПКА &quot;АВАРИЙНЫЙ СТОП БУ&quot; НА ДВЕРИ ШКАФА МПК1 КТУ"/>
+        <TextBlock Canvas.Left="859" Canvas.Top="580" Text="СКПБ-50% - АВАРИЙНЫЙ СИГНАЛ &#xD;&#xA;&#x9;       &quot;50% НИЖНЕГО КОНЦЕНТРАЦИОННОГО&#xD;&#xA;&#x9;       ПРЕДЕЛА ВОСПЛАМЕНЕНИЯ&quot;"/>
+        <TextBlock Canvas.Left="859" Canvas.Top="632" Text="КБ-SB3 - КНОПКА &quot;АВАРИЙНЫЙ СТОП БУ&quot; К КАБИНЕ БУРИЛЬЩИКА"/>
+        <TextBlock Canvas.Left="859" Canvas.Top="652" Text="КТУ-ДТ - АВАРИЙНЫЙ СИГНАЛ &quot;ВЫСОКАЯ ТЕМПЕРАТУРА В КТУ&quot;"/>
+        <TextBlock Canvas.Left="859" Canvas.Top="672" Text="КТУ-ПС - АВАРИНЫЙ СИГНАЛ &quot;ПОЖАРНАЯ СИГНАЛИЗАЦИЯ КТУ&quot;"/>
+        <TextBlock Canvas.Left="859" Canvas.Top="702" Text="НКУ-U100-1К12 - РЕЛЕ КОНТРОЛЯ НАПРЯЖЕНИЯ ВВОД1 &#xD;&#xA;                              (ПИТАНИЕ ОТ Т1 6/0,4 КВ)"/>
+        <TextBlock Canvas.Left="859" Canvas.Top="742" Text="НКУ-U100-1К13 - РЕЛЕ КОНТРОЛЯ НАПРЯЖЕНИЯ ВВОД2 &#xD;&#xA;                              (ПИТАНИЕ ОТ АВАРИЙНОЙ ДЭС 0,4 КВ)"/>
+        <TextBlock Canvas.Left="69" TextWrapping="Wrap" Text="Т1" FontSize="14" Canvas.Top="462" Width="18"/>
+        <TextBlock Canvas.Left="140" TextWrapping="Wrap" Text="Т2" FontSize="14" Canvas.Top="257"/>
+        <TextBlock Canvas.Left="236" Canvas.Top="596" FontSize="6.54" Text="РАСЦЕПИТЕЛЬ&#xA;МИНИМАЛЬНОГО&#xA;НАПРЯЖЕНИЯ"/>
+        <TextBlock Canvas.Left="329" Canvas.Top="369" FontSize="6.54" Text="ЛЭП"/>
+        <TextBlock Canvas.Left="348" Canvas.Top="369" FontSize="6.54" Text="0"/>
+        <TextBlock Canvas.Left="357" Canvas.Top="369" FontSize="6.54" Text="ДЭС"/>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="8" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="97" Canvas.Left="21" Canvas.Top="745" CornerRadius="0">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.scheme].Items[bus_400_nku].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <scheme:QF Canvas.Left="272" Canvas.Top="626" RenderTransformOrigin="0.5,0.5" >
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.scheme].Items[tag76].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                    <hmi:Bind.Converter>
+                        <hmi:BooleanToInverseConverter/>
+                    </hmi:Bind.Converter>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+            <scheme:QF.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.7" ScaleY="-0.7"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </scheme:QF.RenderTransform>
+        </scheme:QF>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="649" Canvas.Left="300.162" Width="40.676"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Square" StrokeEndLineCap="Square" StrokeMiterLimit="1.0" Data="F1 M 1,1 L 0,1" Height="6" Stretch="Fill" Canvas.Top="649" Canvas.Left="96.04" Width="177.92"/>
+        <Ellipse Fill="#ff000000" Height="5" Canvas.Left="92" Canvas.Top="649" Width="5"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Square" StrokeEndLineCap="Square" StrokeMiterLimit="1.0" Data="F1 M 1,1 L 1,0" Canvas.Left="92.542" Stretch="Fill" Width="3.04" Canvas.Top="220" Height="470"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Square" StrokeEndLineCap="Square" StrokeMiterLimit="1.0" Data="F1 M 164.906,122.026 L 164.906,215.569" Canvas.Left="93" Stretch="Fill" Width="5" Canvas.Top="168.14" Height="27.72"/>
+        <Path Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round" StrokeDashArray="4,4" Data="F1 M 118.410,454.487 L 199.908,454.487" Canvas.Top="207" Height="12" Stretch="Fill" Canvas.Left="111" Width="6"/>
+
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 164.906,122.026 L 164.906,215.569" Canvas.Left="168" Stretch="Fill" Width="5" Canvas.Top="168.015" Height="25.97"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Square" StrokeEndLineCap="Square" StrokeMiterLimit="2" Data="F1 M 164.906,122.026 L 164.906,215.569" Canvas.Left="168" Stretch="Fill" Width="5" Canvas.Top="218" Height="58.095"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Square" StrokeEndLineCap="Square" StrokeMiterLimit="1.0" Data="F1 M 164.906,122.026 L 164.906,215.569" Canvas.Left="93" Stretch="Fill" Width="5" Canvas.Top="715" Height="30.918" StrokeDashCap="Square"/>
+        <scheme:QF Canvas.Left="8" Canvas.Top="584" RenderTransformOrigin="0.5,0.5" >
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.scheme].Items[tag18].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                    <hmi:Bind.Converter>
+                        <hmi:BooleanToInverseConverter/>
+                    </hmi:Bind.Converter>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+            <scheme:QF.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.7" ScaleY="0.7"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </scheme:QF.RenderTransform>
+        </scheme:QF>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Square" StrokeEndLineCap="Square" StrokeMiterLimit="1.0" Data="F1 M 164.906,122.026 L 164.906,215.569" Canvas.Left="27" Stretch="Fill" Width="5" Canvas.Top="617.041" Height="128.918"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Square" StrokeEndLineCap="Square" StrokeMiterLimit="1.0" Data="F1 M 164.906,122.026 L 164.906,215.569" Canvas.Left="27" Stretch="Fill" Width="5" Canvas.Top="168.003" Height="422.994"/>
+        <TextBlock Foreground="#ff000000" Canvas.Left="699" Canvas.Top="562" FontSize="8.72" FontFamily="Myriad Pro" Text="K100"/>
+        <TextBlock Foreground="#ff000000" Canvas.Left="750" Canvas.Top="562" FontSize="8.72" FontFamily="Myriad Pro" Text="ДТ"/>
+        <se:VisualBox BorderBrush="Black" HorizontalAlignment="Left" Height="17" VerticalAlignment="Top" Width="35" CornerRadius="0" Background="{StaticResource MediaBoxAttentionSolidColorBrush}" Canvas.Left="483" Canvas.Top="458" FontSize="12" Text="1K4">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource MediaBoxFineSolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.rascepitel].Items[Tag4].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <TextBlock Canvas.Left="573" Canvas.Top="411" FontSize="8.72" Text="K102"/>
+        <TextBlock Canvas.Left="414" Canvas.Top="411" FontSize="8.72" Text="ДТ"/>
+        <TextBlock Canvas.Left="605" Canvas.Top="314" FontSize="8.72" Text="НКУ"/>
+        <TextBlock Canvas.Left="806" Canvas.Top="313" FontSize="8.72" Text="КТУ"/>
+        <TextBlock Canvas.Left="385" Canvas.Top="187" FontSize="8.72" Text="АВАРИЙНЫЙ&#xD;&#xA;СТОП БУ" TextAlignment="Center"/>
+        <TextBlock Canvas.Left="223" Canvas.Top="182" FontSize="8.72" Text="СОБСТВЕННЫЕ &#xD;&#xA;НУЖДЫ КРУ" TextAlignment="Center"/>
+        <TextBlock Canvas.Top="149" FontSize="8.72" Text="АДЭС" TextAlignment="Center" Canvas.Left="18"/>
+        <TextBlock Canvas.Left="280" Canvas.Top="125" FontSize="8.72" Text="КРУ" TextAlignment="Center"/>
+        <TextBlock Canvas.Left="453" Canvas.Top="125" FontSize="8.72" Text="КБ" TextAlignment="Center"/>
+        <TextBlock Canvas.Left="604" Canvas.Top="125" FontSize="8.72" Text="АКЛ" TextAlignment="Center"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Square" StrokeEndLineCap="Square" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="440" Canvas.Left="788.021" Width="43.958"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 164.906,122.026 L 164.906,215.569" Canvas.Left="829" Stretch="Fill" Width="5" Canvas.Top="238.015" Height="204.97"/>
+        <TextBlock Canvas.Left="788" Canvas.Top="174" FontSize="8.72" FontFamily="Myriad Pro" Text="СКПБ" TextAlignment="Center"/>
+        <TextBlock RenderTransform="1.000,-0.000,0.000,1.000,0.000,0.000" Canvas.Top="40" FontSize="16" Text="ЦЕПЬ НУЛЕВОГО РАСЦЕПИТЕЛЯ" FontWeight="Bold" HorizontalAlignment="Center" Canvas.Left="520"/>
+        <scheme:QF Canvas.Left="454" Canvas.Top="424" electricType="QS" RenderTransformOrigin="0.5,0.5" Template="{DynamicResource avariinaya_knopka}" Width="40">
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.rascepitel].Items[Tag4].Value">
+                    <hmi:Bind.Converter>
+                        <hmi:BooleanToInverseConverter/>
+                    </hmi:Bind.Converter>
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>true</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <scheme:QF Canvas.Left="508" Canvas.Top="424" electricType="QS" RenderTransformOrigin="0.5,0.5" Template="{DynamicResource avariinaya_knopka}" Width="40">
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.rascepitel].Items[Tag12].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                    <hmi:Bind.Converter>
+                        <hmi:BooleanToInverseConverter/>
+                    </hmi:Bind.Converter>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <scheme:QF Canvas.Left="639" Canvas.Top="424" electricType="QS" RenderTransformOrigin="0.5,0.5" Template="{DynamicResource avariinaya_knopka}" Width="40">
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.rascepitel].Items[Tag1].Value">
+                    <hmi:Bind.Converter>
+                        <hmi:BooleanToInverseConverter/>
+                    </hmi:Bind.Converter>
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="440" Canvas.Left="678" Width="17"/>
+        <scheme:QF Canvas.Left="694" Canvas.Top="424" electricType="QS" RenderTransformOrigin="0.5,0.5" Template="{DynamicResource avariinaya_knopka}" Width="40">
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.rascepitel].Items[Tag2].Value">
+                    <hmi:Bind.Converter>
+                        <hmi:BooleanToInverseConverter/>
+                    </hmi:Bind.Converter>
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <scheme:QF Canvas.Left="749" Canvas.Top="424" electricType="QS" RenderTransformOrigin="0.5,0.5" Template="{DynamicResource avariinaya_knopka}" Width="40">
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.rascepitel].Items[Tag3].Value">
+                    <hmi:Bind.Converter>
+                        <hmi:BooleanToInverseConverter/>
+                    </hmi:Bind.Converter>
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="440" Canvas.Left="733" Width="17"/>
+        <scheme:QF Canvas.Left="389" Canvas.Top="220" electricType="QS" RenderTransformOrigin="0.5,0.5" Template="{DynamicResource avariinaya_knopka}">
+            <scheme:QF.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </scheme:QF.RenderTransform>
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.rascepitel].Items[Tag8].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                    <hmi:Bind.Converter>
+                        <hmi:BooleanToInverseConverter/>
+                    </hmi:Bind.Converter>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <se:VisualBox Canvas.Left="146" Canvas.Top="275" Height="41" Width="51" BorderBrush="{x:Null}" Background="{DynamicResource t3_yellow}">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{DynamicResource t3_green}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.scheme].Items[tag7].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="{DynamicResource t3_orange}" Priority="2">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.scheme].Items[tag8].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="{DynamicResource t3_red}" Priority="3">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.scheme].Items[tag9].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <se:VisualBox Canvas.Left="84" Canvas.Top="482" Height="41" Width="22" BorderBrush="{x:Null}" Background="{DynamicResource t2_yellow}">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{DynamicResource t2_green}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.scheme].Items[tag5].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="{DynamicResource t2_orange}" Priority="2">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind  Path="Tags.Node[view.scheme].Items[tag6].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+                <se:VisualBoxStateItem Background="{DynamicResource t2_red}" Priority="3">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.scheme].Items[tag10].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <scheme:QF Canvas.Left="78" Canvas.Top="684" Height="52" Width="30">
+            <scheme:QF.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.7" ScaleY="0.7"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </scheme:QF.RenderTransform>
+            <scheme:QF.isOpen>
+                <hmi:Bind  Path="Tags.Node[view.scheme].Items[tag17].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                    <hmi:Bind.Converter>
+                        <hmi:BooleanToInverseConverter/>
+                    </hmi:Bind.Converter>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+
+        <scheme:QF Canvas.Left="153" Canvas.Top="188" Height="45" Width="36"  Template="{StaticResource vacuum_qs}">
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.scheme].Items[tag87].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                    <hmi:Bind.Converter>
+                        <hmi:BooleanToInverseConverter/>
+                    </hmi:Bind.Converter>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <scheme:QF Canvas.Left="78" Canvas.Top="190" Height="45" Width="36" Template="{StaticResource vacuum_qs}">
+            <scheme:QF.isOpen>
+                <hmi:Bind Path="Tags.Node[view.scheme].Items[tag88].Value">
+                    <hmi:Bind.FallbackValue>
+                        <system:Boolean>True</system:Boolean>
+                    </hmi:Bind.FallbackValue>
+                    <hmi:Bind.Converter>
+                        <hmi:BooleanToInverseConverter/>
+                    </hmi:Bind.Converter>
+                </hmi:Bind>
+            </scheme:QF.isOpen>
+        </scheme:QF>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="440" Canvas.Left="361.012" Width="40.976"/>
+        <TextBlock Canvas.Left="702" Canvas.Top="551" FontSize="8.72" Text="ПС"/>
+        <TextBlock Canvas.Left="576" Canvas.Top="401" FontSize="8.72" Text="ПС"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 164.906,122.026 L 164.906,215.569" Canvas.Left="177" Stretch="Fill" Width="5" Canvas.Top="651.078" Height="41.844"/>
+        <se:VisualBox BorderBrush="Black" HorizontalAlignment="Left" Height="17" VerticalAlignment="Top" Width="35" CornerRadius="0" Background="{StaticResource MediaBoxAttentionSolidColorBrush}" Canvas.Left="162" Canvas.Top="665" FontSize="9" Text="">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource MediaBoxFineSolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.scheme].Items[tag76].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="8" Stretch="Fill" Canvas.Top="689" Canvas.Left="173.333" Width="11.667"/>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 164.906,122.026 L 164.906,215.569" Canvas.Left="177" Stretch="Fill" Width="5" Canvas.Top="443.078" Height="41.844"/>
+        <se:VisualBox BorderBrush="Black" HorizontalAlignment="Left" Height="17" VerticalAlignment="Top" Width="35" CornerRadius="0" Background="{StaticResource MediaBoxAttentionSolidColorBrush}" Canvas.Left="161" Canvas.Top="458" FontSize="9" Text="">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource MediaBoxFineSolidColorBrush}">
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.scheme].Items[tag231].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <Path StrokeThickness="2" Stroke="#ff000000" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 145.063,484.860 L 179.079,484.860" Height="6" Stretch="Fill" Canvas.Top="482" Canvas.Left="173.186" Width="11.704"/>
+        <TextBlock Canvas.Left="201" TextWrapping="Wrap" Text="U101-1K13" FontSize="8.72" Canvas.Top="460" />
+        <TextBlock Canvas.Left="201" TextWrapping="Wrap" Text="U100-1K12" FontSize="8.72" Canvas.Top="668" />
+        <Ellipse Fill="#ff000000" Height="7" Canvas.Left="332" Canvas.Top="403" Width="7"/>
+        <Ellipse Fill="#ff000000" Height="7" Canvas.Left="361" Canvas.Top="446" Width="7"/>
+        <Ellipse Fill="#ff000000" Height="7" Canvas.Left="332" Canvas.Top="540" Width="7"/>
+        <Ellipse Fill="#ff000000" Height="7" Canvas.Left="361" Canvas.Top="588" Width="7"/>
+        <Ellipse Fill="#ff000000" Height="7" Canvas.Left="332" Canvas.Top="654" Width="7"/>
+        <se:VisualBox BorderBrush="Black" HorizontalAlignment="Left" Height="18" VerticalAlignment="Top" Width="35" CornerRadius="0" Canvas.Left="271" Canvas.Top="389" FontSize="9" Text="">
+
+        </se:VisualBox>
+        <se:VisualBox BorderBrush="Black" HorizontalAlignment="Left" Height="18" VerticalAlignment="Top" Width="35" CornerRadius="0" Canvas.Left="271" Canvas.Top="434" FontSize="9" Text=""/>
+        <se:VisualBox BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="8" Background="{StaticResource RedBusBrush}" VerticalAlignment="Top" Width="100" Canvas.Left="78" Canvas.Top="166" CornerRadius="0">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Background="{StaticResource GreenBusBrush}" >
+                    <se:VisualBoxStateItem.Value>
+                        <hmi:Bind Path="Tags.Node[view.scheme].Items[bus_kru2].Value">
+                            <hmi:Bind.FallbackValue>
+                                <system:Boolean>False</system:Boolean>
+                            </hmi:Bind.FallbackValue>
+                        </hmi:Bind>
+                    </se:VisualBoxStateItem.Value>
+                </se:VisualBoxStateItem>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+        <TextBlock Canvas.Left="111" TextWrapping="Wrap" Text="~ 6000 В" FontSize="9" Canvas.Top="150"/>
+
+
+    </Canvas>
+</UserControl>

@@ -1,0 +1,18 @@
+﻿<Window x:Class="VFD.Frames.Sub.n159.Servis.Journal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VFD.Frames.Sub.n159.Servis"
+        xmlns:wpfPdfViewer="clr-namespace:WPFPdfViewer;assembly=WPFPdfViewer"
+        mc:Ignorable="d"
+        
+        Title="Journal"
+        ResizeMode="NoResize"  
+             WindowStartupLocation="CenterScreen" 
+             WindowState="Maximized"
+        >
+    <Grid>
+        <wpfPdfViewer:PdfViewer Name="Pdf_j" />
+    </Grid>
+</Window>

@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="NGO.Elements.Special.IO.IOView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:hmi="http://schemas.monokot.com/hmi/"
+             xmlns:io="clr-namespace:NGO.Elements.Special.IO"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="220" Loaded="TopologyView_Loaded">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ListItemStyle" TargetType="ListBoxItem">
+                <EventSetter Event="PreviewMouseUp" Handler="itemOnPreviewMouseUp" />
+            </Style>
+            <DataTemplate x:Key="TopologyItemTemplate">
+                <Border BorderBrush="Black" Height="75" Margin="0,2.5,0,2.5" BorderThickness="1" Background="#FFD4D4D4">
+                    <Grid>
+                        <Grid.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientStopCollection>
+                                    <GradientStop Color="#FF767676" Offset="0.0"/>
+                                    <GradientStop Color="#FFE5E5E5" Offset="0.15"/>
+                                    <GradientStop Color="#FFE5E5E5" Offset="0.85"/>
+                                    <GradientStop Color="#FF767676" Offset="1"/>
+                                </GradientStopCollection>
+                            </LinearGradientBrush>
+                        </Grid.Background>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="23.6*" />
+                            <ColumnDefinition Width="36*" />
+                            <ColumnDefinition Width="36*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Height="30" HorizontalAlignment="Center" Text="{Binding name, FallbackValue='Модуль#'}" VerticalAlignment="Center" TextAlignment="Center" FontSize="22" FontFamily="Tahoma" />
+                        <Button Content="ВХОДЫ"  Grid.Column="1" Name="btn_inputs" Margin="22,12,22,12" FontFamily="Tahoma" FontSize="18" Foreground="Black" Command="{Binding showInputs}"/>
+                        <Button Content="ВЫХОДЫ"  Grid.Column="2" Name="btn_outputs" Margin="22,12,22,12" FontFamily="Tahoma" FontSize="18" Foreground="Black" Command="{Binding showOutputs}" />
+                    </Grid>
+                </Border>
+            </DataTemplate>
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+            <hmi:BooleanToInverseVisibility x:Key="BooleanToInverseVisibility"/>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="348*"/>
+        </Grid.RowDefinitions>
+        <TextBlock HorizontalAlignment="Center" Margin="257,7" TextWrapping="Wrap" Text="{Binding name}" VerticalAlignment="Center" FontSize="20" FontWeight="Bold" Grid.Row="0"/>
+        <TextBlock HorizontalAlignment="Center" Margin="257,7" TextWrapping="Wrap" Text="{Binding description}" VerticalAlignment="Center" FontSize="20" FontWeight="Bold" Grid.Row="1"/>
+        <ListBox Name="TopologyListBox" IsSynchronizedWithCurrentItem="True" ItemTemplate="{StaticResource TopologyItemTemplate}" HorizontalContentAlignment="Stretch" ItemContainerStyle="{StaticResource ListItemStyle}" ItemsSource="{Binding}" Visibility="{Binding ElementName=TopologyListBox, Path=SelectedItem.showModules, Converter={StaticResource BooleanToInverseVisibility}}" Margin="0" BorderThickness="0" Grid.Row="2" Background="{x:Null}">
+            <ListBox.Resources>
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent" />
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="Black" />
+                <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Transparent" />
+            </ListBox.Resources>
+        </ListBox>
+        <io:VfdModule Margin="0" x:Name="vfdModule1" module="{Binding ElementName=TopologyListBox, Path=SelectedItem, UpdateSourceTrigger=PropertyChanged}" Visibility="{Binding ElementName=TopologyListBox, Path=SelectedItem.showModules, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue=true}" Grid.RowSpan="3" d:IsHidden="True"/>
+    </Grid>
+</UserControl>

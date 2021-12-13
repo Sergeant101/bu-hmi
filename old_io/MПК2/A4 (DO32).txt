@@ -1,0 +1,128 @@
+﻿311016
+8
+lang|RU|0 (:2 ) Включить пускатель 1КМ1 на входе устройства плавного пуска УПП1 (реле 1К1 и ШЦС-1РП1)
+lang|EN|0 (:2 ) Switch on led "Stop mud pump 1" in VFD house
+311016
+9
+lang|RU|1 (:3 ) Команда ПУСК на устройство плавного пуска УПП1 (реле 1К2)
+lang|EN|1 (:3 ) Switch on led "Work mud pump 1" in VFD house
+311016
+10
+lang|RU|2 (:4 ) Резерв
+lang|EN|2 (:4 ) Switch on led "Emergency mud pump 1" in VFD house
+311016
+11
+lang|RU|3 (:5 ) Включить пускатель 717КМ2 "Включить насоса пескоотделителя от УПП2" (реле ШЦС-717К2)
+lang|EN|3 (:5 ) Switch on led "Stop mud pump 2" in VFD house
+311016
+12
+lang|RU|4 (:6 ) Включить пускатель 717КМ1 "Прямой пуск насоса пескоотделителя" (реле ШЦС-717К1 и 717К3)
+lang|EN|4 (:6 ) Switch on led "Work mud pump 2" in VFD house
+311016
+13
+lang|RU|5 (:7 ) Резерв
+lang|EN|5 (:7 ) Switch on led "Emergency mud pump 2" in VFD house
+311016
+14
+lang|RU|6 (:8 ) Включить пускатель 113КМ2 "Включить подпорный насос 1 от УПП1" (реле ШЦС-113К2)
+lang|EN|6 (:8 ) Switch on led "Start/Stop/Unlock" main drawworks on drillers console
+311016
+15
+lang|RU|7 (:9 ) Включить пускатель 113КМ1 "Прямой пуск подпорного насоса 1" (реле ШЦС-К112 и 113К1)
+lang|EN|7 (:9 ) Switch on led "Start/Stop/Unlock" aux. drawworks on drillers console
+311016
+0
+lang|RU|0 (:12 ) Резерв
+lang|EN|0 (:12 ) Switch on led "Stop mud pump 3" in VFD house
+311016
+1
+lang|RU|1 (:13 ) Включить пускатель 731КМ2 "Включить воронку 1 от УПП1" (реле ШЦС-731К2)
+lang|EN|1 (:13 ) Switch on led "Work mud pump 3" in VFD house
+311016
+2
+lang|RU|2 (:14 ) Включить пускатель 731КМ1 "Прямой пуск воронки 1" (реле ШЦС-731К1 и 731К3)
+lang|EN|2 (:14 ) Switch on led "Emergency mud pump 3" in VFD house
+311016
+3
+lang|RU|3 (:15 ) Отключить ВШН1 с сенсорного пульта бурильщика (реле 750К7)
+lang|EN|3 (:15 ) Switch on fan brake resistirs
+311016
+4
+lang|RU|4 (:16 ) Включить пускатель 750КМ2 "Включить ВШН1 от УПП1" (реле ШЦС-750К2)
+lang|EN|4 (:16 ) Spare
+311016
+5
+lang|RU|5 (:17 ) Включить пускатель 750КМ1 "Прямой пуск ВШН1" (реле ШЦС-750К1 и 750К3)
+lang|EN|5 (:17 ) Spare
+311016
+6
+lang|RU|6 (:18 ) Резерв
+lang|EN|6 (:18 ) Spare
+311016
+7
+lang|RU|7 (:19 ) Включить пускатель 2КМ1 на входе устройства плавного пуска УПП2 (реле 2К1 и ШЦС-2РП1)
+lang|EN|7 (:19 ) Spare
+311017
+8
+lang|RU|0 (:22 ) Команда ПУСК на устройство плавного пуска УПП2 (реле 2К2)
+lang|EN|0 (:22 ) Switch on led "Stop drawworks 1" in VFD house
+311017
+9
+lang|RU|1 (:23 ) Резерв
+lang|EN|1 (:23 ) Switch on led "Work drawworks 1" in VFD house
+311017
+10
+lang|RU|2 (:24 ) Включить пускатель 719КМ2 "Включить насоса илоотделителя от УПП1" (реле ШЦС-719К2)
+lang|EN|2 (:24 ) Switch on led "Emergency drawworks 1" in VFD house
+311017
+11
+lang|RU|3 (:25 ) Включить пускатель 719КМ1 "Прямой пуск насоса илоотделителя" (реле ШЦС-719К1 и 719К3)
+lang|EN|3 (:25 ) Switch on led "Stop drawworks 2" in VFD house
+311017
+12
+lang|RU|4 (:26 ) Резерв
+lang|EN|4 (:26 ) Switch on led "Work drawworks 2" in VFD house
+311017
+13
+lang|RU|5 (:27 ) Включить пускатель 123КМ2 "Включить подпорный насос 2 от УПП2" (реле ШЦС-123К2)
+lang|EN|5 (:27 ) Switch on led "Emergency drawworks 2" in VFD house
+311017
+14
+lang|RU|6 (:28 ) Включить пускатель 123КМ1 "Прямой пуск подпорного насоса 2" (реле ШЦС-К114 и 123К1)
+lang|EN|6 (:28 ) Switch on led "Stop aux. drive" in VFD house
+311017
+15
+lang|RU|7 (:29 ) Резерв
+lang|EN|7 (:29 ) Switch on led "Work aux. drive" in VFD house
+311017
+0
+lang|RU|0 (:32 ) Включить пускатель 733КМ2 "Включить воронку 2 от УПП2" (реле ШЦС-733К2)
+lang|EN|0 (:32 ) Switch on led "Emergency aux. drive" in VFD house
+311017
+1
+lang|RU|1 (:33 ) Включить пускатель 733КМ1 "Прямой пуск воронки 2" (реле ШЦС-733К1 и 733К3)
+lang|EN|1 (:33 ) Not interlock of aux. drive in VFD house
+311017
+2
+lang|RU|2 (:34 ) Отключить ВШН2 с сенсорного пульта бурильщика (реле 751К7)
+lang|EN|2 (:34 ) Not interlock of drawworks 1 in VFD house
+311017
+3
+lang|RU|3 (:35 ) Включить пускатель 751КМ2 "Включить ВШН2 от УПП2" (реле ШЦС-751К2)
+lang|EN|3 (:35 ) Not interlock of drawworks 2 in VFD house
+311017
+4
+lang|RU|4 (:36 ) Включить пускатель 750КМ2 "Прямой пуск ВШН2" (реле ШЦС-751К1 и 751К3)
+lang|EN|4 (:36 ) Interlock of mud pump 1 in VFD house
+311017
+5
+lang|RU|5 (:37 ) Включить реле ШЦС-703К3 "Включить долив с сенсорного пульта бурильщика"
+lang|EN|5 (:37 ) Interlock of mud pump 2 in VFD house
+311017
+6
+lang|RU|6 (:38 ) Резерв
+lang|EN|6 (:38 ) Interlock of mud pump 3 in VFD house
+311017
+7
+lang|RU|7 (:39 ) Резерв
+lang|EN|7 (:39 ) Spare

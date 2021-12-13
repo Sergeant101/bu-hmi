@@ -1,0 +1,110 @@
+﻿<UserControl x:Class="NGO.Elements.Gauges.ExternalDrawworkIntel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:se="http://schemas.monokot.com/se/" 
+             xmlns:hmi="http://schemas.monokot.com/hmi/"
+             xmlns:System="clr-namespace:System;assembly=mscorlib"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:local="clr-namespace:NGO.Elements.Gauges"
+             
+             xmlns:updated="clr-namespace:NGO.Elements.Special.StatusTextUpdatedDelay"
+             Name="_uc"
+             mc:Ignorable="d" 
+             d:DesignHeight="377.474" d:DesignWidth="400.729">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="{Binding ElementName=_uc,Path=ButtonsRowHeight}"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="ВНЕШНЕЕ УПРАВЛЕНИЕ ЛЕБЕДКОЙ" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,5,0,0" FontSize="20" />
+
+        <se:VisualBox CornerRadius="5" Text="СТАТУС" HorizontalAlignment="Stretch" Margin="5,40,5,0" VerticalAlignment="Top" Height="39" Background="{StaticResource DefaultGray}" FontSize="20">
+            <se:VisualBox.VisualStateCollection>
+                <se:VisualBoxStateItem Text="{hmi:Bind FallbackValue='', Path=Dictionaries.Node[vneshnaya_systema_status_dr].Items[0].Text}" Value="{hmi:Bind Path=AnalogAlarms.Node[intellect.status_vnechnaya_dr].Items[0].Blinking}" Background="{StaticResource MediaBoxEmergencySolidColorBrush}"/>
+                <se:VisualBoxStateItem Text="{hmi:Bind FallbackValue='', Path=Dictionaries.Node[vneshnaya_systema_status_dr].Items[1].Text}" Value="{hmi:Bind Path=AnalogAlarms.Node[intellect.status_vnechnaya_dr].Items[1].Blinking}" Background="{StaticResource DefaultGray}"/>
+                <se:VisualBoxStateItem Text="{hmi:Bind FallbackValue='', Path=Dictionaries.Node[vneshnaya_systema_status_dr].Items[2].Text}" Value="{hmi:Bind Path=AnalogAlarms.Node[intellect.status_vnechnaya_dr].Items[2].Blinking}" Background="{StaticResource MediaBoxEmergencySolidColorBrush}"/>
+                <se:VisualBoxStateItem Text="{hmi:Bind FallbackValue='', Path=Dictionaries.Node[vneshnaya_systema_status_dr].Items[3].Text}" Value="{hmi:Bind Path=AnalogAlarms.Node[intellect.status_vnechnaya_dr].Items[3].Blinking}" Background="{StaticResource MediaBoxAttentionSolidColorBrush}"/>
+                <se:VisualBoxStateItem Text="{hmi:Bind FallbackValue='', Path=Dictionaries.Node[vneshnaya_systema_status_dr].Items[4].Text}" Value="{hmi:Bind Path=AnalogAlarms.Node[intellect.status_vnechnaya_dr].Items[4].Blinking}" Background="{StaticResource MediaBoxAttentionSolidColorBrush}"/>
+                <se:VisualBoxStateItem Text="{hmi:Bind FallbackValue='', Path=Dictionaries.Node[vneshnaya_systema_status_dr].Items[5].Text}" Value="{hmi:Bind Path=AnalogAlarms.Node[intellect.status_vnechnaya_dr].Items[5].Blinking}" Background="{StaticResource MediaBoxAttentionSolidColorBrush}"/>
+                <se:VisualBoxStateItem Text="{hmi:Bind FallbackValue='', Path=Dictionaries.Node[vneshnaya_systema_status_dr].Items[6].Text}" Value="{hmi:Bind Path=AnalogAlarms.Node[intellect.status_vnechnaya_dr].Items[6].Blinking}" Background="{StaticResource MediaBoxFineSolidColorBrush}"/>
+                <se:VisualBoxStateItem Text="{hmi:Bind FallbackValue='', Path=Dictionaries.Node[vneshnaya_systema_status_dr].Items[7].Text}" Value="{hmi:Bind Path=AnalogAlarms.Node[intellect.status_vnechnaya_dr].Items[7].Blinking}" Background="{StaticResource MediaBoxAttentionSolidColorBrush}"/>
+                <se:VisualBoxStateItem Text="{hmi:Bind FallbackValue='', Path=Dictionaries.Node[vneshnaya_systema_status_dr].Items[8].Text}" Value="{hmi:Bind Path=AnalogAlarms.Node[intellect.status_vnechnaya_dr].Items[8].Blinking}" Background="{StaticResource MediaBoxAttentionSolidColorBrush}"/>
+                <se:VisualBoxStateItem Text="{hmi:Bind FallbackValue='', Path=Dictionaries.Node[vneshnaya_systema_status_dr].Items[9].Text}" Value="{hmi:Bind Path=AnalogAlarms.Node[intellect.status_vnechnaya_dr].Items[9].Blinking}" Background="{StaticResource MediaBoxAttentionSolidColorBrush}"/>
+            </se:VisualBox.VisualStateCollection>
+        </se:VisualBox>
+
+        <Grid Grid.Row="1" Visibility="{Binding ElementName=_uc, Path=ButtonsRowVisibility}">
+            <se:HmiButton  Style="{StaticResource CircleStartButton}" x:Name="hmiButton_Copy7" HorizontalAlignment="Left" Height="90" Margin="13,3,0,0" VerticalAlignment="Top" Width="90" FontSize="22" hmi:Click.Command="{hmi:Bind Path=Tags.Node[write.intellect].Items[vkl_vneshnee_upravlenie_dr].WriteCommand}" Grid.Row="1"/>
+            <se:HmiButton  Style="{StaticResource CircleStopButton}" x:Name="hmiButton_Copy8" HorizontalAlignment="Center" Height="90" Margin="0,3,0,0" VerticalAlignment="Top" Width="90" FontSize="22" hmi:Click.Command="{hmi:Bind Path=Tags.Node[write.intellect].Items[otkl_vneshnee_upravlenie_dr].WriteCommand}" Grid.Row="1"/>
+            <TextBlock TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" FontFamily="Tahoma" Text="ВКЛЮЧИТЬ" Margin="0,100,0,0" HorizontalAlignment="Left" FontWeight="Bold" Width="114" TextAlignment="Center" Grid.Row="1" />
+            <TextBlock TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" FontFamily="Tahoma" Text="ОТКЛЮЧИТЬ" Margin="0,100,0,0" HorizontalAlignment="Center" FontWeight="Bold" Width="114" TextAlignment="Center" Grid.Row="1" />
+            <se:VisualBox VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,3,13,0" Width="90" Height="90" Style="{DynamicResource VB_LampStyle}" Background="{StaticResource DefaultGray}" Grid.Row="1">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Background="{DynamicResource LedOkBrush}">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind  Path="Tags.Node[view.intellect].Items[vkl_vneshnaya_dr].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <system:Boolean>False</system:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+            </se:VisualBox>
+
+            <TextBlock TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" FontFamily="Tahoma" Text="СОСТОЯНИЕ" Margin="0,100,3,0" HorizontalAlignment="Right" FontWeight="Bold" Width="108" TextAlignment="Center" Grid.Row="1"/>
+        </Grid>
+
+
+        <Grid HorizontalAlignment="Stretch" Height="130" Margin="5,2.267,5,0" VerticalAlignment="Top" Grid.Row="2" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="*"/>
+                <!--<RowDefinition Height="*"/>-->
+                <!--<RowDefinition Height="1.5*"/>-->
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="ЗАДАНИЕ" Grid.ColumnSpan="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontFamily="Tahoma"/>
+            <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[view.intellect].Items[skorost_vneshnaya_dr].Value}" VerticalAlignment="Center" Grid.Row="0" Grid.ColumnSpan="2" FontSize="20" Margin="0"/>
+            <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="м/ч" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1" Margin="0" FontSize="20"/>
+            <!--<TextBlock HorizontalAlignment="Left" Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" Text="кН x м" VerticalAlignment="Center" FontSize="20" Margin="5,0,0,0"/>-->
+            <!--<TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{hmi:Bind FallbackValue=###, Path=Tags.Node[chtenie.intellect].Items[moment_vneshnaya_mini].Value}" VerticalAlignment="Center" Grid.Row="2" FontSize="20" Margin="0,0,5,0"/>-->
+            <!--<se:VisualBox Grid.Row="3" Grid.ColumnSpan="2" BorderBrush="Transparent" Text="ВНЕШНЕЕ УПРАВЛЕНИЕ ОТКЛЮЧЕНО" FontSize="16">
+                <se:VisualBox.VisualStateCollection>
+                    <se:VisualBoxStateItem Text="ВНЕШНЕЕ УПРАВЛЕНИЕ ВКЛЮЧЕНО">
+                        <se:VisualBoxStateItem.Value>
+                            <hmi:Bind Path="Tags.Node[view.intellect].Items[vkl_vneshnaya_dr].Value">
+                                <hmi:Bind.FallbackValue>
+                                    <System:Boolean>False</System:Boolean>
+                                </hmi:Bind.FallbackValue>
+                            </hmi:Bind>
+                        </se:VisualBoxStateItem.Value>
+                    </se:VisualBoxStateItem>
+                </se:VisualBox.VisualStateCollection>
+            </se:VisualBox>-->
+
+
+            <updated:StatusText Margin="0,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="НАЖАТА АВАРИЙНАЯ КНОПКА ОТКЛЮЧЕНИЯ" FontSize="16" TextAlignment="Center" VerticalAlignment="Top" Grid.ColumnSpan="2">
+                <updated:StatusText.MessageNode>
+                    <hmi:HmiNodeDescriptor Comment="vneshnaya_systema_status_dr_ext" ItemType="Message" Path="vneshnaya_systema_status_dr_ext"/>
+                </updated:StatusText.MessageNode>
+                <updated:StatusText.MessageID>
+                    <hmi:SeBinding  Path="Tags.Node[view.intellect].Items[status_dr_ext].Value">
+                        <hmi:SeBinding.FallbackValue>
+                            <system:Int32>0</system:Int32>
+                        </hmi:SeBinding.FallbackValue>
+                    </hmi:SeBinding>
+                </updated:StatusText.MessageID>
+            </updated:StatusText>
+
+        </Grid>
+
+    </Grid>
+</UserControl>

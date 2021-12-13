@@ -1,0 +1,128 @@
+﻿311020
+8
+lang|RU|0 (:2 ) Включен пускатель 380КМ1 двигателя вентилятора обдува лебедки МЛ1-МВ
+lang|EN|0 (:2 ) Circuit breaker rectifier QF1 on
+311020
+9
+lang|RU|1 (:3 ) Перегрев шкафа активных клеммников лебедки АКЛ (сигнал датчика ВК2)
+lang|EN|1 (:3 ) Circuit breaker 42QF1 on
+311020
+10
+lang|RU|2 (:4 ) Включен пускатель 382К1 обогрева двигателя лебедки МЛ1-ЕК
+lang|EN|2 (:4 ) Emergency control circuit (Emergency STOP SB2 in VFD by relay K21)
+311020
+11
+lang|RU|3 (:5 ) Включен пускатель 383К1 обогрева двигателя лебедки МЛ2-ЕК
+lang|EN|3 (:5 ) Emergency control circuit (Emergency STOP SB3 in VFD by relay K22)
+311020
+12
+lang|RU|4 (:6 ) Включен пускатель 384КМ1 двигателя насоса смазки лебедки
+lang|EN|4 (:6 ) Emergency control circuit (Fire alarm in VFD by relay K23)
+311020
+13
+lang|RU|5 (:7 ) Взведен "следящий" противозатаскиватель SQП (реле К10)
+lang|EN|5 (:7 ) Emergency control circuit (Power supply by relay K24)
+311020
+14
+lang|RU|6 (:8 ) В блоке аппаратуры БА2 сработало реле SP "Аварийный тормоз лебедки расторможен" (реле К11)
+lang|EN|6 (:8 ) Emergency control circuit (50% gassed by relay K25)
+311020
+15
+lang|RU|7 (:9 ) Включен конечный выключатель SQС "Барабан на стопоре"
+lang|EN|7 (:9 ) Emergency control circuit (emergency stop SB12 driller's cabin by relay K19)
+311020
+0
+lang|RU|0 (:12 ) Включен конечный выключатель SQKЛ1 "Одет кожух …"
+lang|EN|0 (:12 ) Emergency control circuit (Temperature sensor in VFD by relay K26)
+311020
+1
+lang|RU|1 (:13 ) Включен конечный выключатель SQKЛ2 "Одет кожух …"
+lang|EN|1 (:13 ) Not low level in oil hydraulic unit
+311020
+2
+lang|RU|2 (:14 ) Включен конечный выключатель SQKЛ3 "Одет кожух …"
+lang|EN|2 (:14 ) Limit level in oil hydraulic unit
+311020
+3
+lang|RU|3 (:15 ) Включен конечный выключатель SQKЛ4 "Одет кожух …"
+lang|EN|3 (:15 ) Oil hydraulic unit filter F1 is dirty in oil hydraulic unit
+311020
+4
+lang|RU|4 (:16 ) Включен пускатель 381КМ1 двигателя вентилятора обдува лебедки МЛ2-МВ
+lang|EN|4 (:16 ) Oil hydraulic unit filter F2 is dirty in oil hydraulic unit
+311020
+5
+lang|RU|5 (:17 ) Включена зубчатая муфта SQДП1 дополнительного привода (реле К8)
+lang|EN|5 (:17 ) Spare
+311020
+6
+lang|RU|6 (:18 ) Отключена зубчатая муфта SQДП2 дополнительного привода (реле К9)
+lang|EN|6 (:18 ) Select CPU1
+311020
+7
+lang|RU|7 (:19 ) Подключен выносной пульт ВП (реле К18)
+lang|EN|7 (:19 ) Select CPU2
+311021
+8
+lang|RU|0 (:22 ) Резерв
+lang|EN|0 (:22 ) Circuit breaker QF1 on in MG-PSC (GEN1)
+311021
+9
+lang|RU|1 (:23 ) Зажат трубный зажим силового верхнего привода (реле 1200К5 шкафа ШМПК контейнера КТУ-СВП)
+lang|EN|1 (:23 ) Sensor air pressure MDW1 ON
+311021
+10
+lang|RU|2 (:24 ) Выдвинуты штропа силового верхнего привода (реле 1200К4 шкафа ШМПК контейнера КТУ-СВП)
+lang|EN|2 (:24 ) No excess of pressure in manifold (signal SMPD)
+311021
+11
+lang|RU|3 (:25 ) Закрыт КШЦ силового верхнего привода (реле 1200К3 шкафа ШМПК контейнера КТУ-СВП)
+lang|EN|3 (:25 ) Sensor air pressure MDW2 ON/
+311021
+12
+lang|RU|4 (:26 ) В шкафу АКЛ отжата кнопка SB1 "Аварийный стоп"
+lang|EN|4 (:26 ) Drawworks oil filter  is dirty
+311021
+13
+lang|RU|5 (:27 ) В кабине бурильщика отжата кнопка SB11 "Стоп/Деблокировка доп. привода"
+lang|EN|5 (:27 ) Circuit breaker QF2 on in MG-PSC (GEN2)
+311021
+14
+lang|RU|6 (:28 ) В кабине бурильщика отжата кнопка SB12 "Стоп/Деблокировка основной лебедки"
+lang|EN|6 (:28 ) Circuit breaker QF3 on in MG-PSC (GEN3)
+311021
+15
+lang|RU|7 (:29 ) Включен конечный выключатель SQKЛ5 "Одет кожух …"
+lang|EN|7 (:29 ) Circuit breaker QF4 on in MG-PSC (GEN4)
+311021
+0
+lang|RU|0 (:32 ) Включен конечный выключатель SQKЛ6 "Одет кожух …"
+lang|EN|0 (:32 ) Circuit breaker QF5 on in MG-PSC (690VAC)
+311021
+1
+lang|RU|1 (:33 ) Сигнал с командоконтроллера ПУ2-SA "Разрешение включения вспом. лебедки МЛВ2"
+lang|EN|1 (:33 ) Circuit breaker QF6 on in MG-PSC (400VAC)
+311021
+2
+lang|RU|2 (:34 ) Сигнал с командоконтроллера ПУ2-SA "Подъём вспом. лебедки МЛВ2 на 1-ой скорости"
+lang|EN|2 (:34 ) Circuit breaker QF7 on in MG-PSC (TopDrive)
+311021
+3
+lang|RU|3 (:35 ) Сигнал с командоконтроллера ПУ2-SA "Спуск вспом. лебедки МЛВ2 на 1-ой скорости"
+lang|EN|3 (:35 ) Circuit breaker QF8 on in MG-PSC (control circuits 1)
+311021
+4
+lang|RU|4 (:36 ) Сигнал с командоконтроллера ПУ2-SA "Движение вспом. лебедки МЛВ2 на 2-ой скорости"
+lang|EN|4 (:36 ) Circuit breaker QF9 on in MG-PSC (control circuits 2)
+311021
+5
+lang|RU|5 (:37 ) Сигнал с командоконтроллера ПУ2-SA "Движение вспом. лебедки МЛВ2 на 3-ой скорости"
+lang|EN|5 (:37 ) Overheat in VFD
+311021
+6
+lang|RU|6 (:38 ) Нажата кнопка поста управления ПУ2-SB "Пуск вспом. лебедки МЛВ2"
+lang|EN|6 (:38 ) High humidity in VFD
+311021
+7
+lang|RU|7 (:39 ) Отжата кнопка поста управления ПУ2-SB "Стоп вспом. лебедки МЛВ2"
+lang|EN|7 (:39 ) SQ3 PCP-ON

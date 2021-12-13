@@ -1,0 +1,134 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:se="http://schemas.monokot.com/se/" xmlns:Custom="http://schemas.monokot.com/hmi/" xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="NGO.Elements.Gauges.Small.Pump3.Pump3DavlenieNaVihode" 
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="100">
+    <Viewbox Stretch="Fill" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        <Grid>
+            <se:RadialGauge ShowScaleLabels="False" Style="{StaticResource PressureGauge}"  MajorTickLength="7" MajorTickCount="5" UseMajorTickCount="True" UseMinorTickCount="True" MinorTickCount="5" Height="100" Width="100" BringRangesToFront="False">
+                <se:RadialGauge.Ranges>
+                    <se:RadialRange>
+                        <se:RadialRange.Maximum>
+                            <Custom:SeBinding  Path="Tags.Node[view.main_drives.pump3.presets.davlenieNaVihode].Items[fault_min].Value">
+                                <Custom:SeBinding.FallbackValue>
+                                    <System:Double>20</System:Double>
+                                </Custom:SeBinding.FallbackValue>
+                            </Custom:SeBinding>
+                        </se:RadialRange.Maximum>
+                        <se:RadialRange.Minimum>
+                            <Custom:SeBinding  Path="Tags.Node[view.main_drives.pump3.presets.davlenieNaVihode].Items[min].Value">
+                                <Custom:SeBinding.FallbackValue>
+                                    <System:Double>0</System:Double>
+                                </Custom:SeBinding.FallbackValue>
+                            </Custom:SeBinding>
+                        </se:RadialRange.Minimum>
+                    </se:RadialRange>
+                    <se:RadialRange Fill="Yellow">
+                        <se:RadialRange.Maximum>
+                            <Custom:SeBinding  Path="Tags.Node[view.main_drives.pump3.presets.davlenieNaVihode].Items[alarm_min].Value">
+                                <Custom:SeBinding.FallbackValue>
+                                    <System:Double>20</System:Double>
+                                </Custom:SeBinding.FallbackValue>
+                            </Custom:SeBinding>
+                        </se:RadialRange.Maximum>
+                        <se:RadialRange.Minimum>
+                            <Custom:SeBinding  Path="Tags.Node[view.main_drives.pump3.presets.davlenieNaVihode].Items[fault_min].Value">
+                                <Custom:SeBinding.FallbackValue>
+                                    <System:Double>0</System:Double>
+                                </Custom:SeBinding.FallbackValue>
+                            </Custom:SeBinding>
+                        </se:RadialRange.Minimum>
+                    </se:RadialRange>
+                    <se:RadialRange Fill="LimeGreen">
+                        <se:RadialRange.Maximum>
+                            <Custom:SeBinding  Path="Tags.Node[view.main_drives.pump3.presets.davlenieNaVihode].Items[alarm_max].Value">
+                                <Custom:SeBinding.FallbackValue>
+                                    <System:Double>20</System:Double>
+                                </Custom:SeBinding.FallbackValue>
+                            </Custom:SeBinding>
+                        </se:RadialRange.Maximum>
+                        <se:RadialRange.Minimum>
+                            <Custom:SeBinding  Path="Tags.Node[view.main_drives.pump3.presets.davlenieNaVihode].Items[alarm_min].Value">
+                                <Custom:SeBinding.FallbackValue>
+                                    <System:Double>0</System:Double>
+                                </Custom:SeBinding.FallbackValue>
+                            </Custom:SeBinding>
+                        </se:RadialRange.Minimum>
+                    </se:RadialRange>
+                    <se:RadialRange Fill="Yellow">
+                        <se:RadialRange.Maximum>
+                            <Custom:SeBinding  Path="Tags.Node[view.main_drives.pump3.presets.davlenieNaVihode].Items[fault_max].Value">
+                                <Custom:SeBinding.FallbackValue>
+                                    <System:Double>20</System:Double>
+                                </Custom:SeBinding.FallbackValue>
+                            </Custom:SeBinding>
+                        </se:RadialRange.Maximum>
+                        <se:RadialRange.Minimum>
+                            <Custom:SeBinding  Path="Tags.Node[view.main_drives.pump3.presets.davlenieNaVihode].Items[alarm_max].Value">
+                                <Custom:SeBinding.FallbackValue>
+                                    <System:Double>0</System:Double>
+                                </Custom:SeBinding.FallbackValue>
+                            </Custom:SeBinding>
+                        </se:RadialRange.Minimum>
+                    </se:RadialRange>
+                    <se:RadialRange>
+                        <se:RadialRange.Maximum>
+                            <Custom:SeBinding  Path="Tags.Node[view.main_drives.pump3.presets.davlenieNaVihode].Items[max].Value">
+                                <Custom:SeBinding.FallbackValue>
+                                    <System:Double>20</System:Double>
+                                </Custom:SeBinding.FallbackValue>
+                            </Custom:SeBinding>
+                        </se:RadialRange.Maximum>
+                        <se:RadialRange.Minimum>
+                            <Custom:SeBinding  Path="Tags.Node[view.main_drives.pump3.presets.davlenieNaVihode].Items[fault_max].Value">
+                                <Custom:SeBinding.FallbackValue>
+                                    <System:Double>0</System:Double>
+                                </Custom:SeBinding.FallbackValue>
+                            </Custom:SeBinding>
+                        </se:RadialRange.Minimum>
+                    </se:RadialRange>
+                </se:RadialGauge.Ranges>
+                <se:RadialGauge.Minimum>
+                    <Custom:SeBinding  Path="Tags.Node[view.main_drives.pump3.presets.davlenieNaVihode].Items[min].Value">
+                        <Custom:SeBinding.FallbackValue>
+                            <System:Double>0</System:Double>
+                        </Custom:SeBinding.FallbackValue>
+                    </Custom:SeBinding>
+                </se:RadialGauge.Minimum>
+                <se:RadialGauge.Maximum>
+                    <Custom:SeBinding  Path="Tags.Node[view.main_drives.pump3.presets.davlenieNaVihode].Items[max].Value">
+                        <Custom:SeBinding.FallbackValue>
+                            <System:Double>100</System:Double>
+                        </Custom:SeBinding.FallbackValue>
+                    </Custom:SeBinding>
+                </se:RadialGauge.Maximum>
+                <se:RadialGauge.Arrows>
+                    <se:RadialArrow BorderBrush="{x:Null}" Background="Black" Height="60" Width="8" Style="{StaticResource PressureRadialArrow}">
+                        <se:RadialArrow.Value>
+                            <Custom:SeBinding  Path="Tags.Node[view.main_drives.pump1].Items[davlenie_na_vihode].Value">
+                                <Custom:SeBinding.FallbackValue>
+                                    <System:Double>0</System:Double>
+                                </Custom:SeBinding.FallbackValue>
+                            </Custom:SeBinding>
+                        </se:RadialArrow.Value>
+                    </se:RadialArrow>
+                </se:RadialGauge.Arrows>
+
+            </se:RadialGauge>
+            <Label Content="{Custom:Bind FallbackValue=0.00, Path=Tags.Node[view.main_drives.pump3].Items[davlenie_na_vihode].Value}" VerticalAlignment="Bottom" Margin="0,0,0,18" HorizontalContentAlignment="Center" ContentStringFormat="{}{0:0.##}" FontSize="18"/>
+            <TextBlock TextWrapping="Wrap" VerticalAlignment="Bottom" Margin="0,0,0,8" TextAlignment="Center"><Run Text="МП"/><Run Text="а"/></TextBlock>
+            <Image HorizontalAlignment="Left" Height="12" Margin="27,31,0,0" VerticalAlignment="Top" Width="12" Source="/NGO.Elements;component/led_danger.png">
+                <Image.Visibility>
+                    <Custom:SeBinding  Path="Tags.Node[view.main_drives.pump3.presets.davlenieNaVihode].Items[OFF].Value">
+                        <Custom:SeBinding.FallbackValue>
+                            <Visibility>Visible</Visibility>
+                        </Custom:SeBinding.FallbackValue>
+                    </Custom:SeBinding>
+                </Image.Visibility>
+            </Image>
+        </Grid>
+    </Viewbox>
+</UserControl>

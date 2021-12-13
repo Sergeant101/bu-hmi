@@ -1,0 +1,164 @@
+﻿<UserControl x:Class="NGO.Elements.Gauges.GaugeWeight"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             d:DesignHeight="705" d:DesignWidth="705" MinHeight="705" MaxHeight="705" MinWidth="705" MaxWidth="705"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:hmi="http://schemas.monokot.com/hmi/"
+             xmlns:se="http://schemas.monokot.com/se/">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Monokot.ScadaExtension.Wpf;component/Themes/Controls/IndustrialStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    
+    <Grid>
+        <Image Stretch="Fill" Width="705" Source="/NGO.Elements;component/Content/Gauges/Background/todco_gauge_%28un_weigth_scale%292.png" Margin="0,-5" />
+        <TextBlock FontFamily="Tahoma" FontSize="24" FontWeight="Normal" Foreground="White" Height="34" HorizontalAlignment="Center" Text="ВЕС" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" Margin="288,390,288,0" />
+        <TextBlock FontFamily="Tahoma" FontSize="20" FontWeight="Normal" Foreground="White" Height="34" HorizontalAlignment="Center" Text="тонн" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" Margin="288,462,288,0" />
+        <TextBlock FontFamily="Tahoma" FontSize="28" FontWeight="Normal" Foreground="#FFFFEA00" Height="34" HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" Margin="288,520,288,0" Text="{hmi:Bind FallbackValue=0.0, Path=Tags.Node[view.main_drives.drawwork].Items[drillometer_weight].Value}"></TextBlock>
+
+        <se:RadialGauge Margin="150,150,150,150" BringRangesToFront="False" MajorTickCost="50" MinorTickCost="10" FontSize="18" FontFamily="Tahoma" FontWeight="Bold" EndAngle="-70" StartAngle="250" MajorTickBrush="#FFFFEA00" Foreground="#FFFFEA00" Clockwise="True" MinorTickBrush="#FFFFEA00" MajorTickThickness="7" MajorTickLength="20" ShowStick="False" MinorTickThickness="7" MinorTickLength="10" d:IsLocked="True">
+            <se:RadialGauge.Ranges>
+                <se:RadialRange>
+                    <se:RadialRange.Maximum>
+                        <hmi:SeBinding  Path="Tags.Node[view.msab.presets.datchikVesa].Items[fault_min].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <sys:Double>20</sys:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:RadialRange.Maximum>
+                    <se:RadialRange.Minimum>
+                        <hmi:SeBinding  Path="Tags.Node[view.msab.presets.datchikVesa].Items[min].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <sys:Double>0</sys:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:RadialRange.Minimum>
+                </se:RadialRange>
+                <se:RadialRange Fill="Yellow">
+                    <se:RadialRange.Maximum>
+                        <hmi:SeBinding  Path="Tags.Node[view.msab.presets.datchikVesa].Items[alarm_min].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <sys:Double>20</sys:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:RadialRange.Maximum>
+                    <se:RadialRange.Minimum>
+                        <hmi:SeBinding  Path="Tags.Node[view.msab.presets.datchikVesa].Items[fault_min].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <sys:Double>0</sys:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:RadialRange.Minimum>
+                </se:RadialRange>
+                <se:RadialRange Fill="LimeGreen">
+                    <se:RadialRange.Maximum>
+                        <hmi:SeBinding  Path="Tags.Node[view.msab.presets.datchikVesa].Items[alarm_max].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <sys:Double>20</sys:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:RadialRange.Maximum>
+                    <se:RadialRange.Minimum>
+                        <hmi:SeBinding  Path="Tags.Node[view.msab.presets.datchikVesa].Items[alarm_min].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <sys:Double>0</sys:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:RadialRange.Minimum>
+                </se:RadialRange>
+                <se:RadialRange Fill="Yellow">
+                    <se:RadialRange.Maximum>
+                        <hmi:SeBinding  Path="Tags.Node[view.msab.presets.datchikVesa].Items[fault_max].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <sys:Double>20</sys:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:RadialRange.Maximum>
+                    <se:RadialRange.Minimum>
+                        <hmi:SeBinding  Path="Tags.Node[view.msab.presets.datchikVesa].Items[alarm_max].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <sys:Double>0</sys:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:RadialRange.Minimum>
+                </se:RadialRange>
+                <se:RadialRange>
+                    <se:RadialRange.Maximum>
+                        <hmi:SeBinding  Path="Tags.Node[view.msab.presets.datchikVesa].Items[max].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <sys:Double>20</sys:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:RadialRange.Maximum>
+                    <se:RadialRange.Minimum>
+                        <hmi:SeBinding  Path="Tags.Node[view.msab.presets.datchikVesa].Items[fault_max].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <sys:Double>0</sys:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:RadialRange.Minimum>
+                </se:RadialRange>
+            </se:RadialGauge.Ranges>
+            <se:RadialGauge.Minimum>
+                <hmi:SeBinding  Path="Tags.Node[view.msab.presets.datchikVesa].Items[min].Value">
+                    <hmi:SeBinding.FallbackValue>
+                        <sys:Double>0</sys:Double>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </se:RadialGauge.Minimum>
+            <se:RadialGauge.Maximum>
+                <hmi:SeBinding  Path="Tags.Node[view.msab.presets.datchikVesa].Items[max].Value">
+                    <hmi:SeBinding.FallbackValue>
+                        <sys:Double>100</sys:Double>
+                    </hmi:SeBinding.FallbackValue>
+                </hmi:SeBinding>
+            </se:RadialGauge.Maximum>
+            <se:RadialGauge.Arrows>
+                <se:RadialArrow Style="{StaticResource DrillRadialArrow}" Height="280" Width="35">
+                    <se:RadialArrow.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork].Items[drillometer_weight].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <sys:Double>150</sys:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:RadialArrow.Value>
+                </se:RadialArrow>
+            </se:RadialGauge.Arrows>
+        </se:RadialGauge>
+
+        <se:RadialGauge Name="rs1" Margin="50" MajorTickBrush="White" ShowStick="False" MinorTickBrush="White" MajorTickThickness="10" MajorTickLength="30" EndAngle="110" StartAngle="430" Maximum="40" Minimum="-10" MajorTickCost="5" MinorTickCost="1" MinorTickThickness="10" MinorTickLength="10" Foreground="White" FontSize="20" Clockwise="False" FontFamily="Tahoma" d:IsLocked="True">
+            <se:RadialGauge.Arrows>
+                <se:RadialArrow Style="{StaticResource NeedleRadialArrowWithTail}" Height="350" Width="80" Background="Red" RenderTransformOrigin="0.5,0.86">
+                    <se:RadialArrow.Value>
+                        <hmi:SeBinding  Path="Tags.Node[view.main_drives.drawwork].Items[drillometer_workbit_real].Value">
+                            <hmi:SeBinding.FallbackValue>
+                                <sys:Double>70</sys:Double>
+                            </hmi:SeBinding.FallbackValue>
+                        </hmi:SeBinding>
+                    </se:RadialArrow.Value>
+                </se:RadialArrow>
+            </se:RadialGauge.Arrows>
+        </se:RadialGauge>
+        <TextBlock Height="34" HorizontalAlignment="Left" Margin="290,41,0,0" Name="textBlock1" Text="НАГРУЗКА НА ДОЛОТО, ТОНН" VerticalAlignment="Top" Width="128" Foreground="White" FontSize="13" TextWrapping="Wrap" TextAlignment="Center" FontWeight="Normal" FontFamily="Tahoma" />
+        <TextBlock FontFamily="Tahoma" FontSize="13" FontWeight="Normal" Foreground="White" Height="23" HorizontalAlignment="Left" Margin="288,109,0,0" Name="textBlock2" Text="задание" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="56" />
+        <TextBlock FontFamily="Tahoma" FontSize="13" FontWeight="Normal" Foreground="White" Height="23" HorizontalAlignment="Left" Margin="362,109,0,0" Text="факт." TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="56" />
+        <Rectangle Fill="White" Margin="288,75,361,596" RadiusX="5" RadiusY="5"/>
+        <TextBlock FontFamily="Tahoma" FontSize="26" FontWeight="Normal" Foreground="Black" Height="34" HorizontalAlignment="Center" Margin="288,75,361,596" Name="textBlock3" Text="{hmi:Bind FallbackValue=40.0, Path=Tags.Node[view.main_drives.drawwork].Items[drillometer_workbit_ref].Value}" TextAlignment="Center" TextWrapping="NoWrap" VerticalAlignment="Center" Width="56" />
+
+
+       
+
+
+        <Image Stretch="None" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/NGO.Elements;component/Content/Gauges/Background/red%20cap%20%28todco%29.png" Margin="332,331,333,334" />
+
+        <Rectangle Fill="White" Margin="362,75,287,596" RadiusX="5" RadiusY="5"/>
+        <TextBlock FontFamily="Tahoma" FontSize="26" FontWeight="Normal" Foreground="Black" Height="34" HorizontalAlignment="Center" Margin="362,75,287,596" x:Name="textBlock3_Copy" Text="{hmi:Bind FallbackValue=40.0, Path=Tags.Node[view.main_drives.drawwork].Items[drillometer_workbit_real].Value}" TextAlignment="Center" TextWrapping="NoWrap" VerticalAlignment="Center" Width="56" />
+    </Grid>
+</UserControl>

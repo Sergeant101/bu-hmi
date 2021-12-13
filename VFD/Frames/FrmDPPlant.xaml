@@ -1,0 +1,126 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:se="http://schemas.monokot.com/se/"
+             x:Class="VFD.Frames.FrmDPPlant" 
+             mc:Ignorable="d" 
+             d:DesignHeight="630" d:DesignWidth="1020">
+    <Grid>
+        <Grid HorizontalAlignment="Left" Height="490" Margin="20,120,0,0" VerticalAlignment="Top" Width="235">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="55*"/>
+                <RowDefinition Height="35*"/>
+                <RowDefinition Height="35*"/>
+                <RowDefinition Height="110*"/>
+                <RowDefinition Height="35*"/>
+                <RowDefinition Height="60*"/>
+                <RowDefinition Height="60*"/>
+                <RowDefinition Height="60*"/>
+            </Grid.RowDefinitions>
+            <Rectangle Fill="#FF373C57" Margin="0" Stroke="Black" RadiusX="10" RadiusY="10" Grid.RowSpan="8"/>
+            <TextBlock HorizontalAlignment="Center" Margin="57,20,57,18" TextWrapping="Wrap" Text="ГЕНЕРАТОР 1" VerticalAlignment="Center" FontSize="20" Width="121" Foreground="#FFD8B05E"/>
+            <se:StatusBox HorizontalAlignment="Center" Margin="0" Grid.Row="1" VerticalAlignment="Center" Height="30" Width="200" CornerRadius="5" Background="White" NormalText="" DefaultText="ОТКЛЮЧЕН" DangerText="АВАРИЯ" FontSize="22" FineText="ВКЛЮЧЕН"/>
+            <se:StatusBox HorizontalAlignment="Center" Margin="0" Grid.Row="2" VerticalAlignment="Center" Height="30" Width="200" CornerRadius="5" Background="White" NormalText="" DefaultText="НЕТ ПЕРЕГРЕВА" DangerText="ПЕРЕГРЕВ" FontSize="22" FineText="НЕТ ПЕРЕГРЕВА"/>
+            <se:StatusBox HorizontalAlignment="Center" Margin="0" Grid.Row="3" VerticalAlignment="Center" Height="95" Width="200" CornerRadius="5" Background="White" NormalText="" DefaultText="УРОВЕНЬ ОХЛАЖДАЮЩЕЙ ЖИДКОСТИ" DangerText="УРОВЕНЬ ОХЛАЖДАЮЩЕЙ ЖИДКОСТИ" FontSize="22" FineText="УРОВЕНЬ ОХЛАЖДАЮЩЕЙ ЖИДКОСТИ"/>
+            <se:StatusBox HorizontalAlignment="Center" Margin="0" Grid.Row="4" VerticalAlignment="Center" Height="30" CornerRadius="5" DangerText="УРОВЕНЬ МАСЛА" DefaultText="УРОВЕНЬ МАСЛА" FineText="УРОВЕНЬ МАСЛА" FontSize="22" Background="White"/>
+            <se:ValueDisplay HorizontalAlignment="Center" Margin="0" Grid.Row="5" VerticalAlignment="Center" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" LabelForeground="DarkBlue" Label="А" Header="Ток" Width="200" BorderBrush="Black" BorderThickness="1" CornerRadius="5"/>
+            <se:ValueDisplay HorizontalAlignment="Center" Margin="0" Grid.Row="6" VerticalAlignment="Center" Width="200" HeaderBackground="Black" LabelForeground="DarkBlue" ValueBackground="White" HeaderForeground="White" Header="Мощность" Label="кВт" ValueForeground="Black" BorderBrush="Black" BorderThickness="1" CornerRadius="5"/>
+            <se:ValueDisplay HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="200" Grid.Row="7" ValueBackground="White" ValueForeground="Black" LabelForeground="DarkBlue" HeaderBackground="Black" Label="отн. ед." Header="Коэф. мощности" BorderBrush="Black" BorderThickness="1" CornerRadius="5"/>
+
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="490" Margin="265,120,0,0" VerticalAlignment="Top" Width="235">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="55*"/>
+                <RowDefinition Height="35*"/>
+                <RowDefinition Height="35*"/>
+                <RowDefinition Height="110*"/>
+                <RowDefinition Height="35*"/>
+                <RowDefinition Height="60*"/>
+                <RowDefinition Height="60*"/>
+                <RowDefinition Height="60*"/>
+            </Grid.RowDefinitions>
+            <Rectangle Fill="#FF373C57" Margin="0" Stroke="Black" RadiusX="10" RadiusY="10" Grid.RowSpan="8"/>
+            <TextBlock HorizontalAlignment="Center" Margin="57,20,57,18" TextWrapping="Wrap" Text="ГЕНЕРАТОР 2" VerticalAlignment="Center" FontSize="20" Width="121" Foreground="#FFD8B05E"/>
+            <se:StatusBox HorizontalAlignment="Center" Margin="0" Grid.Row="1" VerticalAlignment="Center" Height="30" Width="200" CornerRadius="5" Background="White" NormalText="" DefaultText="ОТКЛЮЧЕН" DangerText="АВАРИЯ" FontSize="22" FineText="ВКЛЮЧЕН"/>
+            <se:StatusBox HorizontalAlignment="Center" Margin="0" Grid.Row="2" VerticalAlignment="Center" Height="30" Width="200" CornerRadius="5" Background="White" NormalText="" DefaultText="НЕТ ПЕРЕГРЕВА" DangerText="ПЕРЕГРЕВ" FontSize="22" FineText="НЕТ ПЕРЕГРЕВА"/>
+            <se:StatusBox HorizontalAlignment="Center" Margin="0" Grid.Row="3" VerticalAlignment="Center" Height="95" Width="200" CornerRadius="5" Background="White" NormalText="" DefaultText="УРОВЕНЬ ОХЛАЖДАЮЩЕЙ ЖИДКОСТИ" DangerText="УРОВЕНЬ ОХЛАЖДАЮЩЕЙ ЖИДКОСТИ" FontSize="22" FineText="УРОВЕНЬ ОХЛАЖДАЮЩЕЙ ЖИДКОСТИ"/>
+            <se:StatusBox HorizontalAlignment="Center" Margin="0" Grid.Row="4" VerticalAlignment="Center" Height="30" CornerRadius="5" DangerText="УРОВЕНЬ МАСЛА" DefaultText="УРОВЕНЬ МАСЛА" FineText="УРОВЕНЬ МАСЛА" FontSize="22" Background="White"/>
+            <se:ValueDisplay HorizontalAlignment="Center" Margin="0" Grid.Row="5" VerticalAlignment="Center" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" LabelForeground="DarkBlue" Label="А" Header="Ток" Width="200" BorderBrush="Black" BorderThickness="1" CornerRadius="5"/>
+            <se:ValueDisplay HorizontalAlignment="Center" Margin="0" Grid.Row="6" VerticalAlignment="Center" Width="200" HeaderBackground="Black" LabelForeground="DarkBlue" ValueBackground="White" HeaderForeground="White" Header="Мощность" Label="кВт" ValueForeground="Black" BorderBrush="Black" BorderThickness="1" CornerRadius="5"/>
+            <se:ValueDisplay HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="200" Grid.Row="7" ValueBackground="White" ValueForeground="Black" LabelForeground="DarkBlue" HeaderBackground="Black" Label="отн. ед." Header="Коэф. мощности" BorderBrush="Black" BorderThickness="1" CornerRadius="5"/>
+
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="490" Margin="510,120,0,0" VerticalAlignment="Top" Width="235">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="55*"/>
+                <RowDefinition Height="35*"/>
+                <RowDefinition Height="35*"/>
+                <RowDefinition Height="110*"/>
+                <RowDefinition Height="35*"/>
+                <RowDefinition Height="60*"/>
+                <RowDefinition Height="60*"/>
+                <RowDefinition Height="60*"/>
+            </Grid.RowDefinitions>
+            <Rectangle Fill="#FF373C57" Margin="0" Stroke="Black" RadiusX="10" RadiusY="10" Grid.RowSpan="8"/>
+            <TextBlock HorizontalAlignment="Center" Margin="57,20,57,18" TextWrapping="Wrap" Text="ГЕНЕРАТОР 3" VerticalAlignment="Center" FontSize="20" Width="121" Foreground="#FFD8B05E"/>
+            <se:StatusBox HorizontalAlignment="Center" Margin="0" Grid.Row="1" VerticalAlignment="Center" Height="30" Width="200" CornerRadius="5" Background="White" NormalText="" DefaultText="ОТКЛЮЧЕН" DangerText="АВАРИЯ" FontSize="22" FineText="ВКЛЮЧЕН"/>
+            <se:StatusBox HorizontalAlignment="Center" Margin="0" Grid.Row="2" VerticalAlignment="Center" Height="30" Width="200" CornerRadius="5" Background="White" NormalText="" DefaultText="НЕТ ПЕРЕГРЕВА" DangerText="ПЕРЕГРЕВ" FontSize="22" FineText="НЕТ ПЕРЕГРЕВА"/>
+            <se:StatusBox HorizontalAlignment="Center" Margin="0" Grid.Row="3" VerticalAlignment="Center" Height="95" Width="200" CornerRadius="5" Background="White" NormalText="" DefaultText="УРОВЕНЬ ОХЛАЖДАЮЩЕЙ ЖИДКОСТИ" DangerText="УРОВЕНЬ ОХЛАЖДАЮЩЕЙ ЖИДКОСТИ" FontSize="22" FineText="УРОВЕНЬ ОХЛАЖДАЮЩЕЙ ЖИДКОСТИ"/>
+            <se:StatusBox HorizontalAlignment="Center" Margin="0" Grid.Row="4" VerticalAlignment="Center" Height="30" CornerRadius="5" DangerText="УРОВЕНЬ МАСЛА" DefaultText="УРОВЕНЬ МАСЛА" FineText="УРОВЕНЬ МАСЛА" FontSize="22" Background="White"/>
+            <se:ValueDisplay HorizontalAlignment="Center" Margin="0" Grid.Row="5" VerticalAlignment="Center" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" LabelForeground="DarkBlue" Label="А" Header="Ток" Width="200" BorderBrush="Black" BorderThickness="1" CornerRadius="5"/>
+            <se:ValueDisplay HorizontalAlignment="Center" Margin="0" Grid.Row="6" VerticalAlignment="Center" Width="200" HeaderBackground="Black" LabelForeground="DarkBlue" ValueBackground="White" HeaderForeground="White" Header="Мощность" Label="кВт" ValueForeground="Black" BorderBrush="Black" BorderThickness="1" CornerRadius="5"/>
+            <se:ValueDisplay HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="200" Grid.Row="7" ValueBackground="White" ValueForeground="Black" LabelForeground="DarkBlue" HeaderBackground="Black" Label="отн. ед." Header="Коэф. мощности" BorderBrush="Black" BorderThickness="1" CornerRadius="5"/>
+
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="490" Margin="755,120,0,0" VerticalAlignment="Top" Width="235">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="55*"/>
+                <RowDefinition Height="35*"/>
+                <RowDefinition Height="35*"/>
+                <RowDefinition Height="110*"/>
+                <RowDefinition Height="35*"/>
+                <RowDefinition Height="60*"/>
+                <RowDefinition Height="60*"/>
+                <RowDefinition Height="60*"/>
+            </Grid.RowDefinitions>
+            <Rectangle Fill="#FF373C57" Margin="0" Stroke="Black" RadiusX="10" RadiusY="10" Grid.RowSpan="8"/>
+            <TextBlock HorizontalAlignment="Center" Margin="57,20,57,18" TextWrapping="Wrap" Text="ГЕНЕРАТОР 4" VerticalAlignment="Center" FontSize="20" Width="121" Foreground="#FFD8B05E"/>
+            <se:StatusBox HorizontalAlignment="Center" Margin="0" Grid.Row="1" VerticalAlignment="Center" Height="30" Width="200" CornerRadius="5" Background="White" NormalText="" DefaultText="ОТКЛЮЧЕН" DangerText="АВАРИЯ" FontSize="22" FineText="ВКЛЮЧЕН"/>
+            <se:StatusBox HorizontalAlignment="Center" Margin="0" Grid.Row="2" VerticalAlignment="Center" Height="30" Width="200" CornerRadius="5" Background="White" NormalText="" DefaultText="НЕТ ПЕРЕГРЕВА" DangerText="ПЕРЕГРЕВ" FontSize="22" FineText="НЕТ ПЕРЕГРЕВА"/>
+            <se:StatusBox HorizontalAlignment="Center" Margin="0" Grid.Row="3" VerticalAlignment="Center" Height="95" Width="200" CornerRadius="5" Background="White" NormalText="" DefaultText="УРОВЕНЬ ОХЛАЖДАЮЩЕЙ ЖИДКОСТИ" DangerText="УРОВЕНЬ ОХЛАЖДАЮЩЕЙ ЖИДКОСТИ" FontSize="22" FineText="УРОВЕНЬ ОХЛАЖДАЮЩЕЙ ЖИДКОСТИ"/>
+            <se:StatusBox HorizontalAlignment="Center" Margin="0" Grid.Row="4" VerticalAlignment="Center" Height="30" CornerRadius="5" DangerText="УРОВЕНЬ МАСЛА" DefaultText="УРОВЕНЬ МАСЛА" FineText="УРОВЕНЬ МАСЛА" FontSize="22" Background="White"/>
+            <se:ValueDisplay HorizontalAlignment="Center" Margin="0" Grid.Row="5" VerticalAlignment="Center" HeaderBackground="Black" ValueBackground="White" ValueForeground="Black" HeaderForeground="White" LabelForeground="DarkBlue" Label="А" Header="Ток" Width="200" BorderBrush="Black" BorderThickness="1" CornerRadius="5"/>
+            <se:ValueDisplay HorizontalAlignment="Center" Margin="0" Grid.Row="6" VerticalAlignment="Center" Width="200" HeaderBackground="Black" LabelForeground="DarkBlue" ValueBackground="White" HeaderForeground="White" Header="Мощность" Label="кВт" ValueForeground="Black" BorderBrush="Black" BorderThickness="1" CornerRadius="5"/>
+            <se:ValueDisplay HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="200" Grid.Row="7" ValueBackground="White" ValueForeground="Black" LabelForeground="DarkBlue" HeaderBackground="Black" Label="отн. ед." Header="Коэф. мощности" BorderBrush="Black" BorderThickness="1" CornerRadius="5"/>
+
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="90" Margin="20,10,0,0" VerticalAlignment="Top" Width="970">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="1.2*"/>
+                <ColumnDefinition Width="1.2*"/>
+                <ColumnDefinition Width="1.2*"/>
+                <ColumnDefinition Width="1.2*"/>
+            </Grid.ColumnDefinitions>
+            <Rectangle Fill="#FF373C57" Margin="-2" RadiusY="10" RadiusX="10" Stroke="Black" Grid.ColumnSpan="9" Grid.RowSpan="2"/>
+            <se:ValueDisplay Grid.Column="6" HorizontalAlignment="Center" Height="85" Margin="2" Grid.RowSpan="2" VerticalAlignment="Center" Width="140" HeaderBackground="Black" Label="шт." Header="Число дизелей" ValueBackground="White" ValueForeground="Black" LabelForeground="DarkBlue" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" CornerRadius="5" BorderBrush="Black" BorderThickness="1"/>
+            <se:ValueDisplay Grid.Column="5" HorizontalAlignment="Center" Margin="2" VerticalAlignment="Center" HeaderBackground="Black" Label="кВт" Header="Общая мощность" ValueBackground="White" ValueForeground="Black" LabelForeground="DarkBlue" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="85" Grid.RowSpan="2" CornerRadius="5" BorderBrush="Black" BorderThickness="1" Width="140"/>
+            <se:ValueDisplay Grid.Column="4" HorizontalAlignment="Center" Margin="2" VerticalAlignment="Center" HeaderBackground="Black" Label="А" Header="Общий ток" ValueBackground="White" ValueForeground="Black" LabelForeground="DarkBlue" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="85" Grid.RowSpan="2" Width="140" CornerRadius="5" BorderBrush="Black" BorderThickness="1"/>
+            <se:StatusBox Grid.Column="2" HorizontalAlignment="Center" Margin="0" Grid.RowSpan="2" VerticalAlignment="Center" Width="118" CornerRadius="5" DefaultText="АВАР. ДЭС&#xD;&#xA;ВКЛ" FineText="АВАР. ДЭС&#xD;&#xA;ВКЛ" NormalText="АВАР. ДЭС&#xD;&#xA;ОТКЛ" FontSize="22" Background="White" Height="86"/>
+            <se:ValueDisplay Grid.Column="3" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" HeaderBackground="Black" Label="В" Header="Общее напряжение" ValueBackground="White" ValueForeground="Black" LabelForeground="DarkBlue" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="86" Grid.RowSpan="2" CornerRadius="5" BorderBrush="Black" BorderThickness="1"/>
+            <se:StatusBox Grid.Column="1" HorizontalAlignment="Center" Height="40" Margin="0" VerticalAlignment="Center" Width="115" CornerRadius="5" NormalText="БАЛАНС ТОКА" FineText="БАЛАНС ТОКА" DefaultText="БАЛАНС ТОКА" DangerText="НЕТ БАЛАНСА ТОКА" Background="White"/>
+            <se:StatusBox Grid.Column="1" HorizontalAlignment="Center" Height="40" Margin="0" Grid.Row="1" VerticalAlignment="Center" Width="115" CornerRadius="5" DefaultText="БАЛАНС МОЩНОСТИ" FineText="БАЛАНС МОЩНОСТИ" DangerText="НЕТ БАЛАНСА МОЩНОСТИ" Background="White"/>
+            <se:StatusBox HorizontalAlignment="Center" Height="40" Margin="0" VerticalAlignment="Center" Width="115" CornerRadius="5" DefaultText="НЕТ ПЕРЕГРУЗА" FineText="НЕТ ПЕРЕГРУЗА" DangerText="ПЕРЕГРУЗ" Background="White"/>
+            <se:StatusBox HorizontalAlignment="Center" Height="40" Margin="0" Grid.Row="1" VerticalAlignment="Center" Width="115" CornerRadius="5" DefaultText="НЕТ 95% ОТ ПЕРЕГРУЗА" FineText="НЕТ 95% ОТ ПЕРЕГРУЗА" DangerText="95% ОТ ПЕРЕГРУЗА" Background="White"/>
+        </Grid>
+
+    </Grid>
+</UserControl>

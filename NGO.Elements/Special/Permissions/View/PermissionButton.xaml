@@ -1,0 +1,42 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:Converters="clr-namespace:Monokot.ScadaExtension.Wpf.Converters;assembly=Monokot.ScadaExtension.Wpf"
+             xmlns:converters="http://schemas.monokot.com/hmi/"
+             xmlns:ngo="clr-namespace:NGO.Elements.Special.Permissions.Model"
+             xmlns:buttons="clr-namespace:Monokot.ScadaExtension.Wpf.Controls.Buttons;assembly=Monokot.ScadaExtension.Wpf"
+             x:Class="NGO.Elements.Special.Permissions.View.PermissionButton"
+             mc:Ignorable="d" 
+             x:Name="_UC"
+             d:DesignHeight="70" d:DesignWidth="230">
+    <Grid>
+        <!--<Button Content="{Binding logoutText, Converter={StaticResource BooleanToInverseVisibility}, ElementName=_UC}" Command="{Binding logout}" Visibility="{Binding isLogged, Converter={StaticResource BooleanToInverseVisibility}}" />-->
+        <!--<Button Content="{Binding loginText, ElementName=_UC}" Click="Button_Click" Visibility="{Binding isLogged, Converter={StaticResource BooleanToVisibilityConverter}}" />-->
+        <buttons:HmiButton Style="{StaticResource MetalBorderButton}" Content="{Binding logoutText, ElementName=_UC}" Width="auto" Height="auto" PreviewMouseLeftButtonUp="Logout_click" Margin="0,0,0,0">
+            <buttons:HmiButton.Visibility>
+                <Binding FallbackValue="Hidden" Source="{x:Static ngo:NgoAuth.auth}" Path="isAuth">
+                    <Binding.Converter>
+                        <BooleanToVisibilityConverter/>
+                    </Binding.Converter>
+                </Binding>
+            </buttons:HmiButton.Visibility>
+            </buttons:HmiButton>
+        <buttons:HmiButton 
+            Style="{StaticResource MetalBorderButton}"
+            Content="{Binding loginText, ElementName=_UC}"  
+                           Width="auto" 
+                           Height="auto" 
+                           PreviewMouseLeftButtonUp="Button_Click" 
+                           Margin="0,0,0,0">
+            <buttons:HmiButton.Visibility>
+                <Binding FallbackValue="Visible" Source="{x:Static ngo:NgoAuth.auth}" Path="isAuth">
+                    <Binding.Converter>
+                        <converters:BooleanToInverseVisibility/>
+                    </Binding.Converter>
+                </Binding>
+            </buttons:HmiButton.Visibility>
+        </buttons:HmiButton>
+    </Grid>
+</UserControl>

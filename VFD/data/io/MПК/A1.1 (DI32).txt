@@ -1,0 +1,128 @@
+311004
+8
+lang|RU|0 (:2 ) Авария приточного вентилятора
+lang|EN|0 (:2 ) Spare
+311004
+9
+lang|RU|1 (:3 ) Авария вытяжного вентилятора
+lang|EN|1 (:3 ) Spare
+311004
+10
+lang|RU|2 (:4 ) Резерв
+lang|EN|2 (:4 ) Spare
+311004
+11
+lang|RU|3 (:5 ) Резерв
+lang|EN|3 (:5 ) Spare
+311004
+12
+lang|RU|4 (:6 ) Резерв
+lang|EN|4 (:6 ) Spare
+311004
+13
+lang|RU|5 (:7 ) Резерв
+lang|EN|5 (:7 ) Spare
+311004
+14
+lang|RU|6 (:8 ) Резерв
+lang|EN|6 (:8 ) Spare
+311004
+15
+lang|RU|7 (:9 ) Резерв
+lang|EN|7 (:9 ) Spare
+311004
+0
+lang|RU|0 (:12 ) Резерв
+lang|EN|0 (:12 ) Spare
+311004
+1
+lang|RU|1 (:13 ) Резерв
+lang|EN|1 (:13 ) Spare
+311004
+2
+lang|RU|2 (:14 ) Резерв
+lang|EN|2 (:14 ) Spare
+311004
+3
+lang|RU|3 (:15 ) Резерв
+lang|EN|3 (:15 ) Spare
+311004
+4
+lang|RU|4 (:16 ) Резерв
+lang|EN|4 (:16 ) Spare
+311004
+5
+lang|RU|5 (:17 ) Резерв
+lang|EN|5 (:17 ) Spare
+311004
+6
+lang|RU|6 (:18 ) Резерв
+lang|EN|6 (:18 ) Spare
+311004
+7
+lang|RU|7 (:19 ) Резерв
+lang|EN|7 (:19 ) Spare
+311005
+8
+lang|RU|0 (:22 ) Резерв
+lang|EN|0 (:22 ) Spare
+311005
+9
+lang|RU|1 (:23 ) Резерв
+lang|EN|1 (:23 ) Spare
+311005
+10
+lang|RU|2 (:24 ) Резерв
+lang|EN|2 (:24 ) Spare
+311005
+11
+lang|RU|3 (:25 ) Резерв
+lang|EN|3 (:25 ) Spare
+311005
+12
+lang|RU|4 (:26 ) Резерв
+lang|EN|4 (:26 ) Spare
+311005
+13
+lang|RU|5 (:27 ) Резерв
+lang|EN|5 (:27 ) Spare
+311005
+14
+lang|RU|6 (:28 ) Резерв
+lang|EN|6 (:28 ) Spare
+311005
+15
+lang|RU|7 (:29 ) Резерв
+lang|EN|7 (:29 ) Spare
+311005
+0
+lang|RU|0 (:32 ) Резерв
+lang|EN|0 (:32 ) Spare
+311005
+1
+lang|RU|1 (:33 ) Резерв
+lang|EN|1 (:33 ) Spare
+311005
+2
+lang|RU|2 (:34 ) Резерв
+lang|EN|2 (:34 ) Spare
+311005
+3
+lang|RU|3 (:35 ) Резерв
+lang|EN|3 (:35 ) Spare
+311005
+4
+lang|RU|4 (:36 ) Резерв
+lang|EN|4 (:36 ) Spare
+311005
+5
+lang|RU|5 (:37 ) Резерв
+lang|EN|5 (:37 ) Spare
+311005
+6
+lang|RU|6 (:38 ) Резерв
+lang|EN|6 (:38 ) Spare
+311005
+7
+lang|RU|7 (:39 ) Резерв
+lang|EN|7 (:39 ) Spare
