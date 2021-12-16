@@ -238,6 +238,7 @@
                             </Grid>
                         </se:HmiTabItem>
 
+                        <!---->
 
                         <se:HmiTabItem Width="195" Margin="6,0,0,0" Header="ЛЕБЕДКА" Height="35" hmi:Click.Command="{Binding logoutCommand, Source={x:Static model:NgoAuth.auth}}">
                             <Grid>
